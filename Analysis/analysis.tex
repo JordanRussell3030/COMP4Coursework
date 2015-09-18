@@ -22,7 +22,7 @@ The current website is not designed to completely support the new GCSE maths cur
 
 The lessons on MyMaths teach the students how to calculate angles before how to calculate sides, which is a problem because in most cases you have to be able to use the inverse function of the rule to find the missing angle, for which you need to know which side is missing or which sides are in use, and what their values are.
 
-The only wy of inputting answers is by typing into boxes, which can become repetitive and boring.
+The only way of inputting answers is by typing into boxes, which can become repetitive and boring.
 
 The feedback system is not visual enough or convenient enough to use effectively, for example, there is no quick way of instructing a student to a detention or a meeting with their teacher.
 
@@ -131,6 +131,35 @@ The hardware and software accessible by the client are sufficient. The data shou
 \subsection{The current system}
 
 \subsubsection{Data sources and destinations}
+
+User:Student, Administrator:Teacher
+
+\begin{center}
+	\begin{tabular}{|p{3cm}|p{3cm}|p{3cm}|p{3cm}|}
+		\hline
+		\textbf{Source} & \textbf{Data} & \textbf{Example Data} & \textbf{Destination} \\ \hline
+		User & Login Information & Username & Certification Path Verification Algorithm \\ \hline
+		User & Login Information & Password & Certification Path Verification Algorithm \\ \hline
+		Administrator & Name & First Name & Database \\ \hline
+		Administrator & Name & Surname & Database \\ \hline
+		User, Administrator & Task or Activity & Trigonometry Test 1 & Administrator, Database, User \\ \hline
+		Program & Type & Angles & Administrator, Database, User \\ \hline
+		Administrator & Created & 14/10/15 & Database \\ \hline
+		User & Completed & Yes & Administrator, Database \\ \hline
+		User & Start Date & 16/10/15 & Administrator, Database \\ \hline
+		Administrator & Due & 21/10/15 & Database, User \\ \hline
+		Administrator & Feedback & Good work & Database, User \\ \hline
+		System & Level & 8 & Database, User \\ \hline
+		System & Topic & Tan Rule & Database, User \\ \hline
+		System & Task Name & Tan Rule Practice & Database, User \\ \hline
+		System & Number of Tries & 3 &Administrator, Database \\ \hline
+		User & Last Tried & 17/10/15 & Administrator, Database \\ \hline
+		System & Rating & Amber face graphic & Administrator, Database \\ \hline
+		User & Percentage & 85 & Administrator, Database \\ \hline
+		User & Question Percentage & 90 & Administrator, Database \\ \hline
+		Administrator & Students Belong To These Classes & John Smith & Database \\ \hline
+	\end{tabular}
+\end{center}
 
 \subsubsection{Algorithms}
 
