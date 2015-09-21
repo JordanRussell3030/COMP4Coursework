@@ -135,41 +135,96 @@ The hardware and software accessible by the client are sufficient. The data shou
 User:Student, Administrator:Teacher
 
 \begin{center}
-	\begin{tabular}{|p{3cm}|p{3cm}|p{3cm}|p{3cm}|}
-		\hline
-		\textbf{Source} & \textbf{Data} & \textbf{Example Data} & \textbf{Destination} \\ \hline
-		User & Login Information & Username & Certification Path Verification Algorithm \\ \hline
-		User & Login Information & Password & Certification Path Verification Algorithm \\ \hline
-		Administrator & Name & First Name & Database \\ \hline
-		Administrator & Name & Surname & Database \\ \hline
-		User, Administrator & Task or Activity & Trigonometry Test 1 & Administrator, Database, User \\ \hline
-		Program & Type & Angles & Administrator, Database, User \\ \hline
-		Administrator & Created & 14/10/15 & Database \\ \hline
-		User & Completed & Yes & Administrator, Database \\ \hline
-		User & Start Date & 16/10/15 & Administrator, Database \\ \hline
-		Administrator & Due & 21/10/15 & Database, User \\ \hline
-		Administrator & Feedback & Good work & Database, User \\ \hline
-		System & Level & 8 & Database, User \\ \hline
-		System & Topic & Tan Rule & Database, User \\ \hline
-		System & Task Name & Tan Rule Practice & Database, User \\ \hline
-		System & Number of Tries & 3 &Administrator, Database \\ \hline
-		User & Last Tried & 17/10/15 & Administrator, Database \\ \hline
-		System & Rating & Amber face graphic & Administrator, Database \\ \hline
-		User & Percentage & 85 & Administrator, Database \\ \hline
-		User & Question Percentage & 90 & Administrator, Database \\ \hline
-		Administrator & Students Belong To These Classes & John Smith & Database \\ \hline
-	\end{tabular}
+\begin{tabular}{|p{3cm}|p{3cm}|p{3cm}|p{3cm}|}
+\hline
+\textbf{Source} & \textbf{Data} & \textbf{Example Data} & \textbf{Destination} \\ \hline
+User & Login Information & Username & Certification Path Verification Algorithm \\ \hline
+User & Login Information & Password & Certification Path Verification Algorithm \\ \hline
+Administrator & Name & First Name & Database \\ \hline
+Administrator & Name & Surname & Database \\ \hline
+User, Administrator & Task or Activity & Trigonometry Test 1 & Administrator, Database, User \\ \hline
+Program & Type & Angles & Administrator, Database, User \\ \hline
+Administrator & Created & 14/10/15 & Database \\ \hline
+User & Completed & Yes & Administrator, Database \\ \hline
+User & Start Date & 16/10/15 & Administrator, Database \\ \hline
+Administrator & Due & 21/10/15 & Database, User \\ \hline
+Administrator & Feedback & Good work & Database, User \\ \hline
+System & Level & 8 & Database, User \\ \hline
+System & Topic & Tan Rule & Database, User \\ \hline
+System & Task Name & Tan Rule Practice & Database, User \\ \hline
+System & Number of Tries & 3 &Administrator, Database \\ \hline
+User & Last Tried & 17/10/15 & Administrator, Database \\ \hline
+System & Rating & Amber face graphic & Administrator, Database \\ \hline
+User & Percentage & 85 & Administrator, Database \\ \hline
+User & Question Percentage & 90 & Administrator, Database \\ \hline
+Administrator & Students Belong To These Classes & John Smith & Database \\ \hline
+\end{tabular}
 \end{center}
 
 \subsubsection{Algorithms}
 
-Algorithm for appending names to the class list (manually done by the administrator):
+\begin{algorithm}[H]
+\caption{Inputting the names of the class into the list}
+\begin{algorithmic}[1]
+%The administrator (teacher) enters the names of all the users (students).
+\SEND{$"Please\ enter\ the \ name \ of \ the \ user \ you \ would \ like \ to \ add"$}
+%Each name is appended to the list
+\SET{$class.append(name)$}
+\end{algorithmic}
+\end{algorithm}
 
+\begin{algorithm}[H]
+\caption{Checking whether to add another user or save current list of users}
+\begin{algorithmic}[1]
+%This is run after every name is input to check with the admin if they want to add another name or stop.
+\SEND{$"Would \ you \ like \ to \ add \ another \ user? \ (Y/N) "$}
+\If{$exit.upper() == Y$}
+%If they do, this runs the get_name function again.
+\SET{$get\_ name$}
+\ElsIf{$exit.upper() == N$}
+%If they don't, it saves all the names currently in the list to the database.
+\SET{$save\_names()$}
+\Else{}
+%Makes sure they choose yes or no.
+\SEND{"Please \ enter \ a \ valid \ value"}
+\EndIf
+\end{algorithmic}
+\end{algorithm}
 
+\begin{algorithm}[H]
+\caption{Saving the name list to the database}
+\begin{algorithmic}[1]
+\SET{$open file\_name \ as \ file$}
+%This saves every name in the list to the file
+\For{$name$}{$class\_list$}
+	\SET{$save\_name$}
+\EndFor
+\end{algorithmic}
+\end{algorithm}
 
-Algorithm for generating usernames and passwords:
+\begin{algorithm}[H]
+	\caption{Generating the username from the list of names}
+\begin{algorithmic}[1]
+%This for loop sets every users username as their name
+\For{$name$}{$usernames$}
+	\SET{$username$}{$name$}
+	\SET{$usernames.append(username)$}
+\EndFor
+\end{algorithmic}
+\end{algorithm}
 
-Algorithm for accepting the username and password when logging in (username and password are set randomly by the administrator):
+\begin{algorithm}[H]
+	\caption{Generating the password for each username}
+\begin{algorithmic}[1]
+%This loop generates 7 different characters and combines them to form a password.
+\For{$username$}{$usernames$}
+	\For{$count$}{$7$}
+		\SET{$password[count]$}{$random$}
+		\SET{$passwords.append(password)$}
+	\EndFor
+\EndFor
+\end{algorithmic}
+\end{algorithm}
 
 \subsubsection{Data flow diagram}
 
