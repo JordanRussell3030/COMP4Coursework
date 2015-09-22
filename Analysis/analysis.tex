@@ -30,15 +30,15 @@ The feedback system is not visual enough or convenient enough to use effectively
 
 The client interview was conducted by meeting in person and asking the questions directly, with access to the current system to show in detail precisely what the problems were, and what she needed improving upon. An up to date textbook was also present for referencing. The questionnaire was as follows:
 
-1. What do you require the proposed system to do?
+\textbf{1. What do you require the proposed system to do?}
 
 The proposed system needs to interactively teach the updated GCSE trigonometry syllabus in a way that reduces the number of flaws compared to the current system. It needs to have a range of difficulty for the questions to teach a range of abilities, and it needs to cover every part of GCSE trigonometry in the most effective order. It must also provide an adequate amount of homework tasks to properly test their knowledge following the lessons, and these tasks should be submitted upon completion to be viewed by the teacher. It must also be quick and easy for a teacher to view the students progress with trigonometry, mostly by assessing their homework, with feedback and warnings being easy to give out when required. Finally, it must save a record of every task set for every student, and its completion progress and results, and these records need to be easily accessible. Every student and teacher needs their own individual login to avoid shared or inaccurate progression.
 
-2. What are the problems with the current way of doing things?
+\textbf{2. What are the problems with the current way of doing things?}
 
 Some of the biggest problems are with the way in which things are taught on the current system; in some cases, the method demonstrations are inaccurate and can mislead students away from the correct solution. Furthermore, the button for two consecutive answers are often in the same place, which can allow a student to get the right answer by assuming the answer is in that place after this problem occurring enough times prior to that task, or even by just double-clicking by accident. Answer buttons should be jumbled up, as this problem can be prevented, and can also solve the problem of the students not properly distinguishing the differences between the sine, cosine and tan rules, as they always appear in the same order and are taken for granted. The order in which lessons are taught is also problematic as sides should be taught before angles to allow for the student to learn how to use the inverse function of the rule which is often a key part of finding a missing angle, whereas MyMaths teaches angles before sides. Alongside this problem is that the sine, cosine and tan rules are all taught individually. If they were taught together it would give the student more experience in deciding which rule they actually have to use, rather than just being told. MyMaths also lacks a lesson on how to tell the whether the problem will use the sine or cosine rule. Lastly, the current system does not cover the new GCSE curriculum which will be implemented next year (2016-17), so more focus on the problem-solving aspect is required.
 
-3. What data or information is recorded in the current system?
+\textbf{3. What data or information is recorded in the current system?}
 
 The currently recorded fields in the homework set table are: Name (Text), Task or activity (Text), Type (Text), Created (Date), Completed (Text), Start (Date, Foreign Key), Due (Date), Feedback (Text, Foreign Key).
 
@@ -46,7 +46,7 @@ The currently recorded fields in the results table are: Level (Integer), Topic (
 
 The currently recorded field in the administration table is: Students belong to these classes (Text).
 
-4. Is the any data or information you require to be recorded in the proposed system? If so, how much?
+\textbf{4. Is the any data or information you require to be recorded in the proposed system? If so, how much?}
 
 I require the following data to be recorded in the proposed system: User ID (Integer, Primary Key), First name (Text), Surname (Text), Overall percentage score (Real), Red/Amber/Green face (Graphic, Text, Foreign Key), Feedback (Text).
 
@@ -54,75 +54,75 @@ Also, in a separate table I need a field for each question to view the individua
 
 Example: Question 1 percentage (Real), Question 2 percentage (Real), Question 3 - x (Real), Red/Amber/Green face (Graphic, Text, Foreign Key), Appointment with teacher? (Text, Y/N), Time (Time, only if Appointment with teacher is Yes)
 
-5. If there is data, how frequently will it need to be updated?
+\textbf{5. If there is data, how frequently will it need to be updated?}
 
 The data will need to be updated every time a student submits a finished or amended homework assignment.
 
-6. Will new records need to be added and old ones deleted?
+\textbf{6. Will new records need to be added and old ones deleted?}
 
 The old records will not need to be deleted, and new ones will be added as described above.
 
-7. How important is the data or information that is recorded?
+\textbf{7. How important is the data or information that is recorded?}
 
 It is very important as it allows both teacher and student to track progress and know what needs improving upon, and allows the teacher to record evidence of the amount of work and revision each student has done. However progress will not be actively monitored, only checked following deadlines/
 
-8. What processes or functions are performed by the current system?
+\textbf{8. What processes or functions are performed by the current system?}
 
 The current system saves data to the database which can be viewed by both student and teacher. It uses an interactive GUI so that the user can navigate between many pages and areas of the website, and practice tasks and homework tasks use text boxes for the user to fill in to submit an answer.
 
-9. What processes and functions are to be performed by the new system?
+\textbf{9. What processes and functions are to be performed by the new system?}
 
 The proposed system must also save data to a database, but it must be much easier to access, navigate and use generally. The program will be navigable using a GUI, and lessons, homework tasks and the database will be accessible. The lessons and homeworks will be interactive and use text boxes for answers, as well as drag and drop graphics and boxes for showing working out.
 
-10. What special algorithms do these processes use?
+\textbf{10. What special algorithms do these processes use?}
 
 To save data to the database, the current system uses a read/write algorithm, writing to store, and reading to view in the graphical database. For navigating the pages and submitting answers, there are many radio buttons on the website which will all use the same connection function which is built in to Python. The test questions themselves will use selection statements to determine if a submitted answer is the same as the expected correct answer, stored as a fixed variable. To log on to the website, the program uses a validation algorithm to check the user name and password is correct, and uses error exception algorithms to ask the user for the correct input if necessary.
 
-11. Which processes should be executed manually?
+\textbf{11. Which processes should be executed manually?}
 
 Clicking the connection radio buttons, submitting answers, logging on, navigating the GUI.
 
-12. What are the inputs to the current system?
+\textbf{12. What are the inputs to the current system?}
 
 User name and password, cursor clicks for navigation and selecting text boxes, keyboards for typing answers, cursor clicks for submitting answers.
 
-13. What inputs will be required for the proposed system?
+\textbf{13. What inputs will be required for the proposed system?}
 
 Cursor clicks for navigation, selecting text boxes, submitting answers and dragging graphics, and keyboard for typing answers, user name and password.
 
-14. What are the outputs from the current system?
+\textbf{14. What are the outputs from the current system?}
 
 It outputs an error handling exception if the user name or password is incorrect, a message appears asking you to re-enter the correct inputs. It outputs a tick or a cross beside submitted answers, and graphics to represent how well you did on the database, such as a red or green face. It outputs your score percentage, your rating, and your feedback from the teacher. 
 
-15. What outputs will be required from the proposed system?
+\textbf{15. What outputs will be required from the proposed system?}
 
 The system is required to display methods of working out next to an incorrect answer submission, rather than just a big cross. If a student inputs the wrong data type, it will produce an error exception hint saying "Please input an integer" or "Please input a decimal" or "Please input an angle". It will give a hint in the same way if a student gets the wrong answer using the correct data type, then when they get it wrong the second time it will display the answer as well as the method of working out, and give them marks for their working out accordingly rather than the big cross. The data stored in the database will need to be easily readable and the graphics should be appropriate.
 
-16. What computing resources does the client possess?
+\textbf{16. What computing resources does the client possess?}
 
 The centre has many computer rooms, a smart board in the classroom, and some students can gain permission to bring in their own devices.
 
-17. Are there any security issues?
+\textbf{17. Are there any security issues?}
 
 I may have to gain permission from IT if you need to install your program on the school computers for testing on a class, but this shouldn't be an issue if you are trustworthy and your program can be scanned for insecurities.
 
-18. Should there be restricted access to particular areas?
+\textbf{18. Should there be restricted access to particular areas?}
 
 Students should not be allowed to view the progress of the whole class, only teachers. Teachers should also have exclusive access to manually setting homeworks and sending personal messages or warnings to the students. 
 
-19. how are exceptions and errors handled in the current system?
+\textbf{19. how are exceptions and errors handled in the current system?}
 
 When logging in, if the user name or password is invalid it asks you to input the correct values. If an answer is wrong, or uses the wrong data type, it just takes off the marks and moves on.
 
-20. What errors and exceptions should be reported in the proposed system?
+\textbf{20. What errors and exceptions should be reported in the proposed system?}
 
 If a user name or password is incorrect, a small box should pop up asking for the correct value. If a wrong data type is used to answer a question, a small box should pop up asking for the correct data type (e.g. "Please input an integer, decimal or angle") and will not dock marks or remaining attempts. If a student gets it wrong on their first attempt, a small box should pop up giving a hint, and dock one of the two attempts. If they get it wrong again, the correct answer along with the full method for working out will appear next to the box.
 
-21. How should they be reported?
+\textbf{21. How should they be reported?}
 
 Small windows temporarily popping up on screen with messages, until the OK button or the cross in the top right is clicked.
 
-22. Are there any constraints on hardware, software, data, methods of working, cost, time, etc?
+\textbf{22. Are there any constraints on hardware, software, data, methods of working, cost, time, etc?}
 
 The hardware and software accessible by the client are sufficient. The data should be saved in the database successfully. Methods of working are usual, just navigating the program and inputting the answers. There is no cost for this program. There may be time constraints if difficulties are encountered during the development process.
 
@@ -132,7 +132,7 @@ The hardware and software accessible by the client are sufficient. The data shou
 
 \subsubsection{Data sources and destinations}
 
-User:Student, Administrator:Teacher
+\textit{User:Student, Administrator:Teacher}
 
 \begin{center}
 \begin{tabular}{|p{3cm}|p{3cm}|p{3cm}|p{3cm}|}
@@ -155,13 +155,15 @@ System & Task Name & Tan Rule Practice & Database, User \\ \hline
 System & Number of Tries & 3 &Administrator, Database \\ \hline
 User & Last Tried & 17/10/15 & Administrator, Database \\ \hline
 System & Rating & Amber face graphic & Administrator, Database \\ \hline
-User & Percentage & 85 & Administrator, Database \\ \hline
-User & Question Percentage & 90 & Administrator, Database \\ \hline
+User & Percentage & 85\% & Administrator, Database \\ \hline
+User & Question Percentage & 90\% & Administrator, Database \\ \hline
 Administrator & Students Belong To These Classes & John Smith & Database \\ \hline
 \end{tabular}
 \end{center}
 
 \subsubsection{Algorithms}
+
+\textbf{Manual User names input program:}
 
 \begin{algorithm}[H]
 \caption{Inputting the names of the class into the list}
@@ -194,13 +196,15 @@ Administrator & Students Belong To These Classes & John Smith & Database \\ \hli
 \begin{algorithm}[H]
 \caption{Saving the name list to the database}
 \begin{algorithmic}[1]
-\SET{$open file\_name \ as \ file$}
+\SET{$with \ open("username.txt", mode = "r") as \ file$}
 %This saves every name in the list to the file
 \For{$name$}{$class\_list$}
-	\SET{$save\_name$}
+	\SET{$file.write(name)$}
 \EndFor
 \end{algorithmic}
 \end{algorithm}
+
+\textbf{Username and password generator:}
 
 \begin{algorithm}[H]
 	\caption{Generating the username from the list of names}
@@ -220,9 +224,87 @@ Administrator & Students Belong To These Classes & John Smith & Database \\ \hli
 \For{$username$}{$usernames$}
 	\For{$count$}{$7$}
 		\SET{$password[count]$}{$random$}
-		\SET{$passwords.append(password)$}
+		\SET{$count = 0$}
 	\EndFor
+	\For{$count$}{$7$}
+		\SET{$password = password + password[count]$}
+		\SET{$count += 1$}
+	\EndFor
+	\SET{$passwords.append(password)$}
 \EndFor
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}[H]
+	\caption{Combines the username and password and saves them together as a complete login.}
+\begin{algorithmic}[1]
+%This loop appends each username followed by a password, so the password follows the username in the list which is useful for validation.
+\SET{$count$}{$0$}
+\For{$username$}{$usernames$}
+	\SET{$login\_user = usernames[count]$}
+	\SET{$login\_pass = passwords[count]$}
+	\SET{$logins.append(login\_user)$}
+	\SET{$logins.append(login\_pass)$}
+`	\SET{$count += 1$}
+\EndFor
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}[H]
+	\caption{Saves the username and password as combined logins to the database}
+\begin{algorithmic}[1]
+\SET{$with \ open("logins.txt", mode = "w") as \ logins\_$}
+	\For{$login$}{$logins$}
+		\SET{$logins\_.write(login)$}
+		\SET{$logins\_.write("\backslash \ n")$}
+	\EndFor
+\end{algorithmic}
+\end{algorithm}
+
+\textbf{Validates the username and password when the user tries to log in:}
+
+\begin{algorithm}[H]
+\caption{Takes the logins from the database and adds them to a list from which they can be validated}
+\begin{algorithmic}[1]
+\SET{$with \ open("logins.txt", mode = "r") as \ logins$}
+\For{$name$}{$logins$}
+	\SET{$list\_.append(name)$}
+\EndFor
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}[H]
+\caption{Asks the user for their username}
+\begin{algorithmic}
+\SEND{"Please enter your username"}
+\SET{$return \ username$}
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}[H]
+\caption{Asks the user for their password}
+\begin{algorithmic}[1]
+\SEND{"Please enter your password"}
+\SET{$return \ password$}
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}[H]
+\caption{Validates the given username and password}
+\begin{algorithmic}[1]
+\SET{$count = 0$}
+\SET{$found = False$}
+\While{$found == False$}{$and \ count < len(list\_)$}
+	\If{$list\_[count] == str(username) \ and \ list\_[count + 2] == str(password)$}
+		\SEND("Accepted")
+		\SET{$found = True$}
+		\SET{$return \ found$}
+	\Else{}
+		\SEND{"Not accepted"}
+		\SET{$call \ Validation$}
+	\SET{$count \ += \ 1$}
+	\EndIf
+\EndWhile
 \end{algorithmic}
 \end{algorithm}
 
