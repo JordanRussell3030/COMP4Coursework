@@ -166,24 +166,24 @@ Administrator & Students Belong To These Classes & John Smith & Database \\ \hli
 \textbf{Manual User names input program:}
 
 \begin{algorithm}[H]
-\caption{Inputting the names of the class into the list}
+\caption{Inputting the names of the class into the list.}
 \begin{algorithmic}[1]
 %The administrator (teacher) enters the names of all the users (students).
-\SEND{$"Please\ enter\ the \ name \ of \ the \ user \ you \ would \ like \ to \ add"$}
+\RECEIVE{$"Please\ enter\ the \ name \ of \ the \ user \ you \ would \ like \ to \ add"$}
 %Each name is appended to the list
 \SET{$class.append(name)$}
 \end{algorithmic}
 \end{algorithm}
 
 \begin{algorithm}[H]
-\caption{Checking whether to add another user or save current list of users}
+\caption{Checking whether to add another user or save current list of users.}
 \begin{algorithmic}[1]
 %This is run after every name is input to check with the admin if they want to add another name or stop.
-\SEND{$"Would \ you \ like \ to \ add \ another \ user? \ (Y/N) "$}
-\If{$exit.upper() == Y$}
+\RECEIVE{$"Would \ you \ like \ to \ add \ another \ user? \ (Y/N) "$}
+\If{$exit.upper() = Y$}
 %If they do, this runs the get_name function again.
 \SET{$get\_ name$}
-\ElsIf{$exit.upper() == N$}
+\ElsIf{$exit.upper() = N$}
 %If they don't, it saves all the names currently in the list to the database.
 \SET{$save\_names()$}
 \Else{}
@@ -194,7 +194,7 @@ Administrator & Students Belong To These Classes & John Smith & Database \\ \hli
 \end{algorithm}
 
 \begin{algorithm}[H]
-\caption{Saving the name list to the database}
+\caption{Saving the name list to the database.}
 \begin{algorithmic}[1]
 \SET{$with \ open("username.txt", mode = "r") as \ file$}
 %This saves every name in the list to the file
@@ -207,7 +207,7 @@ Administrator & Students Belong To These Classes & John Smith & Database \\ \hli
 \textbf{Username and password generator:}
 
 \begin{algorithm}[H]
-	\caption{Generating the username from the list of names}
+	\caption{Generating the username from the list of names.}
 \begin{algorithmic}[1]
 %This for loop sets every users username as their name
 \For{$name$}{$usernames$}
@@ -218,16 +218,16 @@ Administrator & Students Belong To These Classes & John Smith & Database \\ \hli
 \end{algorithm}
 
 \begin{algorithm}[H]
-	\caption{Generating the password for each username}
+	\caption{Generating the password for each username.}
 \begin{algorithmic}[1]
 %This loop generates 7 different characters and combines them to form a password.
 \For{$username$}{$usernames$}
 	\For{$count$}{$7$}
 		\SET{$password[count]$}{$random$}
-		\SET{$count = 0$}
+		\SET{$count$}{$0$}
 	\EndFor
 	\For{$count$}{$7$}
-		\SET{$password = password + password[count]$}
+		\SET{$password$}{$password + password[count]$}
 		\SET{$count += 1$}
 	\EndFor
 	\SET{$passwords.append(password)$}
@@ -241,8 +241,8 @@ Administrator & Students Belong To These Classes & John Smith & Database \\ \hli
 %This loop appends each username followed by a password, so the password follows the username in the list which is useful for validation.
 \SET{$count$}{$0$}
 \For{$username$}{$usernames$}
-	\SET{$login\_user = usernames[count]$}
-	\SET{$login\_pass = passwords[count]$}
+	\SET{$login\_user$}{$usernames[count]$}
+	\SET{$login\_pass$}{$passwords[count]$}
 	\SET{$logins.append(login\_user)$}
 	\SET{$logins.append(login\_pass)$}
 `	\SET{$count += 1$}
@@ -251,7 +251,7 @@ Administrator & Students Belong To These Classes & John Smith & Database \\ \hli
 \end{algorithm}
 
 \begin{algorithm}[H]
-	\caption{Saves the username and password as combined logins to the database}
+	\caption{Saves the username and password as combined logins to the database.}
 \begin{algorithmic}[1]
 \SET{$with \ open("logins.txt", mode = "w") as \ logins\_$}
 	\For{$login$}{$logins$}
@@ -264,7 +264,7 @@ Administrator & Students Belong To These Classes & John Smith & Database \\ \hli
 \textbf{Validates the username and password when the user tries to log in:}
 
 \begin{algorithm}[H]
-\caption{Takes the logins from the database and adds them to a list from which they can be validated}
+\caption{Takes the logins from the database and adds them to a list from which they can be validated.}
 \begin{algorithmic}[1]
 \SET{$with \ open("logins.txt", mode = "r") as \ logins$}
 \For{$name$}{$logins$}
@@ -274,30 +274,30 @@ Administrator & Students Belong To These Classes & John Smith & Database \\ \hli
 \end{algorithm} 
 
 \begin{algorithm}[H]
-\caption{Asks the user for their username}
+\caption{Asks the user for their username.}
 \begin{algorithmic}
-\SEND{"Please enter your username"}
+\RECEIVE{"Please enter your username"}
 \SET{$return \ username$}
 \end{algorithmic}
 \end{algorithm}
 
 \begin{algorithm}[H]
-\caption{Asks the user for their password}
+\caption{Asks the user for their password.}
 \begin{algorithmic}[1]
-\SEND{"Please enter your password"}
+\RECEIVE{"Please enter your password"}
 \SET{$return \ password$}
 \end{algorithmic}
 \end{algorithm}
 
 \begin{algorithm}[H]
-\caption{Validates the given username and password}
+\caption{Validates the given username and password.}
 \begin{algorithmic}[1]
-\SET{$count = 0$}
-\SET{$found = False$}
-\While{$found == False$}{$and \ count < len(list\_)$}
-	\If{$list\_[count] == str(username) \ and \ list\_[count + 2] == str(password)$}
+\SET{$count$}{$0$}
+\SET{$found$}{$False$}
+\While{$found = False$}{$and \ count < len(list\_)$}
+	\If{$list\_[count] = str(username) \ and \ list\_[count + 2] = str(password)$}
 		\SEND("Accepted")
-		\SET{$found = True$}
+		\SET{$found$}{$True$}
 		\SET{$return \ found$}
 	\Else{}
 		\SEND{"Not accepted"}
@@ -305,6 +305,136 @@ Administrator & Students Belong To These Classes & John Smith & Database \\ \hli
 	\SET{$count \ += \ 1$}
 	\EndIf
 \EndWhile
+\end{algorithmic}
+\end{algorithm}
+
+\textbf{Pythagoras algorithms:}
+
+\begin{algorithm}[H]
+\caption{Checks if the user's solution for the {$a^2 + b^2 = c^2$} is correct.}
+\begin{algorithmic}[1]
+\SET{$total\_marks$}{$0$}
+\SET{$side\_a$}{$x$}
+\SET{$side\_b$}{$x$}
+\SET{$side\_c$}{$\sqrt{side\_a^2 + side\_b^2}$}
+\SEND{$"Here \ is \ a \ right \ angled \ triangle. \ The \ length \ of \ side \ a \ is \ x$}
+\SET{$centimetres, \ and \ the \ length \ of \ side \ b \ is \ x \ centimetres.$}
+\SET{$Please \ calculate \ the \ length \ of \ side \ c"$}
+\RECEIVE{$length$}{$"Please \ input \ the \ length \ of \ side \ c: "$}
+\If {$length = side\_c$}
+	\SEND{"+ 1 \ mark"}
+	\SET{$total\_marks \ += \ x$}
+\Else{}
+	\SEND{"The \ answer \ is \ x"}
+\EndIf
+\end{algorithmic}
+\end{algorithm}
+
+\textbf{Alternative algorithm:}
+
+\begin{algorithm}[H]
+\caption{Same question and solution with a differently arranged formula.}
+\begin{algorithmic}[1]
+\SET{$total\_marks$}{$0$}
+\SET{$side\_a$}{$x$}
+\SET{$side\_b$}{$x$}
+\SET{$side\_c^2$}{$side\_a^2 + side\_b^2$}
+\SET{$side\_c$}{$\sqrt{side\_c^2}$}
+\SEND{$"Here \ is \ a \ right \ angled \ triangle. \ The \ length \ of \ side \ a \ is \ x$}
+\SET{$centimetres, \ and \ the \ length \ of \ side \ b \ is \ x \ centimetres.$}
+\SET{$Please \ calculate \ the \ length \ of \ side \ c"$}
+\RECEIVE{$length$}{$"Please \ input \ the \ length \ of \ side \ c: "$}
+\If{$length = side\_c$}
+	\SEND{"+ x \ marks"}
+	\SET{$total\_marks \ += \ x$}
+\Else{}
+	\SEND{"The \ answer \ is \ x"}
+\EndIf
+\end{algorithmic}
+\end{algorithm}
+
+\textbf{3D Pythagoras algorithm:}
+
+\begin{algorithm}[H]
+\caption{Similar algorithm, but continues to check the user's solution for a 3D pythagoras problem.}
+\begin{algorithmic}[1]
+\SET{$total\_marks$}{$0$}
+\SET{$left\_side\_a$}{$x$}
+\SET{$middle\_side\_a$}{$x$}
+\SET{$right\_side\_a$}{$x$}
+\SET{$inside\_side\_a$}{$\sqrt{left\_side\_a^2 + middle\_side\_a^2}$}
+\SET{$inside\_side\_b$}{$\sqrt{right\_side\_a^2 + inside\_side\_a^2}$}
+\SEND{$"A \ magician \ stores \ his \ wand \ in \ a \ box.$}
+\SET{$The \ box \ is \ xcm \ by \ xcm \ by \ xcm.$}
+\SET{$The \ wand \ only \ just \ fits \ in \ wedged \ against \ opposite \ corners."$}
+\RECEIVE{$length$}{$"How \ long \ is \ the \ wand?"$}
+\If{$length = inside\_side\_b$}
+	\SEND{"+ \ x \ marks"}
+	\SET{$total\_marks \ += \ x$}
+\Else{}
+	\SEND{"The \ answer \ is \ x"}
+\EndIf	
+\end{algorithmic}
+\end{algorithm}
+
+\textbf{Trigonometry Algorithms:}
+
+\begin{algorithm}[H]
+\caption{Sine rule.}
+\begin{algorithmic}[1]
+\SET{$sinA$}{$\frac{opposite}{hypotenuse}$}{$\frac{a}{h}$}
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}[H]
+\caption{Cosine rule.}
+\begin{algorithmic}[1]
+\SET{$cosA$}{$\frac{adjacent}{hypotenuse}$}{$\frac{b}{h}$}
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}[H]
+\caption{Tan rule.}
+\begin{algorithmic}[1]
+\SET{$tanA$}{$\frac{opposite}{adjacent}$}{$\frac{a}{b}$}
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}[H]
+\caption{The sine formula in use.}
+\begin{algorithmic}[1]
+\SET{$\frac{A}{sinA}$}{$\frac{B}{sinB}$}
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}[H]
+\caption{The cosine formula in use.}
+\begin{algorithmic}[1]
+\SET{$a^2$}{$b^2 + c^2 \ - \ 2bc \ cosA$}
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}[H]
+\caption{The formula for finding angles in scalene triangles using the cosine rule.}
+\begin{algorithmic}[1]
+\SET{$cosA \ b^2 + c^2 - \frac{a^2}{2bc}$}
+\SET{$C$}{$inv \ cos\frac{adjacent}{hypotenuse}$}
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}[H]
+\caption{Formula for finding the area of a scalene triangle using the sine rule.}
+\begin{algorithmic}[1]
+\SET{$area$}{$\frac{1}{2} \ ab \ sinC$}
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}[H]
+\caption{Formula for finding an angle using the tan rule.}
+\begin{algorithmic}[1]
+\SET{$tanA$}{$\frac{10}{15}$}
+\SET{$\frac{10}{15}$}{$ \ $}{$0.67$}
+\SET{$tan^-1(0.67)$}{$33.82^o$}
 \end{algorithmic}
 \end{algorithm}
 
