@@ -435,10 +435,50 @@ Administrator & Students Belong To These Classes & John Smith & Database \\ \hli
 \SET{$tanA$}{$\frac{10}{15}$}
 \SET{$\frac{10}{15}$}{$ \ $}{$0.67$}
 \SET{$tan^-1(0.67)$}{$33.82^o$}
+\SET{$tanA$}{$33.82^o$}
 \end{algorithmic}
 \end{algorithm}
 
 \subsubsection{Data flow diagram}
+
+
+
+
+\begin{document}
+\begin{center}
+\begin{tikzpicture}[
+  font=\rmfamily\footnotesize,
+  every matrix/.style={ampersand replacement=\&,column sep=2cm,row sep=.6cm},
+  source/.style={draw,thick,rounded corners,fill=yellow!20,inner sep=.3cm},
+  process/.style={draw,thick,circle,fill=blue!20},
+  sink/.style={source,fill=green!20},
+  datastore/.style={draw,very thick,shape=datastore,inner sep=.3cm},
+  dots/.style={gray,scale=2},
+  to/.style={->,>=stealth',shorten >=1pt,semithick,font=\rmfamily\scriptsize},
+  every node/.style={align=center}]
+
+  % Position the nodes using a matrix layout
+  \matrix{
+    \node[source] (a) {A}; \& \& \\
+     \& \& \node[source] (b) {B};\\
+     \node[source] (c) {C}; \& \node[source] (d) {D};\\
+     \& \& \node[source] (e) {E};\\
+     \node[source] (f) {F}; \& \& \\      
+  };
+
+  % Draw the arrows between the nodes and label them.
+  \draw[to] (a) -- node[midway,above] {raw events}
+      node[midway,below] {level 0} (c);
+  \draw[to] (c) -- node[midway,right] {raw event data\\level 1} (f);
+  \draw[to] (f) to[bend right=20] node[midway,above] {events}
+      node[midway,below] {level 1} (d);
+  \draw[to] (d)-- node[midway,above] {events}
+      node[midway,below] {level 1} (b);
+  \draw[to] (d) -- node[midway,above] {events}
+      node[midway,below] {level 1} (e);
+\end{tikzpicture}
+\end{center}
+\end{document}
 
 \subsubsection{Input Forms, Output Forms, Report Formats}
 
