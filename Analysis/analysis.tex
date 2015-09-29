@@ -140,10 +140,10 @@ We have access to plenty of computers, and our system is powerful enough to hand
 \begin{tabular}{|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|}
 \hline
 \textbf{Source} & \textbf{Data} & \textbf{Process} & \textbf{Example Data} & \textbf{Destination} \\ \hline
-User & Login Information & The user manually inputs their username using a keyboard & john\_smith\_b, string & Certification Path Verification Algorithm \\ \hline
-User & Login Information & The user manually inputs their password using a keyboard & SFC, string & Certification Path Verification Algorithm \\ \hline
-Administrator & Name & Is added manually when a class is being set up & John, string & Database \\ \hline
-Administrator & Name & Is added manually when a class is being set up & Smith, string & Database \\ \hline
+User & Username & The user manually inputs their username using a keyboard & john\_smith\_b, string & Certification Path Verification Algorithm \\ \hline
+User & Password & The user manually inputs their password using a keyboard & SFC, string & Certification Path Verification Algorithm \\ \hline
+Administrator & First name & Is added manually when a class is being set up & John, string & Database \\ \hline
+Administrator & Surname & Is added manually when a class is being set up & Smith, string & Database \\ \hline
 User, Administrator & Task or Activity & Each task name is hard-coded & Trigonometry Test 1, string & Administrator, Database, User \\ \hline
 Program & Type & Type of task is hard-coded & Angles, string & Administrator, Database, User \\ \hline
 Administrator & Created & The date the administrator sets the task is automatically saved when set & 14/10/15, date & Database \\ \hline
@@ -163,7 +163,7 @@ System & Topic & Topic is hard-coded & Tan Rule, string & Database, User \\ \hli
 System & Task Name & Task name is hard-coded & Tan Rule Practice, string & Database, User \\ \hline
 System & Number of Tries & Number of tries is automatically recorded, incrementing the total each time the task is opened and marked & 3, integer & Administrator, Database \\ \hline
 User & Last Tried & The date the student most recently attempted the task is automatically saved after each attempt and the previous data is over-written & 17/10/15, date & Administrator, Database \\ \hline
-System & Rating & Depending on the student's score, a coloured face (red, amber or green) is automatically saved when a task is submitted & Amber face graphic, graphic & Administrator, Database \\ \hline
+System & Rating & Depending on the student's score, a coloured face (red, amber or green) is automatically saved when a task is submitted & Amber face graphic, blob & Administrator, Database \\ \hline
 User & Percentage & calculated from the amount of marks a student gets for each task & 85\%, real & Administrator, Database \\ \hline
 User & Question Percentage & Percentage calculated from the amount of marks awarded to the student for each individual question & 90\%, real & Administrator, Database \\ \hline
 Administrator & Students Belong To These Classes & All students added when setting up a class are stored in a separate table in the database & John Smith, string & Database \\ \hline
@@ -496,7 +496,7 @@ Administrator & First name & The first name of each user is manually input by th
 Administrator & Surname & The surname of each user is manually input by the administrator & Smith, string & Database, User \\ \hline
 User & Overall percentage score & The percentage of the questions in a task which the user got correct is recorded automatically upon submission by the system & 70\%, real & Administrator, Database \\ \hline
 User & Individual question percentage score & The percentage score for each individual question is recorded automatically upon task submission & 50\%, real & Administrator, Database \\ \hline
-System & Rating & A red, amber or green face is recorded for each submitted assignment to represent whether or not the user did well enough & Green face graphic, graphic & Administrator, Database \\ \hline
+System & Rating & A red, amber or green face is recorded for each submitted assignment to represent whether or not the user did well enough & Green face graphic, blob & Administrator, Database \\ \hline
 Administrator & Feedback & The teacher gives feedback to the user manually & Well done, string & Database, User \\ \hline
 \end{tabular}
 \end{center}
@@ -513,6 +513,20 @@ Administrator & Time of appointment & The time for a meeting with the user if th
 \subsubsection{Data flow diagram}
 
 \subsubsection{Data dictionary}
+
+\begin{center}
+\begin{tabular}{|p{3cm}|p{1.6cm}|p{2cm}|p{2cm}|p{2cm}|p{3.5cm}|}
+\hline
+\textbf{Name} & \textbf{Data Type} & \textbf{Length} & \textbf{Validation} & \textbf{Example Data} & \textbf{Comment} \\ \hline
+UserID & Integer & 4 bits & 0001 to 9999 & 1546 & Unique to each user \\ \hline
+FirstName & String & 15 characters & First letter upper case, rest lower case & John & Unique to each user, but could be shared by some \\ \hline
+Surname & String & 25 characters & First letter upper case, rest lower case & Smith & Unique to each user, but could be shared by some \\ \hline
+OverallPercentageScore & Real & 3 characters & in range 0 - 100 & 76.5\% & The percentage of marks obtained in a test, decimal points allowed \\ \hline
+IndividualPercentageScore & Real & 3 characters & in range 0 - 100 & 45.5\% & The percentage of marks for an individual question, field will only appear in separate table for individual tasks \\ \hline
+FaceRating & Blob & 64 kilobytes & \ &  Green face graphic & Green, amber or red face graphic \\ \hline
+
+\end{tabular}
+\end{center}
 
 \subsubsection{Volumetrics}
 
