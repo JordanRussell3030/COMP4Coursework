@@ -145,7 +145,7 @@ User & Password & The user manually inputs their password using a keyboard & SFC
 Administrator & First name & Is added manually when a class is being set up & John, string & Database \\ \hline
 Administrator & Surname & Is added manually when a class is being set up & Smith, string & Database \\ \hline
 User, Administrator & Task or Activity & Each task name is hard-coded & Trigonometry Test 1, string & Administrator, Database, User \\ \hline
-Program & Type & Type of task is hard-coded & Angles, string & Administrator, Database, User \\ \hline
+System & Type & Type of task is hard-coded & Angles, string & Administrator, Database, User \\ \hline
 Administrator & Created & The date the administrator sets the task is automatically saved when set & 14/10/15, date & Database \\ \hline
 User & Completed & The date when the student completes the task is saved automatically & Yes, boolean & Administrator, Database \\ \hline
 User & Start Date & The date when the student first attempts the task is saved automatically & 16/10/15, date & Administrator, Database \\ \hline
@@ -161,11 +161,11 @@ Administrator & Feedback & Text typed by the administrator and saved manually & 
 System & Level & Level is hard-coded & 8, integer & Database, User \\ \hline
 System & Topic & Topic is hard-coded & Tan Rule, string & Database, User \\ \hline
 System & Task Name & Task name is hard-coded & Tan Rule Practice, string & Database, User \\ \hline
-System & Number of Tries & Number of tries is automatically recorded, incrementing the total each time the task is opened and marked & 3, integer & Administrator, Database \\ \hline
-User & Last Tried & The date the student most recently attempted the task is automatically saved after each attempt and the previous data is over-written & 17/10/15, date & Administrator, Database \\ \hline
-System & Rating & Depending on the student's score, a coloured face (red, amber or green) is automatically saved when a task is submitted & Amber face graphic, blob & Administrator, Database \\ \hline
-User & Percentage & calculated from the amount of marks a student gets for each task & 85\%, real & Administrator, Database \\ \hline
-User & Question Percentage & Percentage calculated from the amount of marks awarded to the student for each individual question & 90\%, real & Administrator, Database \\ \hline
+System & Number of Tries & Number of tries is automatically recorded, incrementing the total each time the task is opened and marked & 3, integer & Administrator, Database, User \\ \hline
+User & Last Tried & The date of the most recent attempt is recorded and the last attempt is overwritten & 17/10/15, date & Administrator, Database, User \\ \hline
+System & Rating & Depending on the student's score, a coloured face (red, amber or green) is automatically saved when a task is submitted & Amber face graphic, blob & Administrator, Database, User \\ \hline
+User & Percentage & calculated from the amount of marks a student gets for each task & 85\%, real & Administrator, Database, User \\ \hline
+User & Question Percentage & Percentage calculated from the amount of marks awarded to the student for each individual question & 90\%, real & Administrator, Database, User \\ \hline
 Administrator & Students Belong To These Classes & All students added when setting up a class are stored in a separate table in the database & John Smith, string & Database \\ \hline
 \end{tabular}
 \end{center}
@@ -479,13 +479,26 @@ Administrator & Students Belong To These Classes & All students added when setti
 
 \subsubsection{Data flow diagram}
 
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Data_Flow_Diagram_1.png}
+    \caption{The process of how the administrator puts their classes names into the system} \label{fig:print_function_result}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Data_Flow_Diagram_2.png}
+    \caption{The system validating the users login using the stored login information} \label{fig:print_function_result}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Data_Flow_Diagram_3.png}
+    \caption{The entire process of a user using the system and the results of a homework being recorded, including the teacher setting the task} \label{fig:print_function_result}
+\end{figure}
+
 \subsubsection{Input Forms, Output Forms, Report Formats}
 
 \subsection{The proposed system}
 
 \subsubsection{Data sources and destinations}
-
-\textit{User:Student, Administrator:Teacher}
 
 \begin{center}
 \begin{tabular}{|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|}
@@ -494,9 +507,9 @@ Administrator & Students Belong To These Classes & All students added when setti
 Administrator & User ID & The user ID is automatically generated when a class is added to the system & 0001, integer & Database, User \\ \hline
 Administrator & First name & The first name of each user is manually input by the administrator & John, string & Database, User \\ \hline
 Administrator & Surname & The surname of each user is manually input by the administrator & Smith, string & Database, User \\ \hline
-User & Overall percentage score & The percentage of the questions in a task which the user got correct is recorded automatically upon submission by the system & 70\%, real & Administrator, Database \\ \hline
-User & Individual question percentage score & The percentage score for each individual question is recorded automatically upon task submission & 50\%, real & Administrator, Database \\ \hline
-System & Rating & A red, amber or green face is recorded for each submitted assignment to represent whether or not the user did well enough & Green face graphic, blob & Administrator, Database \\ \hline
+User & Overall percentage score & The percentage of the questions in a task which the user got correct is recorded automatically upon submission by the system & 70\%, real & Administrator, Database, User \\ \hline
+User & Individual question percentage score & The percentage score for each individual question is recorded automatically upon task submission & 50\%, real & Administrator, Database, User \\ \hline
+System & Rating & A red, amber or green face is recorded for each submitted assignment to represent whether or not the user did well enough & Green face graphic, blob & Administrator, Database, User \\ \hline
 Administrator & Feedback & The teacher gives feedback to the user manually & Well done, string & Database, User \\ \hline
 \end{tabular}
 \end{center}
@@ -505,7 +518,7 @@ Administrator & Feedback & The teacher gives feedback to the user manually & Wel
 \begin{tabular}{|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|}
 \hline
 \textbf{Source} & \textbf{Data} & \textbf{Process} & \textbf{Example Data} & \textbf{Destination} \\ \hline
-Administrator & See after class & The administrator can manually set parameters so that the system knows to inform a student if they need to see the teacher after their next lesson e.g Below 50\% & Yes, boolean & User, Database \\ \hline
+Administrator & See after class & The administrator can manually set parameters so that the system knows to inform a student if they need to see the teacher after their next lesson e.g Below 50\% & Yes, boolean & Database,User \\ \hline
 Administrator & Time of appointment & The time for a meeting with the user if they need to see the teacher, input manually be the teacher & 11:00AM, time & Database, User \\ \hline
 \end{tabular}
 \end{center}
@@ -515,16 +528,18 @@ Administrator & Time of appointment & The time for a meeting with the user if th
 \subsubsection{Data dictionary}
 
 \begin{center}
-\begin{tabular}{|p{3cm}|p{1.6cm}|p{2cm}|p{2cm}|p{2cm}|p{3.5cm}|}
+\begin{tabular}{|p{3.4cm}|p{1.2cm}|p{2cm}|p{2cm}|p{2cm}|p{3.5cm}|}
 \hline
 \textbf{Name} & \textbf{Data Type} & \textbf{Length} & \textbf{Validation} & \textbf{Example Data} & \textbf{Comment} \\ \hline
 UserID & Integer & 4 bits & 0001 to 9999 & 1546 & Unique to each user \\ \hline
 FirstName & String & 15 characters & First letter upper case, rest lower case & John & Unique to each user, but could be shared by some \\ \hline
 Surname & String & 25 characters & First letter upper case, rest lower case & Smith & Unique to each user, but could be shared by some \\ \hline
-OverallPercentageScore & Real & 3 characters & in range 0 - 100 & 76.5\% & The percentage of marks obtained in a test, decimal points allowed \\ \hline
-IndividualPercentageScore & Real & 3 characters & in range 0 - 100 & 45.5\% & The percentage of marks for an individual question, field will only appear in separate table for individual tasks \\ \hline
+OverallPercentScore & Real & 3 characters & in range 0 - 100 & 76.5\% & The percentage of marks obtained in a test, decimal points allowed \\ \hline
+IndividualPercentScore & Real & 3 characters & in range 0 - 100 & 45.5\% & The percentage of marks for an individual question, field will only appear in separate table for individual tasks \\ \hline
 FaceRating & Blob & 64 kilobytes & \ &  Green face graphic & Green, amber or red face graphic \\ \hline
-
+Feedback & String & 500 characters & \ & Good work & This can consist of any characters as it is a personal message \\ \hline
+SeeAfterClass & Boolean & 3 characters & Yes or No & Yes & If the user doesn't achieve a sufficient score, this variable will become true and alert the user \\ \hline
+AppointmentTime & Time & 5 characters & 24 hour format & 13:35 & Only relevant if the user has a true SeeAfterClass variable, set automatically bsed on the administrator's timetable but can be changed if necessary\\ \hline
 \end{tabular}
 \end{center}
 
