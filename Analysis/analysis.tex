@@ -480,17 +480,17 @@ Administrator & Students Belong To These Classes & All students added when setti
 \subsubsection{Data flow diagram}
 
 \begin{figure}[H]
-    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Data_Flow_Diagram_1.png}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/dataflowdiagram1.png}
     \caption{The process of how the administrator puts their classes names into the system} \label{fig:print_function_result}
 \end{figure}
 
 \begin{figure}[H]
-    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Data_Flow_Diagram_2.png}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/dataflowdiagram2.png}
     \caption{The system validating the users login using the stored login information} \label{fig:print_function_result}
 \end{figure}
 
 \begin{figure}[H]
-    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Data_Flow_Diagram_3.png}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/dataflowdiagram3.png}
     \caption{The entire process of a user using the system and the results of a homework being recorded, including the teacher setting the task} \label{fig:print_function_result}
 \end{figure}
 
@@ -505,12 +505,12 @@ Administrator & Students Belong To These Classes & All students added when setti
 \hline
 \textbf{Source} & \textbf{Data} & \textbf{Process} & \textbf{Example Data} & \textbf{Destination} \\ \hline
 Administrator & User ID & The user ID is automatically generated when a class is added to the system & 0001, integer & Database, User \\ \hline
+Administrator & Password & The user's password is automatically generated when a UserID is generated & d4g5s1g & Database, User \\ \hline
 Administrator & First name & The first name of each user is manually input by the administrator & John, string & Database, User \\ \hline
 Administrator & Surname & The surname of each user is manually input by the administrator & Smith, string & Database, User \\ \hline
 User & Overall percentage score & The percentage of the questions in a task which the user got correct is recorded automatically upon submission by the system & 70\%, real & Administrator, Database, User \\ \hline
 User & Individual question percentage score & The percentage score for each individual question is recorded automatically upon task submission & 50\%, real & Administrator, Database, User \\ \hline
 System & Rating & A red, amber or green face is recorded for each submitted assignment to represent whether or not the user did well enough & Green face graphic, blob & Administrator, Database, User \\ \hline
-Administrator & Feedback & The teacher gives feedback to the user manually & Well done, string & Database, User \\ \hline
 \end{tabular}
 \end{center}
 
@@ -518,12 +518,28 @@ Administrator & Feedback & The teacher gives feedback to the user manually & Wel
 \begin{tabular}{|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|}
 \hline
 \textbf{Source} & \textbf{Data} & \textbf{Process} & \textbf{Example Data} & \textbf{Destination} \\ \hline
-Administrator & See after class & The administrator can manually set parameters so that the system knows to inform a student if they need to see the teacher after their next lesson e.g Below 50\% & Yes, boolean & Database,User \\ \hline
-Administrator & Time of appointment & The time for a meeting with the user if they need to see the teacher, input manually be the teacher & 11:00AM, time & Database, User \\ \hline
+Administrator & Feedback & The teacher gives feedback to the user manually & Well done, string & Database, User \\ \hline
+Administrator & See after class & The administrator can manually set parameters so that the system knows to inform a student if they need to see the teacher after their next lesson e.g Below 50\% & Yes, boolean &  User \\ \hline
+Administrator & Time of appointment & The time for a meeting with the user if they need to see the teacher, input manually be the teacher & 11:00AM, time & Administrator, User \\ \hline
 \end{tabular}
 \end{center}
 
 \subsubsection{Data flow diagram}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/dataflowdiagram1.png}
+    \caption{The process of how the administrator puts their classes names into the system} \label{fig:print_function_result}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/dataflowdiagram2.png}
+    \caption{The system validating the users login using the stored login information} \label{fig:print_function_result}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/dataflowdiagram4.png}
+    \caption{The teacher sets the task, then the student proceeds to complete it, and their progress is recorded} \label{fig:print_function_result}
+\end{figure}
 
 \subsubsection{Data dictionary}
 
@@ -532,14 +548,31 @@ Administrator & Time of appointment & The time for a meeting with the user if th
 \hline
 \textbf{Name} & \textbf{Data Type} & \textbf{Length} & \textbf{Validation} & \textbf{Example Data} & \textbf{Comment} \\ \hline
 UserID & Integer & 4 bits & 0001 to 9999 & 1546 & Unique to each user \\ \hline
+Password & String and integers & 7 characters & letter followed by number followed by letter & f7h3j5f & The password generator uses mixed data types to avoid inappropriate passwords \\ \hline
 FirstName & String & 15 characters & First letter upper case, rest lower case & John & Unique to each user, but could be shared by some \\ \hline
 Surname & String & 25 characters & First letter upper case, rest lower case & Smith & Unique to each user, but could be shared by some \\ \hline
 OverallPercentScore & Real & 3 characters & in range 0 - 100 & 76.5\% & The percentage of marks obtained in a test, decimal points allowed \\ \hline
 IndividualPercentScore & Real & 3 characters & in range 0 - 100 & 45.5\% & The percentage of marks for an individual question, field will only appear in separate table for individual tasks \\ \hline
-FaceRating & Blob & 64 kilobytes & \ &  Green face graphic & Green, amber or red face graphic \\ \hline
+Rating & Blob & 64 kilobytes & \ &  Green face graphic & Green, amber or red face graphic \\ \hline
 Feedback & String & 500 characters & \ & Good work & This can consist of any characters as it is a personal message \\ \hline
 SeeAfterClass & Boolean & 3 characters & Yes or No & Yes & If the user doesn't achieve a sufficient score, this variable will become true and alert the user \\ \hline
 AppointmentTime & Time & 5 characters & 24 hour format & 13:35 & Only relevant if the user has a true SeeAfterClass variable, set automatically bsed on the administrator's timetable but can be changed if necessary\\ \hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{|p{3.4cm}|p{1.2cm}|p{2cm}|p{2cm}|p{2cm}|p{3.5cm}|}
+\hline
+\textbf{Name} & \textbf{Data Type} & \textbf{Length} & \textbf{Validation} & \textbf{Example Data} & \textbf{Comment} \\ \hline
+ErrorMessage1 & String & 50 characters & & Sorry, the name cannot have integers & An error message if the wrong data type is used to input a name \\ \hline
+ErrorMessage2 & String & 50 characters & & Sorry, that is not a valid login & Tells the user if they have input the wrong username or password \\ \hline
+ErrorMessage3 & String & 50 characters & & Please input a decimal, not an integer & Tells the user if their incorrect answer is the wrong data type \\ \hline
+ErrorMessage4 & String & 50 characters & & That is incorrect, try one more time & Tells the user that their answer is incorrect and gives them one more attempt \\ \hline
+CorrectAnswer & Integer, Real, String & 5 characters & Must be a decimal or whole number, or text if in a text box & 25.5cm & Gives the user the correct answer if they get the question wrong too many times \\ \hline
+Login data & String & 25 characters & & johnsmith1, f8j4h6k & The login information saved in the system to be loaded and checked with the user's inputs \\ \hline
+Task data & String & 100 characters & & Trigonometry - sin rule, Level 7, Trigonometry & Contains all the information about the task, what difficulty it is, what type it is etc. \\ \hline
+Set answers & Integer, Real, String & 5 characters & Must be a decimal or whole number, or text if in a text box & 45{$^o$} & Contains all the set answers for some of the tasks \\ \hline
+Calculated answers & Integer, Real & 5 characters & Must be the same as the solution obtained from the algorithm & 29.8 & Contains algorithms which find and validate the solution for randomly generated tasks \\ \hline
 \end{tabular}
 \end{center}
 
