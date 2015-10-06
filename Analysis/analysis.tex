@@ -496,6 +496,8 @@ Administrator & Students Belong To These Classes & All students added when setti
 
 \subsubsection{Input Forms, Output Forms, Report Formats}
 
+There are no physical forms that are used for input or output; the class names are added into the system manually by the teacher, copying from a register, and output forms always come in the form of an e-mail, or a meeting with parents. Specifically, if a student does not complete homework to a sufficient standard, the teacher manually e-mails the parents personally or calls them in for a meeting. No action is taken by the system beyond informing the teacher of the student's progress.
+
 \subsection{The proposed system}
 
 \subsubsection{Data sources and destinations}
@@ -510,7 +512,6 @@ Administrator & First name & The first name of each user is manually input by th
 Administrator & Surname & The surname of each user is manually input by the administrator & Smith, string & Database, User \\ \hline
 User & Overall percentage score & The percentage of the questions in a task which the user got correct is recorded automatically upon submission by the system & 70\%, real & Administrator, Database, User \\ \hline
 User & Individual question percentage score & The percentage score for each individual question is recorded automatically upon task submission & 50\%, real & Administrator, Database, User \\ \hline
-System & Rating & A red, amber or green face is recorded for each submitted assignment to represent whether or not the user did well enough & Green face graphic, blob & Administrator, Database, User \\ \hline
 \end{tabular}
 \end{center}
 
@@ -518,6 +519,7 @@ System & Rating & A red, amber or green face is recorded for each submitted assi
 \begin{tabular}{|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|}
 \hline
 \textbf{Source} & \textbf{Data} & \textbf{Process} & \textbf{Example Data} & \textbf{Destination} \\ \hline
+System & Rating & A red, amber or green face is recorded for each submitted assignment to represent whether or not the user did well enough & Green face graphic, blob & Administrator, Database, User \\ \hline
 Administrator & Feedback & The teacher gives feedback to the user manually & Well done, string & Database, User \\ \hline
 Administrator & See after class & The administrator can manually set parameters so that the system knows to inform a student if they need to see the teacher after their next lesson e.g Below 50\% & Yes, boolean &  User \\ \hline
 Administrator & Time of appointment & The time for a meeting with the user if they need to see the teacher, input manually be the teacher & 11:00AM, time & Administrator, User \\ \hline
@@ -551,6 +553,7 @@ UserID & Integer & 4 bits & 0001 to 9999 & 1546 & Unique to each user \\ \hline
 Password & String and integers & 7 characters & letter followed by number followed by letter & f7h3j5f & The password generator uses mixed data types to avoid inappropriate passwords \\ \hline
 FirstName & String & 15 characters & First letter upper case, rest lower case & John & Unique to each user, but could be shared by some \\ \hline
 Surname & String & 25 characters & First letter upper case, rest lower case & Smith & Unique to each user, but could be shared by some \\ \hline
+TaskName & String & 25 characters & & Trigonometry 2 & Hard-coded into the system 
 OverallPercentScore & Real & 3 characters & in range 0 - 100 & 76.5\% & The percentage of marks obtained in a test, decimal points allowed \\ \hline
 IndividualPercentScore & Real & 3 characters & in range 0 - 100 & 45.5\% & The percentage of marks for an individual question, field will only appear in separate table for individual tasks \\ \hline
 Rating & Blob & 64 kilobytes & \ &  Green face graphic & Green, amber or red face graphic \\ \hline
@@ -577,6 +580,23 @@ Calculated answers & Integer, Real & 5 characters & Must be the same as the solu
 \end{center}
 
 \subsubsection{Volumetrics}
+
+There are between 25 and 30 students in each class in years 10 and 11, and there are about 10 classes between the two years at the client's school. This equates to 300 students, so 300 records will be needed across the first year. These will not be needed once a year group moves on, so 150 will be overwritten by 150 more, meaning no expansion will be necessary. Obviously there won't be exactly 150 in each year, so there will be a boundary of 30 extra per year. It is highly unlikely that more would be needed. There will be a total of 360 record spaces each year, half of which will be either overwritten or just deleted following a decline in numbers. Each of these 360 students will have a record with personal details, and then will also have space for 30 more records, easily enough for the amount of tasks they could complete. 360 * 20 is 7600, the total number of records in the master database.
+
+Each user's personal record will look like this:
+
+\begin{center}
+\begin{tabular}{|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|} \hline
+\textbf{First Name} & \textbf{Surname} & \textbf{UserID} & \text{Password} \\ \hline
+John & Smith & john\_smith\_1 & s3g6h3f \\ \hline
+\end{tabular}
+\end{center}
+
+Each user's task record will look like this:
+
+\begin{center}
+\begin{tabular}{|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|} \hline
+\textbf{UserID} & \textbf{TaskName} & \textbf{OverallPercentScore} & \textbf{IndividualPercentScore1} & \textbf{IndividualPercentScore2} & \textbf{Rating} & \textbf{Feedback}
 
 \section{Objectives}
 
