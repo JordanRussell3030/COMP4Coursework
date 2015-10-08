@@ -480,23 +480,41 @@ Administrator & Students Belong To These Classes & All students added when setti
 \subsubsection{Data flow diagram}
 
 \begin{figure}[H]
-    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/dataflowdiagram1.png}
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/dataflowdiagram1.png}
     \caption{The process of how the administrator puts their classes names into the system} \label{fig:print_function_result}
 \end{figure}
 
 \begin{figure}[H]
-    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/dataflowdiagram2.png}
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/dataflowdiagram2.png}
     \caption{The system validating the users login using the stored login information} \label{fig:print_function_result}
 \end{figure}
 
 \begin{figure}[H]
-    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/dataflowdiagram3.png}
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/dataflowdiagram3.png}
     \caption{The entire process of a user using the system and the results of a homework being recorded, including the teacher setting the task} \label{fig:print_function_result}
 \end{figure}
 
 \subsubsection{Input Forms, Output Forms, Report Formats}
 
 There are no physical forms that are used for input or output; the class names are added into the system manually by the teacher, copying from a register, and output forms always come in the form of an e-mail, or a meeting with parents. Specifically, if a student does not complete homework to a sufficient standard, the teacher manually e-mails the parents personally or calls them in for a meeting. No action is taken by the system beyond informing the teacher of the student's progress.
+
+\textbf{An example register:}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/register.png}
+    \caption{A screenshot of what the register used to input the names correctly might look like} \label{fig:print_function_result}
+\end{figure}
+
+\textbf{An example e-mail to a parent:}
+
+Dear Sir/Madam
+
+I am writing to inform you that your son/daughter has unfortunately not been completing their homework to the standard that is expected of them. 
+
+They have many outstanding tasks to complete, and if they do not complete them very soon I am afraid I will have to call you in for a meeting.
+
+Yours faithfully, \\
+Ms Teacher
 
 \subsection{The proposed system}
 
@@ -529,17 +547,17 @@ Administrator & Time of appointment & The time for a meeting with the user if th
 \subsubsection{Data flow diagram}
 
 \begin{figure}[H]
-    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/dataflowdiagram1.png}
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/dataflowdiagram1.png}
     \caption{The process of how the administrator puts their classes names into the system} \label{fig:print_function_result}
 \end{figure}
 
 \begin{figure}[H]
-    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/dataflowdiagram2.png}
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/dataflowdiagram2.png}
     \caption{The system validating the users login using the stored login information} \label{fig:print_function_result}
 \end{figure}
 
 \begin{figure}[H]
-    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/dataflowdiagram4.png}
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/dataflowdiagram4.png}
     \caption{The teacher sets the task, then the student proceeds to complete it, and their progress is recorded} \label{fig:print_function_result}
 \end{figure}
 
@@ -553,7 +571,7 @@ UserID & Integer & 4 bits & 0001 to 9999 & 1546 & Unique to each user \\ \hline
 Password & String and integers & 7 characters & letter followed by number followed by letter & f7h3j5f & The password generator uses mixed data types to avoid inappropriate passwords \\ \hline
 FirstName & String & 15 characters & First letter upper case, rest lower case & John & Unique to each user, but could be shared by some \\ \hline
 Surname & String & 25 characters & First letter upper case, rest lower case & Smith & Unique to each user, but could be shared by some \\ \hline
-TaskName & String & 25 characters & & Trigonometry 2 & Hard-coded into the system 
+TaskName & String & 25 characters & & Trigonometry 2 & Hard-coded into the system \\ \hline
 OverallPercentScore & Real & 3 characters & in range 0 - 100 & 76.5\% & The percentage of marks obtained in a test, decimal points allowed \\ \hline
 IndividualPercentScore & Real & 3 characters & in range 0 - 100 & 45.5\% & The percentage of marks for an individual question, field will only appear in separate table for individual tasks \\ \hline
 Rating & Blob & 64 kilobytes & \ &  Green face graphic & Green, amber or red face graphic \\ \hline
@@ -581,7 +599,7 @@ Calculated answers & Integer, Real & 5 characters & Must be the same as the solu
 
 \subsubsection{Volumetrics}
 
-There are between 25 and 30 students in each class in years 10 and 11, and there are about 10 classes between the two years at the client's school. This equates to 300 students, so 300 records will be needed across the first year. These will not be needed once a year group moves on, so 150 will be overwritten by 150 more, meaning no expansion will be necessary. Obviously there won't be exactly 150 in each year, so there will be a boundary of 30 extra per year. It is highly unlikely that more would be needed. There will be a total of 360 record spaces each year, half of which will be either overwritten or just deleted following a decline in numbers. Each of these 360 students will have a record with personal details, and then will also have space for 30 more records, easily enough for the amount of tasks they could complete. 360 * 20 is 7600, the total number of records in the master database.
+There are between 25 and 30 students in each class in years 10 and 11, and there are about 10 classes between the two years at the client's school. This equates to 300 students, so 300 records will be needed across the first year. These will not be needed once a year group moves on, so 150 will be overwritten by 150 more, meaning no expansion will be necessary. Obviously there won't be exactly 150 in each year, so there will be a boundary of 30 more or less per year. It is highly unlikely that more would be needed. There will be a total of 360 record spaces each year, half of which will be either overwritten or just deleted following a decline in numbers. Each of these 360 students will have a record with personal details, and then will also have space for 30 more records, easily enough for the amount of tasks they could complete. 360 * 20 is 7600 task records, added to the personal records, making the total number of records in the master database 7960.
 
 Each user's personal record will look like this:
 
@@ -595,8 +613,15 @@ John & Smith & john\_smith\_1 & s3g6h3f \\ \hline
 Each user's task record will look like this:
 
 \begin{center}
-\begin{tabular}{|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|} \hline
-\textbf{UserID} & \textbf{TaskName} & \textbf{OverallPercentScore} & \textbf{IndividualPercentScore1} & \textbf{IndividualPercentScore2} & \textbf{Rating} & \textbf{Feedback}
+\begin{tabular}{|p{4.2cm}|p{2.5cm}|p{3.7cm}|p{4.1cm}|} \hline
+\textbf{UserID} & \textbf{TaskName} & \textbf{OverallPercentScore} & \textbf{IndividualPercentScore1} \\ \hline
+john\_smith\_1 & Trigonometry Higher & 75\% & 100\% \\ \hline
+\textbf{IndividualPercentScore2} & \textbf{Rating} & \textbf{Feedback} \\ \hline
+50\% & [Green face] & Very good \\ \hline
+\end{tabular}
+\end{center}
+
+SeeAfterClass and TimeOfAppointment will not need to be recorded, only the user and the teacher temporarily need to know these.
 
 \section{Objectives}
 
