@@ -677,6 +677,22 @@ SeeAfterClass and TimeOfAppointment will not need to be recorded, only the user 
 
 \subsection{Entity Descriptions}
 
+\begin{center}
+\begin{tabular}{|p{3cm}|p{4cm}|p{4cm}|p{3cm}|} \hline
+\textbf{Entity} & \textbf{Description} & \textbf{Attributes} & \textbf{Key} \\ \hline
+System & The entire system being developed for the use by users and administrators &  & \\ \hline
+Administrator  & The teacher who sets the tasks for the users & ClassTeacher &  \\ \hline
+User & The main users of the program who submit the tasks & UserID & Primary Key (**), Foreign Key (*) \\ \hline
+Topic & The name which each task comes under & Topic &  \\ \hline
+Lesson & The lesson corresponding with the set topic & TaskName & \\ \hline
+Homework & The homework set by the administrator for the student & TaskName & \\ \hline
+Difficulty & The difficulty of the homework & Difficulty & \\ \hline
+Question & Each individual question within each lesson or homework & IndividualPercentScore & Foreign Key (*) \\ \hline
+Correct Answer & The correct solution for wach question & CorrectAnswer & \\ \hline
+Incorrect Answer & There is an unlimited amount of incorrect answers for each question & IncorrectAnswer & \\ \hline
+\end{tabular}
+\end{center}
+
 \section{Object Analysis}
 
 \subsection{Object Listing}
