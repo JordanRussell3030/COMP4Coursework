@@ -680,16 +680,15 @@ SeeAfterClass and TimeOfAppointment will not need to be recorded, only the user 
 \begin{center}
 \begin{tabular}{|p{3cm}|p{4cm}|p{4cm}|p{3cm}|} \hline
 \textbf{Entity} & \textbf{Description} & \textbf{Attributes} & \textbf{Key} \\ \hline
-System & The entire system being developed for the use by users and administrators &  & \\ \hline
-Administrator  & The teacher who sets the tasks for the users & ClassTeacher &  \\ \hline
-User & The main users of the program who submit the tasks & UserID & Primary Key (**), Foreign Key (*) \\ \hline
-Topic & The name which each task comes under & Topic &  \\ \hline
-Lesson & The lesson corresponding with the set topic & TaskName & \\ \hline
-Homework & The homework set by the administrator for the student & TaskName & \\ \hline
-Difficulty & The difficulty of the homework & Difficulty & \\ \hline
-Question & Each individual question within each lesson or homework & IndividualPercentScore & Foreign Key (*) \\ \hline
-Correct Answer & The correct solution for wach question & CorrectAnswer & \\ \hline
-Incorrect Answer & There is an unlimited amount of incorrect answers for each question & IncorrectAnswer & \\ \hline
+System & The entire system being developed for the use by users and administrators & \textbf{System}(\underline{Administrator}, \underline{User}) & Primary Key(Administrator), Foreign Key(User) \\ \hline
+Administrator & The teacher who sets the tasks for the users & \textbf{Administrator}(User) & Foreign Key(, Administrator, User) \\ \hline
+User & The main users of the program who submit the tasks & \textbf{User}(\underline{UserID}, Password, FirstName, Surname, \underline{Administrator}) & Primary Key (UserID), Foreign Key (Administrator) \\ \hline
+Topic & The name which each task comes under & \textbf{Topic}(\underline{Lesson}, \underline{Homework}) & Primary Key(Lesson, Homework) \\ \hline
+Lesson & The lesson corresponding with the set topic & \textbf{Lesson}(\underline{Question}, \underline{Difficulty}) & Foreign Key(Question, Difficulty) \\ \hline
+Homework & The homework set by the administrator for the student & \textbf{Homework}(\underline{Question}, \underline{Difficulty}) & Foreign Key(Question, Difficulty) \\ \hline
+Difficulty & The difficulty of the homework & \textbf{Difficulty}(\underline{Homework}, \underline{Lesson}) & Foreign Key(Homework, Lesson) \\ \hline
+Question & Each individual question within each lesson or homework & \textbf{Question}(\underline{Difficulty}) & Primary Key (Difficulty) \\ \hline
+Answer & The correct solution for each question & \textbf{Answer}(\underline{Question}) & Primary Key(Question) \\ \hline
 \end{tabular}
 \end{center}
 
@@ -697,9 +696,143 @@ Incorrect Answer & There is an unlimited amount of incorrect answers for each qu
 
 \subsection{Object Listing}
 
+\begin{itemize}
+	\item Course
+	\item Teacher
+	\item Student
+	\item Trigonometry Section
+	\item Pythagoras Section
+	\item Trigonometry Lesson
+	\item Trigonometry Homework
+	\item Pythagoras Lesson
+	\item Pythagoras Homework
+\end{itemize}
+
 \subsection{Relationship diagrams}
 
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/objectrelationships.png}
+    \caption{The relationships between each of the objects in the proposed system} \label{fig:print_function_result}
+\end{figure}
+
 \subsection{Class definitions}
+
+\begin{center}
+\begin{tabular}{|p{5cm}|} \hline
+Course \\ \hline
+Title \\
+Subject \\ \hline
+AddTitle \\ 
+EditTitle \\
+AddSubject \\
+EditSubject \\ \hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{|p{5cm}|} \hline
+Teacher \\ \hline
+Surname \\
+Title \\
+Subject \\ \hline
+AddSurname \\
+EditSurname \\
+AddTitle \\
+EditTitle \\
+AddSubject \\
+EditSubject \\ \hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{|p{5cm}|} \hline
+Student \\ \hline
+FirstName \\
+Surname \\
+UserID \\
+Password  \\ \hline
+AddFirstName \\
+EditFirstName \\
+AddSurname \\
+EditSurname \\
+AddUserID \\
+EditUserID \\
+AddPassword \\
+EditPassword \\ \hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{|p{5cm}|} \hline
+Trigonometry Section \\ \hline
+TrigonometryLesson \\
+TrigonometryHomework \\ \hline
+PresentTrigonometryLesson \\
+SetTrigonometryHomework \\
+MarkTrigonometryHomework \\ \hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{|p{5cm}|} \hline
+Pythagoras Section \\ \hline
+PythagorasLesson \\
+PythagorasHomework \\ \hline
+PresentPythagorasLesson \\
+SetPythagorasHomework \\
+MarkPythagorasHomework \\ \hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{|p{5cm}|} \hline
+Trigonometry Lesson \\ \hline
+Examples \\
+Questions \\ \hline
+DisplayExamples \\
+GiveExampleAnswers \\
+GiveQuestionAnswers \\ \hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{|p{5cm}|} \hline
+Trigonometry Homework \\ \hline
+Questions \\
+Answers \\ \hline
+SetQuestions \\
+CheckAnswers \\
+DisplayCorrectAnswers \\
+OutputCorrectMessage \\
+OutputDataTypeErrorMessage \\
+SubmitScore \\ \hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{|p{5cm}|} \hline
+Pythagoras Lesson \\ \hline
+Examples \\
+Questions \\ \hline
+DisplayExamples \\
+GiveExampleAnswers \\
+GiveQuestionAnswers \\ \hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{|p{5cm}|} \hline
+Pythagoras Homework \\ \hline
+Questions \\
+Answers \\ \hline
+SetQuestions \\
+CheckAnswers \\
+DisplayCorrectAnswers \\
+OutputCorrectMessage \\
+OutputDataTypeErrorMessage \\
+SubmitScore \\ \hline
+\end{tabular}
+\end{center}
 
 \section{Other Abstractions and Graphs}
 
@@ -707,22 +840,58 @@ Incorrect Answer & There is an unlimited amount of incorrect answers for each qu
 
 \subsection{Hardware}
 
+The centre which my client works for have multiple classrooms with standard computers in, which are powerful enough to run a program of the proposed programs size. All of the hardware components are compatible with Python, and any other software required to use a Python-made program. Threr are enough computers at the facility for everyone to use them together. There are essentially no hardware constraints, and no additional hardware will be required.
+
 \subsection{Software}
+
+All of the computers at the center have the appropriate software installed to be able to view graphics and access the internet, so they can be used to record the users progression in an online database. They do not have Python, but that can easily be installed if necessary. They will be able to access the download and/or installation for my program easily too. Otherwise no constraints.
 
 \subsection{Time}
 
+The deadline for this project officially is set by the teacher and then the exam board; the client does not mind when it is done, within reason, but would prefer if it was ready for the updated curriculum, which is after the teacher deadline anyway, so won't be a problem.
+
 \subsection{User Knowledge}
 
+The users have had sufficient experience using computers and navigating other websites and programs, so will have no trouble navigating the proposed system. There will be a guide if they do have any problems. The administrator will have had experience using a similar program in terms of setting homework and deadlines, and accessing the database will be easy. Otherwise, no more knowledge is necessary.
+
 \subsection{Access restrictions}
+
+Users will be allowed to access all lessons and homeworks, and their personal database records and task records for their own profile. They will not be able to see other user's database records. Only the administrator will be able to set homeworks and deadlines, and view every user's database records.
 
 \section{Limitations}
 
 \subsection{Areas which will not be included in computerisation}
 
+The system to be developed is focused on the trigonometry and pythagoras areas of GCSE Mathematics exclusively, so will not include all of the other areas of GCSE Maths, such as algebra, vectors, fractions, probability, etc. It also will only cover GCSE level, so no SAT or A-Level type problems will be included.
+
 \subsection{Areas considered for future computerisation}
+
+It is possible that some questions at the easier or moderate end of AS Level trigonometry could be included for those who really want to challenge themselves. Lessons and homeworks on the area of 2D ad 3D triangles might be included, expanding the range of triangle based subjects within GCSE Maths.
 
 \section{Solutions}
 
 \subsection{Alternative solutions}
 
+\begin{itemize}
+	\item The database will be accessible online via the click of a button from the program home page, and will be easy to read, as space conserving as possible (on screen) and will be adjustable exclusively by the administrator of necessary. The database will be initially generated by a Python program which incorporates the SQL package, and then python-SQL commands will be used to make adjustments. The GUI of the database will be programmed using OpenGL, most likely.
+
+	\item The 3D graphics used in some of the lessons and homeworks will use OpenGL because it is platform independent, a requirement for the client. It supports 3D transformations, translations and rotations, solid filling, and hidden line removal, all of the things which I will include in the lessons and homeworks.
+
+	\item PHP could be used because it has good support for working with SQL.
+
+	\item JQuery could be implemented somewhere because it supports browsers, which might be the basis of my database.
+
+	\item Mathematical formulas will be implemented into algorithms which will help check whether or not the user's solution is correct for a question. These will include Pythagoras' Theorem and SOHCAHTOA. They will also be used to generate random questions with solutions in certain homeworks or optional challenges.
+
+\end{itemize}
+
 \subsection{Justification of chosen solution}
+
+\begin{itemize}
+	\item OpenGL is supported by Python very well, and is capable of producing high quality graphics. Python also supports SQL, so both of these languages can be incorporated into my mainly Python program effectively.
+
+	\item Python has a numpy package which supports mathematical algorithms, including Pythagoras and trigonometry algorithms, so will be useful for implementing them alongside the OpenGL graphics code for 3D operations and solution checks.
+
+	\item  3D graphics will be used in the first place because they make the program more interactive by including animations triggered by the user, and interactivity is a priority across all aspects of the program, including navigating the GUI, learning from the lessons, completing the homeworks and reading and adjusting the database.
+
+\end{itemize}
