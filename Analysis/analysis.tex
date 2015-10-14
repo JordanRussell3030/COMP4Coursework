@@ -127,7 +127,7 @@ Small windows temporarily popping up on screen with messages, until the OK butto
 We have access to plenty of computers, and our system is powerful enough to handle easily enough data. We don't have a deadline for you. 
 
 \begin{figure}[H]
-    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/signature}
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/signature}
 \end{figure}
 
 \section{Investigation}
@@ -151,8 +151,6 @@ System & Type & Type of task is hard-coded & Angles, string & Administrator, Dat
 Administrator & Created & The date the administrator sets the task is automatically saved when set & 14/10/15, date & Database \\ \hline
 User & Completed & The date when the student completes the task is saved automatically & Yes, boolean & Administrator, Database \\ \hline
 User & Start Date & The date when the student first attempts the task is saved automatically & 16/10/15, date & Administrator, Database \\ \hline
-Administrator & Due & The date when the task is due is set manually by the administrator & 21/10/15, date & Database, User \\ \hline
-Administrator & Feedback & Text typed by the administrator and saved manually & Good work, string & Database, User \\ \hline
 \end{tabular}
 \end{center}
 
@@ -160,6 +158,8 @@ Administrator & Feedback & Text typed by the administrator and saved manually & 
 \begin{tabular}{|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|}
 \hline
 \textbf{Source} & \textbf{Data} & \textbf{Process} & \textbf{Example Data} & \textbf{Destination} \\ \hline
+Administrator & Due & The date when the task is due is set manually by the administrator & 21/10/15, date & Database, User \\ \hline
+Administrator & Feedback & Text typed by the administrator and saved manually & Good work, string & Database, User \\ \hline
 System & Level & Level is hard-coded & 8, integer & Database, User \\ \hline
 System & Topic & Topic is hard-coded & Tan Rule, string & Database, User \\ \hline
 System & Task Name & Task name is hard-coded & Tan Rule Practice, string & Database, User \\ \hline
@@ -167,6 +167,13 @@ System & Number of Tries & Number of tries is automatically recorded, incrementi
 User & Last Tried & The date of the most recent attempt is recorded and the last attempt is overwritten & 17/10/15, date & Administrator, Database, User \\ \hline
 System & Rating & Depending on the student's score, a coloured face (red, amber or green) is automatically saved when a task is submitted & Amber face graphic, blob & Administrator, Database, User \\ \hline
 User & Percentage & calculated from the amount of marks a student gets for each task & 85\%, real & Administrator, Database, User \\ \hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|}
+\hline
+\textbf{Source} & \textbf{Data} & \textbf{Process} & \textbf{Example Data} & \textbf{Destination} \\ \hline
 User & Question Percentage & Percentage calculated from the amount of marks awarded to the student for each individual question & 90\%, real & Administrator, Database, User \\ \hline
 Administrator & Students Belong To These Classes & All students added when setting up a class are stored in a separate table in the database & John Smith, string & Database \\ \hline
 \end{tabular}
@@ -482,17 +489,17 @@ Administrator & Students Belong To These Classes & All students added when setti
 \subsubsection{Data flow diagram}
 
 \begin{figure}[H]
-    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/dataflowdiagram1.png}
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/dataflowdiagram1.png}
     \caption{The process of how the administrator puts their classes names into the system} \label{fig:print_function_result}
 \end{figure}
 
 \begin{figure}[H]
-    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/dataflowdiagram2.png}
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/dataflowdiagram2.png}
     \caption{The system validating the users login using the stored login information} \label{fig:print_function_result}
 \end{figure}
 
 \begin{figure}[H]
-    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/dataflowdiagram3.png}
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/dataflowdiagram3.png}
     \caption{The entire process of a user using the system and the results of a homework being recorded, including the teacher setting the task} \label{fig:print_function_result}
 \end{figure}
 
@@ -503,7 +510,7 @@ There are no physical forms that are used for input or output; the class names a
 \textbf{An example register:}
 
 \begin{figure}[H]
-    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/register.png}
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/register.png}
     \caption{A screenshot of what the register used to input the names correctly might look like} \label{fig:print_function_result}
 \end{figure}
 
@@ -517,6 +524,32 @@ They have many outstanding tasks to complete, and if they do not complete them v
 
 Yours faithfully, \\
 Ms Teacher
+
+As for computerised input forms, these include the login screen, the lesson/task select window, and the generic text boxes for inputting answers. There are currently no error messages, so the only other output form is displaying the results following a submission, which are then saved to the database.
+
+\textbf{Login screen:}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/login_screen.png}
+\end{figure}
+
+\textbf{Task select:}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/task_select.png}
+\end{figure}
+
+\textbf{Generic user inputs:}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/user_input.png}
+\end{figure}
+
+\textbf{Results viewing:}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/results.png}
+\end{figure}
 
 \subsection{The proposed system}
 
@@ -551,17 +584,17 @@ Administrator & Time of appointment & The time for a meeting with the user if th
 %C:/Users/Jordan
 
 \begin{figure}[H]
-    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/dataflowdiagram1.png}
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/dataflowdiagram1.png}
     \caption{The process of how the administrator puts their classes names into the system} \label{fig:print_function_result}
 \end{figure}
 
 \begin{figure}[H]
-    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/dataflowdiagram2.png}
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/dataflowdiagram2.png}
     \caption{The system validating the users login using the stored login information} \label{fig:print_function_result}
 \end{figure}
 
 \begin{figure}[H]
-    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/dataflowdiagram4.png}
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/dataflowdiagram4.png}
     \caption{The teacher sets the task, then the student proceeds to complete it, and their progress is recorded} \label{fig:print_function_result}
 \end{figure}
 
@@ -581,7 +614,6 @@ IndividualPercentScore & Real & 3 characters & in range 0 - 100 & 45.5\% & The p
 Rating & Blob & 64 kilobytes & \ &  Green face graphic & Green, amber or red face graphic \\ \hline
 Feedback & String & 500 characters & \ & Good work & This can consist of any characters as it is a personal message \\ \hline
 SeeAfterClass & Boolean & 3 characters & Yes or No & Yes & If the user doesn't achieve a sufficient score, this variable will become true and alert the user \\ \hline
-AppointmentTime & Time & 5 characters & 24 hour format & 13:35 & Only relevant if the user has a true SeeAfterClass variable, set automatically bsed on the administrator's timetable but can be changed if necessary\\ \hline
 \end{tabular}
 \end{center}
 
@@ -589,6 +621,7 @@ AppointmentTime & Time & 5 characters & 24 hour format & 13:35 & Only relevant i
 \begin{tabular}{|p{3.4cm}|p{1.2cm}|p{2cm}|p{2cm}|p{2cm}|p{3.5cm}|}
 \hline
 \textbf{Name} & \textbf{Data Type} & \textbf{Length} & \textbf{Validation} & \textbf{Example Data} & \textbf{Comment} \\ \hline
+AppointmentTime & Time & 5 characters & 24 hour format & 13:35 & Only relevant if the user has a true SeeAfterClass variable, set automatically bsed on the administrator's timetable but can be changed if necessary\\ \hline
 ErrorMessage1 & String & 50 characters & & Sorry, the name cannot have integers & An error message if the wrong data type is used to input a name \\ \hline
 ErrorMessage2 & String & 50 characters & & Sorry, that is not a valid login & Tells the user if they have input the wrong username or password \\ \hline
 ErrorMessage3 & String & 50 characters & & Please input a decimal, not an integer & Tells the user if their incorrect answer is the wrong data type \\ \hline
@@ -629,7 +662,11 @@ SeeAfterClass and TimeOfAppointment will not need to be recorded, only the user 
 
 If FirstName, Surname and UserID allow for up to 15 characters, and the Password is 7 characters, then 52 bytes will be needed for each user's personal record. 52 x 300 = 15600 bytes, or roughly 15.6 kilobytes for all of the personal records.
 
-UserID + Password will be 30 bytes, and the face blob for Rating will be up to about 64 kilobytes, and the feedback box will have space for 500 characters, or 500 bytes. 500 + 30 = 530 + 64000 = 64530 bytes, or 64.53 kilobytes approximately. 64.53 x 7600 =
+\textbf{UserID} + \textbf{Password} will be 30 bytes, and the face blob for \textbf{Rating} will be up to about 64 kilobytes, and the \textbf{Feedback} box will have space for 500 characters, or 500 bytes. 500 + 30 = 530 + 64000 = 64530 bytes, or 64.53 kilobytes approximately. 64.53 x 7600 = 490428 kilobytes, or 490.4 megabytes roughly. The values for \textbf{OverallPercentScore} and \textbf{IndividualPercentScore} will be calculated, so won't take up permanent memory space.
+
+490.4 megabytes + 15.6 kilobytes = approximately 490.415 megabytes, which is the estimated size of the proposed database.
+
+Therefore it will fit on a standard USB stick, however e-mail won't be able to send it, it's too big.
 
 \section{Objectives}
 
@@ -677,7 +714,7 @@ UserID + Password will be 30 bytes, and the face blob for Rating will be up to a
 \subsection{ER Diagram}
 
 \begin{figure}[H]
-    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/er_diagram.png}
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/er_diagram.png}
     \label{fig:print_function_result}
 \end{figure}
 
@@ -717,7 +754,7 @@ Answer & The correct solution for each question & \textbf{Answer}(\underline{Que
 \subsection{Relationship diagrams}
 
 \begin{figure}[H]
-    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/objectrelationships.png}
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/objectrelationships.png}
     \caption{The relationships between each of the objects in the proposed system} \label{fig:print_function_result}
 \end{figure}
 
@@ -840,13 +877,11 @@ SubmitScore \\ \hline
 \end{tabular}
 \end{center}
 
-\section{Other Abstractions and Graphs}
-
 \section{Constraints}
 
 \subsection{Hardware}
 
-The centre which my client works for have multiple classrooms with standard computers in, which are powerful enough to run a program of the proposed programs size. All of the hardware components are compatible with Python, and any other software required to use a Python-made program. Threr are enough computers at the facility for everyone to use them together. There are essentially no hardware constraints, and no additional hardware will be required.
+The centre which my client works for have multiple classrooms with standard computers in, which are powerful enough to run a program of the proposed programs size. All of the hardware components are compatible with Python, and any other software required to use a Python-made program. There are enough computers at the facility for everyone to use them together. There are essentially no hardware constraints, and no additional hardware will be required.
 
 \subsection{Software}
 
