@@ -38,6 +38,18 @@ The system needs to interactively teach the updated GCSE trigonometry syllabus i
 
 Some of the biggest problems are with the way in which things are taught on the current system; in some cases, the method demonstrations are inaccurate and can mislead students away from the correct solution. Furthermore, the button for two consecutive answers are often in the same place, which can allow a student to get the right answer by assuming the answer is in that place after this problem occurring enough times prior to that task, or even by just double-clicking by accident. Answer buttons should be jumbled up, as this problem can be prevented, and can also solve the problem of the students not properly distinguishing the differences between the sine, cosine and tan rules, as they always appear in the same order and are taken for granted. The order in which lessons are taught is also problematic as sides should be taught before angles to allow for the student to learn how to use the inverse function of the rule which is often a key part of finding a missing angle, whereas MyMaths teaches angles before sides. Alongside this problem is that the sine, cosine and tan rules are all taught individually. If they were taught together it would give the student more experience in deciding which rule they actually have to use, rather than just being told. MyMaths also lacks a lesson on how to tell the whether the problem will use the sine or cosine rule. Lastly, the current system does not cover the new GCSE curriculum which will be implemented next year (2016-17), so more focus on the problem-solving aspect is required.
 
+\textbf{To summarise: }
+
+\begin{itemize}
+	\item The demonstrations used to show the methods used to find a solution are oftne inaccurate and can mislead students
+	\item These methods are also taught in an undesirable order which could potentially confuse students or cause them to miss out on important information 
+	\item The positioning of some multiple choice buttons causes students to be able to memorise or guess the correct answer, or double click by accident and get two correct answers without any thought behind them. They need to be randomised so they move around
+	\item Another problem cuased by the button positioning is that they make it harder to distinguish the differences between the sin, cosine and tan rules as they do not provide a challenge
+	\item The order in which lessons are taught is not effective; students end up attempting problems which require knowledge that they have not yet acquired e.g doing angles before knowing the inverse function rules
+	\item The current system does not cover the new 2016-17 GCSE Maths curriculum
+	\item \textbf{See section \textit{1.2.1 - Input Forms, Output Forms, Report Formats} for visual details}
+\end{itemize}
+
 \textbf{3. What data or information is recorded in the current system?}
 
 The currently recorded fields in the homework set table are: Name (Text), Task or activity (Text), Type (Text), Created (Date), Completed (Text), Start (Date, Foreign Key), Due (Date), Feedback (Text, Foreign Key).
@@ -488,6 +500,13 @@ Administrator & Students Belong To These Classes & All students added when setti
 
 \subsubsection{Data flow diagram}
 
+\textbf{Key: }
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/dataflowkey.png}
+\end{figure}
+
+
 \begin{figure}[H]
     \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/dataflowdiagram1.png}
     \caption{The process of how the administrator puts their classes names into the system} \label{fig:print_function_result}
@@ -581,7 +600,11 @@ Administrator & Time of appointment & The time for a meeting with the user if th
 
 \subsubsection{Data flow diagram}
 
-%C:/Users/Jordan
+\textbf{Key: }
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/dataflowkey.png}
+\end{figure}
 
 \begin{figure}[H]
     \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/dataflowdiagram1.png}
@@ -662,51 +685,57 @@ SeeAfterClass and TimeOfAppointment will not need to be recorded, only the user 
 
 If FirstName, Surname and UserID allow for up to 15 characters, and the Password is 7 characters, then 52 bytes will be needed for each user's personal record. 52 x 300 = 15600 bytes, or roughly 15.6 kilobytes for all of the personal records.
 
-\textbf{UserID} + \textbf{Password} will be 30 bytes, and the face blob for \textbf{Rating} will be up to about 64 kilobytes, and the \textbf{Feedback} box will have space for 500 characters, or 500 bytes. 500 + 30 = 530 + 64000 = 64530 bytes, or 64.53 kilobytes approximately. 64.53 x 7600 = 490428 kilobytes, or 490.4 megabytes roughly. The values for \textbf{OverallPercentScore} and \textbf{IndividualPercentScore} will be calculated, so won't take up permanent memory space.
+\textbf{UserID} + \textbf{Password} will be 30 bytes, and the \textbf{Feedback} box will have space for 500 characters, or 500 bytes. 500 + 30 = 530 bytes, or roughly 0.53 kilobytes. Three faces will be stored by the system, and the database will store an index which will find the face and display it when the display is loaded. 1 character each, for up to 7600 records, totalling 7.6 kilobytes. 0.53 kilobytes x 7600 is 4028 kilobytes, or 4.02 megabytes roughly. The values for \textbf{OverallPercentScore} and \textbf{IndividualPercentScore} will be calculated, so won't take up permanent memory space.
 
-490.4 megabytes + 15.6 kilobytes = approximately 490.415 megabytes, which is the estimated size of the proposed database.
+4.028 megabytes + 15.6 kilobytes = approximately 4.043 megabytes, which is the estimated size of the proposed database.
 
-Therefore it will fit on a standard USB stick, however e-mail won't be able to send it, it's too big.
+Therefore it will fit on a standard USB stick, and it should be possible to send by e-mail.
 
 \section{Objectives}
 
 \subsection{General Objectives}
 
 \begin{itemize}
-	\item To have an interactive and easily navigable graphical user interface, applying a suitable colour scheme and layout.
-	\item To create various lessons, with a wide range of challenges, which effectively teach students how to do trigonometry and Pythagoras. 
-	\item To create tasks which are relevant to the lessons to be completed by the user in order to test their progress.
-	\item To allow this progress to be recorded in an easily accessible and readable database.
-	\item To incorporate algorithms which find and/or check the solution given by the user accurately and give clear and easy to read outputs to correspond with said inputs.
-	\item To have some access restrictions to certain levels of user.
-	\item To make the program accessible only from various computers with permissions.
+	\item To have an interactive and easily navigable graphical user interface, applying a suitable colour scheme and layout
+	\item To create various lessons, with a wide range of challenges, which effectively teach students how to do trigonometry and Pythagoras.
+	\item To create tasks which are relevant to the lessons to be completed by the user in order to test their progress
+	\item To allow this progress to be recorded in an easily accessible and readable database
+	\item To incorporate algorithms which find and/or check the solution given by the user accurately and give clear and easy to read outputs to correspond with said inputs
+	\item To have some access restrictions to certain levels of user
+	\item To make the program accessible only from various computers with permissions
 \end{itemize}
 
 \subsection{Specific Objectives}
 
 \begin{itemize}
-	\item To create a teaching program that uses the new GCSE Maths curriculum, as lots of resources will soon be out of date. 
-	\item To make the database easy to access, and read, and adjust if necessary.
-	\item To include a range of specific topics, such as how to use the tan rule, or 3D Pythagoras, as well as general trigonometry.
-	\item To include a range of topics which challenge different levels of abilities.
-	\item Use a more interesting range of input types e.g drag and drop, drawing boxes, text boxes, rather than just clicking and typing.
+	\item To create a teaching program that uses the new GCSE Maths curriculum, as lots of resources will soon be out of date
+	\item To make the database concise and adjustable
+	\item To include the following topics: Trigonometry, Pythagoras, 3D Trigonometry, 3D Pythagoras
+	\item To include a range of difficulty levels, which can challenge every user's level of ability
+	\item Use a more interesting range of input types e.g drag and drop, drawing boxes, text boxes, rather than just clicking and typing
+	\item To have a database which can be accessed by different computers online
+	\item Use a specific and attractive colour scheme in every window
+	\item To have medium sized, highly visible icons
+	\item To have all input buttons randomised to avoid double clicking and guessing from memory
+	\item To have small error message windows which pop up and disappear on a timer
+	\item To include images and shapes which contrast the colour scheme so they are visible and readable
 \end{itemize}
 
 \subsection{Core Objectives}
 
 \begin{itemize}
-	\item To create a teaching program that uses the new GCSE Maths curriculum, as lots of resources will soon be out of date. 
-	\item To make the database easy to access and easy to read.
-	\item To include a range of specific topics, such as how to use the tan rule, or 3D Pythagoras, as well as general trigonometry.
-	\item To include a range of topics which challenge different levels of abilities.
+	\item To create a teaching program that uses the new GCSE Maths curriculum, as lots of resources will soon be out of date
+	\item To make the database easy to access and easy to read
+	\item To include a range of specific topics, such as how to use the tan rule, or 3D Pythagoras, as well as general trigonometry
+	\item To include a range of topics which challenge different levels of abilities
 \end{itemize}
 
 \subsection{Other Objectives}
 
 \begin{itemize}
-	\item To position buttons, text boxes and drag and drop boxes in within the layout of the graphical user interface in such a way that cheating and lucky guessing can be minimised.
-	\item To make the database adjustable if necessary.
-	\item Use a more interesting range of input types e.g drag and drop, drawing boxes, text boxes, rather than just clicking and typing.
+	\item To position buttons, text boxes and drag and drop boxes in within the layout of the graphical user interface in such a way that cheating and lucky guessing can be minimised
+	\item To make the database adjustable if necessary
+	\item Use a more interesting range of input types e.g drag and drop, drawing boxes, text boxes, rather than just clicking and typing
 \end{itemize}
 
 \section{ER Diagrams and Descriptions}
