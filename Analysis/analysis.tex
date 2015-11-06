@@ -158,17 +158,18 @@ User & Username & The user manually inputs their username using a keyboard & joh
 User & Password & The user manually inputs their password using a keyboard & SFC, string & Certification Path Verification Algorithm \\ \hline
 Administrator & First name & Is added manually when a class is being set up & John, string & Database \\ \hline
 Administrator & Surname & Is added manually when a class is being set up & Smith, string & Database \\ \hline
-User, Administrator & Task or Activity & Each task name is hard-coded & Trigonometry Test 1, string & Administrator, Database, User \\ \hline
-System & Type & Type of task is hard-coded & Angles, string & Administrator, Database, User \\ \hline
-Administrator & Created & The date the administrator sets the task is automatically saved when set & 14/10/15, date & Database \\ \hline
-User & Completed & The date when the student completes the task is saved automatically & Yes, boolean & Administrator, Database \\ \hline
-User & Start Date & The date when the student first attempts the task is saved automatically & 16/10/15, date & Administrator, Database \\ \hline
 \end{tabular}
 \end{center}
 
 \begin{center}
 \begin{tabular}{|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|}
 \hline
+\textbf{Source} & \textbf{Data} & \textbf{Process} & \textbf{Example Data} & \textbf{Destination} \\ \hline
+User, Administrator & Task or Activity & Each task name is hard-coded & Trigonometry Test 1, string & Administrator, Database, User \\ \hline
+System & Type & Type of task is hard-coded & Angles, string & Administrator, Database, User \\ \hline
+Administrator & Created & The date the administrator sets the task is automatically saved when set & 14/10/15, date & Database \\ \hline
+User & Completed & The date when the student completes the task is saved automatically & Yes, boolean & Administrator, Database \\ \hline
+User & Start Date & The date when the student first attempts the task is saved automatically & 16/10/15, date & Administrator, Database \\ \hline
 \textbf{Source} & \textbf{Data} & \textbf{Process} & \textbf{Example Data} & \textbf{Destination} \\ \hline
 Administrator & Due & The date when the task is due is set manually by the administrator & 21/10/15, date & Database, User \\ \hline
 Administrator & Feedback & Text typed by the administrator and saved manually & Good work, string & Database, User \\ \hline
@@ -176,9 +177,6 @@ System & Level & Level is hard-coded & 8, integer & Database, User \\ \hline
 System & Topic & Topic is hard-coded & Tan Rule, string & Database, User \\ \hline
 System & Task Name & Task name is hard-coded & Tan Rule Practice, string & Database, User \\ \hline
 System & Number of Tries & Number of tries is automatically recorded, incrementing the total each time the task is opened and marked & 3, integer & Administrator, Database, User \\ \hline
-User & Last Tried & The date of the most recent attempt is recorded and the last attempt is overwritten & 17/10/15, date & Administrator, Database, User \\ \hline
-System & Rating & Depending on the student's score, a coloured face (red, amber or green) is automatically saved when a task is submitted & Amber face graphic, blob & Administrator, Database, User \\ \hline
-User & Percentage & calculated from the amount of marks a student gets for each task & 85\%, real & Administrator, Database, User \\ \hline
 \end{tabular}
 \end{center}
 
@@ -186,6 +184,9 @@ User & Percentage & calculated from the amount of marks a student gets for each 
 \begin{tabular}{|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|}
 \hline
 \textbf{Source} & \textbf{Data} & \textbf{Process} & \textbf{Example Data} & \textbf{Destination} \\ \hline
+User & Last Tried & The date of the most recent attempt is recorded and the last attempt is overwritten & 17/10/15, date & Administrator, Database, User \\ \hline
+System & Rating & Depending on the student's score, a coloured face (red, amber or green) is automatically saved when a task is submitted & Amber face graphic, blob & Administrator, Database, User \\ \hline
+User & Percentage & calculated from the amount of marks a student gets for each task & 85\%, real & Administrator, Database, User \\ \hline
 User & Question Percentage & Percentage calculated from the amount of marks awarded to the student for each individual question & 90\%, real & Administrator, Database, User \\ \hline
 Administrator & Students Belong To These Classes & All students added when setting up a class are stored in a separate table in the database & John Smith, string & Database \\ \hline
 \end{tabular}
@@ -713,6 +714,7 @@ Therefore it will fit on a standard USB stick, and it should be possible to send
 	\item To include the following topics: Trigonometry, Pythagoras, 3D Trigonometry, 3D Pythagoras
 	\item To include a range of difficulty levels, which can challenge every user's level of ability
 	\item Use a more interesting range of input types e.g drag and drop, drawing boxes, text boxes, rather than just clicking and typing
+	\item To include interactive 2D graphics which give a clearer idea of the method being shown to the user
 	\item To have a database which can be accessed by different computers online
 	\item Use a specific and attractive colour scheme in every window
 	\item To have medium sized, highly visible icons
@@ -752,12 +754,12 @@ Therefore it will fit on a standard USB stick, and it should be possible to send
 \begin{center}
 \begin{tabular}{|p{3cm}|p{4cm}|p{4cm}|p{3cm}|} \hline
 \textbf{Entity} & \textbf{Description} & \textbf{Attributes} & \textbf{Key} \\ \hline
-Student & Many students are in one class, and one student receives many results & \textbf{Student}(\underline{StudentID}, \underline{ClassID}) & Primary Key(StudentID, ClassID) \\ \hline
-Class & One class has many students, who all receive many homeworks, and one teacher has many classes & \textbf{Class}(\underline{ClassID}, TeacherID) & Primary Key(ClassID) \\ \hline
-Homework & One homework is set many times, and each homework has many questions & \textbf{Homework}(\underline{HomeworkID}, HomeworkSet, HomeworkResults) & Primary Key(HomeworkID) \\ \hline 
-HomeworkSet & One class is set many homeworks, and a homework is set many times & \textbf{HomeworkSet}(\underline{ClassID}, \underline{HomeworkID}, DueDate, SetDate) & Primary Key(ClassID, HomeworkID) \\ \hline
-HomeworkResults & One student receives many homework results, and the questions are in many results & \textbf{HomeworkResults} (\underline{HomeworkID}, \underline{StudentID}, \underline{QuestionID}, Rating, CompletedDate) & Primary Key(HomeworkID, StudentID, QuestionID) \\ \hline
-Question & Each homework has many questions, which are in many results & \textbf{Question}(\underline{HomeworkID}, \underline{QuestionID}, QuestionText, Choice1, Choice2, ChoiceX, CorrectAnswer, TypeOfQuestion) & Primary Key(HomeworkID, QuestionID) \\ \hline
+Student & Each record shows how many results a student receives, and which class they are in & \textbf{Student}(\underline{StudentID}, \underline{ClassID}) & Primary Key(StudentID, ClassID) \\ \hline
+Class & Shows which students are in the class and the teacher of that class, and how much homework the class has been set & \textbf{Class}(\underline{ClassID}, TeacherID) & Primary Key(ClassID) \\ \hline
+Homework & Shows who each homework has been set for, and the results if the homework has been completed & \textbf{Homework}(\underline{HomeworkID}, HomeworkSet, HomeworkResults) & Primary Key(HomeworkID) \\ \hline 
+HomeworkSet & Shows who has been set the homework, when, and how many times/how long for & \textbf{HomeworkSet}(\underline{ClassID}, \underline{HomeworkID}, DueDate, SetDate) & Primary Key(ClassID, HomeworkID) \\ \hline
+HomeworkResults & This record contains all of the results for a completed homework & \textbf{HomeworkResults} (\underline{HomeworkID}, \underline{StudentID}, \underline{QuestionID}, Rating, CompletedDate) & Primary Key(HomeworkID, StudentID, QuestionID) \\ \hline
+Question & Shows how many questions were in a homework, and the percentage which are correct in each students results & \textbf{Question}(\underline{HomeworkID}, \underline{QuestionID}, QuestionText, Choice1, Choice2, ChoiceX, CorrectAnswer, TypeOfQuestion) & Primary Key(HomeworkID, QuestionID) \\ \hline
 \end{tabular}
 \end{center}
 
@@ -968,11 +970,11 @@ The deadline for this project officially is set by the teacher and then the exam
 
 \subsection{User Knowledge}
 
-The users have had sufficient experience using computers and navigating other websites and programs, so will have no trouble navigating the proposed system. There will be a guide if they do have any problems. The administrator will have had experience using a similar program in terms of setting homework and deadlines, and accessing the database will be easy. Otherwise, no more knowledge is necessary.
+The users have had sufficient experience using computers and navigating other websites and programs, so will have no trouble navigating the proposed system. There will be a guide if they do have any problems. The administrator will have had experience using a similar program in terms of setting homework and deadlines, and accessing the database will be easy. Otherwise, no more knowledge is necessary. There will be a clear and comprehensive user manual which will be available digitally for each user to read should they have any problems.
 
 \subsection{Access restrictions}
 
-Users will be allowed to access all lessons and homework, and their personal database records and task records for their own profile. They will not be able to see other user's database records. Only the administrator will be able to set homework and deadlines, and view every user's database records.
+Users will be allowed to access all lessons and homework, and their personal database records and task records for their own profile. They will not be able to see other user's database records. Only the administrator will be able to set homework and deadlines, and view every user's database records. Every user will be able to access a computer with the program installed on it during the lesson time or extra time in which they can access the computer rooms. They might not be able to access it from a home device if they choose not to install it. There may be restrictions in installing software on a school's computers, in which case fewer people will be able to test the program.
 
 \section{Limitations}
 
@@ -991,7 +993,7 @@ It is possible that some questions at the easier or moderate end of AS Level tri
 \begin{itemize}
 	\item The database will be accessible online via the click of a button from the program home page, and will be easy to read, as space conserving as possible (on screen), and will be adjustable exclusively by the administrator if necessary. The database will be initially generated by a Python program which incorporates the SQL package, and then python-SQL commands will be used to make adjustments. The GUI of the database could be programmed using OpenGL, if the Python generated database itself cannot be made to look like the client's request.
 
-	\item The 3D graphics used in some of the lessons and homework could use OpenGL or JQuery because OpenGL is platform independent, a requirement for the client. It supports 3D transformations, translations and rotations, solid filling, and hidden line removal, all of the things which I will include in the lessons and homework. JQuery is able to support online graphics, on a web browser if need be.
+	\item The 2D graphics used in some of the lessons and homework could use OpenGL or JQuery because OpenGL is platform independent, a requirement for the client. It supports 2D transformations, translations and rotations, solid filling, and hidden line removal, all of the things which I will include in the lessons and homework. JQuery is able to support online graphics, on a web browser if need be.
 
 	\item PHP could be used because it has good support for working with SQL.
 
@@ -1006,8 +1008,8 @@ It is possible that some questions at the easier or moderate end of AS Level tri
 \begin{itemize}
 	\item OpenGL is supported by Python very well, and is capable of producing high quality graphics. Python also supports SQL, so both of these languages can be incorporated into my mainly Python program effectively.
 
-	\item Python has a numpy package which supports mathematical algorithms, including Pythagoras and trigonometry algorithms, so will be useful for implementing them alongside the OpenGL graphics code for 3D operations and solution checks.
+	\item Python has a numpy package which supports mathematical algorithms, including Pythagoras and trigonometry algorithms, so will be useful for implementing them alongside the OpenGL graphics code for 2D operations and solution checks.
 
-	\item  3D graphics will be used in the first place because they make the program more interactive by including animations triggered by the user, and interactivity is a priority across all aspects of the program, including navigating the GUI, learning from the lessons, completing the homework and reading and adjusting the database.
+	\item  2D graphics will be used in the first place because they make the program more interactive by including animations triggered by the user, and interactivity is a priority across all aspects of the program, including navigating the GUI, learning from the lessons, completing the homework and reading and adjusting the database.
 
 \end{itemize}
