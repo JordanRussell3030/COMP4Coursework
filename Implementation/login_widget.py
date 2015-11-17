@@ -5,6 +5,7 @@ from login_screen_window import *
 import sys
 
 class LoginWidget(QWidget):
+    NameEntered = pyqtSignal()
     def __init__(self):
         super().__init__()
         self.username = QLineEdit()
@@ -26,8 +27,9 @@ class LoginWidget(QWidget):
         self.login.clicked.connect(self.submit_pushed)
 
     def submit_pushed(self):
-        print("Success login")
-        self.stack.setCurrentIndex(1)
+        username = self.username.text()
+        print(username)
+        self.NameEntered.emit()
 ##        if self.username.text == "Jordan" and self.password.text == "abc":
 ##            print("Valid")
 ##        else:

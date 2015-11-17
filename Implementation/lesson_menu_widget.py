@@ -26,6 +26,7 @@ class LessonMenuWidget(QWidget):
         self.tdp2 = QPushButton("3D Pythagoras 2")
         self.tdt1 = QPushButton("3D Trigonometry 1")
         self.tdt2 = QPushButton("3D Trigonometry 2")
+        self.back = QPushButton("Back")
 
         self.layout = QGridLayout()
 
@@ -48,6 +49,7 @@ class LessonMenuWidget(QWidget):
         self.layout.addWidget(self.tdp2)
         self.layout.addWidget(self.tdt1)
         self.layout.addWidget(self.tdt2)
+        self.layout.addWidget(self.back)
 
         self.setLayout(self.layout)
 
@@ -70,6 +72,7 @@ class LessonMenuWidget(QWidget):
         self.tdp2.clicked.connect(self.selected_tdp2)
         self.tdt1.clicked.connect(self.selected_tdt1)
         self.tdt2.clicked.connect(self.selected_tdt2)
+        self.back.clicked.connect(self.selected_back)
 
     def selected_et1(self):
         print("et1")
@@ -127,3 +130,6 @@ class LessonMenuWidget(QWidget):
 
     def selected_tdt2(self):
         print("tdt2")
+
+    def selected_back(self):
+        print("Back")
