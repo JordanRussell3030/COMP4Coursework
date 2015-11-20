@@ -139,17 +139,17 @@ class LessonMenuWidget(QMainWindow):
         extended_trig_3_widget._raise()
 
     def selected_ep(self):
-        easy_pythagoras_1_widget = EasyPythagoras1()
+        easy_pythagoras_1_widget = EasyPythagoras()
         easy_pythagoras_1_widget.show()
         easy_pythagoras_1_widget._raise()
 
     def selected_mp(self):
-        medium_pythagoras_1_widget = MediumPythagoras1()
+        medium_pythagoras_1_widget = MediumPythagoras()
         medium_pythagoras_1_widget.show()
         medium_pythagoras_1_widget._raise()
 
     def selected_hp(self):
-        hard_pythagoras_1_widget = HardPythagoras1()
+        hard_pythagoras_1_widget = HardPythagoras()
         hard_pythagoras_1_widget.show()
         hard_pythagoras_1_widget._raise()
 

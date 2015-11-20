@@ -8,6 +8,7 @@ class LoginWidget(QWidget):
     NameEntered = pyqtSignal()
     def __init__(self):
         super().__init__()
+        
         self.username = QLineEdit()
         self.u_label = QLabel("Please enter your username: ")
         self.password = QLineEdit()
