@@ -3,7 +3,13 @@ from PyQt4.QtCore import *
 from login_screen_window import *
 from login_widget import *
 
+from lesson_menu_widget import *
+from homework_menu_widget import *
+
 class UserAccountWidget(QWidget):
+    selected_lessons = pyqtSignal()
+    selected_homework = pyqtSignal()
+    selected_progress = pyqtSignal()
     #self.radio_buttons = RadioButtonWidget("GCSE Trigonometry and Pythagoras Program", "Please select an option" ("Lessons", "Homework", "Progress"))
     def __init__(self):
         super().__init__()
@@ -24,13 +30,22 @@ class UserAccountWidget(QWidget):
         self.progress.clicked.connect(self.selected_progress)
 
     def selected_lessons(self):
-        print("Success lessons")
+        lessonmenuwidget = LessonMenuWidget()
+        lessonmenuwidget.show()
+        lessonmenuwidget._raise()
+#        self.stack.setCurrentIndex(2)
 
     def selected_homework(self):
-        print("Success homework")
+        homeworkmenuwidget = HomeworkMenuWidget()
+        homeworkmenuwidget.show()
+        homeworkmenuwidget._raise()
+        #self.stack.setCurrentIndex(3)
 
     def selected_progress(self):
-        print("Success progress")
+        databasewidget = DatabaseWidget()
+        databasewidget.show()
+        databasewidget._raise()
+        #self.stack.setCurrentIndex(4)
         
        
         
