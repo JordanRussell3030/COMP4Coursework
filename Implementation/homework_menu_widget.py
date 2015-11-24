@@ -1,8 +1,10 @@
 from PyQt4.QtGui import *
 from PyQt4.QtCore import *
 from login_screen_window import *
-from login_widget import *
+from homework_menu_widget import *
 from student_account_home import *
+from derived_homework_menus import *
+from homework_widgets import *
 
 class HomeworkMenuWidget(QMainWindow):
     def __init__(self):
@@ -78,61 +80,101 @@ class HomeworkMenuWidget(QMainWindow):
         self.back.clicked.connect(self.selected_back)
 
     def selected_et1(self):
-        print("et1")
+        easy_trig_1_homework = EasyTrigonometry1HW()
+        easy_trig_1_homework.show()
+        easy_trig_1_homework._raise()
 
     def selected_et2(self):
-        print("et2")
+        easy_trig_2_homework = EasyTrigonometry2HW()
+        easy_trig_2_homework.show()
+        easy_trig_2_homework._raise()
 
     def selected_et3(self):
-        print("et3")
+        easy_trig_3_homework = EasyTrigonometry3HW()
+        easy_trig_3_homework.show()
+        easy_trig_3_homework._raise()
 
     def selected_mt1(self):
-        print("mt1")
+        medium_trig_1_homework = MediumTrigonometry1HW()
+        medium_trig_1_homework.show()
+        medium_trig_1_homework._raise()
 
     def selected_mt2(self):
-        print("mt2")
+        medium_trig_2_homework = MediumTrigonometry2HW()
+        medium_trig_2_homework.show()
+        medium_trig_2_homework._raise()
 
     def selected_mt3(self):
-        print("mt3")
+        medium_trig_3_homework = MediumTrigonometry3HW()
+        medium_trig_3_homework.show()
+        medium_trig_3_homework._raise()
 
     def selected_ht1(self):
-        print("ht1")
+        hard_trig_1_homework = HardTrigonometry1HW()
+        hard_trig_1_homework.show()
+        hard_trig_1_homework._raise()
 
     def selected_ht2(self):
-        print("ht2")
+        hard_trig_2_homework = HardTrigonometry2HW()
+        hard_trig_2_homework.show()
+        hard_trig_2_homework._raise()
 
     def selected_ht3(self):
-        print("ht3")
+        hard_trig_3_homework = HardTrigonometry3HW()
+        hard_trig_3_homework.show()
+        hard_trig_3_homework._raise()
 
     def selected_ext1(self):
-        print("ext1")
+        extended_trig_1_homework = ExtendedTrigonometry1HW()
+        extended_trig_1_homework.show()
+        extended_trig_1_homework._raise()
 
     def selected_ext2(self):
-        print("ext2")
+        extended_trig_2_homework = ExtendedTrigonometry2HW()
+        extended_trig_2_homework.show()
+        extended_trig_2_homework._raise()
 
     def selected_ext3(self):
-        print("ext3")
+        extended_trig_3_homework = ExtendedTrigonometry3HW()
+        extended_trig_3_homework.show()
+        extended_trig_3_homework._raise()
 
     def selected_ep(self):
-        print("ep")
+        easy_pythagoras_1_homework = EasyPythagorasHW()
+        easy_pythagoras_1_homework.show()
+        easy_pythagoras_1_homework._raise()
 
     def selected_mp(self):
-        print("mp")
+        medium_pythagoras_1_homework = MediumPythagorasHW()
+        medium_pythagoras_1_homework.show()
+        medium_pythagoras_1_homework._raise()
 
     def selected_hp(self):
-        print("hp")
+        hard_pythagoras_1_homework = HardPythagorasHW()
+        hard_pythagoras_1_homework.show()
+        hard_pythagoras_1_homework._raise()
 
     def selected_tdp1(self):
-        print("tdp1")
+        threed_pythagoras_1_homework = TDPythagoras1HW()
+        threed_pythagoras_1_homework.show()
+        threed_pythagoras_1_homework._raise()
 
     def selected_tdp2(self):
-        print("tdp2")
+        threed_pythagoras_2_homework = TDPythagoras2HW()
+        threed_pythagoras_2_homework.show()
+        threed_pythagoras_2_homework._raise()
 
     def selected_tdt1(self):
-        print("tdt1")
+        threed_trigonometry_1_homework = TDTrigonometry1HW()
+        threed_trigonometry_1_homework.show()
+        threed_trigonometry_1_homework._raise()
 
     def selected_tdt2(self):
-        print("tdt2")
+        threed_trigonometry_2_homework = TDTrigonometry2HW()
+        threed_trigonometry_2_homework.show()
+        threed_trigonometry_2_homework._raise()
 
     def selected_back(self):
-        print("Back")
+        lessonmenuhomework.close()
+        student_home.show()
+        student_home._raise()

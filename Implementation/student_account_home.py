@@ -5,6 +5,7 @@ from login_widget import *
 
 from lesson_menu_widget import *
 from homework_menu_widget import *
+from database_widget import *
 
 class UserAccountWidget(QWidget):
     selected_lessons = pyqtSignal()
