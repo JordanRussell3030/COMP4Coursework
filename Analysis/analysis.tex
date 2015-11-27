@@ -139,7 +139,7 @@ Small windows temporarily popping up on screen with messages, until the OK butto
 We have access to plenty of computers, and our system is powerful enough to handle easily enough data. We don't have a deadline for you. 
 
 \begin{figure}[H]
-    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/signature}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Analysis/signature}
 \end{figure}
 
 \section{Investigation}
@@ -504,22 +504,22 @@ Administrator & Students Belong To These Classes & All students added when setti
 \textbf{Key: }
 
 \begin{figure}[H]
-    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/dataflowkey.png}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Analysis/dataflowkey.png}
 \end{figure}
 
 
 \begin{figure}[H]
-    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/dataflowdiagram1.png}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Analysis/dataflowdiagram1.png}
     \caption{The process of how the administrator puts their classes names into the system} \label{fig:print_function_result}
 \end{figure}
 
 \begin{figure}[H]
-    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/dataflowdiagram2.png}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Analysis/dataflowdiagram2.png}
     \caption{The system validating the users login using the stored login information} \label{fig:print_function_result}
 \end{figure}
 
 \begin{figure}[H]
-    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/dataflowdiagram3.png}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Analysis/dataflowdiagram3.png}
     \caption{The entire process of a user using the system and the results of a homework being recorded, including the teacher setting the task} \label{fig:print_function_result}
 \end{figure}
 
@@ -530,7 +530,7 @@ There are no physical forms that are used for input or output; the class names a
 \textbf{An example register:}
 
 \begin{figure}[H]
-    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/register.png}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Analysis/register.png}
     \caption{A screenshot of what the register used to input the names correctly might look like} \label{fig:print_function_result}
 \end{figure}
 
@@ -550,25 +550,25 @@ As for computerised input forms, these include the login screen, the lesson/task
 \textbf{Login screen:}
 
 \begin{figure}[H]
-    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/login_screen.png}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Analysis/login_screen.png}
 \end{figure}
 
 \textbf{Task select:}
 
 \begin{figure}[H]
-    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/task_select.png}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Analysis/task_select.png}
 \end{figure}
 
 \textbf{Generic user inputs:}
 
 \begin{figure}[H]
-    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/user_input.png}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Analysis/user_input.png}
 \end{figure}
 
 \textbf{Results viewing:}
 
 \begin{figure}[H]
-    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/results.png}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Analysis/results.png}
 \end{figure}
 
 \subsection{The proposed system}
@@ -604,21 +604,21 @@ Administrator & Time of appointment & The time for a meeting with the user if th
 \textbf{Key: }
 
 \begin{figure}[H]
-    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/dataflowkey.png}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Analysis/dataflowkey.png}
 \end{figure}
 
 \begin{figure}[H]
-    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/dataflowdiagram1.png}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Analysis/dataflowdiagram1.png}
     \caption{The process of how the administrator puts their classes names into the system} \label{fig:print_function_result}
 \end{figure}
 
 \begin{figure}[H]
-    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/dataflowdiagram2.png}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Analysis/dataflowdiagram2.png}
     \caption{The system validating the users login using the stored login information} \label{fig:print_function_result}
 \end{figure}
 
 \begin{figure}[H]
-    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/dataflowdiagram4.png}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Analysis/dataflowdiagram4.png}
     \caption{The teacher sets the task, then the student proceeds to complete it, and their progress is recorded} \label{fig:print_function_result}
 \end{figure}
 
@@ -654,7 +654,7 @@ CorrectAnswer & Integer, Real, String & 5 characters & Must be a decimal or whol
 Login data & String & 25 characters & & johnsmith1, f8j4h6k & The login information saved in the system to be loaded and checked with the user's inputs \\ \hline
 Task data & String & 100 characters & & Trigonometry - sin rule, Level 7, Trigonometry & Contains all the information about the task, what difficulty it is, what type it is etc. \\ \hline
 Set answers & Integer, Real, String & 5 characters & Must be a decimal or whole number, or text if in a text box & 45{$^o$} & Contains all the set answers for some of the tasks \\ \hline
-Calculated answers & Integer, Real & 5 characters & Must be the same solution obtained from the algorithm & 29.8 & Contains algorithms which find and validate the solution for randomly generated tasks \\ \hline
+Calculated answers & Integer, Real & 5 characters & Must be the same solution as the algorithm & 29.8 & Contains algorithms which find and validate the solution for randomly generated tasks \\ \hline
 \end{tabular}
 \end{center}
 
@@ -698,6 +698,7 @@ Therefore it will fit on a standard USB stick, and it should be possible to send
 
 \begin{itemize}
 	\item To have an interactive and easily navigable graphical user interface, applying a suitable colour scheme and layout
+	\item To make the database concise and adjustable
 	\item To create various lessons, with a wide range of challenges, which effectively teach students how to do trigonometry and Pythagoras.
 	\item To create tasks which are relevant to the lessons to be completed by the user in order to test their progress
 	\item To allow this progress to be recorded in an easily accessible and readable database
@@ -710,13 +711,12 @@ Therefore it will fit on a standard USB stick, and it should be possible to send
 
 \begin{itemize}
 	\item To create a teaching program that uses the new GCSE Maths curriculum, as lots of resources will soon be out of date
-	\item To make the database concise and adjustable
 	\item To include the following topics: Trigonometry, Pythagoras, 3D Trigonometry, 3D Pythagoras
 	\item To include a range of difficulty levels, which can challenge every user's level of ability
-	\item Use a more interesting range of input types e.g drag and drop, drawing boxes, text boxes, rather than just clicking and typing
+	\item Use drag and drop, text boxes and drop down menus for inputs
 	\item To include interactive 2D graphics which give a clearer idea of the method being shown to the user
 	\item To have a database which can be accessed by different computers online
-	\item Use a specific and attractive colour scheme in every window
+	\item Use a specific, continuous and attractive colour scheme in every window
 	\item To have medium sized, highly visible icons
 	\item To have all input buttons randomised to avoid double clicking and guessing from memory
 	\item To have small error message windows which pop up and disappear on a timer
@@ -728,8 +728,9 @@ Therefore it will fit on a standard USB stick, and it should be possible to send
 \begin{itemize}
 	\item To create a teaching program that uses the new GCSE Maths curriculum, as lots of resources will soon be out of date
 	\item To make the database easy to access and easy to read
-	\item To include a range of specific topics, such as how to use the tan rule, or 3D Pythagoras, as well as general trigonometry
-	\item To include a range of topics which challenge different levels of abilities
+	\item To include primarily trigonometry based topics, such as how to use the sine, cosine and tan rules
+	\item To include an initial, moderate difficulty in order to cater for a majority of students
+	\item To make the database functional and able to store the requested details
 \end{itemize}
 
 \subsection{Other Objectives}
@@ -737,7 +738,9 @@ Therefore it will fit on a standard USB stick, and it should be possible to send
 \begin{itemize}
 	\item To position buttons, text boxes and drag and drop boxes in within the layout of the graphical user interface in such a way that cheating and lucky guessing can be minimised
 	\item To make the database adjustable if necessary
-	\item Use a more interesting range of input types e.g drag and drop, drawing boxes, text boxes, rather than just clicking and typing
+	\item Use a more interesting range of input types like drawing boxes rather than just clicking and typing
+	\item To include a wider range of difficulties to challenge every student on the right level for them
+	\item To include a wider range of topics such as pythagoras, then 3D trigonometry and 3D pythagoras
 \end{itemize}
 
 \section{ER Diagrams and Descriptions}
@@ -745,7 +748,7 @@ Therefore it will fit on a standard USB stick, and it should be possible to send
 \subsection{ER Diagram}
 
 \begin{figure}[H]
-    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/er_diagram.png}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Analysis/er_diagram.png}
     \label{fig:print_function_result}
 \end{figure}
 
@@ -786,7 +789,7 @@ Question & Shows how many questions were in a homework, and the percentage which
 \subsection{Relationship diagrams}
 
 \begin{figure}[H]
-    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/objectrelationships.png}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Analysis/objectrelationships.png}
     \caption{The relationships between each of the objects in the proposed system} \label{fig:print_function_result}
 \end{figure}
 

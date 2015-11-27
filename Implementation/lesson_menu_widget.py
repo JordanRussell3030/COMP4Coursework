@@ -6,8 +6,8 @@ from student_account_home import *
 from derived_lesson_menus import *
 
 class LessonMenuWidget(QMainWindow):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, parent):
+        super().__init__(parent)
         self.et1 = QPushButton("Easy Trigonometry 1")
         self.et2 = QPushButton("Easy Trigonometry 2")
         self.et3 = QPushButton("Easy Trigonometry 3")
@@ -79,101 +79,101 @@ class LessonMenuWidget(QMainWindow):
         self.back.clicked.connect(self.selected_back)
 
     def selected_et1(self):
-        easy_trig_1_widget = EasyTrigonometry1()
+        easy_trig_1_widget = EasyTrigonometry1(self)
         easy_trig_1_widget.show()
-        easy_trig_1_widget._raise()
+        easy_trig_1_widget.raise_()
 
     def selected_et2(self):
-        easy_trig_2_widget = EasyTrigonometry2()
+        easy_trig_2_widget = EasyTrigonometry2(self)
         easy_trig_2_widget.show()
-        easy_trig_2_widget._raise()
+        easy_trig_2_widget.raise_()
 
     def selected_et3(self):
-        easy_trig_3_widget = EasyTrigonometry3()
+        easy_trig_3_widget = EasyTrigonometry3(self)
         easy_trig_3_widget.show()
-        easy_trig_3_widget._raise()
+        easy_trig_3_widget.raise_()
 
     def selected_mt1(self):
-        medium_trig_1_widget = MediumTrigonometry1()
+        medium_trig_1_widget = MediumTrigonometry1(self)
         medium_trig_1_widget.show()
-        medium_trig_1_widget._raise()
+        medium_trig_1_widget.raise_()
 
     def selected_mt2(self):
-        medium_trig_2_widget = MediumTrigonometry2()
+        medium_trig_2_widget = MediumTrigonometry2(self)
         medium_trig_2_widget.show()
-        medium_trig_2_widget._raise()
+        medium_trig_2_widget.raise_()
 
     def selected_mt3(self):
-        medium_trig_3_widget = MediumTrigonometry3()
+        medium_trig_3_widget = MediumTrigonometry3(self)
         medium_trig_3_widget.show()
-        medium_trig_3_widget._raise()
+        medium_trig_3_widget.raise_()
 
-    def selected_ht1(self):
-        hard_trig_1_widget = HardTrigonometry1()
-        hard_trig_1_widget.show()
-        hard_trig_1_widget._raise()
-
-    def selected_ht2(self):
-        hard_trig_2_widget = HardTrigonometry2()
-        hard_trig_2_widget.show()
-        hard_trig_2_widget._raise()
-
-    def selected_ht3(self):
-        hard_trig_3_widget = HardTrigonometry3()
-        hard_trig_3_widget.show()
-        hard_trig_3_widget._raise()
-
-    def selected_ext1(self):
-        extended_trig_1_widget = ExtendedTrigonometry1()
-        extended_trig_1_widget.show()
-        extended_trig_1_widget._raise()
-
-    def selected_ext2(self):
-        extended_trig_2_widget = ExtendedTrigonometry2()
-        extended_trig_2_widget.show()
-        extended_trig_2_widget._raise()
-
-    def selected_ext3(self):
-        extended_trig_3_widget = ExtendedTrigonometry3()
-        extended_trig_3_widget.show()
-        extended_trig_3_widget._raise()
-
-    def selected_ep(self):
-        easy_pythagoras_1_widget = EasyPythagoras()
-        easy_pythagoras_1_widget.show()
-        easy_pythagoras_1_widget._raise()
-
-    def selected_mp(self):
-        medium_pythagoras_1_widget = MediumPythagoras()
-        medium_pythagoras_1_widget.show()
-        medium_pythagoras_1_widget._raise()
-
-    def selected_hp(self):
-        hard_pythagoras_1_widget = HardPythagoras()
-        hard_pythagoras_1_widget.show()
-        hard_pythagoras_1_widget._raise()
-
-    def selected_tdp1(self):
-        threed_pythagoras_1_widget = TDPythagoras1()
-        threed_pythagoras_1_widget.show()
-        threed_pythagoras_1_widget._raise()
-
-    def selected_tdp2(self):
-        threed_pythagoras_2_widget = TDPythagoras2()
-        threed_pythagoras_2_widget.show()
-        threed_pythagoras_2_widget._raise()
-
-    def selected_tdt1(self):
-        threed_trigonometry_1_widget = TDTrigonometry1()
-        threed_trigonometry_1_widget.show()
-        threed_trigonometry_1_widget._raise()
-
-    def selected_tdt2(self):
-        threed_trigonometry_2_widget = TDTrigonometry2()
-        threed_trigonometry_2_widget.show()
-        threed_trigonometry_2_widget._raise()
+##    def selected_ht1(self):
+##        hard_trig_1_widget = HardTrigonometry1(self)
+##        hard_trig_1_widget.show()
+##        hard_trig_1_widget.raise_()
+##
+##    def selected_ht2(self):
+##        hard_trig_2_widget = HardTrigonometry2(self)
+##        hard_trig_2_widget.show()
+##        hard_trig_2_widget.raise_()
+##
+##    def selected_ht3(self):
+##        hard_trig_3_widget = HardTrigonometry3(self)
+##        hard_trig_3_widget.show()
+##        hard_trig_3_widget.raise_()
+##
+##    def selected_ext1(self):
+##        extended_trig_1_widget = ExtendedTrigonometry1(self)
+##        extended_trig_1_widget.show()
+##        extended_trig_1_widget.raise_()
+##
+##    def selected_ext2(self):
+##        extended_trig_2_widget = ExtendedTrigonometry2(self)
+##        extended_trig_2_widget.show()
+##        extended_trig_2_widget.raise_()
+##
+##    def selected_ext3(self):
+##        extended_trig_3_widget = ExtendedTrigonometry3(self)
+##        extended_trig_3_widget.show()
+##        extended_trig_3_widget.raise_()
+##
+##    def selected_ep(self):
+##        easy_pythagoras_1_widget = EasyPythagoras(self)
+##        easy_pythagoras_1_widget.show()
+##        easy_pythagoras_1_widget.raise_()
+##
+##    def selected_mp(self):
+##        medium_pythagoras_1_widget = MediumPythagoras(self)
+##        medium_pythagoras_1_widget.show()
+##        medium_pythagoras_1_widget.raise_()
+##
+##    def selected_hp(self):
+##        hard_pythagoras_1_widget = HardPythagoras(self)
+##        hard_pythagoras_1_widget.show()
+##        hard_pythagoras_1_widget.raise_()
+##
+##    def selected_tdp1(self):
+##        threed_pythagoras_1_widget = TDPythagoras1(self)
+##        threed_pythagoras_1_widget.show()
+##        threed_pythagoras_1_widget.raise_()
+##
+##    def selected_tdp2(self):
+##        threed_pythagoras_2_widget = TDPythagoras2(self)
+##        threed_pythagoras_2_widget.show()
+##        threed_pythagoras_2_widget.raise_()
+##
+##    def selected_tdt1(self):
+##        threed_trigonometry_1_widget = TDTrigonometry1(self)
+##        threed_trigonometry_1_widget.show()
+##        threed_trigonometry_1_widget.raise_()
+##
+##    def selected_tdt2(self):
+##        threed_trigonometry_2_widget = TDTrigonometry2(self)
+##        threed_trigonometry_2_widget.show()
+##        threed_trigonometry_2_widget.raise_()
 
     def selected_back(self):
         lessonmenuwidget.close()
         student_home.show()
-        student_home._raise()
+        student_home.raise_()

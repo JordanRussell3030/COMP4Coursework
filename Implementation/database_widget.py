@@ -6,8 +6,8 @@ from lesson_menu_widget import *
 
 
 class DatabaseWidget(QWidget):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, parent):
+        super().__init__(parent)
         self._pass = QLabel("Empty")
 
         self.layout = QVBoxLayout()
