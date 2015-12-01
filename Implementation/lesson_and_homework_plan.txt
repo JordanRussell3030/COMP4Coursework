@@ -1,0 +1,43 @@
+Lessons:
+- Trigonometry 1
+	-Sides AHO
+	-SOHCAHTOA
+- Trigonometry 2
+	-Finding angles
+	-inverted angles
+	-3D Trigonometry
+- Pythagoras
+	-a2 + b2 = c2
+	- 3d pythagoras
+- Pythagoras and Trigonometry Problems
+	-All stuff revised (Harder stuff)
+- Summary
+	-More stuff revised (Moderate stuff)
+	
+Homework:
+- Trigonometry 1
+	-sides AHO Easy
+	-sides AHO Medium
+	-sides AHO Hard
+	-SOHCAHTOA Easy
+	-SOHCAHTOA Medium
+	-SOHCAHTOA Hard
+-Trigonometry 2
+	-Finding Angles Easy
+	-Finding Angles Medium
+	-Finding Angles Hard
+	-inverted Angles Easy
+	-inverted Angles Medium
+	-inverted Angles Hard
+	-3D Trigonometry Easy
+	-3D Trigonometry Medium
+	-3D Trigonometry Hard
+-Pythagoras
+	-a2 + b2 = c2 Easy
+	-a2 + b2 = c2 Medium
+	-a2 + b2 = c2 Hard
+	-3d Pythagoras Easy
+	-3d Pythagoras Medium
+	-3d Pythagoras Hard
+- All Stuff revised 1 - 3
+-Summary 1 - 3

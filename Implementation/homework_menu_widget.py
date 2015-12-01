@@ -7,8 +7,8 @@ from derived_homework_menus import *
 from homework_widgets import *
 
 class HomeworkMenuWidget(QMainWindow):
-    def __init__(self, parent):
-        super().__init__(parent)
+    def __init__(self):
+        super().__init__()
         self.et1 = QPushButton("Easy Trigonometry 1")
         self.et2 = QPushButton("Easy Trigonometry 2")
         self.et3 = QPushButton("Easy Trigonometry 3")
@@ -64,117 +64,117 @@ class HomeworkMenuWidget(QMainWindow):
         self.mt1.clicked.connect(self.selected_mt1)
         self.mt2.clicked.connect(self.selected_mt2)
         self.mt3.clicked.connect(self.selected_mt3)
-        self.ht1.clicked.connect(self.selected_ht1)
-        self.ht2.clicked.connect(self.selected_ht2)
-        self.ht3.clicked.connect(self.selected_ht3)
-        self.ext1.clicked.connect(self.selected_ext1)
-        self.ext2.clicked.connect(self.selected_ext2)
-        self.ext3.clicked.connect(self.selected_ext3)
-        self.ep.clicked.connect(self.selected_ep)
-        self.mp.clicked.connect(self.selected_mp)
-        self.hp.clicked.connect(self.selected_hp)
-        self.tdp1.clicked.connect(self.selected_tdp1)
-        self.tdp2.clicked.connect(self.selected_tdp2)
-        self.tdt1.clicked.connect(self.selected_tdt1)
-        self.tdt2.clicked.connect(self.selected_tdt2)
+##        self.ht1.clicked.connect(self.selected_ht1)
+##        self.ht2.clicked.connect(self.selected_ht2)
+##        self.ht3.clicked.connect(self.selected_ht3)
+##        self.ext1.clicked.connect(self.selected_ext1)
+##        self.ext2.clicked.connect(self.selected_ext2)
+##        self.ext3.clicked.connect(self.selected_ext3)
+##        self.ep.clicked.connect(self.selected_ep)
+##        self.mp.clicked.connect(self.selected_mp)
+##        self.hp.clicked.connect(self.selected_hp)
+##        self.tdp1.clicked.connect(self.selected_tdp1)
+##        self.tdp2.clicked.connect(self.selected_tdp2)
+##        self.tdt1.clicked.connect(self.selected_tdt1)
+##        self.tdt2.clicked.connect(self.selected_tdt2)
         self.back.clicked.connect(self.selected_back)
 
     def selected_et1(self):
         easy_trig_1_homework = EasyTrigonometry1HW()
         easy_trig_1_homework.show()
-        easy_trig_1_homework.raise_()
+        easy_trig_1_homework._raise()
 
     def selected_et2(self):
         easy_trig_2_homework = EasyTrigonometry2HW()
         easy_trig_2_homework.show()
-        easy_trig_2_homework.raise_()
+        easy_trig_2_homework._raise()
 
     def selected_et3(self):
         easy_trig_3_homework = EasyTrigonometry3HW()
         easy_trig_3_homework.show()
-        easy_trig_3_homework.raise_()
+        easy_trig_3_homework._raise()
 
     def selected_mt1(self):
         medium_trig_1_homework = MediumTrigonometry1HW()
         medium_trig_1_homework.show()
-        medium_trig_1_homework.raise_()
+        medium_trig_1_homework._raise()
 
     def selected_mt2(self):
         medium_trig_2_homework = MediumTrigonometry2HW()
         medium_trig_2_homework.show()
-        medium_trig_2_homework.raise_()
+        medium_trig_2_homework._raise()
 
     def selected_mt3(self):
         medium_trig_3_homework = MediumTrigonometry3HW()
         medium_trig_3_homework.show()
-        medium_trig_3_homework.raise_()
+        medium_trig_3_homework._raise()
 
-    def selected_ht1(self):
-        hard_trig_1_homework = HardTrigonometry1HW()
-        hard_trig_1_homework.show()
-        hard_trig_1_homework.raise_()
-
-    def selected_ht2(self):
-        hard_trig_2_homework = HardTrigonometry2HW()
-        hard_trig_2_homework.show()
-        hard_trig_2_homework.raise_()
-
-    def selected_ht3(self):
-        hard_trig_3_homework = HardTrigonometry3HW()
-        hard_trig_3_homework.show()
-        hard_trig_3_homework.raise_()
-
-    def selected_ext1(self):
-        extended_trig_1_homework = ExtendedTrigonometry1HW()
-        extended_trig_1_homework.show()
-        extended_trig_1_homework.raise_()
-
-    def selected_ext2(self):
-        extended_trig_2_homework = ExtendedTrigonometry2HW()
-        extended_trig_2_homework.show()
-        extended_trig_2_homework.raise_()
-
-    def selected_ext3(self):
-        extended_trig_3_homework = ExtendedTrigonometry3HW()
-        extended_trig_3_homework.show()
-        extended_trig_3_homework.raise_()
-
-    def selected_ep(self):
-        easy_pythagoras_1_homework = EasyPythagorasHW()
-        easy_pythagoras_1_homework.show()
-        easy_pythagoras_1_homework.raise_()
-
-    def selected_mp(self):
-        medium_pythagoras_1_homework = MediumPythagorasHW()
-        medium_pythagoras_1_homework.show()
-        medium_pythagoras_1_homework.raise_()
-
-    def selected_hp(self):
-        hard_pythagoras_1_homework = HardPythagorasHW()
-        hard_pythagoras_1_homework.show()
-        hard_pythagoras_1_homework.raise_()
-
-    def selected_tdp1(self):
-        threed_pythagoras_1_homework = TDPythagoras1HW()
-        threed_pythagoras_1_homework.show()
-        threed_pythagoras_1_homework.raise_()
-
-    def selected_tdp2(self):
-        threed_pythagoras_2_homework = TDPythagoras2HW()
-        threed_pythagoras_2_homework.show()
-        threed_pythagoras_2_homework.raise_()
-
-    def selected_tdt1(self):
-        threed_trigonometry_1_homework = TDTrigonometry1HW()
-        threed_trigonometry_1_homework.show()
-        threed_trigonometry_1_homework.raise_()
-
-    def selected_tdt2(self):
-        threed_trigonometry_2_homework = TDTrigonometry2HW()
-        threed_trigonometry_2_homework.show()
-        threed_trigonometry_2_homework.raise_()
+##    def selected_ht1(self):
+##        hard_trig_1_homework = HardTrigonometry1HW()
+##        hard_trig_1_homework.show()
+##        hard_trig_1_homework._raise()
+##
+##    def selected_ht2(self):
+##        hard_trig_2_homework = HardTrigonometry2HW()
+##        hard_trig_2_homework.show()
+##        hard_trig_2_homework._raise()
+##
+##    def selected_ht3(self):
+##        hard_trig_3_homework = HardTrigonometry3HW()
+##        hard_trig_3_homework.show()
+##        hard_trig_3_homework._raise()
+##
+##    def selected_ext1(self):
+##        extended_trig_1_homework = ExtendedTrigonometry1HW()
+##        extended_trig_1_homework.show()
+##        extended_trig_1_homework._raise()
+##
+##    def selected_ext2(self):
+##        extended_trig_2_homework = ExtendedTrigonometry2HW()
+##        extended_trig_2_homework.show()
+##        extended_trig_2_homework._raise()
+##
+##    def selected_ext3(self):
+##        extended_trig_3_homework = ExtendedTrigonometry3HW()
+##        extended_trig_3_homework.show()
+##        extended_trig_3_homework._raise()
+##
+##    def selected_ep(self):
+##        easy_pythagoras_1_homework = EasyPythagorasHW()
+##        easy_pythagoras_1_homework.show()
+##        easy_pythagoras_1_homework._raise()
+##
+##    def selected_mp(self):
+##        medium_pythagoras_1_homework = MediumPythagorasHW()
+##        medium_pythagoras_1_homework.show()
+##        medium_pythagoras_1_homework._raise()
+##
+##    def selected_hp(self):
+##        hard_pythagoras_1_homework = HardPythagorasHW()
+##        hard_pythagoras_1_homework.show()
+##        hard_pythagoras_1_homework._raise()
+##
+##    def selected_tdp1(self):
+##        threed_pythagoras_1_homework = TDPythagoras1HW()
+##        threed_pythagoras_1_homework.show()
+##        threed_pythagoras_1_homework._raise()
+##
+##    def selected_tdp2(self):
+##        threed_pythagoras_2_homework = TDPythagoras2HW()
+##        threed_pythagoras_2_homework.show()
+##        threed_pythagoras_2_homework._raise()
+##
+##    def selected_tdt1(self):
+##        threed_trigonometry_1_homework = TDTrigonometry1HW()
+##        threed_trigonometry_1_homework.show()
+##        threed_trigonometry_1_homework._raise()
+##
+##    def selected_tdt2(self):
+##        threed_trigonometry_2_homework = TDTrigonometry2HW()
+##        threed_trigonometry_2_homework.show()
+##        threed_trigonometry_2_homework._raise()
 
     def selected_back(self):
         lessonmenuhomework.close()
         student_home.show()
-        student_home.raise_()
+        student_home._raise()

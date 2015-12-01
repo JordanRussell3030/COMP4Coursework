@@ -25,18 +25,18 @@ class ParentHomework(QWidget):
     def selected_homework_1(self):
         homework_1_widget = Homework1Widget()
         homework_1_widget.show()
-        homework_1_widget.raise_()
+        homework_1_widget._raise()
 
     def selected_homework_2(self):
         homework_2_widget = Homework2Widget()
         homework_2_widget.show()
-        homework_2_widget.raise_()
+        homework_2_widget._raise()
 
     def selected_homework_3(self):
         homework_3_widget = Homework3Widget()
         homework_3_widget.show()
-        homework_3_widget.raise_()
+        homework_3_widget._raise()
 
     def selected_back(self):
         homeworkmenuwidget.show()
-        homeworkmenuwidget.raise_()
+        homeworkmenuwidget._raise()

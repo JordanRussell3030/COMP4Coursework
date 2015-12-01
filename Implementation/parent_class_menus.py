@@ -6,8 +6,8 @@ from login_widget import *
 from lesson_menu_widget import *
 
 class ParentLesson(QWidget):
-    def __init__(self, parent):
-        super().__init__(parent)
+    def __init__(self):
+        super().__init__()
         self.lesson_1 = QPushButton("Lesson 1")
         self.lesson_2 = QPushButton("Lesson 2")
         self.lesson_3 = QPushButton("Lesson 3")

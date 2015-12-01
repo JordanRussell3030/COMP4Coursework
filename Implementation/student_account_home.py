@@ -31,21 +31,21 @@ class UserAccountWidget(QWidget):
         self.progress.clicked.connect(self.selected_progress)
 
     def selected_lessons(self):
-        lessonmenuwidget = LessonMenuWidget(self)
+        lessonmenuwidget = LessonMenuWidget()
         lessonmenuwidget.show()
-        lessonmenuwidget.raise_()
+        lessonmenuwidget._raise()
 #        self.stack.setCurrentIndex(2)
 
     def selected_homework(self):
-        homeworkmenuwidget = HomeworkMenuWidget(self)
+        homeworkmenuwidget = HomeworkMenuWidget()
         homeworkmenuwidget.show()
-        homeworkmenuwidget.raise_()
+        homeworkmenuwidget._raise()
         #self.stack.setCurrentIndex(3)
 
     def selected_progress(self):
-        databasewidget = DatabaseWidget(self)
+        databasewidget = DatabaseWidget()
         databasewidget.show()
-        databasewidget.raise_()
+        databasewidget._raise()
         #self.stack.setCurrentIndex(4)
         
        
