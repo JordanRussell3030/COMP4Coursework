@@ -9,458 +9,293 @@ from parent_class_homework import *
 from easy_trig_widget import *
 from homework_widgets import *
 
-class EasyTrigonometry1HW(ParentLesson):
+class Trigonometry1HW(QWidget):
     def __init__(self):
         super().__init__()
 
-        self.lesson_1.clicked.connect(self.selected_easy_1)
-        self.lesson_2.clicked.connect(self.selected_easy_2)
-        self.lesson_3.clicked.connect(self.selected_easy_3)
-        self.back.clicked.connect(self.selected_back)
+        self.sides_aho_easy_button = QPushButton("Sides AHO Easy")
+        self.sides_aho_medium_button = QPushButton("Sides AHO Medium")
+        self.sides_aho_hard_button = QPushButton("Sides AHO Hard")
+        self.sohcahtoa_easy_button = QPushButton("SOHCAHTOA Easy")
+        self.sohcahtoa_medium_button = QPushButton("SOHCAHTOA Medium")
+        self.sohcahtoa_hard_button = QPushButton("SOHCAHTOA Hard")
+        self.back_button = QPushButton("Back")
+
+        self.layout = QVBoxLayout()
+
+        self.layout.addWidget(self.sides_aho_easy_button)
+        self.layout.addWidget(self.sides_aho_medium_button)
+        self.layout.addWidget(self.sides_aho_hard_button)
+        self.layout.addWidget(self.sohcahtoa_easy_button)
+        self.layout.addWidget(self.sohcahtoa_medium_button)
+        self.layout.addWidget(self.sohcahtoa_hard_button)
+        self.layout.addWidget(self.back_button)
+        
+        self.sides_aho_easy_button.clicked.connect(self.sides_aho_easy)
+        self.sides_aho_medium_button.clicked.connect(self.sides_aho_medium)
+        self.sides_aho_hard_button.clicked.connect(self.sides_aho_hard)
+        self.sohcahtoa_easy_button.clicked.connect(self.sohcahtoa_easy)
+        self.sohcahtoa_medium_button.clicked.connect(self.sohcahtoa_medium)
+        self.sohcahtoa_hard_button.clicked.connect(self.sohcahtoa_hard)
+        self.back_button.clicked.connect(self.selected_back)
     
-    def selected_easy_1(self):
-        easy_1_1 = Easy1_1TrigWidgetHW()
-        easy_1_1.show()
-        easy_1_1._raise()
+    def sides_aho_easy(self):
+        sides_aho_1 = SidesAHOEasyWidget()
+        sides_aho_1.show()
+        sides_aho_1._raise()
 
-    def selected_easy_2(self):
-        easy_1_2 = Easy1_2TrigWidgetHW()
-        easy_1_2.show()
-        easy_1_2._raise()
+    def sides_aho_medium(self):
+        sides_aho_2 = SidesAHOMediumWidget()
+        sides_aho_2.show()
+        sides_aho_2._raise()
 
-    def selected_easy_3(self):
-        easy_1_3 = Easy1_3TrigWidgetHW()
-        easy_1_3.show()
-        easy_1_3._raise()
+    def sides_aho_hard(self):
+        sides_aho_3 = SidesAHOHardWidget()
+        sides_aho_3.show()
+        sides_aho_3._raise()
 
-class EasyTrigonometry2HW(ParentLesson):
+    def sohcahtoa_easy(self):
+        sohcahtoa_1 = SOHCAHTOAEasyWidget()
+        sohcahtoa_1.show()
+        sohcahtoa_1._raise()
+
+    def sohcahtoa_medium(self):
+        sohcahtoa_2 = SOHCAHTOAMediumWidget()
+        sohcahtoa_2.show()
+        sohcahtoa_3._raise()
+
+    def sohcahtoa_hard(self):
+        sohcahtoa_3 = SOHCAHTOAHardWidget()
+        sohcahtoa_3.show()
+        sohcahtoa_3._raise()
+
+    def selected_back(self):
+        pass
+
+class Trigonometry2HW(QWidget):
     def __init__(self):
         super().__init__()
 
-        self.lesson_1.clicked.connect(self.selected_easy_1)
-        self.lesson_2.clicked.connect(self.selected_easy_2)
-        self.lesson_3.clicked.connect(self.selected_easy_3)
-        self.back.clicked.connect(self.selected_back)
+        self.finding_angles_easy_button = QPushButton("Finding Angles Easy")
+        self.finding_angles_medium_button = QPushButton("Finding Angles Medium")
+        self.finding_angles_hard_button = QPushButton("Finding Angles Hard")
+        self.inverted_angles_easy_button = QPushButton("Inverted Angles Easy")
+        self.inverted_angles_medium_button = QPushButton("Inverted Angles Medium")
+        self.inverted_angles_hard_button = QPushButton("Inverted Angles Hard")
+        self.three_d_trig_easy_button = QPushButton("3D Trigonometry Easy")
+        self.three_d_trig_medium_button = QPushButton("3D Trigonometry Medium")
+        self.three_d_trig_hard_button = QPushButton("3D Trigonometry Hard")
+        self.back_button = QPushButton("Back")
+
+        self.layout = QVBoxLayout()
+
+        self.layout.addWidget(self.finding_angles_easy_button)
+        self.layout.addWidget(self.finding_angles_medium_button)
+        self.layout.addWidget(self.finding_angles_hard_button)
+        self.layout.addWidget(self.inverted_angles_easy_button)
+        self.layout.addWidget(self.inverted_angles_medium_button)
+        self.layout.addWidget(self.inverted_angles_hard_button)
+        self.layout.addWidget(self.three_d_trig_easy_button)
+        self.layout.addWidget(self.three_d_trig_medium_button)
+        self.layout.addWidget(self.three_d_trig_hard_button)
+        self.layout.addWidget(self.back_button)
+
+        self.finding_angles_easy_button.clicked.connect(self.finding_angles_easy)
+        self.finding_angles_medium_button.clicked.connect(self.finding_angles_medium)
+        self.finding_angles_hard_button.clicked.connect(self.finding_angles_hard)
+        self.inverted_angles_easy_button.clicked.connect(self.inverted_angles_easy)
+        self.inverted_angles_medium_button.clicked.connect(self.inverted_angles_medium)
+        self.inverted_angles_hard_button.clicked.connect(self.inverted_angles_hard)
+        self.three_d_trig_easy_button.clicked.connect(self.three_d_trig_easy)
+        self.three_d_trig_medium_button.clicked.connect(self.three_d_trig_medium)
+        self.three_d_trig_hard_button.clicked.connect(self.three_d_trig_hard)
+        self.back_button.clicked.connect(self.selected_back)
     
-    def selected_easy_1(self):
-        easy_2_1 = Easy2_1TrigWidgetHW()
-        easy_2_1.show()
-        easy_2_1._raise()
+    def finding_angles_easy(self):
+        finding_angles_1 = FindingAnglesEasyWidget()
+        finding_angles_1.show()
+        finding_angles_1._raise()
 
-    def selected_easy_2(self):
-        easy_2_2 = Easy2_2TrigWidgetHW()
-        easy_2_2.show()
-        easy_2_2._raise()
+    def finding_angles_medium(self):
+        finding_angles_2 = FindingAnglesMediumWidget()
+        finding_angles_2.show()
+        finding_angles_2._raise()
 
-    def selected_easy_3(self):
-        easy_2_3 = Easy2_3TrigWidgetHW()
-        easy_2_3.show()
-        easy_2_3._raise()
+    def finding_angles_hard(self):
+        finding_angles_3 = FindingAnglesHardWidget()
+        finding_angles_3.show()
+        finding_angles_3._raise()
 
-##class EasyTrigonometry3HW(ParentLesson):
-##    def __init__(self):
-##        super().__init__()
-##
-##        self.lesson_1.clicked.connect(self.selected_easy_1)
-##        self.lesson_2.clicked.connect(self.selected_easy_2)
-##        self.lesson_3.clicked.connect(self.selected_easy_3)
-##        self.back.clicked.connect(self.selected_back)
-##    
-##    def selected_easy_1(self):
-##        easy_3_1 = Easy3_1TrigWidgetHW()
-##        easy_3_1.show()
-##        easy_3_1._raise()
-##
-##    def selected_easy_2(self):
-##        easy_3_2 = Easy3_2TrigWidgetHW()
-##        easy_3_2.show()
-##        easy_3_2._raise()
-##
-##    def selected_easy_3(self):
-##        easy_3_3 = Easy3_3TrigWidgetHW()
-##        easy_3_3.show()
-##        easy_3_3._raise()
-##
-##class MediumTrigonometry1HW(ParentLesson):
-##    def __init__(self):
-##        super().__init__()
-##
-##        self.lesson_1.clicked.connect(self.selected_medium_1)
-##        self.lesson_2.clicked.connect(self.selected_medium_2)
-##        self.lesson_3.clicked.connect(self.selected_medium_3)
-##        self.back.clicked.connect(self.selected_back)
-##    
-##    def selected_medium_1(self):
-##        medium_1_1 = Medium1_1TrigWidgetHW()
-##        medium_1_1.show()
-##        medium_1_1._raise()
-##
-##    def selected_medium_2(self):
-##        medium_1_2 = Medium1_2TrigWidgetHW()
-##        medium_1_2.show()
-##        medium_1_2._raise()
-##
-##    def selected_medium_3(self):
-##        medium_1_3 = Medium1_3TrigWidgetHW()
-##        medium_1_3.show()
-##        medium_1_3._raise()
-##
-##class MediumTrigonometry2HW(ParentLesson):
-##    def __init__(self):
-##        super().__init__()
-##
-##        self.lesson_1.clicked.connect(self.selected_medium_1)
-##        self.lesson_2.clicked.connect(self.selected_medium_2)
-##        self.lesson_3.clicked.connect(self.selected_medium_3)
-##        self.back.clicked.connect(self.selected_back)
-##    
-##    def selected_medium_1(self):
-##        medium_2_1 = Medium2_1TrigWidgetHW()
-##        medium_2_1.show()
-##        medium_2_1._raise()
-##
-##    def selected_medium_2(self):
-##        medium_2_2 = Medium2_2TrigWidgetHW()
-##        medium_2_2.show()
-##        medium_2_2._raise()
-##
-##    def selected_medium_3(self):
-##        medium_2_3 = Medium2_3TrigWidgetHW()
-##        medium_2_3.show()
-##        medium_2_3._raise()
-##
-##class MediumTrigonometry3HW(ParentLesson):
-##    def __init__(self):
-##        super().__init__()
-##
-##        self.lesson_1.clicked.connect(self.selected_medium_1)
-##        self.lesson_2.clicked.connect(self.selected_medium_2)
-##        self.lesson_3.clicked.connect(self.selected_medium_3)
-##        self.back.clicked.connect(self.selected_back)
-##    
-##    def selected_medium_1(self):
-##        medium_3_1 = Medium3_1TrigWidgetHW()
-##        medium_3_1.show()
-##        medium_3_1._raise()
-##
-##    def selected_medium_2(self):
-##        medium_3_2 = Medium3_2TrigWidgetHW()
-##        medium_3_2.show()
-##        medium_3_2._raise()
-##
-##    def selected_medium_3(self):
-##        medium_3_3 = Medium3_3TrigWidgetHW()
-##        medium_3_3.show()
-##        medium_3_3._raise()
-##
-##class HardTrigonometry1HW(ParentLesson):
-##    def __init__(self):
-##        super().__init__()
-##
-##        self.lesson_1.clicked.connect(self.selected_hard_1)
-##        self.lesson_2.clicked.connect(self.selected_hard_2)
-##        self.lesson_3.clicked.connect(self.selected_hard_3)
-##        self.back.clicked.connect(self.selected_back)
-##    
-##    def selected_hard_1(self):
-##        hard_1_1 = Hard1_1TrigWidgetHW()
-##        hard_1_1.show()
-##        hard_1_1._raise()
-##
-##    def selected_hard_2(self):
-##        hard_1_2 = Hard1_2TrigWidgetHW()
-##        hard_1_2.show()
-##        hard_1_2._raise()
-##
-##    def selected_hard_3(self):
-##        hard_1_3 = Hard1_3TrigWidgetHW()
-##        hard_1_3.show()
-##        hard_1_3._raise()
-##
-##class HardTrigonometry2HW(ParentLesson):
-##    def __init__(self):
-##        super().__init__()
-##
-##        self.lesson_1.clicked.connect(self.selected_hard_1)
-##        self.lesson_2.clicked.connect(self.selected_hard_2)
-##        self.lesson_3.clicked.connect(self.selected_hard_3)
-##        self.back.clicked.connect(self.selected_back)
-##    
-##    def selected_hard_1(self):
-##        hard_2_1 = Hard2_1TrigWidgetHW()
-##        hard_2_1.show()
-##        hard_2_1._raise()
-##
-##    def selected_hard_2(self):
-##        hard_2_2 = Hard2_2TrigWidgetHW()
-##        hard_2_2.show()
-##        hard_2_2._raise()
-##
-##    def selected_hard_3(self):
-##        hard_2_3 = Hard2_3TrigWidgetHW()
-##        hard_2_3.show()
-##        hard_2_3._raise()
-##
-##class HardTrigonometry3HW(ParentLesson):
-##    def __init__(self):
-##        super().__init__()
-##
-##        self.lesson_1.clicked.connect(self.selected_hard_1)
-##        self.lesson_2.clicked.connect(self.selected_hard_2)
-##        self.lesson_3.clicked.connect(self.selected_hard_3)
-##        self.back.clicked.connect(self.selected_back)
-##    
-##    def selected_hard_1(self):
-##        hard_3_1 = Hard3_1TrigWidgetHW()
-##        hard_3_1.show()
-##        hard_3_1._raise()
-##
-##    def selected_hard_2(self):
-##        hard_3_2 = Hard3_2TrigWidgetHW()
-##        hard_3_2.show()
-##        hard_3_2._raise()
-##
-##    def selected_hard_3(self):
-##        hard_3_3 = Hard3_3TrigWidgetHW()
-##        hard_3_3.show()
-##        hard_3_3._raise()
-##
-##class ExtendedTrigonometry1HW(ParentLesson):
-##    def __init__(self):
-##        super().__init__()
-##
-##        self.lesson_1.clicked.connect(self.selected_extended_1)
-##        self.lesson_2.clicked.connect(self.selected_extended_2)
-##        self.lesson_3.clicked.connect(self.selected_extended_3)
-##        self.back.clicked.connect(self.selected_back)
-##    
-##    def selected_extended_1(self):
-##        extended_1_1 = Extended1_1TrigWidgetHW()
-##        extended_1_1.show()
-##        extended_1_1._raise()
-##
-##    def selected_extended_2(self):
-##        extended_1_2 = Extended1_2TrigWidgetHW()
-##        extended_1_2.show()
-##        extended_1_2._raise()
-##
-##    def selected_extended_3(self):
-##        extended_1_3 = Extended1_3TrigWidgetHW()
-##        extended_1_3.show()
-##        extended_1_3._raise()
-##
-##class ExtendedTrigonometry2HW(ParentLesson):
-##    def __init__(self):
-##        super().__init__()
-##
-##        self.lesson_1.clicked.connect(self.selected_extended_1)
-##        self.lesson_2.clicked.connect(self.selected_extended_2)
-##        self.lesson_3.clicked.connect(self.selected_extended_3)
-##        self.back.clicked.connect(self.selected_back)
-##    
-##    def selected_extended_1(self):
-##        extended_2_1 = Extended2_1TrigWidgetHW()
-##        extended_2_1.show()
-##        extended_2_1._raise()
-##
-##    def selected_extended_2(self):
-##        extended_2_2 = Extended2_2TrigWidgetHW()
-##        extended_2_2.show()
-##        extended_2_2._raise()
-##
-##    def selected_extended_3(self):
-##        extended_2_3 = Extended2_3TrigWidgetHW()
-##        extended_2_3.show()
-##        extended_2_3._raise()
-##
-##class ExtendedTrigonometry3HW(ParentLesson):
-##    def __init__(self):
-##        super().__init__()
-##
-##        self.lesson_1.clicked.connect(self.selected_extended_1)
-##        self.lesson_2.clicked.connect(self.selected_extended_2)
-##        self.lesson_3.clicked.connect(self.selected_extended_3)
-##        self.back.clicked.connect(self.selected_back)
-##    
-##    def selected_extended_1(self):
-##        extended_3_1 = Extended3_1TrigWidgetHW()
-##        extended_3_1.show()
-##        extended_3_1._raise()
-##
-##    def selected_extended_2(self):
-##        extended_3_2 = Extended3_2TrigWidgetHW()
-##        extended_3_2.show()
-##        extended_3_2._raise()
-##
-##    def selected_extended_3(self):
-##        extended_3_3 = Extended3_3TrigWidgetHW()
-##        extended_3_3.show()
-##        extended_3_3._raise()
-##        
-##class EasyPythagorasHW(ParentLesson):
-##    def __init__(self):
-##        super().__init__()
-##
-##        self.lesson_1.clicked.connect(self.selected_easy_pythag_1)
-##        self.lesson_2.clicked.connect(self.selected_easy_pythag_2)
-##        self.lesson_3.clicked.connect(self.selected_easy_pythag_3)
-##        self.back.clicked.connect(self.selected_back)
-##    
-##    def selected_easy_pythag_1(self):
-##        easy_1_1 = EasyPythagoras1WidgetHW()
-##        easy_1_1.show()
-##        easy_1_1._raise()
-##
-##    def selected_easy_pythag_2(self):
-##        easy_1_2 = EasyPythagoras2WidgetHW()
-##        easy_1_2.show()
-##        easy_1_2._raise()
-##
-##    def selected_easy_pythag_3(self):
-##        easy_1_3 = EasyPythagoras3WidgetHW()
-##        easy_1_3.show()
-##        easy_1_3._raise()
-##
-##class MediumPythagorasHW(ParentLesson):
-##    def __init__(self):
-##        super().__init__()
-##
-##        self.lesson_1.clicked.connect(self.selected_medium_pythag_1)
-##        self.lesson_2.clicked.connect(self.selected_medium_pythag_2)
-##        self.lesson_3.clicked.connect(self.selected_medium_pythag_3)
-##        self.back.clicked.connect(self.selected_back)
-##    
-##    def selected_medium_pythag_1(self):
-##        medium_1_1 = MediumPythagoras1WidgetHW()
-##        medium_1_1.show()
-##        medium_1_1._raise()
-##
-##    def selected_medium_pythag_2(self):
-##        medium_1_2 = MediumPythagoras2WidgetHW()
-##        medium_1_2.show()
-##        medium_1_2._raise()
-##
-##    def selected_medium_pythag_3(self):
-##        medium_1_3 = MediumPythagoras3WidgetHW()
-##        medium_1_3.show()
-##        medium_1_3._raise()
-##
-##class HardPythagorasHW(ParentLesson):
-##    def __init__(self):
-##        super().__init__()
-##
-##        self.lesson_1.clicked.connect(self.selected_hard_pythag_1)
-##        self.lesson_2.clicked.connect(self.selected_hard_pythag_2)
-##        self.lesson_3.clicked.connect(self.selected_hard_pythag_3)
-##        self.back.clicked.connect(self.selected_back)
-##    
-##    def selected_hard_pythag_1(self):
-##        hard_1_1 = HardPythagoras1WidgetHW()
-##        hard_1_1.show()
-##        hard_1_1._raise()
-##
-##    def selected_hard_pythag_2(self):
-##        hard_1_2 = HardPythagoras2WidgetHW()
-##        hard_1_2.show()
-##        hard_1_2._raise()
-##
-##    def selected_hard_pythag_3(self):
-##        hard_1_3 = HardPythagoras3WidgetHW()
-##        hard_1_3.show()
-##        hard_1_3._raise()
-##
-##class TDPythagoras1HW(ParentLesson):
-##    def __init__(self):
-##        super().__init__()
-##
-##        self.lesson_1.clicked.connect(self.selected_threed_pythag_1)
-##        self.lesson_2.clicked.connect(self.selected_threed_pythag_2)
-##        self.lesson_3.clicked.connect(self.selected_threed_pythag_3)
-##        self.back.clicked.connect(self.selected_back)
-##    
-##    def selected_threed_pythag_1(self):
-##        threed_1_1 = TDPythagoras1_1WidgetHW()
-##        threed_1_1.show()
-##        threed_1_1._raise()
-##
-##    def selected_threed_pythag_2(self):
-##        threed_1_2 = TDPythagoras1_2WidgetHW()
-##        threed_1_2.show()
-##        threed_1_2._raise()
-##
-##    def selected_threed_pythag_3(self):
-##        threed_1_3 = TDPythagoras1_3WidgetHW()
-##        threed_1_3.show()
-##        threed_1_3._raise()
-##
-##class TDPythagoras2HW(ParentLesson):
-##    def __init__(self):
-##        super().__init__()
-##
-##        self.lesson_1.clicked.connect(self.selected_threed_pythag_1)
-##        self.lesson_2.clicked.connect(self.selected_threed_pythag_2)
-##        self.lesson_3.clicked.connect(self.selected_threed_pythag_3)
-##        self.back.clicked.connect(self.selected_back)
-##    
-##    def selected_threed_pythag_1(self):
-##        threed_2_1 = TDPythagoras2_1WidgetHW()
-##        threed_2_1.show()
-##        threed_2_1._raise()
-##
-##    def selected_threed_pythag_2(self):
-##        threed_2_2 = TDPythagoras2_2WidgetHW()
-##        threed_2_2.show()
-##        threed_2_2._raise()
-##
-##    def selected_threed_pythag_3(self):
-##        threed_2_3 = TDPythagoras2_3WidgetHW()
-##        threed_2_3.show()
-##        threed_2_3._raise()
-##
-##class TDTrigonometry1HW(ParentLesson):
-##    def __init__(self):
-##        super().__init__()
-##
-##        self.lesson_1.clicked.connect(self.selected_threed_trig_1)
-##        self.lesson_2.clicked.connect(self.selected_threed_trig_2)
-##        self.lesson_3.clicked.connect(self.selected_threed_trig_3)
-##        self.back.clicked.connect(self.selected_back)
-##    
-##    def selected_threed_trig_1(self):
-##        threed_1_1 = TDTrigonometry1_1WidgetHW()
-##        threed_1_1.show()
-##        threed_1_1._raise()
-##
-##    def selected_threed_trig_2(self):
-##        threed_1_2 = TDTrigonometry1_2WidgetHW()
-##        threed_1_2.show()
-##        threed_1_2._raise()
-##
-##    def selected_threed_trig_3(self):
-##        threed_1_3 = TDTrigonometry1_3WidgetHW()
-##        threed_1_3.show()
-##        threed_1_3._raise()
-##
-##class TDTrigonometry2HW(ParentLesson):
-##    def __init__(self):
-##        super().__init__()
-##
-##        self.lesson_1.clicked.connect(self.selected_threed_trig_1)
-##        self.lesson_2.clicked.connect(self.selected_threed_trig_2)
-##        self.lesson_3.clicked.connect(self.selected_threed_trig_3)
-##        self.back.clicked.connect(self.selected_back)
-##    
-##    def selected_threed_trig_1(self):
-##        threed_2_1 = TDTrigonometry2_1WidgetHW()
-##        threed_2_1.show()
-##        threed_2_1._raise()
-##
-##    def selected_threed_trig_2(self):
-##        threed_2_2 = TDTrigonometry2_2WidgetHW()
-##        threed_2_2.show()
-##        threed_2_2._raise()
-##
-##    def selected_threed_trig_3(self):
-##        threed_2_3 = TDTrigonometry2_3WidgetHW()
-##        threed_2_3.show()
-##        threed_2_3._raise()
+    def inverted_angles_easy(self):
+        inverted_angles_1 = InvertedAnglesEasyWidget()
+        inverted_angles_1.show()
+        inverted_angles_1._raise()
+
+    def inverted_angles_medium(self):
+        inverted_angles_2 = InvertedAnglesMediumWidget()
+        inverted_angles_2.show()
+        inverted_angles_2._raise()
+
+    def inverted_angles_hard(self):
+        inverted_angles_3 = InvertedAnglesHardWidget()
+        inverted_angles_3.show()
+        inverted_angles_3._raise()
+
+    def three_d_trig_easy(self):
+        three_d_trig_1 = ThreeDTrigEasyWidget()
+        three_d_trig_1.show()
+        three_d_trig_1._raise()
+
+    def three_d_trig_medium(self):
+        three_d_trig_2 = ThreeDTrigMediumWidget()
+        three_d_trig_2.show()
+        three_d_trig_2._raise()
+
+    def three_d_trig_hard(self):
+        three_d_trig_3 = ThreeDTrigHardWidget()
+        three_d_trig_3.show()
+        three_d_trig_3._raise()
+
+    def selected_back(self):
+        pass
+
+class PythagorasHW():
+    def __init__(self):
+        super().__init__()
+
+        self.pythag_theorem_easy_button = QPushButton("Pythagoras' Theorem Easy")
+        self.pythag_theorem_medium_button = QPushButton("Pythagoras' Theorem Medium")
+        self.pythag_theorem_hard_button = QPushButton("Pythagoras' Theorem Hard")
+        self.three_d_pythag_easy_button = QPushButton("3D Pythagoras Easy")
+        self.three_d_pythag_medium_button = QPushButton("3D Pythagoras Medium")
+        self.three_d_pythag_hard_button = QPushButton("3D Pythagoras Hard")
+        self.back_button = QPushButton("Back")
+
+        self.layout = QVBoxLayout()
+
+        self.layout.addWidget(self.pythag_theorem_easy_button)
+        self.layout.addWidget(self.pythag_theorem_medium_button)
+        self.layout.addWidget(self.pythag_theorem_hard_button)
+        self.layout.addWidget(self.three_d_pythag_easy_button)
+        self.layout.addWidget(self.three_d_pythag_medium_button)
+        self.layout.addWidget(self.three_d_pythag_hard_button)
+        self.layout.addWidget(self.back_button)
+
+        self.pythag_theorem_easy_button.clicked.connect(self.pythag_theorem_easy)
+        self.pythag_theorem_medium_button.clicked.connect(self.pythag_theorem_medium)
+        self.pythag_theorem_hard_button.clicked.connect(self.pythag_theorem_hard)
+        self.three_d_pythag_easy_button.clicked.connect(self.three_d_pythag_easy)
+        self.three_d_pythag_medium_button.clicked.connect(self.three_d_pythag_medium)
+        self.three_d_pythag_hard_button.clicked.connect(self.three_d_pythag_hard)
+        self.back_button.clicked.connect(self.selected_back)
+    
+    def pythag_theorem_easy(self):
+        pythag_theorem_1 = PythagTheoremEasyWidget()
+        pythag_theorem_1.show()
+        pythag_theorem_1._raise()
+
+    def pythag_theorem_medium(self):
+        pythag_theorem_2 = PythagTheoremMediumWidget()
+        pythag_theorem_2.show()
+        pythag_theorem_2._raise()
+
+    def pythag_theorem_hard(self):
+        pythag_theorem_3 = PythagTheoremHardWidget()
+        pythag_theorem_3.show()
+        pythag_theorem_3._raise()
+
+    def three_d_pythag_easy(self):
+        three_d_pythag_1 = ThreeDPythagEasyWidget()
+        three_d_pythag_1.show()
+        three_d_pythag._raise()
+
+    def three_d_pythag_medium(self):
+        three_d_pythag_2 = ThreeDPythagMediumWidget()
+        three_d_pythag_2.show()
+        three_d_pythag_2._raise()
+
+    def three_d_pythag_hard(self):
+        three_d_pythag_3 = ThreeDPythagHardWidget()
+        three_d_pythag_3.show()
+        three_d_pythag_3._raise()
+
+    def selected_back(self):
+        pass
+
+class PythagTrigonometryHW():
+    def __init__(self):
+        super().__init__()
+
+        self.pythag_trig_problems_easy_button = QPushButton("Trigonometry and Pythagoras Problems Easy")
+        self.pythag_trig_problems_medium_button = QPushButton("Trigonometry and Pythagoras Problems Mediu")
+        self.pythag_trig_problems_hard_button = QPushButton("Trigonometry and Pythagoras Problems Hard")
+        self.back_button= QPushButton("Back")
+
+        self.layout = QVBoxLayout()
+
+        self.layout.addWidget(self.pythag_trig_problems_easy_button)
+        self.layout.addWidget(self.pythag_trig_problems_medium_button)
+        self.layout.addWidget(self.pythag_trig_problems_hard_button)
+        self.layout.addWidget(self.back_button)
+
+        self.pythag_trig_problems_easy_button.clicked.connect(self.pythag_trig_problems_easy)
+        self.pythag_trig_problems_medium_button.clicked.connect(self.pythag_trig_problems_medium)
+        self.pythag_trig_problems_hard_button.clicked.connect(self.pythag_trig_problems_hard)
+        self.back_button.clicked.connect(self.selected_back)
+        
+    def pythag_trig_problems_easy(self):
+        pythag_trig_problems_1 = PythagTrigProblemsEasyWidget()
+        pythag_trig_problems_1.show()
+        pythag_trig_problems_1._raise()
+
+    def pythag_trig_problems_medium(self):
+        pythag_trig_problems_2 = PythagTrigProblemsMediumWidget()
+        pythag_trig_problems_2.show()
+        pythag_trig_problems_2._raise()
+
+    def pythag_trig_problems_hard(self):
+        pythag_trig_problems_3 = PythagTrigProblemsHardWidget()
+        pythag_trig_problems_3.show()
+        pythag_trig_problems_3._raise()
+
+    def selected_back(self):
+        pass
+
+class SummaryHW():
+    def __init__(self):
+        super().__init__()
+
+        self.easy_summary_button = QPushButton("Easy Summary")
+        self.medium_summary_button = QPushButton("Medium Summary")
+        self.hard_summary_button = QPushButton("Hard Summary")
+        self.back_button = QPushButton("Back")
+
+        self.layout = QVBoxLayout()
+
+        self.layout.addWidget(self.easy_summary_button)
+        self.layout.addWidget(self.medium_summary_button)
+        self.layout.addWidget(self.hard_summary_button)
+        self.layout.addWidget(self.back_button)
+
+        self.easy_summary_button.clicked.connect(self.easy_summary)
+        self.medium_summary_button.clicked.connect(self.medium_summary)
+        self.hard_summary_button.clicked.connect(self.hard_summary)
+        self.back_button.clicked.connect(self.selected_back)
+          
+    def easy_summary(self):
+        summary_1 = EasySummaryWidget()
+        summary_1.show()
+        summary_1._raise()
+
+    def medium_summary(self):
+        summary_2 = MediumSummaryWidget()
+        summary_2.show()
+        summary_2._raise()
+
+    def hard_summary(self):
+        summary_3 = HardSummaryWidget()
+        summary_3.show()
+        summary_3._raise()
+
+    def selected_back(self):
+        pass
