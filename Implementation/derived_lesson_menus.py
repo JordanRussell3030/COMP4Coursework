@@ -15,12 +15,15 @@ class Trigonometry1(QWidget):
         self.sides_aho_button = QPushButton("Sides AHO")
         self.sohcahtoa_button = QPushButton("SOHCAHTOA")
         self.back = QPushButton("Back")
+        self.topic_label = QLabel("Trigonometry 1")
+        #self.picture
 
-        self.layout = QVBoxLayout()
+        self.layout = QGridLayout()
 
-        self.layout.addWidget(self.sides_aho_button)
-        self.layout.addWidget(self.sohcahtoa_button)
-        self.layout.addWidget(self.back)
+        self.layout.addWidget(self.sides_aho_button, 0, 2)
+        self.layout.addWidget(self.sohcahtoa_button, 1, 2)
+        self.layout.addWidget(self.back, 1, 0)
+        self.layout.addWidget(self.topic_label, 0, 0)
 
         self.setLayout(self.layout)
 

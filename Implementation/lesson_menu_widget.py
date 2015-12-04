@@ -13,16 +13,19 @@ class LessonMenuWidget(QMainWindow):
         self.pyt = QPushButton("Pythagoras")
         self.pytrig = QPushButton("Pythagoras and Trigonometry Problems")
         self.sum = QPushButton("Summary")
-        self.back = QPushButton("Back")
+        self.back = QPushButton("Return")
+        self.lesson_label = QLabel("Lessons")
 
         self.layout = QGridLayout()
-
-        self.layout.addWidget(self.t1)
-        self.layout.addWidget(self.t2)
-        self.layout.addWidget(self.pyt)
-        self.layout.addWidget(self.pytrig)
-        self.layout.addWidget(self.sum)
-        self.layout.addWidget(self.back)
+        
+        self.layout.addWidget(self.lesson_label, 0, 0)
+        self.layout.addWidget(self.t1, 0, 1)
+        self.layout.addWidget(self.t2, 1, 1)
+        self.layout.addWidget(self.pyt, 2, 1)
+        self.layout.addWidget(self.pytrig, 3, 1)
+        self.layout.addWidget(self.sum, 4, 1)
+        #self.picture (1, 0)
+        self.layout.addWidget(self.back, 4, 0)
 
         #self.setLayout(self.layout)
         self._centralwidget = QWidget()

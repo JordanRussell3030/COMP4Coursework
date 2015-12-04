@@ -1,6 +1,7 @@
 from PyQt4.QtGui import *
 from PyQt4.QtCore import *
 from login_screen_window import *
+from error_messages import *
 
 import sys
 
@@ -10,18 +11,24 @@ class LoginWidget(QWidget):
         super().__init__()
         
         self.username = QLineEdit()
-        self.u_label = QLabel("Please enter your username: ")
+        self.u_label = QLabel("Username: ")
         self.password = QLineEdit()
-        self.p_label = QLabel("Please enter your password: ")
-        self.login = QPushButton("Submit")
+        self.p_label = QLabel("Password: ")
+        self.a_label = QLabel("Please log in with your username and password.")
+        self.b_label = QLabel("Consult your administrator if you have forgotten your login details.")
+        self.login = QPushButton("Log in")
+        
+        self.setWindowTitle("Welcome to Trigonometry and Pythagoras Lessons")
 
-        self.layout = QVBoxLayout()
+        self.layout = QGridLayout()
 
-        self.layout.addWidget(self.u_label)
-        self.layout.addWidget(self.username)
-        self.layout.addWidget(self.p_label)
-        self.layout.addWidget(self.password)
-        self.layout.addWidget(self.login)
+        self.layout.addWidget(self.u_label, 0, 0)
+        self.layout.addWidget(self.username, 0, 1)
+        self.layout.addWidget(self.p_label, 1, 0)
+        self.layout.addWidget(self.password, 1, 1)
+        self.layout.addWidget(self.a_label, 2, 1)
+        self.layout.addWidget(self.b_label, 3, 1)
+        self.layout.addWidget(self.login, 4, 1)
 
         self.setLayout(self.layout)
 
@@ -31,7 +38,6 @@ class LoginWidget(QWidget):
         username = self.username.text()
         print(username)
         self.NameEntered.emit()
-##        if self.username.text == "Jordan" and self.password.text == "abc":
-##            print("Valid")
-##        else:
-##            print("Nope")
+##        self.error_message_1 = ErrorMessage1()
+##        self.error_message_1.show()
+##        self.error_message_1._raise()

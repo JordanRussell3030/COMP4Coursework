@@ -12,18 +12,34 @@ from parent_lesson_class import *
 class SidesAHOWidget(QWidget):
     def __init__(self):
         super().__init__()
+
+        self.title = QLabel("Sides AHO")
+        #self.lesson_1 = QTextFrame("Text")
+        #self.lesson_2 = QTextFrame("Text")
+        self.back = QPushButton("Return")
+        self.next = QPushButton("Next")
+
+        self.layout = QGridLayout()
+
+        self.layout.addWidget(self.title, 0, 0)
+##        self.layout.addWidget(self.lesson_1, 1, 0)
+##        self.layout.addWidget(self.lesson_2, 0, 1)
+        self.layout.addWidget(self.back, 0, 2)
+        self.layout.addWidget(self.next, 0, 3)
+
+        self.setLayout(self.layout)
 ##        self.lesson = ParentLessonPage1()
 ##        self.lesson.show()
 ##        self.lesson._raise()
 ##        
-        self._pass = QPushButton("Sides AHO")
-
-        self.layout = QVBoxLayout()
-
-        self.layout.addWidget(self._pass)
-
-        self.setLayout(self.layout)
-        
+##        self._pass = QPushButton("Sides AHO")
+##
+##        self.layout = QVBoxLayout()
+##
+##        self.layout.addWidget(self._pass)
+##
+##        self.setLayout(self.layout)
+##        
 class SOHCAHTOAWidget(QWidget):
     def __init__(self):
         super().__init__()
