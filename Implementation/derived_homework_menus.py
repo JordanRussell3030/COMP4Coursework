@@ -30,6 +30,8 @@ class Trigonometry1HW(QWidget):
         self.layout.addWidget(self.sohcahtoa_medium_button)
         self.layout.addWidget(self.sohcahtoa_hard_button)
         self.layout.addWidget(self.back_button)
+
+        self.setLayout(self.layout)
         
         self.sides_aho_easy_button.clicked.connect(self.sides_aho_easy)
         self.sides_aho_medium_button.clicked.connect(self.sides_aho_medium)
@@ -100,6 +102,8 @@ class Trigonometry2HW(QWidget):
         self.layout.addWidget(self.three_d_trig_hard_button)
         self.layout.addWidget(self.back_button)
 
+        self.setLayout(self.layout)
+
         self.finding_angles_easy_button.clicked.connect(self.finding_angles_easy)
         self.finding_angles_medium_button.clicked.connect(self.finding_angles_medium)
         self.finding_angles_hard_button.clicked.connect(self.finding_angles_hard)
@@ -159,7 +163,7 @@ class Trigonometry2HW(QWidget):
     def selected_back(self):
         pass
 
-class PythagorasHW():
+class PythagorasHW(QWidget):
     def __init__(self):
         super().__init__()
 
@@ -180,6 +184,8 @@ class PythagorasHW():
         self.layout.addWidget(self.three_d_pythag_medium_button)
         self.layout.addWidget(self.three_d_pythag_hard_button)
         self.layout.addWidget(self.back_button)
+
+        self.setLayout(self.layout)
 
         self.pythag_theorem_easy_button.clicked.connect(self.pythag_theorem_easy)
         self.pythag_theorem_medium_button.clicked.connect(self.pythag_theorem_medium)
@@ -222,7 +228,7 @@ class PythagorasHW():
     def selected_back(self):
         pass
 
-class PythagTrigonometryHW():
+class PythagTrigonometryHW(QWidget):
     def __init__(self):
         super().__init__()
 
@@ -237,6 +243,8 @@ class PythagTrigonometryHW():
         self.layout.addWidget(self.pythag_trig_problems_medium_button)
         self.layout.addWidget(self.pythag_trig_problems_hard_button)
         self.layout.addWidget(self.back_button)
+
+        self.setLayout(self.layout)
 
         self.pythag_trig_problems_easy_button.clicked.connect(self.pythag_trig_problems_easy)
         self.pythag_trig_problems_medium_button.clicked.connect(self.pythag_trig_problems_medium)
@@ -261,7 +269,7 @@ class PythagTrigonometryHW():
     def selected_back(self):
         pass
 
-class SummaryHW():
+class SummaryHW(QWidget):
     def __init__(self):
         super().__init__()
 
@@ -276,6 +284,8 @@ class SummaryHW():
         self.layout.addWidget(self.medium_summary_button)
         self.layout.addWidget(self.hard_summary_button)
         self.layout.addWidget(self.back_button)
+
+        self.setLayout(self.layout)
 
         self.easy_summary_button.clicked.connect(self.easy_summary)
         self.medium_summary_button.clicked.connect(self.medium_summary)

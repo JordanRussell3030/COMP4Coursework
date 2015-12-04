@@ -261,7 +261,7 @@ class PythagTrigProblemsMediumWidget(QWidget):
 
         self.setLayout(self.layout)
 
-class PythagTrigHardProblemsWidget(QWidget):
+class PythagTrigProblemsHardWidget(QWidget):
     def __init__(self):
         super().__init__()
         self._pass = QPushButton("Pythagoras and Trigonometry Problems Hard")
