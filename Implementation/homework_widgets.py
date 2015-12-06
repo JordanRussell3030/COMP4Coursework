@@ -7,17 +7,63 @@ from lesson_menu_widget import *
 from homework_menu_widget import *
 from parent_class_menus import *
 from derived_lesson_menus import *
+from homework_widgets_page_2 import *
 
 class SidesAHOEasyWidget(QWidget):
     def __init__(self):
         super().__init__()
-        self._pass = QPushButton("Sides AHO Easy")
+        self.title = QLabel("Sides AHO Easy")
+        self.question_1 = QLabel("Question 1:\n ___________\n__________")
+        self.question_1_shape = QLabel("Shape")
+        self.answer_a = QLineEdit("___________\n___________")
+        self.answer_b = QLineEdit("___________\n___________")
+        self.answer_c = QLineEdit("___________\n___________")
+        self.answer_d = QLineEdit("___________\n___________")
+        self.answer_e = QLineEdit("___________\n___________")
+        self.answer_f = QLineEdit("___________\n___________")
+        self.score_box = QLabel("Score: X/X")
+        self.cancel = QPushButton("Cancel")
+        self.next = QPushButton("Next")
+        self.check = QPushButton("Check Answers")
+        self.reset = QPushButton("Reset Answers")
 
-        self.layout = QVBoxLayout()
+        self.layout = QGridLayout()
 
-        self.layout.addWidget(self._pass)
+        self.layout.addWidget(self.title, 0, 0)
+        self.layout.addWidget(self.question_1, 1, 0)
+        self.layout.addWidget(self.question_1_shape, 2, 0)
+        self.layout.addWidget(self.answer_a, 1, 1)
+        self.layout.addWidget(self.answer_b, 2, 1)
+        self.layout.addWidget(self.answer_c, 3, 1)
+        self.layout.addWidget(self.answer_d, 4, 1)
+        self.layout.addWidget(self.answer_e, 5, 1)
+        self.layout.addWidget(self.answer_f, 6, 1)
+        self.layout.addWidget(self.score_box, 7, 1)
+        self.layout.addWidget(self.check, 7, 2)
+        self.layout.addWidget(self.reset, 8, 2)
+        self.layout.addWidget(self.cancel, 8, 1)
+        self.layout.addWidget(self.next, 9, 2)
 
         self.setLayout(self.layout)
+
+        self.check.clicked.connect(self.check_selected)
+        self.reset.clicked.connect(self.reset_selected)
+        self.cancel.clicked.connect(self.cancel_selected)
+        self.next.clicked.connect(self.next_selected)
+
+    def check_selected(self):
+        pass
+
+    def reset_selected(self):
+        pass
+
+    def cancel_selected(self):
+        pass
+
+    def next_selected(self):
+        self.page_2 = SidesAHOEasyWidget2()
+        self.page_2.show()
+        self.page_2._raise()
         
 class SidesAHOMediumWidget(QWidget):
     def __init__(self):

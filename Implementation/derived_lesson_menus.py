@@ -14,16 +14,19 @@ class Trigonometry1(QWidget):
 
         self.sides_aho_button = QPushButton("Sides AHO")
         self.sohcahtoa_button = QPushButton("SOHCAHTOA")
-        self.back = QPushButton("Back")
+        self.blank = QLabel("Shape")
+        self.back = QPushButton("Return")
         self.topic_label = QLabel("Trigonometry 1")
-        #self.picture
+        self.select = QLabel("Please select a lesson: ")
 
         self.layout = QGridLayout()
 
-        self.layout.addWidget(self.sides_aho_button, 0, 2)
-        self.layout.addWidget(self.sohcahtoa_button, 1, 2)
-        self.layout.addWidget(self.back, 1, 0)
+        self.layout.addWidget(self.sides_aho_button, 2, 2)
+        self.layout.addWidget(self.sohcahtoa_button, 3, 2)
+        self.layout.addWidget(self.blank, 2, 0)
+        self.layout.addWidget(self.back, 3, 0)
         self.layout.addWidget(self.topic_label, 0, 0)
+        self.layout.addWidget(self.select, 1, 0)
 
         self.setLayout(self.layout)
 
@@ -52,7 +55,7 @@ class Trigonometry2(QWidget):
         self.finding_angles_button = QPushButton("Finding Angles")
         self.inverted_angles_button = QPushButton("Inverted Angles")
         self.three_d_trigonometry_button = QPushButton("3D Trigonometry")
-        self.back = QPushButton("Back")
+        self.back = QPushButton("Return")
 
         self.layout = QVBoxLayout()
 
@@ -93,7 +96,7 @@ class Pythagoras(QWidget):
 
         self.pythag_theorem_button = QPushButton("Pythagoras Theorem")
         self.three_d_pythagoras_button = QPushButton("3D Pythagoras")
-        self.back = QPushButton("Back")
+        self.back = QPushButton("Return")
 
         self.layout = QVBoxLayout()
 
@@ -128,7 +131,7 @@ class PythagTrig(QWidget):
         self.easy_button = QPushButton("Easy")
         self.medium_button = QPushButton("Medium")
         self.hard_button = QPushButton("Hard")
-        self.back = QPushButton("Back")
+        self.back = QPushButton("Return")
 
         self.layout = QVBoxLayout()
 
@@ -170,7 +173,7 @@ class Summary(QWidget):
         self.revise_trig_1_button = QPushButton("Revise Trigonometry 1")
         self.revise_trig_2_button = QPushButton("Revise Trigonometry 2")
         self.revise_trig_3_button = QPushButton("Revise Trigonometry 3")
-        self.back = QPushButton("Back")
+        self.back = QPushButton("Return")
 
         self.layout = QVBoxLayout()
 

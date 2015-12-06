@@ -8,26 +8,38 @@ from homework_menu_widget import *
 from parent_class_menus import *
 from derived_lesson_menus import *
 from parent_lesson_class import *
+from lesson_page_2 import *
 
 class SidesAHOWidget(QWidget):
     def __init__(self):
         super().__init__()
 
         self.title = QLabel("Sides AHO")
-        #self.lesson_1 = QTextFrame("Text")
-        #self.lesson_2 = QTextFrame("Text")
+        self.lesson_1 = QTextEdit("Tutorial space e.g Teaching how to use the sine rule")
+        self.lesson_2 = QTextEdit("Space for an example showing how it's done with methods e.g a2 + b2 = c2")
         self.back = QPushButton("Return")
         self.next = QPushButton("Next")
 
         self.layout = QGridLayout()
 
         self.layout.addWidget(self.title, 0, 0)
-##        self.layout.addWidget(self.lesson_1, 1, 0)
-##        self.layout.addWidget(self.lesson_2, 0, 1)
-        self.layout.addWidget(self.back, 0, 2)
-        self.layout.addWidget(self.next, 0, 3)
+        self.layout.addWidget(self.lesson_1, 1, 0)
+        self.layout.addWidget(self.lesson_2, 1, 1)
+        self.layout.addWidget(self.back, 2, 0)
+        self.layout.addWidget(self.next, 2, 1)
 
         self.setLayout(self.layout)
+
+        self.back.clicked.connect(self.selected_back)
+        self.next.clicked.connect(self.selected_next)
+
+    def selected_back(self):
+        pass
+
+    def selected_next(self):
+        self.page_2 = SidesAHOWidgetPage2()
+        self.page_2.show()
+        self.page_2._raise()
 ##        self.lesson = ParentLessonPage1()
 ##        self.lesson.show()
 ##        self.lesson._raise()
