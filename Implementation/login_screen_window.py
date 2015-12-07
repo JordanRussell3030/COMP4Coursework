@@ -18,7 +18,7 @@ class MyWindow(QMainWindow):
         self.login_widget = LoginWidget()
 ##        self.student_home = UserAccountWidget()
         self.student_home = AdminAccountWidget()
-        ##self.student_home = AnyWidget()
+##        self.student_home = AnyWidget()
 ##        self.student_home = HomeworkSetScreen()  
 
         self.stack = QStackedLayout()

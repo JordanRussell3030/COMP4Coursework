@@ -310,6 +310,234 @@ This system will need to run on a standard desktop computer, as generally found 
 
 \subsection{Algorithms in pseudo-code for each data transformation process}
 
+\textbf{Validates the username and password when the user tries to log in:}
+
+\begin{algorithm}[H]
+\caption{Takes the logins from the database and adds them to a list from which they can be validated.}
+\begin{algorithmic}[1]
+\SET{$with \ open("logins.txt", mode = "r") as \ logins$}
+\For{$name$}{$logins$}
+	\SET{$list\_.append(name)$}
+\EndFor
+\RECEIVE{"Please enter your username"}
+\SET{$return \ username$}
+\RECEIVE{"Please enter your password"}
+\SET{$return \ password$}
+\SET{$count$}{$0$}
+\SET{$found$}{$False$}
+\While{$found = False$}{$and \ count < len(list\_)$}
+	\If{$list\_[count] = str(username) \ and \ list\_[count + 2] = str(password)$}
+		\SEND("Accepted")
+		\SET{$found$}{$True$}
+		\SET{$return \ found$}
+	\Else{}
+		\SEND{"Not accepted"}
+		\SET{$call \ Validation$}
+	\SET{$count \ += \ 1$}
+	\EndIf
+\EndWhile
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}[H]
+\caption{Checks if the user's solution for the {$a^2 + b^2 = c^2$} is correct.}
+\begin{algorithmic}[1]
+\SET{$total\_marks$}{$0$}
+\SET{$side\_a$}{$x$}
+\SET{$side\_b$}{$x$}
+\SET{$side\_c$}{$\sqrt{side\_a^2 + side\_b^2}$}
+\SEND{$"Here \ is \ a \ right \ angled \ triangle. \ The \ length \ of \ side \ a \ is \ x$}
+\SET{$centimetres, \ and \ the \ length \ of \ side \ b \ is \ x \ centimetres.$}
+\SET{$Please \ calculate \ the \ length \ of \ side \ c"$}
+\RECEIVE{$length$}{$"Please \ input \ the \ length \ of \ side \ c: "$}
+\If {$length = side\_c$}
+	\SEND{"+ 1 \ mark"}
+	\SET{$total\_marks \ += \ x$}
+\Else{}
+	\SEND{"The \ answer \ is \ x"}
+\EndIf
+\end{algorithmic}
+\end{algorithm}
+
+\textbf{Alternative algorithm:}
+
+\begin{algorithm}[H]
+\caption{Same question and solution with a differently arranged formula.}
+\begin{algorithmic}[1]
+\SET{$total\_marks$}{$0$}
+\SET{$side\_a$}{$x$}
+\SET{$side\_b$}{$x$}
+\SET{$side\_c^2$}{$side\_a^2 + side\_b^2$}
+\SET{$side\_c$}{$\sqrt{side\_c^2}$}
+\SEND{$"Here \ is \ a \ right \ angled \ triangle. \ The \ length \ of \ side \ a \ is \ x$}
+\SET{$centimetres, \ and \ the \ length \ of \ side \ b \ is \ x \ centimetres.$}
+\SET{$Please \ calculate \ the \ length \ of \ side \ c"$}
+\RECEIVE{$length$}{$"Please \ input \ the \ length \ of \ side \ c: "$}
+\If{$length = side\_c$}
+	\SEND{"+ x \ marks"}
+	\SET{$total\_marks \ += \ x$}
+\Else{}
+	\SEND{"The \ answer \ is \ x"}
+\EndIf
+\end{algorithmic}
+\end{algorithm}
+
+\textbf{3D Pythagoras algorithm:}
+
+\begin{algorithm}[H]
+\caption{Similar algorithm, but continues to check the user's solution for a 3D pythagoras problem.}
+\begin{algorithmic}[1]
+\SET{$total\_marks$}{$0$}
+\SET{$left\_side\_a$}{$x$}
+\SET{$middle\_side\_a$}{$x$}
+\SET{$right\_side\_a$}{$x$}
+\SET{$inside\_side\_a$}{$\sqrt{left\_side\_a^2 + middle\_side\_a^2}$}
+\SET{$inside\_side\_b$}{$\sqrt{right\_side\_a^2 + inside\_side\_a^2}$}
+\SEND{$"A \ magician \ stores \ his \ wand \ in \ a \ box.$}
+\SET{$The \ box \ is \ xcm \ by \ xcm \ by \ xcm.$}
+\SET{$The \ wand \ only \ just \ fits \ in \ wedged \ against \ opposite \ corners."$}
+\RECEIVE{$length$}{$"How \ long \ is \ the \ wand?"$}
+\If{$length = inside\_side\_b$}
+	\SEND{"+ \ x \ marks"}
+	\SET{$total\_marks \ += \ x$}
+\Else{}
+	\SEND{"The \ answer \ is \ x"}
+\EndIf	
+\end{algorithmic}
+\end{algorithm}
+
+\textbf{Trigonometry Algorithms:}
+
+\begin{algorithm}[H]
+\caption{Sine rule.}
+\begin{algorithmic}[1]
+\SET{$sinA$}{$\frac{opposite}{hypotenuse}$}{$\frac{a}{h}$}
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}[H]
+\caption{Cosine rule.}
+\begin{algorithmic}[1]
+\SET{$cosA$}{$\frac{adjacent}{hypotenuse}$}{$\frac{b}{h}$}
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}[H]
+\caption{Tan rule.}
+\begin{algorithmic}[1]
+\SET{$tanA$}{$\frac{opposite}{adjacent}$}{$\frac{a}{b}$}
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}[H]
+\caption{The sine formula in use.}
+\begin{algorithmic}[1]
+\SET{$\frac{A}{sinA}$}{$\frac{B}{sinB}$}
+\If{$\frac{A}{sinA} = \frac{B}{sinB}$}
+	\SEND{"Your solution is correct"}
+\Else{}
+	\SEND{"Your solution is not correct"}
+\EndIf
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}[H]
+\caption{The cosine formula in use.}
+\begin{algorithmic}[1]
+\SET{$a^2$}{$b^2 + c^2 \ - \ 2bc \ cosA$}
+\RECEIVE{$side\_a$}{$"Please \ input \ the \ length \ of \ side \ a: "$}
+\If{$side\_a = {b^2 + c^2 - 2bc \ cosA}$}
+	\SEND{"Correct"}
+\Else{}
+	\SEND{"Incorrect"}
+\EndIf
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}[H]
+\caption{The formula for finding angles in scalene triangles using the cosine rule.}
+\begin{algorithmic}[1]
+\SET{$cosA \ b^2 + c^2 - \frac{a^2}{2bc}$}
+\SET{$C$}{$inv \ cos\frac{adjacent}{hypotenuse}$}
+\RECEIVE{$angle\_c$}{$"Please \ input \ the \ size \ of \ angle \ C:"$}
+\If{$angle\_c = {inv \ cos\frac{adjacent}{hypotenuse}}$}
+	\SEND{"Correct"}
+\Else{}
+	\SEND{"Correct"}
+\EndIf
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}[H]
+\caption{Formula for finding the area of a scalene triangle using the sine rule.}
+\begin{algorithmic}[1]
+\SET{$area$}{$\frac{1}{2} \ ab \ sinC$}
+\RECEIVE{$area\_1$}{"Please \ input \ the \ area \ of \ this \ scalene \ triangle:"}
+\If{$area\_1 = \frac{1}{2} \ ab \ sinC$}
+	\SEND{"Correct"}
+\Else{}
+	\SEND{"Incorrect"}
+\EndIf
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}[H]
+\caption{Formula for finding an angle using the tan rule.}
+\begin{algorithmic}[1]
+\SET{$tanA$}{$\frac{10}{15}$}
+\SET{$\frac{10}{15}$}{$ \ $}{$0.67$}
+\SET{$tan^-1(0.67)$}{$33.82^o$}
+\SET{$tanA$}{$33.82^o$}
+\RECEIVE{$tan\_a$}{"Please \ input \ the \ size \ of \ the \ angle \ using \ the \ tan \ rule:"}
+\If{$tan\_a = {33.82^o}$}
+	\SEND{"Correct"}
+\Else{}
+	\SEND{"Incorrect"}
+\EndIf
+\end{algorithmic}
+\end{algorithm}
+
+\textbf{Algorithm for resetting the answers on the homework: }
+
+\begin{algorithm}[H]
+\begin{algorithmic}[1]
+\For{$question$}{$screen$}
+	\SET{$question\_text\_box.value = 0$}
+\EndFor
+\end{algorithmic}
+\end{algorithm}
+
+\textbf{Algorithm for saving the results to the database: }
+
+\begin{algorithm}[H]
+\begin{algorithmic}[1]
+\SET{$score\_percentage\_1$}{$75$}
+\SET{$score\_percentage\_2$}{$50$}
+\If{$button\_pressed = finish\_button$}
+	\For{$question$}{$screen\_1$}
+		\SET{$database.topic.percentage\_1.append$}{$score\_percentage\_1$}
+	\EndFor
+	\For{$question$}{$screen\_2$}
+		\SET{$database.topic.percentage\_2.append$}{$score\_percentage\_2$}
+	\EndFor
+\EndIf
+\end{algorithmic}
+\end{algorithm}
+
+\textbf{Algorithm for setting the homeworks: }
+
+\begin{algorithm}[H]
+\begin{algorithmic}[1]
+\If{$button\_pressed = topic$}
+	\SET{$set\_topic$}{$topic$}
+\EndIf
+\For{$student$}{$class$}
+	\SET{$topic.activate$}
+	\SEND{$You \ must \ now \ complete \ \{0\}.format\{topic\}$}
+\EndFor 
+\end{algorithmic}
+\end{algorithm}
+
 \subsection{Object Diagrams}
 
 \begin{figure}[H]
@@ -483,15 +711,296 @@ OutputError \\ \hline
 
 \section{Prototyping}
 
+\begin{figure}[H]
+    \label{fig:print_function_result}\caption{Login Screen: The user inputs their username and password and selects log in.}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Design/pyqt_figure_1}
+\end{figure}
+
+\begin{figure}[H]
+    \label{fig:print_function_result}\caption{ErrorMessage2: If the user's input username or password is incorrect, this message will appear.}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Design/pyqt_figure_2}
+\end{figure}
+
+\begin{figure}[H]
+    \label{fig:print_function_result}\caption{Student Home Screen: If the user's username is recognised as a student's name, the student version of the home screen will appear.}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Design/pyqt_figure_3}
+\end{figure}
+
+\begin{figure}[H]
+    \label{fig:print_function_result}\caption{Lesson Topic Menu: Appears if the user selects the lessons button - displays the topics to choose from.}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Design/pyqt_figure_4}
+\end{figure}
+
+\begin{figure}[H]
+    \label{fig:print_function_result}\caption{Lesson Menu: Will appear for any lesson topic selected, displaying the buttons for the topic specific lessons to choose from. Will look the same for each topic except for the button and window names.}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Design/pyqt_figure_5}
+\end{figure}
+
+\begin{figure}[H]
+    \label{fig:print_function_result}\caption{First Lesson Screen: Will appear with the lessons depending on which button was selected; all lessons will use a generic design plan.}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Design/pyqt_figure_6}
+\end{figure}
+
+\begin{figure}[H]
+    \label{fig:print_function_result}\caption{Second Lesson Screen: Appears once next has been selected from the previous screen, continuing a generic design plan and displaying the next examples.}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Design/pyqt_figure_7}
+\end{figure}
+
+\begin{figure}[H]
+    \label{fig:print_function_result}\caption{Homework Topic Menu: Appears if the user selects the homework button - displays the topics to choose from.}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Design/pyqt_figure_8}
+\end{figure}
+
+\begin{figure}[H]
+    \label{fig:print_function_result}\caption{Homework Menu: Will appear for any homework topic selected, displaying the buttons for the topic specific homeworks to choose from. Will look the same for each topic except for the button and window names.}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Design/pyqt_figure_9}
+\end{figure}
+
+\begin{figure}[H]
+    \label{fig:print_function_result}\caption{First Homework Screen: Will appear with the homework depending on which button was selected; all homeworks will use a generic design plan.}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Design/pyqt_figure_10}
+\end{figure}
+
+\begin{figure}[H]
+    \label{fig:print_function_result}\caption{Second Homework Screen: Appears once next has been selected from the previous screen, continuing a generic design plan and displaying the next questions.}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Design/pyqt_figure_11}
+\end{figure}
+
+\begin{figure}[H]
+    \label{fig:print_function_result}\caption{Individual User Progress Database: Appears if the user selects the progress button - displays their individual database in a table in the window.}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Design/pyqt_figure_12}
+\end{figure}
+
+\begin{figure}[H]
+    \label{fig:print_function_result}\caption{Administrator Account Home: If the user's username is recognised as an teacher's name, the administrator version of the home screen will appear.}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Design/pyqt_figure_13}
+\end{figure}
+
+\begin{figure}[H]
+    \label{fig:print_function_result}\caption{Homework Setting Topic Menu: Appears if the user selects the homework button - displays the topics to choose from to set as homework.}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Design/pyqt_figure_14}
+\end{figure}
+
+\begin{figure}[H]
+    \label{fig:print_function_result}\caption{Homework Set Screen: Appears once a topic has been selected - once the set button is pressed this homework will be available on each student's homework to-do list.}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Design/pyqt_figure_15}
+\end{figure}
+
+\begin{figure}[H]
+    \label{fig:print_function_result}\caption{Results Menu: Appears if the user selects the results button - displays a list of buttons leading to homework recently completed that needs to be checked.}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Design/pyqt_figure_16}
+\end{figure}
+
+\begin{figure}[H]
+    \label{fig:print_function_result}\caption{Class Results Database: Once a homework is selected from the previous screen, the database will appear showing all the results for that specific homework.}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Design/pyqt_figure_17}
+\end{figure}
+
+\begin{figure}[H]
+    \label{fig:print_function_result}\caption{ErrorMessage3: Appears if the user inputs a wrong data type into an answer box on a homework - should be a decimal.}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Design/pyqt_figure_18}
+\end{figure}
+
+\begin{figure}[H]
+    \label{fig:print_function_result}\caption{ErrorMessage3: Appears if the user inputs a wrong data type into an answer box on a homework - should be an intege.r}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Design/pyqt_figure_19}
+\end{figure}
+
+\begin{figure}[H]
+    \label{fig:print_function_result}\caption{ErrorMessage3: Appears if the user inputs a wrong data type into an answer box on a homework - should be a string.}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Design/pyqt_figure_20}
+\end{figure}
+
+\begin{figure}[H]
+    \label{fig:print_function_result}\caption{ErrorMessage4: Appears if the user gets the wrong answer on an answer box on a homework.}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Design/pyqt_figure_21}
+\end{figure}
+
 \section{Definition of Data Requirements}
 
 \subsection{Identification of all data input items}
 
+\begin{itemize}
+	\item Log In Inputs:
+	\begin{itemize}
+		\item Username
+		\item Password
+	\end{itemize}
+	\item Lesson Inputs:
+	\begin{itemize}
+		\item Lesson test answer
+		\item Check answers button
+	\end{itemize}
+	\item Homework Set Inputs:
+	\begin{itemize}
+		\item Class
+		\item Deadline
+		\item Score Requirements
+		\item Set homework button
+	\end{itemize}
+	\item Homework Inputs:
+	\begin{itemize}
+		\item Question 1a answer
+		\item Question 1b answer
+		\item Question 1c answer
+		\item Question 1d answer
+		\item Question 1e answer
+		\item Question 1f answer
+		\item Question 2 drop down selection
+		\item Question 3 drop down selection
+		\item Question 4 drag and drop inputs
+		\item Submit answers button
+		\item Homework Buttons:
+		\begin{itemize}
+			\item Reset answers button
+			\item Mark answers button
+		\end{itemize}
+	\end{itemize}
+	\item All Other Buttons:
+	\begin{itemize}
+		\item Log in button
+		\item Student Version:
+		\begin{itemize}
+			\item Lesson button
+			\item Homework button
+			\item Progress button
+			\item Lesson topic buttons	
+			\item Lesson buttons
+			\item Homework topic buttons
+			\item Homework buttons
+			\item Set homework buttons
+		\end{itemize}
+		\item Teacher Version:
+		\begin{itemize}
+			\item Homework button
+			\item Results button
+			\item Progress button
+			\item Result selection buttons
+			\item Feedback
+		\end{itemize}
+		\item Previous button
+		\item Next button
+		\item Return button
+		\item Finish button
+		\item OK button
+		\item Log out button
+	\end{itemize}
+\end{itemize}
+
 \subsection{Identification of all data output items}
+
+\begin{itemize}
+	\item Displays:
+	\begin{itemize}
+		\item All screens
+		\item Hard-coded lesson examples
+		\item Hard-coded homework questions
+		\item Correct answers
+	\end{itemize}
+	\item Database:
+	\begin{itemize}
+		\item FirstName
+		\item LastName
+		\item TaskName
+		\item OverallPercentageScore
+		\item IndividualPercentageScore (For each question in a homework)
+		\item Rating
+		\item Feedback (From teacher to student)
+	\end{itemize}
+	\item Error Messages:
+	\begin{itemize}
+		\item ErrorMessage2
+		\item ErrorMessage3 - Decimal
+		\item ErrorMessage3 - Integer
+		\item ErrorMessage3 - String
+		\item ErrorMessage4
+	\end{itemize}
+	\item Displayed On Home:
+	\begin{itemize}
+		\item Account name
+		\item Username
+		\item Average rating (Student)
+		\item Class (Teacher)
+	\end{itemize}
+\end{itemize}
 
 \subsection{Explanation of how data output items are generated}
 
+\begin{center}
+\begin{tabular}{|p{4cm}|p{6cm}|} \hline
+\textbf{Output} & \textbf{How it's generated} \\ \hline
+Lesson Examples & These are hard-coded and will be saved as overrides in each lesson's subclass \\ \hline
+Homework Examples & These are hard-coded and will be saved as overrides in each homework's subclass \\ \hline
+Correct Answers & These will be generated using algorithms which will solve the same problem the user is trying to solve, find the answer, and display it \\ \hline
+FirstName & This will be saved to the database once the administrator inputs the class names \\ \hline
+LastName & This will be saved to the database once the administrator inputs the class names \\ \hline
+TaskName & This will be hard-coded as an attribute in each subclass \\ \hline
+OverallPercentageScore & When a homework task is submitted, algorithms will check how many answers were correct, and obtain a percentage from them, then calculate the average from them \\ \hline
+IndividualPercentageScore & When a homework task is submitted, algorithms will check how many answers were correct, and obtain a percentage from each question from the average of each question's parts \\ \hline
+Rating & This will be decided using selection statements depending on what the OverallPercentageScore is \\ \hline
+Feedback & The administrator will manually input this and the user will then be able to see it on their individual results page \\ \hline
+ErrorMessage2 & This is a hard-coded QErrorMessage() which will appear if the user inputs an incorrect username or password \\ \hline
+ErrorMessage3 & These are hard-coded QErrorMessage()s which will appear if the user inputs an incorrect data type as an answer, depending on what the data type is supposed to be \\ \hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{|p{4cm}|p{6cm}|}  \hline
+\textbf{Output} & \textbf{How it's generated} \\ \hline
+ErrorMessage4 & This is a hard-coded QErrorMessage() which will appear if the user inputs an incorrect answer to a  homework question \\ \hline
+Account Name & Will be a unique identifier saved by the system, only visible on the homescreens \\ \hline
+Username & This is the same as the username used to log in, and will be obtained from the same place it's saved for validation, probably a notepad file \\ \hline
+Average Rating & All of the user's past homework's ratings will be averaged and displayed on the homescreen \\ \hline
+Class & This will be input by the administrator before inputting each students name \\ \hline
+\end{tabular}
+\end{center}
+
 \subsection{Data Dictionary}
+
+\begin{center}
+\begin{tabular}{|p{3.4cm}|p{1.2cm}|p{2cm}|p{2cm}|p{2cm}|p{3.5cm}|}
+\hline
+\textbf{Name} & \textbf{Data Type} & \textbf{Length} & \textbf{Validation} & \textbf{Example Data} & \textbf{Comment} \\ \hline
+UserID & Integer & 4 bits & 0001 to 9999 & 1546 & Unique to each user \\ \hline
+Password & String and integers & 7 characters & letter followed by number followed by letter & f7h3j5f & The password generator uses mixed data types to avoid inappropriate passwords \\ \hline
+FirstName & String & 15 characters & First letter upper case, rest lower case & John & Unique to each user, but could be shared by some \\ \hline
+Surname & String & 25 characters & First letter upper case, rest lower case & Smith & Unique to each user, but could be shared by some \\ \hline
+TaskName & String & 25 characters & & Trigonometry 2 & Hard-coded into the system \\ \hline
+OverallPercentScore & Real & 3 characters & in range 0 - 100 & 76.5\% & The percentage of marks obtained in a test, decimal points allowed \\ \hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{|p{3.4cm}|p{1.2cm}|p{2cm}|p{2cm}|p{2cm}|p{3.5cm}|}
+\hline
+IndividualPercentScore & Real & 3 characters & in range 0 - 100 & 45.5\% & The percentage of marks for an individual question, field will only appear in separate table for individual tasks \\ \hline
+Rating & Blob & 64 kilobytes & \ &  Green face graphic & Green, amber or red face graphic \\ \hline
+Feedback & String & 500 characters & \ & Good work & This can consist of any characters as it is a personal message \\ \hline
+AppointmentTime & Time & 5 characters & 24 hour format & 13:35 & Only relevant if the user has a true SeeAfterClass variable, set automatically bsed on the administrator's timetable but can be changed if necessary\\ \hline
+\textbf{Name} & \textbf{Data Type} & \textbf{Length} & \textbf{Validation} & \textbf{Example Data} & \textbf{Comment} \\ \hline
+SeeAfterClass & Boolean & 3 characters & Yes or No & Yes & If the user doesn't achieve a sufficient score, this variable will become true and alert the user \\ \hline
+ErrorMessage1 & String & 50 characters & & Sorry, the name cannot have integers & An error message if the wrong data type is used to input a name \\ \hline
+ErrorMessage2 & String & 50 characters & & Sorry, that is not a valid login & Tells the user if they have input the wrong username or password \\ \hline
+ErrorMessage3 & String & 50 characters & & Please input a decimal, not an integer & Tells the user if their incorrect answer is the wrong data type \\ \hline
+ErrorMessage4 & String & 50 characters & & That is incorrect, try one more time & Tells the user that their answer is incorrect and gives them one more attempt \\ \hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{|p{3.4cm}|p{1.2cm}|p{2cm}|p{2cm}|p{2cm}|p{3.5cm}|}
+\hline
+CorrectAnswer & Integer, Real, String & 5 characters & Must be a decimal or whole number, or text & 25.5cm & Gives the user the correct answer if they get the question wrong too many times \\ \hline
+Login data & String & 25 characters & & johnsmith1, f8j4h6k & The login information saved in the system to be loaded and checked with the user's inputs \\ \hline
+Task data & String & 100 characters & & Trigonometry - sin rule, Level 7, Trigonometry & Contains all the information about the task, what difficulty it is, what type it is etc. \\ \hline
+Set answers & Integer, Real, String & 5 characters & Must be a decimal or whole number, or text if in a text box & 45{$^o$} & Contains all the set answers for some of the tasks \\ \hline
+Calculated answers & Integer, Real & 5 characters & Must be the same solution as the algorithm & 29.8 & Contains algorithms which find and validate the solution for randomly generated tasks \\ \hline
+\end{tabular}
+\end{center}
+
+%Acccount name
+%average rating
+%class
+%possibly for all of the individual questions variables in the algorithms for checking corrctness + check answer on lessons
 
 \subsection{Identification of appropriate storage media}
 
