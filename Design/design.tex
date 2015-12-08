@@ -976,6 +976,7 @@ OverallPercentScore & Real & 3 characters & in range 0 - 100 & 76.5\% & The perc
 \begin{center}
 \begin{tabular}{|p{3.4cm}|p{1.2cm}|p{2cm}|p{2cm}|p{2cm}|p{3.5cm}|}
 \hline
+\textbf{Name} & \textbf{Data Type} & \textbf{Length} & \textbf{Validation} & \textbf{Example Data} & \textbf{Comment} \\ \hline
 IndividualPercentScore & Real & 3 characters & in range 0 - 100 & 45.5\% & The percentage of marks for an individual question, field will only appear in separate table for individual tasks \\ \hline
 Rating & Blob & 64 kilobytes & \ &  Green face graphic & Green, amber or red face graphic \\ \hline
 Feedback & String & 500 characters & \ & Good work & This can consist of any characters as it is a personal message \\ \hline
@@ -992,19 +993,20 @@ CorrectAnswer & Integer, Real, String & 5 characters & Must be a decimal or whol
 \begin{center}
 \begin{tabular}{|p{3.4cm}|p{1.2cm}|p{2cm}|p{2cm}|p{2cm}|p{3.5cm}|}
 \hline
+\textbf{Name} & \textbf{Data Type} & \textbf{Length} & \textbf{Validation} & \textbf{Example Data} & \textbf{Comment} \\ \hline
 Login data & String & 25 characters & & johnsmith1, f8j4h6k & The login information saved in the system to be loaded and checked with the user's inputs \\ \hline
 Task data & String & 100 characters & & Trigonometry - sin rule, Level 7, Trigonometry & Contains all the information about the task, what difficulty it is, what type it is etc. \\ \hline
 Set answers & Integer, Real, String & 5 characters & Must be a decimal or whole number, or text if in a text box & 45{$^o$} & Contains all the set answers for some of the tasks \\ \hline
 Calculated answers & Integer, Real & 5 characters & Must be the same solution as the algorithm & 29.8 & Contains algorithms which find and validate the solution for randomly generated tasks \\ \hline
+Account name & Integer & 4 characters & Must be a string of 4 integers, 0 - 9 & 1357 & This is the unique identifier for the database \\ \hline
+Average rating & Blob & 1 blob & Will be a green, amber or red face & Green face blob & This is the rating from the average rating of each student's completed homework so far \\ \hline
+Class & String & 3 - 6 characters & Must be the name of the class, same as is in the centre's system & 10A & Is input with the student names \\ \hline
 \end{tabular}
 \end{center}
 
-%Acccount name
-%average rating
-%class
-%possibly for all of the individual questions variables in the algorithms for checking corrctness + check answer on lessons
-
 \subsection{Identification of appropriate storage media}
+
+My system files will need to be stored on the school's local server, as every part will need to be accessible from every computer, to save the teacher having to log into every computer one at a time to check work. this way, every computer can access every account, and if they have the permissions, every part of the database. If necessary, some files can be backed up onto an individual computer in the system, or onto a USB stick. As a result, all users and administrators will be able to share the files and use them at the same time.
 
 \section{Database Design}
 
@@ -1012,11 +1014,151 @@ Calculated answers & Integer, Real & 5 characters & Must be the same solution as
 
 \subsubsection{ER Diagrams}
 
+\begin{figure}[H]
+    \label{fig:print_function_result}
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Design/er_diagram}
+\end{figure}
+
 \subsubsection{Entity Descriptions}
 
-\subsubsection{1NF to 3NF}
+\begin{center}
+\begin{tabular}{|p{3cm}|p{4cm}|p{4cm}|p{3cm}|} \hline
+\textbf{Entity} & \textbf{Description} & \textbf{Attributes} & \textbf{Key} \\ \hline
+Student & Each record shows how many results a student receives, and which class they are in & \textbf{Student}(\underline{StudentID}, \underline{ClassID}) & Primary Key(StudentID, ClassID) \\ \hline
+Class & Shows which students are in the class and the teacher of that class, and how much homework the class has been set & \textbf{Class}(\underline{ClassID}, TeacherID) & Primary Key(ClassID) \\ \hline
+Homework & Shows who each homework has been set for, and the results if the homework has been completed & \textbf{Homework}(\underline{HomeworkID}, HomeworkSet, HomeworkResults) & Primary Key(HomeworkID) \\ \hline 
+HomeworkSet & Shows who has been set the homework, when, and how many times/how long for & \textbf{HomeworkSet}(\underline{ClassID}, \underline{HomeworkID}, DueDate, SetDate) & Primary Key(ClassID, HomeworkID) \\ \hline
+HomeworkResults & This record contains all of the results for a completed homework & \textbf{HomeworkResults} (\underline{HomeworkID}, \underline{StudentID}, \underline{QuestionID}, Rating, CompletedDate) & Primary Key(HomeworkID, StudentID, QuestionID) \\ \hline
+Question & Shows how many questions were in a homework, and the percentage which are correct in each students results & \textbf{Question}(\underline{HomeworkID}, \underline{QuestionID}, QuestionText, Choice1, Choice2, ChoiceX, CorrectAnswer, TypeOfQuestion) & Primary Key(HomeworkID, QuestionID) \\ \hline
+\end{tabular}
+\end{center}
+
+\subsubsection{UNF to 3NF}
+
+\textbf{Unnormalised: }
+
+\begin{center}
+\begin{tabular}{|p{4cm}|} \hline
+AccountID \\
+UserID \\
+ClassID
+FirstName \\
+LastName \\
+TaskName \\
+OverallPercentScore \\
+IndividualPercentScore \\
+Rating \\
+Feedback \\ \hline
+\end{tabular}
+\end{center}
+
+\textbf{1st Normalised Form: }
+
+\begin{center}
+\begin{tabular}{|p{4cm}|p{3cm}|} \hline
+\textbf{Repeating Attributes} & \textbf{Non-repeating Attributes} \\ \hline
+\textbf{\underline{UserID}} & \textbf{\underline{AccountID}} \\
+\textbf{\underline{ClassID}} & \\
+\textbf{\underline{TaskName}} & \\
+FirstName & \\
+LastName & \\
+OverallPercentScore & \\
+IndividualPercentScore & \\
+Feedback & \\
+Rating & \\ \hline
+\end{tabular}
+\end{center}
+
+\textbf{2nd Normalised Form: }
+
+\begin{center}
+\begin{tabular}{|p{4cm}|p{3cm}|} \hline
+\textbf{Repeating Attributes} & \textbf{Non-repeating Attributes} \\ \hline
+\textbf{\underline{ClassID}} & \textbf{\underline{AccountID}} \\
+\textbf{\underline{UserID}} & \\
+FirstName & \\
+LastName & \\
+ & \\
+\textbf{\underline{TaskName}} & \\
+OverallPercentScore & \\
+IndividualPercentScore & \\
+Feedback & \\
+Rating & \\ \hline
+\end{tabular}
+\end{center}
+
+\textbf{3rd Normalised Form: }
+
+\begin{center}
+\begin{tabular}{|p{4cm}|p{3cm}|} \hline
+\textbf{Repeating Attributes} & \textbf{Non-repeating Attributes} \\ \hline
+\textbf{\underline{ClassID}} & \textbf{\underline{AccountID}} \\
+\textbf{\underline{UserID}} & \\
+FirstName & \\
+LastName & \\
+ & \\
+\textbf{\underline{TaskName}} & \\
+\underline{IndividualPercentScore} & \\
+& \\
+\textbf{\underline{IndividualPercentScore}} & \\
+\underline{OverallPercentScore} & \\
+& \\
+\textbf{\underline{OverallPercentScore}} & \\
+Rating & \\
+Feedback & \\ \hline
+\end{tabular}
+\end{center}
 
 \subsection{SQL Queries}
+
+\begin{center}
+\begin{tabular}{|p{8cm}|p{6cm}|} \hline
+\textbf{SQL Query (Python Format)} & \textbf{Description} \\ \hline
+sql = """create table Student & This is the SQL statement which \\ 
+(UserID integer, & creates the initial table called \\
+FirstName text, & Student, with all of the attributes \\
+LastName text, & that need to be displayed to the users \\
+TaskName text, & in the database \\
+OverallPercentScore real, & \\
+IndividualPercentScore real, &\\
+Rating blob, & \\
+Feedback text, & \\
+primary key(UserID))""" & \\ \hline
+"""insert into Student & This query adds values to the \\
+(FirstName, LastName, UserID) values ('{0}', '{1}', '{2}') & FirstName, LastName and UserID \\
+""".format(FirstName, LastName, UserID) & fields when the administrator adds names to the system \\ \hline
+"""select * from Student & This query is for student use and it \\
+where TaskName = '{0}' and UserID = '{1}' & fetches all of the database information \\
+""".format(TaskName, UserID) & for that user for a specific homework they have completed \\ \hline
+"""select * from Class & This query is for teacher use and it \\
+where TaskName = '{0}' and ClassID = '{1}' & fetches all of the records saved for an\\
+""".format(TaskName, ClassID) & entire class for a specific homework \\ \hline
+"""select * from Class & This query will fetch all of the records \\
+where StudentID = '{0}'""".format(StudentID) & stored for a specific student, for teacher use \\ \hline
+"""select * from Class & This query can be used by the teacher \\
+where TaskName = '{0}' and Rating = '{1}' & to search for all homework done in a \\
+""".format(TaskName, Rating) & class which has not been done to a sufficient standard \\ \hline
+"""select * from Student & This query will select all of the \\
+where StudentID = '{0}' and Rating = '{1}' & homework done by one student which \\
+""".format(StudentID, Rating) & has not been done to a sufficient standard \\ \hline
+"""update Student & This query will update the database \\
+OverallPercentScore = '{0}' & with the results when a student \\
+IndividualPercentScore = '{1}' & completes a homework \\
+Rating = '{2}' & \\
+where StudentID = '{3}' and TaskName = '{4}' & \\
+""".format(OverallPercentScore, IndividualPercentScore, Rating, StudentID, TaskName) & \\ \hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{|p{8cm}|p{6cm}|} \hline
+\textbf{SQL Query (Python Format)} & \textbf{Description} \\ \hline
+"""update Student & This query will update the records \\
+Feedback = '{0}' & for a student when the \\
+where StudentID = '{1}' and TaskName = '{2}' & teacher manually gives them \\
+""".format(Feedback, StudentID, TaskName) & feedback \\ \hline
+\end{tabular}
+\end{center}
 
 \section{Security and Integrity of the System and Data}
 
