@@ -1125,27 +1125,27 @@ Rating blob, & \\
 Feedback text, & \\
 primary key(UserID))""" & \\ \hline
 """insert into Student & This query adds values to the \\
-(FirstName, LastName, UserID) values ('{0}', '{1}', '{2}') & FirstName, LastName and UserID \\
+(FirstName, LastName, UserID) values ('\{0\}', '\{1\}', '\{2\}') & FirstName, LastName and UserID \\
 """.format(FirstName, LastName, UserID) & fields when the administrator adds names to the system \\ \hline
 """select * from Student & This query is for student use and it \\
-where TaskName = '{0}' and UserID = '{1}' & fetches all of the database information \\
+where TaskName = '\{0\}' and UserID = '\{1\}' & fetches all of the database information \\
 """.format(TaskName, UserID) & for that user for a specific homework they have completed \\ \hline
 """select * from Class & This query is for teacher use and it \\
-where TaskName = '{0}' and ClassID = '{1}' & fetches all of the records saved for an\\
+where TaskName = '\{0\}' and ClassID = '\{1\}' & fetches all of the records saved for an\\
 """.format(TaskName, ClassID) & entire class for a specific homework \\ \hline
 """select * from Class & This query will fetch all of the records \\
-where StudentID = '{0}'""".format(StudentID) & stored for a specific student, for teacher use \\ \hline
+where StudentID = '\{0\}'""".format(StudentID) & stored for a specific student, for teacher use \\ \hline
 """select * from Class & This query can be used by the teacher \\
-where TaskName = '{0}' and Rating = '{1}' & to search for all homework done in a \\
+where TaskName = '\{0\}' and Rating = '\{1\}' & to search for all homework done in a \\
 """.format(TaskName, Rating) & class which has not been done to a sufficient standard \\ \hline
 """select * from Student & This query will select all of the \\
-where StudentID = '{0}' and Rating = '{1}' & homework done by one student which \\
+where StudentID = '\{0\}' and Rating = '\{1\}' & homework done by one student which \\
 """.format(StudentID, Rating) & has not been done to a sufficient standard \\ \hline
 """update Student & This query will update the database \\
-OverallPercentScore = '{0}' & with the results when a student \\
-IndividualPercentScore = '{1}' & completes a homework \\
-Rating = '{2}' & \\
-where StudentID = '{3}' and TaskName = '{4}' & \\
+OverallPercentScore = '\{0\}' & with the results when a student \\
+IndividualPercentScore = '\{1\}' & completes a homework \\
+Rating = '\{2\}' & \\
+where StudentID = '\{3\}' and TaskName = '\{4\}' & \\
 """.format(OverallPercentScore, IndividualPercentScore, Rating, StudentID, TaskName) & \\ \hline
 \end{tabular}
 \end{center}
@@ -1154,8 +1154,8 @@ where StudentID = '{3}' and TaskName = '{4}' & \\
 \begin{tabular}{|p{8cm}|p{6cm}|} \hline
 \textbf{SQL Query (Python Format)} & \textbf{Description} \\ \hline
 """update Student & This query will update the records \\
-Feedback = '{0}' & for a student when the \\
-where StudentID = '{1}' and TaskName = '{2}' & teacher manually gives them \\
+Feedback = '\{0\}' & for a student when the \\
+where StudentID = '\{1\}' and TaskName = '\{2\}' & teacher manually gives them \\
 """.format(Feedback, StudentID, TaskName) & feedback \\ \hline
 \end{tabular}
 \end{center}
@@ -1164,9 +1164,39 @@ where StudentID = '{1}' and TaskName = '{2}' & teacher manually gives them \\
 
 \subsection{Security and Integrity of Data}
 
+As this system will store a small amount of personal data (FirstName, LastName, ClassID), the Data Protection Act of 1998 must be followed. Therefore the data must be kept up to date, and a way of editing the FirstName, LastName and ClassID records will be included to ensure that wrong data is not forced to be kept permanently, should it be input by mistake. To ensure that the data is not kept for longer than the DPA says it should be, any old data will be searched for and deleted whenever the system is started, should it be found. Furthermore, checks shall be implemented to ensure key data fields are not left empty, in order to maintain referential integrity. The only possible way to view the data stored by my system will be on the visual database in the graphical user interface, which will only be accessible following the input of a correct username and password. Finally, all of the data stored will be valid and feasible as drop down menus, and data type relevant error messages will be used to ensure the user is given a fair chance to input answers.
+
 \subsection{System Security}
 
+In order to prevent theft of information and tampering, all information in the system will only be accessible by providing a username and password, and each user will only be allowed to view data relevant to their own progression. Students will not be able to change any information in the database, but teachers will, if they accidentally include a typo when inputting names into the system. Furthermore, the number of people with access to the system will be limited, and those with key access trusted as professional teachers. The database will be encrypted to avoid people somehow accessing the database information by some other means, although only names will be stored as personal information. Lastly, all of the names input into the system will have a validation check to ensure they do not accidentally include numbers, extra capital letters, not enough capital letters or other characters not in the alphabet. Because the names stored will fall under the Data Protection Act, I will ensure that no data is sent to other countries, or even anywhere at all outside of the school, that the data is secure and only accessible by authorised people, that it is only stored by the school, that the data can be updated and destroyed to ensure protection, and that only necessary data will be collected in the first place.
+
 \section{Validation}
+
+\begin{center}
+\begin{tabular}{|p{2cm}|p{3cm}|p{4cm}|p{4cm}|} \hline
+\textbf{Item} & \textbf{Example} & \textbf{Validation applied} & \textbf{Comments} \\ \hline
+ClassID & 10A & Presence check & The ClassID is the same as the classes actual class name, so no validation is required \\ \hline
+FirstName & John & Data type check: First letter, capital, rest lower case, all string, no spaces & Checks that the name given is in fact a name \\ \hline
+LastName & Smith & Data type check: First letter, capital, rest lower case, all string, no spaces & Checks that the name given is in fact a name \\ \hline
+Username & User \ 1 & Format check: First 4 letters of LastName followed by a number. Validation check - Check it's in the system as a valid username & This ensures that the username is in the right format before checking if it's recognised as a valid username \\ \hline
+Password & f5h3d7h & Format check: letter, number, letter, number, letter, number, letter, all lower case. Validation check - Check it's in the system and matches the username input beforehand & The password is randomly generated and attached to the username, in that format to avoid any inappropriate words being generated \\ \hline
+Text answer input & 7 & ValueErrorCheck - integer & Checks that the value input is the correct data type \\ \hline
+Text answer input & 7.5 & ValueErrorCheck - decimal & Checks that the value input is the correct data type \\ \hline
+Text answer input & seven & ValueErrorCheck - string & Checks that the value input is the correct data type  \\ \hline
+ComboBox answer input & select 5 & Presence check & Checks that an option has actually been selected \\ \hline
+Drag and drop answer input & all pictures dropped onto shape & Presence check & Checks to see if all of the drag icons have been dropped into the corresponding spaces \\ \hline
+Correct & True & Presence check & This boolean corresponds to every answer and says whether or not it is correct \\ \hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{|p{2cm}|p{3cm}|p{4cm}|p{4cm}|} \hline
+\textbf{Item} & \textbf{Example} & \textbf{Validation applied} & \textbf{Comments} \\ \hline
+Class selected & 10A and & Presence check & Makes sure a class has been selected from the combo box to set the homework for \\ \hline
+Deadline & 14/12/15 & Presence check & Makes sure a date within a given set of boundaries has been selected from the combo box \\ \hline
+Score Requirements & 75\% & Presence check & Makes sure a score percentage has been selected from the combo box \\ \hline
+\end{tabular}
+\end{center}
 
 \section{Testing}
 
