@@ -3,7 +3,7 @@ from PyQt4.QtCore import *
 from login_widget import *
 from student_account_home import *
 from lesson_menu_widget import *
-
+from database_class import *
 
 class DatabaseWidget(QWidget):
     def __init__(self):
@@ -14,6 +14,18 @@ class DatabaseWidget(QWidget):
         self.not_success_2 = QPushButton("Not enough score")
         self.back = QPushButton("Return")
         self.database = QTableWidget()
+
+        self.database.setRowCount(27)
+        self.database.setColumnCount(17)
+        self.database_header = ("StudentID", "First Name", "Last Name")
+        self.database.setHorizontalHeaderLabels(self.database_header)
+
+        self.database.setStyleSheet("QTableView {selection-background-color: purple;}");
+
+        students = g_database.GetAllNames()
+        for student in students:
+            self.database.setItem(0, 0, QTableWidgetItem(str(student[0])))
+            self.database.setItem(0, 1, QTableWidgetItem(student[1]))
 
         self.layout = QGridLayout()
 

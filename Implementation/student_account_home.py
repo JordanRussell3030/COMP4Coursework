@@ -11,9 +11,9 @@ class UserAccountWidget(QWidget):
     selected_lessons = pyqtSignal()
     selected_homework = pyqtSignal()
     selected_progress = pyqtSignal()
-    #self.radio_buttons = RadioButtonWidget("GCSE Trigonometry and Pythagoras Program", "Please select an option" ("Lessons", "Homework", "Progress"))
-    def __init__(self):
+    def __init__(self, parent):
         super().__init__()
+        self.parent_window = parent
         self.lessons = QPushButton("Lessons")
         self.homework = QPushButton("Homework")
         self.progress = QPushButton("Progress")
@@ -52,19 +52,17 @@ class UserAccountWidget(QWidget):
         lessonmenuwidget = LessonMenuWidget()
         lessonmenuwidget.show()
         lessonmenuwidget._raise()
-#        self.stack.setCurrentIndex(2)
+        self.parent_window.close()
 
     def selected_homework(self):
         homeworkmenuwidget = HomeworkMenuWidget()
         homeworkmenuwidget.show()
         homeworkmenuwidget._raise()
-        #self.stack.setCurrentIndex(3)
 
     def selected_progress(self):
         databasewidget = DatabaseWidget()
         databasewidget.show()
         databasewidget._raise()
-        #self.stack.setCurrentIndex(4)
         
        
         

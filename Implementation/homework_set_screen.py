@@ -17,6 +17,12 @@ class HomeworkSetScreen(QWidget):
         self.back_button = QPushButton("Return")
         self.set_button = QPushButton("Set")
 
+        self.class_box.addItem("10A")
+        self.class_box.addItem("10B")
+        self.class_box.addItem("10C")
+        self.deadline_box.addItem("12/12/15")
+        self.deadline_box.addItem("13/12/15")
+
         self.layout = QGridLayout()
 
         self.layout.addWidget(self.title, 0, 0)
