@@ -78,7 +78,7 @@ class Trigonometry1HW(QWidget):
         sohcahtoa_3._raise()
 
     def selected_back(self):
-        pass
+        self.close()
 
 class Trigonometry2HW(QWidget):
     def __init__(self):
@@ -93,7 +93,7 @@ class Trigonometry2HW(QWidget):
         self.three_d_trig_easy_button = QPushButton("3D Trigonometry Easy")
         self.three_d_trig_medium_button = QPushButton("3D Trigonometry Medium")
         self.three_d_trig_hard_button = QPushButton("3D Trigonometry Hard")
-        self.back_button = QPushButton("Back")
+        self.back_button = QPushButton("Return")
 
         self.layout = QVBoxLayout()
 
@@ -167,7 +167,7 @@ class Trigonometry2HW(QWidget):
         three_d_trig_3._raise()
 
     def selected_back(self):
-        pass
+        self.close()
 
 class PythagorasHW(QWidget):
     def __init__(self):
@@ -179,7 +179,7 @@ class PythagorasHW(QWidget):
         self.three_d_pythag_easy_button = QPushButton("3D Pythagoras Easy")
         self.three_d_pythag_medium_button = QPushButton("3D Pythagoras Medium")
         self.three_d_pythag_hard_button = QPushButton("3D Pythagoras Hard")
-        self.back_button = QPushButton("Back")
+        self.back_button = QPushButton("Return")
 
         self.layout = QVBoxLayout()
 
@@ -232,7 +232,7 @@ class PythagorasHW(QWidget):
         three_d_pythag_3._raise()
 
     def selected_back(self):
-        pass
+        self.close()
 
 class PythagTrigonometryHW(QWidget):
     def __init__(self):
@@ -241,7 +241,7 @@ class PythagTrigonometryHW(QWidget):
         self.pythag_trig_problems_easy_button = QPushButton("Trigonometry and Pythagoras Problems Easy")
         self.pythag_trig_problems_medium_button = QPushButton("Trigonometry and Pythagoras Problems Mediu")
         self.pythag_trig_problems_hard_button = QPushButton("Trigonometry and Pythagoras Problems Hard")
-        self.back_button= QPushButton("Back")
+        self.back_button= QPushButton("Return")
 
         self.layout = QVBoxLayout()
 
@@ -273,7 +273,7 @@ class PythagTrigonometryHW(QWidget):
         pythag_trig_problems_3._raise()
 
     def selected_back(self):
-        pass
+        self.close()
 
 class SummaryHW(QWidget):
     def __init__(self):
@@ -282,7 +282,7 @@ class SummaryHW(QWidget):
         self.easy_summary_button = QPushButton("Easy Summary")
         self.medium_summary_button = QPushButton("Medium Summary")
         self.hard_summary_button = QPushButton("Hard Summary")
-        self.back_button = QPushButton("Back")
+        self.back_button = QPushButton("Return")
 
         self.layout = QVBoxLayout()
 
@@ -314,4 +314,4 @@ class SummaryHW(QWidget):
         summary_3._raise()
 
     def selected_back(self):
-        pass
+        self.close()

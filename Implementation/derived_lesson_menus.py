@@ -5,34 +5,24 @@ from login_widget import *
 
 from lesson_menu_widget import *
 from homework_menu_widget import *
-from parent_class_menus import *
+##from parent_class_menus import *
 from easy_trig_widget import *
+from parent_lesson_menu import *
 
-class Trigonometry1(QWidget):
+class Trigonometry1(ParentLessonMenu):
     def __init__(self):
         super().__init__()
 
-        self.sides_aho_button = QPushButton("Sides AHO")
-        self.sohcahtoa_button = QPushButton("SOHCAHTOA")
-        self.blank = QLabel("Shape")
-        self.back = QPushButton("Return")
-        self.topic_label = QLabel("Trigonometry 1")
-        self.select = QLabel("Please select a lesson: ")
-
-        self.layout = QGridLayout()
-
-        self.layout.addWidget(self.sides_aho_button, 2, 2)
-        self.layout.addWidget(self.sohcahtoa_button, 3, 2)
-        self.layout.addWidget(self.blank, 2, 0)
-        self.layout.addWidget(self.back, 3, 0)
-        self.layout.addWidget(self.topic_label, 0, 0)
-        self.layout.addWidget(self.select, 1, 0)
+        self.button_1 = QPushButton("Sides AHO")
+        self.button_2 = QPushButton("SOHCAHTOA")
 
         self.setLayout(self.layout)
 
-        self.sides_aho_button.clicked.connect(self.SidesAHO)
-        self.sohcahtoa_button.clicked.connect(self.SOHCAHTOA)
-        self.back.clicked.connect(self.selected_back)
+        self.layout.addWidget(self.button_1, 0, 1)
+        self.layout.addWidget(self.button_2, 1, 1)
+
+        self.button_1.clicked.connect(self.SidesAHO)
+        self.button_2.clicked.connect(self.SOHCAHTOA)
     
     def SidesAHO(self):
         sides_aho = SidesAHOWidget()
@@ -44,32 +34,23 @@ class Trigonometry1(QWidget):
         sohcahtoa.show()
         sohcahtoa._raise()
 
-    def selected_back(self):
-        lessonmenuwidget.show()
-        lessonmenuwidget._raise()
-
-class Trigonometry2(QWidget):
+class Trigonometry2(ParentLessonMenu):
     def __init__(self):
         super().__init__()
 
-        self.finding_angles_button = QPushButton("Finding Angles")
-        self.inverted_angles_button = QPushButton("Inverted Angles")
-        self.three_d_trigonometry_button = QPushButton("3D Trigonometry")
-        self.back = QPushButton("Return")
-
-        self.layout = QVBoxLayout()
-
-        self.layout.addWidget(self.finding_angles_button)
-        self.layout.addWidget(self.inverted_angles_button)
-        self.layout.addWidget(self.three_d_trigonometry_button)
-        self.layout.addWidget(self.back)
+        self.button_1 = QPushButton("Finding Angles")
+        self.button_2 = QPushButton("Inverted Angles")
+        self.button_3 = QPushButton("3D Trigonometry")
 
         self.setLayout(self.layout)
 
-        self.finding_angles_button.clicked.connect(self.FindingAngles)
-        self.inverted_angles_button.clicked.connect(self.InvertedAngles)
-        self.three_d_trigonometry_button.clicked.connect(self.ThreeDTrigonometry)
-        self.back.clicked.connect(self.selected_back)
+        self.layout.addWidget(self.button_1, 0, 1)
+        self.layout.addWidget(self.button_2, 1, 1)
+        self.layout.addWidget(self.button_3, 2, 1)
+
+        self.button_1.clicked.connect(self.FindingAngles)
+        self.button_2.clicked.connect(self.InvertedAngles)
+        self.button_3.clicked.connect(self.ThreeDTrigonometry)
     
     def FindingAngles(self):
         finding_angles = FindingAnglesWidget()
@@ -86,29 +67,20 @@ class Trigonometry2(QWidget):
         three_d_trig.show()
         three_d_trig._raise()
 
-    def selected_back(self):
-        lessonmenuwidget.show()
-        lessonmenuwidget._raise()
-
-class Pythagoras(QWidget):
+class Pythagoras(ParentLessonMenu):
     def __init__(self):
         super().__init__()
 
-        self.pythag_theorem_button = QPushButton("Pythagoras Theorem")
-        self.three_d_pythagoras_button = QPushButton("3D Pythagoras")
-        self.back = QPushButton("Return")
-
-        self.layout = QVBoxLayout()
-
-        self.layout.addWidget(self.pythag_theorem_button)
-        self.layout.addWidget(self.three_d_pythagoras_button)
-        self.layout.addWidget(self.back)
+        self.button_1 = QPushButton("Pythagoras Theorem")
+        self.button_2 = QPushButton("3D Pythagoras")
 
         self.setLayout(self.layout)
 
-        self.pythag_theorem_button.clicked.connect(self.PythagTheorem)
-        self.three_d_pythagoras_button.clicked.connect(self.ThreeDPythagoras)
-        self.back.clicked.connect(self.selected_back)
+        self.layout.addWidget(self.button_1, 0, 1)
+        self.layout.addWidget(self.button_2, 1, 1)
+
+        self.button_1.clicked.connect(self.PythagTheorem)
+        self.button_2.clicked.connect(self.ThreeDPythagoras)
     
     def PythagTheorem(self):
         pythag_theorem = PythagTheoremWidget()
@@ -120,32 +92,23 @@ class Pythagoras(QWidget):
         three_d_pythag.show()
         three_d_pythag._raise()
 
-    def selected_back(self):
-        lessonmenuwidget.show()
-        lessonmenuwidget._raise()
-
-class PythagTrig(QWidget):
+class PythagTrig(ParentLessonMenu):
     def __init__(self):
         super().__init__()
 
-        self.easy_button = QPushButton("Easy")
-        self.medium_button = QPushButton("Medium")
-        self.hard_button = QPushButton("Hard")
-        self.back = QPushButton("Return")
-
-        self.layout = QVBoxLayout()
-
-        self.layout.addWidget(self.easy_button)
-        self.layout.addWidget(self.medium_button)
-        self.layout.addWidget(self.hard_button)
-        self.layout.addWidget(self.back)
+        self.button_1 = QPushButton("Easy")
+        self.button_2 = QPushButton("Medium")
+        self.button_3 = QPushButton("Hard")
 
         self.setLayout(self.layout)
 
-        self.easy_button.clicked.connect(self.Easy)
-        self.medium_button.clicked.connect(self.Medium)
-        self.hard_button.clicked.connect(self.Hard)
-        self.back.clicked.connect(self.selected_back)
+        self.layout.addWidget(self.button_1, 0, 1)
+        self.layout.addWidget(self.button_2, 1, 1)
+        self.layout.addWidget(self.button_3, 2, 1)
+
+        self.button_1.clicked.connect(self.Easy)
+        self.button_2.clicked.connect(self.Medium)
+        self.button_3.clicked.connect(self.Hard)
     
     def Easy(self):
         easy = EasyWidget()
@@ -162,32 +125,23 @@ class PythagTrig(QWidget):
         hard.show()
         hard._raise()
 
-    def selected_back(self):
-        lessonmenuwidget.show()
-        lessonmenuwidget._raise()
-
-class Summary(QWidget):
+class Summary(ParentLessonMenu):
     def __init__(self):
         super().__init__()
 
-        self.revise_trig_1_button = QPushButton("Revise Trigonometry 1")
-        self.revise_trig_2_button = QPushButton("Revise Trigonometry 2")
-        self.revise_trig_3_button = QPushButton("Revise Trigonometry 3")
-        self.back = QPushButton("Return")
-
-        self.layout = QVBoxLayout()
-
-        self.layout.addWidget(self.revise_trig_1_button)
-        self.layout.addWidget(self.revise_trig_2_button)
-        self.layout.addWidget(self.revise_trig_3_button)
-        self.layout.addWidget(self.back)
+        self.button_1 = QPushButton("Revise Trigonometry 1")
+        self.button_2 = QPushButton("Revise Trigonometry 2")
+        self.button_3 = QPushButton("Revise Trigonometry 3")
 
         self.setLayout(self.layout)
 
-        self.revise_trig_1_button.clicked.connect(self.ReviseTrig1)
-        self.revise_trig_2_button.clicked.connect(self.ReviseTrig2)
-        self.revise_trig_3_button.clicked.connect(self.ReviseTrig3)
-        self.back.clicked.connect(self.selected_back)
+        self.layout.addWidget(self.button_1, 0, 1)
+        self.layout.addWidget(self.button_2, 1, 1)
+        self.layout.addWidget(self.button_3, 2, 1)
+
+        self.button_1.clicked.connect(self.ReviseTrig1)
+        self.button_2.clicked.connect(self.ReviseTrig2)
+        self.button_3.clicked.connect(self.ReviseTrig3)
     
     def ReviseTrig1(self):
         revise_trig_1 = ReviseTrig1Widget()
@@ -203,7 +157,3 @@ class Summary(QWidget):
         revise_trig_3 = ReviseTrig3Widget()
         revise_trig_3.show()
         revise_trig_3._raise()
-
-    def selected_back(self):
-        lessonmenuwidget.show()
-        lessonmenuwidget._raise()

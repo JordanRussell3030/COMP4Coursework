@@ -68,6 +68,7 @@ class LessonMenuWidget(QMainWindow):
         summary_widget._raise()
 
     def selected_back(self):
-        lessonmenuwidget.close()
-        student_home.show()
-        student_home._raise()
+        self.close()
+        self.student_home = UserAccountWidget()
+        self.student_home.show()
+        self.student_home._raise()

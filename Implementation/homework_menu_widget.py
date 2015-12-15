@@ -15,7 +15,7 @@ class HomeworkMenuWidget(QMainWindow):
         self.hpyt = QPushButton("Pythagoras")
         self.hpytrig = QPushButton("Pythagoras and Trigonometry Problems")
         self.hsum = QPushButton("Summary")
-        self.back = QPushButton("Back")
+        self.back = QPushButton("Return")
         #self.picture = QLabel("Shape")
         self.temp_set = QPushButton("Set Homework 1")
         self.temp_set_2 = QPushButton("Set Homework 2")
@@ -75,6 +75,7 @@ class HomeworkMenuWidget(QMainWindow):
         summary_homework._raise()
 
     def selected_back(self):
-        lessonmenuhomework.close()
-        student_home.show()
-        student_home._raise()
+        self.close()
+##        student_home = UserAccountWidget()
+##        student_home.show()
+##        student_home._raise()

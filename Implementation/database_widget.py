@@ -3,7 +3,7 @@ from PyQt4.QtCore import *
 from login_widget import *
 from student_account_home import *
 from lesson_menu_widget import *
-from database_class import *
+#from database_class import *
 
 class DatabaseWidget(QWidget):
     def __init__(self):
@@ -20,12 +20,12 @@ class DatabaseWidget(QWidget):
         self.database_header = ("StudentID", "First Name", "Last Name")
         self.database.setHorizontalHeaderLabels(self.database_header)
 
-        self.database.setStyleSheet("QTableView {selection-background-color: purple;}");
+        self.database.setStyleSheet("QTableView {selection-background-color: cyan;}");
 
-        students = g_database.GetAllNames()
-        for student in students:
-            self.database.setItem(0, 0, QTableWidgetItem(str(student[0])))
-            self.database.setItem(0, 1, QTableWidgetItem(student[1]))
+##        students = g_database.GetAllNames()
+##        for student in students:
+##            self.database.setItem(0, 0, QTableWidgetItem(str(student[0])))
+##            self.database.setItem(0, 1, QTableWidgetItem(student[1]))
 
         self.layout = QGridLayout()
 
@@ -37,6 +37,11 @@ class DatabaseWidget(QWidget):
         self.layout.addWidget(self.back, 4, 0)
 
         self.setLayout(self.layout)
+
+        self.back.clicked.connect(self.selected_back)
+
+    def selected_back(self):
+        self.close()
 
 class AdminDatabaseWidget(QWidget):
     def __init__(self):
