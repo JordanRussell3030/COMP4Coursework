@@ -8,6 +8,8 @@ from derived_lesson_menus import *
 class LessonMenuWidget(QMainWindow):
     def __init__(self):
         super().__init__()
+        self.showMaximized()
+        
         self.t1 = QPushButton("Trigonometry 1")
         self.t2 = QPushButton("Trigonometry 2")
         self.pyt = QPushButton("Pythagoras")
@@ -17,6 +19,40 @@ class LessonMenuWidget(QMainWindow):
         self.lesson_label = QLabel("Lessons")
         self.picture = QLabel("Shape")
         self.select = QLabel("Please select a topic: ")
+
+        self.t1.setMinimumWidth(90)
+        self.t1.setMinimumHeight(110)
+        self.t1.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue; font-size: 20;}")
+        self.t1.setFont(QFont("Courier", 40))
+
+        self.t2.setMinimumWidth(90)
+        self.t2.setMinimumHeight(110)
+        self.t2.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue; font-size: 20;}")
+        self.t2.setFont(QFont("Courier", 40))
+
+        self.pyt.setMinimumWidth(90)
+        self.pyt.setMinimumHeight(110)
+        self.pyt.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue; font-size: 20;}")
+        self.pyt.setFont(QFont("Courier", 40))
+
+        self.pytrig.setMinimumWidth(90)
+        self.pytrig.setMinimumHeight(110)
+        self.pytrig.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue; font-size: 20;}")
+        self.pytrig.setFont(QFont("Courier", 30))
+
+        self.sum.setMinimumWidth(90)
+        self.sum.setMinimumHeight(110)
+        self.sum.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue; font-size: 20;}")
+        self.sum.setFont(QFont("Courier", 40))
+
+        self.back.setMinimumWidth(90)
+        self.back.setMinimumHeight(110)
+        self.back.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue; font-size: 20;}")
+        self.back.setFont(QFont("Courier", 40))
+
+        self.lesson_label.setFont(QFont("Courier", 40))
+        self.picture.setFont(QFont("Courier", 25))
+        self.select.setFont(QFont("Courier", 25))
 
         self.layout = QGridLayout()
         
@@ -46,26 +82,31 @@ class LessonMenuWidget(QMainWindow):
         trig_1_widget = Trigonometry1()
         trig_1_widget.show()
         trig_1_widget._raise()
+        trig_1_widget.showMaximized()
 
     def selected_t2(self):
         trig_2_widget = Trigonometry2()
         trig_2_widget.show()
         trig_2_widget._raise()
+        trig_2_widget.showMaximized()
 
     def selected_pyt(self):
         pythagoras_widget = Pythagoras()
         pythagoras_widget.show()
         pythagoras_widget._raise()
+        pythagoras_widget.showMaximized()
 
     def selected_pytrig(self):
         pyth_trig_widget = PythagTrig()
         pyth_trig_widget.show()
         pyth_trig_widget._raise()
+        pyth_trig_widget.showMaximized()
 
     def selected_sum(self):
         summary_widget = Summary()
         summary_widget.show()
         summary_widget._raise()
+        summary_widget.showMaximized()
 
     def selected_back(self):
         self.close()

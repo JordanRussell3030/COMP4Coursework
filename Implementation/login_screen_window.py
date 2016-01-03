@@ -16,10 +16,10 @@ class MyWindow(QMainWindow):
         super().__init__()
 
         self.login_widget = LoginWidget()
-##        self.student_home = UserAccountWidget(self)
+        self.student_home = UserAccountWidget(self)
 ##        self.student_home = AdminAccountWidget()
 ##        self.student_home = AnyWidget()
-        self.student_home = HomeworkSetScreen()  
+##        self.student_home = HomeworkSetScreen()  
 
         self.stack = QStackedLayout()
 
@@ -35,6 +35,7 @@ class MyWindow(QMainWindow):
 
     def username_provided(self):
         self.stack.setCurrentIndex(1)
+        self.student_home.showMaximized()
         username = self.login_widget.username.text()
 
 if __name__ == "__main__":
@@ -42,5 +43,6 @@ if __name__ == "__main__":
     window = MyWindow()
     window.show()
     window.raise_()
+    window.showMaximized()
     app.exec_()
     

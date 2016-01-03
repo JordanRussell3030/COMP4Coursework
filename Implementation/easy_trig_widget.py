@@ -5,181 +5,191 @@ from login_widget import *
 
 from lesson_menu_widget import *
 from homework_menu_widget import *
-from parent_class_menus import *
+##from parent_class_menus import *
 from derived_lesson_menus import *
-from parent_lesson_class import *
+##from parent_lesson_class import *
 from lesson_page_2 import *
+from lesson_layout_parent_class import *
 
-class SidesAHOWidget(QWidget):
+class SidesAHOWidget(ParentLessonLayout):
     def __init__(self):
         super().__init__()
+        
+        self.title.setText("Sides")
+        self.lesson_1.setText("Every triangle has 3 sides, and each side has a name. The HYPOTENUSE is the longest side. The OPPOSITE is the side opposite the angle being used. The ADJACENT is next to the angle being used.")
+        self.lesson_2.setText("How to do this")
 
-        self.title = QLabel("Sides AHO")
-        self.lesson_1 = QTextEdit("Tutorial space e.g Teaching how to use the sine rule")
-        self.lesson_2 = QTextEdit("Space for an example showing how it's done with methods e.g a2 + b2 = c2")
-        self.back = QPushButton("Return")
-        self.next = QPushButton("Next")
-
-        self.layout = QGridLayout()
-
-        self.layout.addWidget(self.title, 0, 0)
-        self.layout.addWidget(self.lesson_1, 1, 0)
-        self.layout.addWidget(self.lesson_2, 1, 1)
-        self.layout.addWidget(self.back, 2, 0)
-        self.layout.addWidget(self.next, 2, 1)
-
-        self.setLayout(self.layout)
-
-        self.back.clicked.connect(self.selected_back)
         self.next.clicked.connect(self.selected_next)
 
-    def selected_back(self):
-        pass
+    def selected_next(self):
+        sides_l = SidesAHOWidgetPage2()
+        sides_l.show()
+        sides_l._raise()
+       
+class SOHCAHTOAWidget(ParentLessonLayout):
+    def __init__(self):
+        super().__init__()
+        self.title.setText("SOHCAHTOA")
+        self.lesson_1.setText("SOHCAHTOA stands for: \nSine Opposite Hypotenuse\nCosine Adjacent Hypotenuse\nTan Opposite Adjacent.\nThis is the best way to remember the three different rules for working out trigonometry problems. They each turn into a FORMULA TRIANGLE, a triangle which shows the formula inside in a memorable format.")
+        self.lesson_2.setText("Method\n1. Label the three sides O, A and H\n2. Write down from memory SOHCAHTOA\n3. Decide which two sides are involved: O,H, A,H or O,A\n4. Turn the one you choose into one of the formula triangles to the left of the screen\n5. Cover up the thing you want to find and write down whateveris left showing\n6. Translate into numbers and work it out\n7. Finally, check that your answer is sensible")
+
+        self.next.clicked.connect(self.selected_next)
 
     def selected_next(self):
-        self.page_2 = SidesAHOWidgetPage2()
-        self.page_2.show()
-        self.page_2._raise()
-##        self.lesson = ParentLessonPage1()
-##        self.lesson.show()
-##        self.lesson._raise()
-##        
-##        self._pass = QPushButton("Sides AHO")
-##
-##        self.layout = QVBoxLayout()
-##
-##        self.layout.addWidget(self._pass)
-##
-##        self.setLayout(self.layout)
-##        
-class SOHCAHTOAWidget(QWidget):
+        sohcahtoa_l = SOHCAHTOAWidgetPage2()
+        sohcahtoa_l.show()
+        sohcahtoa_l._raise()
+
+class FindingAnglesWidget(ParentLessonLayout):
     def __init__(self):
         super().__init__()
-        self._pass = QPushButton("SOHCAHTOA")
+        self.title.setText("Finding Angles")
+        self.lesson_1.setText("SOHCAHTROA stuff")
+        self.lesson_2.setText("You chubby batch")
 
-        self.layout = QVBoxLayout()
+        self.next.clicked.connect(self.selected_next)
 
-        self.layout.addWidget(self._pass)
+    def selected_next(self):
+        sohcahtoa_l = FindingAnglesWidgetPage2()
+        sohcahtoa_l.show()
+        sohcahtoa_l._raise()
 
-        self.setLayout(self.layout)
-
-class FindingAnglesWidget(QWidget):
+class InvertedAnglesWidget(ParentLessonLayout):
     def __init__(self):
         super().__init__()
-        self._pass = QPushButton("Finding Angles")
+        self.title.setText("Inverted Angles")
+        self.lesson_1.setText("SOHCAHTROA stuff")
+        self.lesson_2.setText("You chubby batch")
 
-        self.layout = QVBoxLayout()
+        self.next.clicked.connect(self.selected_next)
 
-        self.layout.addWidget(self._pass)
+    def selected_next(self):
+        sohcahtoa_l = InvertedAnglesWidgetPage2()
+        sohcahtoa_l.show()
+        sohcahtoa_l._raise()
 
-        self.setLayout(self.layout)
-
-class InvertedAnglesWidget(QWidget):
+class ThreeDTrigonometryWidget(ParentLessonLayout):
     def __init__(self):
         super().__init__()
-        self._pass = QPushButton("Inverted Angles")
+        self.title.setText("3D Trigonometry")
+        self.lesson_1.setText("SOHCAHTROA stuff")
+        self.lesson_2.setText("You chubby batch")
 
-        self.layout = QVBoxLayout()
+        self.next.clicked.connect(self.selected_next)
 
-        self.layout.addWidget(self._pass)
+    def selected_next(self):
+        sohcahtoa_l = ThreeDTrigonometryWidgetPage2()
+        sohcahtoa_l.show()
+        sohcahtoa_l._raise()
 
-        self.setLayout(self.layout)
-
-class ThreeDTrigonometryWidget(QWidget):
+class PythagTheoremWidget(ParentLessonLayout):
     def __init__(self):
         super().__init__()
-        self._pass = QPushButton("3D Trigonometry")
+        self.title.setText("Pythagoras' Theorem")
+        self.lesson_1.setText("SOHCAHTROA stuff")
+        self.lesson_2.setText("You chubby batch")
 
-        self.layout = QVBoxLayout()
+        self.next.clicked.connect(self.selected_next)
 
-        self.layout.addWidget(self._pass)
+    def selected_next(self):
+        sohcahtoa_l = PythagTheoremWidgetPage2()
+        sohcahtoa_l.show()
+        sohcahtoa_l._raise()
 
-        self.setLayout(self.layout)
-
-class PythagTheoremWidget(QWidget):
+class ThreeDPythagorasWidget(ParentLessonLayout):
     def __init__(self):
         super().__init__()
-        self._pass = QPushButton("Pythagoras Theorem")
+        self.title.setText("3D Pythagoras")
+        self.lesson_1.setText("SOHCAHTROA stuff")
+        self.lesson_2.setText("You chubby batch")
 
-        self.layout = QVBoxLayout()
+        self.next.clicked.connect(self.selected_next)
 
-        self.layout.addWidget(self._pass)
+    def selected_next(self):
+        sohcahtoa_l = ThreeDPythagorasWidgetPage2()
+        sohcahtoa_l.show()
+        sohcahtoa_l._raise()
 
-        self.setLayout(self.layout)
-
-class ThreeDPythagorasWidget(QWidget):
+class EasyWidget(ParentLessonLayout):
     def __init__(self):
         super().__init__()
-        self._pass = QPushButton("3D Pythagoras")
+        self.title.setText("Easy Problems")
+        self.lesson_1.setText("SOHCAHTROA stuff")
+        self.lesson_2.setText("You chubby batch")
 
-        self.layout = QVBoxLayout()
+        self.next.clicked.connect(self.selected_next)
 
-        self.layout.addWidget(self._pass)
+    def selected_next(self):
+        sohcahtoa_l = EasyWidgetPage2()
+        sohcahtoa_l.show()
+        sohcahtoa_l._raise()
 
-        self.setLayout(self.layout)
-
-class EasyWidget(QWidget):
+class MediumWidget(ParentLessonLayout):
     def __init__(self):
         super().__init__()
-        self._pass = QPushButton("Easy")
+        self.title.setText("Medium Problems")
+        self.lesson_1.setText("SOHCAHTROA stuff")
+        self.lesson_2.setText("You chubby batch")
 
-        self.layout = QVBoxLayout()
+        self.next.clicked.connect(self.selected_next)
 
-        self.layout.addWidget(self._pass)
+    def selected_next(self):
+        sohcahtoa_l = MediumWidgetPage2()
+        sohcahtoa_l.show()
+        sohcahtoa_l._raise()
 
-        self.setLayout(self.layout)
-
-class MediumWidget(QWidget):
+class HardWidget(ParentLessonLayout):
     def __init__(self):
         super().__init__()
-        self._pass = QPushButton("Medium")
+        self.title.setText("Hard Problems")
+        self.lesson_1.setText("SOHCAHTROA stuff")
+        self.lesson_2.setText("You chubby batch")
 
-        self.layout = QVBoxLayout()
+        self.next.clicked.connect(self.selected_next)
 
-        self.layout.addWidget(self._pass)
+    def selected_next(self):
+        sohcahtoa_l = HardWidgetPage2()
+        sohcahtoa_l.show()
+        sohcahtoa_l._raise()
 
-        self.setLayout(self.layout)
-
-class HardWidget(QWidget):
+class ReviseTrig1Widget(ParentLessonLayout):
     def __init__(self):
         super().__init__()
-        self._pass = QPushButton("Hard")
+        self.title.setText("Revise Trigonometry 1")
+        self.lesson_1.setText("SOHCAHTROA stuff")
+        self.lesson_2.setText("You chubby batch")
 
-        self.layout = QVBoxLayout()
+        self.next.clicked.connect(self.selected_next)
 
-        self.layout.addWidget(self._pass)
+    def selected_next(self):
+        sohcahtoa_l = ReviseTrig1WidgetPage2()
+        sohcahtoa_l.show()
+        sohcahtoa_l._raise()
 
-        self.setLayout(self.layout)
-
-class ReviseTrig1Widget(QWidget):
+class ReviseTrig2Widget(ParentLessonLayout):
     def __init__(self):
         super().__init__()
-        self._pass = QPushButton("Revise Trigonometry 1")
+        self.title.setText("Revise Trigonometry 2")
+        self.lesson_1.setText("SOHCAHTROA stuff")
+        self.lesson_2.setText("You chubby batch")
 
-        self.layout = QVBoxLayout()
+        self.next.clicked.connect(self.selected_next)
 
-        self.layout.addWidget(self._pass)
+    def selected_next(self):
+        sohcahtoa_l = ReviseTrig2WidgetPage2()
+        sohcahtoa_l.show()
+        sohcahtoa_l._raise()
 
-        self.setLayout(self.layout)
 
-class ReviseTrig2Widget(QWidget):
+class ReviseTrig3Widget(ParentLessonLayout):
     def __init__(self):
         super().__init__()
-        self._pass = QPushButton("Revise Trigonometry 2")
+        self.title.setText("Revise Trigonometry 3")
+        self.lesson_1.setText("SOHCAHTROA stuff")
+        self.lesson_2.setText("You chubby batch")
+        self.next.clicked.connect(self.selected_next)
 
-        self.layout = QVBoxLayout()
-
-        self.layout.addWidget(self._pass)
-
-        self.setLayout(self.layout)
-
-class ReviseTrig3Widget(QWidget):
-    def __init__(self):
-        super().__init__()
-        self._pass = QPushButton("Revise Trigonometry 3")
-        
-        self.layout = QVBoxLayout()
-
-        self.layout.addWidget(self._pass)
-
-        self.setLayout(self.layout)
+    def selected_next(self):
+        sohcahtoa_l = ReviseTrig3WidgetPage2()
+        sohcahtoa_l.show()
+        sohcahtoa_l._raise()

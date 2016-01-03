@@ -9,6 +9,8 @@ from homework_widgets import *
 class HomeworkMenuWidget(QMainWindow):
     def __init__(self):
         super().__init__()
+        self.showMaximized()
+        
         self.title = QLabel("Homework")
         self.ht1 = QPushButton("Trigonometry 1")
         self.ht2 = QPushButton("Trigonometry 2")
@@ -21,6 +23,54 @@ class HomeworkMenuWidget(QMainWindow):
         self.temp_set_2 = QPushButton("Set Homework 2")
         self.temp_set_3 = QPushButton("Set Homework 3")
         self.select = QLabel("Please select a topic: ")
+
+        self.ht1.setMinimumWidth(90)
+        self.ht1.setMinimumHeight(110)
+        self.ht1.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue; font-size: 20;}")
+        self.ht1.setFont(QFont("Courier", 40))
+
+        self.ht2.setMinimumWidth(90)
+        self.ht2.setMinimumHeight(110)
+        self.ht2.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue; font-size: 20;}")
+        self.ht2.setFont(QFont("Courier", 40))
+
+        self.hpyt.setMinimumWidth(90)
+        self.hpyt.setMinimumHeight(110)
+        self.hpyt.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue; font-size: 20;}")
+        self.hpyt.setFont(QFont("Courier", 40))
+
+        self.hpytrig.setMinimumWidth(90)
+        self.hpytrig.setMinimumHeight(110)
+        self.hpytrig.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue; font-size: 20;}")
+        self.hpytrig.setFont(QFont("Courier", 30))
+
+        self.hsum.setMinimumWidth(90)
+        self.hsum.setMinimumHeight(110)
+        self.hsum.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue; font-size: 20;}")
+        self.hsum.setFont(QFont("Courier", 40))
+
+        self.back.setMinimumWidth(90)
+        self.back.setMinimumHeight(110)
+        self.back.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue; font-size: 20;}")
+        self.back.setFont(QFont("Courier", 40))
+
+        self.temp_set.setMinimumWidth(90)
+        self.temp_set.setMinimumHeight(110)
+        self.temp_set.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue; font-size: 20;}")
+        self.temp_set.setFont(QFont("Courier", 40))
+
+        self.temp_set_2.setMinimumWidth(90)
+        self.temp_set_2.setMinimumHeight(110)
+        self.temp_set_2.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue; font-size: 20;}")
+        self.temp_set_2.setFont(QFont("Courier", 40))
+
+        self.temp_set_3.setMinimumWidth(90)
+        self.temp_set_3.setMinimumHeight(110)
+        self.temp_set_3.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue; font-size: 20;}")
+        self.temp_set_3.setFont(QFont("Courier", 40))
+        
+        self.title.setFont(QFont("Courier", 40))
+        self.select.setFont(QFont("Courier", 25))
 
         self.layout = QGridLayout()
 
@@ -53,26 +103,31 @@ class HomeworkMenuWidget(QMainWindow):
         trigonometry_1_homework = Trigonometry1HW()
         trigonometry_1_homework.show()
         trigonometry_1_homework._raise()
+        trigonometry_1_homework.showMaximized()
 
     def selected_ht2(self):
         trigonometry_2_homework = Trigonometry2HW()
         trigonometry_2_homework.show()
         trigonometry_2_homework._raise()
+        trigonometry_2_homework.showMaximized()
 
     def selected_hpyt(self):
         pythagoras_homework = PythagorasHW()
         pythagoras_homework.show()
         pythagoras_homework._raise()
+        pythagoras_homework.showMaximized()
 
     def selected_hpytrig(self):
         pythag_trig_homework = PythagTrigonometryHW()
         pythag_trig_homework.show()
         pythag_trig_homework._raise()
+        pythag_trig_homework.showMaximized()
 
     def selected_hsum(self):
         summary_homework = SummaryHW()
         summary_homework.show()
         summary_homework._raise()
+        summary_homework.showMaximized()
 
     def selected_back(self):
         self.close()

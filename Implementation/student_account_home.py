@@ -24,7 +24,31 @@ class UserAccountWidget(QWidget):
         self.log_out = QPushButton("Log out")
         self.picture = QLabel("Shape")
 
-        
+        self.lessons.setMinimumWidth(90)
+        self.lessons.setMinimumHeight(110)
+        self.lessons.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue; font-size: 20;}")
+        self.lessons.setFont(QFont("Courier", 40))
+
+        self.homework.setMinimumWidth(90)
+        self.homework.setMinimumHeight(110)
+        self.homework.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue; font-size: 20;}")
+        self.homework.setFont(QFont("Courier", 40))
+
+        self.progress.setMinimumWidth(90)
+        self.progress.setMinimumHeight(110)
+        self.progress.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue; font-size: 20;}")
+        self.progress.setFont(QFont("Courier", 40))
+
+        self.log_out.setMinimumWidth(90)
+        self.log_out.setMinimumHeight(110)
+        self.log_out.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue; font-size: 20;}")
+        self.log_out.setFont(QFont("Courier", 40))
+
+        self.lessons_label.setFont(QFont("Courier", 25))
+        self.homework_label.setFont(QFont("Courier", 25))
+        self.database_label.setFont(QFont("Courier", 25))
+        self.account_label.setFont(QFont("Courier", 25))
+      
         self.layout = QGridLayout()
 
         self.layout.addWidget(self.lessons, 0, 1)
@@ -52,17 +76,20 @@ class UserAccountWidget(QWidget):
         lessonmenuwidget = LessonMenuWidget()
         lessonmenuwidget.show()
         lessonmenuwidget._raise()
+        lessonmenuwidget.showMaximized()
         self.parent_window.close()
 
     def selected_homework(self):
         homeworkmenuwidget = HomeworkMenuWidget()
         homeworkmenuwidget.show()
         homeworkmenuwidget._raise()
+        homeworkmenuwidget.showMaximized()
 
     def selected_progress(self):
         databasewidget = DatabaseWidget()
         databasewidget.show()
         databasewidget._raise()
+        databasewidget.showMaximized()
         
        
         

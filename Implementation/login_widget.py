@@ -9,16 +9,36 @@ class LoginWidget(QWidget):
     NameEntered = pyqtSignal()
     def __init__(self):
         super().__init__()
-        
+
         self.username = QLineEdit()
         self.u_label = QLabel("Username: ")
         self.password = QLineEdit()
         self.p_label = QLabel("Password: ")
-        self.a_label = QLabel("Please log in\nwith your username\nand password.")
-        self.b_label = QLabel("Consult your administrator\nif you have forgotten\nyour login details.")
+        self.a_label = QLabel("Please log in with your username\nand password.")
+        self.b_label = QLabel("Consult your administrator if you\nhave forgotten your login details.")
         self.login = QPushButton("Log in")
-        
+
+        self.username.setMinimumWidth(60)
+        self.username.setMinimumHeight(100)
+        self.username.setFont(QFont("Courier", 40))
+
+        self.u_label.setFont(QFont("Courier", 30))
+        self.p_label.setFont(QFont("Courier", 30))
+
+        self.password.setMinimumWidth(60)
+        self.password.setMinimumHeight(100)
+        self.password.setFont(QFont("Courier", 40))
+
+        self.login.setMinimumWidth(60)
+        self.login.setMinimumHeight(110)
+        self.login.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue; font-size: 20;}")
+        self.login.setFont(QFont("Courier", 40))
+
+        self.a_label.setFont(QFont("Courier", 40))
+        self.b_label.setFont(QFont("Courier", 40))
+    
         self.setWindowTitle("Welcome to Trigonometry and Pythagoras Lessons")
+##        self.setStyleSheet("background: blue")
 
         self.layout = QGridLayout()
 
@@ -33,6 +53,8 @@ class LoginWidget(QWidget):
         self.setLayout(self.layout)
 
         self.login.clicked.connect(self.submit_pushed)
+
+        #print(self.login.icon())
 
     def submit_pushed(self):
         username = self.username.text()

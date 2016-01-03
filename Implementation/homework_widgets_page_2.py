@@ -2,59 +2,249 @@ from PyQt4.QtCore import *
 from PyQt4.QtGui import *
 
 from homework_widgets import *
+from homework_page_2_parent_class import *
 
-class SidesAHOEasyWidget2(QWidget):
+class SidesAHOEasyWidget2(HomeworkPage2ParentClass):
     def __init__(self):
         super().__init__()
-        self.question_2 = QLabel("Question 2\n_________\n_________")
-        self.shape_2 = QLabel("Shape")
-        self.answer_2 = QComboBox()
-        self.mark_2 = QPushButton("Mark it  |  2")
-        self.question_3 = QLabel("Question 3\n_________\n_________")
-        self.shape_3 = QLabel("Shape")
-        self.answer_3 = QComboBox()
-        self.mark_3 = QPushButton("Mark it  |  2")
-        self.previous = QPushButton("Previous")
-        self.drag_drop = QLabel("Drag and drop space")
-        self.question_4 = QLabel("Question 4\n______\n______\n______")
-        self.mark_4 = QPushButton("Mark it  |  2")
-        self.finish = QPushButton("Finish")
+        self.question_2.setText("Question 2\n_________\n_________")
+        self.shape_2.setText("sides easy")
+        self.question_3.setText("Question 3\n_________\n_________")
+        self.shape_3.setText("Shape")
+        self.question_4.setText("Question 4\n______\n______\n______")
 
-        self.layout = QGridLayout()
+##        self.answer_2.addItem("")
 
-        self.layout.addWidget(self.question_2, 0, 0)
-        self.layout.addWidget(self.shape_2, 1, 0)
-        self.layout.addWidget(self.answer_2, 2, 0)
-        self.layout.addWidget(self.mark_2, 2, 1)
-        self.layout.addWidget(self.question_3, 3, 0)
-        self.layout.addWidget(self.shape_3, 4, 0)
-        self.layout.addWidget(self.answer_3, 5, 0)
-        self.layout.addWidget(self.mark_3, 5, 1)
-        self.layout.addWidget(self.previous, 6, 0)
-        self.layout.addWidget(self.drag_drop, 0, 2)
-        self.layout.addWidget(self.question_4, 5, 2)
-        self.layout.addWidget(self.mark_4, 5, 3)
-        self.layout.addWidget(self.finish, 6, 3)
+class SidesAHOMediumWidget2(HomeworkPage2ParentClass):
+    def __init__(self):
+        super().__init__()
+        self.question_2.setText("Question 2\n_________\n_________")
+        self.shape_2.setText("sides m")
+        self.question_3.setText("Question 3\n_________\n_________")
+        self.shape_3.setText("Shape")
+        self.question_4.setText("Question 4\n______\n______\n______")
 
-        self.setLayout(self.layout)
+class SidesAHOHardWidget2(HomeworkPage2ParentClass):
+    def __init__(self):
+        super().__init__()
+        self.question_2.setText("Question 2\n_________\n_________")
+        self.shape_2.setText("sides hard")
+        self.question_3.setText("Question 3\n_________\n_________")
+        self.shape_3.setText("Shape")
+        self.question_4.setText("Question 4\n______\n______\n______")
 
-        self.mark_2.clicked.connect(self.selected_mark_2)
-        self.mark_3.clicked.connect(self.selected_mark_3)
-        self.previous.clicked.connect(self.selected_previous)
-        self.mark_4.clicked.connect(self.selected_mark_4)
-        self.finish.clicked.connect(self.selected_finish)
+class SOHCAHTOAEasyWidget2(HomeworkPage2ParentClass):
+    def __init__(self):
+        super().__init__()
+        self.question_2.setText("Question 2\n_________\n_________")
+        self.shape_2.setText("soh e")
+        self.question_3.setText("Question 3\n_________\n_________")
+        self.shape_3.setText("Shape")
+        self.question_4.setText("Question 4\n______\n______\n______")
 
-    def selected_mark_2(self):
-        pass
+class SOHCAHTOAMediumWidget2(HomeworkPage2ParentClass):
+    def __init__(self):
+        super().__init__()
+        self.question_2.setText("Question 2\n_________\n_________")
+        self.shape_2.setText("soh m")
+        self.question_3.setText("Question 3\n_________\n_________")
+        self.shape_3.setText("Shape")
+        self.question_4.setText("Question 4\n______\n______\n______")
 
-    def selected_mark_3(self):
-        pass
+class SOHCAHTOAHardWidget2(HomeworkPage2ParentClass):
+    def __init__(self):
+        super().__init__()
+        self.question_2.setText("Question 2\n_________\n_________")
+        self.shape_2.setText("soh h")
+        self.question_3.setText("Question 3\n_________\n_________")
+        self.shape_3.setText("Shape")
+        self.question_4.setText("Question 4\n______\n______\n______")
 
-    def selected_previous(self):
-        pass
+class FindingAnglesEasyWidget2(HomeworkPage2ParentClass):
+    def __init__(self):
+        super().__init__()
+        self.question_2.setText("Question 2\n_________\n_________")
+        self.shape_2.setText("fa e")
+        self.question_3.setText("Question 3\n_________\n_________")
+        self.shape_3.setText("Shape")
+        self.question_4.setText("Question 4\n______\n______\n______")
 
-    def selected_mark_4(self):
-        pass
+class FindingAnglesMediumWidget2(HomeworkPage2ParentClass):
+    def __init__(self):
+        super().__init__()
+        self.question_2.setText("Question 2\n_________\n_________")
+        self.shape_2.setText("fa m")
+        self.question_3.setText("Question 3\n_________\n_________")
+        self.shape_3.setText("Shape")
+        self.question_4.setText("Question 4\n______\n______\n______")
 
-    def selected_finish(self):
-        pass
+class FindingAnglesHardWidget2(HomeworkPage2ParentClass):
+    def __init__(self):
+        super().__init__()
+        self.question_2.setText("Question 2\n_________\n_________")
+        self.shape_2.setText("fa h")
+        self.question_3.setText("Question 3\n_________\n_________")
+        self.shape_3.setText("Shape")
+        self.question_4.setText("Question 4\n______\n______\n______")
+
+class InvetedAnglesEasyWidget2(HomeworkPage2ParentClass):
+    def __init__(self):
+        super().__init__()
+        self.question_2.setText("Question 2\n_________\n_________")
+        self.shape_2.setText("ia e")
+        self.question_3.setText("Question 3\n_________\n_________")
+        self.shape_3.setText("Shape")
+        self.question_4.setText("Question 4\n______\n______\n______")
+
+class InvertedAnglesMediumWidget2(HomeworkPage2ParentClass):
+    def __init__(self):
+        super().__init__()
+        self.question_2.setText("Question 2\n_________\n_________")
+        self.shape_2.setText("ia m")
+        self.question_3.setText("Question 3\n_________\n_________")
+        self.shape_3.setText("Shape")
+        self.question_4.setText("Question 4\n______\n______\n______")
+
+class InvertedAnglesHardWidget2(HomeworkPage2ParentClass):
+    def __init__(self):
+        super().__init__()
+        self.question_2.setText("Question 2\n_________\n_________")
+        self.shape_2.setText("ia h")
+        self.question_3.setText("Question 3\n_________\n_________")
+        self.shape_3.setText("Shape")
+        self.question_4.setText("Question 4\n______\n______\n______")
+
+class ThreeDTrigEasyWidget2(HomeworkPage2ParentClass):
+    def __init__(self):
+        super().__init__()
+        self.question_2.setText("Question 2\n_________\n_________")
+        self.shape_2.setText("3dt e")
+        self.question_3.setText("Question 3\n_________\n_________")
+        self.shape_3.setText("Shape")
+        self.question_4.setText("Question 4\n______\n______\n______")
+
+class ThreeDTrigMediumWidget2(HomeworkPage2ParentClass):
+    def __init__(self):
+        super().__init__()
+        self.question_2.setText("Question 2\n_________\n_________")
+        self.shape_2.setText("3dt m")
+        self.question_3.setText("Question 3\n_________\n_________")
+        self.shape_3.setText("Shape")
+        self.question_4.setText("Question 4\n______\n______\n______")
+
+class ThreeDTrigHardWidget2(HomeworkPage2ParentClass):
+    def __init__(self):
+        super().__init__()
+        self.question_2.setText("Question 2\n_________\n_________")
+        self.shape_2.setText("3dt h")
+        self.question_3.setText("Question 3\n_________\n_________")
+        self.shape_3.setText("Shape")
+        self.question_4.setText("Question 4\n______\n______\n______")
+
+class PythagTheoremEasyWidget2(HomeworkPage2ParentClass):
+    def __init__(self):
+        super().__init__()
+        self.question_2.setText("Question 2\n_________\n_________")
+        self.shape_2.setText("pt e")
+        self.question_3.setText("Question 3\n_________\n_________")
+        self.shape_3.setText("Shape")
+        self.question_4.setText("Question 4\n______\n______\n______")
+
+class PythagTheoremMediumWidget2(HomeworkPage2ParentClass):
+    def __init__(self):
+        super().__init__()
+        self.question_2.setText("Question 2\n_________\n_________")
+        self.shape_2.setText("pt m")
+        self.question_3.setText("Question 3\n_________\n_________")
+        self.shape_3.setText("Shape")
+        self.question_4.setText("Question 4\n______\n______\n______")
+
+class PythagTheoremHardWidget2(HomeworkPage2ParentClass):
+    def __init__(self):
+        super().__init__()
+        self.question_2.setText("Question 2\n_________\n_________")
+        self.shape_2.setText("pt h")
+        self.question_3.setText("Question 3\n_________\n_________")
+        self.shape_3.setText("Shape")
+        self.question_4.setText("Question 4\n______\n______\n______")
+
+class ThreeDPythagEasyWidget2(HomeworkPage2ParentClass):
+    def __init__(self):
+        super().__init__()
+        self.question_2.setText("Question 2\n_________\n_________")
+        self.shape_2.setText("3dp e")
+        self.question_3.setText("Question 3\n_________\n_________")
+        self.shape_3.setText("Shape")
+        self.question_4.setText("Question 4\n______\n______\n______")
+
+class ThreeDPythagMediumWidget2(HomeworkPage2ParentClass):
+    def __init__(self):
+        super().__init__()
+        self.question_2.setText("Question 2\n_________\n_________")
+        self.shape_2.setText("3dp m")
+        self.question_3.setText("Question 3\n_________\n_________")
+        self.shape_3.setText("Shape")
+        self.question_4.setText("Question 4\n______\n______\n______")
+
+class ThreeDPythagHardWidget2(HomeworkPage2ParentClass):
+    def __init__(self):
+        super().__init__()
+        self.question_2.setText("Question 2\n_________\n_________")
+        self.shape_2.setText("3dp h")
+        self.question_3.setText("Question 3\n_________\n_________")
+        self.shape_3.setText("Shape")
+        self.question_4.setText("Question 4\n______\n______\n______")
+
+class PythagTrigProblemsEasyWidget2(HomeworkPage2ParentClass):
+    def __init__(self):
+        super().__init__()
+        self.question_2.setText("Question 2\n_________\n_________")
+        self.shape_2.setText("ptp e")
+        self.question_3.setText("Question 3\n_________\n_________")
+        self.shape_3.setText("Shape")
+        self.question_4.setText("Question 4\n______\n______\n______")
+
+class PythagTrigProblemsMediumWidget2(HomeworkPage2ParentClass):
+    def __init__(self):
+        super().__init__()
+        self.question_2.setText("Question 2\n_________\n_________")
+        self.shape_2.setText("ptp m")
+        self.question_3.setText("Question 3\n_________\n_________")
+        self.shape_3.setText("Shape")
+        self.question_4.setText("Question 4\n______\n______\n______")
+
+class PythagTrigProblemsHardWidget2(HomeworkPage2ParentClass):
+    def __init__(self):
+        super().__init__()
+        self.question_2.setText("Question 2\n_________\n_________")
+        self.shape_2.setText("ptp h")
+        self.question_3.setText("Question 3\n_________\n_________")
+        self.shape_3.setText("Shape")
+        self.question_4.setText("Question 4\n______\n______\n______")
+
+class EasySummaryWidget2(HomeworkPage2ParentClass):
+    def __init__(self):
+        super().__init__()
+        self.question_2.setText("Question 2\n_________\n_________")
+        self.shape_2.setText("s e")
+        self.question_3.setText("Question 3\n_________\n_________")
+        self.shape_3.setText("Shape")
+        self.question_4.setText("Question 4\n______\n______\n______")
+
+class MediumSummaryWidget2(HomeworkPage2ParentClass):
+    def __init__(self):
+        super().__init__()
+        self.question_2.setText("Question 2\n_________\n_________")
+        self.shape_2.setText("s m")
+        self.question_3.setText("Question 3\n_________\n_________")
+        self.shape_3.setText("Shape")
+        self.question_4.setText("Question 4\n______\n______\n______")
+
+class HardSummaryWidget2(HomeworkPage2ParentClass):
+    def __init__(self):
+        super().__init__()
+        self.question_2.setText("Question 2\n_________\n_________")
+        self.shape_2.setText("s h")
+        self.question_3.setText("Question 3\n_________\n_________")
+        self.shape_3.setText("Shape")
+        self.question_4.setText("Question 4\n______\n______\n______")
