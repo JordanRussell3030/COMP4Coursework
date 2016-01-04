@@ -19,65 +19,65 @@ class SOHCAHTOAWidgetPage2(ParentLessonPage2):
 class FindingAnglesWidgetPage2(ParentLessonPage2):
     def __init__(self):
         super().__init__()
-        self.text_1.setText("More FA MotherFuckers")
-        self.text_2.setText("Space for SOHCAHTOA bants")
+        self.text_1.setText("More FA""")
+        self.text_2.setText("Space for SOHCAHTOA """)
 
 class InvertedAnglesWidgetPage2(ParentLessonPage2):
     def __init__(self):
         super().__init__()
-        self.text_1.setText("More IA MotherFuckers")
-        self.text_2.setText("Space for SOHCAHTOA bants")
+        self.text_1.setText("More IA""")
+        self.text_2.setText("Space for SOHCAHTOA """)
 
 class ThreeDTrigonometryWidgetPage2(ParentLessonPage2):
     def __init__(self):
         super().__init__()
-        self.text_1.setText("More 3DT MotherFuckers")
-        self.text_2.setText("Space for SOHCAHTOA bants")
+        self.text_1.setText("More 3DT""")
+        self.text_2.setText("Space for SOHCAHTOA """)
 
 class PythagTheoremWidgetPage2(ParentLessonPage2):
     def __init__(self):
         super().__init__()
-        self.text_1.setText("More PT MotherFuckers")
-        self.text_2.setText("Space for SOHCAHTOA bants")
+        self.text_1.setText("More PT""")
+        self.text_2.setText("Space for SOHCAHTOA """)
 
 class ThreeDPythagorasWidgetPage2(ParentLessonPage2):
     def __init__(self):
         super().__init__()
-        self.text_1.setText("More 3DP MotherFuckers")
-        self.text_2.setText("Space for SOHCAHTOA bants")
+        self.text_1.setText("More 3DP""")
+        self.text_2.setText("Space for SOHCAHTOA """)
 
 class EasyWidgetPage2(ParentLessonPage2):
     def __init__(self):
         super().__init__()
-        self.text_1.setText("More Easy MotherFuckers")
-        self.text_2.setText("Space for SOHCAHTOA bants")
+        self.text_1.setText("More Easy""")
+        self.text_2.setText("Space for SOHCAHTOA """)
 
 class MediumWidgetPage2(ParentLessonPage2):
     def __init__(self):
         super().__init__()
-        self.text_1.setText("More Medium MotherFuckers")
-        self.text_2.setText("Space for SOHCAHTOA bants")
+        self.text_1.setText("More Medium""")
+        self.text_2.setText("Space for SOHCAHTOA """)
 
 class HardWidgetPage2(ParentLessonPage2):
     def __init__(self):
         super().__init__()
-        self.text_1.setText("More Hard MotherFuckers")
-        self.text_2.setText("Space for SOHCAHTOA bants")
+        self.text_1.setText("More Hard""")
+        self.text_2.setText("Space for SOHCAHTOA """)
 
 class ReviseTrig1WidgetPage2(ParentLessonPage2):
     def __init__(self):
         super().__init__()
-        self.text_1.setText("More R1 MotherFuckers")
-        self.text_2.setText("Space for SOHCAHTOA bants")
+        self.text_1.setText("More R1""")
+        self.text_2.setText("Space for SOHCAHTOA """)
 
 class ReviseTrig2WidgetPage2(ParentLessonPage2):
     def __init__(self):
         super().__init__()
-        self.text_1.setText("More R2 MotherFuckers")
-        self.text_2.setText("Space for SOHCAHTOA bants")
+        self.text_1.setText("More R2""")
+        self.text_2.setText("Space for SOHCAHTOA """)
 
 class ReviseTrig3WidgetPage2(ParentLessonPage2):
     def __init__(self):
         super().__init__()
-        self.text_1.setText("More R3 MotherFuckers")
-        self.text_2.setText("Space for SOHCAHTOA bants")
+        self.text_1.setText("More R3""")
+        self.text_2.setText("Space for SOHCAHTOA """)

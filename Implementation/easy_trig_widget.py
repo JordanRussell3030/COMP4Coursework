@@ -45,7 +45,7 @@ class FindingAnglesWidget(ParentLessonLayout):
         super().__init__()
         self.title.setText("Finding Angles")
         self.lesson_1.setText("SOHCAHTROA stuff")
-        self.lesson_2.setText("You chubby batch")
+        self.lesson_2.setText("")
 
         self.next.clicked.connect(self.selected_next)
 
@@ -59,7 +59,7 @@ class InvertedAnglesWidget(ParentLessonLayout):
         super().__init__()
         self.title.setText("Inverted Angles")
         self.lesson_1.setText("SOHCAHTROA stuff")
-        self.lesson_2.setText("You chubby batch")
+        self.lesson_2.setText("")
 
         self.next.clicked.connect(self.selected_next)
 
@@ -73,7 +73,7 @@ class ThreeDTrigonometryWidget(ParentLessonLayout):
         super().__init__()
         self.title.setText("3D Trigonometry")
         self.lesson_1.setText("SOHCAHTROA stuff")
-        self.lesson_2.setText("You chubby batch")
+        self.lesson_2.setText("")
 
         self.next.clicked.connect(self.selected_next)
 
@@ -87,7 +87,7 @@ class PythagTheoremWidget(ParentLessonLayout):
         super().__init__()
         self.title.setText("Pythagoras' Theorem")
         self.lesson_1.setText("SOHCAHTROA stuff")
-        self.lesson_2.setText("You chubby batch")
+        self.lesson_2.setText("")
 
         self.next.clicked.connect(self.selected_next)
 
@@ -101,7 +101,7 @@ class ThreeDPythagorasWidget(ParentLessonLayout):
         super().__init__()
         self.title.setText("3D Pythagoras")
         self.lesson_1.setText("SOHCAHTROA stuff")
-        self.lesson_2.setText("You chubby batch")
+        self.lesson_2.setText("")
 
         self.next.clicked.connect(self.selected_next)
 
@@ -115,7 +115,7 @@ class EasyWidget(ParentLessonLayout):
         super().__init__()
         self.title.setText("Easy Problems")
         self.lesson_1.setText("SOHCAHTROA stuff")
-        self.lesson_2.setText("You chubby batch")
+        self.lesson_2.setText("")
 
         self.next.clicked.connect(self.selected_next)
 
@@ -129,7 +129,7 @@ class MediumWidget(ParentLessonLayout):
         super().__init__()
         self.title.setText("Medium Problems")
         self.lesson_1.setText("SOHCAHTROA stuff")
-        self.lesson_2.setText("You chubby batch")
+        self.lesson_2.setText("")
 
         self.next.clicked.connect(self.selected_next)
 
@@ -143,7 +143,7 @@ class HardWidget(ParentLessonLayout):
         super().__init__()
         self.title.setText("Hard Problems")
         self.lesson_1.setText("SOHCAHTROA stuff")
-        self.lesson_2.setText("You chubby batch")
+        self.lesson_2.setText("")
 
         self.next.clicked.connect(self.selected_next)
 
@@ -157,7 +157,7 @@ class ReviseTrig1Widget(ParentLessonLayout):
         super().__init__()
         self.title.setText("Revise Trigonometry 1")
         self.lesson_1.setText("SOHCAHTROA stuff")
-        self.lesson_2.setText("You chubby batch")
+        self.lesson_2.setText("")
 
         self.next.clicked.connect(self.selected_next)
 
@@ -171,7 +171,7 @@ class ReviseTrig2Widget(ParentLessonLayout):
         super().__init__()
         self.title.setText("Revise Trigonometry 2")
         self.lesson_1.setText("SOHCAHTROA stuff")
-        self.lesson_2.setText("You chubby batch")
+        self.lesson_2.setText("")
 
         self.next.clicked.connect(self.selected_next)
 
@@ -186,7 +186,7 @@ class ReviseTrig3Widget(ParentLessonLayout):
         super().__init__()
         self.title.setText("Revise Trigonometry 3")
         self.lesson_1.setText("SOHCAHTROA stuff")
-        self.lesson_2.setText("You chubby batch")
+        self.lesson_2.setText("")
         self.next.clicked.connect(self.selected_next)
 
     def selected_next(self):
