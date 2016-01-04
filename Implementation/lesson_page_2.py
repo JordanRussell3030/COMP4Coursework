@@ -1,6 +1,6 @@
 from PyQt4.QtCore import *
 from PyQt4.QtCore import *
-
+#
 from easy_trig_widget import *
 from lesson_page_2_parent_class import *
 

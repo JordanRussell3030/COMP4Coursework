@@ -2,7 +2,7 @@ from PyQt4.QtGui import *
 from PyQt4.QtCore import *
 from login_screen_window import *
 from login_widget import *
-
+#
 from lesson_menu_widget import *
 from homework_menu_widget import *
 from database_widget import *

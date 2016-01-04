@@ -1,5 +1,5 @@
 import sqlite3
-
+#
 def insert_data(values):
     with sqlite3.connect("student_names.db") as db:
         cursor = db.cursor()

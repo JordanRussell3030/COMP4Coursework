@@ -1,6 +1,6 @@
 from PyQt4.QtGui import *
 from PyQt4.QtCore import *
-
+#
 from easy_trig_widget import *
 from derived_lesson_menus import *
 
