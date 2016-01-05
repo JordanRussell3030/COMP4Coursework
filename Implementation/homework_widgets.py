@@ -2,351 +2,410 @@ from PyQt4.QtGui import *
 from PyQt4.QtCore import *
 from login_screen_window import *
 from login_widget import *
-
+#
 from lesson_menu_widget import *
 from homework_menu_widget import *
-from parent_class_menus import *
+##from parent_class_menus import *
 from derived_lesson_menus import *
 from homework_widgets_page_2 import *
+from homework_parent_class import *
 
-class SidesAHOEasyWidget(QWidget):
+class SidesAHOEasyWidget(ParentHomeworkPage1Class):
     def __init__(self):
         super().__init__()
-        self.title = QLabel("Sides AHO Easy")
-        self.question_1 = QLabel("Question 1:\n ___________\n__________")
-        self.question_1_shape = QLabel("Shape")
-        self.answer_a = QLineEdit("___________\n___________")
-        self.answer_b = QLineEdit("___________\n___________")
-        self.answer_c = QLineEdit("___________\n___________")
-        self.answer_d = QLineEdit("___________\n___________")
-        self.answer_e = QLineEdit("___________\n___________")
-        self.answer_f = QLineEdit("___________\n___________")
-        self.score_box = QLabel("Score: X/X")
-        self.cancel = QPushButton("Cancel")
-        self.next = QPushButton("Next")
-        self.check = QPushButton("Check Answers")
-        self.reset = QPushButton("Reset Answers")
+        self.title.setText("Sides Easy")
+        self.question_1.setText("Question 1:\n ___________\n__________")
+        self.question_1_shape.setText("Shape")
+        
+##        self.next = QPushButton("Next")
+##        self.layout.addWidget(self.next, 9, 2)
 
-        self.layout = QGridLayout()
-
-        self.layout.addWidget(self.title, 0, 0)
-        self.layout.addWidget(self.question_1, 1, 0)
-        self.layout.addWidget(self.question_1_shape, 2, 0)
-        self.layout.addWidget(self.answer_a, 1, 1)
-        self.layout.addWidget(self.answer_b, 2, 1)
-        self.layout.addWidget(self.answer_c, 3, 1)
-        self.layout.addWidget(self.answer_d, 4, 1)
-        self.layout.addWidget(self.answer_e, 5, 1)
-        self.layout.addWidget(self.answer_f, 6, 1)
-        self.layout.addWidget(self.score_box, 7, 1)
-        self.layout.addWidget(self.check, 7, 2)
-        self.layout.addWidget(self.reset, 8, 2)
-        self.layout.addWidget(self.cancel, 8, 1)
-        self.layout.addWidget(self.next, 9, 2)
-
-        self.setLayout(self.layout)
-
-        self.check.clicked.connect(self.check_selected)
-        self.reset.clicked.connect(self.reset_selected)
-        self.cancel.clicked.connect(self.cancel_selected)
         self.next.clicked.connect(self.next_selected)
-
-    def check_selected(self):
-        pass
-
-    def reset_selected(self):
-        pass
-
-    def cancel_selected(self):
-        pass
 
     def next_selected(self):
         self.page_2 = SidesAHOEasyWidget2()
         self.page_2.show()
         self.page_2._raise()
         
-class SidesAHOMediumWidget(QWidget):
+class SidesAHOMediumWidget(ParentHomeworkPage1Class):
     def __init__(self):
         super().__init__()
-        self._pass = QPushButton("Sides AHO Medium")
+        self.title.setText("Sides Medium")
+        self.question_1.setText("Question 1:\n ___________\n__________")
+        self.question_1_shape.setText("Shape")
 
-        self.layout = QVBoxLayout()
+        self.next.clicked.connect(self.next_selected)
 
-        self.layout.addWidget(self._pass)
+    def next_selected(self):
+        self.page_2 = SidesAHOMediumWidget2()
+        self.page_2.show()
+        self.page_2._raise()
 
-        self.setLayout(self.layout)
-
-class SidesAHOHardWidget(QWidget):
+class SidesAHOHardWidget(ParentHomeworkPage1Class):
     def __init__(self):
         super().__init__()
-        self._pass = QPushButton("Sides AHO Hard")
+        self.title.setText("Sides Hard")
+        self.question_1.setText("Question 1:\n ___________\n__________")
+        self.question_1_shape.setText("Shape")
 
-        self.layout = QVBoxLayout()
+        self.next.clicked.connect(self.next_selected)
 
-        self.layout.addWidget(self._pass)
+    def next_selected(self):
+        self.page_2 = SidesAHOHardWidget2()
+        self.page_2.show()
+        self.page_2._raise()
 
-        self.setLayout(self.layout)
 
-class SOHCAHTOAEasyWidget(QWidget):
+class SOHCAHTOAEasyWidget(ParentHomeworkPage1Class):
     def __init__(self):
         super().__init__()
-        self._pass = QPushButton("SOHCAHTOA Easy")
+        self.title.setText("SOHCAHTOA Easy")
+        self.question_1.setText("Question 1:\n ___________\n__________")
+        self.question_1_shape.setText("Shape")
+        
+        self.next.clicked.connect(self.next_selected)
 
-        self.layout = QVBoxLayout()
+    def next_selected(self):
+        self.page_2 = SOHCAHTOAEasyWidget2()
+        self.page_2.show()
+        self.page_2._raise()
 
-        self.layout.addWidget(self._pass)
 
-        self.setLayout(self.layout)
-
-class SOHCAHTOAMediumWidget(QWidget):
+class SOHCAHTOAMediumWidget(ParentHomeworkPage1Class):
     def __init__(self):
         super().__init__()
-        self._pass = QPushButton("SOHCAHTOA Medium")
+        self.title.setText("SOHCAHTOA Medium")
+        self.question_1.setText("Question 1:\n ___________\n__________")
+        self.question_1_shape.setText("Shape")
 
-        self.layout = QVBoxLayout()
+        self.next.clicked.connect(self.next_selected)
 
-        self.layout.addWidget(self._pass)
+    def next_selected(self):
+        self.page_2 = SOHCAHTOAMediumWidget2()
+        self.page_2.show()
+        self.page_2._raise()
 
-        self.setLayout(self.layout)
-
-class SOHCAHTOAHardWidget(QWidget):
+class SOHCAHTOAHardWidget(ParentHomeworkPage1Class):
     def __init__(self):
         super().__init__()
-        self._pass = QPushButton("SOHCAHTOA Hard")
+        self.title.setText("SOHCAHTOA Hard")
+        self.question_1.setText("Question 1:\n ___________\n__________")
+        self.question_1_shape.setText("Shape")
 
-        self.layout = QVBoxLayout()
+        self.next.clicked.connect(self.next_selected)
 
-        self.layout.addWidget(self._pass)
+    def next_selected(self):
+        self.page_2 = SOHCAHTOAHardWidget2()
+        self.page_2.show()
+        self.page_2._raise()
 
-        self.setLayout(self.layout)
-
-class FindingAnglesEasyWidget(QWidget):
+class FindingAnglesEasyWidget(ParentHomeworkPage1Class):
     def __init__(self):
         super().__init__()
-        self._pass = QPushButton("Finding Angles Easy")
+        self.title.setText("Finding Angles Easy")
+        self.question_1.setText("Question 1:\n ___________\n__________")
+        self.question_1_shape.setText("Shape")
 
-        self.layout = QVBoxLayout()
+        self.next.clicked.connect(self.next_selected)
 
-        self.layout.addWidget(self._pass)
+    def next_selected(self):
+        self.page_2 = FindingAnglesEasyWidget2()
+        self.page_2.show()
+        self.page_2._raise()
 
-        self.setLayout(self.layout)
-
-class FindingAnglesMediumWidget(QWidget):
+class FindingAnglesMediumWidget(ParentHomeworkPage1Class):
     def __init__(self):
         super().__init__()
-        self._pass = QPushButton("Finding Angles Medium")
+        self.title.setText("Finding Angles Medium")
+        self.question_1.setText("Question 1:\n ___________\n__________")
+        self.question_1_shape.setText("Shape")
 
-        self.layout = QVBoxLayout()
+        self.next.clicked.connect(self.next_selected)
 
-        self.layout.addWidget(self._pass)
+    def next_selected(self):
+        self.page_2 = FindingAnglesMediumWidget2()
+        self.page_2.show()
+        self.page_2._raise()
 
-        self.setLayout(self.layout)
-
-class FindingAnglesHardWidget(QWidget):
+class FindingAnglesHardWidget(ParentHomeworkPage1Class):
     def __init__(self):
         super().__init__()
-        self._pass = QPushButton("Finding Angles Hard")
+        self.title.setText("Finding Angles Hard")
+        self.question_1.setText("Question 1:\n ___________\n__________")
+        self.question_1_shape.setText("Shape")
+        
+        self.next.clicked.connect(self.next_selected)
 
-        self.layout = QVBoxLayout()
+    def next_selected(self):
+        self.page_2 = FindingAnglesHardWidget2()
+        self.page_2.show()
+        self.page_2._raise()
 
-        self.layout.addWidget(self._pass)
 
-        self.setLayout(self.layout)
-
-class InvertedAnglesEasyWidget(QWidget):
+class InvertedAnglesEasyWidget(ParentHomeworkPage1Class):
     def __init__(self):
         super().__init__()
-        self._pass = QPushButton("Inverted Angles Easy")
+        self.title.setText("Inverted Angles Easy")
+        self.question_1.setText("Question 1:\n ___________\n__________")
+        self.question_1_shape.setText("Shape")
 
-        self.layout = QVBoxLayout()
+        self.next.clicked.connect(self.next_selected)
 
-        self.layout.addWidget(self._pass)
+    def next_selected(self):
+        self.page_2 = InvertedAnglesEasyWidget2()
+        self.page_2.show()
+        self.page_2._raise()
 
-        self.setLayout(self.layout)
 
-class InvertedAnglesMediumWidget(QWidget):
+class InvertedAnglesMediumWidget(ParentHomeworkPage1Class):
     def __init__(self):
         super().__init__()
-        self._pass = QPushButton("Inverted Angles Medium")
+        self.title.setText("Inverted Angles Medium")
+        self.question_1.setText("Question 1:\n ___________\n__________")
+        self.question_1_shape.setText("Shape")
 
-        self.layout = QVBoxLayout()
+        self.next.clicked.connect(self.next_selected)
 
-        self.layout.addWidget(self._pass)
+    def next_selected(self):
+        self.page_2 = InvertedAnglesMediumWidget2()
+        self.page_2.show()
+        self.page_2._raise()
 
-        self.setLayout(self.layout)
 
-class InvertedAnglesHardWidget(QWidget):
+class InvertedAnglesHardWidget(ParentHomeworkPage1Class):
     def __init__(self):
         super().__init__()
-        self._pass = QPushButton("Inverted Angles Hard")
+        self.title.setText("Inverted Angles Hard")
+        self.question_1.setText("Question 1:\n ___________\n__________")
+        self.question_1_shape.setText("Shape")
 
-        self.layout = QVBoxLayout()
+        self.next.clicked.connect(self.next_selected)
 
-        self.layout.addWidget(self._pass)
+    def next_selected(self):
+        self.page_2 = InvertedAnglesHardWidget2()
+        self.page_2.show()
+        self.page_2._raise()
 
-        self.setLayout(self.layout)
 
-class ThreeDTrigEasyWidget(QWidget):
+class ThreeDTrigEasyWidget(ParentHomeworkPage1Class):
     def __init__(self):
         super().__init__()
-        self._pass = QPushButton("3D Trigonometry Easy")
+        self.title.setText("3D Trigonometry Easy")
+        self.question_1.setText("Question 1:\n ___________\n__________")
+        self.question_1_shape.setText("Shape")
 
-        self.layout = QVBoxLayout()
+        self.next.clicked.connect(self.next_selected)
 
-        self.layout.addWidget(self._pass)
+    def next_selected(self):
+        self.page_2 = ThreeDTrigEasyWidget2()
+        self.page_2.show()
+        self.page_2._raise()
 
-        self.setLayout(self.layout)
 
-class ThreeDTrigMediumWidget(QWidget):
+class ThreeDTrigMediumWidget(ParentHomeworkPage1Class):
     def __init__(self):
         super().__init__()
-        self._pass = QPushButton("3D Trigonometry Medium")
+        self.title.setText("3D Trigonometry Medium")
+        self.question_1.setText("Question 1:\n ___________\n__________")
+        self.question_1_shape.setText("Shape")
 
-        self.layout = QVBoxLayout()
+        self.next.clicked.connect(self.next_selected)
 
-        self.layout.addWidget(self._pass)
+    def next_selected(self):
+        self.page_2 = ThreeDTrigMediumWidget2()
+        self.page_2.show()
+        self.page_2._raise()
 
-        self.setLayout(self.layout)
 
-class ThreeDTrigHardWidget(QWidget):
+class ThreeDTrigHardWidget(ParentHomeworkPage1Class):
     def __init__(self):
         super().__init__()
-        self._pass = QPushButton("3D Trigonometry Hard")
+        self.title.setText("3D Trigonometry Hard")
+        self.question_1.setText("Question 1:\n ___________\n__________")
+        self.question_1_shape.setText("Shape")
 
-        self.layout = QVBoxLayout()
+        self.next.clicked.connect(self.next_selected)
 
-        self.layout.addWidget(self._pass)
+    def next_selected(self):
+        self.page_2 = threeDTrigHardWidget2()
+        self.page_2.show()
+        self.page_2._raise()
 
-        self.setLayout(self.layout)
 
-class PythagTheoremEasyWidget(QWidget):
+class PythagTheoremEasyWidget(ParentHomeworkPage1Class):
     def __init__(self):
         super().__init__()
-        self._pass = QPushButton("Pythagoras' Theorem Easy")
+        self.title.setText("Pythagoras' Theorem Easy")
+        self.question_1.setText("Question 1:\n ___________\n__________")
+        self.question_1_shape.setText("Shape")
 
-        self.layout = QVBoxLayout()
+        self.next.clicked.connect(self.next_selected)
 
-        self.layout.addWidget(self._pass)
+    def next_selected(self):
+        self.page_2 = PythagTheoremEasyWidget2()
+        self.page_2.show()
+        self.page_2._raise()
 
-        self.setLayout(self.layout)
 
-class PythagTheoremMediumWidget(QWidget):
+class PythagTheoremMediumWidget(ParentHomeworkPage1Class):
     def __init__(self):
         super().__init__()
-        self._pass = QPushButton("Pythagoras' Theorem Medium")
+        self.title.setText("Pythagoras' Theorem Medium")
+        self.question_1.setText("Question 1:\n ___________\n__________")
+        self.question_1_shape.setText("Shape")
 
-        self.layout = QVBoxLayout()
+        self.next.clicked.connect(self.next_selected)
 
-        self.layout.addWidget(self._pass)
+    def next_selected(self):
+        self.page_2 = PythagTheoremMediumWidget2()
+        self.page_2.show()
+        self.page_2._raise()
 
-        self.setLayout(self.layout)
 
-class PythagTheoremHardWidget(QWidget):
+class PythagTheoremHardWidget(ParentHomeworkPage1Class):
     def __init__(self):
         super().__init__()
-        self._pass = QPushButton("Pythagoras' Theorem Hard")
+        self.title.setText("Pythagoras' Theorem Hard")
+        self.question_1.setText("Question 1:\n ___________\n__________")
+        self.question_1_shape.setText("Shape")
 
-        self.layout = QVBoxLayout()
+        self.next.clicked.connect(self.next_selected)
 
-        self.layout.addWidget(self._pass)
+    def next_selected(self):
+        self.page_2 = PythagTheoremHardWidget2()
+        self.page_2.show()
+        self.page_2._raise()
 
-        self.setLayout(self.layout)
 
-class ThreeDPythagEasyWidget(QWidget):
+class ThreeDPythagEasyWidget(ParentHomeworkPage1Class):
     def __init__(self):
         super().__init__()
-        self._pass = QPushButton("3D Pythagoras Easy")
+        self.title.setText("3D Pythagoras Easy")
+        self.question_1.setText("Question 1:\n ___________\n__________")
+        self.question_1_shape.setText("Shape")
 
-        self.layout = QVBoxLayout()
+        self.next.clicked.connect(self.next_selected)
 
-        self.layout.addWidget(self._pass)
+    def next_selected(self):
+        self.page_2 = ThreeDPythagEasyWidget2()
+        self.page_2.show()
+        self.page_2._raise()
 
-        self.setLayout(self.layout)
 
-class ThreeDPythagMediumWidget(QWidget):
+class ThreeDPythagMediumWidget(ParentHomeworkPage1Class):
     def __init__(self):
         super().__init__()
-        self._pass = QPushButton("3D Pythagoras Medium")
+        self.title.setText("3D Trigonometry Medium")
+        self.question_1.setText("Question 1:\n ___________\n__________")
+        self.question_1_shape.setText("Shape")
 
-        self.layout = QVBoxLayout()
+        self.next.clicked.connect(self.next_selected)
 
-        self.layout.addWidget(self._pass)
+    def next_selected(self):
+        self.page_2 = ThreeDPythagMediumWidget2()
+        self.page_2.show()
+        self.page_2._raise()
 
-        self.setLayout(self.layout)
 
-class ThreeDPythagHardWidget(QWidget):
+class ThreeDPythagHardWidget(ParentHomeworkPage1Class):
     def __init__(self):
         super().__init__()
-        self._pass = QPushButton("3D Pythagoras Hard")
+        self.title.setText("3D Pythagoras Hard")
+        self.question_1.setText("Question 1:\n ___________\n__________")
+        self.question_1_shape.setText("Shape")
 
-        self.layout = QVBoxLayout()
+        self.next.clicked.connect(self.next_selected)
 
-        self.layout.addWidget(self._pass)
+    def next_selected(self):
+        self.page_2 = ThreeDPythagorasHardWidget2()
+        self.page_2.show()
+        self.page_2._raise()
 
-        self.setLayout(self.layout)
 
-class PythagTrigProblemsEasyWidget(QWidget):
+class PythagTrigProblemsEasyWidget(ParentHomeworkPage1Class):
     def __init__(self):
         super().__init__()
-        self._pass = QPushButton("Pythagoras and Trigonometry Problems Easy")
+        self.title.setText("Easy Problems")
+        self.question_1.setText("Question 1:\n ___________\n__________")
+        self.question_1_shape.setText("Shape")
 
-        self.layout = QVBoxLayout()
+        self.next.clicked.connect(self.next_selected)
 
-        self.layout.addWidget(self._pass)
+    def next_selected(self):
+        self.page_2 = PythagTrigProblemsEasyWidget2()
+        self.page_2.show()
+        self.page_2._raise()
 
-        self.setLayout(self.layout)
-
-class PythagTrigProblemsMediumWidget(QWidget):
+class PythagTrigProblemsMediumWidget(ParentHomeworkPage1Class):
     def __init__(self):
         super().__init__()
-        self._pass = QPushButton("Pythagoras and Trigonometry Problems Medium")
+        self.title.setText("Medium Problems")
+        self.question_1.setText("Question 1:\n ___________\n__________")
+        self.question_1_shape.setText("Shape")
 
-        self.layout = QVBoxLayout()
+        self.next.clicked.connect(self.next_selected)
 
-        self.layout.addWidget(self._pass)
+    def next_selected(self):
+        self.page_2 = PythagTrigProblemsMediumWidget2()
+        self.page_2.show()
+        self.page_2._raise()
 
-        self.setLayout(self.layout)
 
-class PythagTrigProblemsHardWidget(QWidget):
+class PythagTrigProblemsHardWidget(ParentHomeworkPage1Class):
     def __init__(self):
         super().__init__()
-        self._pass = QPushButton("Pythagoras and Trigonometry Problems Hard")
+        self.title.setText("Hard Problems")
+        self.question_1.setText("Question 1:\n ___________\n__________")
+        self.question_1_shape.setText("Shape")
 
-        self.layout = QVBoxLayout()
+        self.next.clicked.connect(self.next_selected)
 
-        self.layout.addWidget(self._pass)
+    def next_selected(self):
+        self.page_2 = PythagTrigProblemsHardWidget2()
+        self.page_2.show()
+        self.page_2._raise()
 
-        self.setLayout(self.layout)
 
-class EasySummaryWidget(QWidget):
+class EasySummaryWidget(ParentHomeworkPage1Class):
     def __init__(self):
         super().__init__()
-        self._pass = QPushButton("Summary Easy")
+        self.title.setText("Easy Summary")
+        self.question_1.setText("Question 1:\n ___________\n__________")
+        self.question_1_shape.setText("Shape")
 
-        self.layout = QVBoxLayout()
+        self.next.clicked.connect(self.next_selected)
 
-        self.layout.addWidget(self._pass)
+    def next_selected(self):
+        self.page_2 = EasySummaryWidget2()
+        self.page_2.show()
+        self.page_2._raise()
 
-        self.setLayout(self.layout)
 
-class MediumSummaryWidget(QWidget):
+class MediumSummaryWidget(ParentHomeworkPage1Class):
     def __init__(self):
         super().__init__()
-        self._pass = QPushButton("Summary Medium")
+        self.title.setText("Medium Summary")
+        self.question_1.setText("Question 1:\n ___________\n__________")
+        self.question_1_shape.setText("Shape")
 
-        self.layout = QVBoxLayout()
+        self.next.clicked.connect(self.next_selected)
 
-        self.layout.addWidget(self._pass)
+    def next_selected(self):
+        self.page_2 = MediumSummaryWidget2()
+        self.page_2.show()
+        self.page_2._raise()
 
-        self.setLayout(self.layout)
 
-class HardSummaryWidget(QWidget):
+class HardSummaryWidget(ParentHomeworkPage1Class):
     def __init__(self):
         super().__init__()
-        self._pass = QPushButton("Summary Hard")
+        self.title.setText("Hard Summary")
+        self.question_1.setText("Question 1:\n ___________\n__________")
+        self.question_1_shape.setText("Shape")
 
-        self.layout = QVBoxLayout()
+        self.next.clicked.connect(self.next_selected)
 
-        self.layout.addWidget(self._pass)
-
-        self.setLayout(self.layout)
+    def next_selected(self):
+        self.page_2 = HardSummaryWidget2()
+        self.page_2.show()
+        self.page_2._raise()

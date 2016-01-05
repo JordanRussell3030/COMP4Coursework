@@ -2,24 +2,25 @@ from PyQt4.QtGui import *
 from PyQt4.QtCore import *
 from login_screen_window import *
 from login_widget import *
-
+#
 from lesson_menu_widget import *
 from homework_menu_widget import *
 ##from parent_class_menus import *
 from easy_trig_widget import *
 from parent_lesson_menu import *
+##from default_button_widget import *
 
 class Trigonometry1(ParentLessonMenu):
     def __init__(self):
         super().__init__()
+        self.title.setText("Trigonometry 1")
 
-        self.button_1 = QPushButton("Sides AHO")
-        self.button_2 = QPushButton("SOHCAHTOA")
-
-        self.setLayout(self.layout)
-
-        self.layout.addWidget(self.button_1, 0, 1)
-        self.layout.addWidget(self.button_2, 1, 1)
+        self.button_1.setText("Sides")
+        self.button_2.setText("SOHCAHTOA")
+        
+        self.layout.addWidget(self.title, 0, 0)
+        self.layout.addWidget(self.button_1, 1, 1)
+        self.layout.addWidget(self.button_2, 0, 1)
 
         self.button_1.clicked.connect(self.SidesAHO)
         self.button_2.clicked.connect(self.SOHCAHTOA)
@@ -37,13 +38,14 @@ class Trigonometry1(ParentLessonMenu):
 class Trigonometry2(ParentLessonMenu):
     def __init__(self):
         super().__init__()
+        
+        self.title.setText("Trigonometry 2")
 
-        self.button_1 = QPushButton("Finding Angles")
-        self.button_2 = QPushButton("Inverted Angles")
-        self.button_3 = QPushButton("3D Trigonometry")
+        self.button_1.setText("Finding Angles")
+        self.button_2.setText("Inverted Angles")
+        self.button_3.setText("3D Trigonometry")
 
-        self.setLayout(self.layout)
-
+        self.layout.addWidget(self.title, 0, 0)
         self.layout.addWidget(self.button_1, 0, 1)
         self.layout.addWidget(self.button_2, 1, 1)
         self.layout.addWidget(self.button_3, 2, 1)
@@ -70,12 +72,13 @@ class Trigonometry2(ParentLessonMenu):
 class Pythagoras(ParentLessonMenu):
     def __init__(self):
         super().__init__()
+        
+        self.title.setText("Pythagoras")
 
-        self.button_1 = QPushButton("Pythagoras Theorem")
-        self.button_2 = QPushButton("3D Pythagoras")
+        self.button_1.setText("Pythagoras' Theorem")
+        self.button_2.setText("3D Pythagoras")
 
-        self.setLayout(self.layout)
-
+        self.layout.addWidget(self.title, 0, 0)
         self.layout.addWidget(self.button_1, 0, 1)
         self.layout.addWidget(self.button_2, 1, 1)
 
@@ -96,12 +99,13 @@ class PythagTrig(ParentLessonMenu):
     def __init__(self):
         super().__init__()
 
-        self.button_1 = QPushButton("Easy")
-        self.button_2 = QPushButton("Medium")
-        self.button_3 = QPushButton("Hard")
+        self.title.setText("Pythagoras and Trigonometry Problems")
 
-        self.setLayout(self.layout)
+        self.button_1.setText("Easy")
+        self.button_2.setText("Medium")
+        self.button_3.setText("Hard")
 
+        self.layout.addWidget(self.title, 0, 0)
         self.layout.addWidget(self.button_1, 0, 1)
         self.layout.addWidget(self.button_2, 1, 1)
         self.layout.addWidget(self.button_3, 2, 1)
@@ -129,12 +133,13 @@ class Summary(ParentLessonMenu):
     def __init__(self):
         super().__init__()
 
-        self.button_1 = QPushButton("Revise Trigonometry 1")
-        self.button_2 = QPushButton("Revise Trigonometry 2")
-        self.button_3 = QPushButton("Revise Trigonometry 3")
+        self.title.setText("Summary")
 
-        self.setLayout(self.layout)
-
+        self.button_1.setText("Easy")
+        self.button_2.setText("Medium")
+        self.button_3.setText("Hard")
+        
+        self.layout.addWidget(self.title, 0, 0)
         self.layout.addWidget(self.button_1, 0, 1)
         self.layout.addWidget(self.button_2, 1, 1)
         self.layout.addWidget(self.button_3, 2, 1)
