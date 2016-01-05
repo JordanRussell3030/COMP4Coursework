@@ -40,8 +40,8 @@ class ParentLessonLayout(QWidget):
         self.layout = QGridLayout()
 
         self.layout.addWidget(self.title, 0, 0)
-        self.layout.addWidget(self.back, 2, 0)
-        self.layout.addWidget(self.next, 2, 1)
+        self.layout.addWidget(self.back, 3, 0)
+        self.layout.addWidget(self.next, 3, 1)
         self.layout.addWidget(self.lesson_1, 1, 0)
         self.layout.addWidget(self.lesson_2, 1, 1)
 
