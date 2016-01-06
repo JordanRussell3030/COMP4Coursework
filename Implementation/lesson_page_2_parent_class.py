@@ -55,7 +55,7 @@ class ParentLessonPage2(QWidget):
         self.setLayout(self.layout)
 
         self.layout.addWidget(self.answer, 1, 1)
-        self.layout.addWidget(self.previous, 2, 0)
+        self.layout.addWidget(self.previous, 3, 0)
         self.layout.addWidget(self.check, 2, 1)
         self.layout.addWidget(self.finish, 3, 1)
         self.layout.addWidget(self.text_1, 0, 0)

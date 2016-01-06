@@ -16,12 +16,12 @@ class ParentLessonLayout(QWidget):
         self.back = QPushButton("Return")
         self.next = QPushButton("Next")
 
-        self.back.setMinimumHeight(110)
+        self.back.setMinimumHeight(50)
         self.back.setMinimumWidth(60)
         self.back.setFont(QFont("Courier", 40))
         self.back.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue;}")
 
-        self.next.setMinimumHeight(110)
+        self.next.setMinimumHeight(50)
         self.next.setMinimumWidth(60)
         self.next.setFont(QFont("Courier", 40))
         self.next.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue;}")
@@ -40,8 +40,8 @@ class ParentLessonLayout(QWidget):
         self.layout = QGridLayout()
 
         self.layout.addWidget(self.title, 0, 0)
-        self.layout.addWidget(self.back, 2, 0)
-        self.layout.addWidget(self.next, 2, 1)
+        self.layout.addWidget(self.back, 3, 0)
+        self.layout.addWidget(self.next, 3, 1)
         self.layout.addWidget(self.lesson_1, 1, 0)
         self.layout.addWidget(self.lesson_2, 1, 1)
 
