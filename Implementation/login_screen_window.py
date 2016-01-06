@@ -8,7 +8,9 @@ from admin_account_home import *
 from homework_set_screen import *
 from results_menu_widget import *
 from error_messages import *
-
+###
+##from temp import *
+###
 import sys
 
 class MyWindow(QMainWindow):
@@ -17,9 +19,10 @@ class MyWindow(QMainWindow):
         super().__init__()
 
         self.login_widget = LoginWidget()
-        self.student_home = UserAccountWidget(self)
-##        self.student_home = AdminAccountWidget()
+##        self.student_home = UserAccountWidget(self)
+        self.student_home = AdminAccountWidget()
 ##        self.student_home = AnyWidget()
+##        self.student_home = RWidget()
 
 ##        self.student_home = HomeworkSetScreen()  
 

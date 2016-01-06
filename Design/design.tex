@@ -9,6 +9,7 @@
 	\begin{itemize}
 		\item General User Interface
 		\item Getting Username and Password
+		\item Entering Users Into the System
 		\item Navigating User's Personal Account User Interface
 		\item Setting Homework From Administrator
 		\item Running Individual Lessons
@@ -17,6 +18,7 @@
 		\item Outputting Error Exception Messages
 		\item Recording Homework Results On Database
 		\item Viewing Results in Database
+		\item Querying the Database
 	\end{itemize}
 \end{itemize}
 
@@ -34,6 +36,14 @@
 		\item This will come in the very first window every time the user or administrator wants to access the program; it will ask them to log in so that they can view their own personal account, with all of their homework progress and personal records.
 		\item It will mainly consist of two text boxes in the centre of the screen, one prompting a username and the other a password underneath. 
 		\item If invalid information is input it will display an error message asking the user to retry. There will be no limit to the number of attempts a user can have; it won't lock them out of their computer if they keep getting it wrong.
+	\end{itemize}
+\end{itemize}
+
+\begin{itemize}
+	\item Entering Users Into the System
+	\begin{itemize}
+		\item The administrator will be able to click a button from their home screen which will like them to an administration window from which they can add names and classes
+		\item They will input a name, then click submit to finish, or submit and add another to continue adding names, or select the add class button which will take them to a similar window to add a class
 	\end{itemize}
 \end{itemize}
 
@@ -116,6 +126,14 @@
 		\item A teacher will be able to click a button on the home screen to take them to the database view, where they will clearly see all of the students results in any of their own classes, and they will be able to scroll through each student in alphabetical order on a scroll bar on the side to find individual's results
 		\item An administrator (teacher) can amend a database value if it is necessary, although it is unlikely that it will be
 		\item A return button will take them straight back to the home page to continue using the system
+	\end{itemize}
+\end{itemize}
+
+\begin{itemize}
+	\item Querying the Database
+	\begin{itemize}
+		\item An administrator or student eill be able to query the databases they can access by using the report window, where admins can select a class, student, task and/or score and be given all database entries with the relevant information. Students will only be able to query tasks and scores to comply with their access authorisation
+		\item The system will be queried using SQL statements provided by combining the user's selections from the report window
 	\end{itemize}
 \end{itemize}
 
@@ -274,18 +292,38 @@
 \end{figure}
 
 \begin{figure}[H]
-    \label{fig:print_function_result}\caption{ErrorMessage3}
+    \label{fig:print_function_result}
     \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Design/figure_2_27}
 \end{figure}
 
 \begin{figure}[H]
-    \label{fig:print_function_result}\caption{ErrorMessage3}
+    \label{fig:print_function_result}
     \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Design/figure_2_28}
 \end{figure}
 
 \begin{figure}[H]
-    \label{fig:print_function_result}\caption{ErrorMessage4}
+    \label{fig:print_function_result}
     \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Design/figure_2_29}
+\end{figure}
+
+\begin{figure}[H]
+    \label{fig:print_function_result}\caption{Administrator Query Window}
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Design/figure_2_030}
+\end{figure}
+
+\begin{figure}[H]
+    \label{fig:print_function_result}\caption{Student Query Window}
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Design/figure_2_031}
+\end{figure}
+
+\begin{figure}[H]
+    \label{fig:print_function_result}\caption{Administration Names Window}
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Design/figure_2_032}
+\end{figure}
+
+\begin{figure}[H]
+    \label{fig:print_function_result}\caption{Administration Class Window}
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Design/figure_2_033}
 \end{figure}
 
 \section{Hardware Specification}
@@ -849,6 +887,26 @@ OutputError \\ \hline
     \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Design/pyqt_figure_21}
 \end{figure}
 
+\begin{figure}[H]
+    \label{fig:print_function_result}\caption{Administrator Report Widget: Appears if the user selects the 'report' button from the progress screen, and allows the user to quickly query the database by selecting criteria for an SQL search statement. Can also query an entire clsas or a student, unlike students whi have restricted use.}
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Design/pyqt_figure_22}
+\end{figure}
+
+\begin{figure}[H]
+    \label{fig:print_function_result}\caption{Student Report Widget: Appears if the user selects the 'report' button from the progress screen, and allows the user to quickly query the database by selecting criteria for an SQL search statement.}
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Design/pyqt_figure_23}
+\end{figure}
+
+\begin{figure}[H]
+    \label{fig:print_function_result}\caption{Administration Names Widget: The administrator can use this window to add students into the system. Is accessible from the admin home screen.}
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Design/pyqt_figure_24}
+\end{figure}
+
+\begin{figure}[H]
+    \label{fig:print_function_result}\caption{Administration Class Widget: The administrator can use this window to add classes into the system. Is accessible from the admin home screen.}
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Design/pyqt_figure_25}
+\end{figure}
+
 \section{Definition of Data Requirements}
 
 \subsection{Identification of all data input items}
@@ -910,6 +968,19 @@ OutputError \\ \hline
 			\item Progress button
 			\item Result selection buttons
 			\item Feedback
+		\end{itemize}
+		\item Report Screen:
+		\begin{itemize}
+			\item Class selection combo box
+			\item Student selection combo box
+			\item Task selection combo box
+			\item Score selection combo box
+		\end{itemize}
+		\item Administration:
+		\begin{itemize}
+			\item Student FirstName
+			\item Student LastName
+			\item ClassID
 		\end{itemize}
 		\item Previous button
 		\item Next button
@@ -1679,6 +1750,18 @@ Score Requirements & 75\% & Presence check & Makes sure a score percentage has b
 1.426 & To test the Result buttons on the results menu screen functions as intended & This should link to the results of the corresponding homework in the database viewer for the entire class & Click the results button(s) & Normal & The results for the corresponding homework across the class should be displayed in the database viewer & & \\ \hline
 1.427 & To test the return button on the results menu screen functions as intended & This should link back to the administrator account home screen & Click the return button & Normal & The administrator account home screen should be displayed & & \\ \hline
 1.428 & To test the return button on the admin progress database viewer screen functions as intended & This should link back to the administrator account home screen & Click the return button & Normal & The administrator account home screen should be displayed & & \\ \hline
+1.429 & To test the return button on the administrator report screen functions as intended & This should link back to the admin progress screen & Click the return button & Normal & The administrator progress screen should be displayed & & \\ \hline
+1.430 & To test the query button on the administrator report screen functions as intended & This should link back to the admin progress screen and new queried information should be displayed & Click the query button & Normal & The admin progress screen should be displayed with updated data in the database widget & & \\ \hline
+1.431 & To test the return button on the student report screen functions as intended & This should link back to the student progress screen & Click the return button & Normal & The student progress screen should be displayed & & \\ \hline
+1.432 & To test the query button on the student report screen functions as intended & This should link back to the student progress screen and new queried information should be displayed & Click the query button & Normal & The student progress screen should be displayed with updated data in the database widget & & \\ \hline
+1.433 & To test the add class button on the add names widget functions as intended & This should link to the add class screen & Click the add class button & Normal & The add class screen should be displayed & & \\ \hline
+1.434 & To test the add name button on the add names widget functions as intended & This should add a name to the system and link back to the admin home screen & Click the add name button & Normal & The name should be stored and the admin home screen should be displayed & & \\ \hline
+1.435 & To test the add another button on the add names widget functions as intended & This should add a name to the system and remain on the same page for the process to repeat & Click the add another button & Normal & The name should be added to the sytem and the input boxes wiped ready for another name & & \\ \hline
+1.436 & To test the return button on the add names widget functions as intended & This should link back to the admin home screen & Click the return button & Normal & The admin home screen should be displayed & & \\ \hline
+1.437 & To test the add stduents button on the add class widget functions as intended & This should link to the add names screen & Click the add students button & Normal & The add names screen should be displayed & & \\ \hline
+1.438 & To test the add class button on the add class widget functions as intended & This should add a class to the system and then return to the admin home screen & Click the add class button & Normal & The class should be added to the system and the admin home screen should be displayed & & \\ \hline
+1.439 & To test the add another button on the add class widget functions as intended & This should add a class to the system and remain on the same page for the process to repeat & Click the add another button & Normal & The class should be added to the sytem and the input boxes wiped ready for another class & & \\ \hline
+1.440 & To test the return button on the add class widget functions as intended & This should link back to the admin home screen & Click the return button & Normal & The admin home screen should be displayed & & \\ \hline
 2.001 & To test that the system can recognise a user's username when input correctly and allow access to their account & This should allow the user access to their account & Input User1 & Erroneous, Presence & The username should be accepted and the user allowed access (alongside a correct password) & & \\ \hline
 2.002 & To test that the system can recognise a user's password when input correctly and allow access to their account & This should allow the user access to their account & Input d8g3h6g & Erroneous, Presence & The password should be accepted and the user allowed access to their account (alongside a correct username) & & \\ \hline
 2.003 & To test that the input for the practice question on the Sides second lesson screen is properly checked as correct or incorrect & This should truthfully notify the user whether they were right or wrong & 45 degrees & Boundary, Erroneous, Presence & The user should be notified whether or not they were right & & \\ \hline
@@ -1969,6 +2052,15 @@ Score Requirements & 75\% & Presence check & Makes sure a score percentage has b
 2.288 & To test that the feedback box for the Summary Easy homework functions as intended & This should accept a string of text from an administrator and make it available for the corresponding student to view & Very good work & Normal, Presence & The corresponding student should then be able to view this feedback & & \\ \hline
 2.289 & To test that the feedback box for the Summary Medium homework functions as intended & This should accept a string of text from an administrator and make it available for the corresponding student to view & Very good work & Normal, Presence & The corresponding student should then be able to view this feedback & & \\ \hline
 2.290 & To test that the feedback box for the Summary Hard homework functions as intended & This should accept a string of text from an administrator and make it available for the corresponding student to view & Very good work & Normal, Presence & The corresponding student should then be able to view this feedback & & \\ \hline
+2.291 & To test the the class selection combo box on the admin report screen functions as intended & This should accept a class selected from the combo box and use it in the SQL statement to query the database & 10A & Normal, Presence & The input should be used in the SQL statement to give relevant information & & \\ \hline
+2.292 & To test the the student selection combo box on the admin report screen functions as intended & This should accept a student selected from the combo box and use it in the SQL statement to query the database & 10A & Normal, Presence & The input should be used in the SQL statement to give relevant information & & \\ \hline
+2.293 & To test the the task selection combo box on the admin report screen functions as intended & This should accept a task selected from the combo box and use it in the SQL statement to query the database & 10A & Normal, Presence & The input should be used in the SQL statement to give relevant information & & \\ \hline
+2.294 & To test the the score selection combo box on the admin report screen functions as intended & This should accept a score selected from the combo box and use it in the SQL statement to query the database & 10A & Normal, Presence & The input should be used in the SQL statement to give relevant information & & \\ \hline
+2.295 & To test the the task selection combo box on the student report screen functions as intended & This should accept a task selected from the combo box and use it in the SQL statement to query the database & 10A & Normal, Presence & The input should be used in the SQL statement to give relevant information & & \\ \hline
+2.296 & To test the the score selection combo box on the student report screen functions as intended & This should accept a score selected from the combo box and use it in the SQL statement to query the database & 10A & Normal, Presence & The input should be used in the SQL statement to give relevant information & & \\ \hline
+2.297 & To test the FirstName line edit on the add names widget functions as intended & This should accept the name given, validate it as a name and store it in the database & John & Erroneous, Presence & The name should be validated and added to the database & & \\ \hline
+2.298 & To test the LastName line edit on the add names widget functions as intended & This should accept the name given, validate it as a name and store it in the database & Smith & Erroneous, Presence & The name should be validated and added to the database & & \\ \hline
+2.299 & To test the ClassID line edit on the add class widget functions as intended & This should accept the class given, validate it as a ClassID and store it in the database & 10A & Erroneous, Presence & The class should be validated and added to the database & & \\ \hline
 3.001 & To test that the ClassID is stored in the correct place in the database & This should be stored as a primary key and should not be displayed at any point in the system & 10A & Presence, Normal & The ClassID should be stored as a primary key in the Class database & & \\ \hline
 3.002 & To test that the UserIDs are all stored in the correct place in the database & These should be stored as primary keys and should be displayed on account home screens & 0001 & Presence, Normal & The UserIDs should be stored as a primary key in the Class Database and in the User's database & & \\ \hline
 3.003 & To test that the student's FirstNames are all stored in the correct place in the database & These should be stored and visible only by the user whose first name it is in their personal task database & John & Presence, Normal & The FirstNames should be stored in the User's database and visible together by the administrator or individually by the respective student & & \\ \hline
