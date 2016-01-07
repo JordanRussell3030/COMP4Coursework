@@ -1,6 +1,7 @@
 import sqlite3
 #
 from database_gui import *
+from homework_parent_class import *
 
 class Database:
     def __init__(self, db_name):

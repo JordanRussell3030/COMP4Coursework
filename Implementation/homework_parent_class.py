@@ -3,6 +3,7 @@ from PyQt4.QtGui import *
 #
 from homework_widgets import *
 from homework_page_2_parent_class import *
+from database_class import *
 
 class ParentHomeworkPage1Class(QWidget):
     def __init__(self):
@@ -108,7 +109,12 @@ class ParentHomeworkPage1Class(QWidget):
     #check answers using algorithms
 
     def reset_selected(self):
-        pass
+        self.answer_a.setText(None)
+        self.answer_b.setText(None)
+        self.answer_c.setText(None)
+        self.answer_d.setText(None)
+        self.answer_e.setText(None)
+        self.answer_f.setText(None)
     #answer_a.text = None
 
     def cancel_selected(self):
