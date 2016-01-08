@@ -9,6 +9,7 @@ from homework_menu_widget import *
 from easy_trig_widget import *
 from homework_widgets import *
 from homework_menu_parent_class import *
+from homework_widgets_page_2 import *
 
 class Trigonometry1HW(ParentHomeworkMenuClass):
     def __init__(self):

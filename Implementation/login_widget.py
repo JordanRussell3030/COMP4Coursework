@@ -17,6 +17,14 @@ class LoginWidget(QWidget):
         self.a_label = QLabel("Please log in with your username\nand password.")
         self.b_label = QLabel("Consult your administrator if you\nhave forgotten your login details.")
         self.login = QPushButton("Log in")
+        self.pic = QLabel()
+        self.pic_2 = QLabel()
+        
+        self.pic.setPixmap(QPixmap("login_widget_picture"))
+
+        self.pic_2.setPixmap(QPixmap("powered_by_python"))
+##        self.pic_2.setMaximumHeight(140)
+##        self.pic_2.setMaximumWidth(140)
 
         self.username.setMinimumWidth(60)
         self.username.setMinimumHeight(100)
@@ -49,17 +57,27 @@ class LoginWidget(QWidget):
         self.layout.addWidget(self.a_label, 2, 1)
         self.layout.addWidget(self.b_label, 3, 1)
         self.layout.addWidget(self.login, 4, 1)
+        self.layout.addWidget(self.pic, 0, 2)
+        self.layout.addWidget(self.pic_2, 4, 2)
 
         self.setLayout(self.layout)
 
-        self.login.clicked.connect(self.submit_pushed)
+        self.login.clicked.connect(self.validate_login)
 
-        #print(self.login.icon())
+        #print(self.login.icon())       
 
-    def submit_pushed(self):
-        username = self.username.text()
-        print(username)
+    def validate_login(self):
         self.NameEntered.emit()
+        
+        #SQL stuff
+        #if username in database and password in database
+##        self.NameEntered.emit()
+##        else:
+##            error_message = ErrorMessage1()
+##            error_message.show()
+##            error_message._raise()
+##            self.username.setText(None)
+##            self.password.setText(None)
 ##        self.error_message_1 = ErrorMessage5()
 ##        self.error_message_1.show()
 ##        self.error_message_1._raise()

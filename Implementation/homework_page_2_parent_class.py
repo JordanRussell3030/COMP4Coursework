@@ -105,8 +105,8 @@ class HomeworkPage2ParentClass(QWidget):
     def selected_mark_4(self):
         pass
 
-    def selected_previous(self):
-        self.close()
+##    def selected_previous(self):
+##        self.close()
 
     def selected_finish(self):
         self.close()

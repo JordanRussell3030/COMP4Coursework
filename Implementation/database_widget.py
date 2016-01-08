@@ -44,12 +44,12 @@ class DatabaseWidget(QWidget):
         self.back.setFont(QFont("Courier", 40))
         self.back.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue;}")
 
-        self.database.setRowCount(22)
-        self.database.setColumnCount(8)
+        self.database.setRowCount(29)
+        self.database.setColumnCount(13)
         self.database_header = ("StudentID", "First Name", "Last Name")
         self.database.setHorizontalHeaderLabels(self.database_header)
         self.database.setMinimumWidth(45)
-        self.database.setMinimumHeight(577)
+        self.database.setMinimumHeight(890)
 
         self.database.setStyleSheet("QTableView {selection-background-color: cyan;}");
 

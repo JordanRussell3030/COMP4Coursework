@@ -22,7 +22,18 @@ class UserAccountWidget(QWidget):
         self.database_label = QLabel("To view your\nprogress so far,\nclick here! ")
         self.account_label = QLabel("Account No: XXXX\nUsername: XXXX\nAverage Rating: XXXX")
         self.log_out = QPushButton("Log out")
-        self.picture = QLabel("Shape")
+        self.picture = QLabel()
+        self.homework_pic = QLabel()
+        self.smiler = QLabel()
+
+        self.picture.setPixmap(QPixmap("student_account_home_pic"))
+        self.picture.setAlignment(Qt.AlignCenter)
+        
+        self.smiler.setPixmap(QPixmap("smile"))
+        self.smiler.setAlignment(Qt.AlignCenter)
+
+        self.homework_pic.setPixmap(QPixmap("student_home_homework"))
+        self.homework_pic.setAlignment(Qt.AlignCenter)        
 
         self.lessons.setMinimumWidth(90)
         self.lessons.setMinimumHeight(110)
@@ -61,6 +72,8 @@ class UserAccountWidget(QWidget):
         self.layout.addWidget(self.account_label, 0, 3)
         self.layout.addWidget(self.picture, 1, 3)
         self.layout.addWidget(self.log_out, 2, 3)
+        self.layout.addWidget(self.smiler, 2, 2)
+        self.layout.addWidget(self.homework_pic, 1, 2)
 
         self.setLayout(self.layout)
 

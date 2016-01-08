@@ -29,8 +29,6 @@ class ParentHomeworkPage1Class(QWidget):
         self.answer_e = QLineEdit()
         self.answer_f = QLineEdit()
 
-        self.buttons = []
-
         self.answer_a.setMinimumHeight(70)
         self.answer_a.setMinimumWidth(60)
         self.answer_a.setFont(QFont("Courier", 30))
@@ -62,10 +60,6 @@ class ParentHomeworkPage1Class(QWidget):
 
         self.score_box.setFont(QFont("Courier", 30))
 
-        self.buttons.append(self.cancel)
-        self.buttons.append(self.check)
-        self.buttons.append(self.reset)
-
         self.cancel.setMinimumHeight(110)
         self.cancel.setMinimumWidth(60)
         self.cancel.setFont(QFont("Courier", 40))
@@ -78,8 +72,11 @@ class ParentHomeworkPage1Class(QWidget):
         self.reset.setMinimumWidth(60)
         self.reset.setFont(QFont("Courier", 40))
 
-        for button in self.buttons:
-            self.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue;}")
+        self.next.setMinimumHeight(110)
+        self.next.setMinimumWidth(60)
+        self.next.setFont(QFont("Courier", 40))
+
+        self.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue;}")
 
         self.layout = QGridLayout()
         
@@ -105,8 +102,7 @@ class ParentHomeworkPage1Class(QWidget):
         self.cancel.clicked.connect(self.cancel_selected)
 
     def check_selected(self):
-        pass
-    #check answers using algorithms
+        raise Exception("Need to override check_selected from ParentHomeworkPage1Class")
 
     def reset_selected(self):
         self.answer_a.setText(None)
@@ -115,7 +111,6 @@ class ParentHomeworkPage1Class(QWidget):
         self.answer_d.setText(None)
         self.answer_e.setText(None)
         self.answer_f.setText(None)
-    #answer_a.text = None
 
     def cancel_selected(self):
         self.close()

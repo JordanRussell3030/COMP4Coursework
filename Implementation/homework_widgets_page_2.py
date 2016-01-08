@@ -3,6 +3,7 @@ from PyQt4.QtGui import *
 #
 from homework_widgets import *
 from homework_page_2_parent_class import *
+from derived_homework_menus import *
 
 class SidesAHOEasyWidget2(HomeworkPage2ParentClass):
     def __init__(self):
@@ -13,7 +14,21 @@ class SidesAHOEasyWidget2(HomeworkPage2ParentClass):
         self.shape_3.setText("Shape")
         self.question_4.setText("Question 4\n______\n______\n______")
 
-##        self.answer_2.addItem("")
+        self.answer_2.addItem("10")
+        self.answer_2.addItem("20")
+        self.answer_2.addItem("30")
+
+##    def selected_mark_2(self):
+##        if self.answer_2.item() == 20:
+##            print("Correct")
+##        else:
+##            print("Incorrect")
+
+        
+    def selected_previous(self):
+##        sides_aho_1 = SidesAHOEasyWidget()
+        sides_aho_1.show()
+##        sides_aho_1._raise()
 
 class SidesAHOMediumWidget2(HomeworkPage2ParentClass):
     def __init__(self):

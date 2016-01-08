@@ -19,52 +19,58 @@ class LessonMenuWidget(QMainWindow):
         self.lesson_label = QLabel("Lessons")
         self.picture = QLabel("Shape")
         self.select = QLabel("Please select a topic: ")
+        self.pic = QLabel()
+        self.title_pic = QLabel()
+
+        self.title_pic.setPixmap(QPixmap("title_lessons"))
+
+        self.pic.setPixmap(QPixmap("lesson_topic_menu_pic"))
+        self.pic.setAlignment(Qt.AlignCenter)
 
         self.t1.setMinimumWidth(90)
         self.t1.setMinimumHeight(110)
-        self.t1.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue; font-size: 20;}")
         self.t1.setFont(QFont("Courier", 40))
 
         self.t2.setMinimumWidth(90)
         self.t2.setMinimumHeight(110)
-        self.t2.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue; font-size: 20;}")
         self.t2.setFont(QFont("Courier", 40))
+##        self.t2.move(0, -200)
 
         self.pyt.setMinimumWidth(90)
         self.pyt.setMinimumHeight(110)
-        self.pyt.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue; font-size: 20;}")
         self.pyt.setFont(QFont("Courier", 40))
 
         self.pytrig.setMinimumWidth(90)
         self.pytrig.setMinimumHeight(110)
-        self.pytrig.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue; font-size: 20;}")
         self.pytrig.setFont(QFont("Courier", 30))
+##        self.pytrig.move(0, 300)
 
         self.sum.setMinimumWidth(90)
         self.sum.setMinimumHeight(110)
-        self.sum.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue; font-size: 20;}")
         self.sum.setFont(QFont("Courier", 40))
 
         self.back.setMinimumWidth(90)
         self.back.setMinimumHeight(110)
-        self.back.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue; font-size: 20;}")
         self.back.setFont(QFont("Courier", 40))
 
         self.lesson_label.setFont(QFont("Courier", 40))
         self.picture.setFont(QFont("Courier", 25))
         self.select.setFont(QFont("Courier", 25))
 
+        self.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue; font-size: 20;}")
+
         self.layout = QGridLayout()
         
-        self.layout.addWidget(self.lesson_label, 0, 0)
-        self.layout.addWidget(self.t1, 2, 1)
-        self.layout.addWidget(self.t2, 3, 1)
-        self.layout.addWidget(self.pyt, 4, 1)
-        self.layout.addWidget(self.pytrig, 5, 1)
-        self.layout.addWidget(self.sum, 6, 1)
-        self.layout.addWidget(self.picture, 2, 0)
-        self.layout.addWidget(self.back, 6, 0)
-        self.layout.addWidget(self.select, 1, 0)
+##        self.layout.addWidget(self.lesson_label, 1, 0)
+        self.layout.addWidget(self.t1, 1, 1)
+        self.layout.addWidget(self.t2, 2, 1)
+        self.layout.addWidget(self.pyt, 3, 1)
+        self.layout.addWidget(self.pytrig, 4, 1)
+        self.layout.addWidget(self.sum, 5, 1)
+        self.layout.addWidget(self.pic, 0, 0)
+        self.layout.addWidget(self.back, 5, 0)
+        self.layout.addWidget(self.title_pic, 0, 1)
+##        self.layout.addWidget(self.select, 2, 0)
 
         #self.setLayout(self.layout)
         self._centralwidget = QWidget()
