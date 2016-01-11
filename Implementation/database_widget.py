@@ -51,7 +51,7 @@ class DatabaseWidget(QWidget):
         self.database.setMinimumWidth(45)
         self.database.setMinimumHeight(890)
 
-        self.database.setStyleSheet("QTableView {selection-background-color: cyan;}");
+        self.database.setStyleSheet("QTableView {selection-background-color: #A3C1DA;}");
 
 ##        students = g_database.GetAllNames()
 ##        for student in students:

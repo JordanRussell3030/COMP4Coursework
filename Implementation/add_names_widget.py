@@ -3,7 +3,7 @@ from PyQt4.QtCore import *
 #
 from admin_account_home import *
 from add_class_widget import *
-#from database import *
+from database_class import *
 
 class AddNamesWidget(QWidget):
     def __init__(self):
@@ -86,8 +86,10 @@ class AddNamesWidget(QWidget):
         add_class._raise()
 
     def selected_submit_1(self):
-        pass
-        #SQL add name to database
+##        pass
+        insert_data("{0}".format(self.input_first_name.text()))
+        insert_data("{0}".format(self.input_last_name.text()))
+        self.close()
 
     def selected_submit_2(self):
         pass

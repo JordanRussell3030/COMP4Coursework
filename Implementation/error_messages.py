@@ -9,8 +9,7 @@ from login_screen_window import *
 class ErrorMessage1(QErrorMessage):
     def __init__(self):
         super().__init__()
-        message = "Either your username or password is incorrect, please try again. If you have forgotten your login details, please speak to your administrator."
-        
+        message = "Your username and password are incorrect, please try again. If you have forgotten your login details, please speak to your administrator."
         QErrorMessage.showMessage(self, message)
 
 class ErrorMessage2(QErrorMessage):
@@ -35,4 +34,16 @@ class ErrorMessage5(QErrorMessage):
     def __init__(self):
         super().__init__()
         message = "That is incorrect - please try again. You have X more attempts"
+        QErrorMessage.showMessage(self, message)
+
+class ErrorMessage6(QErrorMessage):
+    def __init__(self):
+        super().__init__()
+        message = "Your username is incorrect, please try again. If you have forgotten your username, please speak to your administrator."
+        QErrorMessage.showMessage(self, message)
+
+class ErrorMessage7(QErrorMessage):
+    def __init__(self):
+        super().__init__()
+        message = "Your password is incorrect, please try again. If you have forgotten your password, please speak to your administrator."
         QErrorMessage.showMessage(self, message)

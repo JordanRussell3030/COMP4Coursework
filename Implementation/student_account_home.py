@@ -1,8 +1,8 @@
 from PyQt4.QtGui import *
 from PyQt4.QtCore import *
+
 from login_screen_window import *
 from login_widget import *
-#
 from lesson_menu_widget import *
 from homework_menu_widget import *
 from database_widget import *
@@ -83,8 +83,9 @@ class UserAccountWidget(QWidget):
         self.log_out.clicked.connect(self.log_out_selected)
 
     def log_out_selected(self):
+##        exit()
         self.close()
-
+        
     def selected_lessons(self):
         lessonmenuwidget = LessonMenuWidget()
         lessonmenuwidget.show()

@@ -36,6 +36,7 @@ class LoginWidget(QWidget):
         self.password.setMinimumWidth(60)
         self.password.setMinimumHeight(100)
         self.password.setFont(QFont("Courier", 40))
+        self.password.setEchoMode(QLineEdit.Password)
 
         self.login.setMinimumWidth(60)
         self.login.setMinimumHeight(110)
@@ -67,7 +68,20 @@ class LoginWidget(QWidget):
         #print(self.login.icon())       
 
     def validate_login(self):
-        self.NameEntered.emit()
+##        if self.username.text() == "admin" and self.password.text() == "admin":
+            self.NameEntered.emit()
+##        elif self.password.text() != "admin" and self.username.text() == "admin":
+##            self.error_message = ErrorMessage7()
+##            self.error_message.show()
+##            self.error_message._raise()
+##        elif self.username.text() == "admin" and self.password.text() != "admin":
+##            self.error_message = ErrorMessage6()
+##            self.error_message.show()
+##            self.error_message._raise()
+##        else:
+##            self.error_message = ErrorMessage1()
+##            self.error_message.show()
+##            self.error_message._raise()
         
         #SQL stuff
         #if username in database and password in database

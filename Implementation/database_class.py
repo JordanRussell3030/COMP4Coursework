@@ -2,6 +2,7 @@ import sqlite3
 #
 from database_gui import *
 from homework_parent_class import *
+from add_names_widget import *
 
 class Database:
     def __init__(self, db_name):
