@@ -102,7 +102,32 @@ class ParentHomeworkPage1Class(QWidget):
         self.cancel.clicked.connect(self.cancel_selected)
 
     def check_selected(self):
-        raise Exception("Need to override check_selected from ParentHomeworkPage1Class")
+##        raise Exception("Need to override check_selected from ParentHomeworkPage1Class")
+        if self.answer_a.text() == self.answer_1_a:
+            self.answer_a.setText("{0} Correct".format(self.answer_a.text()))
+        else:
+            self.answer_a.setText("Incorrect")
+        if self.answer_b.text() == self.answer_1_b:
+            self.answer_b.setText("{0} Correct".format(self.answer_b.text()))
+        else:
+            self.answer_b.setText("Incorrect")
+        if self.answer_c.text() == self.answer_1_c:
+            self.answer_c.setText("{0} Correct".format(self.answer_c.text()))
+        else:
+            self.answer_c.setText("Incorrect")
+        if self.answer_d.text() == self.answer_1_d:
+            self.answer_d.setText("{0} Correct".format(self.answer_d.text()))
+        else:
+            self.answer_d.setText("Incorrect")
+        if self.answer_e.text() == self.answer_1_e:
+            self.answer_e.setText("{0} Correct".format(self.answer_e.text()))
+        else:
+            self.answer_e.setText("Incorrect")
+        if self.answer_f.text() == self.answer_1_f:
+            self.answer_f.setText("{0} Correct".format(self.answer_f.text()))
+        else:
+            self.answer_f.setText("Incorrect")
+        
 
     def reset_selected(self):
         self.answer_a.setText(None)

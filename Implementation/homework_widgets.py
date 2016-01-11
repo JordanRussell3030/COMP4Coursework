@@ -25,7 +25,6 @@ class SidesAHOEasyWidget(ParentHomeworkPage1Class, Database):
         self.answer_1_f = "6"
 
         self.next.clicked.connect(self.next_selected)
-##        self.check.clicked.connect(self.check_selected)
 
     def next_selected(self):
 ##        self.insert_data("{0}".format(self.answer_a.text()))
@@ -33,39 +32,20 @@ class SidesAHOEasyWidget(ParentHomeworkPage1Class, Database):
         self.page_2 = SidesAHOEasyWidget2()
         self.page_2.show()
         self.page_2._raise()
-
-    def check_selected(self):
-        if self.answer_a.text() == self.answer_1_a:
-            self.answer_a.setText("{0} Correct".format(self.answer_a.text()))
-        else:
-            self.answer_a.setText("Incorrect")
-        if self.answer_b.text() == self.answer_1_b:
-            self.answer_b.setText("{0} Correct".format(self.answer_b.text()))
-        else:
-            self.answer_b.setText("Incorrect")
-        if self.answer_c.text() == self.answer_1_c:
-            self.answer_c.setText("{0} Correct".format(self.answer_c.text()))
-        else:
-            self.answer_c.setText("Incorrect")
-        if self.answer_d.text() == self.answer_1_d:
-            self.answer_d.setText("{0} Correct".format(self.answer_d.text()))
-        else:
-            self.answer_d.setText("Incorrect")
-        if self.answer_e.text() == self.answer_1_e:
-            self.answer_e.setText("{0} Correct".format(self.answer_e.text()))
-        else:
-            self.answer_e.setText("Incorrect")
-        if self.answer_f.text() == self.answer_1_f:
-            self.answer_f.setText("{0} Correct".format(self.answer_f.text()))
-        else:
-            self.answer_f.setText("Incorrect")
-        
+       
 class SidesAHOMediumWidget(ParentHomeworkPage1Class):
     def __init__(self):
         super().__init__()
         self.title.setText("Sides Medium")
         self.question_1.setText("Question 1:\n ___________\n__________")
         self.question_1_shape.setText("Shape")
+
+        self.answer_1_a = "7"
+        self.answer_1_b = "8"
+        self.answer_1_c = "9"
+        self.answer_1_d = "10"
+        self.answer_1_e = "11"
+        self.answer_1_f = "12"
 
         self.next.clicked.connect(self.next_selected)
 
@@ -83,6 +63,13 @@ class SidesAHOHardWidget(ParentHomeworkPage1Class):
 
         self.next.clicked.connect(self.next_selected)
 
+        self.answer_1_a = None
+        self.answer_1_b = None
+        self.answer_1_c = None
+        self.answer_1_d = None
+        self.answer_1_e = None
+        self.answer_1_f = None
+
     def next_selected(self):
         self.page_2 = SidesAHOHardWidget2()
         self.page_2.show()
@@ -97,6 +84,13 @@ class SOHCAHTOAEasyWidget(ParentHomeworkPage1Class):
         self.question_1_shape.setText("Shape")
         
         self.next.clicked.connect(self.next_selected)
+
+        self.answer_1_a = None
+        self.answer_1_b = None
+        self.answer_1_c = None
+        self.answer_1_d = None
+        self.answer_1_e = None
+        self.answer_1_f = None
 
     def next_selected(self):
         self.page_2 = SOHCAHTOAEasyWidget2()
@@ -113,6 +107,13 @@ class SOHCAHTOAMediumWidget(ParentHomeworkPage1Class):
 
         self.next.clicked.connect(self.next_selected)
 
+        self.answer_1_a = None
+        self.answer_1_b = None
+        self.answer_1_c = None
+        self.answer_1_d = None
+        self.answer_1_e = None
+        self.answer_1_f = None
+
     def next_selected(self):
         self.page_2 = SOHCAHTOAMediumWidget2()
         self.page_2.show()
@@ -126,6 +127,13 @@ class SOHCAHTOAHardWidget(ParentHomeworkPage1Class):
         self.question_1_shape.setText("Shape")
 
         self.next.clicked.connect(self.next_selected)
+
+        self.answer_1_a = None
+        self.answer_1_b = None
+        self.answer_1_c = None
+        self.answer_1_d = None
+        self.answer_1_e = None
+        self.answer_1_f = None
 
     def next_selected(self):
         self.page_2 = SOHCAHTOAHardWidget2()
@@ -141,6 +149,13 @@ class FindingAnglesEasyWidget(ParentHomeworkPage1Class):
 
         self.next.clicked.connect(self.next_selected)
 
+        self.answer_1_a = None
+        self.answer_1_b = None
+        self.answer_1_c = None
+        self.answer_1_d = None
+        self.answer_1_e = None
+        self.answer_1_f = None
+
     def next_selected(self):
         self.page_2 = FindingAnglesEasyWidget2()
         self.page_2.show()
@@ -155,6 +170,13 @@ class FindingAnglesMediumWidget(ParentHomeworkPage1Class):
 
         self.next.clicked.connect(self.next_selected)
 
+        self.answer_1_a = None
+        self.answer_1_b = None
+        self.answer_1_c = None
+        self.answer_1_d = None
+        self.answer_1_e = None
+        self.answer_1_f = None
+
     def next_selected(self):
         self.page_2 = FindingAnglesMediumWidget2()
         self.page_2.show()
@@ -168,6 +190,13 @@ class FindingAnglesHardWidget(ParentHomeworkPage1Class):
         self.question_1_shape.setText("Shape")
         
         self.next.clicked.connect(self.next_selected)
+
+        self.answer_1_a = None
+        self.answer_1_b = None
+        self.answer_1_c = None
+        self.answer_1_d = None
+        self.answer_1_e = None
+        self.answer_1_f = None
 
     def next_selected(self):
         self.page_2 = FindingAnglesHardWidget2()
@@ -184,6 +213,13 @@ class InvertedAnglesEasyWidget(ParentHomeworkPage1Class):
 
         self.next.clicked.connect(self.next_selected)
 
+        self.answer_1_a = None
+        self.answer_1_b = None
+        self.answer_1_c = None
+        self.answer_1_d = None
+        self.answer_1_e = None
+        self.answer_1_f = None
+
     def next_selected(self):
         self.page_2 = InvertedAnglesEasyWidget2()
         self.page_2.show()
@@ -198,6 +234,13 @@ class InvertedAnglesMediumWidget(ParentHomeworkPage1Class):
         self.question_1_shape.setText("Shape")
 
         self.next.clicked.connect(self.next_selected)
+
+        self.answer_1_a = None
+        self.answer_1_b = None
+        self.answer_1_c = None
+        self.answer_1_d = None
+        self.answer_1_e = None
+        self.answer_1_f = None
 
     def next_selected(self):
         self.page_2 = InvertedAnglesMediumWidget2()
@@ -214,6 +257,13 @@ class InvertedAnglesHardWidget(ParentHomeworkPage1Class):
 
         self.next.clicked.connect(self.next_selected)
 
+        self.answer_1_a = None
+        self.answer_1_b = None
+        self.answer_1_c = None
+        self.answer_1_d = None
+        self.answer_1_e = None
+        self.answer_1_f = None
+
     def next_selected(self):
         self.page_2 = InvertedAnglesHardWidget2()
         self.page_2.show()
@@ -228,6 +278,13 @@ class ThreeDTrigEasyWidget(ParentHomeworkPage1Class):
         self.question_1_shape.setText("Shape")
 
         self.next.clicked.connect(self.next_selected)
+
+        self.answer_1_a = None
+        self.answer_1_b = None
+        self.answer_1_c = None
+        self.answer_1_d = None
+        self.answer_1_e = None
+        self.answer_1_f = None
 
     def next_selected(self):
         self.page_2 = ThreeDTrigEasyWidget2()
@@ -244,6 +301,13 @@ class ThreeDTrigMediumWidget(ParentHomeworkPage1Class):
 
         self.next.clicked.connect(self.next_selected)
 
+        self.answer_1_a = None
+        self.answer_1_b = None
+        self.answer_1_c = None
+        self.answer_1_d = None
+        self.answer_1_e = None
+        self.answer_1_f = None
+
     def next_selected(self):
         self.page_2 = ThreeDTrigMediumWidget2()
         self.page_2.show()
@@ -258,6 +322,13 @@ class ThreeDTrigHardWidget(ParentHomeworkPage1Class):
         self.question_1_shape.setText("Shape")
 
         self.next.clicked.connect(self.next_selected)
+
+        self.answer_1_a = None
+        self.answer_1_b = None
+        self.answer_1_c = None
+        self.answer_1_d = None
+        self.answer_1_e = None
+        self.answer_1_f = None
 
     def next_selected(self):
         self.page_2 = threeDTrigHardWidget2()
@@ -274,6 +345,13 @@ class PythagTheoremEasyWidget(ParentHomeworkPage1Class):
 
         self.next.clicked.connect(self.next_selected)
 
+        self.answer_1_a = None
+        self.answer_1_b = None
+        self.answer_1_c = None
+        self.answer_1_d = None
+        self.answer_1_e = None
+        self.answer_1_f = None
+
     def next_selected(self):
         self.page_2 = PythagTheoremEasyWidget2()
         self.page_2.show()
@@ -288,6 +366,13 @@ class PythagTheoremMediumWidget(ParentHomeworkPage1Class):
         self.question_1_shape.setText("Shape")
 
         self.next.clicked.connect(self.next_selected)
+
+        self.answer_1_a = None
+        self.answer_1_b = None
+        self.answer_1_c = None
+        self.answer_1_d = None
+        self.answer_1_e = None
+        self.answer_1_f = None
 
     def next_selected(self):
         self.page_2 = PythagTheoremMediumWidget2()
@@ -304,6 +389,13 @@ class PythagTheoremHardWidget(ParentHomeworkPage1Class):
 
         self.next.clicked.connect(self.next_selected)
 
+        self.answer_1_a = None
+        self.answer_1_b = None
+        self.answer_1_c = None
+        self.answer_1_d = None
+        self.answer_1_e = None
+        self.answer_1_f = None
+
     def next_selected(self):
         self.page_2 = PythagTheoremHardWidget2()
         self.page_2.show()
@@ -318,6 +410,13 @@ class ThreeDPythagEasyWidget(ParentHomeworkPage1Class):
         self.question_1_shape.setText("Shape")
 
         self.next.clicked.connect(self.next_selected)
+
+        self.answer_1_a = None
+        self.answer_1_b = None
+        self.answer_1_c = None
+        self.answer_1_d = None
+        self.answer_1_e = None
+        self.answer_1_f = None
 
     def next_selected(self):
         self.page_2 = ThreeDPythagEasyWidget2()
@@ -334,6 +433,13 @@ class ThreeDPythagMediumWidget(ParentHomeworkPage1Class):
 
         self.next.clicked.connect(self.next_selected)
 
+        self.answer_1_a = None
+        self.answer_1_b = None
+        self.answer_1_c = None
+        self.answer_1_d = None
+        self.answer_1_e = None
+        self.answer_1_f = None
+
     def next_selected(self):
         self.page_2 = ThreeDPythagMediumWidget2()
         self.page_2.show()
@@ -348,6 +454,13 @@ class ThreeDPythagHardWidget(ParentHomeworkPage1Class):
         self.question_1_shape.setText("Shape")
 
         self.next.clicked.connect(self.next_selected)
+
+        self.answer_1_a = None
+        self.answer_1_b = None
+        self.answer_1_c = None
+        self.answer_1_d = None
+        self.answer_1_e = None
+        self.answer_1_f = None
 
     def next_selected(self):
         self.page_2 = ThreeDPythagorasHardWidget2()
@@ -364,6 +477,13 @@ class PythagTrigProblemsEasyWidget(ParentHomeworkPage1Class):
 
         self.next.clicked.connect(self.next_selected)
 
+        self.answer_1_a = None
+        self.answer_1_b = None
+        self.answer_1_c = None
+        self.answer_1_d = None
+        self.answer_1_e = None
+        self.answer_1_f = None
+
     def next_selected(self):
         self.page_2 = PythagTrigProblemsEasyWidget2()
         self.page_2.show()
@@ -377,6 +497,13 @@ class PythagTrigProblemsMediumWidget(ParentHomeworkPage1Class):
         self.question_1_shape.setText("Shape")
 
         self.next.clicked.connect(self.next_selected)
+
+        self.answer_1_a = None
+        self.answer_1_b = None
+        self.answer_1_c = None
+        self.answer_1_d = None
+        self.answer_1_e = None
+        self.answer_1_f = None
 
     def next_selected(self):
         self.page_2 = PythagTrigProblemsMediumWidget2()
@@ -393,6 +520,13 @@ class PythagTrigProblemsHardWidget(ParentHomeworkPage1Class):
 
         self.next.clicked.connect(self.next_selected)
 
+        self.answer_1_a = None
+        self.answer_1_b = None
+        self.answer_1_c = None
+        self.answer_1_d = None
+        self.answer_1_e = None
+        self.answer_1_f = None
+
     def next_selected(self):
         self.page_2 = PythagTrigProblemsHardWidget2()
         self.page_2.show()
@@ -407,6 +541,13 @@ class EasySummaryWidget(ParentHomeworkPage1Class):
         self.question_1_shape.setText("Shape")
 
         self.next.clicked.connect(self.next_selected)
+
+        self.answer_1_a = None
+        self.answer_1_b = None
+        self.answer_1_c = None
+        self.answer_1_d = None
+        self.answer_1_e = None
+        self.answer_1_f = None
 
     def next_selected(self):
         self.page_2 = EasySummaryWidget2()
@@ -423,6 +564,13 @@ class MediumSummaryWidget(ParentHomeworkPage1Class):
 
         self.next.clicked.connect(self.next_selected)
 
+        self.answer_1_a = None
+        self.answer_1_b = None
+        self.answer_1_c = None
+        self.answer_1_d = None
+        self.answer_1_e = None
+        self.answer_1_f = None
+
     def next_selected(self):
         self.page_2 = MediumSummaryWidget2()
         self.page_2.show()
@@ -437,6 +585,13 @@ class HardSummaryWidget(ParentHomeworkPage1Class):
         self.question_1_shape.setText("Shape")
 
         self.next.clicked.connect(self.next_selected)
+
+        self.answer_1_a = None
+        self.answer_1_b = None
+        self.answer_1_c = None
+        self.answer_1_d = None
+        self.answer_1_e = None
+        self.answer_1_f = None
 
     def next_selected(self):
         self.page_2 = HardSummaryWidget2()

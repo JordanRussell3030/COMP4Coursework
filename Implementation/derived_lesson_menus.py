@@ -13,14 +13,24 @@ from parent_lesson_menu import *
 class Trigonometry1(ParentLessonMenu):
     def __init__(self):
         super().__init__()
-        self.title.setText("Trigonometry 1")
+        self.title.setPixmap(QPixmap("trig_1_title"))
+
+        self.pic = QLabel()
+        self.pic.setPixmap(QPixmap("trig_1_pic"))
+        self.pic.setAlignment(Qt.AlignCenter)
+
+        self.pic_2 = QLabel()
+        self.pic_2.setPixmap(QPixmap("trig_1_pic_2"))
+        self.pic_2.setAlignment(Qt.AlignCenter)
 
         self.button_1.setText("Sides")
         self.button_2.setText("SOHCAHTOA")
         
         self.layout.addWidget(self.title, 0, 0)
-        self.layout.addWidget(self.button_1, 1, 1)
-        self.layout.addWidget(self.button_2, 0, 1)
+        self.layout.addWidget(self.button_1, 2, 0)
+        self.layout.addWidget(self.button_2, 1, 1)
+        self.layout.addWidget(self.pic, 1, 0)
+        self.layout.addWidget(self.pic_2, 2, 1)
 
         self.button_1.clicked.connect(self.SidesAHO)
         self.button_2.clicked.connect(self.SOHCAHTOA)
@@ -39,16 +49,32 @@ class Trigonometry2(ParentLessonMenu):
     def __init__(self):
         super().__init__()
         
-        self.title.setText("Trigonometry 2")
+        self.title.setPixmap(QPixmap("trig_2_title"))
+
+        self.pic = QLabel()
+        self.pic_2 = QLabel()
+        self.pic_3 = QLabel()
+
+        self.pic.setPixmap(QPixmap("trig_2_pic_1"))
+        self.pic_2.setPixmap(QPixmap("trig_2_pic_2"))
+        self.pic_3.setPixmap(QPixmap("trig_2_pic_3"))
+
+        self.pic.setAlignment(Qt.AlignCenter)
+        self.pic_2.setAlignment(Qt.AlignCenter)
+        self.pic_3.setAlignment(Qt.AlignCenter)
 
         self.button_1.setText("Finding Angles")
         self.button_2.setText("Inverted Angles")
         self.button_3.setText("3D Trigonometry")
 
         self.layout.addWidget(self.title, 0, 0)
-        self.layout.addWidget(self.button_1, 0, 1)
-        self.layout.addWidget(self.button_2, 1, 1)
-        self.layout.addWidget(self.button_3, 2, 1)
+        self.layout.addWidget(self.button_1, 1, 1)
+        self.layout.addWidget(self.button_2, 2, 0)
+        self.layout.addWidget(self.button_3, 3, 1)
+        self.layout.addWidget(self.back, 4, 0)
+        self.layout.addWidget(self.pic, 1, 0)
+        self.layout.addWidget(self.pic_2, 2, 1)
+        self.layout.addWidget(self.pic_3, 3, 0)
 
         self.button_1.clicked.connect(self.FindingAngles)
         self.button_2.clicked.connect(self.InvertedAngles)
@@ -73,14 +99,25 @@ class Pythagoras(ParentLessonMenu):
     def __init__(self):
         super().__init__()
         
-        self.title.setText("Pythagoras")
+        self.title.setPixmap(QPixmap("pythag_title"))
 
+        self.pic = QLabel()
+        self.pic_2 = QLabel()
+
+        self.pic.setPixmap(QPixmap("pythag_pic_1"))
+        self.pic_2.setPixmap(QPixmap("pythag_pic_2"))
+
+        self.pic.setAlignment(Qt.AlignCenter)
+        self.pic_2.setAlignment(Qt.AlignCenter)
+        
         self.button_1.setText("Pythagoras' Theorem")
         self.button_2.setText("3D Pythagoras")
 
         self.layout.addWidget(self.title, 0, 0)
-        self.layout.addWidget(self.button_1, 0, 1)
-        self.layout.addWidget(self.button_2, 1, 1)
+        self.layout.addWidget(self.button_1, 1, 1)
+        self.layout.addWidget(self.button_2, 2, 0)
+        self.layout.addWidget(self.pic, 1, 0)
+        self.layout.addWidget(self.pic_2, 2, 1)
 
         self.button_1.clicked.connect(self.PythagTheorem)
         self.button_2.clicked.connect(self.ThreeDPythagoras)
@@ -99,7 +136,7 @@ class PythagTrig(ParentLessonMenu):
     def __init__(self):
         super().__init__()
 
-        self.title.setText("Pythagoras and Trigonometry Problems")
+        self.title.setPixmap(QPixmap("vectors_title"))
 
         self.button_1.setText("Easy")
         self.button_2.setText("Medium")
@@ -133,7 +170,7 @@ class Summary(ParentLessonMenu):
     def __init__(self):
         super().__init__()
 
-        self.title.setText("Summary")
+        self.title.setPixmap(QPixmap("summary_title"))
 
         self.button_1.setText("Easy")
         self.button_2.setText("Medium")

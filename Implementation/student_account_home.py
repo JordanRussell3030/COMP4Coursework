@@ -37,28 +37,27 @@ class UserAccountWidget(QWidget):
 
         self.lessons.setMinimumWidth(90)
         self.lessons.setMinimumHeight(110)
-        self.lessons.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue; font-size: 20;}")
         self.lessons.setFont(QFont("Courier", 40))
 
         self.homework.setMinimumWidth(90)
         self.homework.setMinimumHeight(110)
-        self.homework.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue; font-size: 20;}")
         self.homework.setFont(QFont("Courier", 40))
 
         self.progress.setMinimumWidth(90)
         self.progress.setMinimumHeight(110)
-        self.progress.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue; font-size: 20;}")
         self.progress.setFont(QFont("Courier", 40))
 
         self.log_out.setMinimumWidth(90)
         self.log_out.setMinimumHeight(110)
-        self.log_out.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue; font-size: 20;}")
         self.log_out.setFont(QFont("Courier", 40))
 
         self.lessons_label.setFont(QFont("Courier", 25))
         self.homework_label.setFont(QFont("Courier", 25))
         self.database_label.setFont(QFont("Courier", 25))
         self.account_label.setFont(QFont("Courier", 25))
+        
+        self.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue; font-size: 20;}")
+        self.log_out.setStyleSheet("QPushButton {background-color: #D3E5FF; color: red; font-size: 20;}")
       
         self.layout = QGridLayout()
 

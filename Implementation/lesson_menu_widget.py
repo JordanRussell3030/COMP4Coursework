@@ -16,7 +16,7 @@ class LessonMenuWidget(QMainWindow):
         self.t2_pic = QLabel()
         self.pyt = QPushButton("Pythagoras")
         self.pyt_pic = QLabel()
-        self.pytrig = QPushButton("Pythagoras and Trigonometry Problems")
+        self.pytrig = QPushButton("Vectors")
         self.pytrig_pic = QLabel()
         self.sum = QPushButton("Summary")
         self.sum_pic = QLabel()
@@ -59,7 +59,7 @@ class LessonMenuWidget(QMainWindow):
 
         self.pytrig.setMinimumWidth(90)
         self.pytrig.setMinimumHeight(110)
-        self.pytrig.setFont(QFont("Courier", 30))
+        self.pytrig.setFont(QFont("Courier", 40))
 ##        self.pytrig.move(0, 300)
 
         self.sum.setMinimumWidth(90)
@@ -75,6 +75,7 @@ class LessonMenuWidget(QMainWindow):
         self.select.setFont(QFont("Courier", 25))
 
         self.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue; font-size: 20;}")
+        self.back.setStyleSheet("QPushButton {background-color: #D3E5FF; color: red; font-size: 20;}")
 
         self.layout = QGridLayout()
         
