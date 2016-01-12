@@ -47,3 +47,9 @@ class ErrorMessage7(QErrorMessage):
         super().__init__()
         message = "Your password is incorrect, please try again. If you have forgotten your password, please speak to your administrator."
         QErrorMessage.showMessage(self, message)
+
+class ErrorMessage8(QErrorMessage):
+    def __init__(self):
+        super().__init__()
+        message = "Please input your answers"
+        QErrorMessage.showMessage(self, message)

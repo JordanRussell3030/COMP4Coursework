@@ -15,7 +15,7 @@ class SidesAHOWidget(ParentLessonLayout):
     def __init__(self):
         super().__init__()
         
-        self.title.setText("Sides")
+        self.title.setPixmap(QPixmap("sides_lesson_title"))
         self.lesson_1.setText("Every triangle has 3 sides, and each side has a name. The HYPOTENUSE is the longest side. The OPPOSITE is the side opposite the angle being used. The ADJACENT is next to the angle being used.")
         self.lesson_2.setText("How to do this")
 
@@ -29,7 +29,7 @@ class SidesAHOWidget(ParentLessonLayout):
 class SOHCAHTOAWidget(ParentLessonLayout):
     def __init__(self):
         super().__init__()
-        self.title.setText("SOHCAHTOA")
+        self.title.setPixmap(QPixmap("sohcahtoa_lesson_title"))
         self.lesson_1.setText("SOHCAHTOA stands for: \nSine Opposite Hypotenuse\nCosine Adjacent Hypotenuse\nTan Opposite Adjacent.\nThis is the best way to remember the three different rules for working out trigonometry problems. They each turn into a FORMULA TRIANGLE, a triangle which shows the formula inside in a memorable format.")
         self.lesson_2.setText("Method\n1. Label the three sides O, A and H\n2. Write down from memory SOHCAHTOA\n3. Decide which two sides are involved: O,H, A,H or O,A\n4. Turn the one you choose into one of the formula triangles to the left of the screen\n5. Cover up the thing you want to find and write down whatever is left showing\n6. Translate into numbers and work it out\n7. Finally, check that your answer is sensible")
 
@@ -37,22 +37,10 @@ class SOHCAHTOAWidget(ParentLessonLayout):
 
         self.pic = QLabel()
         self.pic.setPixmap(QPixmap("formula_triangles.png"))
-##        self.pic.setMaximumWidth(300)
-##        self.pic.setMaximumHeight(200)
-##
-##        self.pic_2 = QLabel()
-##        self.pic_2.setPixmap(QPixmap("cosine_formula_triangle.png"))
-##
-##        self.pic_3 = QLabel()
-##        self.pic_3.setPixmap(QPixmap("tan_formula_triangle.png"))
 
         self.next.clicked.connect(self.selected_next)
 
         self.layout.addWidget(self.pic, 2, 0)
-##        self.layout.addWidget(self.pic_2, 2, 1)
-##        self.layout.addWidget(self.pic_3, 2, 2)
-
-##        self.layout.addWidget(self.pic, 0, 5)
 
     def selected_next(self):
         sohcahtoa_l = SOHCAHTOAWidgetPage2()
@@ -62,7 +50,7 @@ class SOHCAHTOAWidget(ParentLessonLayout):
 class FindingAnglesWidget(ParentLessonLayout):
     def __init__(self):
         super().__init__()
-        self.title.setText("Finding Angles")
+        self.title.setPixmap(QPixmap("finding_angles_lesson_title"))
         self.lesson_1.setText("SOHCAHTROA stuff")
         self.lesson_2.setText("")
 
@@ -76,7 +64,7 @@ class FindingAnglesWidget(ParentLessonLayout):
 class InvertedAnglesWidget(ParentLessonLayout):
     def __init__(self):
         super().__init__()
-        self.title.setText("Inverted Angles")
+        self.title.setPixmap(QPixmap("inverted_angles_lesson_title"))
         self.lesson_1.setText("SOHCAHTROA stuff")
         self.lesson_2.setText("")
 
@@ -90,7 +78,7 @@ class InvertedAnglesWidget(ParentLessonLayout):
 class ThreeDTrigonometryWidget(ParentLessonLayout):
     def __init__(self):
         super().__init__()
-        self.title.setText("3D Trigonometry")
+        self.title.setPixmap(QPixmap("three_d_trig_lesson_title"))
         self.lesson_1.setText("SOHCAHTROA stuff")
         self.lesson_2.setText("")
 
@@ -104,7 +92,7 @@ class ThreeDTrigonometryWidget(ParentLessonLayout):
 class PythagTheoremWidget(ParentLessonLayout):
     def __init__(self):
         super().__init__()
-        self.title.setText("Pythagoras' Theorem")
+        self.title.setPixmap(QPixmap("pythag_theorem_lesson_title"))
         self.lesson_1.setText("SOHCAHTROA stuff")
         self.lesson_2.setText("")
 
@@ -118,7 +106,7 @@ class PythagTheoremWidget(ParentLessonLayout):
 class ThreeDPythagorasWidget(ParentLessonLayout):
     def __init__(self):
         super().__init__()
-        self.title.setText("3D Pythagoras")
+        self.title.setPixmap(QPixmap("three_d_pythag_lesson_title"))
         self.lesson_1.setText("SOHCAHTROA stuff")
         self.lesson_2.setText("")
 
@@ -132,7 +120,7 @@ class ThreeDPythagorasWidget(ParentLessonLayout):
 class EasyWidget(ParentLessonLayout):
     def __init__(self):
         super().__init__()
-        self.title.setText("Easy Problems")
+        self.title.setPixmap(QPixmap("vectors_1_lesson_title"))
         self.lesson_1.setText("SOHCAHTROA stuff")
         self.lesson_2.setText("")
 
@@ -146,7 +134,7 @@ class EasyWidget(ParentLessonLayout):
 class MediumWidget(ParentLessonLayout):
     def __init__(self):
         super().__init__()
-        self.title.setText("Medium Problems")
+        self.title.setPixmap(QPixmap("vectors_2_lesson_title"))
         self.lesson_1.setText("SOHCAHTROA stuff")
         self.lesson_2.setText("")
 
@@ -160,7 +148,7 @@ class MediumWidget(ParentLessonLayout):
 class HardWidget(ParentLessonLayout):
     def __init__(self):
         super().__init__()
-        self.title.setText("Hard Problems")
+        self.title.setPixmap(QPixmap("vectors_3_lesson_title"))
         self.lesson_1.setText("SOHCAHTROA stuff")
         self.lesson_2.setText("")
 
@@ -174,7 +162,7 @@ class HardWidget(ParentLessonLayout):
 class ReviseTrig1Widget(ParentLessonLayout):
     def __init__(self):
         super().__init__()
-        self.title.setText("Revise Trigonometry 1")
+        self.title.setPixmap(QPixmap("summary_lesson_1_title"))
         self.lesson_1.setText("SOHCAHTROA stuff")
         self.lesson_2.setText("")
 
@@ -188,7 +176,7 @@ class ReviseTrig1Widget(ParentLessonLayout):
 class ReviseTrig2Widget(ParentLessonLayout):
     def __init__(self):
         super().__init__()
-        self.title.setText("Revise Trigonometry 2")
+        self.title.setPixmap(QPixmap("summary_lesson_2_title"))
         self.lesson_1.setText("SOHCAHTROA stuff")
         self.lesson_2.setText("")
 
@@ -203,7 +191,7 @@ class ReviseTrig2Widget(ParentLessonLayout):
 class ReviseTrig3Widget(ParentLessonLayout):
     def __init__(self):
         super().__init__()
-        self.title.setText("Revise Trigonometry 3")
+        self.title.setPixmap(QPixmap("summary_lesson_3_title"))
         self.lesson_1.setText("SOHCAHTROA stuff")
         self.lesson_2.setText("")
         self.next.clicked.connect(self.selected_next)

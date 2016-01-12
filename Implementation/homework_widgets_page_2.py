@@ -4,6 +4,7 @@ from PyQt4.QtGui import *
 from homework_widgets import *
 from homework_page_2_parent_class import *
 from derived_homework_menus import *
+##from homework_stack_widgets import *
 
 class SidesAHOEasyWidget2(HomeworkPage2ParentClass):
     def __init__(self):
@@ -26,9 +27,8 @@ class SidesAHOEasyWidget2(HomeworkPage2ParentClass):
 
         
     def selected_previous(self):
-##        sides_aho_1 = SidesAHOEasyWidget()
-        sides_aho_1.show()
-##        sides_aho_1._raise()
+        pass
+##        self.layout.setCurrentIndex[0]
 
 class SidesAHOMediumWidget2(HomeworkPage2ParentClass):
     def __init__(self):

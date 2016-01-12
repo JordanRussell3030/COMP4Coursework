@@ -9,8 +9,11 @@ from homework_menu_widget import *
 from derived_lesson_menus import *
 from homework_widgets_page_2 import *
 from homework_parent_class import *
+from database_class import *
+from error_messages import *
+##from homework_stack_widgets import *
 
-class SidesAHOEasyWidget(ParentHomeworkPage1Class, Database):
+class SidesAHOEasyWidget(ParentHomeworkPage1Class):
     def __init__(self):
         super().__init__()
         self.title.setText("Sides Easy")
@@ -27,11 +30,25 @@ class SidesAHOEasyWidget(ParentHomeworkPage1Class, Database):
         self.next.clicked.connect(self.next_selected)
 
     def next_selected(self):
-##        self.insert_data("{0}".format(self.answer_a.text()))
-        self.hide()
-        self.page_2 = SidesAHOEasyWidget2()
-        self.page_2.show()
-        self.page_2._raise()
+        cont = False
+        while not cont:
+            try:
+                g_database.insert_data(self.correct_count)
+                cont = True
+            except AttributeError:
+                error_message = ErrorMessage8()
+                error_message.show()
+                error_message._raise()
+        ##        QSound.play("boxachoc.wav")
+##            self.layout.setCurrentIndex[1]
+            self.hide()
+            self.page_2 = SidesAHOEasyWidget2()
+            self.page_2.show()
+            self.page_2._raise()
+
+        #set to stackwidget with pages 1 and 2
+        #put next_selected method in parent class with setCurrectIndex(1)
+            #so it works with every subclass
        
 class SidesAHOMediumWidget(ParentHomeworkPage1Class):
     def __init__(self):

@@ -19,6 +19,8 @@ class LoginWidget(QWidget):
         self.login = QPushButton("Log in")
         self.pic = QLabel()
         self.pic_2 = QLabel()
+
+        self.setStyleSheet("layout {background-color: white;}")
         
         self.pic.setPixmap(QPixmap("login_widget_picture"))
 
@@ -95,3 +97,11 @@ class LoginWidget(QWidget):
 ##        self.error_message_1 = ErrorMessage5()
 ##        self.error_message_1.show()
 ##        self.error_message_1._raise()
+
+
+##            username list = []
+##            password list = []
+##            for count in range(len(username_list)):
+##                if username_list[count] == username.text() and password.text() == password.text():
+##                    nameEntered.emit()
+##            if username.text() == 

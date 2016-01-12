@@ -72,10 +72,10 @@ class ParentLessonPage2(QWidget):
         
 
     def check_selected(self):
-        pass
-    #Get it to check answer
-    #if answer present
-    #if answer == algorithm answer
+        if self.answer.text() == self.answer_lesson:
+            self.answer.setText("{0} Correct".format(self.answer_lesson))
+        else:
+            self.answer.setText("Incorrect")
 
     def finish_selected(self):
         self.close()

@@ -36,7 +36,8 @@ class Trigonometry1(ParentLessonMenu):
         self.button_2.clicked.connect(self.SOHCAHTOA)
     
     def SidesAHO(self):
-        sides_aho = SidesAHOWidget()
+##        sides_aho = SidesAHOWidget()
+        sides_aho = SidesAHOEasyStack()
         sides_aho.show()
         sides_aho._raise()
 
@@ -138,14 +139,30 @@ class PythagTrig(ParentLessonMenu):
 
         self.title.setPixmap(QPixmap("vectors_title"))
 
-        self.button_1.setText("Easy")
-        self.button_2.setText("Medium")
-        self.button_3.setText("Hard")
+        self.button_1.setText("Vectors 1")
+        self.button_2.setText("Vectors 2")
+        self.button_3.setText("Vectors 3")
+
+        self.pic = QLabel()
+        self.pic.setPixmap(QPixmap("vectors_pic_1"))
+        self.pic.setAlignment(Qt.AlignCenter)
+
+        self.pic_2 = QLabel()
+        self.pic_2.setPixmap(QPixmap("vectors_pic_2"))
+        self.pic_2.setAlignment(Qt.AlignCenter)
+
+        self.pic_3 = QLabel()
+        self.pic_3.setPixmap(QPixmap("vectors_pic_3"))
+        self.pic_3.setAlignment(Qt.AlignCenter)
 
         self.layout.addWidget(self.title, 0, 0)
-        self.layout.addWidget(self.button_1, 0, 1)
-        self.layout.addWidget(self.button_2, 1, 1)
-        self.layout.addWidget(self.button_3, 2, 1)
+        self.layout.addWidget(self.button_1, 1, 1)
+        self.layout.addWidget(self.button_2, 2, 0)
+        self.layout.addWidget(self.button_3, 3, 1)
+        self.layout.addWidget(self.pic, 1, 0)
+        self.layout.addWidget(self.pic_2, 2, 1)
+        self.layout.addWidget(self.pic_3, 3, 0)
+        self.layout.addWidget(self.back, 4, 0)
 
         self.button_1.clicked.connect(self.Easy)
         self.button_2.clicked.connect(self.Medium)
@@ -172,14 +189,30 @@ class Summary(ParentLessonMenu):
 
         self.title.setPixmap(QPixmap("summary_title"))
 
+        self.pic = QLabel()
+        self.pic.setPixmap(QPixmap("summary_pic_1"))
+        self.pic.setAlignment(Qt.AlignCenter)
+
+        self.pic_2 = QLabel()
+        self.pic_2.setPixmap(QPixmap("summary_pic_2"))
+        self.pic_2.setAlignment(Qt.AlignCenter)
+
+        self.pic_3 = QLabel()
+        self.pic_3.setPixmap(QPixmap("summary_pic_3"))
+        self.pic_3.setAlignment(Qt.AlignCenter)
+
         self.button_1.setText("Easy")
         self.button_2.setText("Medium")
         self.button_3.setText("Hard")
         
         self.layout.addWidget(self.title, 0, 0)
-        self.layout.addWidget(self.button_1, 0, 1)
-        self.layout.addWidget(self.button_2, 1, 1)
-        self.layout.addWidget(self.button_3, 2, 1)
+        self.layout.addWidget(self.button_1, 1, 1)
+        self.layout.addWidget(self.button_2, 2, 0)
+        self.layout.addWidget(self.button_3, 3, 1)
+        self.layout.addWidget(self.pic, 1, 0)
+        self.layout.addWidget(self.pic_2, 2, 1)
+        self.layout.addWidget(self.pic_3, 3, 0)
+        self.layout.addWidget(self.back, 4, 0)
 
         self.button_1.clicked.connect(self.ReviseTrig1)
         self.button_2.clicked.connect(self.ReviseTrig2)

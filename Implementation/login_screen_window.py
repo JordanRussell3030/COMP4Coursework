@@ -20,12 +20,8 @@ class MyWindow(QMainWindow):
         self.student_home = UserAccountWidget(self)
 ##        self.student_home = AdminAccountWidget()
 ##        self.student_home = AnyWidget()
-##        self.student_home = RWidget()
 
 ##        self.student_home = HomeworkSetScreen()  
-
-##        self.student_home = HomeworkSetScreen()
-##        self.student_home = ErrorMessage2()
 
         self.stack = QStackedLayout()
 

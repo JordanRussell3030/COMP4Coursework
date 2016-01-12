@@ -9,7 +9,7 @@ class Database:
         self._db_name = db_name
         self.table_name = "Student"
         self.create_table(self.table_name)
-        self.insert_data("DownloadMoreROM")
+##        self.insert_data("DownloadMoreROM")
 
     def execute_sql(self, sql):
         with sqlite3.connect(self._db_name) as db:

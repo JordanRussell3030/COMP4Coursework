@@ -10,6 +10,8 @@ class SidesAHOWidgetPage2(ParentLessonPage2):
         self.text_1.setText("More sides, BANTER")
         self.text_2.setText("Space for a practice question based on the lesson e.g what is the length of a")
 
+        self.answer_lesson = None
+
 class SOHCAHTOAWidgetPage2(ParentLessonPage2):
     def __init__(self):
         super().__init__()
@@ -24,11 +26,15 @@ class SOHCAHTOAWidgetPage2(ParentLessonPage2):
 
         self.layout.addWidget(self.pic, 2, 0)
 
+        self.answer_lesson = None
+
 class FindingAnglesWidgetPage2(ParentLessonPage2):
     def __init__(self):
         super().__init__()
         self.text_1.setText("More FA""")
         self.text_2.setText("Space for SOHCAHTOA """)
+
+        self.answer_lesson = None
 
 class InvertedAnglesWidgetPage2(ParentLessonPage2):
     def __init__(self):
@@ -36,11 +42,15 @@ class InvertedAnglesWidgetPage2(ParentLessonPage2):
         self.text_1.setText("More IA""")
         self.text_2.setText("Space for SOHCAHTOA """)
 
+        self.answer_lesson = None
+
 class ThreeDTrigonometryWidgetPage2(ParentLessonPage2):
     def __init__(self):
         super().__init__()
         self.text_1.setText("More 3DT""")
         self.text_2.setText("Space for SOHCAHTOA """)
+
+        self.answer_lesson = None
 
 class PythagTheoremWidgetPage2(ParentLessonPage2):
     def __init__(self):
@@ -48,11 +58,15 @@ class PythagTheoremWidgetPage2(ParentLessonPage2):
         self.text_1.setText("More PT""")
         self.text_2.setText("Space for SOHCAHTOA """)
 
+        self.answer_lesson = None
+
 class ThreeDPythagorasWidgetPage2(ParentLessonPage2):
     def __init__(self):
         super().__init__()
         self.text_1.setText("More 3DP""")
         self.text_2.setText("Space for SOHCAHTOA """)
+
+        self.answer_lesson = None
 
 class EasyWidgetPage2(ParentLessonPage2):
     def __init__(self):
@@ -60,11 +74,15 @@ class EasyWidgetPage2(ParentLessonPage2):
         self.text_1.setText("More Easy""")
         self.text_2.setText("Space for SOHCAHTOA """)
 
+        self.answer_lesson = None
+
 class MediumWidgetPage2(ParentLessonPage2):
     def __init__(self):
         super().__init__()
         self.text_1.setText("More Medium""")
         self.text_2.setText("Space for SOHCAHTOA """)
+
+        self.answer_lesson = None
 
 class HardWidgetPage2(ParentLessonPage2):
     def __init__(self):
@@ -72,11 +90,15 @@ class HardWidgetPage2(ParentLessonPage2):
         self.text_1.setText("More Hard""")
         self.text_2.setText("Space for SOHCAHTOA """)
 
+        self.answer_lesson = None
+
 class ReviseTrig1WidgetPage2(ParentLessonPage2):
     def __init__(self):
         super().__init__()
         self.text_1.setText("More R1""")
         self.text_2.setText("Space for SOHCAHTOA """)
+
+        self.answer_lesson = None
 
 class ReviseTrig2WidgetPage2(ParentLessonPage2):
     def __init__(self):
@@ -84,8 +106,12 @@ class ReviseTrig2WidgetPage2(ParentLessonPage2):
         self.text_1.setText("More R2""")
         self.text_2.setText("Space for SOHCAHTOA """)
 
+        self.answer_lesson = None
+
 class ReviseTrig3WidgetPage2(ParentLessonPage2):
     def __init__(self):
         super().__init__()
         self.text_1.setText("More R3""")
         self.text_2.setText("Space for SOHCAHTOA """)
+        
+        self.answer_lesson = None

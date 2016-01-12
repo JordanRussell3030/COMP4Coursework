@@ -11,7 +11,6 @@ class ParentLessonLayout(QWidget):
         self.showMaximized()
 
         self.title = QLabel()
-        self.title.setFont(QFont("Courier", 30))
 
         self.back = QPushButton("Return")
         self.next = QPushButton("Next")
