@@ -11,6 +11,11 @@ class ParentHomeworkMenuClass(QWidget):
 
         self.showMaximized()
 
+        pal = QPalette()
+        pal.setColor(QPalette.Background, Qt.white)
+        self.setAutoFillBackground(True)
+        self.setPalette(pal)
+
         self.buttons = []
         
         self.title = QLabel()

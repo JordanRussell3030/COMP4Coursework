@@ -27,6 +27,11 @@ class LessonMenuWidget(QMainWindow):
 ##        self.pic = QLabel()
         self.title_pic = QLabel()
 
+        pal = QPalette()
+        pal.setColor(QPalette.Background, Qt.white)
+        self.setAutoFillBackground(True)
+        self.setPalette(pal)
+
         self.title_pic.setPixmap(QPixmap("title_lessons"))
 
         self.t1_pic.setPixmap(QPixmap("t1_pic"))

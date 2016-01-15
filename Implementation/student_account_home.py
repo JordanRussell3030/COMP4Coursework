@@ -26,6 +26,11 @@ class UserAccountWidget(QWidget):
         self.homework_pic = QLabel()
         self.smiler = QLabel()
 
+        pal = QPalette()
+        pal.setColor(QPalette.Background, Qt.white)
+        self.setAutoFillBackground(True)
+        self.setPalette(pal)
+
         self.picture.setPixmap(QPixmap("student_account_home_pic"))
         self.picture.setAlignment(Qt.AlignCenter)
         

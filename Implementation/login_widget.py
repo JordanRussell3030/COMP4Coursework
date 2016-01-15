@@ -20,7 +20,11 @@ class LoginWidget(QWidget):
         self.pic = QLabel()
         self.pic_2 = QLabel()
 
-        self.setStyleSheet("layout {background-color: white;}")
+##        self.setStyleSheet("layout {background-color: white;}")
+        pal = QPalette()
+        pal.setColor(QPalette.Background, Qt.white)
+        self.setAutoFillBackground(True)
+        self.setPalette(pal)
         
         self.pic.setPixmap(QPixmap("login_widget_picture"))
 
@@ -70,13 +74,18 @@ class LoginWidget(QWidget):
         #print(self.login.icon())       
 
     def validate_login(self):
-##        if self.username.text() == "admin" and self.password.text() == "admin":
+##        with open("login_details.txt", mode = "r") as logins:
+##            logins.read(username_)
+##            logins.read(password_)
+##        if self.username.text() == username_ and self.password.text() == password_:
             self.NameEntered.emit()
-##        elif self.password.text() != "admin" and self.username.text() == "admin":
+####        if self.username.text() == "admin" and self.password.text() == "admin":
+####            self.NameEntered.emit()
+##        elif self.password.text() != password_ and self.username.text() == username_:
 ##            self.error_message = ErrorMessage7()
 ##            self.error_message.show()
 ##            self.error_message._raise()
-##        elif self.username.text() == "admin" and self.password.text() != "admin":
+##        elif self.username.text() == username_ and self.password.text() != password_:
 ##            self.error_message = ErrorMessage6()
 ##            self.error_message.show()
 ##            self.error_message._raise()

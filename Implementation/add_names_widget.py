@@ -1,13 +1,15 @@
 from PyQt4.QtGui import *
 from PyQt4.QtCore import *
-#
-from admin_account_home import *
+import random
+
+##from admin_account_home import *
 from add_class_widget import *
 from database_class import *
 
 class AddNamesWidget(QWidget):
     def __init__(self):
         super().__init__()
+        
         self.showMaximized()
 
         self.add_class = QPushButton("Add Class")
@@ -23,27 +25,22 @@ class AddNamesWidget(QWidget):
         self.add_class.setMinimumHeight(110)
         self.add_class.setMinimumWidth(60)
         self.add_class.setFont(QFont("Courier", 40))
-        self.add_class.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue}")
 
         self.back.setMinimumHeight(110)
         self.back.setMinimumWidth(60)
         self.back.setFont(QFont("Courier", 40))
-        self.back.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue}")
 
         self.submit_1.setMinimumHeight(110)
         self.submit_1.setMinimumWidth(60)
         self.submit_1.setFont(QFont("Courier", 40))
-        self.submit_1.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue}")
 
         self.submit_2.setMinimumHeight(110)
         self.submit_2.setMinimumWidth(60)
         self.submit_2.setFont(QFont("Courier", 40))
-        self.submit_2.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue}")
-
+        
         self.input_first_name.setMinimumHeight(110)
         self.input_first_name.setMinimumWidth(60)
         self.input_first_name.setFont(QFont("Courier", 40))
-##        self.submit_2.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue}")
 
         self.input_last_name.setMinimumHeight(110)
         self.input_last_name.setMinimumWidth(60)
@@ -55,7 +52,9 @@ class AddNamesWidget(QWidget):
         self.select_class.setMinimumHeight(110)
         self.select_class.setMinimumWidth(60)
         self.select_class.setFont(QFont("Courier", 40))
+        
         self.select_class.setStyleSheet("QComboBox {background-color: #A3C1DA; color: blue}")
+        self.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue}")
 
         self.layout = QGridLayout()
 
@@ -86,11 +85,36 @@ class AddNamesWidget(QWidget):
         add_class._raise()
 
     def selected_submit_1(self):
-##        pass
-        insert_data("{0}".format(self.input_first_name.text()))
-        insert_data("{0}".format(self.input_last_name.text()))
-        self.close()
+        character_list = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+        cont = False
+        while not cont:
+            try:
+                username_ = self.input_first_name.text()
+                cont = True
+            except AttributeError:
+                error_message = ErrorMessage8()
+                error_message.show()
+                error_message._raise()
+            password_a = random.choice(character_list)
+            password_b = random.randint(0, 9)
+            password_c = random.choice(character_list)
+            password_d = random.randint(0, 9)
+            password_e = random.choice(character_list)
+            password_f = random.randint(0, 9)
+            password_g = random.choice(character_list)
+            password_ = password_a + str(password_b) + password_c + str(password_d) + password_e + str(password_f) + password_g
+            g_database.insert_data_first(self.input_first_name.text())
+            self.save_login(username_, password_)
+    ##        g_database.insert_data_last(self.input_last_name.text())
+            self.close()
 
     def selected_submit_2(self):
         pass
         #SQL add names to database
+
+    def save_login(self, username_, password_):
+        with open("login_details.txt", mode = "w") as logins:
+            logins.write(username_)
+            logins.write("\n")
+            logins.write(password_)
+            logins.write("\n")

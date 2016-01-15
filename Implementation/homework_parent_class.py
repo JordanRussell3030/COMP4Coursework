@@ -11,6 +11,11 @@ class ParentHomeworkPage1Class(QWidget):
 
         self.showMaximized()
 
+        pal = QPalette()
+        pal.setColor(QPalette.Background, Qt.white)
+        self.setAutoFillBackground(True)
+        self.setPalette(pal)
+
         self.title = QLabel()
         self.title.setFont(QFont("Courier", 40))
 

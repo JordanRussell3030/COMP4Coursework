@@ -17,6 +17,11 @@ class ParentLessonPage2(QWidget):
         self.text_1 = QTextEdit()
         self.text_2 = QTextEdit()
 
+        pal = QPalette()
+        pal.setColor(QPalette.Background, Qt.white)
+        self.setAutoFillBackground(True)
+        self.setPalette(pal)
+
         self.buttons = []
 
         self.buttons.append(self.previous)

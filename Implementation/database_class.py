@@ -2,7 +2,7 @@ import sqlite3
 #
 from database_gui import *
 from homework_parent_class import *
-from add_names_widget import *
+##from add_names_widget import *
 
 class Database:
     def __init__(self, db_name):
@@ -36,21 +36,38 @@ class Database:
             if not keep_table:
                 sql = """create table Student
                 (StudentID integer,
+                FirstName text,
                 Surname text,
+                Score integer,
                 primary key(StudentID))"""
                 cursor.execute(sql)
                 db.commit()
                 
-    def insert_data(self, student):
+    def insert_data_first(self, first_name):
         with sqlite3.connect(self._db_name) as db:
-            sql = """insert into Student values
-                  ((SELECT max(StudentID) From Student) + 1,
-                  '{0}')""".format(student)
-            self.execute_sql(sql)
+##            sql = """insert into Student values
+##                  ((SELECT max(StudentID) From Student) + 1,
+##                  '{0}')""".format(first_name)
+            sql = "insert into Student(StudentID, FirstName) values ((SELECT max(StudentID) FROM Student)+1, '{0}')".format(first_name)
 ##            cursor = db.cursor()
-##            sql = "insert into Student (StudentID, Surname) values (?, ?)"
+            self.execute_sql(sql)
 ##            cursor.execute(values)
 ##            db.commit()
+
+    def insert_data_last(self, last_name):
+        with sqlite3.connect(self._db_name) as db:
+            sql = "insert into Student(Surname) values ((WHERE FirstName == first_name, '{0}')".format(last_name)
+##            sql = """insert into Student values
+##                  ((SELECT max(Surname) From Student) + 1,
+##                  '{0}')""".format(last_name)
+            self.execute_sql(sql)
+
+    def insert_data_score(self, score):
+        with sqlite3.connect(self._db_name) as db:
+            sql = """insert into Student values
+                  ((SELECT max(Score) From Student) + 1,
+                  '{0}')""".format(score)
+            self.execute_sql(sql)
 
     def GetAllNames(self):
         with sqlite3.connect(self._db_name) as db:

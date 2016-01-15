@@ -9,6 +9,11 @@ class HomeworkPage2ParentClass(QWidget):
         super().__init__()
         self.showMaximized()
 
+        pal = QPalette()
+        pal.setColor(QPalette.Background, Qt.white)
+        self.setAutoFillBackground(True)
+        self.setPalette(pal)
+
         self.buttons = []
 
         self.question_2 = QLabel()

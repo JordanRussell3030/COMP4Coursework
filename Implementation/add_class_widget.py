@@ -2,7 +2,7 @@ from PyQt4.QtGui import *
 from PyQt4.QtCore import *
 #
 #from database import *
-from admin_account_home import *
+##from admin_account_home import *
 from add_names_widget import *
 
 class AddClassWidget(QWidget):
@@ -63,9 +63,10 @@ class AddClassWidget(QWidget):
         self.close()
 
     def selected_add_students(self):
-        add_student = AddNamesWidget()
-        add_student.show()
-        add_student._raise()
+        pass
+##        add_student = AddNamesWidget()
+##        add_student.show()
+##        add_student._raise()
 
     def selected_submit_1(self):
         pass

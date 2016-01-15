@@ -12,6 +12,11 @@ class DatabaseWidget(QWidget):
         super().__init__()
         
         self.showMaximized()
+
+        pal = QPalette()
+        pal.setColor(QPalette.Background, Qt.white)
+        self.setAutoFillBackground(True)
+        self.setPalette(pal)
         
         self.title = QLabel("Progress")
         self.details = QLabel("Account No: XXXX\nUsername: XXXX\nAverage Rating: X")

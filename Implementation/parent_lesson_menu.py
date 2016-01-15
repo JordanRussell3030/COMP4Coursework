@@ -9,6 +9,11 @@ class ParentLessonMenu(QWidget):
 
         self.showMaximized()
 
+        pal = QPalette()
+        pal.setColor(QPalette.Background, Qt.white)
+        self.setAutoFillBackground(True)
+        self.setPalette(pal)
+
         self.title = QLabel()
         
         self.button_1 = QPushButton()

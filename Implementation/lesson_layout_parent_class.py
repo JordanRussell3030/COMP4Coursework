@@ -15,6 +15,11 @@ class ParentLessonLayout(QWidget):
         self.back = QPushButton("Return")
         self.next = QPushButton("Next")
 
+        pal = QPalette()
+        pal.setColor(QPalette.Background, Qt.white)
+        self.setAutoFillBackground(True)
+        self.setPalette(pal)
+
         self.back.setMinimumHeight(50)
         self.back.setMinimumWidth(60)
         self.back.setFont(QFont("Courier", 40))
