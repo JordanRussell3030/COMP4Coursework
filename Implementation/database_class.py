@@ -43,28 +43,28 @@ class Database:
                 cursor.execute(sql)
                 db.commit()
                 
-    def insert_data_first(self, first_name):
+    def insert_data_first(self, first_name, last_name):
         with sqlite3.connect(self._db_name) as db:
 ##            sql = """insert into Student values
 ##                  ((SELECT max(StudentID) From Student) + 1,
 ##                  '{0}')""".format(first_name)
-            sql = "insert into Student(StudentID, FirstName) values ((SELECT max(StudentID) FROM Student)+1, '{0}')".format(first_name)
+            sql = "insert into Student(StudentID, FirstName, Surname) values ((SELECT max(StudentID) FROM Student)+1, '{0}', '{1}')".format(first_name, last_name)
 ##            cursor = db.cursor()
             self.execute_sql(sql)
 ##            cursor.execute(values)
 ##            db.commit()
 
-    def insert_data_last(self, last_name):
-        with sqlite3.connect(self._db_name) as db:
-            sql = "insert into Student(Surname) values ((WHERE FirstName == first_name, '{0}')".format(last_name)
+##    def insert_data_last(self, last_name):
+##        with sqlite3.connect(self._db_name) as db:
+##            sql = "insert into Student(Surname) values ((WHERE FirstName == first_name, '{0}')".format(last_name)
 ##            sql = """insert into Student values
 ##                  ((SELECT max(Surname) From Student) + 1,
 ##                  '{0}')""".format(last_name)
-            self.execute_sql(sql)
+##            self.execute_sql(sql)
 
     def insert_data_score(self, score):
         with sqlite3.connect(self._db_name) as db:
-            sql = """insert into Student values
+            sql = """insert into Student(Score) values
                   ((SELECT max(Score) From Student) + 1,
                   '{0}')""".format(score)
             self.execute_sql(sql)

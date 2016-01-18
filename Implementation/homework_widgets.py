@@ -30,17 +30,15 @@ class SidesAHOEasyWidget(ParentHomeworkPage1Class):
         self.next.clicked.connect(self.next_selected)
 
     def next_selected(self):
-##        cont = False
-##        while not cont:
-##            try: ###
-##                g_database.insert_data_score(self.correct_count)
-##                cont = True
-##            except AttributeError:
-##                error_message = ErrorMessage8()
-##                error_message.show()
-##                error_message._raise()
-##        ##        QSound.play("boxachoc.wav")
-####            self.layout.setCurrentIndex[1]
+        cont = False
+        while not cont:
+            try:
+                g_database.insert_data_score(self.correct_count)
+                cont = True
+            except AttributeError:
+                error_message = ErrorMessage8()
+                error_message.show()
+                error_message._raise()
             self.hide()
             self.page_2 = SidesAHOEasyWidget2()
             self.page_2.show()

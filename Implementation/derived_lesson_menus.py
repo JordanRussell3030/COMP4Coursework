@@ -36,8 +36,8 @@ class Trigonometry1(ParentLessonMenu):
         self.button_2.clicked.connect(self.SOHCAHTOA)
     
     def SidesAHO(self):
-##        sides_aho = SidesAHOWidget()
-        sides_aho = SidesAHOEasyStack()
+        sides_aho = SidesAHOWidget()
+##        sides_aho = SidesAHOEasyStack()
         sides_aho.show()
         sides_aho._raise()
 

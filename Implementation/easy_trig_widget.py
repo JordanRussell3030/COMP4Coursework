@@ -162,7 +162,7 @@ class HardWidget(ParentLessonLayout):
 class ReviseTrig1Widget(ParentLessonLayout):
     def __init__(self):
         super().__init__()
-        self.title.setPixmap(QPixmap("summary_lesson_1_title"))
+        self.title.setPixmap(QPixmap("easy_summary_lesson_title"))
         self.lesson_1.setText("SOHCAHTROA stuff")
         self.lesson_2.setText("")
 
@@ -176,7 +176,7 @@ class ReviseTrig1Widget(ParentLessonLayout):
 class ReviseTrig2Widget(ParentLessonLayout):
     def __init__(self):
         super().__init__()
-        self.title.setPixmap(QPixmap("summary_lesson_2_title"))
+        self.title.setPixmap(QPixmap("medium_summary_lesson_title"))
         self.lesson_1.setText("SOHCAHTROA stuff")
         self.lesson_2.setText("")
 
@@ -191,7 +191,7 @@ class ReviseTrig2Widget(ParentLessonLayout):
 class ReviseTrig3Widget(ParentLessonLayout):
     def __init__(self):
         super().__init__()
-        self.title.setPixmap(QPixmap("summary_lesson_3_title"))
+        self.title.setPixmap(QPixmap("hard_summary_lesson_title"))
         self.lesson_1.setText("SOHCAHTROA stuff")
         self.lesson_2.setText("")
         self.next.clicked.connect(self.selected_next)

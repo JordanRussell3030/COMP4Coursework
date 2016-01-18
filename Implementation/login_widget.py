@@ -2,7 +2,7 @@ from PyQt4.QtGui import *
 from PyQt4.QtCore import *
 from login_screen_window import *
 from error_messages import *
-#
+
 import sys
 
 class LoginWidget(QWidget):
@@ -20,7 +20,6 @@ class LoginWidget(QWidget):
         self.pic = QLabel()
         self.pic_2 = QLabel()
 
-##        self.setStyleSheet("layout {background-color: white;}")
         pal = QPalette()
         pal.setColor(QPalette.Background, Qt.white)
         self.setAutoFillBackground(True)
@@ -29,8 +28,6 @@ class LoginWidget(QWidget):
         self.pic.setPixmap(QPixmap("login_widget_picture"))
 
         self.pic_2.setPixmap(QPixmap("powered_by_python"))
-##        self.pic_2.setMaximumHeight(140)
-##        self.pic_2.setMaximumWidth(140)
 
         self.username.setMinimumWidth(60)
         self.username.setMinimumHeight(100)
@@ -46,14 +43,13 @@ class LoginWidget(QWidget):
 
         self.login.setMinimumWidth(60)
         self.login.setMinimumHeight(110)
-        self.login.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue; font-size: 20;}")
         self.login.setFont(QFont("Courier", 40))
 
         self.a_label.setFont(QFont("Courier", 40))
         self.b_label.setFont(QFont("Courier", 40))
     
         self.setWindowTitle("Welcome to Trigonometry and Pythagoras Lessons")
-##        self.setStyleSheet("background: blue")
+        self.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue; font-size: 20;}")
 
         self.layout = QGridLayout()
 
@@ -69,9 +65,7 @@ class LoginWidget(QWidget):
 
         self.setLayout(self.layout)
 
-        self.login.clicked.connect(self.validate_login)
-
-        #print(self.login.icon())       
+        self.login.clicked.connect(self.validate_login)     
 
     def validate_login(self):
 ##        with open("login_details.txt", mode = "r") as logins:

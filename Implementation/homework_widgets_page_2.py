@@ -19,30 +19,30 @@ class SidesAHOEasyWidget2(HomeworkPage2ParentClass):
         self.answer_2.addItem("20")
         self.answer_2.addItem("30")
 
-        self.drag_drop = TriangleDragLabel()
+##        self.drag_drop = TriangleDragLabel()
 
-        self.layout.append(self.drag_drop, 5, 0)
+##        self.layout.append(self.drag_drop, 5, 0)
 
-    def mouseMoveEvent(self, event):
-        if event.buttons() == Qt.LeftButton:
-            data = QByteArray()
-            mime_data = QMimeData()
-            mime_data.setData(self.mimetext, data)
-            drag = QDrag(self)
-            drag.setMimeData(mime_data)
-            drag.setHotSpot(self.rect().topLeft())
-            if QT_VERSION_STR < '5':
-                drop_action = drag.start(Qt.MoveAction)
-            else:
-                drop_action = drag.exec(Qt.MoveAction)
-
-class QDragLabel(QLabel):
-    """This class provides an image label that can be dragged and dropped"""
-
-class TriangleDragLabel(QDragLabel):
-        def __init__(self):
-            super().__init__(QPixmap("triangle.png"))
-            self.mimetext = "application/x-triangle"
+##    def mouseMoveEvent(self, event):
+##        if event.buttons() == Qt.LeftButton:
+##            data = QByteArray()
+##            mime_data = QMimeData()
+##            mime_data.setData(self.mimetext, data)
+##            drag = QDrag(self)
+##            drag.setMimeData(mime_data)
+##            drag.setHotSpot(self.rect().topLeft())
+##            if QT_VERSION_STR < '5':
+##                drop_action = drag.start(Qt.MoveAction)
+##            else:
+##                drop_action = drag.exec(Qt.MoveAction)
+##
+##class QDragLabel(QLabel):
+##    """This class provides an image label that can be dragged and dropped"""
+##
+##class TriangleDragLabel(QDragLabel):
+##        def __init__(self):
+##            super().__init__(QPixmap("triangle.png"))
+##            self.mimetext = "application/x-triangle"
 
             
 

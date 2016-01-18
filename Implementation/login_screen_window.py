@@ -17,7 +17,6 @@ class MyWindow(QMainWindow):
         super().__init__()
 
         self.login_widget = LoginWidget()
-##        self.login_widget.setStyleSheet("QWidget {background-color: 'white';}")
         self.student_home = UserAccountWidget(self)
 ##        self.student_home = AdminAccountWidget()
 ##        self.student_home = AddNamesWidget()
