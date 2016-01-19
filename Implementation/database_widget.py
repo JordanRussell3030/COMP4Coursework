@@ -1,10 +1,10 @@
 from PyQt4.QtGui import *
 from PyQt4.QtCore import *
-#
+
 from login_widget import *
 from student_account_home import *
 from lesson_menu_widget import *
-#from database_class import *
+from database_class import *
 from report_widget import *
 
 class DatabaseWidget(QWidget):
@@ -32,36 +32,36 @@ class DatabaseWidget(QWidget):
         self.not_success.setMinimumWidth(60)
         self.not_success.setMinimumHeight(100)
         self.not_success.setFont(QFont("Courier", 40))
-        self.not_success.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue;}")
 
         self.report.setMinimumWidth(60)
         self.report.setMinimumHeight(100)
         self.report.setFont(QFont("Courier", 40))
-        self.report.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue;}")
 
         self.not_success_2.setMinimumWidth(60)
         self.not_success_2.setMinimumHeight(100)
         self.not_success_2.setFont(QFont("Courier", 40))
-        self.not_success_2.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue;}")
 
         self.back.setMinimumWidth(60)
         self.back.setMinimumHeight(100)
         self.back.setFont(QFont("Courier", 40))
-        self.back.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue;}")
 
         self.database.setRowCount(29)
         self.database.setColumnCount(13)
-        self.database_header = ("StudentID", "First Name", "Last Name")
+        self.database_header = ("StudentID", "First Name", "Last Name", "Score")
         self.database.setHorizontalHeaderLabels(self.database_header)
         self.database.setMinimumWidth(45)
         self.database.setMinimumHeight(890)
+        
+        self.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue;}")
+        self.database.setStyleSheet("QTableView {selection-background-color: #A3C1DA;}")
+        self.back.setStyleSheet("QPushButton {background-color: #D3E5FF; color: red;}")
 
-        self.database.setStyleSheet("QTableView {selection-background-color: #A3C1DA;}");
-
-##        students = g_database.GetAllNames()
-##        for student in students:
-##            self.database.setItem(0, 0, QTableWidgetItem(str(student[0])))
-##            self.database.setItem(0, 1, QTableWidgetItem(student[1]))
+        students = g_database.GetAllNames()
+        for student in students:
+            self.database.setItem(0, 0, QTableWidgetItem(str(student[0])))
+            self.database.setItem(0, 1, QTableWidgetItem(student[1]))
+            self.database.setItem(0, 2, QTableWidgetItem(student[2]))
+            self.database.setItem(0, 3, QTableWidgetItem(str(student[3])))
 
         self.layout = QGridLayout()
 

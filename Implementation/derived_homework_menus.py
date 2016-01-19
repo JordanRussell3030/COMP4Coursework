@@ -86,56 +86,53 @@ class Trigonometry2HW(ParentHomeworkMenuClass):
     def __init__(self):
         super().__init__()
 
-        self.title.setText("Trigonometry 2")
+        self.title.setPixmap(QPixmap("trig_2_title"))
 
         self.button_1.setText("Finding Angles Easy")
         self.button_2.setText("Finding Angles Medium")
         self.button_3.setText("Finding Angles Hard")
-        self.button_4.setText("Inverted Angles Easy")
-        self.button_5.setText("Inverted Angles Medium")
-        self.button_6.setText("Inverted Angles Hard")
-        self.button_7.setText("3D Trigonometry Easy")
-        self.button_8.setText("3D Trigonometry Medium")
-        self.button_9.setText("3D Trigonometry Hard")
+##        self.button_4.setText("Inverted Angles Easy")
+##        self.button_5.setText("Inverted Angles Medium")
+##        self.button_6.setText("Inverted Angles Hard")
+        self.button_4.setText("3D Trigonometry Easy")
+        self.button_5.setText("3D Trigonometry Medium")
+        self.button_6.setText("3D Trigonometry Hard")
 
         self.pic_1.setPixmap(QPixmap("trig_2_pic_1_h"))
         self.pic_2.setPixmap(QPixmap("trig_2_pic_2_h"))
         self.pic_3.setPixmap(QPixmap("trig_2_pic_3_h"))
-        self.pic_4.setPixmap(QPixmap("trig_2_pic_4_h"))
-        self.pic_5.setPixmap(QPixmap("trig_2_pic_5_h"))
-        self.pic_6.setPixmap(QPixmap("trig_2_pic_6_h"))
-        self.pic_7.setPixmap(QPixmap("trig_2_pic_7_h"))
-        self.pic_8.setPixmap(QPixmap("trig_2_pic_8_h"))
-        self.pic_9.setPixmap(QPixmap("trig_2_pic_9_h"))
+##        self.pic_4.setPixmap(QPixmap("trig_2_pic_4_h"))
+##        self.pic_5.setPixmap(QPixmap("trig_2_pic_5_h"))
+##        self.pic_6.setPixmap(QPixmap("trig_2_pic_6_h"))
+        self.pic_4.setPixmap(QPixmap("trig_2_pic_7_h"))
+        self.pic_5.setPixmap(QPixmap("trig_2_pic_8_h"))
+        self.pic_6.setPixmap(QPixmap("trig_2_pic_9_h"))
 
-        self.layout.addWidget(self.button_1, 1, 1)
-        self.layout.addWidget(self.button_2, 2, 0)
-        self.layout.addWidget(self.button_3, 3, 1)
-        self.layout.addWidget(self.button_4, 4, 0)
-        self.layout.addWidget(self.button_5, 5, 1)
-        self.layout.addWidget(self.button_6, 6, 0)
-        self.layout.addWidget(self.button_7, 7, 1)
-        self.layout.addWidget(self.button_8, 8, 0)
-        self.layout.addWidget(self.button_9, 9, 1)
-        self.layout.addWidget(self.pic_1, 1, 0)
-        self.layout.addWidget(self.pic_2, 2, 1)
-        self.layout.addWidget(self.pic_3, 3, 0)
-        self.layout.addWidget(self.pic_4, 4, 1)
-        self.layout.addWidget(self.pic_5, 5, 0)
-        self.layout.addWidget(self.pic_6, 6, 1)
-        self.layout.addWidget(self.pic_7, 7, 0)
-        self.layout.addWidget(self.pic_8, 8, 1)
-        self.layout.addWidget(self.pic_9, 9, 0)
+        self.layout.addWidget(self.button_1, 1, 0)
+        self.layout.addWidget(self.button_2, 2, 1)
+        self.layout.addWidget(self.button_3, 3, 0)
+##        self.layout.addWidget(self.button_4, 4, 0)
+##        self.layout.addWidget(self.button_5, 5, 1)
+##        self.layout.addWidget(self.button_6, 6, 0)
+        self.layout.addWidget(self.button_4, 4, 1)
+        self.layout.addWidget(self.button_5, 5, 0)
+        self.layout.addWidget(self.button_6, 6, 1)
+        self.layout.addWidget(self.pic_1, 1, 1)
+        self.layout.addWidget(self.pic_2, 2, 0)
+        self.layout.addWidget(self.pic_3, 3, 1)
+##        self.layout.addWidget(self.pic_4, 4, 1)
+##        self.layout.addWidget(self.pic_5, 5, 0)
+##        self.layout.addWidget(self.pic_6, 6, 1)
+        self.layout.addWidget(self.pic_4, 4, 0)
+        self.layout.addWidget(self.pic_5, 5, 1)
+        self.layout.addWidget(self.pic_6, 6, 0)
 
         self.button_1.clicked.connect(self.finding_angles_easy)
         self.button_2.clicked.connect(self.finding_angles_medium)
         self.button_3.clicked.connect(self.finding_angles_hard)
-        self.button_4.clicked.connect(self.inverted_angles_easy)
-        self.button_5.clicked.connect(self.inverted_angles_medium)
-        self.button_6.clicked.connect(self.inverted_angles_hard)
-        self.button_7.clicked.connect(self.three_d_trig_easy)
-        self.button_8.clicked.connect(self.three_d_trig_medium)
-        self.button_9.clicked.connect(self.three_d_trig_hard)
+        self.button_4.clicked.connect(self.three_d_trig_easy)
+        self.button_5.clicked.connect(self.three_d_trig_medium)
+        self.button_6.clicked.connect(self.three_d_trig_hard)
     
     def finding_angles_easy(self):
         finding_angles_1 = FindingAnglesEasyWidget()
@@ -152,20 +149,20 @@ class Trigonometry2HW(ParentHomeworkMenuClass):
         finding_angles_3.show()
         finding_angles_3._raise()
 
-    def inverted_angles_easy(self):
-        inverted_angles_1 = InvertedAnglesEasyWidget()
-        inverted_angles_1.show()
-        inverted_angles_1._raise()
-
-    def inverted_angles_medium(self):
-        inverted_angles_2 = InvertedAnglesMediumWidget()
-        inverted_angles_2.show()
-        inverted_angles_2._raise()
-
-    def inverted_angles_hard(self):
-        inverted_angles_3 = InvertedAnglesHardWidget()
-        inverted_angles_3.show()
-        inverted_angles_3._raise()
+##    def inverted_angles_easy(self):
+##        inverted_angles_1 = InvertedAnglesEasyWidget()
+##        inverted_angles_1.show()
+##        inverted_angles_1._raise()
+##
+##    def inverted_angles_medium(self):
+##        inverted_angles_2 = InvertedAnglesMediumWidget()
+##        inverted_angles_2.show()
+##        inverted_angles_2._raise()
+##
+##    def inverted_angles_hard(self):
+##        inverted_angles_3 = InvertedAnglesHardWidget()
+##        inverted_angles_3.show()
+##        inverted_angles_3._raise()
 
     def three_d_trig_easy(self):
         three_d_trig_1 = ThreeDTrigEasyWidget()
@@ -186,7 +183,7 @@ class PythagorasHW(ParentHomeworkMenuClass):
     def __init__(self):
         super().__init__()
 
-        self.title.setText("Pythagoras")
+        self.title.setPixmap(QPixmap("pythag_title"))
 
         self.button_1.setText("Pythagoras' Theorem Easy")
         self.button_2.setText("Pythagoras' Theorem Medium")
@@ -194,13 +191,20 @@ class PythagorasHW(ParentHomeworkMenuClass):
         self.button_4.setText("3D Pythagoras Easy")
         self.button_5.setText("3D Pythagoras Medium")
         self.button_6.setText("3D Pythagoras Hard")
+
+        self.pic_1.setPixmap(QPixmap("pythag_pic_1_h"))
+        self.pic_2.setPixmap(QPixmap("pythag_pic_2_h"))
+        self.pic_3.setPixmap(QPixmap("pythag_pic_3_h"))
         
-        self.layout.addWidget(self.button_1, 0, 1)
-        self.layout.addWidget(self.button_2, 1, 1)
-        self.layout.addWidget(self.button_3, 2, 1)
-        self.layout.addWidget(self.button_4, 3, 1)
-        self.layout.addWidget(self.button_5, 4, 1)
-        self.layout.addWidget(self.button_6, 5, 1)
+        self.layout.addWidget(self.button_1, 1, 0)
+        self.layout.addWidget(self.button_2, 2, 1)
+        self.layout.addWidget(self.button_3, 3, 0)
+        self.layout.addWidget(self.button_4, 4, 1)
+        self.layout.addWidget(self.button_5, 5, 0)
+        self.layout.addWidget(self.button_6, 6, 1)
+        self.layout.addWidget(self.pic_1, 1, 1)
+        self.layout.addWidget(self.pic_2, 2, 0)
+        self.layout.addWidget(self.pic_3, 3, 1)
 
         self.button_1.clicked.connect(self.pythag_theorem_easy)
         self.button_2.clicked.connect(self.pythag_theorem_medium)
@@ -243,14 +247,14 @@ class PythagTrigonometryHW(ParentHomeworkMenuClass):
     def __init__(self):
         super().__init__()
 
-        self.title.setText("Pythagoras and Trigonometry Problems")
+        self.title.setPixmap(QPixmap("vectors_title"))
 
-        self.button_1.setText("Trigonometry and Pythagoras Problems Easy")
-        self.button_2.setText("Trigonometry and Pythagoras Problems Mediu")
-        self.button_3.setText("Trigonometry and Pythagoras Problems Hard")
+        self.button_1.setText("Vectors Easy")
+        self.button_2.setText("Vectors Medium")
+        self.button_3.setText("Vectors Hard")
 
         self.layout.addWidget(self.button_1, 0, 1)
-        self.layout.addWidget(self.button_2, 1, 1)
+        self.layout.addWidget(self.button_2, 1, 0)
         self.layout.addWidget(self.button_3, 2, 1)
 
         self.button_1.clicked.connect(self.pythag_trig_problems_easy)
@@ -276,14 +280,14 @@ class SummaryHW(ParentHomeworkMenuClass):
     def __init__(self):
         super().__init__()
 
-        self.title.setText("Summary")
+        self.title.setPixmap(QPixmap("summary_title"))
 
         self.button_1.setText("Easy Summary")
         self.button_2.setText("Medium Summary")
         self.button_3.setText("Hard Summary")
 
         self.layout.addWidget(self.button_1, 0, 1)
-        self.layout.addWidget(self.button_2, 1, 1)
+        self.layout.addWidget(self.button_2, 1, 0)
         self.layout.addWidget(self.button_3, 2, 1)
 
         self.button_1.clicked.connect(self.easy_summary)

@@ -1,5 +1,5 @@
 import sqlite3
-#
+
 from database_gui import *
 from homework_parent_class import *
 ##from add_names_widget import *
@@ -9,7 +9,6 @@ class Database:
         self._db_name = db_name
         self.table_name = "Student"
         self.create_table(self.table_name)
-##        self.insert_data("DownloadMoreROM")
 
     def execute_sql(self, sql):
         with sqlite3.connect(self._db_name) as db:
@@ -43,30 +42,20 @@ class Database:
                 cursor.execute(sql)
                 db.commit()
                 
-    def insert_data_first(self, first_name, last_name):
+    def insert_data_first(self, first_name, last_name, score):
         with sqlite3.connect(self._db_name) as db:
-##            sql = """insert into Student values
-##                  ((SELECT max(StudentID) From Student) + 1,
-##                  '{0}')""".format(first_name)
-            sql = "insert into Student(StudentID, FirstName, Surname) values ((SELECT max(StudentID) FROM Student)+1, '{0}', '{1}')".format(first_name, last_name)
+            sql = "insert into Student(StudentID, FirstName, Surname, Score) values ((SELECT max(StudentID) FROM Student)+1, '{0}', '{1}', '{2}')".format(first_name, last_name, 0)
 ##            cursor = db.cursor()
             self.execute_sql(sql)
 ##            cursor.execute(values)
 ##            db.commit()
 
-##    def insert_data_last(self, last_name):
-##        with sqlite3.connect(self._db_name) as db:
-##            sql = "insert into Student(Surname) values ((WHERE FirstName == first_name, '{0}')".format(last_name)
-##            sql = """insert into Student values
-##                  ((SELECT max(Surname) From Student) + 1,
-##                  '{0}')""".format(last_name)
-##            self.execute_sql(sql)
-
     def insert_data_score(self, score):
         with sqlite3.connect(self._db_name) as db:
-            sql = """insert into Student(Score) values
-                  ((SELECT max(Score) From Student) + 1,
-                  '{0}')""".format(score)
+##            sql = """insert into Student(Score) values (('{0}'))""".format(score)
+##            sql = """update Student set Score = '{0}' where Score = null""".format(score)
+##            sql = """insert into Student(Score) values ((WHERE FirstName != NULL, ('{0}')))""".format(score)
+            sql = "UPDATE Student SET Score = '{0}' WHERE Score = 0".format(score)
             self.execute_sql(sql)
 
     def GetAllNames(self):

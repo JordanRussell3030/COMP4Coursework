@@ -24,9 +24,6 @@ class ParentHomeworkMenuClass(QWidget):
         self.button_4 = QPushButton()
         self.button_5 = QPushButton()
         self.button_6 = QPushButton()
-        self.button_7 = QPushButton()
-        self.button_8 = QPushButton()
-        self.button_9 = QPushButton()
 
         self.pic_1 = QLabel()
         self.pic_2 = QLabel()
@@ -34,9 +31,6 @@ class ParentHomeworkMenuClass(QWidget):
         self.pic_4 = QLabel()
         self.pic_5 = QLabel()
         self.pic_6 = QLabel()
-        self.pic_7 = QLabel()
-        self.pic_8 = QLabel()
-        self.pic_9 = QLabel()
 
         self.pic_1.setAlignment(Qt.AlignCenter)
         self.pic_2.setAlignment(Qt.AlignCenter)
@@ -44,9 +38,6 @@ class ParentHomeworkMenuClass(QWidget):
         self.pic_4.setAlignment(Qt.AlignCenter)
         self.pic_5.setAlignment(Qt.AlignCenter)
         self.pic_6.setAlignment(Qt.AlignCenter)
-        self.pic_7.setAlignment(Qt.AlignCenter)
-        self.pic_8.setAlignment(Qt.AlignCenter)
-        self.pic_9.setAlignment(Qt.AlignCenter)
 
         self.button_1.setMinimumHeight(110)
         self.button_1.setMinimumWidth(60)
@@ -71,18 +62,6 @@ class ParentHomeworkMenuClass(QWidget):
         self.button_6.setMinimumHeight(110)
         self.button_6.setMinimumWidth(60)
         self.button_6.setFont(QFont("Courier", 40))
-
-        self.button_7.setMinimumHeight(110)
-        self.button_7.setMinimumWidth(60)
-        self.button_7.setFont(QFont("Courier", 40))
-
-        self.button_8.setMinimumHeight(110)
-        self.button_8.setMinimumWidth(60)
-        self.button_8.setFont(QFont("Courier", 40))
-
-        self.button_9.setMinimumHeight(110)
-        self.button_9.setMinimumWidth(60)
-        self.button_9.setFont(QFont("Courier", 40))
 
         self.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue}")
         

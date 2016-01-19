@@ -212,7 +212,7 @@ class PythagTheoremHardWidget2(HomeworkPage2ParentClass):
         self.shape_3.setText("Shape")
         self.question_4.setText("Question 4\n______\n______\n______")
 
-class ThreeDPythagEasyWidget2(HomeworkPage2ParentClass):
+class ThreeDPythagorasEasyWidget2(HomeworkPage2ParentClass):
     def __init__(self):
         super().__init__()
         self.question_2.setText("Question 2\n_________\n_________")
@@ -221,7 +221,7 @@ class ThreeDPythagEasyWidget2(HomeworkPage2ParentClass):
         self.shape_3.setText("Shape")
         self.question_4.setText("Question 4\n______\n______\n______")
 
-class ThreeDPythagMediumWidget2(HomeworkPage2ParentClass):
+class ThreeDPythagorasMediumWidget2(HomeworkPage2ParentClass):
     def __init__(self):
         super().__init__()
         self.question_2.setText("Question 2\n_________\n_________")
@@ -230,7 +230,7 @@ class ThreeDPythagMediumWidget2(HomeworkPage2ParentClass):
         self.shape_3.setText("Shape")
         self.question_4.setText("Question 4\n______\n______\n______")
 
-class ThreeDPythagHardWidget2(HomeworkPage2ParentClass):
+class ThreeDPythagorasHardWidget2(HomeworkPage2ParentClass):
     def __init__(self):
         super().__init__()
         self.question_2.setText("Question 2\n_________\n_________")

@@ -103,7 +103,7 @@ class AddNamesWidget(QWidget):
             password_f = random.randint(0, 9)
             password_g = random.choice(character_list)
             password_ = password_a + str(password_b) + password_c + str(password_d) + password_e + str(password_f) + password_g
-            g_database.insert_data_first(self.input_first_name.text(), self.input_last_name.text())
+            g_database.insert_data_first(self.input_first_name.text(), self.input_last_name.text(), 0)
             self.save_login(username_, password_)
             self.close()
 

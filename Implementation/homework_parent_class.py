@@ -1,9 +1,10 @@
 from PyQt4.QtCore import *
 from PyQt4.QtGui import *
-#
+
 from homework_widgets import *
 from homework_page_2_parent_class import *
 from database_class import *
+from error_messages import *
 
 class ParentHomeworkPage1Class(QWidget):
     def __init__(self):
@@ -105,6 +106,7 @@ class ParentHomeworkPage1Class(QWidget):
         self.check.clicked.connect(self.check_selected)
         self.reset.clicked.connect(self.reset_selected)
         self.cancel.clicked.connect(self.cancel_selected)
+        self.next.clicked.connect(self.next_selected)
 
     def check_selected(self):
         self.correct_count = 0
@@ -139,8 +141,20 @@ class ParentHomeworkPage1Class(QWidget):
             self.correct_count += 1
         else:
             self.answer_f.setText("Incorrect")
-##        return self.correct_count
-        
+
+    def next_selected(self):
+        cont = False
+        while not cont:
+            try:
+                print(self.correct_count)
+                g_database.insert_data_score(self.correct_count)
+                cont = True
+            except AttributeError:
+                error_message = ErrorMessage8()
+                error_message.show()
+                error_message._raise()
+            self.open_page_2()#
+            self.hide() #might have to swap
 
     def reset_selected(self):
         self.answer_a.setText(None)
