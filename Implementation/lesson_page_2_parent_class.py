@@ -1,6 +1,6 @@
 from PyQt4.QtGui import *
 from PyQt4.QtCore import *
-#
+
 from lesson_page_2 import *
 from easy_trig_widget import *
 
@@ -40,8 +40,7 @@ class ParentLessonPage2(QWidget):
         self.finish.setMinimumWidth(60)
         self.finish.setFont(QFont("Courier", 40))
 
-        for button in self.buttons:
-            self.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue;}")
+        self.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue;}")
 
         self.answer.setMinimumWidth(80)
         self.answer.setMinimumHeight(110)
@@ -59,10 +58,10 @@ class ParentLessonPage2(QWidget):
 
         self.setLayout(self.layout)
 
-        self.layout.addWidget(self.answer, 1, 1)
+        self.layout.addWidget(self.answer, 3, 1)
         self.layout.addWidget(self.previous, 3, 0)
-        self.layout.addWidget(self.check, 2, 1)
-        self.layout.addWidget(self.finish, 3, 1)
+        self.layout.addWidget(self.check, 4, 1)
+        self.layout.addWidget(self.finish, 4, 0)
         self.layout.addWidget(self.text_1, 0, 0)
         self.layout.addWidget(self.text_2, 0, 1)
 
@@ -72,9 +71,6 @@ class ParentLessonPage2(QWidget):
 
     def previous_selected(self):
         self.close()
-        #get it to save stuff thats been typed if possible
-        #open page 1
-        
 
     def check_selected(self):
         if self.answer.text() == self.answer_lesson:
