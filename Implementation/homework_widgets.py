@@ -3,9 +3,6 @@ from PyQt4.QtCore import *
 from login_screen_window import *
 from login_widget import *
 
-from lesson_menu_widget import *
-from homework_menu_widget import *
-from derived_lesson_menus import *
 from homework_widgets_page_2 import *
 from homework_parent_class import *
 from database_class import *
@@ -26,30 +23,7 @@ class SidesAHOEasyWidget(ParentHomeworkPage1Class):
         self.answer_1_e = "5"
         self.answer_1_f = "6"
 
-##        self.next.clicked.connect(self.next_selected)
-
-##    def next_selected(self):
-##        cont = False
-##        while not cont:
-##            try:
-##                print(self.correct_count)
-##                g_database.insert_data_score(self.correct_count)
-##                cont = True
-##            except AttributeError:
-##                error_message = ErrorMessage8()
-##                error_message.show()
-##                error_message._raise()
-##            open_page_2()#
-##            self.hide() #might have to swap
-
-    def open_page_2(self):
         self.page_2 = SidesAHOEasyWidget2()
-        self.page_2.show()
-        self.page_2._raise()
-
-        #set to stackwidget with pages 1 and 2
-        #put next_selected method in parent class with setCurrectIndex(1)
-            #so it works with every subclass
        
 class SidesAHOMediumWidget(ParentHomeworkPage1Class):
     def __init__(self):
@@ -67,10 +41,7 @@ class SidesAHOMediumWidget(ParentHomeworkPage1Class):
 
         self.next.clicked.connect(self.next_selected)
 
-    def open_page_2(self):
         self.page_2 = SidesAHOMediumWidget2()
-        self.page_2.show()
-        self.page_2._raise()
 
 class SidesAHOHardWidget(ParentHomeworkPage1Class):
     def __init__(self):
@@ -88,11 +59,7 @@ class SidesAHOHardWidget(ParentHomeworkPage1Class):
         self.answer_1_e = None
         self.answer_1_f = None
 
-    def open_page_2(self):
         self.page_2 = SidesAHOHardWidget2()
-        self.page_2.show()
-        self.page_2._raise()
-
 
 class SOHCAHTOAEasyWidget(ParentHomeworkPage1Class):
     def __init__(self):
@@ -110,11 +77,7 @@ class SOHCAHTOAEasyWidget(ParentHomeworkPage1Class):
         self.answer_1_e = None
         self.answer_1_f = None
 
-    def open_page_2(self):
         self.page_2 = SOHCAHTOAEasyWidget2()
-        self.page_2.show()
-        self.page_2._raise()
-
 
 class SOHCAHTOAMediumWidget(ParentHomeworkPage1Class):
     def __init__(self):

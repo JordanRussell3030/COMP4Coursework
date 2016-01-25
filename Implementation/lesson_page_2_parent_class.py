@@ -1,9 +1,6 @@
 from PyQt4.QtGui import *
 from PyQt4.QtCore import *
 
-from lesson_page_2 import *
-from easy_trig_widget import *
-
 class ParentLessonPage2(QWidget):
     def __init__(self):
         super().__init__()

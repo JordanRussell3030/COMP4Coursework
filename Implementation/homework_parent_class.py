@@ -1,8 +1,6 @@
 from PyQt4.QtCore import *
 from PyQt4.QtGui import *
 
-from homework_widgets import *
-from homework_page_2_parent_class import *
 from database_class import *
 from error_messages import *
 
@@ -11,6 +9,8 @@ class ParentHomeworkPage1Class(QWidget):
         super().__init__()
 
         self.showMaximized()
+
+        self.page_2 = None
 
         pal = QPalette()
         pal.setColor(QPalette.Background, Qt.white)
@@ -146,16 +146,20 @@ class ParentHomeworkPage1Class(QWidget):
         cont = False
         while not cont:
             try:
-                print(self.correct_count)
+##                print(self.correct_count)
                 g_database.insert_data_score(self.correct_count)
                 cont = True
             except AttributeError:
                 error_message = ErrorMessage8()
                 error_message.show()
                 error_message._raise()
-            self.open_page_2()#
-            self.hide() #might have to swap
+            self.open_page_2()
+            self.hide()
 
+    def open_page_2(self):
+        self.page_2.show()
+        self.page_2._raise()
+            
     def reset_selected(self):
         self.answer_a.setText(None)
         self.answer_b.setText(None)

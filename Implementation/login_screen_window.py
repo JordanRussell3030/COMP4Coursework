@@ -1,9 +1,10 @@
 from PyQt4.QtGui import *
 from PyQt4.QtCore import *
 
+##import pdb
+
 from login_widget import * #The login screen window class is in here.
 from student_account_home import * #The student home class is in here.
-from lesson_menu_widget import * #Contains the lesson menu class.
 from admin_account_home import * #Contains the admin account class.
 from homework_set_screen import * #Contains the homework setting screen class.
 from results_menu_widget import * #Contains the result menu class.
@@ -57,6 +58,7 @@ class MyWindow(QMainWindow):
         
 #This makes the program start by default when run.
 if __name__ == "__main__":
+##    pdb.run('MyWindow')
     app = QApplication(sys.argv)
     #Assigns the window to the MyWindow class made above.
     window = MyWindow()

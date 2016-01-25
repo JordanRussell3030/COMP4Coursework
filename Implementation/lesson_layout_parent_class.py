@@ -1,14 +1,13 @@
 from PyQt4.QtGui import *
 from PyQt4.QtCore import *
-#
-from easy_trig_widget import *
-from derived_lesson_menus import *
 
 class ParentLessonLayout(QWidget):
     def __init__(self):
         super().__init__()
 
         self.showMaximized()
+
+        self.second_window = None
 
         self.title = QLabel()
 
@@ -52,6 +51,12 @@ class ParentLessonLayout(QWidget):
         self.setLayout(self.layout)
 
         self.back.clicked.connect(self.selected_back)
+        self.next.clicked.connect(self.selected_next)
+
+    def selected_next(self):
+        self.close()
+        second_window.show()
+        second_window._raise()
 
     def selected_back(self):
         self.close()

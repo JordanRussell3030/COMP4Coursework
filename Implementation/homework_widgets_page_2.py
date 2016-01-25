@@ -4,7 +4,6 @@ from PyQt4.QtGui import *
 from homework_widgets import *
 from homework_page_2_parent_class import *
 from derived_homework_menus import *
-##from homework_stack_widgets import *
 
 class SidesAHOEasyWidget2(HomeworkPage2ParentClass):
     def __init__(self):
@@ -19,45 +18,60 @@ class SidesAHOEasyWidget2(HomeworkPage2ParentClass):
         self.answer_2.addItem("20")
         self.answer_2.addItem("30")
 
-##        self.drag_drop = TriangleDragLabel()
+    def selected_previous(self):
+        pass
 
-##        self.layout.append(self.drag_drop, 5, 0)
+class DragFromWidget(QDockWidget):
+    def __init__(self, parent = None):
+        super(DragFromWidget, self).__init__(parent = parent)
+        self.layout.addWidget(QLabel("Label"))
 
-##    def mouseMoveEvent(self, event):
-##        if event.buttons() == Qt.LeftButton:
-##            data = QByteArray()
-##            mime_data = QMimeData()
-##            mime_data.setData(self.mimetext, data)
-##            drag = QDrag(self)
-##            drag.setMimeData(mime_data)
-##            drag.setHotSpot(self.rect().topLeft())
-##            if QT_VERSION_STR < '5':
-##                drop_action = drag.start(Qt.MoveAction)
-##            else:
-##                drop_action = drag.exec(Qt.MoveAction)
-##
-##class QDragLabel(QLabel):
-##    """This class provides an image label that can be dragged and dropped"""
-##
-##class TriangleDragLabel(QDragLabel):
-##        def __init__(self):
-##            super().__init__(QPixmap("triangle.png"))
-##            self.mimetext = "application/x-triangle"
+    def DragEnterEvent(self, event):
+        print("Success")
 
-            
+    def MousePressEvent(self, event):
+        label = self.childAt(event.pos())
+        if not label:
+            return
+        hotSpot = event.pos() - label.pos()
+        mimeData = QtCore.QMimeData()
+        mimeData.setText(label.text())
+        mimeData.setData("application/x-hotspot", str(hotSpot.x()))
+        pixmap = QtGui.QPixmap(label.size())
+        label.render(pixmap)
 
-        
+        drag = QDrag(self)
+        drag.setMimeData(mimeData)
+        drag.setPixmap(pixmap)
+        drag.setHotSpot(hotspot)
 
-##    def selected_mark_2(self):
-##        if self.answer_2.item() == 20:
-##            print("Correct")
-##        else:
-##            print("Incorrect")
+        dropAction = drag.exec_(Qt.CopyAction|Qt.MoveAction, Qt.CopyAction)
+        if dropAction == Qt.MoveAction:
+            label.close()
 
-        
-        def selected_previous(self):
-            pass
-##        self.layout.setCurrentIndex[0]
+class DragToWidget(QDockWidget):
+    def __init__(self, parent = None):
+        super(DragToWidget, self).__init__(parent = parent)
+        self.setAcceptDrops(True)
+
+    def DragEnterEvent(self, event):
+        event.accept()
+
+    def DropEvent(self, event):
+        print("{0} was dropped onto me.".format(event))
+
+class SandboxApp(QApplication):
+    def __init__(self, args, kwargs):
+        super(SandboxApp, self).__init__(args)
+        self.main_window = MainWindow()
+        self.main_window.show()
+
+class MainWindow(QMainWindow):
+    def __init__(self, parent = None):
+        super(MainWindow, self).__init__(parent = parent)
+        self.setDockOptions(QMainWindow.AllowNestedDocks|QMainWindow.AnimatedDocks)
+        self.addDockWidget(Qt.LeftDockWidgetArea, DragFromWidget())
+        self.addDockWidget(Qt.RightDockWidget, DragToWidget())
 
 class SidesAHOMediumWidget2(HomeworkPage2ParentClass):
     def __init__(self):
