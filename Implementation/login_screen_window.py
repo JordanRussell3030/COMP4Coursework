@@ -9,6 +9,7 @@ from admin_account_home import * #Contains the admin account class.
 from homework_set_screen import * #Contains the homework setting screen class.
 from results_menu_widget import * #Contains the result menu class.
 from error_messages import * #Contains all the QErrorMessage classes.
+from lesson_stacks import *
 
 import sys
 
@@ -20,10 +21,12 @@ class MyWindow(QMainWindow):
     #Constructor.
     def __init__(self):
         super().__init__()
-        #This is the first widget which opens when the progream is run.
+        #This is the first widget which opens when the program is run.
         self.login_widget = LoginWidget()
         #This is the second widget in the stack if the user is a student.
+        
         self.student_home = UserAccountWidget(self)
+        
         #This is the second widget in the stack if the user is an administrator.
 ##        self.student_home = AdminAccountWidget()
 ##        self.student_home = AddNamesWidget()
@@ -53,6 +56,7 @@ class MyWindow(QMainWindow):
         self.stack.setCurrentIndex(1)
         #Maximises the screen.
         self.student_home.showMaximized()
+        self.student_home._raise()
         ##Login and password stuff
         username = self.login_widget.username.text()
         

@@ -7,8 +7,6 @@ class ParentLessonLayout(QWidget):
 
         self.showMaximized()
 
-        self.second_window = None
-
         self.title = QLabel()
 
         self.back = QPushButton("Return")
@@ -51,12 +49,7 @@ class ParentLessonLayout(QWidget):
         self.setLayout(self.layout)
 
         self.back.clicked.connect(self.selected_back)
-        self.next.clicked.connect(self.selected_next)
-
-    def selected_next(self):
-        self.close()
-        second_window.show()
-        second_window._raise()
+        self.next.clicked.connect(self.selected_next_page)
 
     def selected_back(self):
         self.close()

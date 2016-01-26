@@ -5,8 +5,9 @@ from easy_trig_widget import *
 from lesson_page_2_parent_class import *
 
 class SidesAHOWidgetPage2(ParentLessonPage2):
-    def __init__(self):
+    def __init__(self, parent):
         super().__init__()
+        self.parent = parent
         self.text_1.setText("More sides, BANTER")
         self.text_2.setText("Space for a practice question based on the lesson e.g what is the length of a")
 
@@ -42,13 +43,13 @@ class FindingAnglesWidgetPage2(ParentLessonPage2):
 
         self.answer_lesson = None
 
-class InvertedAnglesWidgetPage2(ParentLessonPage2):
-    def __init__(self):
-        super().__init__()
-        self.text_1.setText("More IA""")
-        self.text_2.setText("Space for SOHCAHTOA """)
-
-        self.answer_lesson = None
+##class InvertedAnglesWidgetPage2(ParentLessonPage2):
+##    def __init__(self):
+##        super().__init__()
+##        self.text_1.setText("More IA""")
+##        self.text_2.setText("Space for SOHCAHTOA """)
+##
+##        self.answer_lesson = None
 
 class ThreeDTrigonometryWidgetPage2(ParentLessonPage2):
     def __init__(self):

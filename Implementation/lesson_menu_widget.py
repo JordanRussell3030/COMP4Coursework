@@ -1,10 +1,12 @@
 from PyQt4.QtGui import *
 from PyQt4.QtCore import *
+
 from login_screen_window import *
 from login_widget import *
 from student_account_home import *
 from derived_lesson_menus import *
-#
+from lesson_stacks import *
+
 class LessonMenuWidget(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -113,6 +115,7 @@ class LessonMenuWidget(QMainWindow):
         self.back.clicked.connect(self.selected_back)
 
     def selected_t1(self):
+##        trig_1_widget = Trigonometry1()
         trig_1_widget = Trigonometry1()
         trig_1_widget.show()
         trig_1_widget._raise()

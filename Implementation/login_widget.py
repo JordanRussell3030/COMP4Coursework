@@ -26,6 +26,7 @@ class LoginWidget(QWidget):
         self.setPalette(pal)
         
         self.pic.setPixmap(QPixmap("login_widget_picture"))
+##        self.pic.setPixmap(QPixmap("be_like_bob"))
 
         self.pic_2.setPixmap(QPixmap("powered_by_python"))
 
@@ -73,6 +74,7 @@ class LoginWidget(QWidget):
 ##            logins.read(password_)
 ##        if self.username.text() == username_ and self.password.text() == password_:
             self.NameEntered.emit()
+##            QSound.play("boxachoc")
 ####        if self.username.text() == "admin" and self.password.text() == "admin":
 ####            self.NameEntered.emit()
 ##        elif self.password.text() != password_ and self.username.text() == username_:

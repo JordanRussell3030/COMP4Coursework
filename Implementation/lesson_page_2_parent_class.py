@@ -67,7 +67,7 @@ class ParentLessonPage2(QWidget):
         self.finish.clicked.connect(self.finish_selected)
 
     def previous_selected(self):
-        self.close()
+        self.parent.stack.setCurrentIndex(0)
 
     def check_selected(self):
         if self.answer.text() == self.answer_lesson:
