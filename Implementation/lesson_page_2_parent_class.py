@@ -4,8 +4,6 @@ from PyQt4.QtCore import *
 class ParentLessonPage2(QWidget):
     def __init__(self):
         super().__init__()
-
-        self.showMaximized()
         
         self.answer = QLineEdit()
         self.previous = QPushButton("Previous")

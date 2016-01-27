@@ -63,8 +63,7 @@ class HomeworkPage2ParentClass(QWidget):
         self.finish.setMinimumHeight(110)
         self.finish.setFont(QFont("Courier", 40))
 
-        for button in self.buttons:
-            self.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue;}")
+        self.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue;}")
 
         self.answer_2.setMinimumWidth(60)
         self.answer_2.setMinimumHeight(110)
@@ -111,7 +110,7 @@ class HomeworkPage2ParentClass(QWidget):
         pass
 
     def selected_previous(self):
-        self.close()
+        self.parent.stack.setCurrentIndex(0)
 
     def selected_finish(self):
         self.close()

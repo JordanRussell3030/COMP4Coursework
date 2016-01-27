@@ -7,11 +7,14 @@ from homework_widgets_page_2 import *
 from homework_parent_class import *
 from database_class import *
 from error_messages import *
-
+from homework_stacks import *
 
 class SidesAHOEasyWidget(ParentHomeworkPage1Class):
-    def __init__(self):
+    def __init__(self, parent):
         super().__init__()
+
+        self.parent = parent
+        
         self.title.setText("Sides Easy")
         self.question_1.setText("Question 1:\n ___________\n__________")
         self.question_1_shape.setText("Shape")
@@ -23,7 +26,8 @@ class SidesAHOEasyWidget(ParentHomeworkPage1Class):
         self.answer_1_e = "5"
         self.answer_1_f = "6"
 
-        self.page_2 = SidesAHOEasyWidget2()
+    def open_page_2(self):
+        self.parent.stack.setCurrentIndex(1)
        
 class SidesAHOMediumWidget(ParentHomeworkPage1Class):
     def __init__(self):

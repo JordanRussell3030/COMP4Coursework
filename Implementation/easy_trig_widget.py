@@ -9,6 +9,7 @@ class SidesAHOWidget(ParentLessonLayout):
         super().__init__()
 
         self.parent = parent
+        
         self.title.setPixmap(QPixmap("sides_lesson_title"))
         self.lesson_1.setText("Every triangle has 3 sides, and each side has a name. The HYPOTENUSE is the longest side. The OPPOSITE is the side opposite the angle being used. The ADJACENT is next to the angle being used.")
         self.lesson_2.setText("How to do this")

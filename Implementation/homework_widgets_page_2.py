@@ -3,11 +3,14 @@ from PyQt4.QtGui import *
 
 from homework_widgets import *
 from homework_page_2_parent_class import *
-from derived_homework_menus import *
+from homework_stacks import *
 
 class SidesAHOEasyWidget2(HomeworkPage2ParentClass):
-    def __init__(self):
+    def __init__(self, parent):
         super().__init__()
+
+        self.parent = parent
+        
         self.question_2.setText("Question 2\n_________\n_________")
         self.shape_2.setText("sides easy")
         self.question_3.setText("Question 3\n_________\n_________")
@@ -18,60 +21,57 @@ class SidesAHOEasyWidget2(HomeworkPage2ParentClass):
         self.answer_2.addItem("20")
         self.answer_2.addItem("30")
 
-    def selected_previous(self):
-        pass
-
-class DragFromWidget(QDockWidget):
-    def __init__(self, parent = None):
-        super(DragFromWidget, self).__init__(parent = parent)
-        self.layout.addWidget(QLabel("Label"))
-
-    def DragEnterEvent(self, event):
-        print("Success")
-
-    def MousePressEvent(self, event):
-        label = self.childAt(event.pos())
-        if not label:
-            return
-        hotSpot = event.pos() - label.pos()
-        mimeData = QtCore.QMimeData()
-        mimeData.setText(label.text())
-        mimeData.setData("application/x-hotspot", str(hotSpot.x()))
-        pixmap = QtGui.QPixmap(label.size())
-        label.render(pixmap)
-
-        drag = QDrag(self)
-        drag.setMimeData(mimeData)
-        drag.setPixmap(pixmap)
-        drag.setHotSpot(hotspot)
-
-        dropAction = drag.exec_(Qt.CopyAction|Qt.MoveAction, Qt.CopyAction)
-        if dropAction == Qt.MoveAction:
-            label.close()
-
-class DragToWidget(QDockWidget):
-    def __init__(self, parent = None):
-        super(DragToWidget, self).__init__(parent = parent)
-        self.setAcceptDrops(True)
-
-    def DragEnterEvent(self, event):
-        event.accept()
-
-    def DropEvent(self, event):
-        print("{0} was dropped onto me.".format(event))
-
-class SandboxApp(QApplication):
-    def __init__(self, args, kwargs):
-        super(SandboxApp, self).__init__(args)
-        self.main_window = MainWindow()
-        self.main_window.show()
-
-class MainWindow(QMainWindow):
-    def __init__(self, parent = None):
-        super(MainWindow, self).__init__(parent = parent)
-        self.setDockOptions(QMainWindow.AllowNestedDocks|QMainWindow.AnimatedDocks)
-        self.addDockWidget(Qt.LeftDockWidgetArea, DragFromWidget())
-        self.addDockWidget(Qt.RightDockWidget, DragToWidget())
+##class DragFromWidget(QDockWidget):
+##    def __init__(self, parent = None):
+##        super(DragFromWidget, self).__init__(parent = parent)
+##        self.layout.addWidget(QLabel("Label"))
+##
+##    def DragEnterEvent(self, event):
+##        print("Success")
+##
+##    def MousePressEvent(self, event):
+##        label = self.childAt(event.pos())
+##        if not label:
+##            return
+##        hotSpot = event.pos() - label.pos()
+##        mimeData = QtCore.QMimeData()
+##        mimeData.setText(label.text())
+##        mimeData.setData("application/x-hotspot", str(hotSpot.x()))
+##        pixmap = QtGui.QPixmap(label.size())
+##        label.render(pixmap)
+##
+##        drag = QDrag(self)
+##        drag.setMimeData(mimeData)
+##        drag.setPixmap(pixmap)
+##        drag.setHotSpot(hotspot)
+##
+##        dropAction = drag.exec_(Qt.CopyAction|Qt.MoveAction, Qt.CopyAction)
+##        if dropAction == Qt.MoveAction:
+##            label.close()
+##
+##class DragToWidget(QDockWidget):
+##    def __init__(self, parent = None):
+##        super(DragToWidget, self).__init__(parent = parent)
+##        self.setAcceptDrops(True)
+##
+##    def DragEnterEvent(self, event):
+##        event.accept()
+##
+##    def DropEvent(self, event):
+##        print("{0} was dropped onto me.".format(event))
+##
+##class SandboxApp(QApplication):
+##    def __init__(self, args, kwargs):
+##        super(SandboxApp, self).__init__(args)
+##        self.main_window = MainWindow()
+##        self.main_window.show()
+##
+##class MainWindow(QMainWindow):
+##    def __init__(self, parent = None):
+##        super(MainWindow, self).__init__(parent = parent)
+##        self.setDockOptions(QMainWindow.AllowNestedDocks|QMainWindow.AnimatedDocks)
+##        self.addDockWidget(Qt.LeftDockWidgetArea, DragFromWidget())
+##        self.addDockWidget(Qt.RightDockWidget, DragToWidget())
 
 class SidesAHOMediumWidget2(HomeworkPage2ParentClass):
     def __init__(self):

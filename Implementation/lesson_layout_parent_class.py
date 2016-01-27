@@ -5,8 +5,6 @@ class ParentLessonLayout(QWidget):
     def __init__(self):
         super().__init__()
 
-        self.showMaximized()
-
         self.title = QLabel()
 
         self.back = QPushButton("Return")

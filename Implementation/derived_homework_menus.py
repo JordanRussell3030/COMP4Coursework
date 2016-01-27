@@ -2,10 +2,10 @@ from PyQt4.QtGui import *
 from PyQt4.QtCore import *
 from login_screen_window import *
 from login_widget import *
-#
+
 from lesson_menu_widget import *
 from homework_menu_widget import *
-##from parent_class_homework import *
+from homework_stacks import *
 from easy_trig_widget import *
 from homework_widgets import *
 from homework_menu_parent_class import *
@@ -53,7 +53,7 @@ class Trigonometry1HW(ParentHomeworkMenuClass):
 
     #compress into 1 method
     def sides_aho_easy(self):
-        sides_aho_1 = SidesAHOEasyWidget()
+        sides_aho_1 = Trig1StackSidesEasy()
         sides_aho_1.show()
         sides_aho_1._raise()
 

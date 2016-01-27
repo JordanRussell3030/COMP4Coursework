@@ -155,10 +155,6 @@ class ParentHomeworkPage1Class(QWidget):
                 error_message._raise()
             self.open_page_2()
             self.hide()
-
-    def open_page_2(self):
-        self.page_2.show()
-        self.page_2._raise()
             
     def reset_selected(self):
         self.answer_a.setText(None)

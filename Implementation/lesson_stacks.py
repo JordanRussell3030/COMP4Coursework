@@ -9,6 +9,9 @@ from lesson_page_2 import *
 class Trig1StackSides(QMainWindow):
     def __init__(self):
         super().__init__()
+
+        self.showMaximized()
+        
         self.first_widget = SidesAHOWidget(self)
         self.second_widget = SidesAHOWidgetPage2(self)
 
@@ -25,6 +28,9 @@ class Trig1StackSides(QMainWindow):
 class Trig1StackSOHCAHTOA(QMainWindow):
     def __init__(self):
         super().__init__()
+
+        self.showMaximized()
+        
         self.first_widget = SOHCAHTOAWidget(self)
         self.second_widget = SOHCAHTOAWidgetPage2(self)
 
@@ -41,6 +47,9 @@ class Trig1StackSOHCAHTOA(QMainWindow):
 class Trig2StackFA(QMainWindow):
     def __init__(self):
         super().__init__()
+
+        self.showMaximized()
+        
         self.first_widget = FindingAnglesWidget(self)
         self.second_widget = FindingAnglesWidgetPage2(self)
 
@@ -57,6 +66,9 @@ class Trig2StackFA(QMainWindow):
 class Trig2StackTDT(QMainWindow):
     def __init__(self):
         super().__init__()
+
+        self.showMaximized()
+        
         self.first_widget = ThreeDTrigonometryWidget(self)
         self.second_widget = ThreeDTrigonometryWidgetPage2(self)
 
@@ -73,6 +85,9 @@ class Trig2StackTDT(QMainWindow):
 class PythagStackTheorem(QMainWindow):
     def __init__(self):
         super().__init__()
+
+        self.showMaximized()
+        
         self.first_widget = PythagTheoremWidget(self)
         self.second_widget = PythagTheoremWidgetPage2(self)
 
@@ -89,6 +104,9 @@ class PythagStackTheorem(QMainWindow):
 class PythagStackTDP(QMainWindow):
     def __init__(self):
         super().__init__()
+        
+        self.showMaximized()
+        
         self.first_widget = ThreeDPythagorasWidget(self)
         self.second_widget = ThreeDPythagorasWidgetPage2(self)
 
@@ -105,6 +123,9 @@ class PythagStackTDP(QMainWindow):
 class EasyStack(QMainWindow):
     def __init__(self):
         super().__init__()
+
+        self.showMaximized()
+        
         self.first_widget = EasyWidget(self)
         self.second_widget = EasyWidgetPage2(self)
 
@@ -121,6 +142,9 @@ class EasyStack(QMainWindow):
 class MediumStack(QMainWindow):
     def __init__(self):
         super().__init__()
+
+        self.showMaximized()
+        
         self.first_widget = MediumWidget(self)
         self.second_widget = MediumWidgetPage2(self)
 
@@ -137,6 +161,9 @@ class MediumStack(QMainWindow):
 class HardStack(QMainWindow):
     def __init__(self):
         super().__init__()
+
+        self.showMaximized()
+        
         self.first_widget = HardWidget(self)
         self.second_widget = HardWidgetPage2(self)
 
@@ -153,6 +180,9 @@ class HardStack(QMainWindow):
 class Revise1Stack(QMainWindow):
     def __init__(self):
         super().__init__()
+
+        self.showMaximized()
+        
         self.first_widget = ReviseTrig1Widget(self)
         self.second_widget = ReviseTrig1WidgetPage2(self)
 
@@ -169,6 +199,9 @@ class Revise1Stack(QMainWindow):
 class Revise2Stack(QMainWindow):
     def __init__(self):
         super().__init__()
+
+        self.showMaximized()
+        
         self.first_widget = ReviseTrig2Widget(self)
         self.second_widget = ReviseTrig2WidgetPage2(self)
 
@@ -185,6 +218,9 @@ class Revise2Stack(QMainWindow):
 class Revise3Stack(QMainWindow):
     def __init__(self):
         super().__init__()
+
+        self.showMaximized()
+        
         self.first_widget = ReviseTrig3Widget(self)
         self.second_widget = ReviseTrig3WidgetPage2(self)
 
