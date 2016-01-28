@@ -189,71 +189,71 @@ class FindingAnglesHardWidget(ParentHomeworkPage1Class):
         self.page_2._raise()
 
 
-class InvertedAnglesEasyWidget(ParentHomeworkPage1Class):
-    def __init__(self):
-        super().__init__()
-        self.title.setText("Inverted Angles Easy")
-        self.question_1.setText("Question 1:\n ___________\n__________")
-        self.question_1_shape.setText("Shape")
-
-        self.next.clicked.connect(self.next_selected)
-
-        self.answer_1_a = None
-        self.answer_1_b = None
-        self.answer_1_c = None
-        self.answer_1_d = None
-        self.answer_1_e = None
-        self.answer_1_f = None
-
-    def open_page_2(self):
-        self.page_2 = InvertedAnglesEasyWidget2()
-        self.page_2.show()
-        self.page_2._raise()
-
-
-class InvertedAnglesMediumWidget(ParentHomeworkPage1Class):
-    def __init__(self):
-        super().__init__()
-        self.title.setText("Inverted Angles Medium")
-        self.question_1.setText("Question 1:\n ___________\n__________")
-        self.question_1_shape.setText("Shape")
-
-        self.next.clicked.connect(self.next_selected)
-
-        self.answer_1_a = None
-        self.answer_1_b = None
-        self.answer_1_c = None
-        self.answer_1_d = None
-        self.answer_1_e = None
-        self.answer_1_f = None
-
-    def open_page_2(self):
-        self.page_2 = InvertedAnglesMediumWidget2()
-        self.page_2.show()
-        self.page_2._raise()
-
-
-class InvertedAnglesHardWidget(ParentHomeworkPage1Class):
-    def __init__(self):
-        super().__init__()
-        self.title.setText("Inverted Angles Hard")
-        self.question_1.setText("Question 1:\n ___________\n__________")
-        self.question_1_shape.setText("Shape")
-
-        self.next.clicked.connect(self.next_selected)
-
-        self.answer_1_a = None
-        self.answer_1_b = None
-        self.answer_1_c = None
-        self.answer_1_d = None
-        self.answer_1_e = None
-        self.answer_1_f = None
-
-    def open_page_2(self):
-        self.page_2 = InvertedAnglesHardWidget2()
-        self.page_2.show()
-        self.page_2._raise()
-
+##class InvertedAnglesEasyWidget(ParentHomeworkPage1Class):
+##    def __init__(self):
+##        super().__init__()
+##        self.title.setText("Inverted Angles Easy")
+##        self.question_1.setText("Question 1:\n ___________\n__________")
+##        self.question_1_shape.setText("Shape")
+##
+##        self.next.clicked.connect(self.next_selected)
+##
+##        self.answer_1_a = None
+##        self.answer_1_b = None
+##        self.answer_1_c = None
+##        self.answer_1_d = None
+##        self.answer_1_e = None
+##        self.answer_1_f = None
+##
+##    def open_page_2(self):
+##        self.page_2 = InvertedAnglesEasyWidget2()
+##        self.page_2.show()
+##        self.page_2._raise()
+##
+##
+##class InvertedAnglesMediumWidget(ParentHomeworkPage1Class):
+##    def __init__(self):
+##        super().__init__()
+##        self.title.setText("Inverted Angles Medium")
+##        self.question_1.setText("Question 1:\n ___________\n__________")
+##        self.question_1_shape.setText("Shape")
+##
+##        self.next.clicked.connect(self.next_selected)
+##
+##        self.answer_1_a = None
+##        self.answer_1_b = None
+##        self.answer_1_c = None
+##        self.answer_1_d = None
+##        self.answer_1_e = None
+##        self.answer_1_f = None
+##
+##    def open_page_2(self):
+##        self.page_2 = InvertedAnglesMediumWidget2()
+##        self.page_2.show()
+##        self.page_2._raise()
+##
+##
+##class InvertedAnglesHardWidget(ParentHomeworkPage1Class):
+##    def __init__(self):
+##        super().__init__()
+##        self.title.setText("Inverted Angles Hard")
+##        self.question_1.setText("Question 1:\n ___________\n__________")
+##        self.question_1_shape.setText("Shape")
+##
+##        self.next.clicked.connect(self.next_selected)
+##
+##        self.answer_1_a = None
+##        self.answer_1_b = None
+##        self.answer_1_c = None
+##        self.answer_1_d = None
+##        self.answer_1_e = None
+##        self.answer_1_f = None
+##
+##    def open_page_2(self):
+##        self.page_2 = InvertedAnglesHardWidget2()
+##        self.page_2.show()
+##        self.page_2._raise()
+##
 
 class ThreeDTrigEasyWidget(ParentHomeworkPage1Class):
     def __init__(self):
