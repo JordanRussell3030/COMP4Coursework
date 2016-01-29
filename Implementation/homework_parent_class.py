@@ -10,7 +10,7 @@ class ParentHomeworkPage1Class(QWidget):
 
         self.showMaximized()
 
-        self.page_2 = None
+        self.task = ""
 
         pal = QPalette()
         pal.setColor(QPalette.Background, Qt.white)
@@ -58,6 +58,20 @@ class ParentHomeworkPage1Class(QWidget):
         self.answer_f.setMinimumHeight(70)
         self.answer_f.setMinimumWidth(60)
         self.answer_f.setFont(QFont("Courier", 30))
+
+        self.q1a = QLabel("")
+        self.q1b = QLabel("")
+        self.q1c = QLabel("")
+        self.q1d = QLabel("")
+        self.q1e = QLabel("")
+        self.q1f = QLabel("")
+
+        self.q1a.setFont(QFont("Courier", 20))
+        self.q1b.setFont(QFont("Courier", 20))
+        self.q1c.setFont(QFont("Courier", 20))
+        self.q1d.setFont(QFont("Courier", 20))
+        self.q1e.setFont(QFont("Courier", 20))
+        self.q1f.setFont(QFont("Courier", 20))
         
         self.score_box = QLabel("Score: X/X")
         self.cancel = QPushButton("Cancel")
@@ -83,23 +97,29 @@ class ParentHomeworkPage1Class(QWidget):
         self.next.setFont(QFont("Courier", 40))
 
         self.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue;}")
+        self.question_1_shape.setContentsMargins(600, 600, 600, 600)
 
         self.layout = QGridLayout()
         
         self.layout.addWidget(self.title, 0, 0)
         self.layout.addWidget(self.question_1, 1, 0)
+        self.layout.addWidget(self.q1a, 1, 1)
+        self.layout.addWidget(self.answer_a, 2, 1)
+        self.layout.addWidget(self.q1b, 3, 1)
+        self.layout.addWidget(self.answer_b, 4, 1)
+        self.layout.addWidget(self.q1c, 5, 1)
+        self.layout.addWidget(self.answer_c, 6, 1)
+        self.layout.addWidget(self.q1d, 7, 1)
+        self.layout.addWidget(self.answer_d, 8, 1)
+        self.layout.addWidget(self.q1e, 9, 1)
+        self.layout.addWidget(self.answer_e, 10, 1)
+        self.layout.addWidget(self.q1f, 11, 1)
+        self.layout.addWidget(self.answer_f, 12, 1)
+        self.layout.addWidget(self.check, 13, 1)
+        self.layout.addWidget(self.reset, 1, 2)
+        self.layout.addWidget(self.cancel, 13, 0)
+        self.layout.addWidget(self.next, 13, 2)
         self.layout.addWidget(self.question_1_shape, 2, 0)
-        self.layout.addWidget(self.answer_a, 1, 1)
-        self.layout.addWidget(self.answer_b, 2, 1)
-        self.layout.addWidget(self.answer_c, 3, 1)
-        self.layout.addWidget(self.answer_d, 4, 1)
-        self.layout.addWidget(self.answer_e, 5, 1)
-        self.layout.addWidget(self.answer_f, 6, 1)
-        self.layout.addWidget(self.score_box, 7, 1)
-        self.layout.addWidget(self.check, 7, 2)
-        self.layout.addWidget(self.reset, 8, 2)
-        self.layout.addWidget(self.cancel, 8, 1)
-        self.layout.addWidget(self.next, 9, 2)
 
         self.setLayout(self.layout)
 
@@ -146,8 +166,9 @@ class ParentHomeworkPage1Class(QWidget):
         cont = False
         while not cont:
             try:
+                print(self.task)
 ##                print(self.correct_count)
-                g_database.insert_data_score(self.correct_count)
+                g_database.insert_data_score(self.task, self.correct_count)
                 cont = True
             except AttributeError:
                 error_message = ErrorMessage8()

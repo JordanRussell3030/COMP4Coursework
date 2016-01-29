@@ -125,8 +125,8 @@ class Trig2StackFindingAnglesEasy(QMainWindow):
 
         self.showMaximized()
 
-        self.first_widget = SidesAHOEasyWidget(self)
-        self.second_widget = SidesAHOEasyWidget2(self)
+        self.first_widget = FindingAnglesEasyWidget(self)
+        self.second_widget = FindingAnglesEasyWidget2(self)
 
         self.stack = QStackedLayout()
 
@@ -144,8 +144,8 @@ class Trig2StackFindingAnglesMedium(QMainWindow):
 
         self.showMaximized()
 
-        self.first_widget = SidesAHOEasyWidget(self)
-        self.second_widget = SidesAHOEasyWidget2(self)
+        self.first_widget = FindingAnglesMediumWidget(self)
+        self.second_widget = FindingAnglesMediumWidget2(self)
 
         self.stack = QStackedLayout()
 
@@ -163,8 +163,8 @@ class Trig2StackFindingAnglesHard(QMainWindow):
 
         self.showMaximized()
 
-        self.first_widget = SidesAHOEasyWidget(self)
-        self.second_widget = SidesAHOEasyWidget2(self)
+        self.first_widget = FindingAnglesHardWidget(self)
+        self.second_widget = FindingAnglesHardWidget2(self)
 
         self.stack = QStackedLayout()
 
@@ -182,8 +182,8 @@ class Trig2StackTDTEasy(QMainWindow):
 
         self.showMaximized()
 
-        self.first_widget = SidesAHOEasyWidget(self)
-        self.second_widget = SidesAHOEasyWidget2(self)
+        self.first_widget = ThreeDTrigEasyWidget(self)
+        self.second_widget = ThreeDTrigEasyWidget2(self)
 
         self.stack = QStackedLayout()
 
@@ -201,8 +201,8 @@ class Trig2StackTDTMedium(QMainWindow):
 
         self.showMaximized()
 
-        self.first_widget = SidesAHOEasyWidget(self)
-        self.second_widget = SidesAHOEasyWidget2(self)
+        self.first_widget = ThreeDTrigMediumWidget(self)
+        self.second_widget = ThreeDTrigMediumWidget2(self)
 
         self.stack = QStackedLayout()
 
@@ -220,8 +220,8 @@ class Trig2StackTDTHard(QMainWindow):
 
         self.showMaximized()
 
-        self.first_widget = SidesAHOEasyWidget(self)
-        self.second_widget = SidesAHOEasyWidget2(self)
+        self.first_widget = ThreeDTrigHardWidget(self)
+        self.second_widget = ThreeDTrigHardWidget2(self)
 
         self.stack = QStackedLayout()
 
@@ -239,8 +239,8 @@ class PythagStackTheoremEasy(QMainWindow):
 
         self.showMaximized()
 
-        self.first_widget = SidesAHOEasyWidget(self)
-        self.second_widget = SidesAHOEasyWidget2(self)
+        self.first_widget = PythagTheoremEasyWidget(self)
+        self.second_widget = PythagTheoremEasyWidget2(self)
 
         self.stack = QStackedLayout()
 
@@ -258,8 +258,8 @@ class PythagStackTheoremMediun(QMainWindow):
 
         self.showMaximized()
 
-        self.first_widget = SidesAHOEasyWidget(self)
-        self.second_widget = SidesAHOEasyWidget2(self)
+        self.first_widget = PythagTheoremMediumWidget(self)
+        self.second_widget = PythagTheoremMediumWidget2(self)
 
         self.stack = QStackedLayout()
 
@@ -277,8 +277,8 @@ class PythagStackTheoremHard(QMainWindow):
 
         self.showMaximized()
 
-        self.first_widget = SidesAHOEasyWidget(self)
-        self.second_widget = SidesAHOEasyWidget2(self)
+        self.first_widget = PythagTheoremHardWidget(self)
+        self.second_widget = PythagTheoremHardWidget2(self)
 
         self.stack = QStackedLayout()
 
@@ -296,8 +296,8 @@ class PythagStackTDPEasy(QMainWindow):
 
         self.showMaximized()
 
-        self.first_widget = SidesAHOEasyWidget(self)
-        self.second_widget = SidesAHOEasyWidget2(self)
+        self.first_widget = ThreeDPythagorasEasyWidget(self)
+        self.second_widget = ThreeDPythagorasEasyWidget2(self)
 
         self.stack = QStackedLayout()
 
@@ -315,8 +315,8 @@ class PythagStackTDPMedium(QMainWindow):
 
         self.showMaximized()
 
-        self.first_widget = SidesAHOEasyWidget(self)
-        self.second_widget = SidesAHOEasyWidget2(self)
+        self.first_widget = ThreeDPythagorasMediumWidget(self)
+        self.second_widget = ThreeDPythagorasMediumWidget2(self)
 
         self.stack = QStackedLayout()
 
@@ -334,8 +334,8 @@ class PythagStackTDPHard(QMainWindow):
 
         self.showMaximized()
 
-        self.first_widget = SidesAHOEasyWidget(self)
-        self.second_widget = SidesAHOEasyWidget2(self)
+        self.first_widget = ThreeDPythagorasHardWidget(self)
+        self.second_widget = ThreeDPythagorasHardWidget2(self)
 
         self.stack = QStackedLayout()
 
@@ -353,8 +353,8 @@ class VectorsStackEasy(QMainWindow):
 
         self.showMaximized()
 
-        self.first_widget = SidesAHOEasyWidget(self)
-        self.second_widget = SidesAHOEasyWidget2(self)
+        self.first_widget = VectorsEasyWidget(self)
+        self.second_widget = VectorsEasyWidget2(self)
 
         self.stack = QStackedLayout()
 
@@ -372,8 +372,8 @@ class VectorsStackMedium(QMainWindow):
 
         self.showMaximized()
 
-        self.first_widget = SidesAHOEasyWidget(self)
-        self.second_widget = SidesAHOEasyWidget2(self)
+        self.first_widget = VectorsMediumWidget(self)
+        self.second_widget = VectorsMediumWidget2(self)
 
         self.stack = QStackedLayout()
 
@@ -391,8 +391,8 @@ class VectorsStackHard(QMainWindow):
 
         self.showMaximized()
 
-        self.first_widget = SidesAHOEasyWidget(self)
-        self.second_widget = SidesAHOEasyWidget2(self)
+        self.first_widget = VectorsHardWidget(self)
+        self.second_widget = VectorsHardWidget2(self)
 
         self.stack = QStackedLayout()
 
@@ -410,8 +410,8 @@ class ReviseTrigStackEasy(QMainWindow):
 
         self.showMaximized()
 
-        self.first_widget = SidesAHOEasyWidget(self)
-        self.second_widget = SidesAHOEasyWidget2(self)
+        self.first_widget = EasySummaryWidget(self)
+        self.second_widget = EasySummaryWidget2(self)
 
         self.stack = QStackedLayout()
 
@@ -429,8 +429,8 @@ class ReviseTrigStackMedium(QMainWindow):
 
         self.showMaximized()
 
-        self.first_widget = SidesAHOEasyWidget(self)
-        self.second_widget = SidesAHOEasyWidget2(self)
+        self.first_widget = MediumSummaryWidget(self)
+        self.second_widget = MediumSummaryWidget2(self)
 
         self.stack = QStackedLayout()
 
@@ -448,8 +448,8 @@ class ReviseTrigStackHard(QMainWindow):
 
         self.showMaximized()
 
-        self.first_widget = SidesAHOEasyWidget(self)
-        self.second_widget = SidesAHOEasyWidget2(self)
+        self.first_widget = HardSummaryWidget(self)
+        self.second_widget = HardSummaryWidget2(self)
 
         self.stack = QStackedLayout()
 

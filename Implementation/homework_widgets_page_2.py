@@ -10,6 +10,7 @@ class SidesAHOEasyWidget2(HomeworkPage2ParentClass):
         super().__init__()
 
         self.parent = parent
+##        self.ex = Example()
         
         self.question_2.setText("Question 2\n_________\n_________")
         self.shape_2.setText("sides easy")
@@ -20,6 +21,77 @@ class SidesAHOEasyWidget2(HomeworkPage2ParentClass):
         self.answer_2.addItem("10")
         self.answer_2.addItem("20")
         self.answer_2.addItem("30")
+
+##        self.layout.addWidget(self.ex)
+##
+####        self.lineedit = QLineEdit("Yargh")
+####        self.lineedit.setReadOnly(True)
+####        self.lineedit.setSelection(0, 5)
+####        self.lineedit.setDragEnabled(True)
+##
+####        self.layout.addWidget(self.lineedit, 0, 2)
+##
+##class Button(QPushButton):
+##    def __init__(self, title, parent):
+##        super(Button, self).__init__(title, parent)
+##
+##        self.setAcceptDrops(True)
+##
+##    def dragEnterEvent(self, e):
+##        if e.mimeData().hasFormat("text/plain"):
+##            e.accept()
+##        else:
+##            e.ignore()
+##
+##    def dropEvent(self, e):
+##        self.setText(e.mimeData().text())
+##
+##    def MouseMoveEvent(self, e):
+##        if e.buttons() != Qt.Rightbutton:
+##            return
+##
+##        mime_data = QMimeData()
+##
+##        drag = QDrag(self)
+##        drag.setMimeData(mime_data)
+##        drag.setHotSpot(e.pos() - self.rect().topLeft())
+##
+##        dropAction = drag.start(Qt.MoveAction)
+##
+##    def MousePressEvent(self, e):
+##
+##        super(Button, self).MousePressEvent(e)
+##
+##        if e.button() == Qt.LeftButton:
+##            print("Press")
+##
+##class Example(QWidget):
+##    def __init__(self):
+##        super(Example, self).__init__()
+##
+##        self.initUI()
+##
+##    def initUI(self):
+####        self.setAcceptDrops(True)
+##        self.button = Button('DownloadMoreRAM', self)
+##        self.button.move(190, 65)
+####        self.button.setDragEnabled(True)
+##        self.edit = QLineEdit("", self)
+####        edit.setDragEnabled(True)
+##        edit.move(30, 65)
+##
+##        self.setGeometry(300, 300, 280, 150)
+##        self.show()
+##
+##    def dragEnterEvent(self, e):
+##        e.accept()
+##
+##    def dropEvent(self, e):
+##        position = e.pos()
+##        self.button.move(position)
+##
+##        e.setDropAction(Qt.MoveAction)
+##        e.accept()
 
 ##class DragFromWidget(QDockWidget):
 ##    def __init__(self, parent = None):
@@ -145,32 +217,32 @@ class FindingAnglesHardWidget2(HomeworkPage2ParentClass):
         self.shape_3.setText("Shape")
         self.question_4.setText("Question 4\n______\n______\n______")
 
-class InvetedAnglesEasyWidget2(HomeworkPage2ParentClass):
-    def __init__(self):
-        super().__init__()
-        self.question_2.setText("Question 2\n_________\n_________")
-        self.shape_2.setText("ia e")
-        self.question_3.setText("Question 3\n_________\n_________")
-        self.shape_3.setText("Shape")
-        self.question_4.setText("Question 4\n______\n______\n______")
-
-class InvertedAnglesMediumWidget2(HomeworkPage2ParentClass):
-    def __init__(self):
-        super().__init__()
-        self.question_2.setText("Question 2\n_________\n_________")
-        self.shape_2.setText("ia m")
-        self.question_3.setText("Question 3\n_________\n_________")
-        self.shape_3.setText("Shape")
-        self.question_4.setText("Question 4\n______\n______\n______")
-
-class InvertedAnglesHardWidget2(HomeworkPage2ParentClass):
-    def __init__(self):
-        super().__init__()
-        self.question_2.setText("Question 2\n_________\n_________")
-        self.shape_2.setText("ia h")
-        self.question_3.setText("Question 3\n_________\n_________")
-        self.shape_3.setText("Shape")
-        self.question_4.setText("Question 4\n______\n______\n______")
+##class InvetedAnglesEasyWidget2(HomeworkPage2ParentClass):
+##    def __init__(self):
+##        super().__init__()
+##        self.question_2.setText("Question 2\n_________\n_________")
+##        self.shape_2.setText("ia e")
+##        self.question_3.setText("Question 3\n_________\n_________")
+##        self.shape_3.setText("Shape")
+##        self.question_4.setText("Question 4\n______\n______\n______")
+##
+##class InvertedAnglesMediumWidget2(HomeworkPage2ParentClass):
+##    def __init__(self):
+##        super().__init__()
+##        self.question_2.setText("Question 2\n_________\n_________")
+##        self.shape_2.setText("ia m")
+##        self.question_3.setText("Question 3\n_________\n_________")
+##        self.shape_3.setText("Shape")
+##        self.question_4.setText("Question 4\n______\n______\n______")
+##
+##class InvertedAnglesHardWidget2(HomeworkPage2ParentClass):
+##    def __init__(self):
+##        super().__init__()
+##        self.question_2.setText("Question 2\n_________\n_________")
+##        self.shape_2.setText("ia h")
+##        self.question_3.setText("Question 3\n_________\n_________")
+##        self.shape_3.setText("Shape")
+##        self.question_4.setText("Question 4\n______\n______\n______")
 
 class ThreeDTrigEasyWidget2(HomeworkPage2ParentClass):
     def __init__(self):
@@ -253,7 +325,7 @@ class ThreeDPythagorasHardWidget2(HomeworkPage2ParentClass):
         self.shape_3.setText("Shape")
         self.question_4.setText("Question 4\n______\n______\n______")
 
-class PythagTrigProblemsEasyWidget2(HomeworkPage2ParentClass):
+class VectorsEasyWidget2(HomeworkPage2ParentClass):
     def __init__(self):
         super().__init__()
         self.question_2.setText("Question 2\n_________\n_________")
@@ -262,7 +334,7 @@ class PythagTrigProblemsEasyWidget2(HomeworkPage2ParentClass):
         self.shape_3.setText("Shape")
         self.question_4.setText("Question 4\n______\n______\n______")
 
-class PythagTrigProblemsMediumWidget2(HomeworkPage2ParentClass):
+class VectorsMediumWidget2(HomeworkPage2ParentClass):
     def __init__(self):
         super().__init__()
         self.question_2.setText("Question 2\n_________\n_________")
@@ -271,7 +343,7 @@ class PythagTrigProblemsMediumWidget2(HomeworkPage2ParentClass):
         self.shape_3.setText("Shape")
         self.question_4.setText("Question 4\n______\n______\n______")
 
-class PythagTrigProblemsHardWidget2(HomeworkPage2ParentClass):
+class VectorsHardWidget2(HomeworkPage2ParentClass):
     def __init__(self):
         super().__init__()
         self.question_2.setText("Question 2\n_________\n_________")

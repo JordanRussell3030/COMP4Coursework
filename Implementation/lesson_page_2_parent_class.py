@@ -44,10 +44,12 @@ class ParentLessonPage2(QWidget):
         self.text_1.setMinimumWidth(80)
         self.text_1.setMinimumHeight(110)
         self.text_1.setFont(QFont("Courier", 20))
+        self.text_1.setReadOnly(True)
 
         self.text_2.setMinimumWidth(80)
         self.text_2.setMinimumHeight(110)
         self.text_2.setFont(QFont("Courier", 20))
+        self.text_2.setReadOnly(True)
 
         self.layout = QGridLayout()
 

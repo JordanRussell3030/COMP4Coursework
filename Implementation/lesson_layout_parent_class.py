@@ -31,10 +31,12 @@ class ParentLessonLayout(QWidget):
         self.lesson_1.setMinimumHeight(400)
         self.lesson_1.setMinimumWidth(80)
         self.lesson_1.setFont(QFont("Courier", 20, QFont.Bold))
+        self.lesson_1.setReadOnly(True)
 
         self.lesson_2.setMinimumHeight(400)
         self.lesson_2.setMinimumWidth(80)
         self.lesson_2.setFont(QFont("Courier", 20))
+        self.lesson_2.setReadOnly(True)
 
         self.layout = QGridLayout()
 

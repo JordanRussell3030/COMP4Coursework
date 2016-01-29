@@ -58,27 +58,27 @@ class Trigonometry1HW(ParentHomeworkMenuClass):
         sides_aho_1._raise()
 
     def sides_aho_medium(self):
-        sides_aho_2 = SidesAHOMediumWidget()
+        sides_aho_2 = Trig1StackSidesMedium()
         sides_aho_2.show()
         sides_aho_2._raise()
 
     def sides_aho_hard(self):
-        sides_aho_3 = SidesAHOHardWidget()
+        sides_aho_3 = Trig1StackSidesHard()
         sides_aho_3.show()
         sides_aho_3._raise()
 
     def sohcahtoa_easy(self):
-        sohcahtoa_1 = SOHCAHTOAEasyWidget()
+        sohcahtoa_1 = Trig1StackSOHCAHTOAEasy()
         sohcahtoa_1.show()
         sohcahtoa_1._raise()
 
     def sohcahtoa_medium(self):
-        sohcahtoa_2 = SOHCAHTOAMediumWidget()
+        sohcahtoa_2 = Trig1StackSOHCAHTOAMedium()
         sohcahtoa_2.show()
         sohcahtoa_2._raise()
 
     def sohcahtoa_hard(self):
-        sohcahtoa_3 = SOHCAHTOAHardWidget()
+        sohcahtoa_3 = Trig1StackSOHCAHTOAHard()
         sohcahtoa_3.show()
         sohcahtoa_3._raise()
 
@@ -135,17 +135,17 @@ class Trigonometry2HW(ParentHomeworkMenuClass):
         self.button_6.clicked.connect(self.three_d_trig_hard)
     
     def finding_angles_easy(self):
-        finding_angles_1 = FindingAnglesEasyWidget()
+        finding_angles_1 = Trig2StackFindingAnglesEasy()
         finding_angles_1.show()
         finding_angles_1._raise()
 
     def finding_angles_medium(self):
-        finding_angles_2 = FindingAnglesMediumWidget()
+        finding_angles_2 = Trig2StackFindingAnglesMedium()
         finding_angles_2.show()
         finding_angles_2._raise()
 
     def finding_angles_hard(self):
-        finding_angles_3 = FindingAnglesHardWidget()
+        finding_angles_3 = Trig2StackFindingAnglesHard()
         finding_angles_3.show()
         finding_angles_3._raise()
 
@@ -165,17 +165,17 @@ class Trigonometry2HW(ParentHomeworkMenuClass):
 ##        inverted_angles_3._raise()
 
     def three_d_trig_easy(self):
-        three_d_trig_1 = ThreeDTrigEasyWidget()
+        three_d_trig_1 = Trig2StackTDTEasy()
         three_d_trig_1.show()
         three_d_trig_1._raise()
 
     def three_d_trig_medium(self):
-        three_d_trig_2 = ThreeDTrigMediumWidget()
+        three_d_trig_2 = Trig2StackTDTMedium()
         three_d_trig_2.show()
         three_d_trig_2._raise()
 
     def three_d_trig_hard(self):
-        three_d_trig_3 = ThreeDTrigHardWidget()
+        three_d_trig_3 = Trig2StackTDTHard()
         three_d_trig_3.show()
         three_d_trig_3._raise()
 
@@ -214,32 +214,32 @@ class PythagorasHW(ParentHomeworkMenuClass):
         self.button_6.clicked.connect(self.three_d_pythag_hard)
     
     def pythag_theorem_easy(self):
-        pythag_theorem_1 = PythagTheoremEasyWidget()
+        pythag_theorem_1 = PythagStackTheoremEasy()
         pythag_theorem_1.show()
         pythag_theorem_1._raise()
 
     def pythag_theorem_medium(self):
-        pythag_theorem_2 = PythagTheoremMediumWidget()
+        pythag_theorem_2 = PythagStackTheoremMediun()
         pythag_theorem_2.show()
         pythag_theorem_2._raise()
 
     def pythag_theorem_hard(self):
-        pythag_theorem_3 = PythagTheoremHardWidget()
+        pythag_theorem_3 = PythagStackTheoremHard()
         pythag_theorem_3.show()
         pythag_theorem_3._raise()
 
     def three_d_pythag_easy(self):
-        three_d_pythag_1 = ThreeDPythagEasyWidget()
+        three_d_pythag_1 = PythagStackTDPEasy()
         three_d_pythag_1.show()
         three_d_pythag_1._raise()
 
     def three_d_pythag_medium(self):
-        three_d_pythag_2 = ThreeDPythagMediumWidget()
+        three_d_pythag_2 = PythagStackTDPMedium()
         three_d_pythag_2.show()
         three_d_pythag_2._raise()
 
     def three_d_pythag_hard(self):
-        three_d_pythag_3 = ThreeDPythagHardWidget()
+        three_d_pythag_3 = PythagStackTDPHard()
         three_d_pythag_3.show()
         three_d_pythag_3._raise()
 
@@ -262,17 +262,17 @@ class PythagTrigonometryHW(ParentHomeworkMenuClass):
         self.button_3.clicked.connect(self.pythag_trig_problems_hard)
         
     def pythag_trig_problems_easy(self):
-        pythag_trig_problems_1 = PythagTrigProblemsEasyWidget()
+        pythag_trig_problems_1 = VectorsStackEasy()
         pythag_trig_problems_1.show()
         pythag_trig_problems_1._raise()
 
     def pythag_trig_problems_medium(self):
-        pythag_trig_problems_2 = PythagTrigProblemsMediumWidget()
+        pythag_trig_problems_2 = VectorsStackMedium()
         pythag_trig_problems_2.show()
         pythag_trig_problems_2._raise()
 
     def pythag_trig_problems_hard(self):
-        pythag_trig_problems_3 = PythagTrigProblemsHardWidget()
+        pythag_trig_problems_3 = VectorsStackHard()
         pythag_trig_problems_3.show()
         pythag_trig_problems_3._raise()
 
@@ -295,16 +295,16 @@ class SummaryHW(ParentHomeworkMenuClass):
         self.button_3.clicked.connect(self.hard_summary)
           
     def easy_summary(self):
-        summary_1 = EasySummaryWidget()
+        summary_1 = ReviseTrigStackEasy()
         summary_1.show()
         summary_1._raise()
 
     def medium_summary(self):
-        summary_2 = MediumSummaryWidget()
+        summary_2 = ReviseTrigStackMedium()
         summary_2.show()
         summary_2._raise()
 
     def hard_summary(self):
-        summary_3 = HardSummaryWidget()
+        summary_3 = ReviseTrigStackHard()
         summary_3.show()
         summary_3._raise()

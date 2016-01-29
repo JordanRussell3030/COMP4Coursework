@@ -2,6 +2,8 @@ import sqlite3
 
 from database_gui import *
 from homework_parent_class import *
+from homework_widgets import *
+from homework_widgets_page_2 import *
 ##from add_names_widget import *
 
 class Database:
@@ -37,6 +39,7 @@ class Database:
                 (StudentID integer,
                 FirstName text,
                 Surname text,
+                Task text,
                 Score integer,
                 primary key(StudentID))"""
                 cursor.execute(sql)
@@ -50,12 +53,13 @@ class Database:
 ##            cursor.execute(values)
 ##            db.commit()
 
-    def insert_data_score(self, score):
+    def insert_data_score(self, task, score):
         with sqlite3.connect(self._db_name) as db:
 ##            sql = """insert into Student(Score) values (('{0}'))""".format(score)
 ##            sql = """update Student set Score = '{0}' where Score = null""".format(score)
 ##            sql = """insert into Student(Score) values ((WHERE FirstName != NULL, ('{0}')))""".format(score)
-            sql = "UPDATE Student SET Score = '{0}' WHERE Score = 0".format(score)
+##            sql = "UPDATE Student SET Score = '{0}' WHERE Score = 0".format(score)
+            sql = "insert into Student(StudentID, Task, Score) values ((SELECT max(StudentID) FROM Student)+1, '{0}', '{1}')".format(self.task, self.correct_count)
             self.execute_sql(sql)
 
     def GetAllNames(self):

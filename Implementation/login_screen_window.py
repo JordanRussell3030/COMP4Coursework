@@ -19,6 +19,7 @@ class MyWindow(QMainWindow):
     #The signal which activates the next window.
     NameEntered = pyqtSignal()
     #Constructor.
+
     def __init__(self):
         super().__init__()
         #This is the first widget which opens when the program is run.

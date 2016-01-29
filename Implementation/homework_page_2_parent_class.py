@@ -26,8 +26,6 @@ class HomeworkPage2ParentClass(QWidget):
         self.shape_3.setFont(QFont("Courier", 30))
         self.question_4 = QLabel()
         self.question_4.setFont(QFont("Courier", 30))
-        self.drag_drop = QLabel("Drag and Drop space")
-        self.drag_drop.setFont(QFont("Courier", 30))
         
         self.answer_2 = QComboBox() # Add options in each subclass on homework_widgets_page_2
         self.mark_2 = QPushButton("Mark it  |  2") # Swap 2 for number of attempts remaining
@@ -87,7 +85,6 @@ class HomeworkPage2ParentClass(QWidget):
         self.layout.addWidget(self.answer_3, 5, 0)
         self.layout.addWidget(self.mark_3, 5, 1)
         self.layout.addWidget(self.previous, 6, 0)
-        self.layout.addWidget(self.drag_drop, 0, 2)
         self.layout.addWidget(self.mark_4, 5, 3)
         self.layout.addWidget(self.finish, 6, 3)
 

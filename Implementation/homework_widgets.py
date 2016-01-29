@@ -14,15 +14,21 @@ class SidesAHOEasyWidget(ParentHomeworkPage1Class):
         super().__init__()
 
         self.parent = parent
+
+        self.task = "Sides Easy"
         
         self.title.setText("Sides Easy")
-        self.question_1.setText("Question 1:\n ___________\n__________")
-        self.question_1_shape.setText("Shape")
+        self.question_1.setText("Question 1: Look at the diagram below\nand answer the following questions: ")
+        self.q1a.setText("Which side is oppopsite angle A? ")
+        self.q1b.setText("Which side is adjacent to angle Q? ")
+        self.q1c.setText("Which side is the hypotenuse? ")
+        self.q1d.setText("Which formula would you use to find AB? ")
+        self.question_1_shape.setPixmap(QPixmap("sides_easy_q1"))
 
-        self.answer_1_a = "1"
-        self.answer_1_b = "2"
-        self.answer_1_c = "3"
-        self.answer_1_d = "4"
+        self.answer_1_a = "BC"
+        self.answer_1_b = "AC"
+        self.answer_1_c = "AB"
+        self.answer_1_d = "cosine"
         self.answer_1_e = "5"
         self.answer_1_f = "6"
 
@@ -453,7 +459,7 @@ class ThreeDPythagHardWidget(ParentHomeworkPage1Class):
         self.page_2._raise()
 
 
-class PythagTrigProblemsEasyWidget(ParentHomeworkPage1Class):
+class VectorsEasyWidget(ParentHomeworkPage1Class):
     def __init__(self):
         super().__init__()
         self.title.setText("Easy Problems")
@@ -474,7 +480,7 @@ class PythagTrigProblemsEasyWidget(ParentHomeworkPage1Class):
         self.page_2.show()
         self.page_2._raise()
 
-class PythagTrigProblemsMediumWidget(ParentHomeworkPage1Class):
+class VectorsMediumWidget(ParentHomeworkPage1Class):
     def __init__(self):
         super().__init__()
         self.title.setText("Medium Problems")
@@ -496,7 +502,7 @@ class PythagTrigProblemsMediumWidget(ParentHomeworkPage1Class):
         self.page_2._raise()
 
 
-class PythagTrigProblemsHardWidget(ParentHomeworkPage1Class):
+class VectorsHardWidget(ParentHomeworkPage1Class):
     def __init__(self):
         super().__init__()
         self.title.setText("Hard Problems")
