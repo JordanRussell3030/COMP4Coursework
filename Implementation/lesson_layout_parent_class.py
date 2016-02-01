@@ -2,8 +2,9 @@ from PyQt4.QtGui import *
 from PyQt4.QtCore import *
 
 class ParentLessonLayout(QWidget):
-    def __init__(self):
+    def __init__(self, parent = None):
         super().__init__()
+        self.parent = parent
 
         self.title = QLabel()
 
@@ -52,6 +53,6 @@ class ParentLessonLayout(QWidget):
         self.next.clicked.connect(self.selected_next_page)
 
     def selected_back(self):
-        self.close()
+        self.parent.close()
 
 

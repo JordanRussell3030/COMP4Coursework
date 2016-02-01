@@ -53,13 +53,13 @@ class Database:
 ##            cursor.execute(values)
 ##            db.commit()
 
-    def insert_data_score(self, task, score):
+    def insert_data_score(self, task):
         with sqlite3.connect(self._db_name) as db:
 ##            sql = """insert into Student(Score) values (('{0}'))""".format(score)
 ##            sql = """update Student set Score = '{0}' where Score = null""".format(score)
 ##            sql = """insert into Student(Score) values ((WHERE FirstName != NULL, ('{0}')))""".format(score)
 ##            sql = "UPDATE Student SET Score = '{0}' WHERE Score = 0".format(score)
-            sql = "insert into Student(StudentID, Task, Score) values ((SELECT max(StudentID) FROM Student)+1, '{0}', '{1}')".format(self.task, self.correct_count)
+            sql = "insert into Student(StudentID, Task) values ((SELECT max(StudentID) FROM Student)+1, '{0}')".format(task) #, self.correct_count
             self.execute_sql(sql)
 
     def GetAllNames(self):

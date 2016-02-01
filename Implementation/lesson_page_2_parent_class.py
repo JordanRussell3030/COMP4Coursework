@@ -2,8 +2,9 @@ from PyQt4.QtGui import *
 from PyQt4.QtCore import *
 
 class ParentLessonPage2(QWidget):
-    def __init__(self):
+    def __init__(self, parent = None): #ParentLessonPage2(self)
         super().__init__()
+        self.parent = parent
         
         self.answer = QLineEdit()
         self.previous = QPushButton("Previous")
@@ -72,9 +73,11 @@ class ParentLessonPage2(QWidget):
     def check_selected(self):
         if self.answer.text() == self.answer_lesson:
             self.answer.setText("{0} Correct".format(self.answer_lesson))
+            self.answer.setReadOnly(True)
+            self.check.setEnabled(False)
         else:
             self.answer.setText("Incorrect")
 
     def finish_selected(self):
-        self.close()
+        self.parent.close()
         #open lesson menu window

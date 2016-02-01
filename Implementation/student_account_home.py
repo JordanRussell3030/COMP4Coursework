@@ -1,6 +1,8 @@
 from PyQt4.QtGui import *
 from PyQt4.QtCore import *
 
+import sys
+
 from login_screen_window import *
 from login_widget import *
 from lesson_menu_widget import *
@@ -21,7 +23,7 @@ class UserAccountWidget(QWidget):
         self.homework_label = QLabel("To access the\nhomework set for\nyou to complete,\nclick here! ")
         self.database_label = QLabel("To view your\nprogress so far,\nclick here! ")
         self.account_label = QLabel("Account No: XXXX\nUsername: XXXX\nAverage Rating: XXXX")
-        self.log_out = QPushButton("Log out")
+        self.log_out = QPushButton("Exit Program")
         self.picture = QLabel()
         self.homework_pic = QLabel()
         self.smiler = QLabel()
@@ -88,7 +90,7 @@ class UserAccountWidget(QWidget):
 
     def log_out_selected(self):
 ##        exit()
-        self.close()
+        sys.exit()
         
     def selected_lessons(self):
         lessonmenuwidget = LessonMenuWidget()

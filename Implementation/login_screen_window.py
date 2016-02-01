@@ -10,6 +10,7 @@ from homework_set_screen import * #Contains the homework setting screen class.
 from results_menu_widget import * #Contains the result menu class.
 from error_messages import * #Contains all the QErrorMessage classes.
 from lesson_stacks import *
+from first_screen_widget import *
 
 import sys
 
@@ -18,12 +19,12 @@ import sys
 class MyWindow(QMainWindow):
     #The signal which activates the next window.
     NameEntered = pyqtSignal()
-    #Constructor.
-
+    #Constructor
     def __init__(self):
         super().__init__()
         #This is the first widget which opens when the program is run.
-        self.login_widget = LoginWidget()
+        self.login_widget = FirstScreen()
+        #self.login_widget = LoginWidget()
         #This is the second widget in the stack if the user is a student.
         
         self.student_home = UserAccountWidget(self)
