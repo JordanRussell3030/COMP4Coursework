@@ -137,65 +137,55 @@ class ParentHomeworkPage1Class(QWidget):
         self.answers.append(self.answer_e)
         self.answers.append(self.answer_f)
 
+    def check_selected(self):
         self.correct_count = 0
-
-    def check_selected(self, correct_count):
-##        self.correct_count = 0
 ##        raise Exception("Need to override check_selected from ParentHomeworkPage1Class")
         if self.answer_a.text() == self.answer_1_a:
             self.answer_a.setText("{0} Correct".format(self.answer_a.text()))
-            correct_count += 1
+            self.correct_count += 1
         else:
             self.answer_a.setText("Incorrect")
         if self.answer_b.text() == self.answer_1_b:
             self.answer_b.setText("{0} Correct".format(self.answer_b.text()))
-            correct_count += 1
+            self.correct_count += 1
         else:
             self.answer_b.setText("Incorrect")
         if self.answer_c.text() == self.answer_1_c:
             self.answer_c.setText("{0} Correct".format(self.answer_c.text()))
-            correct_count += 1
+            self.correct_count += 1
         else:
             self.answer_c.setText("Incorrect")
         if self.answer_d.text() == self.answer_1_d:
             self.answer_d.setText("{0} Correct".format(self.answer_d.text()))
-            correct_count += 1
+            self.correct_count += 1
         else:
             self.answer_d.setText("Incorrect")
         if self.answer_e.text() == self.answer_1_e:
             self.answer_e.setText("{0} Correct".format(self.answer_e.text()))
-            correct_count += 1
+            self.correct_count += 1
         else:
             self.answer_e.setText("Incorrect")
         if self.answer_f.text() == self.answer_1_f:
             self.answer_f.setText("{0} Correct".format(self.answer_f.text()))
-            correct_count += 1
+            self.correct_count += 1
         else:
             self.answer_f.setText("Incorrect")
         for a in self.answers:
             a.setReadOnly(True)
         self.check.setEnabled(False)
         self.reset.setEnabled(False)
-        return correct_count
-    #get correct_count in homeworkPage2parentclass!!!!
 
     def next_selected(self):
         cont = False
         while not cont:
             for a in self.answers:
                 if a.text() == "":
-                    
-##            try
-##                #print(self.task)
-####                print(self.correct_count)
-####                g_database.insert_data_score(self.task) #self.correct_count
-##                cont = True
-##            except AttributeError:
                     error_message = ErrorMessage8()
                     error_message.show()
                     error_message._raise()
                     cont = False
             cont = True
+            g_database.insert_data_first(self.task, self.correct_count)
             self.open_page_2()
             self.hide()
             

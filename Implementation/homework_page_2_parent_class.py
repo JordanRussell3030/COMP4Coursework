@@ -113,61 +113,67 @@ class HomeworkPage2ParentClass(QWidget):
 ##        self.correct_count_2 = 0
         if self.answer_2.currentText() == "20":#hard-code answer here
             self.correct_count_2 += 1
-            self.mark_2.setText("Correct!")
+            self.mark_2.setText(" Correct!  ")
             self.mark_2.setEnabled(False)
             self.answer_2.setEnabled(False)
         else:
             self.attempts_remaining_a -= 1
-            self.mark_2.setText("Mark it  |  {0}".format(self.attempts_remaining_a))
+            self.mark_2.setText("Mark it|{0}".format(self.attempts_remaining_a))
             if self.attempts_remaining_a == 0:
                 self.mark_2.setEnabled(False)
                 self.answer_2.setEnabled(False)
             error_message = ErrorMessage5()
             error_message.show()
             error_message._raise()
-        return self.attempts_remaining_a, correct_count_2
+        return self.attempts_remaining_a, self.correct_count_2
                                          
     def selected_mark_3(self, attempts_remaining_b):
 ##        self.correct_count_3 = 0
         if self.answer_3.currentText() == "20":#hard-code answer here
             self.correct_count_3 += 1
-            self.mark_3.setText("Correct!")
+            self.mark_3.setText(" Correct!")
             self.mark_3.setEnabled(False)
             self.answer_3.setEnabled(False)
         else:
             self.attempts_remaining_b -= 1
-            self.mark_3.setText("Mark it  |  {0}".format(self.attempts_remaining_b))
+            self.mark_3.setText("Mark it|{0}".format(self.attempts_remaining_b))
             if self.attempts_remaining_b == 0:
                 self.mark_3.setEnabled(False)
                 self.answer_3.setEnabled(False)
             error_message = ErrorMessage5()
             error_message.show()
             error_message._raise()
-        return self.attempts_remaining_b, correct_count_3
+        return self.attempts_remaining_b, self.correct_count_3
 
     def selected_mark_4(self, attempts_remaining_c):
 ##        self.correct_count_4 = 0
-        if self.answer_4.text() == "20":#hard-code answer here
+        if self.answer_4.text() == "20":
             self.correct_count_4 += 1
-            self.mark_4.setText("Correct!")
+            self.mark_4.setText(" Correct!")
             self.mark_4.setEnabled(False)
             self.answer_4.setEnabled(False)
         else:
             self.attempts_remaining_c -= 1
-            self.mark_4.setText("Mark it  |  {0}".format(self.attempts_remaining_c))
+            self.mark_4.setText("Mark it|{0}".format(self.attempts_remaining_c))
             if self.attempts_remaining_c == 0:
                 self.mark_4.setEnabled(False)
                 self.answer_4.setEnabled(False)
             error_message = ErrorMessage5()
             error_message.show()
             error_message._raise()
-        return self.attempts_remaining_c, correct_count_4
+        return self.attempts_remaining_c, self.correct_count_4
 
     def selected_previous(self):
         self.parent.stack.setCurrentIndex(0)
 
     def selected_finish(self): #correct_count?
-        total_score = self.correct_count_2 + self.correct_count_3 + self.correct_count_4
-        print(total_score)
+##        total_score = self.correct_count_2 + self.correct_count_3 + self.correct_count_4
+        total_temp = self.correct_count_2 + self.correct_count_3 + self.correct_count_4
+        total_percent = (100 / 3) * total_temp
+        if total_percent == 99.9:
+            total = 100
+        else:
+            total = round(total_percent, 1)
+        print(total)
+        g_database.insert_data_second(self.correct_count_2, self.correct_count_3, self.correct_count_4, total)  
         self.parent.close()
-        #save all answer to database
