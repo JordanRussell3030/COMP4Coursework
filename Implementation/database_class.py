@@ -41,31 +41,26 @@ class Database:
                 Qtwo integer,
                 Qthree integer,
                 Qfour integer,
-                Total real,
                 primary key(TaskID))"""
                 cursor.execute(sql)
                 db.commit()
+                #Total real,
 
     def insert_data_first(self, task, correct_count):
-        with sqlite3.connect(self._db_name) as db:
-##            sql = """insert into Student(Score) values (('{0}'))""".format(score)
-##            sql = """update Student set Score = '{0}' where Score = null""".format(score)
-##            sql = """insert into Student(Score) values ((WHERE FirstName != NULL, ('{0}')))""".format(score)
-##            sql = "UPDATE Student SET Score = '{0}' WHERE Score = 0".format(score)
-            sql = "insert into Student(TaskID, Qone, Qtwo, Qthree, Qfour, Total) values ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}%')".format(task, correct_count, str(0), str(0), str(0), str(0))
-            self.execute_sql(sql)
+        sql = "insert into Student(TaskID, Qone, Qtwo, Qthree, Qfour) values ('{0}', '{1}', '{2}', '{3}', '{4}')".format(task, correct_count, str(0), str(0), str(0), str(0)) #Total
+        #GET MAX TASKID CODE FROM HOME!!!
+        self.execute_sql(sql)
 
-    def insert_data_second(self, task, count_2, count_3, count_4, total):#total
+    def insert_data_second(self, task, count_2, count_3, count_4):
         with sqlite3.connect(self._db_name) as db:
-##            sql = "insert into Student(Qtwo, Qthree, Qfour, Total) values ('{0}', '{1}', '{2}', '{3}')".format(count_2, count_3, count_4, total)
             sql = "UPDATE Student SET Qtwo = '{0}' WHERE TaskID = '{1}'".format(count_2, task)
             self.execute_sql(sql)
             sql_2 = "UPDATE Student SET Qthree = '{0}' WHERE TaskID = '{1}'".format(count_3, task)
             self.execute_sql(sql_2)
             sql_3 = "UPDATE Student SET Qfour = '{0}' WHERE TaskID = '{1}'".format(count_4, task)
             self.execute_sql(sql_3)
-            sql_4 = "UPDATE Student SET Total = '{0}%' WHERE TaskID = '{1}'".format(total, task)
-            self.execute_sql(sql_4)
+##            sql_4 = "UPDATE Student SET Total = '{0}%' WHERE TaskID = '{1}'".format(total, task)
+##            self.execute_sql(sql_4)
 
     def GetAllNames(self):
         with sqlite3.connect(self._db_name) as db:

@@ -7,12 +7,12 @@ from error_messages import *
 from homework_parent_class import *
 from homework_widgets import *
 
-#get correct_count in from homework parent class!!!!
-
 class HomeworkPage2ParentClass(QWidget):
     def __init__(self, parent = None):
         super().__init__()
         self.parent = parent
+
+        self.task = "Sides Easy"
         
         self.showMaximized()
 
@@ -110,8 +110,7 @@ class HomeworkPage2ParentClass(QWidget):
         self.correct_count_4 = 0
 
     def selected_mark_2(self, attempts_remaining_a):
-##        self.correct_count_2 = 0
-        if self.answer_2.currentText() == "20":#hard-code answer here
+        if self.answer_2.currentText() == "20":
             self.correct_count_2 += 1
             self.mark_2.setText(" Correct!  ")
             self.mark_2.setEnabled(False)
@@ -128,8 +127,7 @@ class HomeworkPage2ParentClass(QWidget):
         return self.attempts_remaining_a, self.correct_count_2
                                          
     def selected_mark_3(self, attempts_remaining_b):
-##        self.correct_count_3 = 0
-        if self.answer_3.currentText() == "20":#hard-code answer here
+        if self.answer_3.currentText() == "20":
             self.correct_count_3 += 1
             self.mark_3.setText(" Correct!")
             self.mark_3.setEnabled(False)
@@ -146,7 +144,6 @@ class HomeworkPage2ParentClass(QWidget):
         return self.attempts_remaining_b, self.correct_count_3
 
     def selected_mark_4(self, attempts_remaining_c):
-##        self.correct_count_4 = 0
         if self.answer_4.text() == "20":
             self.correct_count_4 += 1
             self.mark_4.setText(" Correct!")
@@ -168,12 +165,15 @@ class HomeworkPage2ParentClass(QWidget):
 
     def selected_finish(self): #correct_count?
 ##        total_score = self.correct_count_2 + self.correct_count_3 + self.correct_count_4
-        total_temp = self.correct_count_2 + self.correct_count_3 + self.correct_count_4
-        total_percent = (100 / 3) * total_temp
-        if total_percent == 99.9:
-            total = 100
-        else:
-            total = round(total_percent, 1)
-        print(total)
-        g_database.insert_data_second(self.correct_count_2, self.correct_count_3, self.correct_count_4, total)  
+##        total_temp = self.correct_count_2 + self.correct_count_3 + self.correct_count_4
+##        total_percent = (100 / 3) * total_temp
+##        if total_percent == 99.9:
+##            total = 100
+##        else:
+##            total = round(total_percent, 1)
+##        print(total)
+##        print(self.correct_count_2)
+##        print(self.correct_count_3)
+##        print(self.correct_count_4)
+        g_database.insert_data_second(self.task, self.correct_count_2, self.correct_count_3, self.correct_count_4)  
         self.parent.close()
