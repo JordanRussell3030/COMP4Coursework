@@ -36,7 +36,8 @@ class Database:
                 keep_table = False
             if not keep_table:
                 sql = """create table Student
-                (TaskID text,
+                (ID integer,
+                TaskID text,
                 Qone integer,
                 Qtwo integer,
                 Qthree integer,
@@ -47,8 +48,7 @@ class Database:
                 #Total real,
 
     def insert_data_first(self, task, correct_count):
-        sql = "insert into Student(TaskID, Qone, Qtwo, Qthree, Qfour) values ('{0}', '{1}', '{2}', '{3}', '{4}')".format(task, correct_count, str(0), str(0), str(0), str(0)) #Total
-        #GET MAX TASKID CODE FROM HOME!!!
+        sql = "insert into Student(ID, TaskID, Qone, Qtwo, Qthree, Qfour) values ((SELECT max(ID) FROM Student)+1, '{0}', '{1}', '{2}', '{3}', '{4}')".format(task, correct_count, str(0), str(0), str(0)) #Total
         self.execute_sql(sql)
 
     def insert_data_second(self, task, count_2, count_3, count_4):

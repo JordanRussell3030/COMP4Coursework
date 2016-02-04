@@ -47,7 +47,7 @@ class DatabaseWidget(QWidget):
 
         self.database.setRowCount(100)
         self.database.setColumnCount(6)
-        self.database_header = ("Task Name", "Question 1", "Question 2", "Question 3", "Question 4")#"Total"
+        self.database_header = ("ID", "Task Name", "Question 1", "Question 2", "Question 3", "Question 4")#"Total"
         self.database.setHorizontalHeaderLabels(self.database_header)
         self.database.setMinimumWidth(45)
         self.database.setMinimumHeight(890)
@@ -58,12 +58,12 @@ class DatabaseWidget(QWidget):
 
         students = g_database.GetAllNames()
         for student in students:
-            self.database.setItem(0, 0, QTableWidgetItem(student[0]))
-            self.database.setItem(0, 1, QTableWidgetItem(str(student[1])))
+            self.database.setItem(0, 0, QTableWidgetItem(str(student[0])))
+            self.database.setItem(0, 1, QTableWidgetItem(student[1]))
             self.database.setItem(0, 2, QTableWidgetItem(str(student[2])))
             self.database.setItem(0, 3, QTableWidgetItem(str(student[3])))
             self.database.setItem(0, 4, QTableWidgetItem(str(student[4])))
-##            self.database.setItem(0, 5, QTableWidgetItem(str(student[5])))
+            self.database.setItem(0, 5, QTableWidgetItem(str(student[5])))
 
         self.layout = QGridLayout()
 
