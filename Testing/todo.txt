@@ -1,2 +1,3 @@
--add in * and ** where need
+-add in the report button test in all tables
+-fill in missing actual results
 -make sure test pan has ocrrect test data types planned corresponding with actual test data

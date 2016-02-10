@@ -15,7 +15,7 @@ class SidesAHOEasyWidget2(HomeworkPage2ParentClass):
         self.shape_2.setText("sides easy")
         self.question_3.setText("Question 3\n_________\n_________")
         self.shape_3.setText("Shape")
-        self.question_4.setText("Question 4\n______\n______\n______")
+        self.question_4.setText("Question 4\nWhat is the length of a?")
 
         self.answer_2.addItem("10")
         self.answer_2.addItem("20")
@@ -24,6 +24,15 @@ class SidesAHOEasyWidget2(HomeworkPage2ParentClass):
         self.answer_3.addItem("10")
         self.answer_3.addItem("20")
         self.answer_3.addItem("30")
+
+        self._button_1.setText("60")
+        self._button_2.setText("50")
+        self._button_3.setText("40")
+        self._button_4.setText("30")
+        self._button_5.setText("20")
+        self._button_6.setText("10")
+
+        self.answer_question_4 = "40"
 
 class SidesAHOMediumWidget2(HomeworkPage2ParentClass):
     def __init__(self, parent):
