@@ -1163,6 +1163,7 @@
 1.431 & To test the return button on the student report screen functions as intended & This should link back to the student progress screen & Click the return button & Normal & The student progress screen should be displayed & & \\ \hline
 1.432 & To test the query button on the student report screen functions as intended & This should link back to the student progress screen and new queried information should be displayed & Click the query button & Normal & The student progress screen should be displayed with updated data in the database widget & & \\ \hline
 1.441 ** & To test the continue button on the first screen functions as intended & This should link to the home screen & Click the continue button & Normal & The home screen should be displayed & & \\ \hline
+1.442 ** & To test the report button on the first screen functions as intended & This should link to the report screen & Click the report button & Normal & The report screen should be displayed & & \\ \hline
 2.003 & To test that the input for the practice question on the Sides second lesson screen is properly checked as correct or incorrect & This should truthfully notify the user whether they were right or wrong & 45 degrees & Boundary, Erroneous, Presence & The user should be notified whether or not they were right & & \\ \hline
 2.004 & To test that the input for the practice question on the SOHCAHTOA second lesson screen is properly checked as correct or incorrect & This should truthfully notify the user whether they were right or wrong & 45 degrees & Boundary, Erroneous, Presence & The user should be notified whether or not they were right & & \\ \hline
 2.005 & To test that the input for the practice question on the Finding Angles second lesson screen is properly checked as correct or incorrect & This should truthfully notify the user whether they were right or wrong & 45 degrees & Boundary, Erroneous, Presence & The user should be notified whether or not they were right & & \\ \hline
@@ -1568,6 +1569,7 @@
 1.431 & Click the button & It does not take a value, it is coded using a connection; therefore the only possible input \\ \hline
 1.432 & Sides Easy, 70\% & It is coded using a connection; therefore the only possible input \\ \hline
 1.441 ** & Click the button & It does not take a value, it is coded using a connection; therefore the only possible input \\ \hline
+1.442 ** & Click the button & It does not take a value, it is coded using a connection; therefore the only possible input \\ \hline
 2.003 & 45; words & To test that the correct answer works and then that any different data types do not crash it \\ \hline
 2.016 & 1; abc; None & To test that the correct answer is recognised and other data types do not crash it \\ \hline
 2.017 & 2; abc; None & To test that the correct answer is recognised and other data types do not crash it \\ \hline 
@@ -1601,9 +1603,9 @@
 
 \begin{center}
 \begin{longtable}{|p{2.5cm}|p{4cm}|p{4cm}|p{4.5cm}|p{3cm}|} \hline
-\textbf{Test Number} & \textbf{Expected Result} & \textbf{Test Data} & \textbf{Actual Result} & \textbf{Screenshot Number} \\ \hline
-1.003 & The lessons menu should be displayed & Click the lessons button & The lessons menu was displayed, as expected & \\ \hline
-1.004 & The homework menu should be displayed & Click the homework button & The homework menu was displayed, as expected & \\ \hline
+\textbf{Test Number} & \textbf{Expected Result} & \textbf{Test Data} & \textbf{Actual Result} & \textbf{Screenshot Numbers} \\ \hline
+1.003 & The lessons menu should be displayed & Click the lessons button & The lessons menu was displayed, as expected & Figures 3.1, 3.2 \\ \hline
+1.004 & The homework menu should be displayed & Click the homework button & The homework menu was displayed, as expected & Figures 3.3, 3.4 \\ \hline
 1.005 & The progress window should be displayed & Click the progress button & The progress window was displayed, as expected & \\ \hline
 1.006 & The program should close entirely & Click the exit program button & The entire program closed, as expected & \\ \hline
 1.007 & The Trigonometry 1 lesson menu should be displayed & Click the Trigonometry 1 button & The Trigonometry 1 lesson menu was displayed, as expected & \\ \hline
@@ -1629,8 +1631,9 @@
 1.143 & the sides easy homework stack should be closed and the trigonometry 1 homework menu should be displayed; The scores from the questions should be stored in the database & Click the finish button & The sides easy homework stack was closed, the trigonometry 1 homework menu was displayed, and the scores were saved to the database, as expected & \\ \hline
 1.380 & The progress screen should be closed and the home screen displayed & Click the return button & The progress screen was closed and the home screen was displayed, as expected & \\ \hline
 1.431 & The report screen should be closed and the progress screen displayed & Click the return button & The report screen was closed and the home screen was displayed, as expected & \\ \hline
-1.432 & The relevant information should be fetched from the database and displayed in a new window & Click the query button &  & \\ \hline
+1.432 & The relevant information should be fetched from the database and displayed in the same window & Click the query button & Relevant information was found and displayed in the database in hte same window, as expected & \\ \hline
 1.441 & The welcome screen should close and the home screen should be displayed & Click the continue button & The welcome screen was closed and the home screen was displayed, as expected & \\ \hline
+1.442 & The report screen should open and the progress screen hidden & Click the report button & The progress screen closed and the report screen was displayed, as expected & \\ \hline
 2.003 & If the input is correct, the word correct should be displayed, otherwise incorrect shoud be displayed & 5 (or right answer); abc; None & Correct was displayed, incorrect was displayed and an error message for no answer was displayed respectively, as expected & \\ \hline
 2.016 & If the input is correct, the word correct should be displayed, otherwise incorrect should be displayed & 1 (or right answer); abc; None & Correct was displayed, incorrect was displayed and an error message for no answer was displayed respectively, as expected & \\ \hline
 2.017 & If the input is correct, the word correct should be displayed, otherwise incorrect should be displayed & 2 (or right answer); abc; None & Correct was displayed, incorrect was displayed and an error message for no answer was displayed respectively, as expected & \\ \hline
@@ -1640,9 +1643,9 @@
 2.021 & If the input is correct, the word correct should be displayed, otherwise incorrect should be displayed & 6 (or right answer); abc; None & Correct was displayed, incorrect was displayed and an error message for no answer was displayed respectively, as expected & \\ \hline
 2.022 & If the contents of the combo box is correct, correct should appear in the button next to it, otherwise an attempt will be removed & 20; 10 & For the correct answer, correct was printed, an incorrect for the incorrect answer, as expected & \\ \hline
 2.023 & If the contents of the combo box is correct, correct should appear in the button next to it, otherwise an attempt will be removed & 40; 15 & For the correct answer, correct was printed, an incorrect for the incorrect answer, as expected & \\ \hline
-2.024 & If the right button is clicked, display correct, otherwise display incorrect & Each button in order & & \\ \hline
-2.295 & The information relevant to the input should be fetched from the database and displayed & Sides Easy; Pythagoras Theorem Hard & & \\ \hline 
-2.296 & The information relevant to the input should be fetched from the database and displayed & 70\%; 80\% & & \\ \hline
+2.024 & If the right button is clicked, display correct, otherwise display incorrect & Each button in order & When the right button was clicked, a mark was added, and when the wrong buttons were clicked attempts were removed, as expected & \\ \hline
+2.295 & The information relevant to the input should be fetched from the database and displayed & Sides Easy; Pythagoras Theorem Hard & The relevant task name was fetched and displayed, as expected & \\ \hline 
+2.296 & The information relevant to the input should be fetched from the database and displayed & 70\%; 80\% & The relevant scores were fetched and displayed, as expected & \\ \hline
 3.009 & The task names should be stored under the 'Task Names' header in the database & Complete a task & The task name was stored under 'Task Names', as expected & \\ \hline
 3.010 & The OverallPercentScore should be stored under the 'Total' header in the database & Complete a task & & \\ \hline
 3.011 & The IndividualPercentScores should be stored under the 'QOne', 'QTwo', 'QThree', and 'QFour' headers respective to the question number in the database & Complete a task & The scores were under their respective headings, as expected \\ \hline
@@ -1650,7 +1653,7 @@
 4.015 & The correct output should be displayed for a correct or incorrect or absent input & [Correct answer]; [Incorrect answer]; None & The correct outputs were given, as expected & \\ \hline
 4.016 & The correct output should be displayed for a correct or incorrect or absent input & [Correct answer]; [Incorrect answer]; None & The correct outputs were given, as expected & \\ \hline
 4.017 & The correct output should be displayed for a correct or incorrect or absent input & [Correct answer]; [Incorrect answer]; None & The correct outputs were given, as expected & \\ \hline
-4.018 & The correct output should be displayed for a correct or incorrect or absent input & [Correct answer]; [Incorrect answer]; None & & \\ \hline
+4.018 & The correct output should be displayed for a correct or incorrect or absent input & [Correct answer]; [Incorrect answer]; None & The appropriate outputs were given for every possile input tested & \\ \hline
 5.001 & The client should be satisfied with the overall system & Show the client each aspect of the system & & \\ \hline
 5.003 & The task names and scores should be being saved to an sqlite database, 6 columns, as many rows as their are attempts & Complete a task & There are the right number of headings in the table all with the correct information being displayed in them, as expected & \\ \hline
 5.004 & Only the task names and scores should be stored in the database & Complete a task & They are the only pieces of information being stored, as expected & \\ \hline
@@ -1658,20 +1661,439 @@
 \end{longtable}
 \end{center}
 
+\end{landscape}
+
 \subsection{Evidence}
 
-\end{landscape}
+\textbf{Test 1.003}
+
+\begin{figure}[H]
+    \label{fig: First Screen}\caption{First screen}
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_103_a}
+\end{figure}
+
+\textit{Button is clicked: }
+
+\begin{figure}[H]
+    \label{fig: Second Screen}\caption{Second screen}
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_103_b}
+\end{figure}
+
+\textbf{Test 1.004}
+
+\begin{figure}[H]
+    \label{fig: First Screen}\caption{First screen}
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_103_a}
+\end{figure}
+
+\textit{Button is clicked: }
+
+\begin{figure}[H]
+    \label{fig: Second Screen}\caption{Second screen}
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_104_b}
+\end{figure}
+
+\textbf{Test 1.005}
+
+\begin{figure}[H]
+    \label{fig: First Screen}\caption{First screen}
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_103_a}
+\end{figure}
+
+\textit{Button is clicked: }
+
+\begin{figure}[H]
+    \label{fig: Second Screen}\caption{Second screen}
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_105_b}
+\end{figure}
+
+\textbf{Test 1.006}
+
+\begin{figure}[H]
+    \label{fig: First Screen}\caption{First screen}
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_106_a}
+\end{figure}
+
+\textit{Button is clicked: }
+
+\begin{figure}[H]
+    \label{fig: Second Screen}\caption{Program is closed}
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_106_b}
+\end{figure}
+
+\textbf{Test 1.007}
+
+\begin{figure}[H]
+    \label{fig: First Screen}\caption{First screen}
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_103_b}
+\end{figure}
+
+\textit{Button is clicked: }
+
+\begin{figure}[H]
+    \label{fig: Second Screen}\caption{Second screen}
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_107_b}
+\end{figure}
+
+\textbf{Test 1.012}
+
+\begin{figure}[H]
+    \label{fig: First Screen}\caption{First screen}
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_103_b}
+\end{figure}
+
+\textit{Button is clicked: }
+
+\begin{figure}[H]
+    \label{fig: Second Screen}\caption{Second screen}
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_107_b}
+\end{figure}
+
+\textbf{Test 1.013}
+
+\begin{figure}[H]
+    \label{fig: First Screen}\caption{First screen}
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_103_b}
+\end{figure}
+
+\textit{Button is clicked: }
+
+\begin{figure}[H]
+    \label{fig: Second Screen}\caption{Second screen}
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_107_b}
+\end{figure}
+
+\textbf{Test 1.015}
+
+\begin{figure}[H]
+    \label{fig: First Screen}\caption{First screen}
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_103_b}
+\end{figure}
+
+\textit{Button is clicked: }
+
+\begin{figure}[H]
+    \label{fig: Second Screen}\caption{Second screen}
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_107_b}
+\end{figure}
+
+\textbf{Test 1.031}
+
+\begin{figure}[H]
+    \label{fig: First Screen}\caption{First screen}
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_103_b}
+\end{figure}
+
+\textit{Button is clicked: }
+
+\begin{figure}[H]
+    \label{fig: Second Screen}\caption{Second screen}
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_107_b}
+\end{figure}
+
+\textbf{Test 1.032}
+
+\begin{figure}[H]
+    \label{fig: First Screen}\caption{First screen}
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_103_b}
+\end{figure}
+
+\textit{Button is clicked: }
+
+\begin{figure}[H]
+    \label{fig: Second Screen}\caption{Second screen}
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_107_b}
+\end{figure}
+
+\textbf{Test 1.033}
+
+\begin{figure}[H]
+    \label{fig: First Screen}\caption{First screen}
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_103_b}
+\end{figure}
+
+\textit{Button is clicked: }
+
+\begin{figure}[H]
+    \label{fig: Second Screen}\caption{Second screen}
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_107_b}
+\end{figure}
+
+\textbf{Test 1.034}
+
+\begin{figure}[H]
+    \label{fig: First Screen}\caption{First screen}
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_103_b}
+\end{figure}
+
+\textit{Button is clicked: }
+
+\begin{figure}[H]
+    \label{fig: Second Screen}\caption{Second screen}
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_107_b}
+\end{figure}
+
+\textbf{Test 1.035}
+
+\begin{figure}[H]
+    \label{fig: First Screen}\caption{First screen}
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_103_b}
+\end{figure}
+
+\textit{Button is clicked: }
+
+\begin{figure}[H]
+    \label{fig: Second Screen}\caption{Second screen}
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_107_b}
+\end{figure}
+
+\textbf{Test 1.097}
+
+\begin{figure}[H]
+    \label{fig: First Screen}\caption{First screen}
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_103_b}
+\end{figure}
+
+\textit{Button is clicked: }
+
+\begin{figure}[H]
+    \label{fig: Second Screen}\caption{Second screen}
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_107_b}
+\end{figure}
+
+\textbf{Test 1.102}
+
+\begin{figure}[H]
+    \label{fig: First Screen}\caption{First screen}
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_103_b}
+\end{figure}
+
+\textit{Button is clicked: }
+
+\begin{figure}[H]
+    \label{fig: Second Screen}\caption{Second screen}
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_107_b}
+\end{figure}
+
+\textbf{Test 1.103}
+
+\begin{figure}[H]
+    \label{fig: First Screen}\caption{First screen}
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_103_b}
+\end{figure}
+
+\textit{Button is clicked: }
+
+\begin{figure}[H]
+    \label{fig: Second Screen}\caption{Second screen}
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_107_b}
+\end{figure}
+
+\textbf{Test 1.135}
+
+\begin{figure}[H]
+    \label{fig: First Screen}\caption{First screen}
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_103_b}
+\end{figure}
+
+\textit{Button is clicked: }
+
+\begin{figure}[H]
+    \label{fig: Second Screen}\caption{Second screen}
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_107_b}
+\end{figure}
+
+\textbf{Test 1.136}
+
+\textbf{Test 1.137}
+
+\textbf{Test 1.138}
+
+\begin{figure}[H]
+    \label{fig: First Screen}\caption{First screen}
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_103_b}
+\end{figure}
+
+\textit{Button is clicked: }
+
+\begin{figure}[H]
+    \label{fig: Second Screen}\caption{Second screen}
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_107_b}
+\end{figure}
+
+\textbf{Test 1.139}
+
+\textbf{Test 1.140}
+
+\textbf{Test 1.141}
+
+\textbf{Test 1.142}
+
+\begin{figure}[H]
+    \label{fig: First Screen}\caption{First screen}
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_103_b}
+\end{figure}
+
+\textit{Button is clicked: }
+
+\begin{figure}[H]
+    \label{fig: Second Screen}\caption{Second screen}
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_107_b}
+\end{figure}
+
+\textbf{Test 1.143}
+
+\begin{figure}[H]
+    \label{fig: First Screen}\caption{First screen}
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_103_b}
+\end{figure}
+
+\textit{Button is clicked: }
+
+\begin{figure}[H]
+    \label{fig: Second Screen}\caption{Second screen}
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_107_b}
+\end{figure}
+
+\textbf{Test 1.380}
+
+\begin{figure}[H]
+    \label{fig: First Screen}\caption{First screen}
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_103_b}
+\end{figure}
+
+\textit{Button is clicked: }
+
+\begin{figure}[H]
+    \label{fig: Second Screen}\caption{Second screen}
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_107_b}
+\end{figure}
+
+\textbf{Test 1.431}
+
+\begin{figure}[H]
+    \label{fig: First Screen}\caption{First screen}
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_103_b}
+\end{figure}
+
+\textit{Button is clicked: }
+
+\begin{figure}[H]
+    \label{fig: Second Screen}\caption{Second screen}
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_107_b}
+\end{figure}
+
+\textbf{Test 1.432}
+
+\textbf{Test 1.441}
+
+\begin{figure}[H]
+    \label{fig: First Screen}\caption{First screen}
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_103_b}
+\end{figure}
+
+\textit{Button is clicked: }
+
+\begin{figure}[H]
+    \label{fig: Second Screen}\caption{Second screen}
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_107_b}
+\end{figure}
+
+\textbf{Test 1.442}
+
+\begin{figure}[H]
+    \label{fig: First Screen}\caption{First screen}
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_103_b}
+\end{figure}
+
+\textit{Button is clicked: }
+
+\begin{figure}[H]
+    \label{fig: Second Screen}\caption{Second screen}
+    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_107_b}
+\end{figure}
+
+\textbf{Test 2.003}
+
+\textbf{Test 2.016}
+
+\textbf{Test 2.017}
+
+\textbf{Test 2.018}
+
+\textbf{Test 2.019}
+
+\textbf{Test 2.020}
+
+\textbf{Test 2.021}
+
+\textbf{Test 2.022}
+
+\textbf{Test 2.023}
+
+\textbf{Test 2.024}
+
+\textbf{Test 2.295}
+
+\textbf{Test 2.296}
+
+\textbf{Test 3.009}
+
+\textbf{Test 3.010}
+
+\textbf{Test 3.011}
+
+\textbf{Test 3.012}
+
+\textbf{Test 4.015}
+
+\textbf{Test 4.016}
+
+\textbf{Test 4.017}
+
+\textbf{Test 4.018}
+
+\textbf{Test 5.001}
+
+\textbf{Test 5.003}
+
+\textbf{Test 5.004}
+
+\textbf{Test 5.006}
 
 \section{Evaluation}
 
 \subsection{Approach to Testing}
 
+I decided to use a variation of testing methods in order to ensure that every aspect of this system works adequately and robustly, and meets as many client specifications as possible. For example, top-down testing was used to check that every button in the system works as intended, bottum up testing was used to test each input opportunity as they were created, black box testing was used to make sure all information was stored in the database correctly, white box testing was used to test each of the marking algorithm in the system worked efficiently, and finally acceptance testing was used to make sure that the client was satisfied with the system. For test series 1, not every button test was documented because there are too many of them and most of them share parent code, so testing at least one of each child button or unique button was enough to be sure that the same code was working everywhere.
+
 \subsection{Problems Encountered}
+
+\begin{itemize}
+\item Initially, on the report widget, I tried to have a separate window pop up to output the results of the user's query, however I struggled to get some of the data variables to pass between files, so I had to have the QTableWidget on the same screen as the query menu. However, this turned out to be just as effective as the first attempted method.
+
+\item For the generic question 4 on the homeworks, I wanted to put in drag and drop functionality to provide a variation of input types. However, there was a very unusual error where enabling a built in drag function would break the entire program, and it was beyond my abilities to either solve this problem, or find another way to implement the drag and drop functionality. So I replaced the drag and drop idea with multiple choice buttons, which admittedly is not as technically 'good', but there is still a range of input types, and this replacement works efficiently.
+
+\item There was a significant problem with saving results to the database; I could not generate a total score variable because, again, I could not find how to pass the required variables across files, as the first and second screen's code are separate from each other. As a result of this, I could not store a Rating variable either, so I resorted to just including the task name along with each questions score.
+
+\item The biggest problem was finding a way to create separate accounts, all accessible from different computers in a LAN, and having an administrator account capable of setting homeworks. It occured to me that this was far too much to code in the time I had, and that I had bitten off much more than I could chew, so I reformed the program down to a single user, self-assessing program, which still records data, but that data stays on one machine, used by one person. More than one person can use it; it can be installed  on multiple offline machines, of course. The client will not be able to keep track of progress, they will have to rely on users to be honest or provide evidence.
+
+\item The database kept having to be over-written,and would only hold one record, otherwise it would crash, if you tried to record results for the same task twice. This was fixed by...
+
+\end{itemize}
 
 \subsection{Strengths of Testing}
 
+The main strength of my testing was testing the answer marking algorithms; these algorithms included awarding marks, removing remaining attempts and disabling buttons, and after testing every possible input, each of these algorithms works robustly and exactly how they were intended. Any wrong data type inputs are dealt with using error messages, and the buttons would be disabled after losing all attempts or getting the correct answer to prevent the user being able to attempt the same question more than once, overwrite the content of the buttons and crash the system upon trying to save information to the database. This also leads to the next strength, the bottum up input testing, as this also shows that no input can cause the program to crash at any point.
+
 \subsection{Weaknesses of Testing}
+
+The main weakness of my testing was simply the massive number of buttons which had to be tested. All of them were tested, and all of them work, even after up to three different methods of coding them, and most of them have a parent class, so the same code works in each place. This was a weakness because it took time, and not every test could be documented, as they were essentially the same. The other weakness of testing is the acceptance testing; after cutting out the entire administrator aspect of the program as well as LAN capabilites, it is unlikely that the client will be fully satisfied. With luck, they accept the system anyway, as it does meet some other main specifications.
 
 \subsection{Reliability of Application}
 
+My system is more or less reliable; all data stored is accurate and correct, and is stored in the right quantity. There are no validation errors when checking answers, as they are hard-coded, and testing has proven the algorithms reliable under every circumstance. The information in the lessons is correct, and all of the buttons work exactly as intended. Only one potentially system breaking issue was found, where the database could not save the same task twice, but that problem has been solved. Finally, the data in the database can only be manipulated by completing a task, there is no way to manually enter the database and change the data.
+
 \subsection{Robustness of Application}
+
+My program is very robust; there are error messages for every possible error, including wrong data types, or not being able to progress. The only error which pops up pretty much every time a new screen opens is te word _raise() not being recognised, however that makes absolutely no difference to anything and can be dealt with simply by putting in an error exception in every place where it could occur. There is no point in the program where an infinite loop can be entered.

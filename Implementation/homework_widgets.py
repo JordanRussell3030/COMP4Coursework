@@ -1,30 +1,40 @@
-from PyQt4.QtGui import *
+from PyQt4.QtGui import * #These two lines import all of the built in PyQt code
 from PyQt4.QtCore import *
-from login_screen_window import *
-from login_widget import *
 
-from homework_widgets_page_2 import *
-from homework_parent_class import *
-from database_class import *
-from error_messages import *
-from homework_stacks import *
+from homework_parent_class import * #This contains the parent class which proides the default attributes for all of these child classes
+from database_class import * #This contains the method which saves the task name and the first question score to the database
+from error_messages import * #This contains the error message classes displayed when the user makes a mistake
 
+#These are the child classes which inherit from the homework_parent_class
 class SidesAHOEasyWidget(ParentHomeworkPage1Class):
+    #Constructor
     def __init__(self, parent):
+        #Return a proxy object that delegates method calls to a parent or sibling class of type.
         super().__init__()
 
+        #This is the parent variable which allows the child classes to inherit the connections to the second widget in the stacks       
         self.parent = parent
 
+        #This overrides the task name in each child class and is saved to the database to identify the task that has been ocmpleted
         self.task = "Sides Easy"
         
         self.title.setText("Sides Easy")
+
+        #The widget variables are all created in the parent class as they are used in each child class, then the
+        #text is set in the child classes so that they can all be different
         self.question_1.setText("Question 1: Look at the diagram below\nand answer the following questions: ")
+        
         self.q1a.setText("Which side is oppopsite angle A? ")
+    
         self.q1b.setText("Which side is adjacent to angle Q? ")
-        self.q1c.setText("Which side is the hypotenuse? ")
+                
+        self.q1c.setText("Which side is the hypotenuse? ")        
+
         self.q1d.setText("Which formula would you use to find AB? ")
+        
         self.question_1_shape.setPixmap(QPixmap("sides_easy_q1"))
 
+        #These are the hard-coded answers to the questions which are checked in the check methods
         self.answer_1_a = "BC"
         self.answer_1_b = "AC"
         self.answer_1_c = "AB"
@@ -32,15 +42,24 @@ class SidesAHOEasyWidget(ParentHomeworkPage1Class):
         self.answer_1_e = "5"
         self.answer_1_f = "6"
 
+    #The connection for this is in the parent class as the code is the same; it knows which screen to switch to because the stack is
+    #already instantiated by this point
     def open_page_2(self):
+        #Switches to screen to in the stack widget
         self.parent.stack.setCurrentIndex(1)
        
 class SidesAHOMediumWidget(ParentHomeworkPage1Class):
     def __init__(self, parent):
         super().__init__()
+        
         self.parent = parent
+
+        self.task = "Sides Medium"
+        
         self.title.setText("Sides Medium")
+        
         self.question_1.setText("Question 1:\n ___________\n__________")
+        
         self.question_1_shape.setText("Shape")
 
         self.answer_1_a = "7"
@@ -53,9 +72,13 @@ class SidesAHOMediumWidget(ParentHomeworkPage1Class):
 class SidesAHOHardWidget(ParentHomeworkPage1Class):
     def __init__(self, parent):
         super().__init__()
+        
         self.parent = parent
+        
         self.title.setText("Sides Hard")
+        
         self.question_1.setText("Question 1:\n ___________\n__________")
+        
         self.question_1_shape.setText("Shape")
 
         self.answer_1_a = None
@@ -68,9 +91,13 @@ class SidesAHOHardWidget(ParentHomeworkPage1Class):
 class SOHCAHTOAEasyWidget(ParentHomeworkPage1Class):
     def __init__(self, parent):
         super().__init__()
+        
         self.parent = parent
+        
         self.title.setText("SOHCAHTOA Easy")
+        
         self.question_1.setText("Question 1:\n ___________\n__________")
+        
         self.question_1_shape.setText("Shape")
 
         self.answer_1_a = None
@@ -83,9 +110,13 @@ class SOHCAHTOAEasyWidget(ParentHomeworkPage1Class):
 class SOHCAHTOAMediumWidget(ParentHomeworkPage1Class):
     def __init__(self, parent):
         super().__init__()
+        
         self.parent = parent
+        
         self.title.setText("SOHCAHTOA Medium")
+        
         self.question_1.setText("Question 1:\n ___________\n__________")
+        
         self.question_1_shape.setText("Shape")
 
         self.answer_1_a = None
@@ -98,9 +129,13 @@ class SOHCAHTOAMediumWidget(ParentHomeworkPage1Class):
 class SOHCAHTOAHardWidget(ParentHomeworkPage1Class):
     def __init__(self, parent):
         super().__init__()
+        
         self.parent = parent
+        
         self.title.setText("SOHCAHTOA Hard")
+        
         self.question_1.setText("Question 1:\n ___________\n__________")
+        
         self.question_1_shape.setText("Shape")
 
         self.answer_1_a = None
@@ -113,9 +148,13 @@ class SOHCAHTOAHardWidget(ParentHomeworkPage1Class):
 class FindingAnglesEasyWidget(ParentHomeworkPage1Class):
     def __init__(self, parent):
         super().__init__()
+        
         self.parent = parent
+        
         self.title.setText("Finding Angles Easy")
+        
         self.question_1.setText("Question 1:\n ___________\n__________")
+        
         self.question_1_shape.setText("Shape")
 
         self.answer_1_a = "1"
@@ -128,9 +167,13 @@ class FindingAnglesEasyWidget(ParentHomeworkPage1Class):
 class FindingAnglesMediumWidget(ParentHomeworkPage1Class):
     def __init__(self, parent):
         super().__init__()
+        
         self.parent = parent
+        
         self.title.setText("Finding Angles Medium")
+        
         self.question_1.setText("Question 1:\n ___________\n__________")
+        
         self.question_1_shape.setText("Shape")
 
         self.answer_1_a = None
@@ -143,9 +186,13 @@ class FindingAnglesMediumWidget(ParentHomeworkPage1Class):
 class FindingAnglesHardWidget(ParentHomeworkPage1Class):
     def __init__(self, parent):
         super().__init__()
+        
         self.parent = parent
+        
         self.title.setText("Finding Angles Hard")
+        
         self.question_1.setText("Question 1:\n ___________\n__________")
+        
         self.question_1_shape.setText("Shape")
 
         self.answer_1_a = None
@@ -158,9 +205,13 @@ class FindingAnglesHardWidget(ParentHomeworkPage1Class):
 class ThreeDTrigEasyWidget(ParentHomeworkPage1Class):
     def __init__(self, parent):
         super().__init__()
+        
         self.parent = parent
+        
         self.title.setText("3D Trigonometry Easy")
+        
         self.question_1.setText("Question 1:\n ___________\n__________")
+        
         self.question_1_shape.setText("Shape")
 
         self.answer_1_a = None
@@ -173,9 +224,13 @@ class ThreeDTrigEasyWidget(ParentHomeworkPage1Class):
 class ThreeDTrigMediumWidget(ParentHomeworkPage1Class):
     def __init__(self, parent):
         super().__init__()
+        
         self.parent = parent
+        
         self.title.setText("3D Trigonometry Medium")
+        
         self.question_1.setText("Question 1:\n ___________\n__________")
+        
         self.question_1_shape.setText("Shape")
 
         self.answer_1_a = None
@@ -188,9 +243,13 @@ class ThreeDTrigMediumWidget(ParentHomeworkPage1Class):
 class ThreeDTrigHardWidget(ParentHomeworkPage1Class):
     def __init__(self, parent):
         super().__init__()
+        
         self.parent = parent
+        
         self.title.setText("3D Trigonometry Hard")
+        
         self.question_1.setText("Question 1:\n ___________\n__________")
+        
         self.question_1_shape.setText("Shape")
 
         self.answer_1_a = None
@@ -203,9 +262,13 @@ class ThreeDTrigHardWidget(ParentHomeworkPage1Class):
 class PythagTheoremEasyWidget(ParentHomeworkPage1Class):
     def __init__(self, parent):
         super().__init__()
+        
         self.parent = parent
+        
         self.title.setText("Pythagoras' Theorem Easy")
+        
         self.question_1.setText("Question 1:\n ___________\n__________")
+        
         self.question_1_shape.setText("Shape")
 
         self.answer_1_a = None
@@ -218,9 +281,13 @@ class PythagTheoremEasyWidget(ParentHomeworkPage1Class):
 class PythagTheoremMediumWidget(ParentHomeworkPage1Class):
     def __init__(self, parent):
         super().__init__()
+        
         self.parent = parent
+        
         self.title.setText("Pythagoras' Theorem Medium")
+        
         self.question_1.setText("Question 1:\n ___________\n__________")
+        
         self.question_1_shape.setText("Shape")
 
         self.answer_1_a = None
@@ -233,9 +300,13 @@ class PythagTheoremMediumWidget(ParentHomeworkPage1Class):
 class PythagTheoremHardWidget(ParentHomeworkPage1Class):
     def __init__(self, parent):
         super().__init__()
+        
         self.parent = parent
+        
         self.title.setText("Pythagoras' Theorem Hard")
+        
         self.question_1.setText("Question 1:\n ___________\n__________")
+        
         self.question_1_shape.setText("Shape")
 
         self.answer_1_a = None
@@ -248,9 +319,13 @@ class PythagTheoremHardWidget(ParentHomeworkPage1Class):
 class ThreeDPythagEasyWidget(ParentHomeworkPage1Class):
     def __init__(self, parent):
         super().__init__()
+        
         self.parent = parent
+        
         self.title.setText("3D Pythagoras Easy")
+        
         self.question_1.setText("Question 1:\n ___________\n__________")
+        
         self.question_1_shape.setText("Shape")
 
         self.answer_1_a = None
@@ -263,9 +338,13 @@ class ThreeDPythagEasyWidget(ParentHomeworkPage1Class):
 class ThreeDPythagMediumWidget(ParentHomeworkPage1Class):
     def __init__(self, parent):
         super().__init__()
+        
         self.parent = parent
+        
         self.title.setText("3D Trigonometry Medium")
+        
         self.question_1.setText("Question 1:\n ___________\n__________")
+        
         self.question_1_shape.setText("Shape")
 
         self.answer_1_a = None
@@ -278,9 +357,13 @@ class ThreeDPythagMediumWidget(ParentHomeworkPage1Class):
 class ThreeDPythagHardWidget(ParentHomeworkPage1Class):
     def __init__(self, parent):
         super().__init__()
+        
         self.parent = parent
+        
         self.title.setText("3D Pythagoras Hard")
+        
         self.question_1.setText("Question 1:\n ___________\n__________")
+        
         self.question_1_shape.setText("Shape")
 
         self.answer_1_a = None
@@ -293,9 +376,13 @@ class ThreeDPythagHardWidget(ParentHomeworkPage1Class):
 class VectorsEasyWidget(ParentHomeworkPage1Class):
     def __init__(self, parent):
         super().__init__()
+        
         self.parent = parent
+        
         self.title.setText("Easy Problems")
+        
         self.question_1.setText("Question 1:\n ___________\n__________")
+        
         self.question_1_shape.setText("Shape")
 
         self.answer_1_a = None
@@ -308,9 +395,13 @@ class VectorsEasyWidget(ParentHomeworkPage1Class):
 class VectorsMediumWidget(ParentHomeworkPage1Class):
     def __init__(self, parent):
         super().__init__()
+        
         self.parent = parent
+        
         self.title.setText("Medium Problems")
+        
         self.question_1.setText("Question 1:\n ___________\n__________")
+        
         self.question_1_shape.setText("Shape")
 
         self.answer_1_a = None
@@ -323,9 +414,13 @@ class VectorsMediumWidget(ParentHomeworkPage1Class):
 class VectorsHardWidget(ParentHomeworkPage1Class):
     def __init__(self, parent):
         super().__init__()
+        
         self.parent = parent
+        
         self.title.setText("Hard Problems")
+        
         self.question_1.setText("Question 1:\n ___________\n__________")
+        
         self.question_1_shape.setText("Shape")
 
         self.answer_1_a = None
@@ -338,9 +433,13 @@ class VectorsHardWidget(ParentHomeworkPage1Class):
 class EasySummaryWidget(ParentHomeworkPage1Class):
     def __init__(self, parent):
         super().__init__()
+        
         self.parent = parent
+        
         self.title.setText("Easy Summary")
+        
         self.question_1.setText("Question 1:\n ___________\n__________")
+        
         self.question_1_shape.setText("Shape")
 
         self.answer_1_a = None
@@ -353,9 +452,13 @@ class EasySummaryWidget(ParentHomeworkPage1Class):
 class MediumSummaryWidget(ParentHomeworkPage1Class):
     def __init__(self, parent):
         super().__init__()
+        
         self.parent = parent
+        
         self.title.setText("Medium Summary")
+        
         self.question_1.setText("Question 1:\n ___________\n__________")
+        
         self.question_1_shape.setText("Shape")
 
         self.answer_1_a = None
@@ -368,9 +471,13 @@ class MediumSummaryWidget(ParentHomeworkPage1Class):
 class HardSummaryWidget(ParentHomeworkPage1Class):
     def __init__(self, parent):
         super().__init__()
+        
         self.parent = parent
+        
         self.title.setText("Hard Summary")
+        
         self.question_1.setText("Question 1:\n ___________\n__________")
+        
         self.question_1_shape.setText("Shape")
 
         self.answer_1_a = None

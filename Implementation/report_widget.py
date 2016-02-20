@@ -1,95 +1,122 @@
-from PyQt4.QtGui import *
+from PyQt4.QtGui import * #These two lines import all of the built in PyQt code
 from PyQt4.QtCore import *
-#
-from database_widget import *
 
+from database_widget import * #This contains the data currently being displayed to the user
+from database_class import * #This contains the methods which fetch the information from the database
+
+#This is the template for the widget which is used to query the database
 class ReportWidget(QWidget):
+    #Constructor
     def __init__(self):
+        #Return a proxy object that delegates method calls to a parent or sibling class of type.
         super().__init__()
 
+        #Maximises the screen
         self.showMaximized()
 
+        #This is just a label with the title of the window
         self.header = QLabel("Report")
+        #Sets the font size and house style of the label
         self.header.setFont(QFont("Courier", 30))
 
-        self.criteria = QLabel("Please select the criteria for your progress report: ")
-        self.criteria.setFont(QFont("Courier", 30))
-
-        self.class_box_label = QLabel("Please select a class to query")
-        self.class_box_label.setFont(QFont("Courier", 25))
-        self.class_box = QComboBox()
-        self.choice = QLabel("Please select a student or a\ntask to query: ")
-        self.choice.setFont(QFont("Courier", 25))
-        self.student_box_label = QLabel("Please select a student\nto query")
-        self.student_box_label.setFont(QFont("Courier", 25))
-        self.student_box = QComboBox()
-        self.task_box_label = QLabel("Please select a task\nto query")
+        self.task_box_label = QLabel("Please select a task\nto query: ")
         self.task_box_label.setFont(QFont("Courier", 25))
+
+        #This combo box contains all of the options which can be chosen from when
+        #querying the database for a task name
         self.task_box = QComboBox()
-        self.score_box_label = QLabel("Please input the maximum\nscore you would like\nto query: ")
-        self.score_box_label.setFont(QFont("Courier", 25))
-        self.score_box = QComboBox()
-        self.back = QPushButton("Return")
-        self.submit = QPushButton("Query")
-
-        self.layout = QGridLayout()
-
-        self.setLayout(self.layout)
-
-        self.layout.addWidget(self.class_box_label, 0, 0)
-        self.layout.addWidget(self.class_box, 0, 1)
-        self.layout.addWidget(self.choice, 1, 0)
-        self.layout.addWidget(self.student_box_label, 2, 0)
-        self.layout.addWidget(self.student_box, 3, 0)
-        self.layout.addWidget(self.task_box_label, 2, 1)
-        self.layout.addWidget(self.task_box, 3, 1)
-        self.layout.addWidget(self.score_box_label, 4, 0)
-        self.layout.addWidget(self.score_box, 4, 1)
-        self.layout.addWidget(self.back, 5, 0)
-        self.layout.addWidget(self.submit, 5, 1)
-
-        self.class_box.setMinimumWidth(60)
-        self.class_box.setMinimumHeight(100)
-        self.class_box.setFont(QFont("Courier", 30))
-        self.class_box.setStyleSheet("QComboBox {background-color: #A3C1DA; color: blue;}")
-
-
-        self.student_box.setMinimumWidth(60)
-        self.student_box.setMinimumHeight(100)
-        self.student_box.setFont(QFont("Courier", 30))
-        self.student_box.setStyleSheet("QComboBox {background-color: #A3C1DA; color: blue;}")
-
-
+        #Sets the size of the combo box
         self.task_box.setMinimumWidth(60)
         self.task_box.setMinimumHeight(100)
+        #Sets the font size and house style of the text in the combo box
         self.task_box.setFont(QFont("Courier", 30))
+        #Sets the background colour of the combo box
         self.task_box.setStyleSheet("QComboBox {background-color: #A3C1DA; color: blue;}")
+        #Adds the data which can be queried as options
+        self.task_box.addItem("Sides Easy")
+        self.task_box.addItem("Sides Medium")
+        
+        self.score_box_label = QLabel("Please input the maximum\nscore you would like\nto query: ")
+        self.score_box_label.setFont(QFont("Courier", 25))
 
-
+        #Essentially the same as the other combo box except with score ranges to select from
+        self.score_box = QComboBox()
         self.score_box.setMinimumWidth(60)
         self.score_box.setMinimumHeight(100)
         self.score_box.setFont(QFont("Courier", 30))
         self.score_box.setStyleSheet("QComboBox {background-color: #A3C1DA; color: blue;}")
+        self.score_box.addItem("6")
+        self.score_box.addItem("5")
 
-
+        #This button closes the window
+        self.back = QPushButton("Return")
         self.back.setMinimumWidth(60)
         self.back.setMinimumHeight(100)
         self.back.setFont(QFont("Courier", 30))
         self.back.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue;}")
 
-
+        #This button initiates the query method - fetches all the relevant data
+        self.submit = QPushButton("Query")
         self.submit.setMinimumWidth(60)
         self.submit.setMinimumHeight(100)
         self.submit.setFont(QFont("Courier", 30))
         self.submit.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue;}")
 
+        #This is the table which displays the data which the user has queried when it is found
+        self.db = QTableWidget()
+        #Sets the number of rows in the table - only 24 possible tasks to find
+        self.db.setRowCount(24)
+        #Sets the number of columns in the table - there are 5 headers
+        self.db.setColumnCount(5)
+        #Sets the headers so that they match the database
+        self.db_header = ("TaskName", "Question 1", "Question 2", "Question 3", "Question 4")
+        #Applies the header to the table
+        self.db.setHorizontalHeaderLabels(self.db_header)
 
+        #Sets the layout to a QGridLayout so that the widgets can be positioned easily
+        self.layout = QGridLayout()
+
+        ##Sets layout as the layout to be used
+        self.setLayout(self.layout)
+
+        #Adds all of the widgets to the layout
+        self.layout.addWidget(self.db, 0, 0) #These numbers position the widget in the layout
+        self.layout.addWidget(self.task_box_label, 0, 1)
+        self.layout.addWidget(self.task_box, 1, 1)
+        self.layout.addWidget(self.score_box_label, 2, 1)
+        self.layout.addWidget(self.score_box, 3, 1)
+        self.layout.addWidget(self.back, 4, 0)
+        self.layout.addWidget(self.submit, 4, 1)
+
+        #The connections for returning to the previous screen or querying the database
         self.back.clicked.connect(self.selected_back)
         self.submit.clicked.connect(self.selected_submit)
 
+    #Closes the window
     def selected_back(self):
         self.close()
 
+    #This method takes the input in the combo boxes are uses it to search the database
     def selected_submit(self):
-        pass
-        #search database for input items
+        #data is the combo box selection and is passed into the database method
+        data = self.task_box.currentText()
+        score_data = self.score_box.currentText()
+        #This method is in the database_class
+        report = g_database.get_query(data, score_data)
+        #This clears the contents of the table with each new query so it does'nt continue to
+        #display data that is no longer relevant
+        self.db.setItem(0, 0, QTableWidgetItem(None))
+        self.db.setItem(0, 1, QTableWidgetItem(None))
+        self.db.setItem(0, 2, QTableWidgetItem(None))
+        self.db.setItem(0, 3, QTableWidgetItem(None))
+        self.db.setItem(0, 4, QTableWidgetItem(None))
+        #The report variable represents all that was fetched from the database
+        for record in report:
+            #Each piece of information is displayed in the QTableWidget under the right headers
+            #so that it looks exactly the same as the actual database would
+            self.db.setItem(0, 0, QTableWidgetItem(record[0]))
+            self.db.setItem(0, 1, QTableWidgetItem(str(record[1])))
+            self.db.setItem(0, 2, QTableWidgetItem(str(record[2])))
+            self.db.setItem(0, 3, QTableWidgetItem(str(record[3])))
+            self.db.setItem(0, 4, QTableWidgetItem(str(record[4])))
+

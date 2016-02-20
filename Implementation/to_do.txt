@@ -1,0 +1,1 @@
+Change the combo box answer checkers so that it checks the hardcoded answer not the temporary 20

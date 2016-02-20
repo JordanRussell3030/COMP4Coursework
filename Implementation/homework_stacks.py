@@ -1,27 +1,36 @@
-from PyQt4.QtCore import *
+from PyQt4.QtCore import * #These two lines import the built in PyQt code
 from PyQt4.QtGui import *
 
-from derived_homework_menus import *
-from homework_widgets import *
-from homework_widgets_page_2 import *
+from homework_widgets import * #Contains the first widgets to add to each stack
+from homework_widgets_page_2 import * #Contains the second widgets to add to each stack
 
 class Trig1StackSidesEasy(QMainWindow):
     def __init__(self):
+        #Return a proxy object that delegates method calls to a parent or sibling class of type.
         super().__init__()
 
+        #Maximises the stack widget for both windows contained in it
         self.showMaximized()
 
+        #Assigns the first sides easy widget from the homework_widgets file for the stack layout
         self.first_widget = SidesAHOEasyWidget(self)
+        #Assigns the second sides easy widget from the homework_widgets_page_2 file for the stack layout
         self.second_widget = SidesAHOEasyWidget2(self)
+        #All of the first widgets and second widgets share files so that only 1 import is necessary for each, and they share a lot of code
+        #Furthermore the code is'nt too long
 
+        #Sets the layout to a stack layout to allow for the addition of a page 1 and 2 to a single window to switch between them
         self.stack = QStackedLayout()
 
+        #Adds the two widgets to the stack
         self.stack.addWidget(self.first_widget)
         self.stack.addWidget(self.second_widget)
 
+        #Sets the layout to be used as a QWidget and adds the stack to it
         self.widget = QWidget()
         self.widget.setLayout(self.stack)
 
+        #Sets the layout to be used as the central widget so that it appears
         self.setCentralWidget(self.widget)
 
 class Trig1StackSidesMedium(QMainWindow):
