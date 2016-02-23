@@ -98,6 +98,7 @@ class ReportWidget(QWidget):
 
     #This method takes the input in the combo boxes are uses it to search the database
     def selected_submit(self):
+        _count = 0
         #data is the combo box selection and is passed into the database method
         data = self.task_box.currentText()
         score_data = self.score_box.currentText()
@@ -105,18 +106,20 @@ class ReportWidget(QWidget):
         report = g_database.get_query(data, score_data)
         #This clears the contents of the table with each new query so it does'nt continue to
         #display data that is no longer relevant
-        self.db.setItem(0, 0, QTableWidgetItem(None))
-        self.db.setItem(0, 1, QTableWidgetItem(None))
-        self.db.setItem(0, 2, QTableWidgetItem(None))
-        self.db.setItem(0, 3, QTableWidgetItem(None))
-        self.db.setItem(0, 4, QTableWidgetItem(None))
+        for count in range(24):
+            self.db.setItem(count, 0, QTableWidgetItem(None))
+            self.db.setItem(count, 1, QTableWidgetItem(None))
+            self.db.setItem(count, 2, QTableWidgetItem(None))
+            self.db.setItem(count, 3, QTableWidgetItem(None))
+            self.db.setItem(count, 4, QTableWidgetItem(None))
         #The report variable represents all that was fetched from the database
         for record in report:
             #Each piece of information is displayed in the QTableWidget under the right headers
             #so that it looks exactly the same as the actual database would
-            self.db.setItem(0, 0, QTableWidgetItem(record[0]))
-            self.db.setItem(0, 1, QTableWidgetItem(str(record[1])))
-            self.db.setItem(0, 2, QTableWidgetItem(str(record[2])))
-            self.db.setItem(0, 3, QTableWidgetItem(str(record[3])))
-            self.db.setItem(0, 4, QTableWidgetItem(str(record[4])))
+            self.db.setItem(_count, 0, QTableWidgetItem(record[0]))
+            self.db.setItem(_count, 1, QTableWidgetItem(str(record[1])))
+            self.db.setItem(_count, 2, QTableWidgetItem(str(record[2])))
+            self.db.setItem(_count, 3, QTableWidgetItem(str(record[3])))
+            self.db.setItem(_count, 4, QTableWidgetItem(str(record[4])))
+            _count += 1
 
