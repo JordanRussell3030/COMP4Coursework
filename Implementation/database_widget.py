@@ -35,6 +35,8 @@ class DatabaseWidget(QWidget):
         self.back.setMinimumHeight(100)
         #Sets the font size and house style of the text in the button
         self.back.setFont(QFont("Courier", 40))
+        #This overrides the background and text colour for the return button
+        self.back.setStyleSheet("QPushButton {background-color: red; color: white; font-size: 20;}")
 
         #This button connects to the report window
         self.report = QPushButton("Report")
@@ -59,7 +61,6 @@ class DatabaseWidget(QWidget):
         #This sets the colour of the selected boxes in the QTableWidget
         self.database.setStyleSheet("QTableView {selection-background-color: #A3C1DA;}")
         #This overrides the background and text colour for the return button
-        self.back.setStyleSheet("QPushButton {background-color: #D3E5FF; color: red;}")
 
         #This calls a method in database_class which fetches all of the data in the database
         students = g_database.GetAllNames()

@@ -61,7 +61,7 @@ class UserAccountWidget(QWidget):
         self.log_out.setFont(QFont("Courier", 40))
         #Overrides the style of the buttons in the window - exit button distinguished from
         #other buttons
-        self.log_out.setStyleSheet("QPushButton {background-color: #D3E5FF; color: red; font-size: 20;}")
+        self.log_out.setStyleSheet("QPushButton {background-color: green; color: white; font-size: 20;}")
 
         #These are pictures - one for each button
         self.picture = QLabel()

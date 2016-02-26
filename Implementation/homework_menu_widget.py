@@ -55,7 +55,7 @@ class HomeworkMenuWidget(QMainWindow):
         self.back.setMinimumHeight(110)
         self.back.setFont(QFont("Courier", 40))
         #Overrides the style of the other buttons so the user can distinguish it from the homework menu buttons easily
-        self.back.setStyleSheet("QPushButton {background-color: #D3E5FF; color: red; font-size: 20;}")
+        self.back.setStyleSheet("QPushButton {background-color: red; color: white; font-size: 20;}")
 
         #Each button has a picture with it
         self.ht1_pic = QLabel()

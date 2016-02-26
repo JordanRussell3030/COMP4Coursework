@@ -1,1 +1,2 @@
 Change the combo box answer checkers so that it checks the hardcoded answer not the temporary 20
+Put in all of the title pictures - make sure all pictures are the right size

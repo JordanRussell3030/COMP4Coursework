@@ -1,0 +1,11 @@
+take to next screen buttons - blue background, dark blue text *
+go to previous screen buttons - light red background, crimson text *
+finish buttons - exit included, and query - green background, white text
+combo boxes - light purple background, purple text *
+check buttons - yellow background, orange text *
+multiple choice buttons - white background, black text
+database background selection - tbd
+
+change blue background to have black text
+change yellow background to have black text
+edit parent_homework_page_1

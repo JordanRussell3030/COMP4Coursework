@@ -59,7 +59,7 @@ class ParentHomeworkMenuClass(QWidget):
         self.back.setMinimumWidth(60)
         self.back.setFont(QFont("Courier", 40))
         #The colour of this one is different so it can be distinguished between the buttons that take you to a homework
-        self.back.setStyleSheet("QPushButton {background-color: #D3E5FF; color: red;}")
+        self.back.setStyleSheet("QPushButton {background-color: red; color: white;}")
 
         #Each child class has 1 picture for every homework button, so the QLabels are created here,
         #and the desired amount of them can be added to the layout, depending on the number of buttons. The QPixmap is defined in the child class

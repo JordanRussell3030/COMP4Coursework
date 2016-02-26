@@ -31,7 +31,7 @@ class ReportWidget(QWidget):
         #Sets the font size and house style of the text in the combo box
         self.task_box.setFont(QFont("Courier", 30))
         #Sets the background colour of the combo box
-        self.task_box.setStyleSheet("QComboBox {background-color: #A3C1DA; color: blue;}")
+        self.task_box.setStyleSheet("QComboBox {background-color: lavender; color: purple;}")
         #Adds the data which can be queried as options
         self.task_box.addItem("Sides Easy")
         self.task_box.addItem("Sides Medium")
@@ -44,7 +44,7 @@ class ReportWidget(QWidget):
         self.score_box.setMinimumWidth(60)
         self.score_box.setMinimumHeight(100)
         self.score_box.setFont(QFont("Courier", 30))
-        self.score_box.setStyleSheet("QComboBox {background-color: #A3C1DA; color: blue;}")
+        self.score_box.setStyleSheet("QComboBox {background-color: lavender; color: purple;}")
         self.score_box.addItem("6")
         self.score_box.addItem("5")
 
@@ -53,14 +53,14 @@ class ReportWidget(QWidget):
         self.back.setMinimumWidth(60)
         self.back.setMinimumHeight(100)
         self.back.setFont(QFont("Courier", 30))
-        self.back.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue;}")
-
+        self.back.setStyleSheet("QPushButton {background-color: red; color: white; font-size: 20;}")
+        
         #This button initiates the query method - fetches all the relevant data
         self.submit = QPushButton("Query")
         self.submit.setMinimumWidth(60)
         self.submit.setMinimumHeight(100)
         self.submit.setFont(QFont("Courier", 30))
-        self.submit.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue;}")
+        self.submit.setStyleSheet("QPushButton {background-color: green; color: white;}")
 
         #This is the table which displays the data which the user has queried when it is found
         self.db = QTableWidget()
@@ -72,6 +72,7 @@ class ReportWidget(QWidget):
         self.db_header = ("TaskName", "Question 1", "Question 2", "Question 3", "Question 4")
         #Applies the header to the table
         self.db.setHorizontalHeaderLabels(self.db_header)
+        self.db.setStyleSheet("QTableWidget {selection-background-color: #A3C1DA;}")
 
         #Sets the layout to a QGridLayout so that the widgets can be positioned easily
         self.layout = QGridLayout()

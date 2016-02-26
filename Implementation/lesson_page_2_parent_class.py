@@ -30,19 +30,20 @@ class ParentLessonPage2(QWidget):
         self.previous.setMinimumHeight(110)
         self.previous.setMinimumWidth(60)
         self.previous.setFont(QFont("Courier", 40))
-        self.previous.setStyleSheet("QPushButton {background-color: crimson; font-color: white;}")
+        self.previous.setStyleSheet("QPushButton {background-color: red; color: white; font-size: 20;}")
         
         self.check = QPushButton("Check Answer")
         self.check.setMinimumHeight(110)
         self.check.setMinimumWidth(60)
         self.check.setFont(QFont("Courier", 40))
+        self.check.setStyleSheet("QPushButton {background-color: yellow; color: black; font-size: 20;}")
         
         self.finish = QPushButton("Finish")
         self.finish.setMinimumHeight(110)
         self.finish.setMinimumWidth(60)
         self.finish.setFont(QFont("Courier", 40))
-        self.finish.setStyleSheet("QPushButton {background-color: crimson; font-color: white;}")
-        
+        self.finish.setStyleSheet("QPushButton {background-color: green; color: white; font-size: 20;}")
+
         self.text_1 = QTextEdit()
         self.text_1.setMinimumWidth(80)
         self.text_1.setMinimumHeight(110)
