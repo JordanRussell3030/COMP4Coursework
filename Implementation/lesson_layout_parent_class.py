@@ -37,7 +37,7 @@ class ParentLessonLayout(QWidget):
         self.lesson_1 = QTextEdit()
         self.lesson_1.setMinimumHeight(400)
         self.lesson_1.setMinimumWidth(80)
-        self.lesson_1.setFont(QFont("Courier", 20, QFont.Bold))
+        self.lesson_1.setFont(QFont("Courier", 20))
         #Prevents the user from being able to change the text of the lessons
         self.lesson_1.setReadOnly(True)
         
