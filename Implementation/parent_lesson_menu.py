@@ -45,7 +45,7 @@ class ParentLessonMenu(QWidget):
         self.back.setMinimumHeight(100)
         self.back.setMinimumWidth(60)
         self.back.setFont(QFont("Courier", 40))
-        self.back.setStyleSheet("QPushButton {background-color: #D3E5FF; color: red; font-size: 20;}")
+        self.back.setStyleSheet("QPushButton {background-color: red; color: white; font-size: 20;}")
 
         #Sets the background colour and font colour of all the buttons in all of the child classes
         self.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue}")
@@ -58,7 +58,7 @@ class ParentLessonMenu(QWidget):
 
         #The back button is added here because it is in the same place in every child class
         self.layout.addWidget(self.back, 3, 0) #These numbers position the widget at the bottm
-                                               #it does'nt matter whether there are two or three buttons above,
+                                               #it doesn't matter whether there are two or three buttons above,
                                                #as the program ignores gaps by default
 
         #This connection is the same in each child class so it is written here, as is the method

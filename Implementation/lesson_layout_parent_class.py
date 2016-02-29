@@ -27,8 +27,8 @@ class ParentLessonLayout(QWidget):
         self.back.setMinimumWidth(60)
         #Changes the font size and house style of the QPushButton
         self.back.setFont(QFont("Courier", 40))
-        self.back.setStyleSheet("QPushButton {background-color: crimson; font-color: white;}")
-  
+        self.back.setStyleSheet("QPushButton {background-color: red; color: white; font-size: 20;}")
+        
         self.next = QPushButton("Next")
         self.next.setMinimumHeight(50)
         self.next.setMinimumWidth(60)

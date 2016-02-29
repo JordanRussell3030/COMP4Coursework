@@ -42,16 +42,19 @@ class ParentHomeworkPage1Class(QWidget):
         self.cancel.setMinimumHeight(110)
         self.cancel.setMinimumWidth(60)
         self.cancel.setFont(QFont("Courier", 40))
+        self.cancel.setStyleSheet("QPushButton {background-color: red; color: white; font-size: 20;}")
         
         self.check = QPushButton("Check Answers")
         self.check.setMinimumHeight(110)
         self.check.setMinimumWidth(60)
         self.check.setFont(QFont("Courier", 40))
+        self.check.setStyleSheet("QPushButton {background-color: yellow; color: black; font-size: 20;}")
         
         self.reset = QPushButton("Reset Answers")
         self.reset.setMinimumHeight(110)
         self.reset.setMinimumWidth(60)
         self.reset.setFont(QFont("Courier", 40))
+        self.reset.setStyleSheet("QPushButton {background-color: yellow; color: black; font-size: 20;}")
 
         self.title = QLabel()
         self.title.setFont(QFont("Courier", 40))

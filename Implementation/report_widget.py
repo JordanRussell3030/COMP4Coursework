@@ -31,7 +31,7 @@ class ReportWidget(QWidget):
         #Sets the font size and house style of the text in the combo box
         self.task_box.setFont(QFont("Courier", 30))
         #Sets the background colour of the combo box
-        self.task_box.setStyleSheet("QComboBox {background-color: #A3C1DA; color: blue;}")
+        self.task_box.setStyleSheet("QComboBox {background-color: lavender; color: purple;}")
         #Adds the data which can be queried as options
         self.task_box.addItem("Sides Easy")
         self.task_box.addItem("Sides Medium")
@@ -44,7 +44,7 @@ class ReportWidget(QWidget):
         self.score_box.setMinimumWidth(60)
         self.score_box.setMinimumHeight(100)
         self.score_box.setFont(QFont("Courier", 30))
-        self.score_box.setStyleSheet("QComboBox {background-color: #A3C1DA; color: blue;}")
+        self.score_box.setStyleSheet("QComboBox {background-color: lavender; color: purple;}")
         self.score_box.addItem("6")
         self.score_box.addItem("5")
 
@@ -53,14 +53,14 @@ class ReportWidget(QWidget):
         self.back.setMinimumWidth(60)
         self.back.setMinimumHeight(100)
         self.back.setFont(QFont("Courier", 30))
-        self.back.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue;}")
-
+        self.back.setStyleSheet("QPushButton {background-color: red; color: white; font-size: 20;}")
+        
         #This button initiates the query method - fetches all the relevant data
         self.submit = QPushButton("Query")
         self.submit.setMinimumWidth(60)
         self.submit.setMinimumHeight(100)
         self.submit.setFont(QFont("Courier", 30))
-        self.submit.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue;}")
+        self.submit.setStyleSheet("QPushButton {background-color: green; color: white;}")
 
         #This is the table which displays the data which the user has queried when it is found
         self.db = QTableWidget()
@@ -72,6 +72,7 @@ class ReportWidget(QWidget):
         self.db_header = ("TaskName", "Question 1", "Question 2", "Question 3", "Question 4")
         #Applies the header to the table
         self.db.setHorizontalHeaderLabels(self.db_header)
+        self.db.setStyleSheet("QTableWidget {selection-background-color: #A3C1DA;}")
 
         #Sets the layout to a QGridLayout so that the widgets can be positioned easily
         self.layout = QGridLayout()
@@ -98,6 +99,7 @@ class ReportWidget(QWidget):
 
     #This method takes the input in the combo boxes are uses it to search the database
     def selected_submit(self):
+        _count = 0
         #data is the combo box selection and is passed into the database method
         data = self.task_box.currentText()
         score_data = self.score_box.currentText()
@@ -105,18 +107,20 @@ class ReportWidget(QWidget):
         report = g_database.get_query(data, score_data)
         #This clears the contents of the table with each new query so it does'nt continue to
         #display data that is no longer relevant
-        self.db.setItem(0, 0, QTableWidgetItem(None))
-        self.db.setItem(0, 1, QTableWidgetItem(None))
-        self.db.setItem(0, 2, QTableWidgetItem(None))
-        self.db.setItem(0, 3, QTableWidgetItem(None))
-        self.db.setItem(0, 4, QTableWidgetItem(None))
+        for count in range(24):
+            self.db.setItem(count, 0, QTableWidgetItem(None))
+            self.db.setItem(count, 1, QTableWidgetItem(None))
+            self.db.setItem(count, 2, QTableWidgetItem(None))
+            self.db.setItem(count, 3, QTableWidgetItem(None))
+            self.db.setItem(count, 4, QTableWidgetItem(None))
         #The report variable represents all that was fetched from the database
         for record in report:
             #Each piece of information is displayed in the QTableWidget under the right headers
             #so that it looks exactly the same as the actual database would
-            self.db.setItem(0, 0, QTableWidgetItem(record[0]))
-            self.db.setItem(0, 1, QTableWidgetItem(str(record[1])))
-            self.db.setItem(0, 2, QTableWidgetItem(str(record[2])))
-            self.db.setItem(0, 3, QTableWidgetItem(str(record[3])))
-            self.db.setItem(0, 4, QTableWidgetItem(str(record[4])))
+            self.db.setItem(_count, 0, QTableWidgetItem(record[0]))
+            self.db.setItem(_count, 1, QTableWidgetItem(str(record[1])))
+            self.db.setItem(_count, 2, QTableWidgetItem(str(record[2])))
+            self.db.setItem(_count, 3, QTableWidgetItem(str(record[3])))
+            self.db.setItem(_count, 4, QTableWidgetItem(str(record[4])))
+            _count += 1
 

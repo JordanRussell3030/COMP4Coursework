@@ -35,37 +35,37 @@ class HomeworkPage2ParentClass(QWidget):
         self._button_1.setMinimumWidth(110)
         self._button_1.setMinimumHeight(110)
         #Sets the background colour and font colour of the button - override from the style sheet of the whole widget
-        self._button_1.setStyleSheet("QPushButton {background-color: yellow; font-color: blue;}")
+        self._button_1.setStyleSheet("QPushButton {background-color: white; font-color: black;}")
         
         self._button_2 = QPushButton()
         self._button_2.setMaximumWidth(200)
         self._button_2.setMinimumWidth(110)
         self._button_2.setMinimumHeight(110)
-        self._button_2.setStyleSheet("QPushButton {background-color: yellow; font-color: blue;}")
+        self._button_2.setStyleSheet("QPushButton {background-color: white; font-color: black;}")
   
         self._button_3 = QPushButton()
         self._button_3.setMaximumWidth(200)
         self._button_3.setMinimumWidth(110)
         self._button_3.setMinimumHeight(110)
-        self._button_3.setStyleSheet("QPushButton {background-color: yellow; font-color: blue;}")
+        self._button_3.setStyleSheet("QPushButton {background-color: white; font-color: black;}")
         
         self._button_4 = QPushButton()
         self._button_4.setMaximumWidth(200)
         self._button_4.setMinimumWidth(110)
         self._button_4.setMinimumHeight(110)
-        self._button_4.setStyleSheet("QPushButton {background-color: yellow; font-color: blue;}")
+        self._button_4.setStyleSheet("QPushButton {background-color: white; font-color: black;}")
         
         self._button_5 = QPushButton()
         self._button_5.setMaximumWidth(200)
         self._button_5.setMinimumWidth(110)
         self._button_5.setMinimumHeight(110)
-        self._button_5.setStyleSheet("QPushButton {background-color: yellow; font-color: blue;}")
+        self._button_5.setStyleSheet("QPushButton {background-color: white; font-color: black;}")
         
         self._button_6 = QPushButton()
         self._button_6.setMaximumWidth(200)
         self._button_6.setMinimumWidth(110)
         self._button_6.setMinimumHeight(110)
-        self._button_6.setStyleSheet("QPushButton {background-color: yellow; font-color: blue;}")
+        self._button_6.setStyleSheet("QPushButton {background-color: white; font-color: black;}")
 
         self.question_2 = QLabel()       
         self.question_2.setFont(QFont("Courier", 30))
@@ -87,47 +87,48 @@ class HomeworkPage2ParentClass(QWidget):
         self.answer_2.setMinimumWidth(60)
         self.answer_2.setMinimumHeight(110)
         self.answer_2.setFont(QFont("Courier", 40))
-        self.answer_2.setStyleSheet("QComboBox {background-color: #A3C1DA; color: blue;}")
+        self.answer_2.setStyleSheet("QComboBox {background-color: lavender; color: purple;}")
 
         #This button is connected to the method to check if the contents of the above combo box is right or not
         self.mark_2 = QPushButton("Mark it  |  2")
         self.mark_2.setMinimumWidth(60)
         self.mark_2.setMinimumHeight(110)
         self.mark_2.setFont(QFont("Courier", 40))
+        self.mark_2.setStyleSheet("QPushButton {background-color: yellow; color: black; font-size: 20;}")
         
         self.answer_3 = QComboBox()
         self.answer_3.setMinimumWidth(60)
         self.answer_3.setMinimumHeight(110)
         self.answer_3.setFont(QFont("Courier", 40))
-        self.answer_3.setStyleSheet("QComboBox {background-color: #A3C1DA; color: blue;}")
+        self.answer_3.setStyleSheet("QComboBox {background-color: lavender; color: purple;}")
         
         self.mark_3 = QPushButton("Mark it  |  2")
         self.mark_3.setMinimumWidth(60)
         self.mark_3.setMinimumHeight(110)
         self.mark_3.setFont(QFont("Courier", 40))
+        self.mark_3.setStyleSheet("QPushButton {background-color: yellow; color: black; font-size: 20;}")
 
         #Switches to the first widget in the stack
         self.previous = QPushButton("Previous")
         self.previous.setMinimumWidth(60)
         self.previous.setMinimumHeight(110)
         self.previous.setFont(QFont("Courier", 40))
+        self.previous.setStyleSheet("QPushButton {background-color: red; color: white; font-size: 20;}")
 
         #Close the stack
         self.finish = QPushButton("Finish")
         self.finish.setMinimumWidth(60)
         self.finish.setMinimumHeight(110)
         self.finish.setFont(QFont("Courier", 40))
+        self.finish.setStyleSheet("QPushButton {background-color: green; color: white; font-size: 20;}")
 
         #Tells the user how many attempts they have left at question 4
         self.attempts_button = QPushButton("3 Attempts left")
         self.attempts_button.setMinimumHeight(60)
         self.attempts_button.setMinimumWidth(90)
         self.attempts_button.setMaximumWidth(200)
-        self.attempts_button.setStyleSheet("QPushButton {background-color: yellow; font-color: blue;}")
+        self.attempts_button.setStyleSheet("QPushButton {background-color: white; font-color: black;}")
         self.attempts_button.setEnabled(False)
-
-        #Sets the background colour and font colour of all the buttons in the window
-        self.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue;}")
 
         #Sets the layout to a QGridLayout so the widgets can be positioned easily
         self.layout = QGridLayout()

@@ -60,9 +60,4 @@ if __name__ == "__main__":
     #Maximises the window.
     window.showMaximized()
     app.exec_()
-
-#These two lines import all of the built in PyQt code
-#Return a proxy object that delegates method calls to a parent or sibling class of type.
-#This is the parent variable which allows the child classes to inherit the connections to the second widget in the stacks       
-
     

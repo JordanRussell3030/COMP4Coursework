@@ -78,7 +78,7 @@ class LessonMenuWidget(QMainWindow):
         self.back.setMinimumHeight(110)
         self.back.setFont(QFont("Courier", 40))
         #This overrides the style of the other buttons
-        self.back.setStyleSheet("QPushButton {background-color: #D3E5FF; color: red; font-size: 20;}")
+        self.back.setStyleSheet("QPushButton {background-color: red; color: white; font-size: 20;}")
     
         self.lesson_label = QLabel("Lessons")
         self.lesson_label.setFont(QFont("Courier", 40))
