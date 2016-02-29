@@ -787,9 +787,9 @@
 3.007 * & To test that all of the user's usernames are stored in the correct place in the database & These should be stored and visible together by the administrator or individually by the user on their home screen or in their personal task database & User01 & Presence, Normal & These should be stored in the User's database and visible together by the adminsitrator or individually by the respective student & & \\ \hline
 3.008 * &  To test that all of the user's passwords are stoed in the correct place in the database & These should be stored and only isible by the administrator & f8h4j7h & Presence, Normal & These should be stored in the User's database and visible only by the administrator behind their password & & \\ \hline
 3.009 & To test that the TaskNames are stored in the correct place in the database & These should be stored and visible together by the administrator or individually by the user who completed the task & Sides Easy & Presence, Normal & These should be stored in the Tasks database and visible together by the administrator or individually by the respective student & & \\ \hline
-3.010 & To test that the OverallPercentScores are stored in the correct place in the database & These should be stored and visible together by the administrator or individually by the user who completed the task & 90\% & Presence, Normal & These should be stored in the Tasks database and the Scores database, visible together by the administrator or individually by the respective student & & \\ \hline
+3.010 * & To test that the OverallPercentScores are stored in the correct place in the database & These should be stored and visible together by the administrator or individually by the user who completed the task & 90\% & Presence, Normal & These should be stored in the Tasks database and the Scores database, visible together by the administrator or individually by the respective student & & \\ \hline
 3.011 & To test that the IndividualPercentScores are stored in the correct place in the database & These should be stored and visible together by the administrator or individually by the user who completed the task & 80\% & Presence, Normal & These should be stored in the Scores database, visible together by the administrator or individually by the respective student & & \\ \hline
-3.012 & To test that the Ratings are stored in the correct place in the database & These should be stored and visible together by the administrator or individually by the user who completed the task & Green & Presence, Normal & These should be stored in the Scores database, visible together by the administrator or individually by the respective student & & \\ \hline
+3.012 * & To test that the Ratings are stored in the correct place in the database & These should be stored and visible together by the administrator or individually by the user who completed the task & Green & Presence, Normal & These should be stored in the Scores database, visible together by the administrator or individually by the respective student & & \\ \hline
 3.013 * & To test that the Feedback is stored in the correct place in the database & This should be stored in and visible together by the administrator or individually by the receiving student & Very good & Presence, Normal & This should be stored in the Tasks database and visible in whole by the administrator or individually by the receiving student & & \\ \hline
 4.001 * & To test that the algorithm for initially inputting names and IDs into the system works as intended & The system should accept the administrators inputs and save them to the right place in the database, before generating an account space for each user along with a username and password & Input John Smith, 10A into the system & Presence, Erroneous & names should be accepted and stored, and usernames and passwords should be generated for each of them & & \\ \hline
 4.002 * & To test that the algorithm for generating usernames works as intended & For each user's name input into the system, a username consisting of part or all of the first name followed by a number should be generated and stored with the name in the database & Generate something like 'John1' & Erroneous & The username should be generated and stored with the names of each user, and should be recognised upon logging in & & \\ \hline
@@ -1506,9 +1506,9 @@
 3.007 * & Anything & For this specific test it doesn't matter what is stored as long as it works and is in the correct place - validation is concerned in series 2 \\ \hline
 3.008 * & Anything & For this specific test it doesn't matter what is stored as long as it works and is in the correct place - validation is concerned in series 2 \\ \hline
 3.009 & Anything & For this specific test it doesn't matter what is stored as long as it works and is in the correct place - validation is concerned in series 2 \\ \hline
-3.010 & Anything & For this specific test it doesn't matter what is stored as long as it works and is in the correct place - validation is concerned in series 2 \\ \hline
+3.010 * & Anything & For this specific test it doesn't matter what is stored as long as it works and is in the correct place - validation is concerned in series 2 \\ \hline
 3.011 & Anything & For this specific test it doesn't matter what is stored as long as it works and is in the correct place - validation is concerned in series 2 \\ \hline
-3.012 & Anything & For this specific test it doesn't matter what is stored as long as it works and is in the correct place - validation is concerned in series 2 \\ \hline
+3.012 * & Anything & For this specific test it doesn't matter what is stored as long as it works and is in the correct place - validation is concerned in series 2 \\ \hline
 3.013 * & Anything & For this specific test it doesn't matter what is stored as long as it works and is in the correct place - validation is concerned in series 2 \\ \hline
 4.001 * & John Smith & To ensure that both names are validated as described above \\ \hline
 4.002 * & No input - expecting output & \\ \hline
@@ -1583,9 +1583,7 @@
 2.295 & Sides Easy & To test that the SQL finds the correct data - there will be no erroneous data due to limited options \\ \hline
 2.296 & 70\% & To test that the SQL finds the correct data - there will be no erroneous data due to limited options \\ \hline
 3.009 & Anything & For this specific test it doesn't matter what is stored as long as it works and is in the correct place - validation is concerned in series 2 \\ \hline
-3.010 & Anything & For this specific test it doesn't matter what is stored as long as it works and is in the correct place - validation is concerned in series 2 \\ \hline
 3.011 & Anything & For this specific test it doesn't matter what is stored as long as it works and is in the correct place - validation is concerned in series 2 \\ \hline
-3.012 & Anything & For this specific test it doesn't matter what is stored as long as it works and is in the correct place - validation is concerned in series 2 \\ \hline
 4.015 ** & 1, 2, 3, 4, 5, 6; a, b, 4, three, £, \$; None & Firstly to test that the correct answers are recognised. Then make sure that the error exceptions work, and finally to test that the appropriate error message appears if nothing is entered before continuing \\ \hline
 4.016 ** & 20 (or correct answer); 30 & To test that the correct option is recognised as the correct answer and the incorrect options are not \\ \hline
 4.017 ** & Click each button in turn & To test that the intended correct button works and the others don't \\ \hline
@@ -1610,13 +1608,13 @@
 1.006 & The program should close entirely & Click the exit program button & The entire program closed, as expected & \\ \hline
 1.007 & The Trigonometry 1 lesson menu should be displayed & Click the Trigonometry 1 button & The Trigonometry 1 lesson menu was displayed, as expected & \\ \hline
 1.012 & The lesson menu should be closed and the home screen displayed & Click the return button & The lesson menu closed and the home screen was displayed, as expected & \\ \hline
-1.013 & The Sides first lesson screen should be displayed & Click the sides button & The sides first lesson screen was displayed, as expected & \\ \hline
+1.013 & The SOHCAHTOA first lesson screen should be displayed & Click the SOHCAHTOA button & The SOHCAHTOA first lesson screen was displayed, as expected & \\ \hline
 1.015 & The Trigonometry 1 lesson menu should be closed and the lesson menu displayed & Click the return button & The Trigonometry 1 lesson menu closed and the lesson menu was displayed, as expected & \\ \hline
-1.031 & The sides first lesson screen should be closed and the Trigonometry 1 lesson menu should be displayed & Click the return button & The sides first lesson screen was closed and the Trigonometry 1 lesson menu was displayed, as expected & \\ \hline
-1.032 & The sides second lesson screen should replace the first sides lesson screen in display & Click the next button & The second sides lesson screen replaced the first sides lesson screen, as expected & \\ \hline
-1.033 & The sides first lesson screen should replace the second sides lesson screen in display & Click the previous button & The first sides lesson screen replaced the second sides lesson screen, as expected & \\ \hline
+1.031 & The SOHCAHTOA first lesson screen should be closed and the Trigonometry 1 lesson menu should be displayed & Click the return button & The SOHCAHTOA first lesson screen was closed and the Trigonometry 1 lesson menu was displayed, as expected & \\ \hline
+1.032 & The SOHCAHTOA second lesson screen should replace the first SOHCAHTOA lesson screen in display & Click the next button & The second SOHCAHTOA lesson screen replaced the first SOHCAHTOA lesson screen, as expected & \\ \hline
+1.033 & The SOHCAHTOA first lesson screen should replace the second SOHCAHTOA lesson screen in display & Click the previous button & The first SOHCAHTOA lesson screen replaced the second SOHCAHTOA lesson screen, as expected & \\ \hline
 1.034 & The input typed in the line edit should be checked and the user told whether they were correct or not & Click the button & The correct answer was registered as correct and the wrong answer was registered as incorrect, as expected & \\ \hline
-1.035 & The stack window with the sides lesson should close and the Trigonometry 1 lesson menu be displayed & Click the finish button & The sides lesson stack was closed and the Trigonometry 1 lesson menu was displayed, as expected & \\ \hline
+1.035 & The stack window with the SOHCAHTOA lesson should close and the Trigonometry 1 lesson menu be displayed & Click the finish button & The SOHCAHTOA lesson stack was closed and the Trigonometry 1 lesson menu was displayed, as expected & \\ \hline
 1.097 & The Trigonometry 1 homework menu should be displayed & Click the trigonometry 1 button & The Trigonometry 1 homework menu was displayed, as expected & \\ \hline
 1.102 & The homework menu should close and the home screen should be displayed & Click the return button & The homework menu closed and the home screen was displayed, as expected & \\ \hline
 1.103 & The first sides easy homework screen should be displayed & Click the sides easy button & The first sides easy homework screen was displayed, as expected & \\ \hline
@@ -1647,15 +1645,13 @@
 2.295 & The information relevant to the input should be fetched from the database and displayed & Sides Easy; Pythagoras Theorem Hard & The relevant task name was fetched and displayed, as expected & \\ \hline 
 2.296 & The information relevant to the input should be fetched from the database and displayed & 70\%; 80\% & The relevant scores were fetched and displayed, as expected & \\ \hline
 3.009 & The task names should be stored under the 'Task Names' header in the database & Complete a task & The task name was stored under 'Task Names', as expected & \\ \hline
-3.010 & The OverallPercentScore should be stored under the 'Total' header in the database & Complete a task & & \\ \hline
 3.011 & The IndividualPercentScores should be stored under the 'QOne', 'QTwo', 'QThree', and 'QFour' headers respective to the question number in the database & Complete a task & The scores were under their respective headings, as expected \\ \hline
-3.012 & The Ratings should be stored under the 'Ratings' heading in the database & Complete a task & & \\ \hline
 4.015 & The correct output should be displayed for a correct or incorrect or absent input & [Correct answer]; [Incorrect answer]; None & The correct outputs were given, as expected & \\ \hline
 4.016 & The correct output should be displayed for a correct or incorrect or absent input & [Correct answer]; [Incorrect answer]; None & The correct outputs were given, as expected & \\ \hline
 4.017 & The correct output should be displayed for a correct or incorrect or absent input & [Correct answer]; [Incorrect answer]; None & The correct outputs were given, as expected & \\ \hline
 4.018 & The correct output should be displayed for a correct or incorrect or absent input & [Correct answer]; [Incorrect answer]; None & The appropriate outputs were given for every possile input tested & \\ \hline
 5.001 & The client should be satisfied with the overall system & Show the client each aspect of the system & & \\ \hline
-5.003 & The task names and scores should be being saved to an sqlite database, 6 columns, as many rows as their are attempts & Complete a task & There are the right number of headings in the table all with the correct information being displayed in them, as expected & \\ \hline
+5.003 & The task names and scores should be being saved to an sqlite database, 5 columns, as many rows as there are tasks & Complete a task & There are the right number of headings in the table all with the correct information being displayed in them, as expected & \\ \hline
 5.004 & Only the task names and scores should be stored in the database & Complete a task & They are the only pieces of information being stored, as expected & \\ \hline
 5.006 & No illegitimate information or personal information should be being stored & Complete a task (only source of information for the database) & No illegitimate information or personal information is being stored, only task names and scores, so the DPA cannot be breached anyway & \\ \hline
 \end{longtable}
@@ -1669,397 +1665,658 @@
 
 \begin{figure}[H]
     \label{fig: First Screen}\caption{First screen}
-    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_103_a}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_2}
 \end{figure}
 
 \textit{Button is clicked: }
 
 \begin{figure}[H]
     \label{fig: Second Screen}\caption{Second screen}
-    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_103_b}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_3}
 \end{figure}
 
 \textbf{Test 1.004}
 
 \begin{figure}[H]
     \label{fig: First Screen}\caption{First screen}
-    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_103_a}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_2}
 \end{figure}
 
 \textit{Button is clicked: }
 
 \begin{figure}[H]
     \label{fig: Second Screen}\caption{Second screen}
-    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_104_b}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_7}
 \end{figure}
 
 \textbf{Test 1.005}
 
 \begin{figure}[H]
     \label{fig: First Screen}\caption{First screen}
-    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_103_a}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_2}
 \end{figure}
 
 \textit{Button is clicked: }
 
 \begin{figure}[H]
     \label{fig: Second Screen}\caption{Second screen}
-    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_105_b}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_11}
 \end{figure}
 
 \textbf{Test 1.006}
 
 \begin{figure}[H]
     \label{fig: First Screen}\caption{First screen}
-    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_106_a}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_2}
 \end{figure}
 
 \textit{Button is clicked: }
 
 \begin{figure}[H]
     \label{fig: Second Screen}\caption{Program is closed}
-    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_106_b}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_13}
 \end{figure}
 
 \textbf{Test 1.007}
 
 \begin{figure}[H]
     \label{fig: First Screen}\caption{First screen}
-    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_103_b}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_3}
 \end{figure}
 
 \textit{Button is clicked: }
 
 \begin{figure}[H]
     \label{fig: Second Screen}\caption{Second screen}
-    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_107_b}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_4}
 \end{figure}
 
 \textbf{Test 1.012}
 
 \begin{figure}[H]
     \label{fig: First Screen}\caption{First screen}
-    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_103_b}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_3}
 \end{figure}
 
 \textit{Button is clicked: }
 
 \begin{figure}[H]
     \label{fig: Second Screen}\caption{Second screen}
-    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_107_b}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_2}
 \end{figure}
 
 \textbf{Test 1.013}
 
 \begin{figure}[H]
     \label{fig: First Screen}\caption{First screen}
-    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_103_b}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_4}
 \end{figure}
 
 \textit{Button is clicked: }
 
 \begin{figure}[H]
     \label{fig: Second Screen}\caption{Second screen}
-    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_107_b}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_5}
 \end{figure}
 
 \textbf{Test 1.015}
 
 \begin{figure}[H]
     \label{fig: First Screen}\caption{First screen}
-    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_103_b}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_4}
 \end{figure}
 
 \textit{Button is clicked: }
 
 \begin{figure}[H]
     \label{fig: Second Screen}\caption{Second screen}
-    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_107_b}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_3}
 \end{figure}
 
 \textbf{Test 1.031}
 
 \begin{figure}[H]
     \label{fig: First Screen}\caption{First screen}
-    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_103_b}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_5}
 \end{figure}
 
 \textit{Button is clicked: }
 
 \begin{figure}[H]
     \label{fig: Second Screen}\caption{Second screen}
-    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_107_b}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_4}
 \end{figure}
 
 \textbf{Test 1.032}
 
 \begin{figure}[H]
     \label{fig: First Screen}\caption{First screen}
-    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_103_b}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_5}
 \end{figure}
 
 \textit{Button is clicked: }
 
 \begin{figure}[H]
     \label{fig: Second Screen}\caption{Second screen}
-    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_107_b}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_6}
 \end{figure}
 
 \textbf{Test 1.033}
 
 \begin{figure}[H]
     \label{fig: First Screen}\caption{First screen}
-    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_103_b}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_6}
 \end{figure}
 
 \textit{Button is clicked: }
 
 \begin{figure}[H]
     \label{fig: Second Screen}\caption{Second screen}
-    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_107_b}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_5}
 \end{figure}
 
 \textbf{Test 1.034}
 
 \begin{figure}[H]
     \label{fig: First Screen}\caption{First screen}
-    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_103_b}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_14}
 \end{figure}
 
 \textit{Button is clicked: }
 
 \begin{figure}[H]
     \label{fig: Second Screen}\caption{Second screen}
-    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_107_b}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_15}
 \end{figure}
 
 \textbf{Test 1.035}
 
 \begin{figure}[H]
     \label{fig: First Screen}\caption{First screen}
-    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_103_b}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_6}
 \end{figure}
 
 \textit{Button is clicked: }
 
 \begin{figure}[H]
     \label{fig: Second Screen}\caption{Second screen}
-    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_107_b}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_4}
 \end{figure}
 
 \textbf{Test 1.097}
 
 \begin{figure}[H]
     \label{fig: First Screen}\caption{First screen}
-    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_103_b}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_7}
 \end{figure}
 
 \textit{Button is clicked: }
 
 \begin{figure}[H]
     \label{fig: Second Screen}\caption{Second screen}
-    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_107_b}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_8}
 \end{figure}
 
 \textbf{Test 1.102}
 
 \begin{figure}[H]
     \label{fig: First Screen}\caption{First screen}
-    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_103_b}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_7}
 \end{figure}
 
 \textit{Button is clicked: }
 
 \begin{figure}[H]
     \label{fig: Second Screen}\caption{Second screen}
-    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_107_b}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_2}
 \end{figure}
 
 \textbf{Test 1.103}
 
 \begin{figure}[H]
     \label{fig: First Screen}\caption{First screen}
-    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_103_b}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_8}
 \end{figure}
 
 \textit{Button is clicked: }
 
 \begin{figure}[H]
     \label{fig: Second Screen}\caption{Second screen}
-    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_107_b}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_9}
 \end{figure}
 
 \textbf{Test 1.135}
 
 \begin{figure}[H]
     \label{fig: First Screen}\caption{First screen}
-    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_103_b}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_9}
 \end{figure}
 
 \textit{Button is clicked: }
 
 \begin{figure}[H]
     \label{fig: Second Screen}\caption{Second screen}
-    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_107_b}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_8}
 \end{figure}
 
 \textbf{Test 1.136}
 
+\begin{figure}[H]
+    \label{fig: First Screen}\caption{First screen}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_16}
+\end{figure}
+
+\textit{Button is clicked: }
+
+\begin{figure}[H]
+    \label{fig: Second Screen}\caption{Second screen}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_17}
+\end{figure}
+
 \textbf{Test 1.137}
+
+\begin{figure}[H]
+    \label{fig: First Screen}\caption{First screen}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_16}
+\end{figure}
+
+\textit{Button is clicked: }
+
+\begin{figure}[H]
+    \label{fig: Second Screen}\caption{Second screen}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_9}
+\end{figure}
 
 \textbf{Test 1.138}
 
 \begin{figure}[H]
     \label{fig: First Screen}\caption{First screen}
-    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_103_b}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_9}
 \end{figure}
 
 \textit{Button is clicked: }
 
 \begin{figure}[H]
     \label{fig: Second Screen}\caption{Second screen}
-    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_107_b}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_10}
 \end{figure}
 
 \textbf{Test 1.139}
 
+\begin{figure}[H]
+    \label{fig: First Screen}\caption{First screen}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_18}
+\end{figure}
+
+\textit{Button is clicked: }
+
+\begin{figure}[H]
+    \label{fig: Second Screen}\caption{Second screen}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_19}
+\end{figure}
+
 \textbf{Test 1.140}
 
+\begin{figure}[H]
+    \label{fig: First Screen}\caption{First screen}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_20}
+\end{figure}
+
+\textit{Button is clicked: }
+
+\begin{figure}[H]
+    \label{fig: Second Screen}\caption{Second screen}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_21}
+\end{figure}
+
 \textbf{Test 1.141}
+
+\begin{figure}[H]
+    \label{fig: Second Screen}\caption{Second screen}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_22}
+\end{figure}
+
+\textit{Wrong button is clicked - incorrect message}
+
+\begin{figure}[H]
+    \label{fig: Second Screen}\caption{Second screen}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_23}
+\end{figure}
+
+\textit{Right button is clicked - correct message}
+
+\begin{figure}[H]
+    \label{fig: Second Screen}\caption{Second screen}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_24}
+\end{figure}
 
 \textbf{Test 1.142}
 
 \begin{figure}[H]
     \label{fig: First Screen}\caption{First screen}
-    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_103_b}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_10}
 \end{figure}
 
 \textit{Button is clicked: }
 
 \begin{figure}[H]
     \label{fig: Second Screen}\caption{Second screen}
-    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_107_b}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_9}
 \end{figure}
 
 \textbf{Test 1.143}
 
 \begin{figure}[H]
     \label{fig: First Screen}\caption{First screen}
-    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_103_b}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_10}
 \end{figure}
 
 \textit{Button is clicked: }
 
 \begin{figure}[H]
     \label{fig: Second Screen}\caption{Second screen}
-    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_107_b}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_8}
 \end{figure}
 
 \textbf{Test 1.380}
 
 \begin{figure}[H]
     \label{fig: First Screen}\caption{First screen}
-    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_103_b}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_11}
 \end{figure}
 
 \textit{Button is clicked: }
 
 \begin{figure}[H]
     \label{fig: Second Screen}\caption{Second screen}
-    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_107_b}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_2}
 \end{figure}
 
 \textbf{Test 1.431}
 
 \begin{figure}[H]
     \label{fig: First Screen}\caption{First screen}
-    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_103_b}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_12}
 \end{figure}
 
 \textit{Button is clicked: }
 
 \begin{figure}[H]
     \label{fig: Second Screen}\caption{Second screen}
-    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_107_b}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_11}
 \end{figure}
 
 \textbf{Test 1.432}
+
+\begin{figure}[H]
+    \label{fig: First Screen}\caption{First screen}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_25}
+\end{figure}
+
+\textit{Button is clicked: }
+
+\begin{figure}[H]
+    \label{fig: Second Screen}\caption{Second screen}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_26}
+\end{figure}
 
 \textbf{Test 1.441}
 
 \begin{figure}[H]
     \label{fig: First Screen}\caption{First screen}
-    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_103_b}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_1}
 \end{figure}
 
 \textit{Button is clicked: }
 
 \begin{figure}[H]
     \label{fig: Second Screen}\caption{Second screen}
-    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_107_b}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_2}
 \end{figure}
 
 \textbf{Test 1.442}
 
 \begin{figure}[H]
     \label{fig: First Screen}\caption{First screen}
-    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_103_b}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_11}
 \end{figure}
 
 \textit{Button is clicked: }
 
 \begin{figure}[H]
     \label{fig: Second Screen}\caption{Second screen}
-    \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/test_1_107_b}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_12}
 \end{figure}
 
 \textbf{Test 2.003}
 
-\textbf{Test 2.016}
+\textit{Input is incorrect: }
 
-\textbf{Test 2.017}
+\begin{figure}[H]
+    \label{fig: Second Screen}\caption{Incorrect input}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_27}
+\end{figure}
 
-\textbf{Test 2.018}
+\textit{Input is correct: }
 
-\textbf{Test 2.019}
+\begin{figure}[H]
+    \label{fig: Second Screen}\caption{Second Correct input}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_28}
+\end{figure}
 
-\textbf{Test 2.020}
+\textbf{Tests 2.016, 2.017, 2.018, 2.019, 2.020, 2.021}
 
-\textbf{Test 2.021}
+\textit{Input is incorrect: }
+
+\begin{figure}[H]
+    \label{fig: Second Screen}\caption{Incorrect inputs}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_29}
+\end{figure}
+
+\textit{Input is correct: }
+
+\begin{figure}[H]
+    \label{fig: Second Screen}\caption{Correct inputs}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_30}
+\end{figure}
 
 \textbf{Test 2.022}
 
+\textit{Input is incorrect: }
+
+\begin{figure}[H]
+    \label{fig: Second Screen}\caption{Incorrect input}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_31}
+\end{figure}
+
+\textit{Input is correct: }
+
+\begin{figure}[H]
+    \label{fig: Second Screen}\caption{Correct input}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_32}
+\end{figure}
+
 \textbf{Test 2.023}
+
+\textit{Input is incorrect: }
+
+\begin{figure}[H]
+    \label{fig: Second Screen}\caption{Incorrect input}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_33}
+\end{figure}
+
+\textit{Input is correct: }
+
+\begin{figure}[H]
+    \label{fig: Second Screen}\caption{Correct input}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_34}
+\end{figure}
 
 \textbf{Test 2.024}
 
+\textit{Input is incorrect: }
+
+\begin{figure}[H]
+    \label{fig: Second Screen}\caption{Incorrect input}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_23}
+\end{figure}
+
+\textit{Input is correct: }
+
+\begin{figure}[H]
+    \label{fig: Second Screen}\caption{Correct input}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_24}
+\end{figure}
+
 \textbf{Test 2.295}
+
+\textit{Task is selected to query: }
+
+\begin{figure}[H]
+    \label{fig: Second Screen}\caption{Task queried}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_35}
+\end{figure}
 
 \textbf{Test 2.296}
 
+\textit{Score is selected to query: }
+
+\begin{figure}[H]
+    \label{fig: Second Screen}\caption{Score queried}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_36}
+\end{figure}
+
 \textbf{Test 3.009}
 
-\textbf{Test 3.010}
+\textit{Task name is stored under the task name header: }
+
+\begin{figure}[H]
+    \label{fig: Second Screen}\caption{Task name stored}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_37}
+\end{figure}
 
 \textbf{Test 3.011}
 
-\textbf{Test 3.012}
+\textit{The scores are stored under the score headers: }
+
+\begin{figure}[H]
+    \label{fig: Second Screen}\caption{Scores stored}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_38}
+\end{figure}
 
 \textbf{Test 4.015}
 
+\textit{Incorrect answer output: }
+
+\begin{figure}[H]
+    \label{fig: Second Screen}\caption{Incorrect answer}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_39}
+\end{figure}
+
+\textit{Correct answer output: }
+
+\begin{figure}[H]
+    \label{fig: Second Screen}\caption{Correct answer}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_40}
+\end{figure}
+
+\textit{No answer output: }
+
+\begin{figure}[H]
+    \label{fig: Second Screen}\caption{Absent answer}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_41}
+\end{figure}
+
 \textbf{Test 4.016}
+
+\textit{Incorrect answer output: }
+
+\begin{figure}[H]
+    \label{fig: Second Screen}\caption{Incorrect answer}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_42}
+\end{figure}
+
+\textit{Correct answer output: }
+
+\begin{figure}[H]
+    \label{fig: Second Screen}\caption{Correct answer}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_43}
+\end{figure}
+
+\textit{No answer output: }
+
+\begin{figure}[H]
+    \label{fig: Second Screen}\caption{Absent answer}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_44}
+\end{figure}
 
 \textbf{Test 4.017}
 
+\textit{Incorrect answer output: }
+
+\begin{figure}[H]
+    \label{fig: Second Screen}\caption{Incorrect answer}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_45}
+\end{figure}
+
+\textit{Correct answer output: }
+
+\begin{figure}[H]
+    \label{fig: Second Screen}\caption{Correct answer}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_46}
+\end{figure}
+
+\textit{No answer output: }
+
+\begin{figure}[H]
+    \label{fig: Second Screen}\caption{Absent answer}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_44}
+\end{figure}
+
 \textbf{Test 4.018}
+
+\textit{Before resetting: }
+
+\begin{figure}[H]
+    \label{fig: Second Screen}\caption{Before reset}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_48}
+\end{figure}
+
+\textit{After resetting: }
+
+\begin{figure}[H]
+    \label{fig: Second Screen}\caption{After reset}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_49}
+\end{figure}
 
 \textbf{Test 5.001}
 
 \textbf{Test 5.003}
 
+\textit{The information is being stored in the right place here: }
+
+\begin{figure}[H]
+    \label{fig: Second Screen}\caption{Database}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_50}
+\end{figure}
+
 \textbf{Test 5.004}
 
+\textit{The right amount of information is being stored here: }
+
+\begin{figure}[H]
+    \label{fig: Second Screen}\caption{Database}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_50}
+\end{figure}
+
 \textbf{Test 5.006}
+
+\textit{No illegitimate information is stored here: }
+
+\begin{figure}[H]
+    \label{fig: Second Screen}\caption{Database}
+    \includegraphics[width=\textwidth]{U:/git/COMP4Coursework2/Testing/screen_50}
+\end{figure}
 
 \section{Evaluation}
 
@@ -2078,7 +2335,7 @@ I decided to use a variation of testing methods in order to ensure that every as
 
 \item The biggest problem was finding a way to create separate accounts, all accessible from different computers in a LAN, and having an administrator account capable of setting homeworks. It occured to me that this was far too much to code in the time I had, and that I had bitten off much more than I could chew, so I reformed the program down to a single user, self-assessing program, which still records data, but that data stays on one machine, used by one person. More than one person can use it; it can be installed  on multiple offline machines, of course. The client will not be able to keep track of progress, they will have to rely on users to be honest or provide evidence.
 
-\item The database kept having to be over-written,and would only hold one record, otherwise it would crash, if you tried to record results for the same task twice. This was fixed by...
+\item The database kept having to be over-written, and would only hold one record, otherwise it would crash, if you tried to record results for the same task twice. I fixed this by implementing some SQL code which would fetch all information currently in the database and check to see if any records with the same TaskName value existed already. If so, another SQL statement would check the values of the current scores and the new scores and only overwrite them if the new ones were higher. Otherwise it would record the new task entirely. Now it works; there are no circumstances or results which would cause the program to crash upon attempting to record them. Either a new record is saved or an old one is overwritten.
 
 \end{itemize}
 
@@ -2096,4 +2353,4 @@ My system is more or less reliable; all data stored is accurate and correct, and
 
 \subsection{Robustness of Application}
 
-My program is very robust; there are error messages for every possible error, including wrong data types, or not being able to progress. The only error which pops up pretty much every time a new screen opens is te word _raise() not being recognised, however that makes absolutely no difference to anything and can be dealt with simply by putting in an error exception in every place where it could occur. There is no point in the program where an infinite loop can be entered.
+My program is very robust; there are error messages for every possible error, including wrong data types, or not being able to progress. The only error which pops up pretty much every time a new screen opens is the word \_raise() not being recognised, however that makes absolutely no difference to anything and can be dealt with simply by putting in an error exception in every place where it could occur. There is no point in the program where an infinite loop can be entered.

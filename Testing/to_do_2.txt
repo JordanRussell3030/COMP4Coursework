@@ -1,0 +1,3 @@
+-make sure test plan has correct test data types planned corresponding with actual test data
+-make sure all screenshots are in the right place
+-Get evidence for test series 5 from Trish - 5.001 only

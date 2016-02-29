@@ -1,0 +1,53 @@
+screen 1 - first screen
+screen 2 - home screen
+screen 3 - lesson topic menu
+screen 4 - Trig 1 lesson menu
+screen 5 - SOHCAHTOA 1st screen
+screen 6 - SOHCAHTOA 2nd screen
+screen 7 - homework topic menu
+screen 8 - trig 1 homework menu
+screen 9 - Sides Easy 1st
+screen 10 - Sides Easy 2nd
+screen 11 - Progress screen
+screen 12 - Report screen
+screen 13 - Exit program
+screen 14 - Lesson page 2 unchecked
+screen 15 - Lesson page 2 checked
+screen 16 - Homework page 1 unchecked
+screen 17 - Homework page 1 checked
+screen 18 - Homework page 2 combo 1 unchecked
+screen 19 - Homework page 2 combo 1 checked
+screen 20 - Homework page 2 combo 2 unchecked
+screen 21 - Homework page 2 combo 2 checked
+screen 22 - Homework page 2 multi unchecked
+screen 23 - Homework page 2 multi incorrect
+screen 24 - Homework page 2 multi correct
+screen 25 - Empty report window
+screen 26 - Info in report window
+
+
+screen 27 - incorrect lesson answer
+screen 28 - correct lesson answer
+screen 29 - Incorrect homework answers
+screen 30 - Incorrect homework answers
+screen 31 - 1 mark removed combo 1
+screen 32 - correct combo 1
+screen 33 - 1 mark removed combo 2 
+screen 34 - correct combo 2 
+screen 35 - Task fetch report
+screen 36 - Score fetch report
+
+screen 37 - Task names stored evidence
+screen 38 - Scores stored evidence
+
+screen 39 - Line edits incorrect
+screen 40 - Line edits correct
+screen 41 - Line edits absent
+screen 42 - Combo box incorrect
+screen 43 - Combo box correct
+screen 44 - Combo box absent
+screen 45 - Multi incorrect
+screen 46 - Multi correct
+screen 47 - Multi absent
+screen 48 - Before reset line edits
+screen 49 - After reset line edits
