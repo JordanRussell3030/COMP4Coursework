@@ -4,20 +4,104 @@
 
 \subsection{Software}
 
+I used the following software to produce my system:
+
+\begin{itemize}
+	\item Python 3.4
+	\item Python IDLE
+	\item PyQt4 (Contains some HTML elements)
+	\item SQLite3
+	\item Internet Explorer
+\end{itemize}
+
 \subsection{Usage Explanation}
+
+\textbf{Python 3.4: }
+
+Python 3.4 was the most up to date release of Python when I began the implementation of the system, and I continued to use it throughout, despite 3.5 being released, to avoid any incompatibilities with the other software used. I use this language because it is the language I used to learn the fundamentals of prorgamming and therefore the one I am most familiar with. 
+
+\textbf{Python IDLE: }
+
+Python IDLE is the environment which Python uses, and which I am most familiar with.
+
+\textbf{PyQt4: }
+
+PyQt4 is Qt, a separate GUI language, altered to work with Python in order to create a clear, smoothly operating graphical interface, and was also used to change the colours and sizes of widgets in the system. Some elements of HTML are in Qt which allows for colour changing and size adjusting.
+
+\textbf{SQLite3: }
+
+SQLite3 is included in the Python 3.4 software download package by default, and is useful for creating a very effective database structure which can be easily accessed and modified uisng Python and PyQt code. 
+
+\textbf{Internet Explorer: }
+
+I used IE to look online to find out how to use code which I had not used before and which wasn't fundamental to learn for my A-Level course, such as how to use PyQt4 to change the sizes and colours of widgets.
 
 \subsection{Features Used}
 
+\textbf{Python 3.4: }
+
+Python 3.4 allowed me to write my code and be able to test it, even in a GUI form when that point was reached. 
+
+\textbf{Python IDLE: }
+
+Python 3.4 comes with an IDLE environment which can be used to easily and frequently test my system as it is created; it allows you to view the system as it would look following distribution, with the IDLE window being used for inputs and outputting errors, which is very useful for fixing said errors. It also has a very clear colour-coded scheme for the code, making it easier to find segments of code.
+
+\textbf{PyQt4: }
+
+PyQt4 comes with many pre-coded tools which I could use to implement a graphical use interface; I was able to create classes which were derived from pre-coded files in the software package, such as buttons and windows. It also gave me limited HTML capabilities with which I could change the look of the GUI.
+
+\textbf{SQLite3: }
+
+SQLite3 was already part of the Python 3.4 package and provided effective SQL capabilities which I used to write data to a structured database and retrieve data ready to be output to the user.
+
+\textbf{Internet Explorer: }
+
+Wasn't a part of the implementation, was only used to research code which I could use. Provided useful access to StackOverflow.
+
 \section{System Overview}
 
-%use as many subsections as necessary for the system components
-\subsection{System Component}
+\subsection{Graphical User Interface}
+
+The GUI provides a navigation tool for the user to use to navigate the different parts of the system in a friendly and easy to use way. Buttons are used to connect the screens and make it easy to access them by simply clicking them. Line edits, combo boxes and other buttons are used for a variation of input methods, which have been enlarged to give the system a more commercial look. Text boxes and images are used to provide an output which makes it clear that the system is intended for educational purposes. The interface also has clear titles so the user will always know where they are in the system.
+
+\subsection{Navigation of Windows}
+
+The windows have been structured in such a way that it is necessary to understand how each of them are connected; The welcome screen and home screen are in a stack so that the welcome screen will not be accessible once the user is already in the system. The menus are all connected individually using subclassed buttons and methods, to ensure that each window can be accessed from at least one of the previous menus, but only from one. The lessons and homeworks are in stacks so that the user cannot have only one screen of a homework open at one time, and the user's inputs on each screen will be kept there until the entire stack is closed, should they decide to go back to something. There is a home screen, which connects to two topic menus, which connect to five specific menus each, which each connect to two, three or six lessons or homeworks, like a branch system. The connections which share a menu are all in the same file to make them easier to find.
+
+\subsection{Viewing a Lesson}
+
+Each lesson is accessed from a derived lesson menu, all of which are in the same file (so all lesson connections are also in the same file), and each lesson consists of two pages in a stack together, both of which are subclassed from separate 'page 1' and 'page 2' parent classes. There are buttons which can allow the user to easily cancel the lesson and return to the menu, continue to the next screen, and close the window when they are done. There is one line edit with a simple test question in each 'page 2', but this isn't recorded in the database. The line edit answer can be checked by clicking the check answer button, and an algorithm is run which will tell the user whether or not they are correct by checking the user's input against the hard-coded answer in the sub-class. This algorithm is in the lesson 'page 2' parent class.
+
+\subsection{Completing a Homework}
+
+The homeworks are accessed in exactly the same way as the lessons, except they are branched from the homework button on the home screen, and use different connections in the following menus. Again, there are buttons for easy navigation, although the homework widgets also have more line edits, combo boxes and multiple choice buttons for inputting answers, the scores from which are saved to the database. Each answer is checked using individual algorithms which are in the parent homework 'page 1' and 'page 2' classes. These algorithms essentially do the same thing, just working with different input types. They check the user's input against the hard-coded answers in the sub-classes, and give error messages if the user is wrong, until they run out of attempts, which decrement with every wrong answer as part of the algorithm. Once a question is either correct, or the user has run out of attempts, the algorithm will disable the input widegts as appropriate to prevent the user having too many goes or saving to the database twice and entering a loop or other error.
+
+\subsection{Storing in the Database}
+
+The database methods are all ina separate class, which can be accessed by all of the other files when needed. For example, when a homework score needs to be saved the file with the homework in it will be able to access the database class and the appropriate method, and pass through the variables from the homework into the SQL insert statements. The only times the database is written to is when the user completes a homework; the task name and first question score is saved after clicking next to the second page, and the scores for the second, third and fourth questions are saved after clicking finish. If the task has been done before and the new scores are better, they will over-write the old ones. The update statements are separate for each question score so that they don't all have to be better for one to over-write. The database is accessed for output when the user loads the progress viewer or the report widget; all information based on the corresponding query is fetched and displayed in the QTableWidgets.
+
+\subsection{Viewing the Database Information}
+
+There are two ways for hte user to view information stored in the database in the system: The progress window, accessible from the home screen, and the report window, accessible from the progress screen, both of which use QTableWidgets to display the information. The progress screen just displays all data in the database in the format you would expect; each piece of data is under the right column and in the right row. The report screen begins blank and is filled with all information relevant to the query which can be made by the user to search for specific task names or scores, using combo boxes for input. SQL statements are used to search for the relevant data, which is fetched, and organised in the table widget using iteration.
+
+\subsection{The Task Data}
+
+The task data is obtained by clicking the next button on any first homework page, and the hard-coded task name variable in the sub-class will be recorded to the database. Once it is saved once, it will never change or disappear, as there is no need. All task names will appear under the Task Name column in the qtablewidgets.
+
+\subsection{The Score Data}
+
+The score for the first question of any homework will be calculated using the algorithms and then saved to the database with the task name when next is clicked. Clicking next will also save the values 0 to the other 3 question's spaces in the database. Update statements are used so that whenever finish is clicked on the second page, the scores will be over-written whether they are 0's, or if the task has been done before, values less than the new score.
 
 \section{Code Structure}
 
 %use as many subsections as necessary for the code sections
+
 \subsection{Particular Code Section}
+
 %the code below can be uncommented and used to get a code section from a particular file
+%One for each class in files
+%Then one subsubsection for each method to explain
+
 \begin{comment}
 \begin{figure}[H]
     \pythonfile[firstline=5,lastline=10]{./tex/function_programs/print_function.py}
@@ -64,3 +148,6 @@
 \pythonfile[firstline=5]{./tex/function_programs/print_function.py}
 \end{comment}
 \end{landscape}
+
+%Class diagrams
+%Navigation diagram
