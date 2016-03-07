@@ -94,20 +94,515 @@ The score for the first question of any homework will be calculated using the al
 
 \section{Code Structure}
 
-%use as many subsections as necessary for the code sections
+\subsection{Database Controller Class}
 
-\subsection{Particular Code Section}
+\begin{python}
+class Database:
+    def __init__(self, db_name):
+        self._db_name = db_name
+        self.table_name = "Student"
+        self.create_table(self.table_name)
+\end{python}
 
-%the code below can be uncommented and used to get a code section from a particular file
-%One for each class in files
-%Then one subsubsection for each method to explain
+This class contains all of the database manipulating code for the system. It can be accessed by any file using the global database variable which can be called from methods which need it, making it easier to keep all SQL code and PyQt code separate. db\_name is the name of the variable which represents the database which is called at the bottom of the file; each method can be called to change this database variable and the variables which change it are passed through from the subclasses in other files, which is efficient as most of the files are subclassed so there will be no collisions between data. The table name is hard-coded so it will never change and the system will always be able to search for the same name to check if the database exists when it is run. The create\_table method is then run, which either creates a new table, leaves the old one or replaces the old one.
 
-\begin{comment}
-\begin{figure}[H]
-    \pythonfile[firstline=5,lastline=10]{./tex/function_programs/print_function.py}
-    \caption{The print() function} \label{fig:print_function}
-\end{figure}
-\end{comment}
+\subsubsection{execute\_sql method}
+
+\begin{python}
+def execute_sql(self, sql):
+     with sqlite3.connect(self._db_name) as db:
+         cursor = db.cursor()
+         cursor.execute(sql)
+\end{python}
+
+This method is called every time an SQL statement is executed in the other methods in this class. It connects to the database using the name which is passed through from the global variable, which will always be the same as it is hard-coded; this connection is only needed to be written once as every SQL statement will be executed following this connection being made in this method. Then the cursor, which is the control structure, is also always in this method so is not need in the others. Then the SQL statement, which is passed through from the method which is calling the execute\_sql method, is executed from using the cursor, which will make the appropriate change to the database.
+
+\subsubsection{create\_table method}
+
+\begin{python}
+def create_table(self, table_name):
+        with sqlite3.connect(self._db_name) as db:
+            cursor = db.cursor()
+            cursor.execute("select name from sqlite_master where name=?",(table_name,))
+            result = cursor.fetchall()
+            keep_table = True
+            if len(result) == 1:
+                response = input("The table {0} already exists, do you wish to recreate it (y/n): ".format(table_name))
+                if response == "y":
+                    keep_table = False
+                    print("The {0} table will be recreated - all existing data will be lost".format(table_name))
+                    cursor.execute("drop table if exists {0}".format(table_name))
+                    db.commit()
+                else:
+                    print("The existing table was kept")
+            else:
+                keep_table = False
+            if not keep_table:
+                sql = """create table Student
+                (TaskID text,
+                Qone integer,
+                Qtwo integer,
+                Qthree integer,
+                Qfour integer,
+                primary key(TaskID))"""
+                cursor.execute(sql)
+                db.commit()
+\end{python}
+
+This method is run as soon as the program is run; the first SQL statement searches all sqlite3 files to check if a database called student already exists, and returns all of the values, in this case either 1 or 0. If it does exist, it will ask the user whether or not they want to over-write the existing database. At the moment this is useful for testing but it will not be in the final version; the user will not be able to over-write the database unless they do it manually with the settings I might put in as a secondary objective. The variables used to check the name of the table are passed in so that they can be different, but they won't be as for now the database name is hard-coded. The SQL statement which creates the actual table uses the execute\_sql function (previous section) to connect to the database and make the changes. db.commit() makes sure the changes stay and are not forgotten.
+
+\subsubsection{insert\_data\_first method}
+
+\begin{python}
+    def insert_data_first(self, task, correct_count):
+        with sqlite3.connect(self._db_name) as db:
+            cursor = db.cursor()
+            cursor.execute("select TaskID from Student where TaskID = '{0}'".format(task))
+            info = cursor.fetchall()
+            if len(info) != 0:
+                sql = "UPDATE Student SET Qone = '{0}' WHERE TaskID = '{1}' AND Qone < '{2}'".format(correct_count, task, correct_count)
+            else:
+                sql = "insert into Student(TaskID, Qone, Qtwo, Qthree, Qfour) values ('{0}', '{1}', '{2}', '{3}', '{4}')".format(task, correct_count, str(0), str(0), str(0))
+            self.execute_sql(sql)
+\end{python}
+
+This method is called in the homework page 1 subclasses. It can be called from any of the 24 subclasses, and the polymorphed variables from each one are passed through, so that, for example, there are no cross-overs of data like the Sides Easy task name being recorded as the parent default. The SQL here firstly checks to see if a task with the same task name already exists, and if it does, each value will only be over-written if it is greater than the exisitng one. Otherwise it will create a new record and save the values from the second pages as 0 so the same SQL statements can be used, update statements, whether the record existed or not before. the execute\_sql method is run in order to make the changes to the table.
+
+\subsubsection{insert\_data\_second method}
+
+\begin{python}
+def insert_data_second(self, task, count_2, count_3, count_4):
+        with sqlite3.connect(self._db_name) as db:
+            sql = "UPDATE Student SET Qtwo = '{0}' WHERE TaskID = '{1}' AND Qtwo < '{2}'".format(count_2, task, count_2)
+            self.execute_sql(sql)
+            sql_2 = "UPDATE Student SET Qthree = '{0}' WHERE TaskID = '{1}' AND Qthree < '{2}'".format(count_3, task, count_3)
+            self.execute_sql(sql_2)
+            sql_3 = "UPDATE Student SET Qfour = '{0}' WHERE TaskID = '{1}' AND Qfour < '{2}'".format(count_4, task, count_4)
+            self.execute_sql(sql_3)
+\end{python}
+
+The SQL statements in this method are individual so that they don't all have to be greater values than the existing value in each column to be able to over-write the previous value. These statements work regardless of whether or not a record for the task already existed because the previous method (which is always run before this one) will write 0 values to each attribute in the table. Like the insert\_data\_first method, this can be called from each homework page 2 subclass to avoid data collisions.
+
+\subsubsection{get\_query}
+
+\begin{python}
+    def get_query(self, data, score_data):
+        with sqlite3.connect(self._db_name) as db:
+            cursor = db.cursor()
+            cursor.execute("select * from Student WHERE TaskID = '{0}' or Qone = '{1}'".format(data, score_data))
+            report = cursor.fetchall()
+            return report
+\end{python}
+
+This method is called in the report widget, and the SQL statement searches for data in the database which is equal to the value of the variables passed through, which come from the combo boxes where the user selects the information they want to search for. data and score\_data come from the combo boxes so that each time the button is clicked the variables can be changed and the table which displays the data is immediately updated based on the new query.
+
+\subsubsection{GetAllNames method}
+
+\begin{python}
+def GetAllNames(self):
+        with sqlite3.connect(self._db_name) as db:
+            cursor = db.cursor()
+            cursor.execute("select * from Student")
+            students = cursor.fetchall()
+            return students
+\end{python}
+
+This method fetches all data currently in the database and returns it so that in the progress window, where this method is called automatically, all data is displayed in the table.
+
+\subsection{DatabaseWidget Class}
+
+\begin{python}
+class DatabaseWidget(QWidget):
+    def __init__(self):
+        super().__init__()
+
+        self.showMaximized()
+
+        pal = QPalette()
+        pal.setColor(QPalette.Background, Qt.white)
+        self.setAutoFillBackground(True)
+        self.setPalette(pal)
+
+        self.title = QLabel("Progress")
+        self.title.setFont(QFont("Courier", 40))
+
+        self.back = QPushButton("Return")
+        self.back.setMinimumWidth(60)
+        self.back.setMinimumHeight(100)
+        self.back.setFont(QFont("Courier", 40))
+        self.back.setStyleSheet("QPushButton {background-color: red; color: white; font-size: 20;}")
+
+        self.report = QPushButton("Report")
+        self.report.setMinimumWidth(60)
+        self.report.setMinimumHeight(100)
+        self.report.setFont(QFont("Courier", 40))
+        
+        self.database = QTableWidget()
+        self.database.setRowCount(24)
+        self.database.setColumnCount(5)
+        self.database_header = ("Task Name", "Question 1", "Question 2", "Question 3", "Question 4")
+        self.database.setHorizontalHeaderLabels(self.database_header)
+
+        self.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue;}")
+
+        self.database.setStyleSheet("QTableView {selection-background-color: #A3C1DA;}")
+
+        students = g_database.GetAllNames()
+        
+        count = 0
+        for student in students:
+            self.database.setItem(count, 0, QTableWidgetItem(student[0]))
+            self.database.setItem(count, 1, QTableWidgetItem(str(student[1])))
+            self.database.setItem(count, 2, QTableWidgetItem(str(student[2])))
+            self.database.setItem(count, 3, QTableWidgetItem(str(student[3])))
+            self.database.setItem(count, 4, QTableWidgetItem(str(student[4])))
+            count += 1
+
+        self.layout = QGridLayout()
+
+        self.layout.addWidget(self.title, 0, 0) 
+        self.layout.addWidget(self.database, 0, 1)
+        self.layout.addWidget(self.back, 4, 0)
+        self.layout.addWidget(self.report, 4, 1)
+
+        self.setLayout(self.layout)
+
+        self.back.clicked.connect(self.selected_back)
+        self.report.clicked.connect(self.selected_report)
+\end{python}
+
+This class is the class which contains the QTableWidget which displays all data from the database. This window can be accessed by clicking the progress button on the home screen. When this window is loaded, the all information is automatically fetched from the database controller and immediately displayed in the QTableWidget so the user can easily access all information. The report widget is for querying and viewing specific imformation, and can be accessed from this window. The for loop is used to display each item in the database in the right place; the list value represents the position of the piece of data in the table. For example each student[0] is a task name, and is displayed in the first column. A count increments so that the next row is accessed each time and the first record isn't constantly over-written up until the last record. This window is accessible from the home page so the user can view all progress without having to go through any other menus.
+
+\subsubsection{selected\_back method}
+
+\begin{python}
+def selected_back(self):
+        self.close()
+\end{python}
+
+This method simply closes the window, so the previous window is displayed. It is called when the previous button is clicked.
+
+\subsubsection{selected\_report method}
+
+\begin{python}
+def selected_report(self):
+        report_widget = ReportWidget()
+        report_widget.show()
+        report_widget._raise()
+\end{python}
+
+This method opens the report window when the report button is clicked.
+
+\subsection{ReportWidget Class}
+
+\begin{python}
+class ReportWidget(QWidget):
+    def __init__(self):
+        super().__init__()
+
+        self.showMaximized()
+
+        self.header = QLabel("Report")
+        self.header.setFont(QFont("Courier", 30))
+
+        self.task_box_label = QLabel("Please select a task\nto query: ")
+        self.task_box_label.setFont(QFont("Courier", 25))
+
+        self.task_box = QComboBox()
+        self.task_box.setMinimumWidth(60)
+        self.task_box.setMinimumHeight(100)
+        self.task_box.setFont(QFont("Courier", 30))
+        self.task_box.setStyleSheet("QComboBox {background-color: lavender; color: purple;}")
+        self.task_box.addItem("")
+        self.task_box.addItem("Sides Easy")
+        self.task_box.addItem("Sides Medium")
+        self.task_box.addItem("Sides Hard")
+        self.task_box.addItem("SOHCAHTOA Easy")
+        self.task_box.addItem("SOHCAHTOA Medium")
+        self.task_box.addItem("SOHCAHTOA Hard")
+        self.task_box.addItem("Finding Angles Easy")
+        self.task_box.addItem("Finding Angles Medium")
+        self.task_box.addItem("Finding Angles Hard")
+        self.task_box.addItem("3D Trigonometry Easy")
+        self.task_box.addItem("3D Trigonometry Medium")
+        self.task_box.addItem("3D Trigonometry Hard")
+        self.task_box.addItem("Pythagoras' Theorem Easy")
+        self.task_box.addItem("Pythagoras' Theorem Medium")
+        self.task_box.addItem("Pythagoras' Theorem Hard")
+        self.task_box.addItem("3D Pythagoras Easy")
+        self.task_box.addItem("3D Pythagoras Medium")
+        self.task_box.addItem("3D Pythagoras Hard")
+        self.task_box.addItem("Vectors Easy")
+        self.task_box.addItem("Vectors Medium")
+        self.task_box.addItem("Vectors Hard")
+        self.task_box.addItem("Easy Summary")
+        self.task_box.addItem("Medium Summary")
+        self.task_box.addItem("Hard Summary")
+        
+        self.score_box_label = QLabel("Please input the maximum\nscore you would like\nto query: ")
+        self.score_box_label.setFont(QFont("Courier", 25))
+
+        self.score_box = QComboBox()
+        self.score_box.setMinimumWidth(60)
+        self.score_box.setMinimumHeight(100)
+        self.score_box.setFont(QFont("Courier", 30))
+        self.score_box.setStyleSheet("QComboBox {background-color: lavender; color: purple;}")
+        self.score_box.addItem(None)
+        self.score_box.addItem("6")
+        self.score_box.addItem("5")
+        self.score_box.addItem("4")
+        self.score_box.addItem("3")
+        self.score_box.addItem("2")
+        self.score_box.addItem("1")
+        self.score_box.addItem("0")
+
+        self.back = QPushButton("Return")
+        self.back.setMinimumWidth(60)
+        self.back.setMinimumHeight(100)
+        self.back.setFont(QFont("Courier", 30))
+        self.back.setStyleSheet("QPushButton {background-color: red; color: white; font-size: 20;}")
+        
+        self.submit = QPushButton("Query")
+        self.submit.setMinimumWidth(60)
+        self.submit.setMinimumHeight(100)
+        self.submit.setFont(QFont("Courier", 30))
+        self.submit.setStyleSheet("QPushButton {background-color: green; color: white;}")
+
+        self.db = QTableWidget()
+        self.db.setRowCount(24)
+        self.db.setColumnCount(5)
+        self.db_header = ("TaskName", "Question 1", "Question 2", "Question 3", "Question 4")
+        self.db.setHorizontalHeaderLabels(self.db_header)
+        self.db.setStyleSheet("QTableWidget {selection-background-color: #A3C1DA;}")
+
+        self.layout = QGridLayout()
+
+        self.setLayout(self.layout)
+
+        self.layout.addWidget(self.db, 0, 0)
+        self.layout.addWidget(self.task_box_label, 0, 1)
+        self.layout.addWidget(self.task_box, 1, 1)
+        self.layout.addWidget(self.score_box_label, 2, 1)
+        self.layout.addWidget(self.score_box, 3, 1)
+        self.layout.addWidget(self.back, 4, 0)
+        self.layout.addWidget(self.submit, 4, 1)
+
+        self.back.clicked.connect(self.selected_back)
+        self.submit.clicked.connect(self.selected_submit)
+\end{python}
+
+This widget is similar to the progress window except it is used to search for specific data in the database. A QTableWidget is used to display all the relevant data which is fetched using the selected\_submit method. The window uses combo boxes to select inputs; all of the possible task names and scores are placed in the combo box for the user to choose from. This window is accessible from the progress window because it would not be convenient for it to be anywhere else; here, the user is already checking database information.
+
+\subsubsection{selected\_back method}
+
+\begin{python}
+def selected_back(self):
+        self.close()
+\end{python}
+
+This closes the window and the progress screen is displayed - if the user opens the report widget again the table widget will be blank, it won't save the previous query.
+
+\subsubsection{selected\_submit method}
+
+\begin{python}
+def selected_submit(self):
+        _count = 0
+        data = self.task_box.currentText()
+        score_data = self.score_box.currentText()
+        report = g_database.get_query(data, score_data)
+        for count in range(24):
+            self.db.setItem(count, 0, QTableWidgetItem(None))
+            self.db.setItem(count, 1, QTableWidgetItem(None))
+            self.db.setItem(count, 2, QTableWidgetItem(None))
+            self.db.setItem(count, 3, QTableWidgetItem(None))
+            self.db.setItem(count, 4, QTableWidgetItem(None))
+        for record in report:
+            self.db.setItem(_count, 0, QTableWidgetItem(record[0]))
+            self.db.setItem(_count, 1, QTableWidgetItem(str(record[1])))
+            self.db.setItem(_count, 2, QTableWidgetItem(str(record[2])))
+            self.db.setItem(_count, 3, QTableWidgetItem(str(record[3])))
+            self.db.setItem(_count, 4, QTableWidgetItem(str(record[4])))
+            _count += 1
+\end{python}
+
+This is the method which accesses the database using the get\_query method (DatabaseWidget Class). The information is displayed in a QTableWidget like in the progress window, only it will usually need fewer rows to display all of the fetched information. This method passes in the variables which are taken from the text in the combo boxes which are selected by the user, and fetches all information from the database which matches these variables. This method sets all of the values in the table widget to blank before it displays the new queried data so that every time a query is made the previous query's data is gone; only one query at a time is necessary.
+
+\subsection{FirstScreen Class}
+
+\begin{python}
+class FirstScreen(QWidget):
+    NameEntered = pyqtSignal()
+    def __init__(self):
+        super().__init__()
+
+        pal = QPalette()
+        pal.setColor(QPalette.Background, Qt.white)
+        self.setAutoFillBackground(True)
+        self.setPalette(pal)
+
+        self.message = QLabel("Welcome to the Triangle Geometry Education Program")
+        self.message.setFont(QFont("Courier", 40))
+        self.message.setAlignment(Qt.AlignCenter)
+
+        self.cont = QPushButton("Continue")
+        self.cont.setMinimumHeight(110)
+        self.cont.setMinimumWidth(60)
+        self.cont.setFont(QFont("Courier", 40))
+
+        self.pic = QLabel()
+        self.pic.setPixmap(QPixmap("powered_by_python"))
+        self.pic.setAlignment(Qt.AlignCenter)
+
+        self.layout = QGridLayout()
+
+        self.setLayout(self.layout)
+
+        self.layout.addWidget(self.pic, 0, 0) 
+        self.layout.addWidget(self.message, 1, 0)
+        self.layout.addWidget(self.cont, 2, 0)
+
+        self.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue;}")
+
+        self.cont.clicked.connect(self.enter)
+\end{python}
+
+This class contains the template for the first screen which is displayed when the system is run; this screen is only displayed at the start, once the user selects continue it cannot be accessed again until the next session. Its main purpose is to be user friendly and give the user a comprehensible start to the system. HTML is included in the PyQt, which sets the positioning of the widgets in the window and changes the size and colour of the button and text. This is part of a stack widget so that it does not remain open behind the home screen; the home screen replaces it. A pyqtSignal is used to send the signal for the connection when the continue button is clicked to change the current screen.
+
+\subsubsection{enter method}
+
+\begin{python}
+def enter(self):
+	self.nameEntered.emit()
+\end{python}
+
+This method contains the signal which tells python to switch to the next screen when the button is clicked - it essentially changes nameEntered to true, which is the condition to display the home screen in place of the first screen.
+
+\subsection{UserAccountWidget Class}
+
+\begin{python}
+class UserAccountWidget(QWidget):
+    def __init__(self, parent):
+        super().__init__()
+        
+        self.parent_window = parent
+
+        pal = QPalette()
+        pal.setColor(QPalette.Background, Qt.white)
+        self.setAutoFillBackground(True)
+        self.setPalette(pal)
+
+        self.lessons = QPushButton("Lessons")
+        self.lessons.setMinimumWidth(90)
+        self.lessons.setMinimumHeight(110)
+        self.lessons.setFont(QFont("Courier", 40))
+
+        self.homework = QPushButton("Homework")
+        self.homework.setMinimumWidth(90)
+        self.homework.setMinimumHeight(110)
+        self.homework.setFont(QFont("Courier", 40))
+
+        self.progress = QPushButton("Progress")
+        self.progress.setMinimumWidth(90)
+        self.progress.setMinimumHeight(110)
+        self.progress.setFont(QFont("Courier", 40))
+        
+        self.lessons_label = QLabel("To view lessons\nand learn more,\nclick here! ")
+        self.lessons_label.setFont(QFont("Courier", 25))
+        
+        self.homework_label = QLabel("To access the\nhomework set for\nyou to complete,\nclick here! ")
+        self.homework_label.setFont(QFont("Courier", 25))
+        
+        self.database_label = QLabel("To view your\nprogress so far,\nclick here! ")
+        self.database_label.setFont(QFont("Courier", 25))
+        
+        self.log_out = QPushButton("Exit Program")
+        self.log_out.setMinimumWidth(90)
+        self.log_out.setMinimumHeight(110)
+        self.log_out.setFont(QFont("Courier", 40))
+        self.log_out.setStyleSheet("QPushButton {background-color: green; color: white; font-size: 20;}")
+
+        self.picture = QLabel()
+        self.picture.setPixmap(QPixmap("student_account_home_pic"))
+        self.picture.setAlignment(Qt.AlignCenter)
+        
+        self.homework_pic = QLabel()
+        self.homework_pic.setPixmap(QPixmap("student_home_homework"))
+        self.homework_pic.setAlignment(Qt.AlignCenter)  
+        
+        self.smiler = QLabel()
+        self.smiler.setPixmap(QPixmap("smile"))
+        self.smiler.setAlignment(Qt.AlignCenter)
+
+        self.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue; font-size: 20;}")
+
+        self.layout = QGridLayout()
+
+        self.layout.addWidget(self.lessons, 0, 1)
+        self.layout.addWidget(self.picture, 0, 2)
+        self.layout.addWidget(self.homework, 1, 1)
+        self.layout.addWidget(self.progress, 2, 1)
+        self.layout.addWidget(self.lessons_label, 0, 0)
+        self.layout.addWidget(self.homework_label, 1, 0)
+        self.layout.addWidget(self.database_label, 2, 0)
+        self.layout.addWidget(self.picture, 1, 3)
+        self.layout.addWidget(self.log_out, 2, 3)
+        self.layout.addWidget(self.smiler, 2, 2)
+        self.layout.addWidget(self.homework_pic, 1, 2)
+
+        self.setLayout(self.layout)
+
+        self.lessons.clicked.connect(self.selected_lessons)
+        self.homework.clicked.connect(self.selected_homework)
+        self.progress.clicked.connect(self.selected_progress)
+        self.log_out.clicked.connect(self.log_out_selected)
+\end{python}
+
+This class is the template for the second window in the stack with the first screen (FirstScreen Class) and is accessed by clicking continue from the first screen. This window has the buttons with connections to every other screen in the window; in other words, the top of the branch. The lessons button takes the user to menus where they can find lessons, the homework button takes them to homework menus, and the progress buttons opens the database viewer. This window is always open so the user can finish a task, close it, and be returned here to select their next task. It also contains the exit program button which closes the entire system immediately, with no messages asking if they're sure, and no windows are left open.
+
+\subsubsection{log\_out\_selected method}
+
+\begin{python}
+def log_out_selected(self):
+        sys.exit()
+\end{python}
+
+This method is connected to the exit program button and closes down the entire system. All data in the database is saved in a separate file so there is no need to try and keep anything open or remember any inputs which haven't been saved yet; they just have to go back and do it again.
+
+\subsubsection{selected\_lessons method}
+
+\begin{python}
+def selected_lessons(self):
+        lessonmenuwidget = LessonMenuWidget()
+        lessonmenuwidget.show()
+        lessonmenuwidget._raise()
+        lessonmenuwidget.showMaximized()
+\end{python}
+
+This simply opens the lesson menu which is in a separate window, so when they press return or close that window, the home screen will still be open ready to access any other part of the system or close it down.
+
+\subsubsection{selected\_homework method}
+
+\begin{python}
+def selected_homework(self):
+        homeworkmenuwidget = HomeworkMenuWidget()
+        homeworkmenuwidget.show()
+        homeworkmenuwidget._raise()
+        homeworkmenuwidget.showMaximized()
+\end{python}
+
+This simply opens the homework menu which is in a separate window, so when they press return or close that window, the home screen will still be open ready to access any other part of the system or close it down.
+
+\subsubsection{selected\_progress method}
+
+\begin{python}
+def selected_progress(self):
+        databasewidget = DatabaseWidget()
+        databasewidget.show()
+        databasewidget._raise()
+        databasewidget.showMaximized()  
+\end{python}
+
+This simply opens the progress menu which is in a separate window, so when they press return or close that window, the home screen will still be open ready to access any other part of the system or close it down.
 
 \section{Variable Listing}
 
