@@ -604,6 +604,1529 @@ def selected_progress(self):
 
 This simply opens the progress menu which is in a separate window, so when they press return or close that window, the home screen will still be open ready to access any other part of the system or close it down.
 
+\subsection{LessonMenuWidget Class}
+
+\begin{python}
+class LessonMenuWidget(QMainWindow):
+    def __init__(self):
+        super().__init__()
+
+        self.showMaximized()
+
+        pal = QPalette()
+        pal.setColor(QPalette.Background, Qt.white)
+        self.setAutoFillBackground(True)
+        self.setPalette(pal)
+
+        self.t1 = QPushButton("Trigonometry 1")
+        self.t1.setMinimumWidth(90)
+        self.t1.setMinimumHeight(110)
+        self.t1.setFont(QFont("Courier", 40))
+        
+        self.t1_pic = QLabel()
+        self.t1_pic.setPixmap(QPixmap("t1_pic"))
+        self.t1_pic.setAlignment(Qt.AlignCenter)
+        
+        self.t2 = QPushButton("Trigonometry 2")
+        self.t2.setMinimumWidth(90)
+        self.t2.setMinimumHeight(110)
+        self.t2.setFont(QFont("Courier", 40))
+        
+        self.t2_pic = QLabel()
+        self.t2_pic.setPixmap(QPixmap("t2_pic"))
+        self.t2_pic.setAlignment(Qt.AlignCenter)
+        
+        self.pyt = QPushButton("Pythagoras")
+        self.pyt.setMinimumWidth(90)
+        self.pyt.setMinimumHeight(110)
+        self.pyt.setFont(QFont("Courier", 40))
+        
+        self.pyt_pic = QLabel()
+        self.pyt_pic.setPixmap(QPixmap("pyt_pic"))
+        self.pyt_pic.setAlignment(Qt.AlignCenter)
+        
+        self.pytrig = QPushButton("Vectors")
+        self.pytrig.setMinimumWidth(90)
+        self.pytrig.setMinimumHeight(110)
+        self.pytrig.setFont(QFont("Courier", 40))
+        
+        self.pytrig_pic = QLabel()
+        self.pytrig_pic.setPixmap(QPixmap("pytrig_pic"))
+        self.pytrig_pic.setAlignment(Qt.AlignCenter)
+        
+        self.sum = QPushButton("Summary")
+        self.sum.setMinimumWidth(90)
+        self.sum.setMinimumHeight(110)
+        self.sum.setFont(QFont("Courier", 40))
+        
+        self.sum_pic = QLabel()
+        self.sum_pic.setPixmap(QPixmap("sum_pic"))
+        self.sum_pic.setAlignment(Qt.AlignCenter)
+
+        self.back = QPushButton("Return")
+        self.back.setMinimumWidth(90)
+        self.back.setMinimumHeight(110)
+        self.back.setFont(QFont("Courier", 40))
+        self.back.setStyleSheet("QPushButton {background-color: red; color: white; font-size: 20;}")
+    
+        self.lesson_label = QLabel("Lessons")
+        self.lesson_label.setFont(QFont("Courier", 40))
+        
+        self.select = QLabel("Please select a topic: ")
+        self.select.setFont(QFont("Courier", 25))
+        
+        self.title_pic = QLabel()
+        self.title_pic.setPixmap(QPixmap("title_lessons"))
+
+        self.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue; font-size: 20;}")
+
+        self.layout = QGridLayout()
+
+        self.layout.addWidget(self.title_pic, 0, 0) 
+        self.layout.addWidget(self.t1_pic, 1, 0)
+        self.layout.addWidget(self.t1, 1, 1)
+        self.layout.addWidget(self.t2, 2, 0)
+        self.layout.addWidget(self.t2_pic, 2, 1)
+        self.layout.addWidget(self.pyt_pic, 3, 0)
+        self.layout.addWidget(self.pyt, 3, 1)
+        self.layout.addWidget(self.pytrig, 4, 0)
+        self.layout.addWidget(self.pytrig_pic, 4, 1)
+        self.layout.addWidget(self.sum_pic, 5, 0)
+        self.layout.addWidget(self.sum, 5, 1)
+        self.layout.addWidget(self.back, 6, 0)
+
+        self._centralwidget = QWidget()
+        self._centralwidget.setLayout(self.layout)
+        self.setCentralWidget(self._centralwidget)
+
+        self.t1.clicked.connect(self.selected_t1) 
+        self.t2.clicked.connect(self.selected_t2)
+        self.pyt.clicked.connect(self.selected_pyt)
+        self.pytrig.clicked.connect(self.selected_pytrig)
+        self.sum.clicked.connect(self.selected_sum)
+        self.back.clicked.connect(self.selected_back)
+\end{python}
+
+This class is the template for the menu screen which connects to the five individual subclassed menus which contain the buttons for the specific lessons; it is the middle screen in a branch menu of three screens. It is accessed by clicking the lessons button on the home screen (UserAccountHome Class), and it connects to five different final menus from which the user can access the lessons. This structure is used to make it easier to navigate to specific lesson topics, and to fit clear and visible buttons on the page, which are all relevant to each other. 
+
+\subsubsection{selected\_t1 method}
+
+\begin{python}
+def selected_t1(self):
+        trig_1_widget = Trigonometry1()
+        trig_1_widget.show()
+        trig_1_widget._raise()
+        trig_1_widget.showMaximized()
+\end{python}
+
+This method is connected to the trigonometry 1 button and is run when said button is clicked; one of five of the derived lesson menus opens with buttons to connect to the lessons which are all relevant to the title and each other.
+
+\subsubsection{selected\_t2 method}
+
+\begin{python}
+def selected_t2(self):
+        trig_2_widget = Trigonometry2()
+        trig_2_widget.show()
+        trig_2_widget._raise()
+        trig_2_widget.showMaximized()
+\end{python}
+
+This method is connected to the trigonometry 2 button and is run when said button is clicked; one of five of the derived lesson menus opens with buttons to connect to the lessons which are all relevant to the title and each other.
+
+\subsubsection{selected\_pyt method}
+
+\begin{python}
+def selected_pyt(self):
+        pythagoras_widget = Pythagoras()
+        pythagoras_widget.show()
+        pythagoras_widget._raise()
+        pythagoras_widget.showMaximized()
+\end{python}
+
+This method is connected to the pythagoras button and is run when said button is clicked; one of five of the derived lesson menus opens with buttons to connect to the lessons which are all relevant to the title and each other.
+
+\subsubsection{selected\_pytrig method}
+
+\begin{python}
+def selected_pytrig(self):
+        pyth_trig_widget = PythagTrig()
+        pyth_trig_widget.show()
+        pyth_trig_widget._raise()
+        pyth_trig_widget.showMaximized()
+\end{python}
+
+This method is connected to the vectors button and is run when said button is clicked; one of five of the derived lesson menus opens with buttons to connect to the lessons which are all relevant to the title and each other (the topic of this section has changed since the connections were coded, hence the unusual variable name).
+
+\subsubsection{selected\_sum method}
+
+\begin{python}
+def selected_sum(self):
+        summary_widget = Summary()
+        summary_widget.show()
+        summary_widget._raise()
+        summary_widget.showMaximized()
+\end{python}
+
+This method is connected to the summary button and is run when said button is clicked; one of five of the derived lesson menus opens with buttons to connect to the lessons which are all relevant to the title and each other.
+
+\subsubsection{selected\_back method}
+
+\begin{python}
+def selected_back(self):
+        self.close()
+\end{python}
+
+This method closes the window and returns the user to the home screen, which is left open for quick accessibility.
+
+\subsection{HomeworkMenuWidget Class}
+
+\begin{python}
+class HomeworkMenuWidget(QMainWindow):
+    def __init__(self):
+        super().__init__()
+
+        self.showMaximized()
+
+        pal = QPalette()
+        pal.setColor(QPalette.Background, Qt.white)
+        self.setAutoFillBackground(True)
+        self.setPalette(pal)
+
+        self.title = QLabel()
+        self.title.setFont(QFont("Courier", 40))
+
+        self.ht1 = QPushButton("Trigonometry 1")
+        self.ht1.setMinimumWidth(90)
+        self.ht1.setMinimumHeight(110)
+        self.ht1.setFont(QFont("Courier", 40))
+        
+        self.ht2 = QPushButton("Trigonometry 2")
+        self.ht2.setMinimumWidth(90)
+        self.ht2.setMinimumHeight(110)
+        self.ht2.setFont(QFont("Courier", 40))
+        
+        self.hpyt = QPushButton("Pythagoras")
+        self.hpyt.setMinimumWidth(90)
+        self.hpyt.setMinimumHeight(110)
+        self.hpyt.setFont(QFont("Courier", 40))
+        
+        self.hpytrig = QPushButton("Vectors")
+        self.hpytrig.setMinimumWidth(90)
+        self.hpytrig.setMinimumHeight(110)
+        self.hpytrig.setFont(QFont("Courier", 40))
+        
+        self.hsum = QPushButton("Summary")
+        self.hsum.setMinimumWidth(90)
+        self.hsum.setMinimumHeight(110)
+        self.hsum.setFont(QFont("Courier", 40))
+        
+        self.back = QPushButton("Return")
+        self.back.setMinimumWidth(90)
+        self.back.setMinimumHeight(110)
+        self.back.setFont(QFont("Courier", 40))
+        self.back.setStyleSheet("QPushButton {background-color: red; color: white; font-size: 20;}")
+
+        self.ht1_pic = QLabel()
+        self.ht1_pic.setPixmap(QPixmap("homework_trig_1_pic"))
+        self.ht1_pic.setAlignment(Qt.AlignCenter)
+        
+        self.ht2_pic = QLabel()
+        self.ht2_pic.setPixmap(QPixmap("homework_trig_2_pic"))
+        self.ht2_pic.setAlignment(Qt.AlignCenter)
+        
+        self.hpyt_pic = QLabel()
+        self.hpyt_pic.setPixmap(QPixmap("homework_pythag_pic"))
+        self.hpyt_pic.setAlignment(Qt.AlignCenter)
+        
+        self.hpytrig_pic = QLabel()
+        self.hpytrig_pic.setPixmap(QPixmap("homework_vectors_pic"))
+        self.hpytrig_pic.setAlignment(Qt.AlignCenter)
+        
+        self.hsum_pic = QLabel()
+        self.hsum_pic.setPixmap(QPixmap("homework_summary_pic"))
+        self.hsum_pic.setAlignment(Qt.AlignCenter)
+
+        self.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue; font-size: 20;}")
+
+        self.layout = QGridLayout()
+
+        self.layout.addWidget(self.title, 0, 0) 
+        self.layout.addWidget(self.ht1_pic, 2, 0)
+        self.layout.addWidget(self.ht1, 2, 1)
+        self.layout.addWidget(self.ht2, 3, 0)
+        self.layout.addWidget(self.ht2_pic, 3, 1)
+        self.layout.addWidget(self.hpyt_pic, 4, 0)
+        self.layout.addWidget(self.hpyt, 4, 1)
+        self.layout.addWidget(self.hpytrig, 5, 0)
+        self.layout.addWidget(self.hpytrig_pic, 5, 1)
+        self.layout.addWidget(self.hsum_pic, 6, 0)
+        self.layout.addWidget(self.hsum, 6, 1)
+        self.layout.addWidget(self.back, 7, 0)
+
+        self._centralwidget = QWidget()
+        self._centralwidget.setLayout(self.layout)
+        self.setCentralWidget(self._centralwidget)
+
+        self.ht1.clicked.connect(self.selected_ht1)
+        self.ht2.clicked.connect(self.selected_ht2)
+        self.hpyt.clicked.connect(self.selected_hpyt)
+        self.hpytrig.clicked.connect(self.selected_hpytrig)
+        self.hsum.clicked.connect(self.selected_hsum)
+        self.back.clicked.connect(self.selected_back)
+\end{python}
+
+Pretty much the same as the LessonMenuWidget Class (LessonMenuWidget Class)This class is the template for the menu screen which connects to the five individual subclassed menus which contain the buttons for the specific homeworks; it is the middle screen in a branch menu of three screens. It is accessed by clicking the homework button on the home screen (UserAccountHome Class), and it connects to five different final menus from which the user can access the homework. This structure is used to make it easier to navigate to specific homework topics, and to fit clear and visible buttons on the page, which are all relevant to each other. 
+
+\subsubsection{selected\_ht1 method}
+
+\begin{python}
+def selected_ht1(self):
+        trigonometry_1_homework = Trigonometry1HW()
+        trigonometry_1_homework.show()
+        trigonometry_1_homework._raise()
+        trigonometry_1_homework.showMaximized()
+\end{python}
+
+This method is connected to the trigonometry 1 button and is run when said button is clicked; one of five of the derived homework menus opens with buttons to connect to the homework which are all relevant to the title and each other.
+
+\subsubsection{selected\_ht2 method}
+
+\begin{python}
+def selected_ht2(self):
+        trigonometry_2_homework = Trigonometry2HW()
+        trigonometry_2_homework.show()
+        trigonometry_2_homework._raise()
+        trigonometry_2_homework.showMaximized()
+\end{python}
+
+This method is connected to the trigonometry 2 button and is run when said button is clicked; one of five of the derived homework menus opens with buttons to connect to the homework which are all relevant to the title and each other.
+
+\subsubsection{selected\_hpyt method}
+
+\begin{python}
+def selected_hpyt(self):
+        pythagoras_homework = PythagorasHW()
+        pythagoras_homework.show()
+        pythagoras_homework._raise()
+        pythagoras_homework.showMaximized()
+\end{python}
+
+This method is connected to the pythagoras button and is run when said button is clicked; one of five of the derived homework menus opens with buttons to connect to the homework which are all relevant to the title and each other.
+
+\subsubsection{selected\_hpytrig method}
+
+\begin{python}
+def selected_hpytrig(self):
+        pythag_trig_homework = PythagTrigonometryHW()
+        pythag_trig_homework.show()
+        pythag_trig_homework._raise()
+        pythag_trig_homework.showMaximized()
+\end{python}
+
+This method is connected to the vectors button and is run when said button is clicked; one of five of the derived homework menus opens with buttons to connect to the homework which are all relevant to the title and each other.
+
+\subsubsection{selected\_hsum method}
+
+\begin{python}
+def selected_hsum(self):
+        summary_homework = SummaryHW()
+        summary_homework.show()
+        summary_homework._raise()
+        summary_homework.showMaximized()
+\end{python}
+
+This method is connected to the summary button and is run when said button is clicked; one of five of the derived homework menus opens with buttons to connect to the homework which are all relevant to the title and each other.
+
+\subsubsection{selected\_back method}
+
+\begin{python}
+def selected_back(self):
+        self.close()
+\end{python}
+
+This method closes the window and returns the user to the home screen, which is left open for quick accessibility.
+
+\subsection{ParentLessonMenu Class}
+
+\begin{python}
+class ParentLessonMenu(QWidget):
+    def __init__(self):
+        super().__init__()
+
+        self.showMaximized()
+
+        pal = QPalette()
+        pal.setColor(QPalette.Background, Qt.white)
+        self.setAutoFillBackground(True)
+        self.setPalette(pal)
+
+        self.title = QLabel()
+
+        self.button_1 = QPushButton()
+        self.button_1.setMinimumHeight(110)
+        self.button_1.setMinimumWidth(60)
+        self.button_1.setFont(QFont("Courier", 40))
+        
+        self.button_2 = QPushButton()
+        self.button_2.setMinimumHeight(110)
+        self.button_2.setMinimumWidth(60)
+        self.button_2.setFont(QFont("Courier", 40))
+        
+        self.button_3 = QPushButton()
+        self.button_3.setMinimumHeight(110)
+        self.button_3.setMinimumWidth(60)
+        self.button_3.setFont(QFont("Courier", 40))
+   
+        self.back = QPushButton("Return")
+        self.back.setMinimumHeight(100)
+        self.back.setMinimumWidth(60)
+        self.back.setFont(QFont("Courier", 40))
+        self.back.setStyleSheet("QPushButton {background-color: red; color: white; font-size: 20;}")
+
+        self.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue}")
+
+        self.layout = QGridLayout()
+
+        self.setLayout(self.layout)
+
+        self.layout.addWidget(self.back, 3, 0)
+
+        self.back.clicked.connect(self.selected_back)
+\end{python}
+
+This is the parent class which provides all of the default attributes for the derived lesson menus (e.g. Trigonometry1(ParentLessonMenu), Trigonometry1 Class). The derived lesson menu file imports from this file, and the five subclasses inherit these attributes, along with some polymorphism to make them different from one another. These subclasses are connected by buttons in the previous menu (LessonMenuWidget Class) and contain buttons to the individual lessons; there are three buttons made in the parent class here, then  one, two or three of them can be added to the layout in each subclass depending on how many lessons there are. All of the connections, along with methods to open the corresponding window, are in the subclasses so that the three buttons can be over-ridden to connect to various lessons.
+
+\subsubsection{selected\_back method}
+
+\begin{python}
+def selected_back(self):
+	self.close()
+\end{python}
+
+This will close the window and the user will be returned to the previous menu (LessonMenuWidget Class) if they want to change topic.
+
+\subsection{ParentHomeworkMenuClass Class}
+
+\begin{python}
+class ParentHomeworkMenuClass(QWidget):
+    def __init__(self):
+        super().__init__()
+
+        self.showMaximized()
+
+        pal = QPalette()
+        pal.setColor(QPalette.Background, Qt.white)
+        self.setAutoFillBackground(True)
+        self.setPalette(pal)
+
+        self.title = QLabel()
+
+        self.button_1 = QPushButton()
+        self.button_1.setMinimumHeight(110)
+        self.button_1.setMinimumWidth(60)
+        self.button_1.setFont(QFont("Courier", 40))
+        
+        self.button_2 = QPushButton()
+        self.button_2.setMinimumHeight(110)
+        self.button_2.setMinimumWidth(60)
+        self.button_2.setFont(QFont("Courier", 40))
+        
+        self.button_3 = QPushButton()
+        self.button_3.setMinimumHeight(110)
+        self.button_3.setMinimumWidth(60)
+        self.button_3.setFont(QFont("Courier", 40))
+        
+        self.button_4 = QPushButton()
+        self.button_4.setMinimumHeight(110)
+        self.button_4.setMinimumWidth(60)
+        self.button_4.setFont(QFont("Courier", 40))
+        
+        self.button_5 = QPushButton()
+        self.button_5.setMinimumHeight(110)
+        self.button_5.setMinimumWidth(60)
+        self.button_5.setFont(QFont("Courier", 40))
+        
+        self.button_6 = QPushButton()
+        self.button_6.setMinimumHeight(110)
+        self.button_6.setMinimumWidth(60)
+        self.button_6.setFont(QFont("Courier", 40))
+
+        self.back = QPushButton("Return")
+        self.back.setMinimumHeight(100)
+        self.back.setMinimumWidth(60)
+        self.back.setFont(QFont("Courier", 40))
+        self.back.setStyleSheet("QPushButton {background-color: red; color: white;}")
+
+        self.pic_1 = QLabel()
+        self.pic_1.setAlignment(Qt.AlignCenter)
+
+        self.pic_2 = QLabel()
+        self.pic_2.setAlignment(Qt.AlignCenter)
+        
+        self.pic_3 = QLabel()
+        self.pic_3.setAlignment(Qt.AlignCenter)
+        
+        self.pic_4 = QLabel()
+        self.pic_4.setAlignment(Qt.AlignCenter)
+
+        self.pic_5 = QLabel()
+        self.pic_5.setAlignment(Qt.AlignCenter)
+        
+        self.pic_6 = QLabel()
+        self.pic_6.setAlignment(Qt.AlignCenter)
+
+        self.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue}")   
+
+        self.layout = QGridLayout()
+
+        self.setLayout(self.layout)
+
+        self.layout.addWidget(self.title, 0, 0)
+        self.layout.addWidget(self.back, 10, 0)
+
+        self.back.clicked.connect(self.selected_back)
+\end{python}
+
+This is the parent class which provides all of the default attributes for the derived homework menus (e.g. Trigonometry1HW(ParentHomeworkMenuClass), Trigonometry1HW Class). The derived homework menu file imports from this file, and the five subclasses inherit these attributes, along with some polymorphism to make them different from one another. These subclasses are connected by buttons in the previous menu (HomeworkMenuWidget Class) and contain buttons to the individual lessons; there are six buttons made in the parent class here, then three or siz of them can be added to the layout in each subclass depending on how many lessons there are. All of the connections, along with methods to open the corresponding window, are in the subclasses so that the three buttons can be over-ridden to connect to various homework.
+
+\subsubsection{selected\_back method}
+
+\begin{python}
+def selected_back(self):
+	self.close()
+\end{python}
+
+This will close the window and the user will be returned to the previous menu (HomeworkMenuWidget Class) if they want to change topic.
+
+\subsection{Trigonometry1(ParentLessonMenu) Class}
+
+\begin{python}
+class Trigonometry1(ParentLessonMenu):
+    def __init__(self):
+        super().__init__()
+
+        self.button_1.setText("Sides")
+        self.button_2.setText("SOHCAHTOA")
+
+        self.pic = QLabel()
+        self.pic.setPixmap(QPixmap("trig_1_pic"))
+        self.pic.setAlignment(Qt.AlignCenter)
+
+        self.pic_2 = QLabel()
+        self.pic_2.setPixmap(QPixmap("trig_1_pic_2"))
+        self.pic_2.setAlignment(Qt.AlignCenter)
+
+        self.layout.addWidget(self.title, 0, 0)
+        self.layout.addWidget(self.pic, 1, 0)
+        self.layout.addWidget(self.button_2, 1, 1)
+        self.layout.addWidget(self.button_1, 2, 0)
+        self.layout.addWidget(self.pic_2, 2, 1)
+
+        self.button_1.clicked.connect(self.SidesAHO)
+        self.button_2.clicked.connect(self.SOHCAHTOA)
+\end{python}
+
+This class is one of the five subclasses which inherit from the ParentLessonMenu Class (ParentLessonMenu Class) and are the third in a branch consisting of three stages of screens; home screen, topic menu and derived menu. Most of the classes attributes are in the parent class, but the button names, connections and methods are coded here to over-ride and allow for difference between the five subclasses. Each button (except for the return button) connects to a stack widget which contains the first and second screen of each lesson in a stack together. Each of the five subclasses are essentially the same, and serve the same purpose; their only differences are the lessons they connect to, hence the branch system.
+
+\subsubsection{SidesAHO method}
+
+\begin{python}
+def SidesAHO(self):
+        sides_aho = Trig1StackSides()
+        sides_aho.show()
+        sides_aho._raise()
+\end{python}
+
+This connects to the stack widget which contains both the first and second screen of the sides lesson.
+
+\subsubsection{SOHCAHTOA method}
+
+\begin{python}
+def SOHCAHTOA(self):
+        sohcahtoa = Trig1StackSOHCAHTOA()
+        sohcahtoa.show()
+        sohcahtoa._raise()
+\end{python}
+
+This connects to the stack widget which contains both the first and second screen of the SOHCAHTOA lesson.
+
+\subsection{Trigonometry1HW(ParentHomeworkMenuClass) Class}
+
+\begin{python}
+class Trigonometry1HW(ParentHomeworkMenuClass):
+    def __init__(self):
+        super().__init__()
+
+        self.title.setPixmap(QPixmap("trig_1_title"))
+
+        self.button_1.setText("Sides Easy")
+        self.button_2.setText("Sides Medium")
+        self.button_3.setText("Sides Hard")
+        self.button_4.setText("SOHCAHTOA Easy")
+        self.button_5.setText("SOHCAHTOA Medium")
+        self.button_6.setText("SOHCAHTOA Hard")
+
+        self.pic_1.setPixmap(QPixmap("trig_1_pic_1_h"))
+        self.pic_2.setPixmap(QPixmap("trig_1_pic_2_h"))
+        self.pic_3.setPixmap(QPixmap("trig_1_pic_3_h"))
+        self.pic_4.setPixmap(QPixmap("trig_1_pic_4_h"))
+        self.pic_5.setPixmap(QPixmap("trig_1_pic_5_h"))
+        self.pic_6.setPixmap(QPixmap("trig_1_pic_6_h"))
+
+        self.layout.addWidget(self.button_1, 1, 0)
+        self.layout.addWidget(self.pic_1, 1, 1)
+        self.layout.addWidget(self.pic_2, 2, 0)
+        self.layout.addWidget(self.button_2, 2, 1)
+        self.layout.addWidget(self.button_3, 3, 0)
+        self.layout.addWidget(self.pic_3, 3, 1)
+        self.layout.addWidget(self.pic_4, 4, 0)
+        self.layout.addWidget(self.button_4, 4, 1)
+        self.layout.addWidget(self.button_5, 5, 0)
+        self.layout.addWidget(self.pic_5, 5, 1)
+        self.layout.addWidget(self.pic_6, 6, 0)
+        self.layout.addWidget(self.button_6, 6, 1)
+
+        self.button_1.clicked.connect(self.sides_aho_easy)
+        self.button_2.clicked.connect(self.sides_aho_medium)
+        self.button_3.clicked.connect(self.sides_aho_hard)
+        self.button_4.clicked.connect(self.sohcahtoa_easy)
+        self.button_5.clicked.connect(self.sohcahtoa_medium)
+        self.button_6.clicked.connect(self.sohcahtoa_hard)
+\end{python}
+
+Essentially serving the same purpise as the Trigonometry1(ParentLessonMenuClass), only it connects to the homeworks from the homework button on the home screen, this class is one of the five subclasses which inherit from the ParentHomeworkMenuClass Class (ParentHomeworkMenuClass Class) and are the third in a branch consisting of three stages of screens; home screen, topic menu and derived menu. Most of the classes attributes are in the parent class, but the button names, connections and methods are coded here to over-ride and allow for difference between the five subclasses. Each button (except for the return button) connects to a stack widget which contains the first and second screen of each homework in a stack together. Each of the five subclasses are essentially the same, and serve the same purpose; their only differences are the homework they connect to, hence the branch system.
+
+\subsubsection{sides\_aho\_easy method}
+
+\begin{python}
+def sides_aho_easy(self):
+        sides_aho_1 = Trig1StackSidesEasy()
+        sides_aho_1.show()
+        sides_aho_1._raise()
+\end{python}
+
+This connects to the stack widget which contains both the first and second screen of the sides easy homework.
+
+\subsubsection{sides\_aho\_medium method}
+
+\begin{python}
+def sides_aho_medium(self):
+        sides_aho_2 = Trig1StackSidesMedium()
+        sides_aho_2.show()
+        sides_aho_2._raise()
+\end{python}
+
+This connects to the stack widget which contains both the first and second screen of the sides medium homework.
+
+\subsubsection{sides\_aho\_hard method}
+
+\begin{python}
+def sides_aho_hard(self):
+        sides_aho_3 = Trig1StackSidesHard()
+        sides_aho_3.show()
+        sides_aho_3._raise()
+\end{python}
+
+This connects to the stack widget which contains both the first and second screen of the sides hard homework.
+
+\subsubsection{sohcahtoa\_easy method}
+
+\begin{python}
+def sohcahtoa_easy(self):
+        sohcahtoa_1 = Trig1StackSOHCAHTOAEasy()
+        sohcahtoa_1.show()
+        sohcahtoa_1._raise()
+\end{python}
+
+This connects to the stack widget which contains both the first and second screen of the SOHCAHTOA easy homework.
+
+\subsubsection{sohcahtoa\_medium method}
+
+\begin{python}
+def sohcahtoa_medium(self):
+        sohcahtoa_2 = Trig1StackSOHCAHTOAMedium()
+        sohcahtoa_2.show()
+        sohcahtoa_2._raise()
+\end{python}
+
+This connects to the stack widget which contains both the first and second screen of the SOHCAHTOA medium homework.
+
+\subsubsection{sohcahtoa\_hard method}
+
+\begin{python}
+def sohcahtoa_hard(self):
+        sohcahtoa_3 = Trig1StackSOHCAHTOAHard()
+        sohcahtoa_3.show()
+        sohcahtoa_3._raise()
+\end{python}
+
+This connects to the stack widget which contains both the first and second screen of the SOHCAHTOA hard homework.
+
+\subsection{Trig1StackSides Class}
+
+\begin{python}
+class Trig1StackSides(QMainWindow):
+    def __init__(self):
+        super().__init__()
+
+        self.showMaximized()
+
+        self.first_widget = SidesAHOWidget(self)
+        self.second_widget = SidesAHOWidgetPage2(self)
+
+        self.stack = QStackedLayout()
+
+        self.stack.addWidget(self.first_widget)
+        self.stack.addWidget(self.second_widget)
+
+        self.widget = QWidget()
+        self.widget.setLayout(self.stack)
+
+        self.setCentralWidget(self.widget)
+\end{python}
+
+This is one of twelve stack classes which each contain the two screens for one lesson. This stack widget has the two screens added to the layout (imported from the files where each widget's class is coded), then when the stack is opened the first screen is displayed, and can switch to the second in the same window. This is accessed by clicking the corrersponding button in the first derived lesson menu (Trigonometry1(ParentLessonMenu) Class). The contents of both screens will be left how the user leaves them until the entire stack is closed, even if they are switching between screens.
+
+\subsection{ParentLessonLayout Class}
+
+\begin{python}
+class ParentLessonLayout(QWidget):
+    def __init__(self, parent = None):
+        super().__init__()
+   
+        self.parent = parent
+
+        self.title = QLabel()
+
+        pal = QPalette()
+        pal.setColor(QPalette.Background, Qt.white)
+        self.setAutoFillBackground(True)
+        self.setPalette(pal)
+
+        self.back = QPushButton("Return")
+        self.back.setMinimumHeight(50)
+        self.back.setMinimumWidth(60)
+        self.back.setFont(QFont("Courier", 40))
+        self.back.setStyleSheet("QPushButton {background-color: red; color: white; font-size: 20;}")
+        
+        self.next = QPushButton("Next")
+        self.next.setMinimumHeight(50)
+        self.next.setMinimumWidth(60)
+        self.next.setFont(QFont("Courier", 40))
+
+        self.lesson_1 = QTextEdit()
+        self.lesson_1.setMinimumHeight(400)
+        self.lesson_1.setMinimumWidth(80)
+        self.lesson_1.setFont(QFont("Courier", 20))
+        self.lesson_1.setReadOnly(True)
+        
+        self.lesson_2 = QTextEdit()
+        self.lesson_2.setMinimumHeight(400)
+        self.lesson_2.setMinimumWidth(80)
+        self.lesson_2.setFont(QFont("Courier", 20))
+        self.lesson_2.setReadOnly(True)
+
+        self.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue;}")
+
+        self.layout = QGridLayout()
+
+        self.layout.addWidget(self.title, 0, 0) 
+        self.layout.addWidget(self.lesson_1, 1, 0)
+        self.layout.addWidget(self.lesson_2, 1, 1)
+        self.layout.addWidget(self.back, 3, 0)
+        self.layout.addWidget(self.next, 3, 1)
+
+        self.setLayout(self.layout)
+
+        self.back.clicked.connect(self.selected_back)
+        self.next.clicked.connect(self.selected_next_page)
+\end{python}
+
+This is the parent class which provides the default attributes to each of the twelve first lesson screens. The file with the subclasses imports from here, and this parent class is never seen by the user; only the subclasses are accessible. This contains the attributes which are shared by all subclasses, while the next page connection method is in each subclass, in order to switch to the relevant second page. The background colour and screen maximising is coded here so all subclasses will have the same background colour and will be maximised. Each subclass is placed in a stack with its corresponding second screen so that the two pages are always the right ones and relevant to each other.
+
+\subsubsection{selected\_back method}
+
+\begin{python}
+def selected_back(self):
+        self.parent.close()
+\end{python}
+
+This method closes the stack window and returns the user to the home screen.
+
+\subsection{ParentLessonPage2 Class}
+
+\begin{python}
+class ParentLessonPage2(QWidget):
+    def __init__(self, parent = None):
+        super().__init__()
+
+        self.parent = parent
+
+        pal = QPalette()
+        pal.setColor(QPalette.Background, Qt.white)
+        self.setAutoFillBackground(True)
+        self.setPalette(pal)
+
+        self.answer = QLineEdit()
+        self.answer.setMinimumWidth(80)
+        self.answer.setMinimumHeight(110)
+        self.answer.setFont(QFont("Courier", 40))
+        
+        self.previous = QPushButton("Previous")
+        self.previous.setMinimumHeight(110)
+        self.previous.setMinimumWidth(60)
+        self.previous.setFont(QFont("Courier", 40))
+        self.previous.setStyleSheet("QPushButton {background-color: red; color: white; font-size: 20;}")
+        
+        self.check = QPushButton("Check Answer")
+        self.check.setMinimumHeight(110)
+        self.check.setMinimumWidth(60)
+        self.check.setFont(QFont("Courier", 40))
+        self.check.setStyleSheet("QPushButton {background-color: yellow; color: black; font-size: 20;}")
+        
+        self.finish = QPushButton("Finish")
+        self.finish.setMinimumHeight(110)
+        self.finish.setMinimumWidth(60)
+        self.finish.setFont(QFont("Courier", 40))
+        self.finish.setStyleSheet("QPushButton {background-color: green; color: white; font-size: 20;}")
+
+        self.text_1 = QTextEdit()
+        self.text_1.setMinimumWidth(80)
+        self.text_1.setMinimumHeight(110)
+        self.text_1.setFont(QFont("Courier", 20))
+        self.text_1.setReadOnly(True)
+        
+        self.text_2 = QTextEdit()
+        self.text_2.setMinimumWidth(80)
+        self.text_2.setMinimumHeight(110)
+        self.text_2.setFont(QFont("Courier", 20))
+        self.text_2.setReadOnly(True)
+
+        self.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue;}")
+
+        self.layout = QGridLayout()
+
+        self.setLayout(self.layout)
+
+        self.layout.addWidget(self.text_1, 0, 0) 
+        self.layout.addWidget(self.text_2, 0, 1)
+        self.layout.addWidget(self.previous, 3, 0)
+        self.layout.addWidget(self.answer, 3, 1)
+        self.layout.addWidget(self.finish, 4, 0)
+        self.layout.addWidget(self.check, 4, 1)
+
+        self.previous.clicked.connect(self.previous_selected)
+        self.check.clicked.connect(self.check_selected)
+        self.finish.clicked.connect(self.finish_selected)
+\end{python}
+
+This is the parent class which provides the default attributes to each of the twelve second lesson screens. The file with the subclasses imports from here, and this parent class is never seen by the user; only the subclasses are accessible. This contains the attributes which are shared by all subclasses, while the previous page connection method is in each subclass, in order to switch to the relevant first page. The background colour and screen maximising is coded here so all subclasses will have the same background colour and will be maximised. Each subclass is placed in a stack with its corresponding first screen so that the two pages are always the right ones and relevant to each other.
+
+\subsubsection{previous\_selected method}
+
+\begin{python}
+def previous_selected(self):
+        self.parent.stack.setCurrentIndex(0)
+\end{python}
+
+This method connects to the first screen in the stack widget which this screen is also in (Trig1StackSides class) - this method does not need to be over-ridden because the variable which is the first screen in the stack index is declared in the stack itself, which was connected to from the derived lesson menu (Trigonometry1(ParentLessonMenu) Class).
+ 
+\subsubsection{check\_selected method}
+
+\begin{python}
+def check_selected(self):
+        if self.answer.text() == self.answer_lesson:
+            self.answer.setText("{0} Correct".format(self.answer_lesson))
+        else:
+            self.answer.setText("Incorrect")
+        self.answer.setReadOnly(True)
+        self.check.setEnabled(False)
+\end{python}
+
+This method checks the input from the user up against the hard-coded variable which is set in each subclass - the variable is passed in from the subclass so the method can use entirely the same code for each subclass, hence why it is in the parent class.
+
+\subsubsection{finish\_selected method}
+
+\begin{python}
+def finish_selected(self):
+        self.parent.close()
+\end{python}
+
+This just closes the stack and returns the user to the home screen, so it can be in the parent class too.
+
+\subsection{SidesAHOWidget(ParentLessonLayout) Class}
+
+\begin{python}
+class SidesAHOWidget(ParentLessonLayout):
+    def __init__(self, parent):
+        super().__init__()
+
+        self.parent = parent
+
+        self.title.setPixmap(QPixmap("sides_lesson_title"))
+
+        self.lesson_1.setText("Every triangle has 3 sides, and each side has a name.\nThe HYPOTENUSE is the longest side, and is always oppposite the right-angle of a triangle.\nThe length can be found using Pythagoras' Theorem of a\u00b2 + b\u00b2 = c\u00b2.\nSine function: sin(x) = Opposite {0} Hypotenuse".format(chr(247)))
+
+        self.lesson_2.setText("The OPPOSITE is the side opposite the angle being used.\nCosine function: cos(x) = Adjacent {0} Hypotenuse".format(chr(247)))
+\end{python}
+
+This is one of the twelve first lesson screens which inherits from the parent lesson page 1 class (ParentLessonLayout Class) and is placed in a stack widget (Trig1StackSides Class) with the corresponding second sides lesson screen. This way it is not possible for only one of the two lesson screens to be open at any time, as they are in the same stack which keeps changes until it is closed entirely.
+
+\subsubsection{selected\_next\_page method}
+
+\begin{python}
+def selected_next_page(self):
+        self.parent.stack.setCurrentIndex(1)
+\end{python}
+
+This method switches to the second screen which shares the stack widget with this widget (Trig1StackSides Class).
+
+\subsection{SidesAHOWidgetPage2(ParentLessonPage2) Class}
+
+\begin{python}
+class SOHCAHTOAWidgetPage2(ParentLessonPage2):
+    def __init__(self, parent):
+        super().__init__()
+        
+        self.parent = parent
+
+        self.answer.setText("m")
+
+        self.text_1.setText("Example 1:\n1. Label O, A, H\n2. Write down SOHCAHTOA\n3. Two sides are involved: O,H\n4. So use O {0} S x H\n5. We want to find H so cover it up to leave H = (O {0} S(0))\n6. Translate: Press 15 {0} SIN(35) = 26.151702, so ans = 26.2m\n7. Check it's sensible: Yes, it's about twice as big as 15, as the diagram suggests.".format(chr(247)))
+        self.text_1.setMinimumHeight(380)
+        
+        self.text_2.setText("You have to figure out yourself which formula to use to find this answer.\nHere's a hint: cut the triangle down the middle and it becomes a right-angled triangle.\n \n \n \n \n \n \nPut your answer in the box below:")      
+        self.text_2.setMinimumHeight(380)
+
+        self.pic = QLabel()
+        self.pic.setPixmap(QPixmap("sohcahtoa_lesson_pic_2.png"))
+        self.pic.setAlignment(Qt.AlignCenter)
+
+        self.pic_2 = QLabel()
+        self.pic_2.setPixmap(QPixmap("sohcahtoa_lesson_pic_3.png"))
+        self.pic_2.setAlignment(Qt.AlignCenter)
+
+        self.layout.addWidget(self.pic, 2, 0)
+        self.layout.addWidget(self.pic_2, 2, 1)
+
+        self.answer_lesson = "26.5m"
+\end{python}
+
+This class is one of the twelve second lesson screens which inherits from the lesson page 2 parent class (ParentLessonPage2 Class) and is placed in a stack widget (Trig1StackSOHCAHTOA Class) with the corresponding first sides lesson screen. This way it is not possible for only one of the two lesson screens to be open at any time, as they are in the same stack which keeps changes until it is closed entirely.
+
+\subsection{Trig1StackSidesEasy Class}
+
+\begin{python}
+class Trig1StackSidesEasy(QMainWindow):
+    def __init__(self):
+        super().__init__()
+
+        self.showMaximized()
+
+        self.first_widget = SidesAHOEasyWidget(self)
+        self.second_widget = SidesAHOEasyWidget2(self)
+
+        self.stack = QStackedLayout()
+
+        self.stack.addWidget(self.first_widget)
+        self.stack.addWidget(self.second_widget)
+
+        self.widget = QWidget()
+        self.widget.setLayout(self.stack)
+
+        self.setCentralWidget(self.widget)
+\end{python}
+
+This is one of twenty four stack classes which each contain the two screens for one homework. This stack widget has the two screens added to the layout (imported from the files where each widget's class is coded), then when the stack is opened the first screen is displayed, and can switch to the second in the same window. This is accessed by clicking the corrersponding button in the first derived homework menu (Trigonometry1HW(ParentHomeworkMenuClass) Class). It is useful to have the two homework screens in a stack together so the user cannot close one screen and skip to the next, or vice-versa and repeat a page, potentially crashing the program. The use can return to one page, but the second will still be there, and they cannot re-submit the score of the first page until the second page has been closed and the stack is closed entirely and they re-do the whole homework. The contents of both screens will be left how the user leaves them until the entire stack is closed, even if they are switching between screens.
+
+\subsection{ParentHomeworkPage1Class Class}
+
+\begin{python}
+class ParentHomeworkPage1Class(QWidget):
+    def __init__(self, parent = None):
+        super().__init__()
+
+        self.parent = parent
+        
+        self.showMaximized()
+
+        self.task = ""
+
+        self.allow_cont = False
+
+        pal = QPalette()
+        pal.setColor(QPalette.Background, Qt.white)
+        self.setAutoFillBackground(True)
+        self.setPalette(pal)     
+
+        self.next = QPushButton("Next")
+        self.next.setMinimumHeight(110)
+        self.next.setMinimumWidth(60)
+        self.next.setFont(QFont("Courier", 40))
+
+        self.cancel = QPushButton("Cancel")
+        self.cancel.setMinimumHeight(110)
+        self.cancel.setMinimumWidth(60)
+        self.cancel.setFont(QFont("Courier", 40))
+        self.cancel.setStyleSheet("QPushButton {background-color: red; color: white; font-size: 20;}")
+        
+        self.check = QPushButton("Check Answers")
+        self.check.setMinimumHeight(110)
+        self.check.setMinimumWidth(60)
+        self.check.setFont(QFont("Courier", 40))
+        self.check.setStyleSheet("QPushButton {background-color: yellow; color: black; font-size: 20;}")
+        
+        self.reset = QPushButton("Reset Answers")
+        self.reset.setMinimumHeight(110)
+        self.reset.setMinimumWidth(60)
+        self.reset.setFont(QFont("Courier", 40))
+        self.reset.setStyleSheet("QPushButton {background-color: yellow; color: black; font-size: 20;}")
+
+        self.title = QLabel()
+        self.title.setFont(QFont("Courier", 40))
+
+        self.question_1 = QLabel()
+        self.question_1.setFont(QFont("Courier", 20))
+
+        self.question_1_shape = QLabel()
+        self.question_1_shape.setFont(QFont("Courier", 40))
+        
+        self.answer_a = QLineEdit()
+        self.answer_a.setMinimumHeight(70)
+        self.answer_a.setMinimumWidth(60)
+        self.answer_a.setFont(QFont("Courier", 30))
+        
+        self.answer_b = QLineEdit()
+        self.answer_b.setMinimumHeight(70)
+        self.answer_b.setMinimumWidth(60)
+        self.answer_b.setFont(QFont("Courier", 30))
+        
+        self.answer_c = QLineEdit()
+        self.answer_c.setMinimumHeight(70)
+        self.answer_c.setMinimumWidth(60)
+        self.answer_c.setFont(QFont("Courier", 30))
+        
+        self.answer_d = QLineEdit()
+        self.answer_d.setMinimumHeight(70)
+        self.answer_d.setMinimumWidth(60)
+        self.answer_d.setFont(QFont("Courier", 30))
+        
+        self.answer_e = QLineEdit()
+        self.answer_e.setMinimumHeight(70)
+        self.answer_e.setMinimumWidth(60)
+        self.answer_e.setFont(QFont("Courier", 30))
+        
+        self.answer_f = QLineEdit()
+        self.answer_f.setMinimumHeight(70)
+        self.answer_f.setMinimumWidth(60)
+        self.answer_f.setFont(QFont("Courier", 30))
+
+        self.q1a = QLabel("")
+        self.q1a.setFont(QFont("Courier", 20))
+        
+        self.q1b = QLabel("")
+        self.q1b.setFont(QFont("Courier", 20))
+        
+        self.q1c = QLabel("")
+        self.q1c.setFont(QFont("Courier", 20))
+        
+        self.q1d = QLabel("")
+        self.q1d.setFont(QFont("Courier", 20))
+        
+        self.q1e = QLabel("")
+        self.q1e.setFont(QFont("Courier", 20))
+        
+        self.q1f = QLabel("")
+        self.q1f.setFont(QFont("Courier", 20))
+        
+        self.score_box = QLabel("Score: X/X")
+        self.score_box.setFont(QFont("Courier", 30))
+
+        self.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue;}")
+
+        self.layout = QGridLayout()
+
+        self.layout.addWidget(self.title, 0, 0) 
+        self.layout.addWidget(self.question_1, 1, 0)
+        self.layout.addWidget(self.q1a, 1, 1)
+        self.layout.addWidget(self.reset, 1, 2)
+        self.layout.addWidget(self.question_1_shape, 2, 0)
+        self.layout.addWidget(self.answer_a, 2, 1)
+        self.layout.addWidget(self.q1b, 3, 1)
+        self.layout.addWidget(self.answer_b, 4, 1)
+        self.layout.addWidget(self.q1c, 5, 1)
+        self.layout.addWidget(self.answer_c, 6, 1)
+        self.layout.addWidget(self.q1d, 7, 1)
+        self.layout.addWidget(self.answer_d, 8, 1)
+        self.layout.addWidget(self.q1e, 9, 1)
+        self.layout.addWidget(self.answer_e, 10, 1)
+        self.layout.addWidget(self.q1f, 11, 1)
+        self.layout.addWidget(self.answer_f, 12, 1)
+        self.layout.addWidget(self.cancel, 13, 0)
+        self.layout.addWidget(self.check, 13, 1)
+        self.layout.addWidget(self.next, 13, 2)
+
+        self.setLayout(self.layout)
+
+        self.check.clicked.connect(self.check_selected)
+        self.reset.clicked.connect(self.reset_selected)
+        self.cancel.clicked.connect(self.cancel_selected)
+        self.next.clicked.connect(self.next_selected)
+
+        self.answers = []
+        self.answers.append(self.answer_a)
+        self.answers.append(self.answer_b)
+        self.answers.append(self.answer_c)
+        self.answers.append(self.answer_d)
+        self.answers.append(self.answer_e)
+        self.answers.append(self.answer_f)
+\end{python}
+
+This is the parent class which provides the default attributes to each of the twenty four first homework screens. The file with the subclasses imports from here, and this parent class is never seen by the user; only the subclasses are accessible. This contains the attributes which are shared by all subclasses, while the next page connection method is in each subclass, in order to switch to the relevant second page. The background colour and screen maximising is coded here so all subclasses will have the same background colour and will be maximised. Each subclass is placed in a stack with its corresponding second screen so that the two pages are always the right ones and relevant to each other.
+
+\subsubsection{check\_selected method}
+
+\begin{python}
+def check_selected(self):
+        self.allow_cont = False
+        self.correct_count = 0
+        if self.answer_a.text() == self.answer_1_a:
+            self.answer_a.setText("{0} Correct".format(self.answer_a.text()))
+            self.correct_count += 1
+        else:
+            self.answer_a.setText("Incorrect")
+        if self.answer_b.text() == self.answer_1_b:
+            self.answer_b.setText("{0} Correct".format(self.answer_b.text()))
+            self.correct_count += 1
+        else:
+            self.answer_b.setText("Incorrect")
+        if self.answer_c.text() == self.answer_1_c:
+            self.answer_c.setText("{0} Correct".format(self.answer_c.text()))
+            self.correct_count += 1
+        else:
+            self.answer_c.setText("Incorrect")
+        if self.answer_d.text() == self.answer_1_d:
+            self.answer_d.setText("{0} Correct".format(self.answer_d.text()))
+            self.correct_count += 1
+        else:
+            self.answer_d.setText("Incorrect")
+        if self.answer_e.text() == self.answer_1_e:
+            self.answer_e.setText("{0} Correct".format(self.answer_e.text()))
+            self.correct_count += 1
+        else:
+            self.answer_e.setText("Incorrect")
+        if self.answer_f.text() == self.answer_1_f:
+            self.answer_f.setText("{0} Correct".format(self.answer_f.text()))
+            self.correct_count += 1
+        else:
+            self.answer_f.setText("Incorrect")
+        for a in self.answers:
+            a.setReadOnly(True)
+        self.check.setEnabled(False)
+        self.reset.setEnabled(False)
+        self.allow_cont = True
+\end{python}
+
+This method uses variables which are passed in from each subclass, whichever one it is being called from, which are checked against hard-coded answers which are declared in the subclass too, so the variable name can be the same in the method allowing it to be written once in the parent class. The purpose of this method is to check the inputs of each of the six line edits in the subclass being used, then tell the user whether or not they are correct based on the hard-coded answers in the subclasses.
+
+\subsubsection{next\_selected method}
+
+\begin{python}
+def next_selected(self):
+        cont = False
+        while not cont:
+            for a in self.answers:
+                if a.text() == "":
+                    error_message = ErrorMessage8()
+                    error_message.show()
+                    error_message._raise()
+                    cont = False
+            cont = True
+            if self.allow_cont:
+                g_database.insert_data_first(self.task, self.correct_count)
+                self.open_page_2()
+                self.hide()
+            else:
+                error_message_2 = ErrorMessage8()
+                error_message_2.show()
+                error_message_2._raise()
+\end{python}
+
+This checks to see if the question has been fully answered before allowing the user to continue to the next screen and saving the first stage of the record in the database. this can be in the parent class because, again, the variables are hard-coded and passed through from the subclass, for the database method.
+
+\subsubsection{reset\_selected method}
+
+\begin{python}
+def reset_selected(self):
+        self.answer_a.setText(None)
+        self.answer_b.setText(None)
+        self.answer_c.setText(None)
+        self.answer_d.setText(None)
+        self.answer_e.setText(None)
+        self.answer_f.setText(None)
+\end{python}
+
+this can be in the parent class because it doesn't matter what the values in the line edits are, it serves the same purpose of removing them.
+
+\subsubsection{cancel\_selected method}
+
+\begin{python}
+def cancel_selected(self):
+        self.parent.close()
+\end{python}
+
+This closes the entire stack regardless of which stack it is, hence why this method can be in the parent class.
+
+\subsubsection{open\_page\_2 method}
+
+\begin{python}
+def open_page_2(self):
+        self.parent.stack.setCurrentIndex(1)
+\end{python}
+
+The screen represented by the index of the stack is deternmined by what is hard-coded in the stack widget (Trig1SidesEasyStack Class) so the variable name is always the same, switching to the screen hard-coded into the stack, so this method can also be in the parent class.
+
+\subsection{HomeworkPage2ParentClass Class}
+
+\begin{python}
+class HomeworkPage2ParentClass(QWidget):
+    def __init__(self, parent = None):
+        super().__init__()
+
+        self.parent = parent
+
+        self.task = ""
+
+        self.showMaximized()
+
+        pal = QPalette()
+        pal.setColor(QPalette.Background, Qt.white)
+        self.setAutoFillBackground(True)
+        self.setPalette(pal)
+
+        self._button_1 = QPushButton()
+        self._button_1.setMaximumWidth(200)
+        self._button_1.setMinimumWidth(110)
+        self._button_1.setMinimumHeight(110)
+        self._button_1.setStyleSheet("QPushButton {background-color: white; font-color: black;}")
+        
+        self._button_2 = QPushButton()
+        self._button_2.setMaximumWidth(200)
+        self._button_2.setMinimumWidth(110)
+        self._button_2.setMinimumHeight(110)
+        self._button_2.setStyleSheet("QPushButton {background-color: white; font-color: black;}")
+  
+        self._button_3 = QPushButton()
+        self._button_3.setMaximumWidth(200)
+        self._button_3.setMinimumWidth(110)
+        self._button_3.setMinimumHeight(110)
+        self._button_3.setStyleSheet("QPushButton {background-color: white; font-color: black;}")
+        
+        self._button_4 = QPushButton()
+        self._button_4.setMaximumWidth(200)
+        self._button_4.setMinimumWidth(110)
+        self._button_4.setMinimumHeight(110)
+        self._button_4.setStyleSheet("QPushButton {background-color: white; font-color: black;}")
+        
+        self._button_5 = QPushButton()
+        self._button_5.setMaximumWidth(200)
+        self._button_5.setMinimumWidth(110)
+        self._button_5.setMinimumHeight(110)
+        self._button_5.setStyleSheet("QPushButton {background-color: white; font-color: black;}")
+        
+        self._button_6 = QPushButton()
+        self._button_6.setMaximumWidth(200)
+        self._button_6.setMinimumWidth(110)
+        self._button_6.setMinimumHeight(110)
+        self._button_6.setStyleSheet("QPushButton {background-color: white; font-color: black;}")
+
+        self.question_2 = QLabel()       
+        self.question_2.setFont(QFont("Courier", 30))
+        
+        self.shape_2 = QLabel()        
+        self.shape_2.setFont(QFont("Courier", 30))
+        
+        self.question_3 = QLabel()        
+        self.question_3.setFont(QFont("Courier", 30))
+        
+        self.shape_3 = QLabel()       
+        self.shape_3.setFont(QFont("Courier", 30))
+        
+        self.question_4 = QLabel()       
+        self.question_4.setFont(QFont("Courier", 30))
+
+        self.answer_2 = QComboBox()
+        self.answer_2.setMinimumWidth(60)
+        self.answer_2.setMinimumHeight(110)
+        self.answer_2.setFont(QFont("Courier", 40))
+        self.answer_2.setStyleSheet("QComboBox {background-color: lavender; color: purple;}")
+
+        self.mark_2 = QPushButton("Mark it  |  2")
+        self.mark_2.setMinimumWidth(60)
+        self.mark_2.setMinimumHeight(110)
+        self.mark_2.setFont(QFont("Courier", 40))
+        self.mark_2.setStyleSheet("QPushButton {background-color: yellow; color: black; font-size: 20;}")
+        
+        self.answer_3 = QComboBox()
+        self.answer_3.setMinimumWidth(60)
+        self.answer_3.setMinimumHeight(110)
+        self.answer_3.setFont(QFont("Courier", 40))
+        self.answer_3.setStyleSheet("QComboBox {background-color: lavender; color: purple;}")
+        
+        self.mark_3 = QPushButton("Mark it  |  2")
+        self.mark_3.setMinimumWidth(60)
+        self.mark_3.setMinimumHeight(110)
+        self.mark_3.setFont(QFont("Courier", 40))
+        self.mark_3.setStyleSheet("QPushButton {background-color: yellow; color: black; font-size: 20;}")
+
+        self.previous = QPushButton("Previous")
+        self.previous.setMinimumWidth(60)
+        self.previous.setMinimumHeight(110)
+        self.previous.setFont(QFont("Courier", 40))
+        self.previous.setStyleSheet("QPushButton {background-color: red; color: white; font-size: 20;}")
+
+        self.finish = QPushButton("Finish")
+        self.finish.setMinimumWidth(60)
+        self.finish.setMinimumHeight(110)
+        self.finish.setFont(QFont("Courier", 40))
+        self.finish.setStyleSheet("QPushButton {background-color: green; color: white; font-size: 20;}")
+
+        self.attempts_button = QPushButton("3 Attempts left")
+        self.attempts_button.setMinimumHeight(60)
+        self.attempts_button.setMinimumWidth(90)
+        self.attempts_button.setMaximumWidth(200)
+        self.attempts_button.setStyleSheet("QPushButton {background-color: white; font-color: black;}")
+        self.attempts_button.setEnabled(False)
+
+        self.layout = QGridLayout()
+
+        self.layout.addWidget(self.question_2, 0, 0)
+        self.layout.addWidget(self.shape_2, 0, 1)
+        self.layout.addWidget(self.answer_2, 1, 0)
+        self.layout.addWidget(self.mark_2, 1, 1)
+        self.layout.addWidget(self._button_1, 1, 2)
+        self.layout.addWidget(self._button_2, 1, 3)
+        self.layout.addWidget(self._button_3, 2, 2)
+        self.layout.addWidget(self.question_3, 2, 0)
+        self.layout.addWidget(self._button_4, 2, 3)
+        self.layout.addWidget(self._button_5, 3, 2)
+        self.layout.addWidget(self._button_6, 3, 3)
+        self.layout.addWidget(self.shape_3, 2, 1)
+        self.layout.addWidget(self.attempts_button, 4, 2)
+        self.layout.addWidget(self.answer_3, 3, 0)
+        self.layout.addWidget(self.mark_3, 3, 1)
+        self.layout.addWidget(self.question_4, 0, 2)
+        self.layout.addWidget(self.previous, 5, 0)
+        self.layout.addWidget(self.finish, 5, 3)
+
+        self.setLayout(self.layout)
+
+        self.mark_2.clicked.connect(self.selected_mark_2)
+        self.mark_3.clicked.connect(self.selected_mark_3)
+        self.previous.clicked.connect(self.selected_previous)
+        self.finish.clicked.connect(self.selected_finish)
+        self._button_1.clicked.connect(self.check_button_1)
+        self._button_2.clicked.connect(self.check_button_2)
+        self._button_3.clicked.connect(self.check_button_3)
+        self._button_4.clicked.connect(self.check_button_4)
+        self._button_5.clicked.connect(self.check_button_5)
+        self._button_6.clicked.connect(self.check_button_6)
+
+        self.attempts_remaining_a = 2
+        self.attempts_remaining_b = 2
+        self.attempts_remaining_c = 3
+        self.correct_count_2 = 0
+        self.correct_count_3 = 0
+        self.correct_count_4 = 0
+        self.answer_question_4 = None
+\end{python}
+
+This is the parent class which provides the default attributes to each of the twenty four second homework screens. The file with the subclasses imports from here, and this parent class is never seen by the user; only the subclasses are accessible. This contains the attributes which are shared by all subclasses, while the previous page connection method is in each subclass, in order to switch to the relevant first page. The background colour and screen maximising is coded here so all subclasses will have the same background colour and will be maximised. Each subclass is placed in a stack with its corresponding first screen so that the two pages are always the right ones and relevant to each other.
+
+\subsubsection{check\_button\_1 method}
+
+\begin{python}
+def check_button_1(self, attempts_remaining_c):
+        self.correct_count_4 = 0
+        if self._button_1.text() == self.answer_question_4:
+            self._button_1.setText("Correct")
+            self._button_1.setEnabled(False)
+            self._button_2.setEnabled(False)
+            self._button_3.setEnabled(False)
+            self._button_4.setEnabled(False)
+            self._button_5.setEnabled(False)
+            self._button_6.setEnabled(False)
+            self.attempts_button.setText("1 mark!")
+            self.correct_count_4 += 1
+        else:
+            self._button_1.setText("Incorrect")
+            self._button_1.setEnabled(False)
+            self.attempts_remaining_c -= 1
+            self.attempts_button.setText("{0} attempts remaining".format(self.attempts_remaining_c))
+            if self.attempts_remaining_c == 0:
+                self._button_1.setEnabled(False)
+                self._button_2.setEnabled(False)
+                self._button_3.setEnabled(False)
+                self._button_4.setEnabled(False)
+                self._button_5.setEnabled(False)
+                self._button_6.setEnabled(False)
+                self.attempts_button.setText("No more attempts")
+            return self.attempts_remaining_c
+\end{python}
+
+This method checks the text on the button which was clicked to see if it matches the hard-coded answer in each subclass; the variable names of the buttons are the same, in the parent class, only the text is over-ridden, so these methods can be in the parent class as the variables being checked are the same, only their values which are passed through are different in each subclass.
+
+\subsubsection{selected\_mark\_2 method}
+
+\begin{python}
+def selected_mark_2(self, attempts_remaining_a):
+        self.correct_count_2 = 0
+        if self.answer_2.currentText() == "20":
+            self.correct_count_2 += 1
+            self.mark_2.setText("Correct!")
+            self.mark_2.setEnabled(False)
+            self.answer_2.setEnabled(False)
+        else:
+            self.attempts_remaining_a -= 1
+            self.mark_2.setText("Mark it|{0}".format(self.attempts_remaining_a))
+            if self.attempts_remaining_a == 0:
+                self.mark_2.setEnabled(False)
+                self.answer_2.setEnabled(False)
+            error_message = ErrorMessage5()
+            error_message.show()
+            error_message._raise()
+        return self.attempts_remaining_a, self.correct_count_2
+\end{python}
+
+As with the check\_button\_1 method, the variable names of the combo boxes are the same, created in the parent class, and it is the values of the combo boxes whiuch are passed through, so the checking methods can be the same written only once in the parent class.
+
+\subsubsection{selected\_previous method}
+
+\begin{python}
+def selected_previous(self):
+        self.parent.stack.setCurrentIndex(0)
+\end{python}
+
+The screen being represented by the index here is hard-coded in the stack which is currently being operated, so this method can use the same code for each stack.
+
+\subsubsection{selected\_finish method}
+
+\begin{python}
+def selected_finish(self):
+        if self.attempts_button.text() != "1 mark!" and self.attempts_button.text() != "No more attempts":
+            error_message_2 = ErrorMessage8()
+            error_message_2.show()
+            error_message_2._raise()
+        elif self.mark_2.text() != "Correct!" and self.mark_2.text() != "Mark it|0":
+            error_message_2 = ErrorMessage8()
+            error_message_2.show()
+            error_message_2._raise()
+        elif self.mark_3.text() != "Correct!" and self.mark_3.text() != "Mark it|0":
+            error_message_2 = ErrorMessage8()
+            error_message_2.show()
+            error_message_2._raise()
+        else:
+            g_database.insert_data_second(self.task, self.correct_count_2, self.correct_count_3, self.correct_count_4)
+            self.parent.close()
+\end{python}
+
+This method's purpose is to check to see if the questions have been answered before saving the scores to the database and returning the user to the home screen; again, the variable names of the widgets being checked are the same and written in the parent class, only the contents of the inputs are being checked, making this method suitable for the parent class.
+
+\subsection{SidesAHOEasyWidget(ParentHomeworkPage1Class) Class}
+
+\begin{python}
+class SidesAHOEasyWidget(ParentHomeworkPage1Class):
+    def __init__(self, parent):
+        super().__init__()
+
+        self.parent = parent
+
+        self.task = "Sides Easy"
+        
+        self.title.setText("Sides Easy")
+
+        self.question_1.setText("Question 1: Look at the diagram below\nand answer the following questions: ")
+        
+        self.q1a.setText("Which side is oppopsite angle A? ")
+    
+        self.q1b.setText("Which side is adjacent to angle Q? ")
+                
+        self.q1c.setText("Which side is the hypotenuse? ")        
+
+        self.q1d.setText("Which formula would you use to find AB? ")
+        
+        self.question_1_shape.setPixmap(QPixmap("sides_easy_q1"))
+
+        self.answer_1_a = "BC"
+        self.answer_1_b = "AC"
+        self.answer_1_c = "AB"
+        self.answer_1_d = "cosine"
+        self.answer_1_e = "5"
+        self.answer_1_f = "6"
+\end{python}
+
+This is one of the twenty four first homework screens which inherits from the parent homework page 1 class (ParentHomeworkPage1 Class) and is placed in a stack widget (Trig1SidesEasyStack Class) with the corresponding second sides easy homework screen. This way it is not possible for only one of the two homework screens to be open at any time, as they are in the same stack which keeps changes until it is closed entirely.
+
+\subsubsection{open\_page\_2 method}
+
+\begin{python}
+def open_page_2(self):
+        self.parent.stack.setCurrentIndex(1)
+\end{python}
+
+The screen being represented by the index here is hard-coded in the stack which is currently being operated, so this method can use the same code for each stack.
+
+\subsection{SidesAHOEasyWidget2(HomeworkPage2ParentClass) Class}
+
+\begin{python}
+class SidesAHOEasyWidget2(HomeworkPage2ParentClass):
+    def __init__(self, parent):
+        super().__init__()
+
+        self.parent = parent
+
+        self.task = "Sides Easy"
+
+        self.question_2.setText("Question 2\nWhat is the length\nof b?")
+        
+        self.question_3.setText("Question 3\nWhat is the length\nof c?")
+        
+        self.question_4.setText("Question 4\nWhat is the\nlength of a?")
+
+        self.answer_2.addItem("10")
+        self.answer_2.addItem("20")
+        self.answer_2.addItem("30")
+
+        self.answer_3.addItem("10")
+        self.answer_3.addItem("20")
+        self.answer_3.addItem("30")
+
+        self._button_1.setText("60")
+        self._button_2.setText("50")
+        self._button_3.setText("40")
+        self._button_4.setText("30")
+        self._button_5.setText("20")
+        self._button_6.setText("10")
+
+        self.answer_question_4 = "40"
+\end{python}
+
+This class is one of the twenty four second homework screens which inherits from the homework page 2 parent class (HomeworkPage2ParentClass Class) and is placed in a stack widget (Trig1SidesEasyStack Class) with the corresponding first sides easy homework screen. This way it is not possible for only one of the two homework screens to be open at any time, as they are in the same stack which keeps changes until it is closed entirely.
+
+\subsection{ErrorMessage2(QErrorMessage) Class}
+
+\begin{python}
+class ErrorMessage2(QErrorMessage):
+    def __init__(self):
+        super().__init__()
+        
+        message = "Invalid data type - please make sure you are inputting a decimal value"
+
+        QErrorMessage.showMessage(self, message)
+\end{python}
+
+This is one of the error message classes which inherits from the built in QErrorMessage class; these are displayed at certain points throughout the program, mainly in the homework if a user gets a wrong answer. these are useful becuase they can all be called at any point in another file simply by importing the file with the error messages into it , similar to the database controller, where all of the SQL code is separated.
+
 \section{Variable Listing}
 
 \section{System Evidence}
