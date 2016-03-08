@@ -2129,117 +2129,116 @@ This is one of the error message classes which inherits from the built in QError
 
 \section{Variable Listing}
 
-\begin{centre}
-\begin{tabular}{|{4cm}|p{3cm}|p{5cm}|p{5cm}|}
-\textbf{Variable Name} & \textbf{Data Type} & \textbf{Purpose of Variable} & \textbf{Class reference}
-self.\_db\_name & String & This is the variable which is passed through to the create\_table method to check if this table already exists &
-self.table\_name & String & This is the name of the table which is created in the create\_table method, and is passed through so the name will always be the same &
-cursor & List & This variable is the structure controller for the database - it makes the changes when SQL code is executed &
-result & List & This is assigned to the contents of the database which is fetched when the system checks to see if the table already exists &
-info & List & This is assigned to the contents of the database which is fetched when a task is searched for to see if it exists already when saving a new record &
-report & List & This is assigned to the contents of the database which is fetched when a user queries specific data in the database &
-students & List & This is assigned to the contents of the database which is fetched when the progress screen is opened and all data is needed for display &
-sql & String & This is the name of the variable which is always passed into the execute\_sql method whenever another method need to access the database; it is the sql statement requiring execution &
-response & String & This is an input which asks the user whether or not they would like to over-write the existing database - accepts y or n &
-keep\_table & Boolean & This is the boolean which checks whether the user wants to keep the existing table or not; input y for True, n for False &
-g\_database & Database Class & This variable represents the entire database and is called whenever a method wants to access the database &
-self.cont & None & This variable is called to make changes to the continue button's appearance and to assign connections to methods for the button,  which takes the user from the first screen to the home screen &
-self.lessons & None & This variable is called to make changes to the lessons button's appearance and to assign connections to methods for the button, which takes the user from the home screen to the lesson topic menu &
-self.homework & None & This variable is called to make changes to the homework button's appearance and to assign connections to methods for the button, which takes the user from the home screen to the homework topic menu &
-self.progress & None &  This variable is called to make changes to the progress button's appearance and to assign connections to methods for the button, which takes the user from the home screen to the progress screen &
-self.log\_out & None & This variable is called to make changes to the log out button's appearance and to assign connections to methods for the button, which closes the entire system when clicked &
-self.t1 & None & This variable is called to make changes to the trigonometry 1 button's appearance and to assign connections to methods for the button, which takes the user from the lesson topic menu to the trigonometry 1 lesson sub menu &
-self.ht1 & None & This variable is called to make changes to the homework trigonometry 1 button's appearance and to assign connections to methods for the button, which takes the user from the homework topic menu to the trigonometry 1 homework dub menu &
-self.back & None & This variable is called to make changes to the return button's appearance and to assign connections to methods for the button, which returns the user from the screen they were on to the previous screen &
-self.report & None & This variable is called to make changes to the report button's appearance and to assign connections to methods for the button, which opens the report window from the progress window &
-self.submit & None & This variable is called to make changes to the submit button's appearance and to assign connections to methods for the button, which submits the contents of the combo boxes on the report widget to query the database &
-self.button\_1 & None & This variable is called to make changes to the first menu button's appearance and to assign connections to methods for the button, which takes the user from the sub menu to the corresponding lesson &
-self.button\_2 & None & This variable is called to make changes to the second menu button's appearance and to assign connections to methods for the button, which takes the user from the sub menu to the corresponding lesson &
-self.button\_3 & None & This variable is called to make changes to the third menu button's appearance and to assign connections to methods for the button, which takes the user from the sub menu to the corresponding lesson &
-self.button\_4 & None & This variable is called to make changes to the fourth menu button's appearance and to assign connections to methods for the button, which takes the user from the sub menu to the corresponding lesson &
-self.button\_5 & None & This variable is called to make changes to the fifth menu button's appearance and to assign connections to methods for the button, which takes the user from the sub menu to the corresponding lesson &
-self.button\_6 & None & This variable is called to make changes to the sixth menu button's appearance and to assign connections to methods for the button, which takes the user from the sub menu to the corresponding lesson &
-self.next & None & This variable is called to make changes to the next button's appearance and to assign connections to methods for the button, which switches from the first window in a stack to the second, and saves the score and task name from the first screen to the database &
-self.previous & None & This variable is called to make changes to the previous button's appearance and to assign connections to methods for the button, which switches from the second window in a stack to the first &
-self.check & None & This variable is called to make changes to the check button's appearance and to assign connections to methods for the button, which checks if the contents of the line edit in the lesson is correct &
-self.finish & None & This variable is called to make changes to the finish button's appearance and to assign connections to methods for the button, which closes the stack widget in use and saves the scores of the second screen to the database &
-self.cancel & None & This variable is called to make changes to the cancel button's appearance and to assign connections to methods for the button, which closes the stack widget in use without making any changes to the database &
-self.reset & None & This variable is called to make changes to the reset button's appearance and to assign connections to methods for the button, which clears the contents of all 6 line edits on the first homework screen &
-self.mark\_2 & None & This variable is called to make changes to the first mark it button's appearance and to assign connections to methods for the button, which checks to see if the contents of the combo box is correct &
-self.mark\_3 & None & This variable is called to make changes to the second mark it button's appearance and to assign connections to methods for the button, which checks to see if the contents of the combo box is correct &
-self.attempts\_button & None & This variable is called to make changes to the atempts button's appearance and to assign connections to methods for the button, which simply displays the number of attempts the user has left on question 4 because it suits the design more than a QLabel &
-self.\_button\_1 & None & This variable is called to make changes to the first mulitple choice button's appearance and to assign connections to methods for the button, which is one of the 6 multiple choice buttons for question 4 & 
-self.\_button\_2 & None & This variable is called to make changes to the second mulitple choice button's appearance and to assign connections to methods for the button, which is one of the 6 multiple choice buttons for question 4 &
-self.\_button\_3 & None & This variable is called to make changes to the third mulitple choice button's appearance and to assign connections to methods for the button, which is one of the 6 multiple choice buttons for question 4 &
-self.\_button\_4 & None & This variable is called to make changes to the fourth mulitple choice button's appearance and to assign connections to methods for the button, which is one of the 6 multiple choice buttons for question 4 &
-self.\_button\_5 & None & This variable is called to make changes to the fifth mulitple choice button's appearance and to assign connections to methods for the button, which is one of the 6 multiple choice buttons for question 4 &
-self.\_button\_6 & None & This variable is called to make changes to the sixth mulitple choice button's appearance and to assign connections to methods for the button, which is one of the 6 multiple choice buttons for question 4 &
-self.title & String & This variable is called to make changes to the title QLabel's appearance. This label tells the user the title of the window which is currently open &
-self.header & String & This variable contains a group of strings which are assigned to be the headers of the columns on the QTableWidgets which display the contents of the database &
-self.task\_box\_label & String &
-self.score\_box\_label & String &
-self.lessons\_label & String &
-self.homework\_label & String &
-self.progress\_label & String &
-self.select & String &
-self.title\_pic & Blob &
-self.question\_2 & String &
-self.task\_box & String, Integer, Real &
-self.score\_box & String, Integer, Real &
-self.answer\_2 & String, Integer, Real &
-self.answer\_3 & String, Integer, Real &
-self.lesson\_1 & String &
-self.lesson\_2 & String &
-self.text\_1 & String &
-self.text\_2 & String &
-self.database & String, Integer &
-self.db & String, Integer &
-pal & Blob &
-self.layout & None &
-self.stack & None &
-self.widget & None &
-self.\_centralwidget & None &
-NameEntered & Boolean &
-self.parent\_window & None &
-self.parent & None &
-lessonmenuwidget & Class &
-homeworkmenuwidget & Class &
-databasewidget & Class &
-trig\_1\_widget & Class &
-trigonometry\_1\_homework & Class &
-sides\_aho & Class &
-sides\_aho\_1 & Class &
-self.first\_widget & Class &
-self.second\_widget & Class &
-report\_widget & Class &
-count & Integer &
-\_count & Integer &
-self.correct\_count & Integer &
-self.correct\_count\_2 & Integer &
-self.correct\_count\_3 & Integer &
-self.correct\_count\_4 & Integer &
-self.task & String &
-self.answer\_lesson & Integer, Real, String &
-self.answer\_1\_a & Integer, Real, String &
-self.answer\_1\_b & Integer, Real, String &
-self.answer\_1\_c & Integer, Real, String & 
-self.answer\_1\_d & Integer, Real, String &
-self.answer\_1\_e & Integer, Real, String &
-self.answer\_1\_f & Integer, Real, String &
-self.answer\_question\_4 & Integer, Real, String &
-cont & Boolean &
-self.allow\_cont & Boolean &
-self.attempts\_remaining\_a & Integer &
-self.attempts\_remaining\_b & Integer &
-self.attempts\_remaining\_c & Integer &
-data & List &
-score\_data & List &
-self.answer & Integer, Real, String &
-error\_message & Class &
-error\_message\_2 & Class &
-message & String &
-\end{tabular}
-\end{centre}
+\begin{center}
+\begin{longtable}{|p{3cm}|p{3cm}|p{4cm}|p{4cm}|} \hline
+\textbf{Variable Name} & \textbf{Data Type} & \textbf{Purpose of Variable} & \textbf{Class reference} \\ \hline
+self.\_db\_name & String & This is the variable which is passed through to the create\_table method to check if this table already exists & Database Controller Class (4.3.1) \\ \hline
+self.table\_name & String & This is the name of the table which is created in the create\_table method, and is passed through so the name will always be the same & Database Controller Class (4.3.1) \\ \hline
+cursor & List & This variable is the structure controller for the database - it makes the changes when SQL code is executed & Database Controller Class (4.3.1) \\ \hline
+result & List & This is assigned to the contents of the database which is fetched when the system checks to see if the table already exists & Database Controller Class (4.3.1) \\ \hline
+info & List & This is assigned to the contents of the database which is fetched when a task is searched for to see if it exists already when saving a new record & Database Controller Class (4.3.1) \\ \hline
+report & List & This is assigned to the contents of the database which is fetched when a user queries specific data in the database & Database Controller Class (4.3.1) \\ \hline
+students & List & This is assigned to the contents of the database which is fetched when the progress screen is opened and all data is needed for display & Database Controller Class (4.3.1) \\ \hline
+sql & String & This is the name of the variable which is always passed into the execute\_sql method whenever another method need to access the database; it is the sql statement requiring execution & Database Controller Class (4.3.1) \\ \hline
+response & String & This is an input which asks the user whether or not they would like to over-write the existing database - accepts y or n & Database Controller Class (4.3.1) \\ \hline
+keep\_table & Boolean & This is the boolean which checks whether the user wants to keep the existing table or not; input y for True, n for False & Database Controller Class (4.3.1) \\ \hline
+g\_database & Database Class & This variable represents the entire database and is called whenever a method wants to access the database & Database Controller Class (4.3.1) \\ \hline
+self.cont & None & This variable is called to make changes to the continue button's appearance and to assign connections to methods for the button,  which takes the user from the first screen to the home screen & All PyQt Windows \\ \hline
+self.lessons & None & This variable is called to make changes to the lessons button's appearance and to assign connections to methods for the button, which takes the user from the home screen to the lesson topic menu & UserAccountClass (4.3.5) \\ \hline
+self.homework & None & This variable is called to make changes to the homework button's appearance and to assign connections to methods for the button, which takes the user from the home screen to the homework topic menu & UserAccountClass (4.3.5) \\ \hline
+self.progress & None &  This variable is called to make changes to the progress button's appearance and to assign connections to methods for the button, which takes the user from the home screen to the progress screen & UserAccountClass (4.3.5) \\ \hline
+self.log\_out & None & This variable is called to make changes to the log out button's appearance and to assign connections to methods for the button, which closes the entire system when clicked & UserAccountClass (4.3.5) \\ \hline
+self.t1 & None & This variable is called to make changes to the trigonometry 1 button's appearance and to assign connections to methods for the button, which takes the user from the lesson topic menu to the trigonometry 1 lesson sub menu & LessonMenuWidget (4.3.6)\\ \hline
+self.ht1 & None & This variable is called to make changes to the homework trigonometry 1 button's appearance and to assign connections to methods for the button, which takes the user from the homework topic menu to the trigonometry 1 homework sub menu & HomeworkMenuWidget (4.3.7) \\ \hline
+self.back & None & This variable is called to make changes to the return button's appearance and to assign connections to methods for the button, which returns the user from the screen they were on to the previous screen & All Menu Classes\\ \hline
+self.report & None & This variable is called to make changes to the report button's appearance and to assign connections to methods for the button, which opens the report window from the progress window & DatabaseWidget (4.3.2) \\ \hline
+self.submit & None & This variable is called to make changes to the submit button's appearance and to assign connections to methods for the button, which submits the contents of the combo boxes on the report widget to query the database & ReportWidget (4.3.3) \\ \hline
+self.button\_1 & None & This variable is called to make changes to the first menu button's appearance and to assign connections to methods for the button, which takes the user from the sub menu to the corresponding lesson & ParentLessonMenuClass (4.3.8), ParentHomeworkMenuClass (4.3.9) \\ \hline
+self.button\_2 & None & This variable is called to make changes to the second menu button's appearance and to assign connections to methods for the button, which takes the user from the sub menu to the corresponding lesson & ParentLessonMenuClass (4.3.8), ParentHomeworkMenuClass (4.3.9) \\ \hline
+self.button\_3 & None & This variable is called to make changes to the third menu button's appearance and to assign connections to methods for the button, which takes the user from the sub menu to the corresponding lesson & ParentLessonMenuClass (4.3.8), ParentHomeworkMenuClass (4.3.9) \\ \hline
+self.button\_4 & None & This variable is called to make changes to the fourth menu button's appearance and to assign connections to methods for the button, which takes the user from the sub menu to the corresponding lesson & ParentLessonMenuClass (4.3.8), ParentHomeworkMenuClass (4.3.9) \\ \hline
+self.button\_5 & None & This variable is called to make changes to the fifth menu button's appearance and to assign connections to methods for the button, which takes the user from the sub menu to the corresponding lesson & ParentLessonMenuClass (4.3.8), ParentHomeworkMenuClass (4.3.9) \\ \hline
+self.button\_6 & None & This variable is called to make changes to the sixth menu button's appearance and to assign connections to methods for the button, which takes the user from the sub menu to the corresponding lesson & ParentLessonMenuClass (4.3.8), ParentHomeworkMenuClass (4.3.9) \\ \hline
+self.next & None & This variable is called to make changes to the next button's appearance and to assign connections to methods for the button, which switches from the first window in a stack to the second, and saves the score and task name from the first screen to the database & ParentLessonLayout (4.3.13), ParentHomeworkPage1Class (4.3.18) \\ \hline
+self.previous & None & This variable is called to make changes to the previous button's appearance and to assign connections to methods for the button, which switches from the second window in a stack to the first & ParentLessonPage2 (4.3.14), HomeworkPage2ParentClass (4.3.19) \\ \hline
+self.check & None & This variable is called to make changes to the check button's appearance and to assign connections to methods for the button, which checks if the contents of the line edit in the lesson is correct & ParentLessonPage2 (4.3.14), ParentHomeworkPage1Class (4.3.18) \\ \hline
+self.finish & None & This variable is called to make changes to the finish button's appearance and to assign connections to methods for the button, which closes the stack widget in use and saves the scores of the second screen to the database & ParentLessonPage2 (4.3.14), HomeworkPage2ParentClass (4.3.19) \\ \hline
+self.cancel & None & This variable is called to make changes to the cancel button's appearance and to assign connections to methods for the button, which closes the stack widget in use without making any changes to the database & ParentLessonLayout (4.3.13), ParentHomeworkPage1Class (4.3.18) \\ \hline
+self.reset & None & This variable is called to make changes to the reset button's appearance and to assign connections to methods for the button, which clears the contents of all 6 line edits on the first homework screen & ParentHomeworkPage1Class (4.3.18) \\ \hline
+self.mark\_2 & None & This variable is called to make changes to the first mark it button's appearance and to assign connections to methods for the button, which checks to see if the contents of the combo box is correct & HomeworkPage2ParentClass (4.3.19) \\ \hline
+self.mark\_3 & None & This variable is called to make changes to the second mark it button's appearance and to assign connections to methods for the button, which checks to see if the contents of the combo box is correct & HomeworkPage2ParentClass (4.3.19) \\ \hline
+self.attempts\_button & None & This variable is called to make changes to the atempts button's appearance and to assign connections to methods for the button, which simply displays the number of attempts the user has left on question 4 because it suits the design more than a QLabel & HomeworkPage2ParentClass (4.3.19) \\ \hline
+self.\_button\_1 & None & This variable is called to make changes to the first mulitple choice button's appearance and to assign connections to methods for the button, which is one of the 6 multiple choice buttons for question 4 & HomeworkPage2ParentClass (4.3.19) \\ \hline
+self.\_button\_2 & None & This variable is called to make changes to the second mulitple choice button's appearance and to assign connections to methods for the button, which is one of the 6 multiple choice buttons for question 4 & HomeworkPage2ParentClass (4.3.19) \\ \hline
+self.\_button\_3 & None & This variable is called to make changes to the third mulitple choice button's appearance and to assign connections to methods for the button, which is one of the 6 multiple choice buttons for question 4 & HomeworkPage2ParentClass (4.3.19) \\ \hline
+self.\_button\_4 & None & This variable is called to make changes to the fourth mulitple choice button's appearance and to assign connections to methods for the button, which is one of the 6 multiple choice buttons for question 4 & HomeworkPage2ParentClass (4.3.19) \\ \hline
+self.\_button\_5 & None & This variable is called to make changes to the fifth mulitple choice button's appearance and to assign connections to methods for the button, which is one of the 6 multiple choice buttons for question 4 & HomeworkPage2ParentClass (4.3.19) \\ \hline
+self.\_button\_6 & None & This variable is called to make changes to the sixth mulitple choice button's appearance and to assign connections to methods for the button, which is one of the 6 multiple choice buttons for question 4 & HomeworkPage2ParentClass (4.3.19) \\ \hline
+self.title & String & This variable is called to make changes to the title QLabel's appearance and position. This label tells the user the title of the window which is currently open & All PyQt Classes\\ \hline
+self.header & String & This variable contains a group of strings which are assigned to be the headers of the columns on the QTableWidgets which display the contents of the database & DatabaseWidget (4.3.2), ReportWidget (4.3.3) \\ \hline
+self.task\_box\_label & String & This variable is used to make changes to the task box label's appearance and position. This label asks the user to select an option from the combo box & ReportWidget (4.3.3) \\ \hline
+self.score\_box\_label & String & This variable is used to make changes to the score box label's appearance and position. This label asks the user to select an option from the combo box & ReportWidget (4.3.3) \\ \hline
+self.lessons\_label & String & This variable is used to make changes to the lessons label's appearance and position. This label identifies the purpose of the lessons button to the user & UserAccountwidget (4.3.5) \\ \hline
+self.homework\_label & String & This variable is used to make changes to the homework label's appearance and position. This label identifies the purpose of the homework button to the user & UserAccountwidget (4.3.5) \\ \hline
+self.progress\_label & String & This variable is used to make changes to the progress label's appearance and position. This label identifies the purpose of the progress button to the user & UserAccountwidget (4.3.5) \\ \hline
+self.select & String & This variable is used to make changes to the select label's appearance and position. This label asks the user to select an option & LessonMenuWidget (4.3.6) \\ \hline
+self.title\_pic & Blob & This variable is used to make changes to the size and position of the image assigned to the label. This image is user friendly and identifies the topic for the user & All PyQt Classes \\ \hline
+self.question\_2 & String & This variable is used to make changes to the question 2 label's appearance and position. This parent label is a question which appears on each homework page 2 & HomeworkPage2ParentClass (4.3.19) \\ \hline
+self.task\_box & String, Integer, Real & This variable is used to make changes to the task query combo box's appearance and position. This combo box contains the options of tasks to query, which are passed through to the SQL statement when selected & ReportWidget (4.3.3) \\ \hline
+self.score\_box & String, Integer, Real & This variable is used to make changes to the score query combo box's appearance and position. This combo box contains the options of scores to query, which are passed through to the SQL statement when selected & ReportWidget (4.3.3) \\ \hline
+self.answer\_2 & String, Integer, Real & This variable is used to make changes to the answer 2 combo box's appearance and position. This combo box contains the options of answers to the generic question 2 on the second homework page & HomeworkPage2ParentClass (4.3.19) \\ \hline
+self.answer\_3 & String, Integer, Real & This variable is used to make changes to the answer 3 combo box's appearance and position. This combo box contains the options of answers to the generic question 3 on the second homework page & HomeworkPage2ParentClass (4.3.19) \\ \hline
+self.lesson\_1 & String & This variable is used to make changes to the size and position of the lesson 1 QTextEdit. This contains the first part of each generic lesson on the first lesson pages & ParentLessonLayout (4.3.13) \\ \hline
+self.lesson\_2 & String & This variable is used to make changes to the size and position of the lesson 2 QTextEdit. This contains the second part of each generic lesson on the first lesson pages & ParentLessonLayout (4.3.13) \\ \hline
+self.text\_1 & String & This variable is used to make changes to the size and position of the text 1 QTextEdit. This contains the third part of each generic lesson on the second lesson pages & ParentLessonPage2 (4.3.14) \\ \hline
+self.text\_2 & String & This variable is used to make changes to the size and position of the text 2 QTextEdit. This contains the fourth part of each generic lesson on the second lesson pages & ParentLessonPage2 (4.3.14) \\ \hline
+self.database & String, Integer & This variable is used to make changes to the size and formatting of the database QTableWidget, which contains all data fetched from the database when the progress screen is opened & DatabaseWidget (4.3.2) \\ \hline
+self.db & String, Integer & This variable is used to make changes to the size and formatting of the db QTableWidget, which contains all data fetched from the database when a user queries for specific information & Reportwidget (4.3.3) \\ \hline
+pal & Blob & This variable is used to set the background colour of the entire window which it is used in & All PyQt Classes \\ \hline
+self.layout & None & This variable is used to assign the layout to be used as a QGridLayout, which is a useful layout for easily positioning widgets & All Classes \\ \hline
+self.stack & None & This variable is used in the lesson and homework stacks to make the layout to be used a stack layout, so that one window can contain both parts of each lesson or homework & Trig1StackSides (4.3.12), Trig1SidesEasyStack (4.3.17) \\ \hline
+self.widget & None & This variable is used where the stack widgets are used to set the widget type to be used as a QWidget, which contains the stack layout & All PyQt QGridLayout Classes \\ \hline
+self.\_centralwidget & None & This variable is used to set the class it is in as the priority window to be opened when an event is activated; the central window to be used first & ParentLessonMenu (4.3.6), HomeworkMenuWidget (4.3.7) \\ \hline
+NameEntered & Boolean & This variable is a pyqtSignal which is used to tell the system that the continue button has been clicked and allow it to switch to the home screen, which is in the stack layout with the home screen & FirstScreen (4.3.4) \\ \hline
+self.parent\_window & None & This variable is used to pass down the parent values required to enable a window to be in a stack & UserAccountWidget(4.3.5) \\ \hline
+self.parent & None & This variable is used to pass down the parent values required to enable a window to be in a stack & ParentLessonLayout (4.3.13), ParentLessonPage2 (4.3.14), ParentHomeworkPage1Class (4.3.18), HomeworkPage2ParentClass (4.3.19) \\ \hline
+lessonmenuwidget & Class & This variable is assigned to the lesson menu widget so that it can be added to the layout and controlled for displaying and closing & UserAccountClass (4.3.5) \\ \hline
+homeworkmenuwidget & Class & This variable is assigned to the homework menu widget so that it can be added to the layout and controlled for displaying and closing & UserAccountClass (4.3.5) \\ \hline
+databasewidget & Class & This variable is assigned to the progress widget so that it can be added to the layout and controlled for displaying and closing & UserAccountClass (4.3.5) \\ \hline
+trig\_1\_widget & Class & This variable is assigned to the trigonometry 1 lesson menu widget so that it can be added to the layout and controlled for displaying and closing & LessonMenuWidget (4.3.6) \\ \hline
+trigonometry\_1\_homework & Class & This variable is assigned to the trigonometry 1 homework menu widget so that it can be added to the layout and controlled for displaying and closing & HomeworkMenuWidget (4.3.7) \\ \hline
+sides\_aho & Class & This variable is assigned to the first lesson screen widget so that it can be added to the layout and controlled for displaying and closing & Trigonometry1(ParentLessonMenu) (4.3.10) \\ \hline
+sides\_aho\_1 & Class & This variable is assigned to the second lesson screen widget so that it can be added to the layout and controlled for displaying and closing & Trigonometry1HW(ParentHomeworkMenuClass) (4.3.11) \\ \hline
+self.first\_widget & Class & This variable is assigned to the screen at the top of the stack so that it can be added to the stack layout and controlled for displaying and closing & Trig1StackSides (4.3.12), Trig1SidesEasyStack (4.3.17) \\ \hline
+self.second\_widget & Class & This variable is assigned to the second screen in the stack so that it can be added to the stack layout and controlled for displaying and closing & Trig1StackSides (4.3.12), Trig1SidesEasyStack (4.3.17) \\ \hline
+report\_widget & Class & This variable is assigned to the lesson menu widget so that it can be controlled for displaying and closing & DatabaseWidget (4.3.2) \\ \hline
+count & Integer & This variable is used to increment for each row that is filled when the database QTableWidget is filled so that the first row isn't constantly over-written until the last record & DatabaseWidget (4.3.2) \\ \hline
+\_count & Integer & This variable is used to increment for each row that is filled when the db QTableWidget is filled so that the first row isn't constantly over-written until the last record & ReportWidget (4.3.3) \\ \hline
+self.correct\_count & Integer & This variable is used in the check\_selected method in the homework page 1 parent class to count the number of line edits which contain a correct input from the user & ParentHomeworkPage1Class (4.3.18) \\ \hline
+self.correct\_count\_2 & Integer & This variable is used to count the correct answers in the generic second homework questions & HomeworkPage2ParentClass (4.3.19) \\ \hline
+self.correct\_count\_3 & Integer & This variable is used to count the correct answers in the generic third homework questions & HomeworkPage2ParentClass (4.3.19) \\ \hline
+self.correct\_count\_4 & Integer & This variable is used to count the correct answers in the generic fourth homework questions & HomeworkPage2ParentClass (4.3.19) \\ \hline
+self.task & String & This is the hard-coded variable in each subclass for the homeworks which is saved to the database - it is the task name which is intended to be saved with the scores & ParentHomeworkPage1Class (4.3.18) \\ \hline
+self.answer\_lesson & Integer, Real, String & This variable is hard-coded in each subclass for the check method to compare the user's input to a question against; it is the correct answer expected for the lesson answers & ParentLessonLayout (4.3.13) \\ \hline
+self.answer\_1\_a & Integer, Real, String & This variable is hard-coded in each subclass for the check method to compare the user's input to a question against; it is the correct answer expected for the first of the six homework page 1 line edits & SidesAHOEasyWidget(ParentHomeworkPage1Class) (4.3.20) \\ \hline
+self.answer\_1\_b & Integer, Real, String & This variable is hard-coded in each subclass for the check method to compare the user's input to a question against; it is the correct answer expected for the second of the six homework page 1 line edits & SidesAHOEasyWidget(ParentHomeworkPage1Class) (4.3.20) \\ \hline
+self.answer\_1\_c & Integer, Real, String & This variable is hard-coded in each subclass for the check method to compare the user's input to a question against; it is the correct answer expected for the third of the six homework page 1 line edits & SidesAHOEasyWidget(ParentHomeworkPage1Class) (4.3.20) \\ \hline
+self.answer\_1\_d & Integer, Real, String & This variable is hard-coded in each subclass for the check method to compare the user's input to a question against; it is the correct answer expected for the fourth of the six homework page 1 line edits & SidesAHOEasyWidget(ParentHomeworkPage1Class) (4.3.20) \\ \hline
+self.answer\_1\_e & Integer, Real, String & This variable is hard-coded in each subclass for the check method to compare the user's input to a question against; it is the correct answer expected for the fifth of the six homework page 1 line edits & SidesAHOEasyWidget(ParentHomeworkPage1Class) (4.3.20) \\ \hline
+self.answer\_1\_f & Integer, Real, String & This variable is hard-coded in each subclass for the check method to compare the user's input to a question against; it is the correct answer expected for the sixth of the six homework page 1 line edits & SidesAHOEasyWidget(ParentHomeworkPage1Class) (4.3.20) \\ \hline
+self.answer\_question\_4 & Integer, Real, String & This variable is hard-coded in each subclass for the check method to compare the user's input to a question against; it is the correct answer expected for the multiple choice question for on each homework page 2 & HomeworkPage2ParentClass (4.3.19) \\ \hline
+cont & Boolean & This boolean is used to decide whether or not the user can switch from the first to the second screen in a stack; if they have not answered all questions, this variable will stay false until they do & ParentHomeworkPage1Class (4.3.18) \\ \hline
+self.allow\_cont & Boolean & this boolean is used to decide whether or not the user can close a homework stack; if they have not answered all questions on a homework page 2 it will stay false until they do & HomeworkPage2ParentClass (4.3.19) \\ \hline
+self.attempts\_remaining\_a & Integer & This variable is used to count how many attempts the user has at question 2 before all input methods involved in said question are disabled; it will decrement with each wrong input checked by the checking methods & HomeworkPage2ParentClass (4.3.19) \\ \hline
+self.attempts\_remaining\_b & Integer & This variable is used to count how many attempts the user has at question 3 before all input methods involved in said question are disabled; it will decrement with each wrong input checked by the checking methods & HomeworkPage2ParentClass (4.3.19) \\ \hline
+self.attempts\_remaining\_c & Integer & This variable is used to count how many attempts the user has at question 4 before all input methods involved in said question are disabled; it will decrement with each wrong input checked by the checking methods & HomeworkPage2ParentClass (4.3.19) \\ \hline
+data & List & This variable is passed through to the method which queries the database; it is the task name value selected in the corresponding combo box & ReportWidget (4.3.3) \\ \hline
+score\_data & List & This variable is passed through to the method which queries the database; it is the score value selected in the corresponding combo box & ReportWidget (4.3.3) \\ \hline
+self.answer & List & This variable is used to add the six self.answer\_1\_x variables to a list so that the same changes can be made to all of them in a for loop rather than typing the changes out separately six times & ParentHomeworkPage1Class (4.3.18)  \\ \hline
+error\_message & Class & This variable is assigned to an error message class so that it can be displayed at any point in a method when necessary & ErrorMessage2(QErrorMessage) (4.3.22) \\ \hline
+message & String & this is the message which is displayed in an error message class when it is called - used to tell the user what they have done wrong & ErrorMessage2(QErrorMessage) (4.3.22) \\ \hline
+\end{longtable}
+\end{center}
 
 \section{System Evidence}
 
