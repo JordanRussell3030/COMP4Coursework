@@ -1,0 +1,129 @@
+pyqt variables:
+
+count
+pal
+self.back
+self.layout
+self.parent
+
+order:
+database variables
+	- self._db_name = db_name
+	- self.table_name = "Student"
+	-cursor = db.cursor()
+	-result = cursor.fetchall()
+	-response = input("")
+	-keep_table = False
+	-sql = create table student
+	-info = cursor.fetchall
+	-report = cursor.fetchall - in report widget
+	-students = cursor.fetchall - in database_widget
+	-g_database = Database("student_database.db") (db_name)
+
+pyqt variables
+	pushbuttons
+-self.back = QPushButton
+-self.report = QPushButton
+-self.submit = QPushButton
+-self.cont = QPushButton
+-self.lessons = QPushButton
+-self.homework = QPushButton
+-self.progress = QPushButton
+-self.log_out = QPushButton
+-self.t1 = QPushButton
+-self.ht1 = QPushButton
+-self.button_1 = QPushButton
+-self.button_2 = QPushButton
+-self.button_3 = QPushButton
+-self.button_4 = QPushButton
+-self.button_5 = QPushButton
+-self.button_6 = QPushButton
+
+-self.next = QPushButton
+-self.previous = QPushButton
+-self.check = QPushButton
+-self.finish = QPushButton
+-self.cancel = QPushButton
+-self.reset = QPushButton
+-self._button_1
+-self._button_2
+-self._button_3
+-self._button_4
+-self._button_5
+-self._button_6
+-self.mark_2 = QPushButton
+-self.mark_3 = QPushButton
+-self.attempts_button = QPushButton
+
+	labels
+-self.title = QLabel
+-self.header = QLabel
+-self.task_box_label = QLabel
+-self.score_box_label = QLabel
+-self.message = QLabel
+-self.pic = QLabel (PIXMAP)
+-self.lessons_label = QLabel
+-self.homework_label = QLabel
+-self.progress_label = QLabel
+-self.select = QLabel
+-self.title_pic = QLabel(PIXMAP)
+-self.question_2 = QLabel
+	
+	comboboxes
+-self.task_box = QComboBox
+-self.score_box = QComboBox
+-self.answer_2 = QComboBox
+-self.answer_3 = QComboBox
+	
+	textedits
+	
+-self.lesson_1 = QTextEdit
+-self.lesson_2 = QTextEdit
+-self.text_1 = QTextEdit
+-self.text_2 = QTextEdit
+
+	tablewidgets
+-self.database = QTableWidget
+-self.db = QTableWidget
+
+	lineedits
+-self.answer = QLineEdit()
+-self.answer_a = QLineEdit
+-self.answer_b = QLineEdit
+-self.answer_c = QLineEdit
+-self.answer_d = QLineEdit
+-self.answer_e = QLineEdit
+-self.answer_f = QLineEdit
+
+
+	
+	layout stuff (widgets, pal)
+-pal = QPalette
+-self.layout = QGridLayout
+-self._centralwidget = QWidget
+-self.stack = QStackedLayout
+-self.widget = QWidget
+
+-NameEntered = pyqtSignal
+-self.parent_window = parent
+-self.parent = parent
+
+	
+variables connecting to windows
+
+-report_widget = ReportWidget()
+lessonmenuwidget = LessonMenuWidget()
+homeworkmenuwidget
+databasewidget
+-trig_1_widget = Trigonometry1()
+-trigonometry_1_homework = Trigonometry1HW()
+-sides_aho = Trig1StackSides()
+-sides_aho_1 = Trig1StackSidesEasy()
+-self.first_widget = SidesAHOWidget
+-self.second_widget = SidesAHOWidgetPage2
+
+
+method variables (count, attempts remainig, that sort of thing)
+self.answer = []
+error_message variables
+leftovers

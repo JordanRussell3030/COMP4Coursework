@@ -1537,7 +1537,7 @@ class Trig1StackSidesEasy(QMainWindow):
         self.setCentralWidget(self.widget)
 \end{python}
 
-This is one of twenty four stack classes which each contain the two screens for one homework. This stack widget has the two screens added to the layout (imported from the files where each widget's class is coded), then when the stack is opened the first screen is displayed, and can switch to the second in the same window. This is accessed by clicking the corrersponding button in the first derived homework menu (Trigonometry1HW(ParentHomeworkMenuClass) Class). It is useful to have the two homework screens in a stack together so the user cannot close one screen and skip to the next, or vice-versa and repeat a page, potentially crashing the program. The use can return to one page, but the second will still be there, and they cannot re-submit the score of the first page until the second page has been closed and the stack is closed entirely and they re-do the whole homework. The contents of both screens will be left how the user leaves them until the entire stack is closed, even if they are switching between screens.
+This is one of twenty-four stack classes which each contain the two screens for one homework. This stack widget has the two screens added to the layout (imported from the files where each widget's class is coded), then when the stack is opened the first screen is displayed, and can switch to the second in the same window. This is accessed by clicking the corrersponding button in the first derived homework menu (Trigonometry1HW(ParentHomeworkMenuClass) Class). It is useful to have the two homework screens in a stack together so the user cannot close one screen and skip to the next, or vice-versa and repeat a page, potentially crashing the program. The use can return to one page, but the second will still be there, and they cannot re-submit the score of the first page until the second page has been closed and the stack is closed entirely and they re-do the whole homework. The contents of both screens will be left how the user leaves them until the entire stack is closed, even if they are switching between screens.
 
 \subsection{ParentHomeworkPage1Class Class}
 
@@ -1682,7 +1682,7 @@ class ParentHomeworkPage1Class(QWidget):
         self.answers.append(self.answer_f)
 \end{python}
 
-This is the parent class which provides the default attributes to each of the twenty four first homework screens. The file with the subclasses imports from here, and this parent class is never seen by the user; only the subclasses are accessible. This contains the attributes which are shared by all subclasses, while the next page connection method is in each subclass, in order to switch to the relevant second page. The background colour and screen maximising is coded here so all subclasses will have the same background colour and will be maximised. Each subclass is placed in a stack with its corresponding second screen so that the two pages are always the right ones and relevant to each other.
+This is the parent class which provides the default attributes to each of the twenty-four first homework screens. The file with the subclasses imports from here, and this parent class is never seen by the user; only the subclasses are accessible. This contains the attributes which are shared by all subclasses, while the next page connection method is in each subclass, in order to switch to the relevant second page. The background colour and screen maximising is coded here so all subclasses will have the same background colour and will be maximised. Each subclass is placed in a stack with its corresponding second screen so that the two pages are always the right ones and relevant to each other.
 
 \subsubsection{check\_selected method}
 
@@ -1941,7 +1941,7 @@ class HomeworkPage2ParentClass(QWidget):
         self.answer_question_4 = None
 \end{python}
 
-This is the parent class which provides the default attributes to each of the twenty four second homework screens. The file with the subclasses imports from here, and this parent class is never seen by the user; only the subclasses are accessible. This contains the attributes which are shared by all subclasses, while the previous page connection method is in each subclass, in order to switch to the relevant first page. The background colour and screen maximising is coded here so all subclasses will have the same background colour and will be maximised. Each subclass is placed in a stack with its corresponding first screen so that the two pages are always the right ones and relevant to each other.
+This is the parent class which provides the default attributes to each of the twenty-four second homework screens. The file with the subclasses imports from here, and this parent class is never seen by the user; only the subclasses are accessible. This contains the attributes which are shared by all subclasses, while the previous page connection method is in each subclass, in order to switch to the relevant first page. The background colour and screen maximising is coded here so all subclasses will have the same background colour and will be maximised. Each subclass is placed in a stack with its corresponding first screen so that the two pages are always the right ones and relevant to each other.
 
 \subsubsection{check\_button\_1 method}
 
@@ -2065,7 +2065,7 @@ class SidesAHOEasyWidget(ParentHomeworkPage1Class):
         self.answer_1_f = "6"
 \end{python}
 
-This is one of the twenty four first homework screens which inherits from the parent homework page 1 class (ParentHomeworkPage1 Class) and is placed in a stack widget (Trig1SidesEasyStack Class) with the corresponding second sides easy homework screen. This way it is not possible for only one of the two homework screens to be open at any time, as they are in the same stack which keeps changes until it is closed entirely.
+This is one of the twenty-four first homework screens which inherits from the parent homework page 1 class (ParentHomeworkPage1 Class) and is placed in a stack widget (Trig1SidesEasyStack Class) with the corresponding second sides easy homework screen. This way it is not possible for only one of the two homework screens to be open at any time, as they are in the same stack which keeps changes until it is closed entirely.
 
 \subsubsection{open\_page\_2 method}
 
@@ -2111,7 +2111,7 @@ class SidesAHOEasyWidget2(HomeworkPage2ParentClass):
         self.answer_question_4 = "40"
 \end{python}
 
-This class is one of the twenty four second homework screens which inherits from the homework page 2 parent class (HomeworkPage2ParentClass Class) and is placed in a stack widget (Trig1SidesEasyStack Class) with the corresponding first sides easy homework screen. This way it is not possible for only one of the two homework screens to be open at any time, as they are in the same stack which keeps changes until it is closed entirely.
+This class is one of the twenty-four second homework screens which inherits from the homework page 2 parent class (HomeworkPage2ParentClass Class) and is placed in a stack widget (Trig1SidesEasyStack Class) with the corresponding first sides easy homework screen. This way it is not possible for only one of the two homework screens to be open at any time, as they are in the same stack which keeps changes until it is closed entirely.
 
 \subsection{ErrorMessage2(QErrorMessage) Class}
 
@@ -2128,6 +2128,118 @@ class ErrorMessage2(QErrorMessage):
 This is one of the error message classes which inherits from the built in QErrorMessage class; these are displayed at certain points throughout the program, mainly in the homework if a user gets a wrong answer. these are useful becuase they can all be called at any point in another file simply by importing the file with the error messages into it , similar to the database controller, where all of the SQL code is separated.
 
 \section{Variable Listing}
+
+\begin{centre}
+\begin{tabular}{|{4cm}|p{3cm}|p{5cm}|p{5cm}|}
+\textbf{Variable Name} & \textbf{Data Type} & \textbf{Purpose of Variable} & \textbf{Class reference}
+self.\_db\_name & String & This is the variable which is passed through to the create\_table method to check if this table already exists &
+self.table\_name & String & This is the name of the table which is created in the create\_table method, and is passed through so the name will always be the same &
+cursor & List & This variable is the structure controller for the database - it makes the changes when SQL code is executed &
+result & List & This is assigned to the contents of the database which is fetched when the system checks to see if the table already exists &
+info & List & This is assigned to the contents of the database which is fetched when a task is searched for to see if it exists already when saving a new record &
+report & List & This is assigned to the contents of the database which is fetched when a user queries specific data in the database &
+students & List & This is assigned to the contents of the database which is fetched when the progress screen is opened and all data is needed for display &
+sql & String & This is the name of the variable which is always passed into the execute\_sql method whenever another method need to access the database; it is the sql statement requiring execution &
+response & String & This is an input which asks the user whether or not they would like to over-write the existing database - accepts y or n &
+keep\_table & Boolean & This is the boolean which checks whether the user wants to keep the existing table or not; input y for True, n for False &
+g\_database & Database Class & This variable represents the entire database and is called whenever a method wants to access the database &
+self.cont & None & This variable is called to make changes to the continue button's appearance and to assign connections to methods for the button,  which takes the user from the first screen to the home screen &
+self.lessons & None & This variable is called to make changes to the lessons button's appearance and to assign connections to methods for the button, which takes the user from the home screen to the lesson topic menu &
+self.homework & None & This variable is called to make changes to the homework button's appearance and to assign connections to methods for the button, which takes the user from the home screen to the homework topic menu &
+self.progress & None &  This variable is called to make changes to the progress button's appearance and to assign connections to methods for the button, which takes the user from the home screen to the progress screen &
+self.log\_out & None & This variable is called to make changes to the log out button's appearance and to assign connections to methods for the button, which closes the entire system when clicked &
+self.t1 & None & This variable is called to make changes to the trigonometry 1 button's appearance and to assign connections to methods for the button, which takes the user from the lesson topic menu to the trigonometry 1 lesson sub menu &
+self.ht1 & None & This variable is called to make changes to the homework trigonometry 1 button's appearance and to assign connections to methods for the button, which takes the user from the homework topic menu to the trigonometry 1 homework dub menu &
+self.back & None & This variable is called to make changes to the return button's appearance and to assign connections to methods for the button, which returns the user from the screen they were on to the previous screen &
+self.report & None & This variable is called to make changes to the report button's appearance and to assign connections to methods for the button, which opens the report window from the progress window &
+self.submit & None & This variable is called to make changes to the submit button's appearance and to assign connections to methods for the button, which submits the contents of the combo boxes on the report widget to query the database &
+self.button\_1 & None & This variable is called to make changes to the first menu button's appearance and to assign connections to methods for the button, which takes the user from the sub menu to the corresponding lesson &
+self.button\_2 & None & This variable is called to make changes to the second menu button's appearance and to assign connections to methods for the button, which takes the user from the sub menu to the corresponding lesson &
+self.button\_3 & None & This variable is called to make changes to the third menu button's appearance and to assign connections to methods for the button, which takes the user from the sub menu to the corresponding lesson &
+self.button\_4 & None & This variable is called to make changes to the fourth menu button's appearance and to assign connections to methods for the button, which takes the user from the sub menu to the corresponding lesson &
+self.button\_5 & None & This variable is called to make changes to the fifth menu button's appearance and to assign connections to methods for the button, which takes the user from the sub menu to the corresponding lesson &
+self.button\_6 & None & This variable is called to make changes to the sixth menu button's appearance and to assign connections to methods for the button, which takes the user from the sub menu to the corresponding lesson &
+self.next & None & This variable is called to make changes to the next button's appearance and to assign connections to methods for the button, which switches from the first window in a stack to the second, and saves the score and task name from the first screen to the database &
+self.previous & None & This variable is called to make changes to the previous button's appearance and to assign connections to methods for the button, which switches from the second window in a stack to the first &
+self.check & None & This variable is called to make changes to the check button's appearance and to assign connections to methods for the button, which checks if the contents of the line edit in the lesson is correct &
+self.finish & None & This variable is called to make changes to the finish button's appearance and to assign connections to methods for the button, which closes the stack widget in use and saves the scores of the second screen to the database &
+self.cancel & None & This variable is called to make changes to the cancel button's appearance and to assign connections to methods for the button, which closes the stack widget in use without making any changes to the database &
+self.reset & None & This variable is called to make changes to the reset button's appearance and to assign connections to methods for the button, which clears the contents of all 6 line edits on the first homework screen &
+self.mark\_2 & None & This variable is called to make changes to the first mark it button's appearance and to assign connections to methods for the button, which checks to see if the contents of the combo box is correct &
+self.mark\_3 & None & This variable is called to make changes to the second mark it button's appearance and to assign connections to methods for the button, which checks to see if the contents of the combo box is correct &
+self.attempts\_button & None & This variable is called to make changes to the atempts button's appearance and to assign connections to methods for the button, which simply displays the number of attempts the user has left on question 4 because it suits the design more than a QLabel &
+self.\_button\_1 & None & This variable is called to make changes to the first mulitple choice button's appearance and to assign connections to methods for the button, which is one of the 6 multiple choice buttons for question 4 & 
+self.\_button\_2 & None & This variable is called to make changes to the second mulitple choice button's appearance and to assign connections to methods for the button, which is one of the 6 multiple choice buttons for question 4 &
+self.\_button\_3 & None & This variable is called to make changes to the third mulitple choice button's appearance and to assign connections to methods for the button, which is one of the 6 multiple choice buttons for question 4 &
+self.\_button\_4 & None & This variable is called to make changes to the fourth mulitple choice button's appearance and to assign connections to methods for the button, which is one of the 6 multiple choice buttons for question 4 &
+self.\_button\_5 & None & This variable is called to make changes to the fifth mulitple choice button's appearance and to assign connections to methods for the button, which is one of the 6 multiple choice buttons for question 4 &
+self.\_button\_6 & None & This variable is called to make changes to the sixth mulitple choice button's appearance and to assign connections to methods for the button, which is one of the 6 multiple choice buttons for question 4 &
+self.title & String & This variable is called to make changes to the title QLabel's appearance. This label tells the user the title of the window which is currently open &
+self.header & String & This variable contains a group of strings which are assigned to be the headers of the columns on the QTableWidgets which display the contents of the database &
+self.task\_box\_label & String &
+self.score\_box\_label & String &
+self.lessons\_label & String &
+self.homework\_label & String &
+self.progress\_label & String &
+self.select & String &
+self.title\_pic & Blob &
+self.question\_2 & String &
+self.task\_box & String, Integer, Real &
+self.score\_box & String, Integer, Real &
+self.answer\_2 & String, Integer, Real &
+self.answer\_3 & String, Integer, Real &
+self.lesson\_1 & String &
+self.lesson\_2 & String &
+self.text\_1 & String &
+self.text\_2 & String &
+self.database & String, Integer &
+self.db & String, Integer &
+pal & Blob &
+self.layout & None &
+self.stack & None &
+self.widget & None &
+self.\_centralwidget & None &
+NameEntered & Boolean &
+self.parent\_window & None &
+self.parent & None &
+lessonmenuwidget & Class &
+homeworkmenuwidget & Class &
+databasewidget & Class &
+trig\_1\_widget & Class &
+trigonometry\_1\_homework & Class &
+sides\_aho & Class &
+sides\_aho\_1 & Class &
+self.first\_widget & Class &
+self.second\_widget & Class &
+report\_widget & Class &
+count & Integer &
+\_count & Integer &
+self.correct\_count & Integer &
+self.correct\_count\_2 & Integer &
+self.correct\_count\_3 & Integer &
+self.correct\_count\_4 & Integer &
+self.task & String &
+self.answer\_lesson & Integer, Real, String &
+self.answer\_1\_a & Integer, Real, String &
+self.answer\_1\_b & Integer, Real, String &
+self.answer\_1\_c & Integer, Real, String & 
+self.answer\_1\_d & Integer, Real, String &
+self.answer\_1\_e & Integer, Real, String &
+self.answer\_1\_f & Integer, Real, String &
+self.answer\_question\_4 & Integer, Real, String &
+cont & Boolean &
+self.allow\_cont & Boolean &
+self.attempts\_remaining\_a & Integer &
+self.attempts\_remaining\_b & Integer &
+self.attempts\_remaining\_c & Integer &
+data & List &
+score\_data & List &
+self.answer & Integer, Real, String &
+error\_message & Class &
+error\_message\_2 & Class &
+message & String &
+\end{tabular}
+\end{centre}
 
 \section{System Evidence}
 

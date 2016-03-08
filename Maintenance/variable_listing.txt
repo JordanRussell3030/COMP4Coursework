@@ -1,0 +1,166 @@
+database_class:
+- self._db_name = db_name
+- self.table_name = "Student"
+
+-cursor = db.cursor()
+-result = cursor.fetchall()
+-response = input("")
+-keep_table = False
+-sql = create table student
+-info = cursor.fetchall
+-report = cursor.fetchall - in report widget
+-students = cursor.fetchall - in database_widget
+
+-g_database = Database("student_database.db") (db_name)
+
+database_widget:
+-pal = QPalette
+-self.title = QLabel
+-self.back = QPushButton
+-self.report = QPushButton
+-self.database = QTableWidget
+-self.layout = QGridLayout
+-count = 0
+-report_widget = ReportWidget()
+
+report_widget:
+-self.header = QLabel
+-self.task_box_label = QLabel
+-self.task_box = QComboBox
+-self.score_box_label = QLabel
+-self.score_box = QComboBox
+-self.submit = QPushButton
+-self.db = QTableWidget
+-_count = 0
+-data = task_boxtext
+-score_data = scoreboxtext
+-report = get_query
+
+first_screen_widget:
+-NameEntered = pyqtSignal
+-self.message = QLabel
+-self.cont = QPushButton
+-self.pic = QLabel (PIXMAP)
+
+student_account_home:
+-self.parent_window = parent
+-self.lessons = QPushButton
+-self.homework = QPushButton
+-self.progress = QPushButton
+-self.lessons_label = QLabel
+-self.homework_label = QLabel
+-self.progress_label = QLabel
+-self.log_out = QPushButton
+-self.picture = QLabel (PIXMAP)
+-self.homework_pic = QLabel(PIXMAP)
+-self.smiler = QLabel(PIXMAP)
+lessonmenuwidget = LessonMenuWidget()
+homeworkmenuwidget
+databasewidget
+
+lesson_menu_widget:
+-self.t1 = QPushButton
+-self.t1_pic = QLabel(PIXMAP)
+-self.lesson_label = QLabel
+-self.select = QLabel
+-self.title_pic = QLabel(PIXMAP)
+-self._centralwidget = QWidget
+-trig_1_widget = Trigonometry1()
+
+homework_menu_widget:
+-self.title = QLabel(PIXMAP)
+-self.ht1 = QPushButton
+-self.ht1_pic = QLabel(PIXMAP)
+-trigonometry_1_homework = Trigonometry1HW()
+
+parent_lesson_menu:
+-self.title = QLabel(PIXMAP)
+-self.button_1 = QPushButton()
+-self.button_2 = QPushButton
+-self.button_3 = QPushButton
+
+parent_homework_menu:
+-self.button_1 = QPushButton
+-self.button_2 = QPushButton
+-self.button_3 = QPushButton
+-self.button_4 = QPushButton
+-self.button_5 = QPushButton
+-self.button_6 = QPushButton
+-self.pic_1 = QLabel(PIXMAP)
+
+derived_lesson_menus:
+-self.pic = QLabel(PIXMAP)
+-sides_aho = Trig1StackSides()
+
+derived_homework_menus:
+-sides_aho_1 = Trig1StackSidesEasy()
+
+lesson_stacks:
+-self.first_widget = SidesAHOWidget
+-self.second_widget = SidesAHOWidgetPage2
+-self.stack = QStackedLayout
+-self.widget = QWidget
+
+parent_lesson_layout_widget (lesson page 1 parent):
+-self.next = QPushButton
+-self.lesson_1 = QTextEdit
+-self.lesson_2 = QTextEdit
+
+parent_lesson_page_2:
+-self.parent = parent
+-self.answer = QLineEdit()
+-self.answer = QLineEdit
+-self.previous = QPushButton
+-self.check = QPushButton
+-self.finish = QPushButton
+-self.text_1 = QTextEdit
+-self.text_2 = QTextEdit
+
+lesson_page_1:
+
+lesson_page_2:
+-self.answer_lesson = ""
+
+homework_stacks:
+sAME aS LESSOn STACKS - put homework/lesson in table
+
+parent_homework_page_1:
+-self.task = ""
+-self.allow_cont = False
+-self.cancel = QPushButton
+-self.reset = QPushButton
+-self.answer_a = QLineEdit
+-self.answer = []
+-self.correct_count
+-cont
+-error_message = ErrorMessage8
+-error_message_2 = ErrorMessage8
+
+homework_page_2_parent_class:
+-self._button_1 = _button_6 = QPushButton
+-self.question_2 = QLabel
+-self.answer_2 = QComboBox
+-self.answer_3 = QComboBox
+-self.mark_2 = QPushButton
+-self.mark_3 = QPushButton
+-self.attempts_button = QPushButton
+-self.attempts_remaining_a = 2
+-self.attempts_remaining_b = 2
+-self.attempts_remaining_c = 3
+-self.correct_count_2 = 0
+-self.correct_count_3 = 0
+-self.correct_count_4 = 0
+
+homework_page_1:
+-self.answer_1_a = "BC"
+-self.answer_1_b = "AC"
+-self.answer_1_c = ""
+-self.answer_1_d = ""
+-self.answer_1_e = ""
+-self.answer_1_f = ""
+
+homework_page_2:
+-self.answer_question_4 = ""
+
+error_messages:
+-message = ""
