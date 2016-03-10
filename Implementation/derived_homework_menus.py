@@ -23,7 +23,7 @@ class Trigonometry1HW(ParentHomeworkMenuClass):
         self.button_5.setText("SOHCAHTOA Medium")
         self.button_6.setText("SOHCAHTOA Hard")
 
-        #The QLabels hae already been created in the parent class
+        #The QLabels have already been created in the parent class
         #The pixmaps are set here so that they can be different across each of the 5 child classes
         self.pic_1.setPixmap(QPixmap("trig_1_pic_1_h"))
         self.pic_2.setPixmap(QPixmap("trig_1_pic_2_h"))
