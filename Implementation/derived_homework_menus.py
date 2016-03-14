@@ -180,11 +180,8 @@ class PythagorasHW(ParentHomeworkMenuClass):
         self.layout.addWidget(self.button_2, 2, 1)
         self.layout.addWidget(self.button_3, 3, 0)
         self.layout.addWidget(self.pic_3, 3, 1)
-##        self.layout.addWidget(self.pic_4, 4, 0)
         self.layout.addWidget(self.button_4, 4, 1)
         self.layout.addWidget(self.button_5, 5, 0)
-##        self.layout.addWidget(self.pic_5, 5, 1)
-##        self.layout.addWidget(self.pic_6, 6, 0)
         self.layout.addWidget(self.button_6, 6, 1)
 
         self.button_1.clicked.connect(self.pythag_theorem_easy)
