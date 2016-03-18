@@ -83,10 +83,21 @@ class PythagTheoremWidget(ParentLessonLayout):
         self.parent = parent
         
         self.title.setPixmap(QPixmap("pythag_theorem_lesson_title"))
+
+        self.lesson_1_pic = QLabel()
+        self.lesson_1_pic.setPixmap(QPixmap("pythag_lesson_pic_1"))
+        self.lesson_1_pic.setAlignment(Qt.AlignCenter)
+
+        self.lesson_2_pic = QLabel()
+        self.lesson_2_pic.setPixmap(QPixmap("pythag_lesson_pic_2"))
+        self.lesson_2_pic.setAlignment(Qt.AlignCenter)
         
-        self.lesson_1.setText("SOHCAHTROA stuff")
+        self.lesson_1.setText("Pythagoras' Theorem is: a\u00b2 + b\u00b2 = c\u00b2\nPythagoras' Theorem always goes with SIN, COS and TAN because they are both involved with right angled triangles.\nHowever, Pythagoras does not ibvolve any angles - it just uses two sides to find the third side.\nGeneral trigonometry always involves angles.\nThe two shorter sides squared add to equal the longest side squared.\nIn trigonometry terms, the opposite squared plus the adjacent squared add up to make the hypotenuse squared.")
         
-        self.lesson_2.setText("")
+        self.lesson_2.setText("Example:\n\nFind the missing side in the triangle shown.\n\na\u00b2 + b\u00b2 = c\u00b2\n3\u00b2 + x\u00b2 = 5\u00b2\n9 + x\u00b2 = 25\nx\u00b2 = 25 - 9 = 16\nx = \u221a16 = 4m\nIs it sensible? Yes, it's just shorter than 5m and longer than 3m.")
+
+        self.layout.addWidget(self.lesson_1_pic, 2, 0)
+        self.layout.addWidget(self.lesson_2_pic, 2, 1)
 
     def selected_next_page(self):
         self.parent.stack.setCurrentIndex(1)
