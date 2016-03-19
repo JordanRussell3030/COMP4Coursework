@@ -56,10 +56,21 @@ class FindingAnglesWidgetPage2(ParentLessonPage2):
         super().__init__()
 
         self.parent = parent
-        
-        self.text_1.setText("More FA""")
-        
-        self.text_2.setText("Space for SOHCAHTOA """)
+
+        self.text_1_pic = QLabel()
+        self.text_1_pic.setPixmap(QPixmap("find_angles_example"))
+        self.text_1_pic.setAlignment(Qt.AlignCenter)
+
+##        self.text_2_pic = QLabel()
+##        self.text_2_pic.setPixmap(QPixmap("find_angles_text_2_pic"))
+##        self.text_2_pic.setAlignment(Qt.AlignCenter)
+                
+        self.text_1.setText("Example:\n\nFind 6 different angles x such that sin x = 0.94\n\n\nMethod:\n\n1. Sketch the extended SIN graph\n2. Put a horizontal line across at 0.94\n3. Draw lines down to the x-axis wherever the horizontal croses the curve\n4. Use your calculator to find inv sin 0.94, to get the first angle (70\u00b0 in this case)\n5. The symmetry is surely obvious. You can see that 70\u00b0 is 20\u00b0 away from the peak, so all the other angles are clearly 20\u00b0 either side of the peaks at 90\u00b0, 450\u00b0, etc\n\nWe can say that sin x = +0.94 for all of the following angles:\n-290\u00b0, -250\u00b0, 70\u00b0, 110\u00b0, 430\u00b0, 470\u00b0, 790\u00b0, 830\u00b0")
+
+        self.text_2.setText("")
+
+        self.layout.addWidget(self.text_1_pic, 3, 1)
+##        self.layout.addWidget(self.text_2_pic, 3, 0)
 
         self.answer_lesson = None
 

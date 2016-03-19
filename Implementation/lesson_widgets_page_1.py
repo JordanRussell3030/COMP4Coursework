@@ -53,10 +53,22 @@ class FindingAnglesWidget(ParentLessonLayout):
         self.parent = parent
         
         self.title.setPixmap(QPixmap("finding_angles_lesson_title"))
+
+        self.lesson_1_pic = QLabel()
+        self.lesson_2_pic = QLabel()
+
+        self.lesson_1_pic.setPixmap(QPixmap("find_angles_lesson_1_pic"))
+        self.lesson_1_pic.setAlignment(Qt.AlignCenter)
+
+        self.lesson_2_pic.setPixmap(QPixmap("find_angles_text_1_pic"))
+        self.lesson_2_pic.setAlignment(Qt.AlignCenter)
         
-        self.lesson_1.setText("SOHCAHTROA stuff")
+        self.lesson_1.setText("Each of the three trigonometry rules has a graph representing its cycle.\n\nFor 0\u00b0 - 360\u00b0, you get a SINE WAVE, which has one peak and one trough, and a COS BUCKET, which starts at the top, dips, and finishes at the top.\n\nThe underlying shape of both the SIN and COS graphs are identical when you extend them in both directions. The only difference between the two is that the SIN graph is shifted by 90\u00b0 right compared to the COS graph.\n\nBoth graphs wiggle between y limits of exactly +1 and -1.\n\nThe key to drawing the extended graphs is to draw the 0 - 360\u00b0 cycle of either the SIN WAVE or the COS BUCKET and then repeat it in both directions as shown.")
         
-        self.lesson_2.setText("")
+        self.lesson_2.setText("The TAN graph bears no resemblance to the SIN WAVE or COS BUCKET.\n\nEvery 180\u00b0, starting at 90\u00b0, the line disappears up into + infinity and then reappears at - infinity on the y line (asymptote).\nTherefore, the TAN wave is not limited to y values between +1 and -1.\n\nWhilst the SIN and COS graphs repeat every 360\u00b0, the TAN graph repeats every 180\u00b0.")
+
+        self.layout.addWidget(self.lesson_1_pic, 2, 0)
+        self.layout.addWidget(self.lesson_2_pic, 2, 1)
 
     def selected_next_page(self):
         self.parent.stack.setCurrentIndex(1)
