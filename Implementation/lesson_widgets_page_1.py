@@ -17,9 +17,9 @@ class SidesAHOWidget(ParentLessonLayout):
         self.title.setPixmap(QPixmap("sides_lesson_title"))
 
         #These TextEdits are declared in the parent class and the text is set here so that it can be different across each child class
-        self.lesson_1.setText("Every triangle has 3 sides, and each side has a name.\nThe HYPOTENUSE is the longest side, and is always oppposite the right-angle of a triangle.\nThe length can be found using Pythagoras' Theorem of a\u00b2 + b\u00b2 = c\u00b2.\nSine function: sin(x) = Opposite {0} Hypotenuse".format(chr(247)))
+        self.lesson_1.setText("Every triangle has 3 sides, and each side has a name.\n\nThe HYPOTENUSE is the longest side, and is always oppposite the right-angle of a triangle.\n\nThe length can be found using Pythagoras' Theorem of a\u00b2 + b\u00b2 = c\u00b2.\n\nSine function: sin(x) = Opposite {0} Hypotenuse\n\nb {0} SIN B = c {0} SIN C or a {0} SIN A = b {0} SIN B".format(chr(247)))
 
-        self.lesson_2.setText("The OPPOSITE is the side opposite the angle being used.\nCosine function: cos(x) = Adjacent {0} Hypotenuse".format(chr(247)))
+        self.lesson_2.setText("The OPPOSITE is the side opposite the angle being used.\n\nCosine function: cos(x) = Adjacent {0} Hypotenuse\n\na\u00b2 = b\u00b2 + c\u00b2 - 2bcCOS A\n\nOR\n\nCOS A = b\u00b2 + c\u00b2 - a\u00b2 {0} 2bc\n\nThe ADJACENT is next to the angle being used.\nTangent function: tan(x) = Opposite {0} Adjacent".format(chr(247)))
 
     #The connection is in the parent class, because each setCurrentIndex(1) (each second screen in the stack) is declared in the lesson stack template which is already in use
     def selected_next_page(self):
@@ -34,9 +34,9 @@ class SOHCAHTOAWidget(ParentLessonLayout):
         
         self.title.setPixmap(QPixmap("sohcahtoa_lesson_title"))
         
-        self.lesson_1.setText("SOHCAHTOA stands for: \nSine Opposite Hypotenuse\nCosine Adjacent Hypotenuse\nTan Opposite Adjacent.\nThis is the best way to remember the three different rules for working out trigonometry problems.They each turn into a FORMULA TRIANGLE, a triangle which shows the formula inside in a memorable format.")
+        self.lesson_1.setText("SOHCAHTOA stands for:\n\nSine Opposite Hypotenuse\nCosine Adjacent Hypotenuse\nTan Opposite Adjacent.\n\nThis is the best way to remember the three different rules for working out trigonometry problems.\n\nThey each turn into a FORMULA TRIANGLE, a triangle which shows the formula inside in a memorable format.")
 
-        self.lesson_2.setText("Method\n1. Label the three sides O, A and H\n2. Write down from memory SOHCAHTOA\n3. Decide which two sides are involved: O,H, A,H or O,A\n4. Turn the one you choose into one of the formula triangles to the left of the screen\n5. Cover up the thing you want to find and write down whatever is left showing\n6. Translate into numbers and work it out\n7. Finally, check that your answer is sensible")
+        self.lesson_2.setText("Method\n\n1. Label the three sides O, A and H\n\n2. Write down from memory SOHCAHTOA\n\n3. Decide which two sides are involved: O,H, A,H or O,A\n\n4. Turn the one you choose into one of the formula triangles to the left of the screen\n\n5. Cover up the thing you want to find and write down whatever is left showing\n\n6. Translate into numbers and work it out\n\n7. Finally, check that your answer is sensible")
 
         self.pic = QLabel()
         self.pic.setPixmap(QPixmap("formula_triangles.png"))
@@ -78,13 +78,24 @@ class ThreeDTrigonometryWidget(ParentLessonLayout):
         super().__init__()
 
         self.parent = parent
+
+        self.lesson_1_pic = QLabel()
+        self.lesson_1_pic.setPixmap(QPixmap("three_d_trig_lesson_1_pic"))
+        self.lesson_1_pic.setAlignment(Qt.AlignCenter)
+
+        self.lesson_2_pic = QLabel()
+        self.lesson_2_pic.setPixmap(QPixmap("three_d_trig_lesson_2_pic"))
+        self.lesson_2_pic.setAlignment(Qt.AlignCenter)
         
         self.title.setPixmap(QPixmap("three_d_trig_lesson_title"))
         
-        self.lesson_1.setText("SOHCAHTROA stuff")
+        self.lesson_1.setText("When you are presented with a 3D pyramid, make a right angled triangle using the line, a line in the plane and a line between the two.\n\nDraw this right angled triangle again so that you can see it clearly. Label the sides. You might have to use Pythagoras to work out the length of one of the sides.\n\nUse trigonometry to calculate the angle.")
         
-        self.lesson_2.setText("")
+        self.lesson_2.setText("Example: ABCDE is a square based pyramid. It is 12cm high and the square base has sides of length 7cm. Find the angle the edge AE makes with the base.\n\n1. First draw a right-angled triangle using the edge AE, the base and a line between the two (in this case the central height). Call the angle you're trying to find X.\n\n2. Now draw this triangle clearly and label it.\nTo find X, you need to know the length of side EZ. So, using Pythagoras - EZ\u00b2 = 3.5\u00b2 + 3.5\u00b2 = 24.5 - EZ = \u221a24.5cm\n\n3. Now use trigonometry to find the angle X: tan X = 12 {0}\u221a24.5 = 2.4\n\nX = 67.6\u00b0".format(chr(247)))
 
+        self.layout.addWidget(self.lesson_1_pic, 2, 0)
+        self.layout.addWidget(self.lesson_2_pic, 2, 1)
+        
     def selected_next_page(self):
         self.parent.stack.setCurrentIndex(1)
 

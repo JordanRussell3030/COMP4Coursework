@@ -9,12 +9,20 @@ class SidesAHOWidgetPage2(ParentLessonPage2):
         super().__init__()
 
         self.parent = parent
-        
-        self.text_1.setText("The ADJACENT is next to the angle being used.\nTangent function: tan(x) = Opposite {0} Adjacent".format(chr(247)))
-        
-        self.text_2.setText("Space for a practice question based on the lesson e.g what is the length of a")
 
-        self.answer_lesson = None
+        self.text_2_pic = QLabel()
+        self.text_2_pic.setPixmap(QPixmap("sides_lesson_2_pic"))
+        self.text_2_pic.setAlignment(Qt.AlignCenter)
+        
+        self.text_1.setText("There are four types of question where the SINE and COSINE rules would be applied.\n\n1. Two angles given plus any side - SINE rule needed\n\nB = A - C\n\nb {0} SIN B = c {0} SIN C\n\nWhich gives c = b x SIN C {0} SIN B = X\n\n2. Two sides given plus an angle not enclosed by them - SINE rule needed\n\nb {0} SIN B = c {0} SIN C\n\nSIN B = b x SIN C {0} c = X\n\n3. Two sides given plus the angle enclosed by them - COSINE rule needed\n\na\u00b2 = b\u00b2 + c\u00b2 - 2bcCOS A\n\n4. All three sides given but no angles - COSINE rule needed\n\nCOS A = b\u00b2 + c\u00b2 - a\u00b2 {0} 2bc".format(chr(247)))
+        
+        self.text_2.setText("Practice:\n\nFind the length of side c in the diagram below.\nUse example 1 to your left to help you find it.")
+
+        self.answer_lesson = "8.05m"
+
+        self.answer.setText("m")
+
+        self.layout.addWidget(self.text_2_pic, 1, 1)
 
 #These are the child classes which inherit from lesson_pge_2_parent_class
 class SOHCAHTOAWidgetPage2(ParentLessonPage2):
@@ -60,31 +68,43 @@ class FindingAnglesWidgetPage2(ParentLessonPage2):
         self.text_1_pic = QLabel()
         self.text_1_pic.setPixmap(QPixmap("find_angles_example"))
         self.text_1_pic.setAlignment(Qt.AlignCenter)
-
-##        self.text_2_pic = QLabel()
-##        self.text_2_pic.setPixmap(QPixmap("find_angles_text_2_pic"))
-##        self.text_2_pic.setAlignment(Qt.AlignCenter)
                 
         self.text_1.setText("Example:\n\nFind 6 different angles x such that sin x = 0.94\n\n\nMethod:\n\n1. Sketch the extended SIN graph\n2. Put a horizontal line across at 0.94\n3. Draw lines down to the x-axis wherever the horizontal croses the curve\n4. Use your calculator to find inv sin 0.94, to get the first angle (70\u00b0 in this case)\n5. The symmetry is surely obvious. You can see that 70\u00b0 is 20\u00b0 away from the peak, so all the other angles are clearly 20\u00b0 either side of the peaks at 90\u00b0, 450\u00b0, etc\n\nWe can say that sin x = +0.94 for all of the following angles:\n-290\u00b0, -250\u00b0, 70\u00b0, 110\u00b0, 430\u00b0, 470\u00b0, 790\u00b0, 830\u00b0")
 
-        self.text_2.setText("")
+        self.text_2.setText("Practice:\n\nFind one other angle which has the same cosine as 65\u00b0.\nUse the calculator to find COS 65\u00b0\n\nYou will need paper and a pen to sketch a COS graph similar to the one in the previous example.\n\n\nPlease input your answer in the box below: ")
 
-        self.layout.addWidget(self.text_1_pic, 3, 1)
-##        self.layout.addWidget(self.text_2_pic, 3, 0)
+        self.layout.addWidget(self.text_1_pic, 1, 0)
 
-        self.answer_lesson = None
+        self.answer.setText("\u00b0")
+        
+        self.answer_lesson = "-425\u00b0"
+        self.answer_lesson_2 = "-295\u00b0"
+        self.answer_lesson_3 = "-65\u00b0"
 
 class ThreeDTrigonometryWidgetPage2(ParentLessonPage2):
     def __init__(self, parent):
         super().__init__()
 
         self.parent = parent
-        
-        self.text_1.setText("More 3DT""")
-        
-        self.text_2.setText("Space for SOHCAHTOA """)
 
-        self.answer_lesson = None
+        self.text_1_pic = QLabel()
+        self.text_1_pic.setPixmap(QPixmap("three_d_trig_lesson_2_pic_1"))
+        self.text_1_pic.setAlignment(Qt.AlignCenter)
+
+        self.text_2_pic = QLabel()
+        self.text_2_pic.setPixmap(QPixmap("three_d_trig_lesson_2_pic_2"))
+        self.text_2_pic.setAlignment(Qt.AlignCenter)
+        
+        self.text_1.setText("You can also use right angled triangles to find lengths.\n\nExample: Find the lengths FH and BH shown in the diagram.\n\n1.First, use Pythagoras to find the length FH.\n\nf\u00b2 = 3\u00b2 + 3\u00b2 = 18\nFH = \u221a18cm\n\n2. Now use Pythagoras again to find the length BH.\nBH\u00b2 = 3\u00b2 +(\u221a18)\u00b2 = 27\nBH = \u221a27cm = 5.2cm")
+        
+        self.text_2.setText("Practice:\n\nCalculate the length of AG in the cuboid below.\nInput your answer in the box to two decimal places.")
+
+        self.layout.addWidget(self.text_1_pic, 2, 0)
+        self.layout.addWidget(self.text_2_pic, 2, 1)
+
+        self.answer_lesson = "7.07cm"
+
+        self.answer.setText("cm")
 
 class PythagTheoremWidgetPage2(ParentLessonPage2):
     def __init__(self, parent):

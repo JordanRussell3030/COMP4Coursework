@@ -79,6 +79,10 @@ class ParentLessonPage2(QWidget):
         self.check.clicked.connect(self.check_selected)
         self.finish.clicked.connect(self.finish_selected)
 
+        self.answer_lesson = None
+        self.answer_lesson_2 = None
+        self.answer_lesson_3 = None
+
     #Switches back to the previous screen in the stack window (page 1)
     def previous_selected(self):
         self.parent.stack.setCurrentIndex(0)
@@ -87,8 +91,9 @@ class ParentLessonPage2(QWidget):
     def check_selected(self):
         #If it's correct it just tells them they are correct
         #Nothing is saved from the lessons
-        if self.answer.text() == self.answer_lesson:
-            self.answer.setText("{0} Correct".format(self.answer_lesson))
+        if self.answer.text() == self.answer_lesson or self.answer.text() == self.answer_lesson_2 or self.answer.text() == self.answer_lesson_3:
+            self.answer_text = self.answer.text()
+            self.answer.setText("{0} Correct".format(self.answer_text))
         else:
             self.answer.setText("Incorrect")
         #Disables the buttons so they can't edit their answer
