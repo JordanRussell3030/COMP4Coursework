@@ -14,6 +14,14 @@ class ReportWidget(QWidget):
         #Maximises the screen
         self.showMaximized()
 
+        #These four lines of code make the background of the widget white
+        pal = QPalette()
+        #Sets the chosen colour to white
+        pal.setColor(QPalette.Background, Qt.white)
+        #The screen will automatically be filled with the chosen colour
+        self.setAutoFillBackground(True)
+        self.setPalette(pal)
+
         #This is just a label with the title of the window
         self.header = QLabel("Report")
         #Sets the font size and house style of the label

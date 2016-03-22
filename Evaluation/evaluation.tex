@@ -2,6 +2,8 @@
 
 \section{Customer Requirements}
 
+These are the original objectives specified by the client at the analysis stage of making this system.
+
 \textbf{General Objectives}
 
 \begin{itemize}
@@ -399,12 +401,68 @@ Yes/no
 
 Evidence
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
 \section{Effectiveness}
 
 %include as many subsections as necessary for your objectives
 \subsection{Objective Evaluation}
 
+
+
+
+
+
 \section{Learnability}
+
+When I first consulted my client I took into account how much experience they have already had using software such as my system. They are comfortable using the internet, so with the assistance of the user manual they should have no problem installing Python 3.4 and PyQt4. They, along with the other people the client intends to use this system with, have all had experience using similar educational maths programs, such as MyMaths, which have essentially the same purpose as my system. Therefore I tried to make some aspects of the system somewhat similar to the ones conventionally used in educational maths programs, such as the layout, including the navigation of the system, the topics, and the rules of saving and popping error messages, such as making sure all questions have been attempted. None the less, this system would probably be easy enough for less experienced users anyway, as generally the buttons are clearly labelled, appropriately sized, and organised in a convenient way (branch menu). Although some users may have issues finding the exact right topic in the sub-menus, being a reason for the big red return buttons which make it easy to go back and try another menu.
+
+\begin{figure}[H]
+	\includegraphics{C:/Users/Jordan/git/COMP4Coursework2/Evaluation/learnability_1}
+	\caption{An example of the return buttons used to make navigating the sub-menus easier}
+\end{figure}
+
+When designing the system I kept in mind the fact that saving data can be a more complex function if it is done manually, especially by an inexperienced user, so I made all of the database functions automatic; they occur when the user simply clicks a button to finish a homework, or opens the progress screen. This cancels out the need for users to learn new skills which they might not have already learned from using similar systems.
+
+\begin{figure}[H]
+	\includegraphics{C:/Users/Jordan/git/COMP4Coursework2/Evaluation/learnability_2}
+	\caption{The finish button being clicked to automatically save progress for the user}
+\end{figure}
+
+\begin{figure}[H]
+	\includegraphics{C:/Users/Jordan/git/COMP4Coursework2/Evaluation/learnability_3}
+	\caption{The record which was just saved immediately being updated to the database}
+\end{figure}
+
+I also endeavoured to make the database itself very easy to access and understand internally in the system; the system accesses the information from a separate file and displays it in a window in the program, which can be accessed by the user very quickly from the home screen, and even queried for specific details should the user be searching for a specific record. the options in hte combo boxes are as clear as I can make them to make it easier for the user to determine how to use the query function when they try it for the first time.
+
+\begin{figure}[H]
+	\includegraphics{C:/Users/Jordan/git/COMP4Coursework2/Evaluation/learnability_4}
+	\caption{An example of the database being queried for easy access to specific records}
+\end{figure}
+
+Error messages were also incorporated to help the user understand why the sytem isn't working as they expected, should they fail to answer a question properly and try to proceed to the next page and be unsure why they cannot.
+
+\begin{figure}[H]
+	\includegraphics{C:/Users/Jordan/git/COMP4Coursework2/Evaluation/learnability_5}
+	\caption{An example of an error message telling the user why they cannot proceed}
+\end{figure}
+
+Generally, this system is very easy to use, even for people with little experience with such software, and care has been taken to ensure that the interface is very clear and the error messages are sufficient to help a user fix a progression related problem should they need the help. The only concern is that the user has no way to reset the database internally, so once they start using the system they have to either keep their progress or delete the database file manually.
 
 \section{Usability}
 
@@ -412,10 +470,60 @@ Evidence
 
 \section{Suggestions for Improvement}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \section{End User Evidence}
+
+The following images are from a feedback form which I provided to the client so they could convey to me the extent to which they were satisfied with the system.
+
+\begin{figure}[H]
+	\includegraphics{C:/Users/Jordan/git/COMP4Coursework2/Evaluation/client_feedback_1}
+\end{figure}
+
+\begin{figure}[H]
+	\includegraphics{C:/Users/Jordan/git/COMP4Coursework2/Evaluation/client_feedback_2}
+\end{figure}
+
+\begin{figure}[H]
+	\includegraphics{C:/Users/Jordan/git/COMP4Coursework2/Evaluation/client_feedback_3}
+\end{figure}
 
 \subsection{Questionnaires}
 
+This was a brief questionnaire given to the client to give a broad idea of how satisfied they are with the system.
+
+\begin{figure}[H]
+	\includegraphics{C:/Users/Jordan/git/COMP4Coursework2/Evaluation/client_questionnaire}
+\end{figure}
+
 \subsection{Graphs}
 
-\subsection{Written Statements}
+This graph shows the balance of how satisfied the client is with the system:
+
+\begin{figure}[H]
+	\includegraphics{C:/Users/Jordan/git/COMP4Coursework2/Evaluation/client_graph}
+	\caption{According to this graph, the customer was satisfied with 68\% of the system.}
+\end{figure}
+
+This graph shows each of the client's 'yes' marks  against the number of 'no' marks related to whether or not each objective was achieved (out of 32 objectives/sub-objectives, some of which were only partially achieved):
+
+\begin{figure}[H]
+	\includegraphics{C:/Users/Jordan/git/COMP4Coursework2/Evaluation/client_graph_2}
+	\caption{According to this graph, the customer believed I had achieved 75\% of their specified objectives.}
+\end{figure}
