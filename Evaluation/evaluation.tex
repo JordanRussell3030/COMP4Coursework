@@ -500,25 +500,96 @@ Conclusively, the usability level of the overall system is reasonably high, as t
 
 \section{Maintainability}
 
+My system should be very easy to maintain. As of the completion of version 1 of the system, there are no bugs or errors which flag up in the IDLE, and there are no infinite loops or dead ends which the user wouldn't be able to escape without closing the entire application and restarting it. So unless more entire modules were added in a future version, there are currently no bugs to be maintained or fixed. I have used clear variable names throughout the modules which make it somewhat obvious what their purposes are, such as \textbf{self.layout} consistently for the PyQt4 layout of each window. Generic names have been used where required for each type of variable, such as \textbf{count} for stepper variables. Because I have so many sub classes within my system, I was able to use similar names for each sub class, such as \textbf{Trig1StackSidesEasy} and \textbf{Trig1StackSidesMedium} where classes inherit from the same parent class. For every parent class, all of its subclasses are created and altered in the same file; all of the first lesson page classes are in the same file, with almost exactly the same layout, and all of the second lesson pages are in a different file together, also with almost the same layout. This way, a programmer can determine what type of window the error is occurring on, look at the title of the window, and find the subclass easily in the file with the subclasses for that type of window. All of my code has been formatted in such a way that makes it easier to find bits of code. For example, the class begins at the top, followed by a constructor and the super(), then all of the PyQt variables are assigned, followed by algorithm variables, then PyQt window structuring, then connections, and lastly the methods in the order of the buttons they were connected to (this system is almost entirely event-driven). Furthermore, all of the database controller code is in one clearly named file, so if there are any problems involving the modification or accessing of the database the programmer will know where to look. Finally, every different line of code has been commented on at least once (some code is used consistently in many files, so an explanation will be in at least one of them). These comments give a clear explanation of the code's purpose and how it works or what it connects to. Therefore, a programmer will be able to find which section of code is responsible for causing a problem by reading the comments.
+
+\begin{figure}[H]
+	\includegraphics{C:/Users/Jordan/git/COMP4Coursework2/Evaluation/maintainability_1}
+	\caption{An example of subclasses which share a file import being created in the same file with similar names}
+\end{figure}
+
+\begin{figure}[H]
+	\includegraphics{C:/Users/Jordan/git/COMP4Coursework2/Evaluation/maintainability_2}
+	\caption{An example of subclasses which share a parent class being created in the same file with similar names}
+\end{figure}
+
+\begin{figure}[H]
+	\includegraphics{C:/Users/Jordan/git/COMP4Coursework2/Evaluation/maintainability_3_1}
+	\caption{This shows the structure of the code in a class, consistent in all modules}
+\end{figure}
+
+\begin{figure}[H]
+	\includegraphics{C:/Users/Jordan/git/COMP4Coursework2/Evaluation/maintainability_3_2}
+	\caption{This shows the structure of the code in a class, consistent in all modules}
+\end{figure}
+
+\begin{figure}[H]
+	\includegraphics{C:/Users/Jordan/git/COMP4Coursework2/Evaluation/maintainability_3_3}
+	\caption{This shows the structure of the code in a class, consistent in all modules}
+\end{figure}
+
+\begin{figure}[H]
+	\includegraphics{C:/Users/Jordan/git/COMP4Coursework2/Evaluation/maintainability_4_1}
+	\caption{This shows the database controller code all in the same class}
+\end{figure}
+
+\begin{figure}[H]
+	\includegraphics{C:/Users/Jordan/git/COMP4Coursework2/Evaluation/maintainability_4_2}
+	\caption{This shows the database controller code all in the same class}
+\end{figure}
+
+\begin{figure}[H]
+	\includegraphics{C:/Users/Jordan/git/COMP4Coursework2/Evaluation/maintainability_4_3}
+	\caption{This shows the database controller code all in the same class}
+\end{figure}
+
+\begin{figure}[H]
+	\includegraphics{C:/Users/Jordan/git/COMP4Coursework2/Evaluation/maintainability_5}
+	\caption{Examples of comments used to explain the purpose of code segments}
+\end{figure}
+
+In terms of system parameters, there are none which could or should be manually changed or ever changed, as usually the parameters are passed into the database controller for database changes to be made. If the structure of the entire database were changed in a future version, then new parameters might need to be placed in the methods in the database controller class and in the places where these methods are called. Otherwise, for the current version of the system, the database can only be modified if the appropriate parameters have been obtained, such as a task score, as error messages are in place to make it impossible for a user to skip a parameter. All of the possible parameter values are hard-coded, and that need not ever be changed as it would potentially involve writing pointlessly complex code for the same purpose as the current code.
+
+\begin{figure}[H]
+	\includegraphics{C:/Users/Jordan/git/COMP4Coursework2/Evaluation/maintainability_6}
+	\caption{The parameters accepted by the database controller methods}
+\end{figure}
+
+\begin{figure}[H]
+	\includegraphics{C:/Users/Jordan/git/COMP4Coursework2/Evaluation/maintainability_7}
+	\caption{Example of an error message used to prevent the user skipping a parameter}
+\end{figure}
+
+\begin{figure}[H]
+	\includegraphics{C:/Users/Jordan/git/COMP4Coursework2/Evaluation/maintainability_8}
+	\caption{Example of hard-coded parameters which must not be changed}
+\end{figure}
+
+On the other hand, one possible short coming relating to the system's maintainability is that, with the subclasses, they are all crammed into one file, so the programmer will have to scroll through the file to find the right subclass. Another issue is that it is not immediately clear where the file with the destination of a connection is, for example, in one file a method might be designed to open another window with a lesson, but if there was an error in that method, the programmer would have to know where the class which is being opened is in the files (i.e. the lesson page class) if the class name was wrong or something like that. 
+
+\begin{figure}[H]
+	\includegraphics{C:/Users/Jordan/git/COMP4Coursework2/Evaluation/maintainability_9}
+	\caption{Examples of a method where it can be unclear where the class which is being assigned to the variable is located}
+\end{figure}
+
+Overall, my code has been organised in a way which is intended to maximise maintainability by making it easier to know where a piece of code is likely to be. The classes are organised under clear file names, and relevant variable, method and class names have been used to make it clear what the purpose of a class might be, or the function of a method. It might be difficult to locate specific subclasses, but there are comments in place to make it easier in some cases, such as which file contains a parent class which subclasses are inheriting from. Finally, the system parameters all work solidly and need never be changed. Therefore, this system has a reasonably high level of maintainability.
+
 \section{Suggestions for Improvement}
 
+\textbf{Include Administrator Capabilities}
 
+By far the biggest short coming from the original client objective specification, the lack of administrator capabilities prevents the client from having an effective way to ensure that students are making the required progress, resorting them to trust alone. Responsible students will be more likely to achieve more by using this system despite not being monitored by the client, but less responsible students might miss out on the boost that this system could provide them.
 
+\textbf{Include a local area network system which can connect multiple computers with multiple user accounts}
 
+It would be useful to have different accounts so that students can access their progress from any computer with the system installed, or at least any computer in a LAN. This way they would be able to use the system in class.
 
+\textbf{Include more entities in the database}
 
+The current database is useful for showing the user which aspects of the maths in the system they need to improve on, but it would be far better to have names and ratings recorded so the client could monitor the students' progress more easily.
 
+\textbf{Include an input type that isn't just clicking or typing, such as drag and drop functionality}
 
-
-
-
-
-
-
-
-
-
-
+There is a range of input types, but they are not necessarily that far off from one another. The system includes typing in text boxes, selecting from drop down combo boxes (multiple choice) and clicking multiple choice buttons, which all involve clicking or typing. Drag and drop functionality would provide a much wider range of input types and make the system somewhat less boring to use after a while.
 
 \section{End User Evidence}
 
