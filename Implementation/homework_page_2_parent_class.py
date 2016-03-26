@@ -1,6 +1,8 @@
 from PyQt4.QtCore import *
 from PyQt4.QtGui import *
 
+import random
+
 from database_class import * #This contains the methods used to add to the database
 from error_messages import * #This contains the default error message classes used when the user makes an error
 
@@ -128,7 +130,7 @@ class HomeworkPage2ParentClass(QWidget):
         self.attempts_button.setMinimumWidth(90)
         self.attempts_button.setMaximumWidth(200)
         self.attempts_button.setStyleSheet("QPushButton {background-color: white; font-color: black;}")
-        self.attempts_button.setEnabled(False)
+        self.attempts_button.setEnabled(False)          
 
         #Sets the layout to a QGridLayout so the widgets can be positioned easily
         self.layout = QGridLayout()

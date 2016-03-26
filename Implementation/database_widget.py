@@ -46,12 +46,14 @@ class DatabaseWidget(QWidget):
         
         #This QTableWidget is the table which the data from the database is presented in
         self.database = QTableWidget()
+        #This is the header which appears in each column in the database
+        self.database_header = ("Task Name", "Question 1", "Question 2", "Question 3", "Question 4")#"Total"
         #Sets the number of rows in the table - there are only 24 possible tasks, rach of which can only be recorded once and overwritten upon improvement
         self.database.setRowCount(24)
         #Sets the number of columns in the table - there are 5 headings, 5 attributes to record
         self.database.setColumnCount(5)
-        #This is the header which appears in each column in the database
-        self.database_header = ("Task Name", "Question 1", "Question 2", "Question 3", "Question 4")#"Total"
+        self.database.horizontalHeader().setResizeMode(3)
+        self.database.verticalHeader().setResizeMode(3)
         #This applies the header to the QTableWidget
         self.database.setHorizontalHeaderLabels(self.database_header)
 
@@ -60,6 +62,7 @@ class DatabaseWidget(QWidget):
 
         #This sets the colour of the selected boxes in the QTableWidget
         self.database.setStyleSheet("QTableView {selection-background-color: #A3C1DA;}")
+        self.database.setFont(QFont("Courier", 25))
         #This overrides the background and text colour for the return button
 
         #This calls a method in database_class which fetches all of the data in the database

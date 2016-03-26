@@ -110,6 +110,9 @@ class ReportWidget(QWidget):
         #Applies the header to the table
         self.db.setHorizontalHeaderLabels(self.db_header)
         self.db.setStyleSheet("QTableWidget {selection-background-color: #A3C1DA;}")
+        self.db.setFont(QFont("Courier", 25))
+        self.db.horizontalHeader().setResizeMode(3)
+        self.db.verticalHeader().setResizeMode(3)
 
         #Sets the layout to a QGridLayout so that the widgets can be positioned easily
         self.layout = QGridLayout()
