@@ -30,11 +30,15 @@ class SidesAHOEasyWidget2(HomeworkPage2ParentClass):
         self.question_4.setText("Question 4\nWhat is the\nlength of a?")
 
         #Adds some wrong answers and the right answer to the combo box
+        self.answer_q_2 = "15"
         self.answer_2.addItem("10")
         self.answer_2.addItem("20")
         self.answer_2.addItem("30")
+        self.answer_2.addItem(self.answer_q_2)
 
+        self.answer_q_3 = "7"
         self.answer_3.addItem("10")
+        self.answer_3.addItem(self.answer_q_3)
         self.answer_3.addItem("20")
         self.answer_3.addItem("30")
 

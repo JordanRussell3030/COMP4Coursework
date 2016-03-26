@@ -356,7 +356,7 @@ class HomeworkPage2ParentClass(QWidget):
         #Resets the correct count so that it doesn't increment across tasks
         self.correct_count_2 = 0
         #Takes the value to be checked from the content of the combo box and compares it to the hard-coded answer
-        if self.answer_2.currentText() == "20":
+        if self.answer_2.currentText() == self.answer_q_2:
             #If they are right they are awarded marks and the buttons are disabled as they have no further need of them (they can't get the same marks twice)
             self.correct_count_2 += 1
             self.mark_2.setText("Correct!")
@@ -379,7 +379,7 @@ class HomeworkPage2ParentClass(QWidget):
                                          
     def selected_mark_3(self, attempts_remaining_b):
         self.correct_count_3 = 0
-        if self.answer_3.currentText() == "20":
+        if self.answer_3.currentText() == self.answer_q_3:
             self.correct_count_3 += 1
             self.mark_3.setText("Correct!")
             self.mark_3.setEnabled(False)

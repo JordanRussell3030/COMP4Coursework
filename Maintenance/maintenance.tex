@@ -18,7 +18,7 @@ I used the following software to produce my system:
 
 \textbf{Python 3.4: }
 
-Python 3.4 was the most up to date release of Python when I began the implementation of the system, and I continued to use it throughout, despite 3.5 being released, to avoid any incompatibilities with the other software used. I use this language because it is the language I used to learn the fundamentals of prorgamming and therefore the one I am most familiar with. 
+Python 3.4 was the most up to date release of Python when I began the implementation of the system, and I continued to use it throughout, despite 3.5 being released, to avoid any incompatibilities with the other software used. I use this language because it is the language I used to learn the fundamentals of programming and therefore the one I am most familiar with. 
 
 \textbf{Python IDLE: }
 
@@ -30,7 +30,7 @@ PyQt4 is Qt, a separate GUI language, altered to work with Python in order to cr
 
 \textbf{SQLite3: }
 
-SQLite3 is included in the Python 3.4 software download package by default, and is useful for creating a very effective database structure which can be easily accessed and modified uisng Python and PyQt code. 
+SQLite3 is included in the Python 3.4 software download package by default, and is useful for creating a very effective database structure which can be easily accessed and modified using Python and PyQt code. 
 
 \textbf{Internet Explorer: }
 
@@ -66,19 +66,19 @@ The GUI provides a navigation tool for the user to use to navigate the different
 
 \subsection{Navigation of Windows}
 
-The windows have been structured in such a way that it is necessary to understand how each of them are connected; The welcome screen and home screen are in a stack so that the welcome screen will not be accessible once the user is already in the system. The menus are all connected individually using subclassed buttons and methods, to ensure that each window can be accessed from at least one of the previous menus, but only from one. The lessons and homeworks are in stacks so that the user cannot have only one screen of a homework open at one time, and the user's inputs on each screen will be kept there until the entire stack is closed, should they decide to go back to something. There is a home screen, which connects to two topic menus, which connect to five specific menus each, which each connect to two, three or six lessons or homeworks, like a branch system. The connections which share a menu are all in the same file to make them easier to find.
+The windows have been structured in such a way that it is necessary to understand how each of them are connected; The welcome screen and home screen are in a stack so that the welcome screen will not be accessible once the user is already in the system. The menus are all connected individually using sub classed buttons and methods, to ensure that each window can be accessed from at least one of the previous menus, but only from one. The lessons and homework tasks are in stacks so that the user cannot have only one screen of a homework open at one time, and the user's inputs on each screen will be kept there until the entire stack is closed, should they decide to go back to something. There is a home screen, which connects to two topic menus, which connect to five specific menus each, which each connect to two, three or six lessons or homework tasks, like a branch system. The connections which share a menu are all in the same file to make them easier to find.
 
 \subsection{Viewing a Lesson}
 
-Each lesson is accessed from a derived lesson menu, all of which are in the same file (so all lesson connections are also in the same file), and each lesson consists of two pages in a stack together, both of which are subclassed from separate 'page 1' and 'page 2' parent classes. There are buttons which can allow the user to easily cancel the lesson and return to the menu, continue to the next screen, and close the window when they are done. There is one line edit with a simple test question in each 'page 2', but this isn't recorded in the database. The line edit answer can be checked by clicking the check answer button, and an algorithm is run which will tell the user whether or not they are correct by checking the user's input against the hard-coded answer in the sub-class. This algorithm is in the lesson 'page 2' parent class.
+Each lesson is accessed from a derived lesson menu, all of which are in the same file (so all lesson connections are also in the same file), and each lesson consists of two pages in a stack together, both of which are sub classed from separate 'page 1' and 'page 2' parent classes. There are buttons which can allow the user to easily cancel the lesson and return to the menu, continue to the next screen, and close the window when they are done. There is one line edit with a simple test question in each 'page 2', but this isn't recorded in the database. The line edit answer can be checked by clicking the check answer button, and an algorithm is run which will tell the user whether or not they are correct by checking the user's input against the hard-coded answer in the sub-class. This algorithm is in the lesson 'page 2' parent class.
 
 \subsection{Completing a Homework}
 
-The homeworks are accessed in exactly the same way as the lessons, except they are branched from the homework button on the home screen, and use different connections in the following menus. Again, there are buttons for easy navigation, although the homework widgets also have more line edits, combo boxes and multiple choice buttons for inputting answers, the scores from which are saved to the database. Each answer is checked using individual algorithms which are in the parent homework 'page 1' and 'page 2' classes. These algorithms essentially do the same thing, just working with different input types. They check the user's input against the hard-coded answers in the sub-classes, and give error messages if the user is wrong, until they run out of attempts, which decrement with every wrong answer as part of the algorithm. Once a question is either correct, or the user has run out of attempts, the algorithm will disable the input widegts as appropriate to prevent the user having too many goes or saving to the database twice and entering a loop or other error.
+The homework tasks are accessed in exactly the same way as the lessons, except they are branched from the homework button on the home screen, and use different connections in the following menus. Again, there are buttons for easy navigation, although the homework widgets also have more line edits, combo boxes and multiple choice buttons for inputting answers, the scores from which are saved to the database. Each answer is checked using individual algorithms which are in the parent homework 'page 1' and 'page 2' classes. These algorithms essentially do the same thing, just working with different input types. They check the user's input against the hard-coded answers in the sub-classes, and give error messages if the user is wrong, until they run out of attempts, which decrement with every wrong answer as part of the algorithm. Once a question is either correct, or the user has run out of attempts, the algorithm will disable the input widgets as appropriate to prevent the user having too many goes or saving to the database twice and entering a loop or other error.
 
 \subsection{Storing in the Database}
 
-The database methods are all ina separate class, which can be accessed by all of the other files when needed. For example, when a homework score needs to be saved the file with the homework in it will be able to access the database class and the appropriate method, and pass through the variables from the homework into the SQL insert statements. The only times the database is written to is when the user completes a homework; the task name and first question score is saved after clicking next to the second page, and the scores for the second, third and fourth questions are saved after clicking finish. If the task has been done before and the new scores are better, they will over-write the old ones. The update statements are separate for each question score so that they don't all have to be better for one to over-write. The database is accessed for output when the user loads the progress viewer or the report widget; all information based on the corresponding query is fetched and displayed in the QTableWidgets.
+The database methods are all in a separate class, which can be accessed by all of the other files when needed. For example, when a homework score needs to be saved the file with the homework in it will be able to access the database class and the appropriate method, and pass through the variables from the homework into the SQL insert statements. The only times the database is written to is when the user completes a homework; the task name and first question score is saved after clicking next to the second page, and the scores for the second, third and fourth questions are saved after clicking finish. If the task has been done before and the new scores are better, they will over-write the old ones. The update statements are separate for each question score so that they don't all have to be better for one to over-write. The database is accessed for output when the user loads the progress viewer or the report widget; all information based on the corresponding query is fetched and displayed in the QTableWidgets.
 
 \subsection{Viewing the Database Information}
 
@@ -86,7 +86,7 @@ There are two ways for the user to view information stored in the database in th
 
 \subsection{The Task Data}
 
-The task data is obtained by clicking the next button on any first homework page, and the hard-coded task name variable in the sub-class will be recorded to the database. Once it is saved once, it will never change or disappear, as there is no need. All task names will appear under the Task Name column in the qtablewidgets.
+The task data is obtained by clicking the next button on any first homework page, and the hard-coded task name variable in the sub-class will be recorded to the database. Once it is saved once, it will never change or disappear, as there is no need. All task names will appear under the Task Name column in the QTableWidgets.
 
 \subsection{The Score Data}
 
@@ -104,7 +104,7 @@ class Database:
         self.create_table(self.table_name)
 \end{python}
 
-This class contains all of the database manipulating code for the system. It can be accessed by any file using the global database variable which can be called from methods which need it, making it easier to keep all SQL code and PyQt code separate. db\_name is the name of the variable which represents the database which is called at the bottom of the file; each method can be called to change this database variable and the variables which change it are passed through from the subclasses in other files, which is efficient as most of the files are subclassed so there will be no collisions between data. The table name is hard-coded so it will never change and the system will always be able to search for the same name to check if the database exists when it is run. The create\_table method is then run, which either creates a new table, leaves the old one or replaces the old one.
+This class contains all of the database manipulating code for the system. It can be accessed by any file using the global database variable which can be called from methods which need it, making it easier to keep all SQL code and PyQt code separate. db\_name is the name of the variable which represents the database which is called at the bottom of the file; each method can be called to change this database variable and the variables which change it are passed through from the subclasses in other files, which is efficient as most of the files are sub classed so there will be no collisions between data. The table name is hard-coded so it will never change and the system will always be able to search for the same name to check if the database exists when it is run. The create\_table method is then run, which either creates a new table, leaves the old one or replaces the old one.
 
 \subsubsection{execute\_sql method}
 
@@ -166,7 +166,7 @@ This method is run as soon as the program is run; the first SQL statement search
             self.execute_sql(sql)
 \end{python}
 
-This method is called in the homework page 1 subclasses. It can be called from any of the 24 subclasses, and the polymorphed variables from each one are passed through, so that, for example, there are no cross-overs of data like the Sides Easy task name being recorded as the parent default. The SQL here firstly checks to see if a task with the same task name already exists, and if it does, each value will only be over-written if it is greater than the exisitng one. Otherwise it will create a new record and save the values from the second pages as 0 so the same SQL statements can be used, update statements, whether the record existed or not before. the execute\_sql method is run in order to make the changes to the table.
+This method is called in the homework page 1 subclasses. It can be called from any of the 24 subclasses, and the sub classed variables from each one are passed through, so that, for example, there are no cross-overs of data like the Sides Easy task name being recorded as the parent default. The SQL here firstly checks to see if a task with the same task name already exists, and if it does, each value will only be over-written if it is greater than the existing one. Otherwise it will create a new record and save the values from the second pages as 0 so the same SQL statements can be used, update statements, whether the record existed or not before. the execute\_sql method is run in order to make the changes to the table.
 
 \subsubsection{insert\_data\_second method}
 
@@ -271,7 +271,7 @@ class DatabaseWidget(QWidget):
         self.report.clicked.connect(self.selected_report)
 \end{python}
 
-This class is the class which contains the QTableWidget which displays all data from the database. This window can be accessed by clicking the progress button on the home screen. When this window is loaded, the all information is automatically fetched from the database controller and immediately displayed in the QTableWidget so the user can easily access all information. The report widget is for querying and viewing specific imformation, and can be accessed from this window. The for loop is used to display each item in the database in the right place; the list value represents the position of the piece of data in the table. For example each student[0] is a task name, and is displayed in the first column. A count increments so that the next row is accessed each time and the first record isn't constantly over-written up until the last record. This window is accessible from the home page so the user can view all progress without having to go through any other menus.
+This class is the class which contains the QTableWidget which displays all data from the database. This window can be accessed by clicking the progress button on the home screen. When this window is loaded, the all information is automatically fetched from the database controller and immediately displayed in the QTableWidget so the user can easily access all information. The report widget is for querying and viewing specific information, and can be accessed from this window. The for loop is used to display each item in the database in the right place; the list value represents the position of the piece of data in the table. For example each student[0] is a task name, and is displayed in the first column. A count increments so that the next row is accessed each time and the first record isn't constantly over-written up until the last record. This window is accessible from the home page so the user can view all progress without having to go through any other menus.
 
 \subsubsection{selected\_back method}
 
@@ -707,7 +707,7 @@ class LessonMenuWidget(QMainWindow):
         self.back.clicked.connect(self.selected_back)
 \end{python}
 
-This class is the template for the menu screen which connects to the five individual subclassed menus which contain the buttons for the specific lessons; it is the middle screen in a branch menu of three screens. It is accessed by clicking the lessons button on the home screen (UserAccountHome Class), and it connects to five different final menus from which the user can access the lessons. This structure is used to make it easier to navigate to specific lesson topics, and to fit clear and visible buttons on the page, which are all relevant to each other. 
+This class is the template for the menu screen which connects to the five individual sub classed menus which contain the buttons for the specific lessons; it is the middle screen in a branch menu of three screens. It is accessed by clicking the lessons button on the home screen (UserAccountHome Class), and it connects to five different final menus from which the user can access the lessons. This structure is used to make it easier to navigate to specific lesson topics, and to fit clear and visible buttons on the page, which are all relevant to each other. 
 
 \subsubsection{selected\_t1 method}
 
@@ -737,13 +737,13 @@ This method is connected to the trigonometry 2 button and is run when said butto
 
 \begin{python}
 def selected_pyt(self):
-        pythagoras_widget = Pythagoras()
-        pythagoras_widget.show()
-        pythagoras_widget._raise()
-        pythagoras_widget.showMaximized()
+        Pythagoras_widget = Pythagoras()
+        Pythagoras_widget.show()
+        Pythagoras_widget._raise()
+        Pythagoras_widget.showMaximized()
 \end{python}
 
-This method is connected to the pythagoras button and is run when said button is clicked; one of five of the derived lesson menus opens with buttons to connect to the lessons which are all relevant to the title and each other.
+This method is connected to the Pythagoras button and is run when said button is clicked; one of five of the derived lesson menus opens with buttons to connect to the lessons which are all relevant to the title and each other.
 
 \subsubsection{selected\_pytrig method}
 
@@ -875,7 +875,7 @@ class HomeworkMenuWidget(QMainWindow):
         self.back.clicked.connect(self.selected_back)
 \end{python}
 
-Pretty much the same as the LessonMenuWidget Class (LessonMenuWidget Class)This class is the template for the menu screen which connects to the five individual subclassed menus which contain the buttons for the specific homeworks; it is the middle screen in a branch menu of three screens. It is accessed by clicking the homework button on the home screen (UserAccountHome Class), and it connects to five different final menus from which the user can access the homework. This structure is used to make it easier to navigate to specific homework topics, and to fit clear and visible buttons on the page, which are all relevant to each other. 
+Pretty much the same as the LessonMenuWidget Class (LessonMenuWidget Class), this class is the template for the menu screen which connects to the five individual sub classed menus which contain the buttons for the specific homework tasks; it is the middle screen in a branch menu of three screens. It is accessed by clicking the homework button on the home screen (UserAccountHome Class), and it connects to five different final menus from which the user can access the homework. This structure is used to make it easier to navigate to specific homework topics, and to fit clear and visible buttons on the page, which are all relevant to each other. 
 
 \subsubsection{selected\_ht1 method}
 
@@ -905,13 +905,13 @@ This method is connected to the trigonometry 2 button and is run when said butto
 
 \begin{python}
 def selected_hpyt(self):
-        pythagoras_homework = PythagorasHW()
-        pythagoras_homework.show()
-        pythagoras_homework._raise()
-        pythagoras_homework.showMaximized()
+        Pythagoras_homework = PythagorasHW()
+        Pythagoras_homework.show()
+        Pythagoras_homework._raise()
+        Pythagoras_homework.showMaximized()
 \end{python}
 
-This method is connected to the pythagoras button and is run when said button is clicked; one of five of the derived homework menus opens with buttons to connect to the homework which are all relevant to the title and each other.
+This method is connected to the Pythagoras button and is run when said button is clicked; one of five of the derived homework menus opens with buttons to connect to the homework which are all relevant to the title and each other.
 
 \subsubsection{selected\_hpytrig method}
 
@@ -1087,7 +1087,7 @@ class ParentHomeworkMenuClass(QWidget):
         self.back.clicked.connect(self.selected_back)
 \end{python}
 
-This is the parent class which provides all of the default attributes for the derived homework menus (e.g. Trigonometry1HW(ParentHomeworkMenuClass), Trigonometry1HW Class). The derived homework menu file imports from this file, and the five subclasses inherit these attributes, along with some polymorphism to make them different from one another. These subclasses are connected by buttons in the previous menu (HomeworkMenuWidget Class) and contain buttons to the individual lessons; there are six buttons made in the parent class here, then three or siz of them can be added to the layout in each subclass depending on how many lessons there are. All of the connections, along with methods to open the corresponding window, are in the subclasses so that the three buttons can be over-ridden to connect to various homework.
+This is the parent class which provides all of the default attributes for the derived homework menus (e.g. Trigonometry1HW(ParentHomeworkMenuClass), Trigonometry1HW Class). The derived homework menu file imports from this file, and the five subclasses inherit these attributes, along with some polymorphism to make them different from one another. These subclasses are connected by buttons in the previous menu (HomeworkMenuWidget Class) and contain buttons to the individual lessons; there are six buttons made in the parent class here, then three or six of them can be added to the layout in each subclass depending on how many lessons there are. All of the connections, along with methods to open the corresponding window, are in the subclasses so that the three buttons can be over-ridden to connect to various homework.
 
 \subsubsection{selected\_back method}
 
@@ -1194,7 +1194,7 @@ class Trigonometry1HW(ParentHomeworkMenuClass):
         self.button_6.clicked.connect(self.sohcahtoa_hard)
 \end{python}
 
-Essentially serving the same purpise as the Trigonometry1(ParentLessonMenuClass), only it connects to the homeworks from the homework button on the home screen, this class is one of the five subclasses which inherit from the ParentHomeworkMenuClass Class (ParentHomeworkMenuClass Class) and are the third in a branch consisting of three stages of screens; home screen, topic menu and derived menu. Most of the classes attributes are in the parent class, but the button names, connections and methods are coded here to over-ride and allow for difference between the five subclasses. Each button (except for the return button) connects to a stack widget which contains the first and second screen of each homework in a stack together. Each of the five subclasses are essentially the same, and serve the same purpose; their only differences are the homework they connect to, hence the branch system.
+Essentially serving the same purpise as the Trigonometry1(ParentLessonMenuClass), only it connects to the homework tasks from the homework button on the home screen, this class is one of the five subclasses which inherit from the ParentHomeworkMenuClass Class (ParentHomeworkMenuClass Class) and are the third in a branch consisting of three stages of screens; home screen, topic menu and derived menu. Most of the classes attributes are in the parent class, but the button names, connections and methods are coded here to over-ride and allow for difference between the five subclasses. Each button (except for the return button) connects to a stack widget which contains the first and second screen of each homework in a stack together. Each of the five subclasses are essentially the same, and serve the same purpose; their only differences are the homework they connect to, hence the branch system.
 
 \subsubsection{sides\_aho\_easy method}
 
@@ -1285,7 +1285,7 @@ class Trig1StackSides(QMainWindow):
         self.setCentralWidget(self.widget)
 \end{python}
 
-This is one of twelve stack classes which each contain the two screens for one lesson. This stack widget has the two screens added to the layout (imported from the files where each widget's class is coded), then when the stack is opened the first screen is displayed, and can switch to the second in the same window. This is accessed by clicking the corrersponding button in the first derived lesson menu (Trigonometry1(ParentLessonMenu) Class). The contents of both screens will be left how the user leaves them until the entire stack is closed, even if they are switching between screens.
+This is one of twelve stack classes which each contain the two screens for one lesson. This stack widget has the two screens added to the layout (imported from the files where each widget's class is coded), then when the stack is opened the first screen is displayed, and can switch to the second in the same window. This is accessed by clicking the corresponding button in the first derived lesson menu (Trigonometry1(ParentLessonMenu) Class). The contents of both screens will be left how the user leaves them until the entire stack is closed, even if they are switching between screens.
 
 \subsection{ParentLessonLayout Class}
 
@@ -1537,7 +1537,7 @@ class Trig1StackSidesEasy(QMainWindow):
         self.setCentralWidget(self.widget)
 \end{python}
 
-This is one of twenty-four stack classes which each contain the two screens for one homework. This stack widget has the two screens added to the layout (imported from the files where each widget's class is coded), then when the stack is opened the first screen is displayed, and can switch to the second in the same window. This is accessed by clicking the corrersponding button in the first derived homework menu (Trigonometry1HW(ParentHomeworkMenuClass) Class). It is useful to have the two homework screens in a stack together so the user cannot close one screen and skip to the next, or vice-versa and repeat a page, potentially crashing the program. The use can return to one page, but the second will still be there, and they cannot re-submit the score of the first page until the second page has been closed and the stack is closed entirely and they re-do the whole homework. The contents of both screens will be left how the user leaves them until the entire stack is closed, even if they are switching between screens.
+This is one of twenty-four stack classes which each contain the two screens for one homework. This stack widget has the two screens added to the layout (imported from the files where each widget's class is coded), then when the stack is opened the first screen is displayed, and can switch to the second in the same window. This is accessed by clicking the corresponding button in the first derived homework menu (Trigonometry1HW(ParentHomeworkMenuClass) Class). It is useful to have the two homework screens in a stack together so the user cannot close one screen and skip to the next, or vice-versa and repeat a page, potentially crashing the program. The use can return to one page, but the second will still be there, and they cannot re-submit the score of the first page until the second page has been closed and the stack is closed entirely and they re-do the whole homework. The contents of both screens will be left how the user leaves them until the entire stack is closed, even if they are switching between screens.
 
 \subsection{ParentHomeworkPage1Class Class}
 
@@ -1766,7 +1766,7 @@ def reset_selected(self):
         self.answer_f.setText(None)
 \end{python}
 
-this can be in the parent class because it doesn't matter what the values in the line edits are, it serves the same purpose of removing them.
+This can be in the parent class because it doesn't matter what the values in the line edits are, it serves the same purpose of removing them.
 
 \subsubsection{cancel\_selected method}
 
@@ -1998,7 +1998,7 @@ def selected_mark_2(self, attempts_remaining_a):
         return self.attempts_remaining_a, self.correct_count_2
 \end{python}
 
-As with the check\_button\_1 method, the variable names of the combo boxes are the same, created in the parent class, and it is the values of the combo boxes whiuch are passed through, so the checking methods can be the same written only once in the parent class.
+As with the check\_button\_1 method, the variable names of the combo boxes are the same, created in the parent class, and it is the values of the combo boxes which are passed through, so the checking methods can be the same written only once in the parent class.
 
 \subsubsection{selected\_previous method}
 
@@ -2125,7 +2125,7 @@ class ErrorMessage2(QErrorMessage):
         QErrorMessage.showMessage(self, message)
 \end{python}
 
-This is one of the error message classes which inherits from the built in QErrorMessage class; these are displayed at certain points throughout the program, mainly in the homework if a user gets a wrong answer. these are useful becuase they can all be called at any point in another file simply by importing the file with the error messages into it , similar to the database controller, where all of the SQL code is separated.
+This is one of the error message classes which inherits from the built in QErrorMessage class; these are displayed at certain points throughout the program, mainly in the homework if a user gets a wrong answer. These are useful because they can all be called at any point in another file simply by importing the file with the error messages into it, similar to the database controller, where all of the SQL code is separated.
 
 \section{Variable Listing}
 
@@ -2139,7 +2139,7 @@ result & List & This is assigned to the contents of the database which is fetche
 info & List & This is assigned to the contents of the database which is fetched when a task is searched for to see if it exists already when saving a new record & Database Controller Class (4.3.1) \\ \hline
 report & List & This is assigned to the contents of the database which is fetched when a user queries specific data in the database & Database Controller Class (4.3.1) \\ \hline
 students & List & This is assigned to the contents of the database which is fetched when the progress screen is opened and all data is needed for display & Database Controller Class (4.3.1) \\ \hline
-sql & String & This is the name of the variable which is always passed into the execute\_sql method whenever another method need to access the database; it is the sql statement requiring execution & Database Controller Class (4.3.1) \\ \hline
+sql & String & This is the name of the variable which is always passed into the execute\_sql method whenever another method need to access the database; it is the SQL statement requiring execution & Database Controller Class (4.3.1) \\ \hline
 response & String & This is an input which asks the user whether or not they would like to over-write the existing database - accepts y or n & Database Controller Class (4.3.1) \\ \hline
 keep\_table & Boolean & This is the boolean which checks whether the user wants to keep the existing table or not; input y for True, n for False & Database Controller Class (4.3.1) \\ \hline
 g\_database & Database Class & This variable represents the entire database and is called whenever a method wants to access the database & Database Controller Class (4.3.1) \\ \hline
@@ -2218,7 +2218,7 @@ self.correct\_count & Integer & This variable is used in the check\_selected met
 self.correct\_count\_2 & Integer & This variable is used to count the correct answers in the generic second homework questions & HomeworkPage2ParentClass (4.3.19) \\ \hline
 self.correct\_count\_3 & Integer & This variable is used to count the correct answers in the generic third homework questions & HomeworkPage2ParentClass (4.3.19) \\ \hline
 self.correct\_count\_4 & Integer & This variable is used to count the correct answers in the generic fourth homework questions & HomeworkPage2ParentClass (4.3.19) \\ \hline
-self.task & String & This is the hard-coded variable in each subclass for the homeworks which is saved to the database - it is the task name which is intended to be saved with the scores & ParentHomeworkPage1Class (4.3.18) \\ \hline
+self.task & String & This is the hard-coded variable in each subclass for the homework tasks which is saved to the database - it is the task name which is intended to be saved with the scores & ParentHomeworkPage1Class (4.3.18) \\ \hline
 self.answer\_lesson & Integer, Real, String & This variable is hard-coded in each subclass for the check method to compare the user's input to a question against; it is the correct answer expected for the lesson answers & ParentLessonLayout (4.3.13) \\ \hline
 self.answer\_1\_a & Integer, Real, String & This variable is hard-coded in each subclass for the check method to compare the user's input to a question against; it is the correct answer expected for the first of the six homework page 1 line edits & SidesAHOEasyWidget(ParentHomeworkPage1Class) (4.3.18) \\ \hline
 self.answer\_1\_b & Integer, Real, String & This variable is hard-coded in each subclass for the check method to compare the user's input to a question against; it is the correct answer expected for the second of the six homework page 1 line edits & SidesAHOEasyWidget(ParentHomeworkPage1Class) (4.3.18) \\ \hline
@@ -2249,14 +2249,14 @@ message & String & this is the message which is displayed in an error message cl
     \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/screen_1}
 \end{figure}
 
-This screen is in the first window which opens whent he system is run; it contains the title of the system, a picture, and a welcome message for user friendliness, and a continue button is present for switching to the home screen.
+This screen is in the first window which opens when the system is run; it contains the title of the system, a picture, and a welcome message for user friendliness, and a continue button is present for switching to the home screen.
 
 \begin{figure}[H]
     \label{fig: Second Screen}\caption{Home Screen}
     \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/screen_2}
 \end{figure}
 
-This screen is in the same stack window as the first screen and is displayed after the continue button is clicked. It contains four buttons: lessons, homework, progress and exit program, for accessing the lesson topic menu, the homework topic menu, the database viewer and exiting the program respectively. It also contains a picture for each of the three navigation buttons which suggest where te button will take them; they are relevant to the next screens and are user friendly.
+This screen is in the same stack window as the first screen and is displayed after the continue button is clicked. It contains four buttons: lessons, homework, progress and exit program, for accessing the lesson topic menu, the homework topic menu, the database viewer and exiting the program respectively. It also contains a picture for each of the three navigation buttons which suggest where the button will take them; they are relevant to the next screens and are user friendly.
 
 \begin{figure}[H]
     \label{fig: Second Screen}\caption{Lesson Topic Menu}
@@ -2277,14 +2277,14 @@ This window opens when the user clicks the first button on the lesson topic menu
     \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/screen_5}
 \end{figure}
 
-This window is accessed by clicking the corresponding button on one of the five derived lesson menus. It is one of twelve first lessons screens which inherit from a parent class; they each contain a title image, two text boxes for lessons and explanations, and cancel button, and a next button, along with one or two images depending on the lesson.
+This window is accessed by clicking the corresponding button on one of the five derived lesson menus. It is one of twelve first lesson's screens which inherit from a parent class; they each contain a title image, two text boxes for lessons and explanations, and cancel button, and a next button, along with one or two images depending on the lesson.
 
 \begin{figure}[H]
     \label{fig: Second Screen}\caption{SOHCAHTOA 2nd Lesson screen}
     \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/screen_6}
 \end{figure}
 
-This window is in the same stack as the SOHCAHTOA 1st lesson screen, is also subclassed from a parent, and is accessed by clicking the next button. It contains a further two text boxes for lessons and examples, a check button with a line edit for a practice question which you can check the answer to, a previous button to switch back to the first lesson screen, and finish button to close the stack, and one or two images, again, depending on the lesson.
+This window is in the same stack as the SOHCAHTOA 1st lesson screen, is also sub classed from a parent, and is accessed by clicking the next button. It contains a further two text boxes for lessons and examples, a check button with a line edit for a practice question which you can check the answer to, a previous button to switch back to the first lesson screen, and finish button to close the stack, and one or two images, again, depending on the lesson.
 
 \begin{figure}[H]
     \label{fig: Second Screen}\caption{Homework Topic Menu}
@@ -2312,14 +2312,14 @@ This window is accessed by clicking the corresponding button on one of the five 
     \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/screen_10}
 \end{figure}
 
-This window is in the same stack as the Sides Easy 1st homework screen, is also subclassed from a parent, and is accessed by clicking the next button. It contains three questions as QLabels, two combo boxes, two mark it buttons, six multiple choice buttons, a button showing the remaining number of attempts, a previous button, and a finish button.
+This window is in the same stack as the Sides Easy 1st homework screen, is also sub classed from a parent, and is accessed by clicking the next button. It contains three questions as QLabels, two combo boxes, two mark it buttons, six multiple choice buttons, a button showing the remaining number of attempts, a previous button, and a finish button.
 
 \begin{figure}[H]
     \label{fig: Second Screen}\caption{Progress Screen}
     \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/screen_11}
 \end{figure}
 
-This window opens when the user selects progress from the home screen. It contains a title, a return button, a report button, which opens the report widget, and a QTableWidget which contains the data fetched from the database automatically everytime the screen is loaded.
+This window opens when the user selects progress from the home screen. It contains a title, a return button, a report button, which opens the report widget, and a QTableWidget which contains the data fetched from the database automatically every time the screen is loaded.
 
 \begin{figure}[H]
     \label{fig: Second Screen}\caption{Report Screen}
@@ -2516,7 +2516,7 @@ def create_table(self, table_name):
                 db.commit()
 \end{python}
 
-This method is responsible for creating the table, and is run whenever the system is run, as it also checks to see if the database already exists before starting. It connects to the database which is identified by the \textit{g\_database} variable which is passed in to the method containing the database file name. The cursor (structure controller) searches all existing database files to see if one named 'Student' (the table\_name variable also passed into the method) already exists. If it does, it asks the user whether or not they want to over-write it; if they input yes, it will the drop the current table and create a new one using the SQL statement at the end of the class. Otherwise, if the boolean keep\_table remains true, the program will just move on; likewise if the table doesn't already exist, in which the same sql statement will be used to create it. The SQL statement in this method creates the table called Student, which is the name used to check the database files at the start of the method, and gives the following entities: TaskID, which is the task name and a string, then four question entities which each contain an integer. The SQL here is executed in the same method, rather than the execute\_sql method.
+This method is responsible for creating the table, and is run whenever the system is run, as it also checks to see if the database already exists before starting. It connects to the database which is identified by the \textit{g\_database} variable which is passed in to the method containing the database file name. The cursor (structure controller) searches all existing database files to see if one named 'Student' (the table\_name variable also passed into the method) already exists. If it does, it asks the user whether or not they want to over-write it; if they input yes, it will the drop the current table and create a new one using the SQL statement at the end of the class. Otherwise, if the boolean keep\_table remains true, the program will just move on; likewise, if the table doesn't already exist, in which the same SQL statement will be used to create it. The SQL statement in this method creates the table called Student, which is the name used to check the database files at the start of the method, and gives the following entities: TaskID, which is the task name and a string, then four question entities which each contain an integer. The SQL here is executed in the same method, rather than the execute\_sql method.
 
 \textbf{Important Database variables: }
 
@@ -2661,10 +2661,10 @@ The problems I encountered includes the following:
 1.143 & the sides easy homework stack should be closed and the home screen should be displayed; The scores from the questions should be stored in the database & Click the finish button & The sides easy homework stack was closed, the home screen was displayed, and the scores were saved to the database, as expected & Figures 3.50, 3.51 \\ \hline
 1.380 & The progress screen should be closed and the home screen displayed & Click the return button & The progress screen was closed and the home screen was displayed, as expected & Figures 3.52, 3.53 \\ \hline
 1.431 & The report screen should be closed and the progress screen displayed & Click the return button & The report screen was closed and the home screen was displayed, as expected & Figures 3.54, 3.55\\ \hline
-1.432 & The relevant information should be fetched from the database and displayed in the same window & Click the query button & Relevant information was found and displayed in the database in hte same window, as expected & Figures 3.56, 3.57 \\ \hline
+1.432 & The relevant information should be fetched from the database and displayed in the same window & Click the query button & Relevant information was found and displayed in the database in the same window, as expected & Figures 3.56, 3.57 \\ \hline
 1.441 & The welcome screen should close and the home screen should be displayed & Click the continue button & The welcome screen was closed and the home screen was displayed, as expected & Figures 3.58, 3.59 \\ \hline
 1.442 & The report screen should open and the progress screen hidden & Click the report button & The progress screen closed and the report screen was displayed, as expected & Figures 3.60, 3.61 \\ \hline
-2.003 & If the input is correct, the word correct should be displayed, otherwise incorrect shoud be displayed & 5 (or right answer); abc; None & Correct was displayed, incorrect was displayed and an error message for no answer was displayed respectively, as expected & Figures 3.62, 3.63 \\ \hline
+2.003 & If the input is correct, the word correct should be displayed, otherwise incorrect should be displayed & 5 (or right answer); abc; None & Correct was displayed, incorrect was displayed and an error message for no answer was displayed respectively, as expected & Figures 3.62, 3.63 \\ \hline
 2.016 & If the input is correct, the word correct should be displayed, otherwise incorrect should be displayed & 1 (or right answer); abc; None & Correct was displayed, incorrect was displayed and an error message for no answer was displayed respectively, as expected & Figures 3.64, 3.65 \\ \hline
 2.017 & If the input is correct, the word correct should be displayed, otherwise incorrect should be displayed & 2 (or right answer); abc; None & Correct was displayed, incorrect was displayed and an error message for no answer was displayed respectively, as expected & Figures 3.64, 3.65 \\ \hline
 2.018 & If the input is correct, the word correct should be displayed, otherwise incorrect should be displayed & 3 (or right answer); abc; None & Correct was displayed, incorrect was displayed and an error message for no answer was displayed respectively, as expected & Figures 3.64, 3.65 \\ \hline
@@ -2682,7 +2682,7 @@ The problems I encountered includes the following:
 4.016 & The correct output should be displayed for a correct or incorrect or absent input & [Correct answer]; [Incorrect answer]; None & The correct outputs were given, as expected & Figures 3.79, 3.80, 3.81 \\ \hline
 4.017 & The correct output should be displayed for a correct or incorrect or absent input & [Correct answer]; [Incorrect answer]; None & The correct outputs were given, as expected & Figures 3.82, 3.83, 3.84 \\ \hline
 4.018 & The correct output should be displayed for a correct or incorrect or absent input & [Correct answer]; [Incorrect answer]; None & The appropriate outputs were given for every possile input tested & 3.85, 3.86 \\ \hline
-5.001 & The client should be satisfied with the overall system & Show the client each aspect of the system & N/A & \\ \hline
+5.001 & The client should be satisfied with the overall system & Show the client each aspect of the system & The client believes that 71.9\% of the objectives have been met & See Evaluation Section 6.7 \\ \hline
 5.003 & The task names and scores should be being saved to an sqlite database, 5 columns, as many rows as there are tasks & Complete a task & There are the right number of headings in the table all with the correct information being displayed in them, as expected & Figure 3.87 \\ \hline
 5.004 & Only the task names and scores should be stored in the database & Complete a task & They are the only pieces of information being stored, as expected & Figure 3.88 \\ \hline
 5.006 & No illegitimate information or personal information should be being stored & Complete a task (only source of information for the database) & No illegitimate information or personal information is being stored, only task names and scores, so the DPA cannot be breached anyway & Figure 3.89 \\ \hline
@@ -2724,7 +2724,7 @@ def selected_submit(self):
             _count += 1
 \end{python}
 
-The part where the database method fetches from the database worked fine here, the problem was displaying the data in the QTableWidget in the report window. Only one record would be displayed, and at first I thought it was because the SQL kept over-writing the previous record, and that the fault was with the insert statements. However it turned out to be to do with the formatting of the fetched information in the QTableWidget; I had to fiddle with counts and tried putting them in different places before all of the data would be displayed, then had to do it again to clear the table with each new query. Eventually the data was all displayed on each row, fixed by an incrementing row count. 
+The part where the database method fetches from the database worked fine here, the problem was displaying the data in the QTableWidget in the report window. Only one record would be displayed, and at first I thought it was because the SQL kept over-writing the previous record, and that the fault was with the insert statements. However, it turned out to be to do with the formatting of the fetched information in the QTableWidget; I had to fiddle with counts and tried putting them in different places before all of the data would be displayed, then had to do it again to clear the table with each new query. Eventually the data was all displayed on each row, fixed by an incrementing row count. 
 
 \textbf{Makes the background white (all PyQt classes)}
 
@@ -2823,7 +2823,7 @@ It was quite difficult to find the right indentation for the input widget disabl
 1 - The variables which represent the task name and the score the user achieved from a homework first page task are passed into the method.
 2 - The database file intended for use, "student\_database.db", is connected to by the controller.
 3 - The cursor variable is the structure controller for the database.
-4 - This SQL statement searches the databsae for a record with the same task name as the value being passed through as task.
+4 - This SQL statement searches the database for a record with the same task name as the value being passed through as task.
 5 - The data retrieved from the SQL statement is assigned to a list variable.
 6 - If a record with the same task name is found, the algorithm will proceed to update it.
 7 - This SQL statement updates the value of the Qone entity if the new value is greater than the old one. Otherwise it is just left.
@@ -3036,8 +3036,8 @@ def check_button_1(self, attempts_remaining_c):
             return self.attempts_remaining_c
 \end{python}
 
-1 - The variable representing the number of attempts the user has left is passed through - This is so that the number doesn't reset if one of the other five methods for the other buttons is run (couldn't be subclassed) and it isn't in the method itself as that would effectively require it to be reset with every click.
-2 - The variable representing the user's score is in the method because it needs to be reset everytime it is run otherwise it would just accumulate beyond a reasonable value.
+1 - The variable representing the number of attempts the user has left is passed through - This is so that the number doesn't reset if one of the other five methods for the other buttons is run (couldn't be sub classed) and it isn't in the method itself as that would effectively require it to be reset with every click.
+2 - The variable representing the user's score is in the method because it needs to be reset every time it is run otherwise it would just accumulate beyond a reasonable value.
 3 - Checks to see if the text on the button is the same as the hard-coded answer in the homework subclass.
 4 - If it is, it tells the user they are correct.
 5 - All the buttons are disabled as they are no longer needed for input.
@@ -3076,7 +3076,7 @@ def selected_mark_2(self, attempts_remaining_a):
 1 - The number representing the number of attempts the user has remaining is passed through so it isn't reset every time the method is run as it would if the variable was in the method.
 2 - The correct\_count variable counts the users score.
 3 - Checks to see if the value of the text in the QComboBox is the same as the hard-coded answer in the homework subclass.
-4 - If it is the same, the user recieves a mark.
+4 - If it is the same, the user receives a mark.
 5 - The user is told they are correct.
 6 - The check button is disabled so they cannot exploit marks.
 7 - The QComboBox is disabled so they cannot change their input.
@@ -3121,21 +3121,21 @@ There are no settings which the user or maintainer needs to be aware of; only Py
 
 \begin{itemize}
 	\item \url{https://www.python.org/community/logos/} - Python Powered Logo - First Screen
-	\item \url{https://www.mathsisfun.com/pythagoras.html} - Pythagoras Picture - Home Screen
+	\item \url{https://www.mathsisfun.com/Pythagoras.html} - Pythagoras Picture - Home Screen
 	\item \url{http://mathinsight.org/vector_introduction} - Vector Picture - Home Screen
 	\item \url{http://www.clipartpanda.com/categories/green-smiley-face-png} - Green Face - Home Screen
 	\item \url{https://commons.wikimedia.org/wiki/File:Triangle_model_of_love.png} - 1st Triangle - Lesson Topic Menu
 	\item \url{https://en.wikipedia.org/wiki/Equilateral_triangle} - 2nd Triangle - Lesson Topic Menu
-	\item \url{http://www.bbc.co.uk/bitesize/standard/maths_i/measure/pythagoras/revision/1/} - 3rd Triangle - Lesson Topic Menu
+	\item \url{http://www.bbc.co.uk/bitesize/standard/maths_i/measure/Pythagoras/revision/1/} - 3rd Triangle - Lesson Topic Menu
 	\item \url{https://en.wikipedia.org/wiki/Triangle_inequality} - 4th Triangle - Lesson Topic Menu
 	\item \url{https://en.wikipedia.org/wiki/Equilateral_triangle} - 5th Triangle - Lesson Topic Menu
 	\item \url{http://passyworldofmathematics.com/trigonometric-ratios/} - 1st Picture - Trigonometry 1 Lesson Menu
 	\item \url{https://www.mathsisfun.com/algebra/sohcahtoa.html} - 2nd Picture - Trigonometry 1 Lesson Menu
 	\item \url{http://www.derivativesinvesting.net/article/262371065/trigonometry-finding-unknown-sides/} - SOHCAHTOA Lesson Page 2
 	\item \url{http://maths.nayland.school.nz/Year_11/AS1.7_Triangles/3_trig_angle.htm} - 1st Picture - Trigonometry 2 Lesson Menu
-	\item \url{http://revisionmaths.com/gcse-maths-revision/trigonometry/pythagorass-theorem} - 2nd Picture - Trigonometry 2 Lesson Menu
+	\item \url{http://revisionmaths.com/gcse-maths-revision/trigonometry/Pythagorass-theorem} - 2nd Picture - Trigonometry 2 Lesson Menu
 	\item \url{http://www.pbs.org/wgbh/nova/proof/puzzle/theoremsans.html} - 1st Picture - Pythagoras Lesson Menu
-	\item \url{http://www.bbc.co.uk/schools/gcsebitesize/maths/geometry/pythagoras3drev1.shtml} - 2nd Picture - Pythagoras Lesson Menu
+	\item \url{http://www.bbc.co.uk/schools/gcsebitesize/maths/geometry/Pythagoras3drev1.shtml} - 2nd Picture - Pythagoras Lesson Menu
 	\item \url{http://www.kshitij-iitjee.com/Adding-Vectors-Subtracting-Vectors-equality-of-vectors} - 1st Picture - Vectors Lesson Menu
 	\item \url{http://www.maths.usyd.edu.au/u/MOW/vectors/vectors-3/v-3-3.html} - 2nd Picture - Vectors Lesson Menu
 	\item \url{https://en.wikipedia.org/wiki/Triangle} - 1st Picture - Summary Lesson Menu
@@ -3953,7 +3953,7 @@ class LessonMenuWidget(QMainWindow):
 
         #These are the buttons which each connect to  a different child menu
         self.t1 = QPushButton("Trigonometry 1")
-        #Sets the size of hte buttons - having a minimum
+        #Sets the size of the buttons - having a minimum
         # and maximum size helps prevent overlapping on different sizes of screen
         self.t1.setMinimumWidth(90)
         self.t1.setMinimumHeight(110)
@@ -4069,10 +4069,10 @@ class LessonMenuWidget(QMainWindow):
         trig_2_widget.showMaximized()
 
     def selected_pyt(self):
-        pythagoras_widget = Pythagoras()
-        pythagoras_widget.show()
-        pythagoras_widget._raise()
-        pythagoras_widget.showMaximized()
+        Pythagoras_widget = Pythagoras()
+        Pythagoras_widget.show()
+        Pythagoras_widget._raise()
+        Pythagoras_widget.showMaximized()
 
     def selected_pytrig(self):
         pyth_trig_widget = PythagTrig()
@@ -4224,10 +4224,10 @@ class HomeworkMenuWidget(QMainWindow):
         trigonometry_2_homework.showMaximized()
 
     def selected_hpyt(self):
-        pythagoras_homework = PythagorasHW()
-        pythagoras_homework.show()
-        pythagoras_homework._raise()
-        pythagoras_homework.showMaximized()
+        Pythagoras_homework = PythagorasHW()
+        Pythagoras_homework.show()
+        Pythagoras_homework._raise()
+        Pythagoras_homework.showMaximized()
 
     def selected_hpytrig(self):
         pythag_trig_homework = PythagTrigonometryHW()
@@ -4424,7 +4424,7 @@ class ParentHomeworkMenuClass(QWidget):
 
         #This is in the parent class because it is the same for each child class; the window just closes and the previous menu is displayed
         self.back.clicked.connect(self.selected_back)
-        #The other connections are in the child classes because they all have to connect to different homeworks stacks
+        #The other connections are in the child classes because they all have to connect to different homework tasks stacks
 
     #The method which is executed when back is selected in any of the 5 child classes
     def selected_back(self):
@@ -6278,7 +6278,7 @@ from PyQt4.QtGui import *
 from database_class import * #Contains all of the methods required to manipulate the database
 from error_messages import * #Contains all of the error message classes for when the user makes a mistake
 
-#The parent template for the first page of all homeworks - all homework child classes inherit their default attributes from here
+#The parent template for the first page of all homework tasks - all homework child classes inherit their default attributes from here
 class ParentHomeworkPage1Class(QWidget):
     #Constructor
     def __init__(self, parent = None):
@@ -6304,7 +6304,7 @@ class ParentHomeworkPage1Class(QWidget):
         self.setAutoFillBackground(True)
         self.setPalette(pal)     
 
-        #All of these buttons appear in all of the child classes - they are created here then the text is set in the child classesso htey can all be different
+        #All of these buttons appear in all of the child classes - they are created here then the text is set in the child classesso they can all be different
         self.next = QPushButton("Next")
         #Sets the size of the button
         self.next.setMinimumHeight(110)
@@ -7347,7 +7347,7 @@ from PyQt4.QtCore import *
 \subsubsection{ErrorMessage2}
 
 \begin{python}
-#These are child class from the built in QErrorMessage class and these are called when the user inputs wrong data types or no value at all on the homeworks
+#These are child class from the built in QErrorMessage class and these are called when the user inputs wrong data types or no value at all on the homework tasks
 class ErrorMessage2(QErrorMessage):
     #Constructor
     def __init__(self):
