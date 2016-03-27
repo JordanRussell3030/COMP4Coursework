@@ -161,14 +161,14 @@ class PythagorasHW(ParentHomeworkMenuClass):
     def __init__(self):
         super().__init__()
 
-        self.title.setPixmap(QPixmap("pythag_title"))
+        self.title.setPixmap(QPixmap("pythag_vector_label"))
 
         self.button_1.setText("Pythagoras' Theorem Easy")
         self.button_2.setText("Pythagoras' Theorem Medium")
         self.button_3.setText("Pythagoras' Theorem Hard")
-        self.button_4.setText("3D Pythagoras Easy")
-        self.button_5.setText("3D Pythagoras Medium")
-        self.button_6.setText("3D Pythagoras Hard")
+        self.button_4.setText("Vectors Easy")
+        self.button_5.setText("Vectors Medium")
+        self.button_6.setText("Vectors Hard")
 
         self.pic_1.setPixmap(QPixmap("pythag_pic_1_h"))
         self.pic_2.setPixmap(QPixmap("pythag_pic_2_h"))
@@ -187,9 +187,9 @@ class PythagorasHW(ParentHomeworkMenuClass):
         self.button_1.clicked.connect(self.pythag_theorem_easy)
         self.button_2.clicked.connect(self.pythag_theorem_medium)
         self.button_3.clicked.connect(self.pythag_theorem_hard)
-        self.button_4.clicked.connect(self.three_d_pythag_easy)
-        self.button_5.clicked.connect(self.three_d_pythag_medium)
-        self.button_6.clicked.connect(self.three_d_pythag_hard)
+        self.button_4.clicked.connect(self.vectors_easy)
+        self.button_5.clicked.connect(self.vectors_medium)
+        self.button_6.clicked.connect(self.vectors_hard)
     
     def pythag_theorem_easy(self):
         pythag_theorem_1 = PythagStackTheoremEasy()
@@ -206,53 +206,20 @@ class PythagorasHW(ParentHomeworkMenuClass):
         pythag_theorem_3.show()
         pythag_theorem_3._raise()
 
-    def three_d_pythag_easy(self):
-        three_d_pythag_1 = PythagStackTDPEasy()
+    def vectors_easy(self):
+        three_d_pythag_1 = VectorsStackEasy()
         three_d_pythag_1.show()
         three_d_pythag_1._raise()
 
-    def three_d_pythag_medium(self):
-        three_d_pythag_2 = PythagStackTDPMedium()
+    def vectors_medium(self):
+        three_d_pythag_2 = VectorsStackMedium()
         three_d_pythag_2.show()
         three_d_pythag_2._raise()
 
-    def three_d_pythag_hard(self):
-        three_d_pythag_3 = PythagStackTDPHard()
+    def vectors_hard(self):
+        three_d_pythag_3 = VectorsStackHard()
         three_d_pythag_3.show()
         three_d_pythag_3._raise()
-
-class PythagTrigonometryHW(ParentHomeworkMenuClass):
-    def __init__(self):
-        super().__init__()
-
-        self.title.setPixmap(QPixmap("vectors_title"))
-
-        self.button_1.setText("Vectors Easy")
-        self.button_2.setText("Vectors Medium")
-        self.button_3.setText("Vectors Hard")
-
-        self.layout.addWidget(self.button_1, 0, 1)
-        self.layout.addWidget(self.button_2, 1, 0)
-        self.layout.addWidget(self.button_3, 2, 1)
-
-        self.button_1.clicked.connect(self.pythag_trig_problems_easy)
-        self.button_2.clicked.connect(self.pythag_trig_problems_medium)
-        self.button_3.clicked.connect(self.pythag_trig_problems_hard)
-        
-    def pythag_trig_problems_easy(self):
-        pythag_trig_problems_1 = VectorsStackEasy()
-        pythag_trig_problems_1.show()
-        pythag_trig_problems_1._raise()
-
-    def pythag_trig_problems_medium(self):
-        pythag_trig_problems_2 = VectorsStackMedium()
-        pythag_trig_problems_2.show()
-        pythag_trig_problems_2._raise()
-
-    def pythag_trig_problems_hard(self):
-        pythag_trig_problems_3 = VectorsStackHard()
-        pythag_trig_problems_3.show()
-        pythag_trig_problems_3._raise()
 
 class SummaryHW(ParentHomeworkMenuClass):
     def __init__(self):

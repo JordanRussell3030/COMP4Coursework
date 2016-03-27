@@ -73,16 +73,16 @@ class HomeworkPage2ParentClass(QWidget):
         self.question_2.setFont(QFont("Courier", 30))
         
         self.shape_2 = QLabel()        
-        self.shape_2.setFont(QFont("Courier", 30))
         
         self.question_3 = QLabel()        
         self.question_3.setFont(QFont("Courier", 30))
         
         self.shape_3 = QLabel()       
-        self.shape_3.setFont(QFont("Courier", 30))
         
         self.question_4 = QLabel()       
         self.question_4.setFont(QFont("Courier", 30))
+
+        self.shape_4 = QLabel()
 
         #This is the combo box which provides the value to check to see if the input for the answer is right or not
         self.answer_2 = QComboBox()
@@ -152,6 +152,7 @@ class HomeworkPage2ParentClass(QWidget):
         self.layout.addWidget(self.answer_3, 3, 0)
         self.layout.addWidget(self.mark_3, 3, 1)
         self.layout.addWidget(self.question_4, 0, 2)
+        self.layout.addWidget(self.shape_4, 0, 3)
         self.layout.addWidget(self.previous, 5, 0)
         self.layout.addWidget(self.finish, 5, 3)
 

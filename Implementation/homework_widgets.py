@@ -24,13 +24,17 @@ class SidesAHOEasyWidget(ParentHomeworkPage1Class):
         #text is set in the child classes so that they can all be different
         self.question_1.setText("Question 1: Look at the diagram below\nand answer the following questions: ")
         
-        self.q1a.setText("Which side is oppopsite angle A? ")
+        self.q1a.setText("Which side is opposite angle A?")
     
-        self.q1b.setText("Which side is adjacent to angle Q? ")
+        self.q1b.setText("Which side is the adjacent?")
                 
-        self.q1c.setText("Which side is the hypotenuse? ")        
+        self.q1c.setText("Which side is the hypotenuse?")        
 
-        self.q1d.setText("Which formula would you use to find AB? ")
+        self.q1d.setText("Which formula would you use to find AB?")
+
+        self.q1e.setText("If BC is 7cm, and AC is 8cm, then what is the length of AB?")
+
+        self.q1f.setText("If BC is 4cm, and AC is 6cm, then what is the length of AB?")
         
         self.question_1_shape.setPixmap(QPixmap("sides_easy_q1"))
 
@@ -39,8 +43,11 @@ class SidesAHOEasyWidget(ParentHomeworkPage1Class):
         self.answer_1_b = "AC"
         self.answer_1_c = "AB"
         self.answer_1_d = "cosine"
-        self.answer_1_e = "5"
-        self.answer_1_f = "6"
+        self.answer_1_e = "10.6cm"
+        self.answer_1_f = "7.2cm"
+
+        self.answer_e.setText("cm")
+        self.answer_f.setText("cm")
 
     #The connection for this is in the parent class as the code is the same; it knows which screen to switch to because the stack is
     #already instantiated by this point

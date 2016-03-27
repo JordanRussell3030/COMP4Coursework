@@ -1,0 +1,29 @@
+stuff to change:
+
+Finish lessons
+finish homeworks
+put in all pictures
+put in all titles
+fix doubled picture summary lesson button
+check for unnecessary parent class code e.g self.text_1_pic
+re-format everything
+re-comment everything
+
+System maintenance - Variable listing
+acknowledgements - add subject matrial, remove some pictures
+Final system screenshots
+All page screen shots when pages are properly done
+Re do code listing entirely ith new code
+update self created algorithms and difficult algorithms
+
+manual - remove error messages 2, 3 and 4
+
+evauuation - update all screenshots
+
+everywhere - change number of lesson from 12 to 9 and 24 homeworks to 27
+
+change where it says 24 about database
+
+update database to have 27 record spaces and report window
+
+If time - go through testing and maintenance actual results deleting stuff about removed topics

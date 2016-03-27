@@ -11,6 +11,9 @@ class Trigonometry1(ParentLessonMenu):
         #Return a proxy object that delegates method calls to a parent or sibling class of type.
         super().__init__()
 
+        self.title.setPixmap(QPixmap("trig_1_title"))
+        self.title.setAlignment(Qt.AlignCenter)
+
         #The buttons are created in the parent class
         #The text is set here so that they can be different in each of the 5 child classes
         self.button_1.setText("Sides")
@@ -53,6 +56,9 @@ class Trigonometry2(ParentLessonMenu):
     def __init__(self):
         super().__init__()
 
+        self.title.setPixmap(QPixmap("trig_2_title"))
+        self.title.setAlignment(Qt.AlignCenter)
+
         self.button_1.setText("Finding Angles")
         self.button_2.setText("3D Trigonometry")
 
@@ -88,13 +94,15 @@ class Pythagoras(ParentLessonMenu):
     def __init__(self):
         super().__init__()
 
+        self.title.setPixmap(QPixmap("pythag_vector_label"))
+        self.title.setAlignment(Qt.AlignCenter)
+
         self.button_1.setText("Pythagoras' Theorem")
-        self.button_2.setText("3D Pythagoras")
+        self.button_2.setText("Vectors")
 
         self.pic = QLabel()
         self.pic.setPixmap(QPixmap("pythag_pic_1"))
         self.pic.setAlignment(Qt.AlignCenter)
-
 
         self.pic_2 = QLabel()
         self.pic_2.setPixmap(QPixmap("pythag_pic_2"))
@@ -107,68 +115,28 @@ class Pythagoras(ParentLessonMenu):
         self.layout.addWidget(self.pic_2, 2, 1)
 
         self.button_1.clicked.connect(self.PythagTheorem)
-        self.button_2.clicked.connect(self.ThreeDPythagoras)
+        self.button_2.clicked.connect(self.Vectors)
     
     def PythagTheorem(self):
         pythag_theorem = PythagStackTheorem()
         pythag_theorem.show()
         pythag_theorem._raise()
 
-    def ThreeDPythagoras(self):
-        three_d_pythag = PythagStackTDP()
-        three_d_pythag.show()
-        three_d_pythag._raise()
-
-class PythagTrig(ParentLessonMenu):
-    def __init__(self):
-        super().__init__()
-
-        self.button_1.setText("Vectors 1")
-        self.button_2.setText("Vectors 2")
-        self.button_3.setText("Vectors 3")
-
-        self.pic = QLabel()
-        self.pic.setPixmap(QPixmap("vectors_pic_1"))
-        self.pic.setAlignment(Qt.AlignCenter)
-
-        self.pic_2 = QLabel()
-        self.pic_2.setPixmap(QPixmap("vectors_pic_2"))
-        self.pic_2.setAlignment(Qt.AlignCenter)
-
-        self.layout.addWidget(self.title, 0, 0)
-        self.layout.addWidget(self.pic, 1, 0)
-        self.layout.addWidget(self.button_1, 1, 1)
-        self.layout.addWidget(self.button_2, 2, 0)
-        self.layout.addWidget(self.pic_2, 2, 1)
-        self.layout.addWidget(self.button_3, 3, 1)
-        self.layout.addWidget(self.back, 4, 0)
-
-        self.button_1.clicked.connect(self.Easy)
-        self.button_2.clicked.connect(self.Medium)
-        self.button_3.clicked.connect(self.Hard)
-    
-    def Easy(self):
-        easy = EasyStack()
-        easy.show()
-        easy._raise()
-
-    def Medium(self):
-        medium = MediumStack()
-        medium.show()
-        medium._raise()
-
-    def Hard(self):
-        hard = HardStack()
-        hard.show()
-        hard._raise()
+    def Vectors(self):
+        vectors = VectorStack()
+        vectors.show()
+        vectors._raise()
 
 class Summary(ParentLessonMenu):
     def __init__(self):
         super().__init__()
 
-        self.button_1.setText("Easy")
-        self.button_2.setText("Medium")
-        self.button_3.setText("Hard")
+        self.title.setPixmap(QPixmap("summary_title"))
+        self.title.setAlignment(Qt.AlignCenter)
+        
+        self.button_1.setText("Trigonometry")
+        self.button_2.setText("Pythagoras")
+        self.button_3.setText("Vectors")
 
         self.pic = QLabel()
         self.pic.setPixmap(QPixmap("summary_pic_1"))

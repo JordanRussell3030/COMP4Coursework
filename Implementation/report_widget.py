@@ -102,7 +102,7 @@ class ReportWidget(QWidget):
         #This is the table which displays the data which the user has queried when it is found
         self.db = QTableWidget()
         #Sets the number of rows in the table - only 24 possible tasks to find
-        self.db.setRowCount(24)
+        self.db.setRowCount(27)
         #Sets the number of columns in the table - there are 5 headers
         self.db.setColumnCount(5)
         #Sets the headers so that they match the database
@@ -147,7 +147,7 @@ class ReportWidget(QWidget):
         report = g_database.get_query(data, score_data)
         #This clears the contents of the table with each new query so it does'nt continue to
         #display data that is no longer relevant
-        for count in range(24):
+        for count in range(27):
             self.db.setItem(count, 0, QTableWidgetItem(None))
             self.db.setItem(count, 1, QTableWidgetItem(None))
             self.db.setItem(count, 2, QTableWidgetItem(None))

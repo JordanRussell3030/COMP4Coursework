@@ -99,8 +99,8 @@ class ThreeDTrigonometryWidgetPage2(ParentLessonPage2):
         
         self.text_2.setText("Practice:\n\nCalculate the length of AG in the cuboid below.\nInput your answer in the box to two decimal places.")
 
-        self.layout.addWidget(self.text_1_pic, 2, 0)
-        self.layout.addWidget(self.text_2_pic, 2, 1)
+        self.layout.addWidget(self.text_1_pic, 1, 0)
+        self.layout.addWidget(self.text_2_pic, 1, 1)
 
         self.answer_lesson = "7.07cm"
 
@@ -111,60 +111,45 @@ class PythagTheoremWidgetPage2(ParentLessonPage2):
         super().__init__()
 
         self.parent = parent
-        
-        self.text_1.setText("More PT""")
-        
-        self.text_2.setText("Space for SOHCAHTOA """)
 
-        self.answer_lesson = None
+        self.text_1_pic = QLabel()
+        self.text_1_pic.setPixmap(QPixmap("three_d_pythag_lesson_1_pic_1"))
+        self.text_1_pic.setAlignment(Qt.AlignCenter)
 
-class ThreeDPythagorasWidgetPage2(ParentLessonPage2):
+        self.text_2_pic = QLabel()
+        self.text_2_pic.setPixmap(QPixmap("three_d_pythag_lesson_1_pic_2"))
+        self.text_2_pic.setAlignment(Qt.AlignCenter)
+        
+        self.text_1.setText("As you may have seen in the 3D Trigonometry lesson, the rules of Trigonometry and Pythagoras can also be applied to 3-dimensional pyramid shapes.\n\nPythagoras' Theorem is useful for finding the lengths of triangles found within a 3D pyramid.\n\nLook at the square based pyramid below. You can see a red triangle highlighted within, representing the first stage of finding angles in a 3D pyramid.\n\nThe principle is hte same as 2D Pythagoras; you just have to pull a triangle out of the pyramid, find the length, and put it back in ready to use that length to get closer to finding the solution to an angle based question (see 3D Trigonometry).\n\nBC = 6cm, and AB = 9.2cm, so AC can by found using the following method:\n\n6\u00b2 = 36\n9.2\u00b2 = 85 (rounded)\n85 - 36 = 49\n\u221a49 = 7\n\nTherefore, AC must be 7.\n\nNow place the triangle back into the pyramid and use your new AC value to help find the next side or angle.")
+        
+        self.text_2.setText("Practice:\n\nLook at the square-based pyramid below.\nCalculate the length of AE to 1 decimal place.")
+
+        self.layout.addWidget(self.text_1_pic, 1, 0)
+        self.layout.addWidget(self.text_2_pic, 1, 1)
+
+        self.answer_lesson = "13.9cm"
+
+        self.answer.setText("cm")
+
+class VectorWidgetPage2(ParentLessonPage2):
     def __init__(self, parent):
         super().__init__()
 
         self.parent = parent
         
-        self.text_1.setText("More 3DP""")
+        self.text_1.setText("Vectors are often used in real life situations. Here is an example of a generic 'swimming across the river' question.\nyou just have to add the two velocity vectors end to end and draw the resultant vector which shows both the speed and direction of the final course.\n\nYou will need to use Pythagoras and Trigonometry to find the length and angle.\n\nExample:\n\nOverall speed = \u221a3\u00b2 + 2\u00b2 = 3.6m/s\nDirection = TAN X = 3 {0} 2\nX = TAN-1(1.5) = 56.3\u00b0.".format(chr(247)))
         
-        self.text_2.setText("Space for SOHCAHTOA """)
+        self.text_2.setText("Practice:\n\nWork out the overall force in Newtons on the Queen Mary in the picture below:")
 
-        self.answer_lesson = None
+        self.text_2_pic = QLabel()
+        self.text_2_pic.setPixmap(QPixmap("vectors_lesson_2_pic_2"))
+        self.text_2_pic.setAlignment(Qt.AlignCenter)
 
-class EasyWidgetPage2(ParentLessonPage2):
-    def __init__(self, parent):
-        super().__init__()
+        self.layout.addWidget(self.text_2_pic, 1, 1)
 
-        self.parent = parent
-        
-        self.text_1.setText("More Easy""")
-        
-        self.text_2.setText("Space for SOHCAHTOA """)
+        self.answer_lesson = "21800N"
 
-        self.answer_lesson = None
-
-class MediumWidgetPage2(ParentLessonPage2):
-    def __init__(self, parent):
-        super().__init__()
-
-        self.parent = parent
-        
-        self.text_1.setText("More Medium""")
-        
-        self.text_2.setText("Space for SOHCAHTOA """)
-
-        self.answer_lesson = None
-
-class HardWidgetPage2(ParentLessonPage2):
-    def __init__(self, parent):
-        super().__init__()
-
-        self.parent = parent
-        
-        self.text_1.setText("More Hard""")
-        
-        self.text_2.setText("Space for SOHCAHTOA """)
-
-        self.answer_lesson = None
+        self.answer.setText("N")
 
 class ReviseTrig1WidgetPage2(ParentLessonPage2):
     def __init__(self, parent):

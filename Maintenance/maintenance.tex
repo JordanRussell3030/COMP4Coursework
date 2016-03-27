@@ -166,7 +166,7 @@ This method is run as soon as the program is run; the first SQL statement search
             self.execute_sql(sql)
 \end{python}
 
-This method is called in the homework page 1 subclasses. It can be called from any of the 24 subclasses, and the sub classed variables from each one are passed through, so that, for example, there are no cross-overs of data like the Sides Easy task name being recorded as the parent default. The SQL here firstly checks to see if a task with the same task name already exists, and if it does, each value will only be over-written if it is greater than the existing one. Otherwise it will create a new record and save the values from the second pages as 0 so the same SQL statements can be used, update statements, whether the record existed or not before. the execute\_sql method is run in order to make the changes to the table.
+This method is called in the homework page 1 subclasses. It can be called from any of the 27 subclasses, and the sub classed variables from each one are passed through, so that, for example, there are no cross-overs of data like the Sides Easy task name being recorded as the parent default. The SQL here firstly checks to see if a task with the same task name already exists, and if it does, each value will only be over-written if it is greater than the existing one. Otherwise it will create a new record and save the values from the second pages as 0 so the same SQL statements can be used, update statements, whether the record existed or not before. the execute\_sql method is run in order to make the changes to the table.
 
 \subsubsection{insert\_data\_second method}
 
@@ -238,7 +238,7 @@ class DatabaseWidget(QWidget):
         self.report.setFont(QFont("Courier", 40))
         
         self.database = QTableWidget()
-        self.database.setRowCount(24)
+        self.database.setRowCount(27)
         self.database.setColumnCount(5)
         self.database_header = ("Task Name", "Question 1", "Question 2", "Question 3", "Question 4")
         self.database.setHorizontalHeaderLabels(self.database_header)
@@ -369,7 +369,7 @@ class ReportWidget(QWidget):
         self.submit.setStyleSheet("QPushButton {background-color: green; color: white;}")
 
         self.db = QTableWidget()
-        self.db.setRowCount(24)
+        self.db.setRowCount(27)
         self.db.setColumnCount(5)
         self.db_header = ("TaskName", "Question 1", "Question 2", "Question 3", "Question 4")
         self.db.setHorizontalHeaderLabels(self.db_header)
@@ -410,7 +410,7 @@ def selected_submit(self):
         data = self.task_box.currentText()
         score_data = self.score_box.currentText()
         report = g_database.get_query(data, score_data)
-        for count in range(24):
+        for count in range(27):
             self.db.setItem(count, 0, QTableWidgetItem(None))
             self.db.setItem(count, 1, QTableWidgetItem(None))
             self.db.setItem(count, 2, QTableWidgetItem(None))
@@ -1285,7 +1285,7 @@ class Trig1StackSides(QMainWindow):
         self.setCentralWidget(self.widget)
 \end{python}
 
-This is one of twelve stack classes which each contain the two screens for one lesson. This stack widget has the two screens added to the layout (imported from the files where each widget's class is coded), then when the stack is opened the first screen is displayed, and can switch to the second in the same window. This is accessed by clicking the corresponding button in the first derived lesson menu (Trigonometry1(ParentLessonMenu) Class). The contents of both screens will be left how the user leaves them until the entire stack is closed, even if they are switching between screens.
+This is one of nine stack classes which each contain the two screens for one lesson. This stack widget has the two screens added to the layout (imported from the files where each widget's class is coded), then when the stack is opened the first screen is displayed, and can switch to the second in the same window. This is accessed by clicking the corresponding button in the first derived lesson menu (Trigonometry1(ParentLessonMenu) Class). The contents of both screens will be left how the user leaves them until the entire stack is closed, even if they are switching between screens.
 
 \subsection{ParentLessonLayout Class}
 
@@ -1342,7 +1342,7 @@ class ParentLessonLayout(QWidget):
         self.next.clicked.connect(self.selected_next_page)
 \end{python}
 
-This is the parent class which provides the default attributes to each of the twelve first lesson screens. The file with the subclasses imports from here, and this parent class is never seen by the user; only the subclasses are accessible. This contains the attributes which are shared by all subclasses, while the next page connection method is in each subclass, in order to switch to the relevant second page. The background colour and screen maximising is coded here so all subclasses will have the same background colour and will be maximised. Each subclass is placed in a stack with its corresponding second screen so that the two pages are always the right ones and relevant to each other.
+This is the parent class which provides the default attributes to each of the nine first lesson screens. The file with the subclasses imports from here, and this parent class is never seen by the user; only the subclasses are accessible. This contains the attributes which are shared by all subclasses, while the next page connection method is in each subclass, in order to switch to the relevant second page. The background colour and screen maximising is coded here so all subclasses will have the same background colour and will be maximised. Each subclass is placed in a stack with its corresponding second screen so that the two pages are always the right ones and relevant to each other.
 
 \subsubsection{selected\_back method}
 
@@ -1420,7 +1420,7 @@ class ParentLessonPage2(QWidget):
         self.finish.clicked.connect(self.finish_selected)
 \end{python}
 
-This is the parent class which provides the default attributes to each of the twelve second lesson screens. The file with the subclasses imports from here, and this parent class is never seen by the user; only the subclasses are accessible. This contains the attributes which are shared by all subclasses, while the previous page connection method is in each subclass, in order to switch to the relevant first page. The background colour and screen maximising is coded here so all subclasses will have the same background colour and will be maximised. Each subclass is placed in a stack with its corresponding first screen so that the two pages are always the right ones and relevant to each other.
+This is the parent class which provides the default attributes to each of the nine second lesson screens. The file with the subclasses imports from here, and this parent class is never seen by the user; only the subclasses are accessible. This contains the attributes which are shared by all subclasses, while the previous page connection method is in each subclass, in order to switch to the relevant first page. The background colour and screen maximising is coded here so all subclasses will have the same background colour and will be maximised. Each subclass is placed in a stack with its corresponding first screen so that the two pages are always the right ones and relevant to each other.
 
 \subsubsection{previous\_selected method}
 
@@ -1470,7 +1470,7 @@ class SidesAHOWidget(ParentLessonLayout):
         self.lesson_2.setText("The OPPOSITE is the side opposite the angle being used.\nCosine function: cos(x) = Adjacent {0} Hypotenuse".format(chr(247)))
 \end{python}
 
-This is one of the twelve first lesson screens which inherits from the parent lesson page 1 class (ParentLessonLayout Class) and is placed in a stack widget (Trig1StackSides Class) with the corresponding second sides lesson screen. This way it is not possible for only one of the two lesson screens to be open at any time, as they are in the same stack which keeps changes until it is closed entirely.
+This is one of the nine first lesson screens which inherits from the parent lesson page 1 class (ParentLessonLayout Class) and is placed in a stack widget (Trig1StackSides Class) with the corresponding second sides lesson screen. This way it is not possible for only one of the two lesson screens to be open at any time, as they are in the same stack which keeps changes until it is closed entirely.
 
 \subsubsection{selected\_next\_page method}
 
@@ -1512,7 +1512,7 @@ class SOHCAHTOAWidgetPage2(ParentLessonPage2):
         self.answer_lesson = "26.5m"
 \end{python}
 
-This class is one of the twelve second lesson screens which inherits from the lesson page 2 parent class (ParentLessonPage2 Class) and is placed in a stack widget (Trig1StackSOHCAHTOA Class) with the corresponding first sides lesson screen. This way it is not possible for only one of the two lesson screens to be open at any time, as they are in the same stack which keeps changes until it is closed entirely.
+This class is one of the nine second lesson screens which inherits from the lesson page 2 parent class (ParentLessonPage2 Class) and is placed in a stack widget (Trig1StackSOHCAHTOA Class) with the corresponding first sides lesson screen. This way it is not possible for only one of the two lesson screens to be open at any time, as they are in the same stack which keeps changes until it is closed entirely.
 
 \subsection{Trig1StackSidesEasy Class}
 
@@ -1537,7 +1537,7 @@ class Trig1StackSidesEasy(QMainWindow):
         self.setCentralWidget(self.widget)
 \end{python}
 
-This is one of twenty-four stack classes which each contain the two screens for one homework. This stack widget has the two screens added to the layout (imported from the files where each widget's class is coded), then when the stack is opened the first screen is displayed, and can switch to the second in the same window. This is accessed by clicking the corresponding button in the first derived homework menu (Trigonometry1HW(ParentHomeworkMenuClass) Class). It is useful to have the two homework screens in a stack together so the user cannot close one screen and skip to the next, or vice-versa and repeat a page, potentially crashing the program. The use can return to one page, but the second will still be there, and they cannot re-submit the score of the first page until the second page has been closed and the stack is closed entirely and they re-do the whole homework. The contents of both screens will be left how the user leaves them until the entire stack is closed, even if they are switching between screens.
+This is one of twenty-seven stack classes which each contain the two screens for one homework. This stack widget has the two screens added to the layout (imported from the files where each widget's class is coded), then when the stack is opened the first screen is displayed, and can switch to the second in the same window. This is accessed by clicking the corresponding button in the first derived homework menu (Trigonometry1HW(ParentHomeworkMenuClass) Class). It is useful to have the two homework screens in a stack together so the user cannot close one screen and skip to the next, or vice-versa and repeat a page, potentially crashing the program. The use can return to one page, but the second will still be there, and they cannot re-submit the score of the first page until the second page has been closed and the stack is closed entirely and they re-do the whole homework. The contents of both screens will be left how the user leaves them until the entire stack is closed, even if they are switching between screens.
 
 \subsection{ParentHomeworkPage1Class Class}
 
@@ -1682,7 +1682,7 @@ class ParentHomeworkPage1Class(QWidget):
         self.answers.append(self.answer_f)
 \end{python}
 
-This is the parent class which provides the default attributes to each of the twenty-four first homework screens. The file with the subclasses imports from here, and this parent class is never seen by the user; only the subclasses are accessible. This contains the attributes which are shared by all subclasses, while the next page connection method is in each subclass, in order to switch to the relevant second page. The background colour and screen maximising is coded here so all subclasses will have the same background colour and will be maximised. Each subclass is placed in a stack with its corresponding second screen so that the two pages are always the right ones and relevant to each other.
+This is the parent class which provides the default attributes to each of the twenty-seven first homework screens. The file with the subclasses imports from here, and this parent class is never seen by the user; only the subclasses are accessible. This contains the attributes which are shared by all subclasses, while the next page connection method is in each subclass, in order to switch to the relevant second page. The background colour and screen maximising is coded here so all subclasses will have the same background colour and will be maximised. Each subclass is placed in a stack with its corresponding second screen so that the two pages are always the right ones and relevant to each other.
 
 \subsubsection{check\_selected method}
 
@@ -1941,7 +1941,7 @@ class HomeworkPage2ParentClass(QWidget):
         self.answer_question_4 = None
 \end{python}
 
-This is the parent class which provides the default attributes to each of the twenty-four second homework screens. The file with the subclasses imports from here, and this parent class is never seen by the user; only the subclasses are accessible. This contains the attributes which are shared by all subclasses, while the previous page connection method is in each subclass, in order to switch to the relevant first page. The background colour and screen maximising is coded here so all subclasses will have the same background colour and will be maximised. Each subclass is placed in a stack with its corresponding first screen so that the two pages are always the right ones and relevant to each other.
+This is the parent class which provides the default attributes to each of the twenty-seven second homework screens. The file with the subclasses imports from here, and this parent class is never seen by the user; only the subclasses are accessible. This contains the attributes which are shared by all subclasses, while the previous page connection method is in each subclass, in order to switch to the relevant first page. The background colour and screen maximising is coded here so all subclasses will have the same background colour and will be maximised. Each subclass is placed in a stack with its corresponding first screen so that the two pages are always the right ones and relevant to each other.
 
 \subsubsection{check\_button\_1 method}
 
@@ -2047,13 +2047,17 @@ class SidesAHOEasyWidget(ParentHomeworkPage1Class):
 
         self.question_1.setText("Question 1: Look at the diagram below\nand answer the following questions: ")
         
-        self.q1a.setText("Which side is oppopsite angle A? ")
+        self.q1a.setText("Which side is opposite angle A?")
     
-        self.q1b.setText("Which side is adjacent to angle Q? ")
+        self.q1b.setText("Which side is the adjacent?")
                 
-        self.q1c.setText("Which side is the hypotenuse? ")        
+        self.q1c.setText("Which side is the hypotenuse?")        
 
-        self.q1d.setText("Which formula would you use to find AB? ")
+        self.q1d.setText("Which formula would you use to find AB?")
+
+        self.q1e.setText("If BC is 7cm, and AC is 8cm, then what is the length of AB?")
+
+        self.q1f.setText("If BC is 4cm, and AC is 6cm, then what is the length of AB?")
         
         self.question_1_shape.setPixmap(QPixmap("sides_easy_q1"))
 
@@ -2061,11 +2065,14 @@ class SidesAHOEasyWidget(ParentHomeworkPage1Class):
         self.answer_1_b = "AC"
         self.answer_1_c = "AB"
         self.answer_1_d = "cosine"
-        self.answer_1_e = "5"
-        self.answer_1_f = "6"
+        self.answer_1_e = "10.6cm"
+        self.answer_1_f = "7.2cm"
+
+        self.answer_e.setText("cm")
+        self.answer_f.setText("cm")
 \end{python}
 
-This is one of the twenty-four first homework screens which inherits from the parent homework page 1 class (ParentHomeworkPage1 Class) and is placed in a stack widget (Trig1SidesEasyStack Class) with the corresponding second sides easy homework screen. This way it is not possible for only one of the two homework screens to be open at any time, as they are in the same stack which keeps changes until it is closed entirely.
+This is one of the twenty-seven first homework screens which inherits from the parent homework page 1 class (ParentHomeworkPage1 Class) and is placed in a stack widget (Trig1SidesEasyStack Class) with the corresponding second sides easy homework screen. This way it is not possible for only one of the two homework screens to be open at any time, as they are in the same stack which keeps changes until it is closed entirely.
 
 \subsubsection{open\_page\_2 method}
 
@@ -2079,48 +2086,69 @@ The screen being represented by the index here is hard-coded in the stack which 
 \subsection{SidesAHOEasyWidget2(HomeworkPage2ParentClass) Class}
 
 \begin{python}
+#These are the child classes which inherit all of their default attributes from homework_page_2_parent_class
 class SidesAHOEasyWidget2(HomeworkPage2ParentClass):
+    #Constructor
     def __init__(self, parent):
+        #Return a proxy object that delegates method calls to a parent or sibling class of type.
         super().__init__()
 
+        #This is the parent variable which allows the child classes to inherit the connections to the second widget in the stacks       
         self.parent = parent
 
+        #Overriding the taskname from the parent class so the user knows which task goes with the score
         self.task = "Sides Easy"
 
-        self.question_2.setText("Question 2\nWhat is the length\nof b?")
+        #The widget variables are all created in the parent class because they are used in all of the child classes
+        #and the text is set here so that it can be different
+        self.question_2.setText("Question 2\nWhat is the name of side AC?")
         
-        self.question_3.setText("Question 3\nWhat is the length\nof c?")
+        self.shape_2.setPixmap(QPixmap("sides_homework_1"))
+        self.shape_2.setAlignment(Qt.AlignCenter)
         
-        self.question_4.setText("Question 4\nWhat is the\nlength of a?")
+        self.question_3.setText("Question 3\nWhat is the name of side BC?")
+        
+        self.shape_3.setPixmap(QPixmap("sides_homework_1"))
+        self.shape_3.setAlignment(Qt.AlignCenter)
+        
+        self.question_4.setText("Question 4\nWhat is the\nlength of AC?")
 
-        self.answer_2.addItem("10")
-        self.answer_2.addItem("20")
-        self.answer_2.addItem("30")
+        self.shape_4.setPixmap(QPixmap("sides_homework_1"))
+        self.shape_4.setAlignment(Qt.AlignCenter)
 
-        self.answer_3.addItem("10")
-        self.answer_3.addItem("20")
-        self.answer_3.addItem("30")
+        #Adds some wrong answers and the right answer to the combo box
+        self.answer_q_2 = "Opposite"
+        self.answer_2.addItem("Adjacent")
+        self.answer_2.addItem("Hypotenuse")
+        self.answer_2.addItem(self.answer_q_2)
 
-        self._button_1.setText("60")
-        self._button_2.setText("50")
-        self._button_3.setText("40")
-        self._button_4.setText("30")
-        self._button_5.setText("20")
-        self._button_6.setText("10")
+        self.answer_q_3 = "Adjacent"
+        self.answer_3.addItem("Hypotenuse")
+        self.answer_3.addItem(self.answer_q_3)
+        self.answer_3.addItem("Opposite")
 
-        self.answer_question_4 = "40"
+        #Sets the text of the multiple choice buttons which is used to check the answer in the check methods
+        self._button_1.setText("4.3cm")
+        self._button_2.setText("6cm")
+        self._button_3.setText("5cm")
+        self._button_4.setText("4cm")
+        self._button_5.setText("7.1cm")
+        self._button_6.setText("12cm")
+
+        #This is the hard-coded answer which is checked against with the text in the buttons above
+        self.answer_question_4 = "5cm"
 \end{python}
 
-This class is one of the twenty-four second homework screens which inherits from the homework page 2 parent class (HomeworkPage2ParentClass Class) and is placed in a stack widget (Trig1SidesEasyStack Class) with the corresponding first sides easy homework screen. This way it is not possible for only one of the two homework screens to be open at any time, as they are in the same stack which keeps changes until it is closed entirely.
+This class is one of the twenty-seven second homework screens which inherits from the homework page 2 parent class (HomeworkPage2ParentClass Class) and is placed in a stack widget (Trig1SidesEasyStack Class) with the corresponding first sides easy homework screen. This way it is not possible for only one of the two homework screens to be open at any time, as they are in the same stack which keeps changes until it is closed entirely.
 
-\subsection{ErrorMessage2(QErrorMessage) Class}
+\subsection{ErrorMessage8(QErrorMessage) Class}
 
 \begin{python}
-class ErrorMessage2(QErrorMessage):
+class ErrorMessage8(QErrorMessage):
     def __init__(self):
         super().__init__()
         
-        message = "Invalid data type - please make sure you are inputting a decimal value"
+        message = "Please input your answers"
 
         QErrorMessage.showMessage(self, message)
 \end{python}
@@ -2277,7 +2305,7 @@ This window opens when the user clicks the first button on the lesson topic menu
     \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/screen_5}
 \end{figure}
 
-This window is accessed by clicking the corresponding button on one of the five derived lesson menus. It is one of twelve first lesson's screens which inherit from a parent class; they each contain a title image, two text boxes for lessons and explanations, and cancel button, and a next button, along with one or two images depending on the lesson.
+This window is accessed by clicking the corresponding button on one of the five derived lesson menus. It is one of nine first lesson's screens which inherit from a parent class; they each contain a title image, two text boxes for lessons and explanations, and cancel button, and a next button, along with one or two images depending on the lesson.
 
 \begin{figure}[H]
     \label{fig: Second Screen}\caption{SOHCAHTOA 2nd Lesson screen}
@@ -2305,7 +2333,7 @@ This window opens when the user clicks the first button on the homework topic me
     \includegraphics[width=\textwidth]{C:/Users/Jordan/git/COMP4Coursework2/Testing/screen_9}
 \end{figure}
 
-This window is accessed by clicking the corresponding button on one of the five derived homework menus. It is one of twenty-four first homework screens which inherit from a parent class; they each contain a title image, a question, a reset button, a check answers button, a cancel button, a next button, and six line edits into which the user can input their answers to the question, which can be marked using the check button or all cleared using the reset button. 
+This window is accessed by clicking the corresponding button on one of the five derived homework menus. It is one of twenty-seven first homework screens which inherit from a parent class; they each contain a title image, a question, a reset button, a check answers button, a cancel button, a next button, and six line edits into which the user can input their answers to the question, which can be marked using the check button or all cleared using the reset button. 
 
 \begin{figure}[H]
     \label{fig: Second Screen}\caption{Sides Easy 2nd Lesson screen}
@@ -2709,7 +2737,7 @@ def selected_submit(self):
         data = self.task_box.currentText()
         score_data = self.score_box.currentText()
         report = g_database.get_query(data, score_data)
-        for count in range(24):
+        for count in range(7):
             self.db.setItem(count, 0, QTableWidgetItem(None))
             self.db.setItem(count, 1, QTableWidgetItem(None))
             self.db.setItem(count, 2, QTableWidgetItem(None))
@@ -2861,7 +2889,7 @@ def selected_submit(self):
         data = self.task_box.currentText()
         score_data = self.score_box.currentText()
         report = g_database.get_query(data, score_data)
-        for count in range(24):
+        for count in range(27):
             self.db.setItem(count, 0, QTableWidgetItem(None))
             self.db.setItem(count, 1, QTableWidgetItem(None))
             self.db.setItem(count, 2, QTableWidgetItem(None))
@@ -2880,7 +2908,7 @@ def selected_submit(self):
 3 - The contents of the task QComboBox is assigned to a variable which can be passed into the get\_query method.
 4 - The contents of the score QComboBox is assigned to a variable which can be passed into the get\_query method.
 5 - A list variable is assigned to the data which will be returned from the get\_query method.
-6 - A for loop is used to clear all values in the QTableWidget, which will only have twenty-four rows, one for each possible task that could be recorded.
+6 - A for loop is used to clear all values in the QTableWidget, which will only have twenty-seven rows, one for each possible task that could be recorded.
 7 - The value none is set for each space in the QTableWidget, removing all values from it.
 12 - For every record fetched from the database, a for loop is used to add each record to the QTableWidget.
 13 - The \_count stepper variable is used to increment the row count so that each record is displayed on the next row rather than constantly over-writing the first row.
@@ -3056,7 +3084,7 @@ def check_button_1(self, attempts_remaining_c):
 \begin{python}
 def selected_mark_2(self, attempts_remaining_a):
         self.correct_count_2 = 0
-        if self.answer_2.currentText() == "20":
+        if self.answer_2.currentText() == self.answer_q_2:
             self.correct_count_2 += 1
             self.mark_2.setText("Correct!")
             self.mark_2.setEnabled(False)
@@ -3164,6 +3192,7 @@ There are no settings which the user or maintainer needs to be aware of; only Py
 	\item \url{http://phasesexperimental.weebly.com/trigonometry.html} - 1st Picture - Finding Angles Lesson Page 1
 	\item \url{http://www.bbc.co.uk/bitesize/standard/maths_ii/trigonometry/equations/revision/1/} - 2nd Picture - Finding Angles Lesson Page 1
 	\item \url{http://www.onlinemathlearning.com/trig-graphs.html} - 1st Picture - Finding Angles Lesson Page 2
+	\item \url{http://www.mymaths.co.uk} - Images in Analysis section 1.2.1
 \end{itemize}
 
 \subsection{Code Segments}
@@ -3251,6 +3280,12 @@ pal = QPalette()
 \begin{python}
 self.setStyleSheet("QPushButton {background-color: #A3C1DA; color: blue;}")
 \end{python}
+
+\subsection{Subject Material}
+
+All of the subject material and information was taken from a CGP book, including some pictures, text and examples, in order to ensure that the material in the system is relevant and useful.
+
+CGP - GCSE Mathematics - The Revision Guide - Higher Level - Richard Parsons - Coordination Group Publications Ltd
 
 \section{Code Listing}
 
@@ -3498,8 +3533,8 @@ class DatabaseWidget(QWidget):
         
         #This QTableWidget is the table which the data from the database is presented in
         self.database = QTableWidget()
-        #Sets the number of rows in the table - there are only 24 possible tasks, rach of which can only be recorded once and overwritten upon improvement
-        self.database.setRowCount(24)
+        #Sets the number of rows in the table - there are only 27 possible tasks, rach of which can only be recorded once and overwritten upon improvement
+        self.database.setRowCount(27)
         #Sets the number of columns in the table - there are 5 headings, 5 attributes to record
         self.database.setColumnCount(5)
         #This is the header which appears in each column in the database
@@ -3658,8 +3693,8 @@ class ReportWidget(QWidget):
 
         #This is the table which displays the data which the user has queried when it is found
         self.db = QTableWidget()
-        #Sets the number of rows in the table - only 24 possible tasks to find
-        self.db.setRowCount(24)
+        #Sets the number of rows in the table - only 27 possible tasks to find
+        self.db.setRowCount(27)
         #Sets the number of columns in the table - there are 5 headers
         self.db.setColumnCount(5)
         #Sets the headers so that they match the database
@@ -3701,7 +3736,7 @@ class ReportWidget(QWidget):
         report = g_database.get_query(data, score_data)
         #This clears the contents of the table with each new query so it does'nt continue to
         #display data that is no longer relevant
-        for count in range(24):
+        for count in range(27):
             self.db.setItem(count, 0, QTableWidgetItem(None))
             self.db.setItem(count, 1, QTableWidgetItem(None))
             self.db.setItem(count, 2, QTableWidgetItem(None))
@@ -4252,7 +4287,7 @@ class HomeworkMenuWidget(QMainWindow):
 from PyQt4.QtCore import * #These two lines import all of the built in PyQt code
 from PyQt4.QtGui import *
 
-#This is the parent class which provides the default attributes for the 5 child lesson menus
+#This is the parent class which provides the default attributes for the 4 child lesson menus
 class ParentLessonMenu(QWidget):
     #Constructor
     def __init__(self):
@@ -4268,7 +4303,7 @@ class ParentLessonMenu(QWidget):
         self.setAutoFillBackground(True)
         self.setPalette(pal)
 
-        #The QLabel is declared here because all 5 child menus will have one
+        #The QLabel is declared here because all 4 child menus will have one
         #The QPixmap is set in the child class
         self.title = QLabel()
 
@@ -4318,6 +4353,7 @@ class ParentLessonMenu(QWidget):
     #This closes the window and returns the user to the previous screen
     def selected_back(self):
         self.close()
+
 \end{python}
 
 \subsection{ParentHomeworkMenuClass Class}
@@ -4326,7 +4362,7 @@ class ParentLessonMenu(QWidget):
 from PyQt4.QtGui import * #These two lines import the built in PyQt code
 from PyQt4.QtCore import *
 
-#This is the template for the parent homework menu, which provides default attributes for 5 child homework menu classes
+#This is the template for the parent homework menu, which provides default attributes for 4 child homework menu classes
 class ParentHomeworkMenuClass(QWidget):
     #Constructor
     def __init__(self):
@@ -4424,9 +4460,9 @@ class ParentHomeworkMenuClass(QWidget):
 
         #This is in the parent class because it is the same for each child class; the window just closes and the previous menu is displayed
         self.back.clicked.connect(self.selected_back)
-        #The other connections are in the child classes because they all have to connect to different homework tasks stacks
+        #The other connections are in the child classes because they all have to connect to different homeworks stacks
 
-    #The method which is executed when back is selected in any of the 5 child classes
+    #The method which is executed when back is selected in any of the 4 child classes
     def selected_back(self):
         #This closes the window - the previous window will still be there
         self.close()
@@ -4438,7 +4474,7 @@ class ParentHomeworkMenuClass(QWidget):
 from PyQt4.QtGui import * #These two lines import the built in PyQt code
 from PyQt4.QtCore import *
 
-from parent_lesson_menu import * #This imports the parent class from which the following 5 classes inherit all of their default attributes
+from parent_lesson_menu import * #This imports the parent class from which the following 4 classes inherit all of their default attributes
 from lesson_stacks import * #This imports the lesson stacks for the connections to open when the buttons are clicked
 \end{python}
 
@@ -4452,8 +4488,11 @@ class Trigonometry1(ParentLessonMenu):
         #Return a proxy object that delegates method calls to a parent or sibling class of type.
         super().__init__()
 
+        self.title.setPixmap(QPixmap("trig_1_title"))
+        self.title.setAlignment(Qt.AlignCenter)
+
         #The buttons are created in the parent class
-        #The text is set here so that they can be different in each of the 5 child classes
+        #The text is set here so that they can be different in each of the 4 child classes
         self.button_1.setText("Sides")
         self.button_2.setText("SOHCAHTOA")
 
@@ -4498,6 +4537,9 @@ class Trigonometry2(ParentLessonMenu):
     def __init__(self):
         super().__init__()
 
+        self.title.setPixmap(QPixmap("trig_2_title"))
+        self.title.setAlignment(Qt.AlignCenter)
+
         self.button_1.setText("Finding Angles")
         self.button_2.setText("3D Trigonometry")
 
@@ -4537,13 +4579,15 @@ class Pythagoras(ParentLessonMenu):
     def __init__(self):
         super().__init__()
 
+        self.title.setPixmap(QPixmap("pythag_vector_label"))
+        self.title.setAlignment(Qt.AlignCenter)
+
         self.button_1.setText("Pythagoras' Theorem")
-        self.button_2.setText("3D Pythagoras")
+        self.button_2.setText("Vectors")
 
         self.pic = QLabel()
         self.pic.setPixmap(QPixmap("pythag_pic_1"))
         self.pic.setAlignment(Qt.AlignCenter)
-
 
         self.pic_2 = QLabel()
         self.pic_2.setPixmap(QPixmap("pythag_pic_2"))
@@ -4556,64 +4600,17 @@ class Pythagoras(ParentLessonMenu):
         self.layout.addWidget(self.pic_2, 2, 1)
 
         self.button_1.clicked.connect(self.PythagTheorem)
-        self.button_2.clicked.connect(self.ThreeDPythagoras)
+        self.button_2.clicked.connect(self.Vectors)
     
     def PythagTheorem(self):
         pythag_theorem = PythagStackTheorem()
         pythag_theorem.show()
         pythag_theorem._raise()
 
-    def ThreeDPythagoras(self):
-        three_d_pythag = PythagStackTDP()
-        three_d_pythag.show()
-        three_d_pythag._raise()
-\end{python}
-
-\subsubsection{PythagTrig Class}
-
-\begin{python}
-class PythagTrig(ParentLessonMenu):
-    def __init__(self):
-        super().__init__()
-
-        self.button_1.setText("Vectors 1")
-        self.button_2.setText("Vectors 2")
-        self.button_3.setText("Vectors 3")
-
-        self.pic = QLabel()
-        self.pic.setPixmap(QPixmap("vectors_pic_1"))
-        self.pic.setAlignment(Qt.AlignCenter)
-
-        self.pic_2 = QLabel()
-        self.pic_2.setPixmap(QPixmap("vectors_pic_2"))
-        self.pic_2.setAlignment(Qt.AlignCenter)
-
-        self.layout.addWidget(self.title, 0, 0)
-        self.layout.addWidget(self.pic, 1, 0)
-        self.layout.addWidget(self.button_1, 1, 1)
-        self.layout.addWidget(self.button_2, 2, 0)
-        self.layout.addWidget(self.pic_2, 2, 1)
-        self.layout.addWidget(self.button_3, 3, 1)
-        self.layout.addWidget(self.back, 4, 0)
-
-        self.button_1.clicked.connect(self.Easy)
-        self.button_2.clicked.connect(self.Medium)
-        self.button_3.clicked.connect(self.Hard)
-    
-    def Easy(self):
-        easy = EasyStack()
-        easy.show()
-        easy._raise()
-
-    def Medium(self):
-        medium = MediumStack()
-        medium.show()
-        medium._raise()
-
-    def Hard(self):
-        hard = HardStack()
-        hard.show()
-        hard._raise()
+    def Vectors(self):
+        vectors = VectorStack()
+        vectors.show()
+        vectors._raise()
 \end{python}
 
 \subsubsection{Summary Class}
@@ -4623,9 +4620,12 @@ class Summary(ParentLessonMenu):
     def __init__(self):
         super().__init__()
 
-        self.button_1.setText("Easy")
-        self.button_2.setText("Medium")
-        self.button_3.setText("Hard")
+        self.title.setPixmap(QPixmap("summary_title"))
+        self.title.setAlignment(Qt.AlignCenter)
+        
+        self.button_1.setText("Trigonometry")
+        self.button_2.setText("Pythagoras")
+        self.button_3.setText("Vectors")
 
         self.pic = QLabel()
         self.pic.setPixmap(QPixmap("summary_pic_1"))
@@ -4674,7 +4674,7 @@ class Summary(ParentLessonMenu):
 from PyQt4.QtGui import * #These two lines import the built in PyQt code
 from PyQt4.QtCore import *
 
-from homework_menu_parent_class import * #This contains the parent template for each of the 5 menus to take from
+from homework_menu_parent_class import * #This contains the parent template for each of the 4 menus to take from
 from homework_stacks import * #This has the templates for the stacks which are opened from each button which is clicked
 \end{python}
 
@@ -4692,7 +4692,7 @@ class Trigonometry1HW(ParentHomeworkMenuClass):
         self.title.setPixmap(QPixmap("trig_1_title"))
 
         #These buttons have already been created in the parent class
-        #The text is set here so that it can be different across each of the 5 child menus
+        #The text is set here so that it can be different across each of the 4 child menus
         self.button_1.setText("Sides Easy")
         self.button_2.setText("Sides Medium")
         self.button_3.setText("Sides Hard")
@@ -4701,7 +4701,7 @@ class Trigonometry1HW(ParentHomeworkMenuClass):
         self.button_6.setText("SOHCAHTOA Hard")
 
         #The QLabels have already been created in the parent class
-        #The pixmaps are set here so that they can be different across each of the 5 child classes
+        #The pixmaps are set here so that they can be different across each of the 4 child classes
         self.pic_1.setPixmap(QPixmap("trig_1_pic_1_h"))
         self.pic_2.setPixmap(QPixmap("trig_1_pic_2_h"))
         self.pic_3.setPixmap(QPixmap("trig_1_pic_3_h"))
@@ -4846,14 +4846,14 @@ class PythagorasHW(ParentHomeworkMenuClass):
     def __init__(self):
         super().__init__()
 
-        self.title.setPixmap(QPixmap("pythag_title"))
+        self.title.setPixmap(QPixmap("pythag_vector_label"))
 
         self.button_1.setText("Pythagoras' Theorem Easy")
         self.button_2.setText("Pythagoras' Theorem Medium")
         self.button_3.setText("Pythagoras' Theorem Hard")
-        self.button_4.setText("3D Pythagoras Easy")
-        self.button_5.setText("3D Pythagoras Medium")
-        self.button_6.setText("3D Pythagoras Hard")
+        self.button_4.setText("Vectors Easy")
+        self.button_5.setText("Vectors Medium")
+        self.button_6.setText("Vectors Hard")
 
         self.pic_1.setPixmap(QPixmap("pythag_pic_1_h"))
         self.pic_2.setPixmap(QPixmap("pythag_pic_2_h"))
@@ -4872,9 +4872,9 @@ class PythagorasHW(ParentHomeworkMenuClass):
         self.button_1.clicked.connect(self.pythag_theorem_easy)
         self.button_2.clicked.connect(self.pythag_theorem_medium)
         self.button_3.clicked.connect(self.pythag_theorem_hard)
-        self.button_4.clicked.connect(self.three_d_pythag_easy)
-        self.button_5.clicked.connect(self.three_d_pythag_medium)
-        self.button_6.clicked.connect(self.three_d_pythag_hard)
+        self.button_4.clicked.connect(self.vectors_easy)
+        self.button_5.clicked.connect(self.vectors_medium)
+        self.button_6.clicked.connect(self.vectors_hard)
     
     def pythag_theorem_easy(self):
         pythag_theorem_1 = PythagStackTheoremEasy()
@@ -4891,57 +4891,20 @@ class PythagorasHW(ParentHomeworkMenuClass):
         pythag_theorem_3.show()
         pythag_theorem_3._raise()
 
-    def three_d_pythag_easy(self):
-        three_d_pythag_1 = PythagStackTDPEasy()
+    def vectors_easy(self):
+        three_d_pythag_1 = VectorsStackEasy()
         three_d_pythag_1.show()
         three_d_pythag_1._raise()
 
-    def three_d_pythag_medium(self):
-        three_d_pythag_2 = PythagStackTDPMedium()
+    def vectors_medium(self):
+        three_d_pythag_2 = VectorsStackMedium()
         three_d_pythag_2.show()
         three_d_pythag_2._raise()
 
-    def three_d_pythag_hard(self):
-        three_d_pythag_3 = PythagStackTDPHard()
+    def vectors_hard(self):
+        three_d_pythag_3 = VectorsStackHard()
         three_d_pythag_3.show()
         three_d_pythag_3._raise()
-\end{python}
-
-\subsubsection{PythagTrigonometryHW}
-
-\begin{python}
-class PythagTrigonometryHW(ParentHomeworkMenuClass):
-    def __init__(self):
-        super().__init__()
-
-        self.title.setPixmap(QPixmap("vectors_title"))
-
-        self.button_1.setText("Vectors Easy")
-        self.button_2.setText("Vectors Medium")
-        self.button_3.setText("Vectors Hard")
-
-        self.layout.addWidget(self.button_1, 0, 1)
-        self.layout.addWidget(self.button_2, 1, 0)
-        self.layout.addWidget(self.button_3, 2, 1)
-
-        self.button_1.clicked.connect(self.pythag_trig_problems_easy)
-        self.button_2.clicked.connect(self.pythag_trig_problems_medium)
-        self.button_3.clicked.connect(self.pythag_trig_problems_hard)
-        
-    def pythag_trig_problems_easy(self):
-        pythag_trig_problems_1 = VectorsStackEasy()
-        pythag_trig_problems_1.show()
-        pythag_trig_problems_1._raise()
-
-    def pythag_trig_problems_medium(self):
-        pythag_trig_problems_2 = VectorsStackMedium()
-        pythag_trig_problems_2.show()
-        pythag_trig_problems_2._raise()
-
-    def pythag_trig_problems_hard(self):
-        pythag_trig_problems_3 = VectorsStackHard()
-        pythag_trig_problems_3.show()
-        pythag_trig_problems_3._raise()
 \end{python}
 
 \subsubsection{SummaryHW}
@@ -4991,7 +4954,7 @@ from lesson_widgets_page_1 import * #This contains the first widget of each stac
 from lesson_page_2 import * #This contains the second widget of each stack widget
 \end{python}
 
-\subsubsection{Trig1StackSiddes}
+\subsubsection{Trig1StackSides}
 
 \begin{python}
 #These are the templates for the stack widgets which contain a first and a second page each for a lesson
@@ -5118,86 +5081,17 @@ class PythagStackTheorem(QMainWindow):
         self.setCentralWidget(self.widget)
 \end{python}
 
-\subsubsection{PythagStackTDP}
+\subsubsection{VectorStack}
 
 \begin{python}
-class PythagStackTDP(QMainWindow):
-    def __init__(self):
-        super().__init__()
-        
-        self.showMaximized()
-        
-        self.first_widget = ThreeDPythagorasWidget(self)
-        self.second_widget = ThreeDPythagorasWidgetPage2(self)
-
-        self.stack = QStackedLayout()
-
-        self.stack.addWidget(self.first_widget)
-        self.stack.addWidget(self.second_widget)
-
-        self.widget = QWidget()
-        self.widget.setLayout(self.stack)
-
-        self.setCentralWidget(self.widget)
-\end{python}
-
-\subsubsection{EasyStack}
-
-\begin{python}
-class EasyStack(QMainWindow):
+class VectorStack(QMainWindow):
     def __init__(self):
         super().__init__()
 
         self.showMaximized()
         
         self.first_widget = EasyWidget(self)
-        self.second_widget = EasyWidgetPage2(self)
-
-        self.stack = QStackedLayout()
-
-        self.stack.addWidget(self.first_widget)
-        self.stack.addWidget(self.second_widget)
-
-        self.widget = QWidget()
-        self.widget.setLayout(self.stack)
-
-        self.setCentralWidget(self.widget)
-\end{python}
-
-\subsubsection{MediumStack}
-
-\begin{python}
-class MediumStack(QMainWindow):
-    def __init__(self):
-        super().__init__()
-
-        self.showMaximized()
-        
-        self.first_widget = MediumWidget(self)
-        self.second_widget = MediumWidgetPage2(self)
-
-        self.stack = QStackedLayout()
-
-        self.stack.addWidget(self.first_widget)
-        self.stack.addWidget(self.second_widget)
-
-        self.widget = QWidget()
-        self.widget.setLayout(self.stack)
-
-        self.setCentralWidget(self.widget)
-\end{python}
-
-\subsubsection{HardStack}
-
-\begin{python}
-class HardStack(QMainWindow):
-    def __init__(self):
-        super().__init__()
-
-        self.showMaximized()
-        
-        self.first_widget = HardWidget(self)
-        self.second_widget = HardWidgetPage2(self)
+        self.second_widget = VectorWidgetPage2(self)
 
         self.stack = QStackedLayout()
 
@@ -5644,75 +5538,6 @@ class PythagStackTheoremHard(QMainWindow):
         self.setCentralWidget(self.widget)
 \end{python}
 
-\subsubsection{PythagStackTDPEasy}
-
-\begin{python}
-class PythagStackTDPEasy(QMainWindow):
-    def __init__(self):
-        super().__init__()
-
-        self.showMaximized()
-
-        self.first_widget = ThreeDPythagorasEasyWidget(self)
-        self.second_widget = ThreeDPythagorasEasyWidget2(self)
-
-        self.stack = QStackedLayout()
-
-        self.stack.addWidget(self.first_widget)
-        self.stack.addWidget(self.second_widget)
-
-        self.widget = QWidget()
-        self.widget.setLayout(self.stack)
-
-        self.setCentralWidget(self.widget)
-\end{python}
-
-\subsubsection{PythagStackTDPMedium}
-
-\begin{python}
-class PythagStackTDPMedium(QMainWindow):
-    def __init__(self):
-        super().__init__()
-
-        self.showMaximized()
-
-        self.first_widget = ThreeDPythagorasMediumWidget(self)
-        self.second_widget = ThreeDPythagorasMediumWidget2(self)
-
-        self.stack = QStackedLayout()
-
-        self.stack.addWidget(self.first_widget)
-        self.stack.addWidget(self.second_widget)
-
-        self.widget = QWidget()
-        self.widget.setLayout(self.stack)
-
-        self.setCentralWidget(self.widget)
-\end{python}
-
-\subsubsection{PythagStackTDPHard}
-
-\begin{python}
-class PythagStackTDPHard(QMainWindow):
-    def __init__(self):
-        super().__init__()
-
-        self.showMaximized()
-
-        self.first_widget = ThreeDPythagorasHardWidget(self)
-        self.second_widget = ThreeDPythagorasHardWidget2(self)
-
-        self.stack = QStackedLayout()
-
-        self.stack.addWidget(self.first_widget)
-        self.stack.addWidget(self.second_widget)
-
-        self.widget = QWidget()
-        self.widget.setLayout(self.stack)
-
-        self.setCentralWidget(self.widget)
-\end{python}
-
 \subsubsection{VectorsStackEasy}
 
 \begin{python}
@@ -5854,6 +5679,9 @@ class ReviseTrigStackHard(QMainWindow):
 \subsection{ParentLessonLayout Class}
 
 \begin{python}
+from PyQt4.QtGui import * #These two lines import all of the built in PyQt code
+from PyQt4.QtCore import *
+
 from PyQt4.QtGui import * #These two lines import all of the built in PyQt code
 from PyQt4.QtCore import *
 
@@ -6013,6 +5841,10 @@ class ParentLessonPage2(QWidget):
         self.check.clicked.connect(self.check_selected)
         self.finish.clicked.connect(self.finish_selected)
 
+        self.answer_lesson = None
+        self.answer_lesson_2 = None
+        self.answer_lesson_3 = None
+
     #Switches back to the previous screen in the stack window (page 1)
     def previous_selected(self):
         self.parent.stack.setCurrentIndex(0)
@@ -6021,8 +5853,9 @@ class ParentLessonPage2(QWidget):
     def check_selected(self):
         #If it's correct it just tells them they are correct
         #Nothing is saved from the lessons
-        if self.answer.text() == self.answer_lesson:
-            self.answer.setText("{0} Correct".format(self.answer_lesson))
+        if self.answer.text() == self.answer_lesson or self.answer.text() == self.answer_lesson_2 or self.answer.text() == self.answer_lesson_3:
+            self.answer_text = self.answer.text()
+            self.answer.setText("{0} Correct".format(self.answer_text))
         else:
             self.answer.setText("Incorrect")
         #Disables the buttons so they can't edit their answer
@@ -6035,6 +5868,8 @@ class ParentLessonPage2(QWidget):
 \end{python}
 
 \subsection{Lesson Page 1 Classes}
+
+Here are some examples of the first lesson screens:
 
 \begin{python}
 from PyQt4.QtGui import * #These two lines import the built in PyQt code
@@ -6060,9 +5895,9 @@ class SidesAHOWidget(ParentLessonLayout):
         self.title.setPixmap(QPixmap("sides_lesson_title"))
 
         #These TextEdits are declared in the parent class and the text is set here so that it can be different across each child class
-        self.lesson_1.setText("Every triangle has 3 sides, and each side has a name.\nThe HYPOTENUSE is the longest side, and is always oppposite the right-angle of a triangle.\nThe length can be found using Pythagoras' Theorem of a\u00b2 + b\u00b2 = c\u00b2.\nSine function: sin(x) = Opposite {0} Hypotenuse".format(chr(247)))
+        self.lesson_1.setText("Every triangle has 3 sides, and each side has a name.\n\nThe HYPOTENUSE is the longest side, and is always opposite the right-angle of a triangle.\n\nThe length can be found using Pythagoras' Theorem of a\u00b2 + b\u00b2 = c\u00b2.\n\nSine function: sin(x) = Opposite {0} Hypotenuse\n\nb {0} SIN B = c {0} SIN C or a {0} SIN A = b {0} SIN B".format(chr(247)))
 
-        self.lesson_2.setText("The OPPOSITE is the side opposite the angle being used.\nCosine function: cos(x) = Adjacent {0} Hypotenuse".format(chr(247)))
+        self.lesson_2.setText("The OPPOSITE is the side opposite the angle being used.\n\nCosine function: cos(x) = Adjacent {0} Hypotenuse\n\na\u00b2 = b\u00b2 + c\u00b2 - 2bcCOS A\n\nOR\n\nCOS A = b\u00b2 + c\u00b2 - a\u00b2 {0} 2bc\n\nThe ADJACENT is next to the angle being used.\nTangent function: tan(x) = Opposite {0} Adjacent".format(chr(247)))
 
     #The connection is in the parent class, because each setCurrentIndex(1) (each second screen in the stack) is declared in the lesson stack template which is already in use
     def selected_next_page(self):
@@ -6081,9 +5916,9 @@ class SOHCAHTOAWidget(ParentLessonLayout):
         
         self.title.setPixmap(QPixmap("sohcahtoa_lesson_title"))
         
-        self.lesson_1.setText("SOHCAHTOA stands for: \nSine Opposite Hypotenuse\nCosine Adjacent Hypotenuse\nTan Opposite Adjacent.\nThis is the best way to remember the three different rules for working out trigonometry problems.They each turn into a FORMULA TRIANGLE, a triangle which shows the formula inside in a memorable format.")
+        self.lesson_1.setText("SOHCAHTOA stands for:\n\nSine Opposite Hypotenuse\nCosine Adjacent Hypotenuse\nTan Opposite Adjacent.\n\nThis is the best way to remember the three different rules for working out trigonometry problems.\n\nThey each turn into a FORMULA TRIANGLE, a triangle which shows the formula inside in a memorable format.")
 
-        self.lesson_2.setText("Method\n1. Label the three sides O, A and H\n2. Write down from memory SOHCAHTOA\n3. Decide which two sides are involved: O,H, A,H or O,A\n4. Turn the one you choose into one of the formula triangles to the left of the screen\n5. Cover up the thing you want to find and write down whatever is left showing\n6. Translate into numbers and work it out\n7. Finally, check that your answer is sensible")
+        self.lesson_2.setText("Method\n\n1. Label the three sides O, A and H\n\n2. Write down from memory SOHCAHTOA\n\n3. Decide which two sides are involved: O,H, A,H or O,A\n\n4. Turn the one you choose into one of the formula triangles to the left of the screen\n\n5. Cover up the thing you want to find and write down whatever is left showing\n\n6. Translate into numbers and work it out\n\n7. Finally, check that your answer is sensible")
 
         self.pic = QLabel()
         self.pic.setPixmap(QPixmap("formula_triangles.png"))
@@ -6097,64 +5932,124 @@ class SOHCAHTOAWidget(ParentLessonLayout):
 \subsubsection{FindingAnglesWidget}
 
 \begin{python}
-#Finish
+class FindingAnglesWidget(ParentLessonLayout):
+    def __init__(self, parent):
+        super().__init__()
+
+        self.parent = parent
+        
+        self.title.setPixmap(QPixmap("finding_angles_lesson_title"))
+
+        self.lesson_1_pic = QLabel()
+        self.lesson_2_pic = QLabel()
+
+        self.lesson_1_pic.setPixmap(QPixmap("find_angles_lesson_1_pic"))
+        self.lesson_1_pic.setAlignment(Qt.AlignCenter)
+
+        self.lesson_2_pic.setPixmap(QPixmap("find_angles_text_1_pic"))
+        self.lesson_2_pic.setAlignment(Qt.AlignCenter)
+        
+        self.lesson_1.setText("Each of the three trigonometry rules has a graph representing its cycle.\n\nFor 0\u00b0 - 360\u00b0, you get a SINE WAVE, which has one peak and one trough, and a COS BUCKET, which starts at the top, dips, and finishes at the top.\n\nThe underlying shape of both the SIN and COS graphs are identical when you extend them in both directions. The only difference between the two is that the SIN graph is shifted by 90\u00b0 right compared to the COS graph.\n\nBoth graphs wiggle between y limits of exactly +1 and -1.\n\nThe key to drawing the extended graphs is to draw the 0 - 360\u00b0 cycle of either the SIN WAVE or the COS BUCKET and then repeat it in both directions as shown.")
+        
+        self.lesson_2.setText("The TAN graph bears no resemblance to the SIN WAVE or COS BUCKET.\n\nEvery 180\u00b0, starting at 90\u00b0, the line disappears up into + infinity and then reappears at - infinity on the y line (asymptote).\nTherefore, the TAN wave is not limited to y values between +1 and -1.\n\nWhilst the SIN and COS graphs repeat every 360\u00b0, the TAN graph repeats every 180\u00b0.")
+
+        self.layout.addWidget(self.lesson_1_pic, 2, 0)
+        self.layout.addWidget(self.lesson_2_pic, 2, 1)
 \end{python}
 
 \subsubsection{ThreeDTrigonometryWidget}
 
 \begin{python}
-#Finish
+class ThreeDTrigonometryWidget(ParentLessonLayout):
+    def __init__(self, parent):
+        super().__init__()
+
+        self.parent = parent
+
+        self.lesson_1_pic = QLabel()
+        self.lesson_1_pic.setPixmap(QPixmap("three_d_trig_lesson_1_pic"))
+        self.lesson_1_pic.setAlignment(Qt.AlignCenter)
+
+        self.lesson_2_pic = QLabel()
+        self.lesson_2_pic.setPixmap(QPixmap("three_d_trig_lesson_2_pic"))
+        self.lesson_2_pic.setAlignment(Qt.AlignCenter)
+        
+        self.title.setPixmap(QPixmap("three_d_trig_lesson_title"))
+        
+        self.lesson_1.setText("When you are presented with a 3D pyramid, make a right angled triangle using the line, a line in the plane and a line between the two.\n\nDraw this right angled triangle again so that you can see it clearly. Label the sides. You might have to use Pythagoras to work out the length of one of the sides.\n\nUse trigonometry to calculate the angle.")
+        
+        self.lesson_2.setText("Example: ABCDE is a square based pyramid. It is 12cm high and the square base has sides of length 7cm. Find the angle the edge AE makes with the base.\n\n1. First draw a right-angled triangle using the edge AE, the base and a line between the two (in this case the central height). Call the angle you're trying to find X.\n\n2. Now draw this triangle clearly and label it.\nTo find X, you need to know the length of side EZ. So, using Pythagoras - EZ\u00b2 = 3.5\u00b2 + 3.5\u00b2 = 24.5 - EZ = \u221a24.5cm\n\n3. Now use trigonometry to find the angle X: tan X = 12 {0}\u221a24.5 = 2.4\n\nX = 67.6\u00b0".format(chr(247)))
+
+        self.layout.addWidget(self.lesson_1_pic, 2, 0)
+        self.layout.addWidget(self.lesson_2_pic, 2, 1)
+        
+    def selected_next_page(self):
+        self.parent.stack.setCurrentIndex(1)
 \end{python}
 
 \subsubsection{PythagTheoremWidget}
 
 \begin{python}
-#Finish
-\end{python}
+class PythagTheoremWidget(ParentLessonLayout):
+    def __init__(self, parent):
+        super().__init__()
 
-\subsubsection{ThreeDPythagorasWidget}
+        self.parent = parent
+        
+        self.title.setPixmap(QPixmap("pythag_theorem_lesson_title"))
 
-\begin{python}
-#Finish
+        self.lesson_1_pic = QLabel()
+        self.lesson_1_pic.setPixmap(QPixmap("pythag_lesson_pic_1"))
+        self.lesson_1_pic.setAlignment(Qt.AlignCenter)
+
+        self.lesson_2_pic = QLabel()
+        self.lesson_2_pic.setPixmap(QPixmap("pythag_lesson_pic_2"))
+        self.lesson_2_pic.setAlignment(Qt.AlignCenter)
+        
+        self.lesson_1.setText("Pythagoras' Theorem is: a\u00b2 + b\u00b2 = c\u00b2\nPythagoras' Theorem always goes with SIN, COS and TAN because they are both involved with right angled triangles.\n\nHowever, Pythagoras does not involve any angles - it just uses two sides to find the third side.\n\nGeneral trigonometry always involves angles.\n\nThe two shorter sides squared add to equal the longest side squared.\n\nIn trigonometry terms, the opposite squared plus the adjacent squared add up to make the hypotenuse squared.")
+        
+        self.lesson_2.setText("Example:\n\nFind the missing side in the triangle shown.\n\na\u00b2 + b\u00b2 = c\u00b2\n3\u00b2 + x\u00b2 = 5\u00b2\n9 + x\u00b2 = 25\nx\u00b2 = 25 - 9 = 16\nx = \u221a16 = 4m\nIs it sensible? Yes, it's just shorter than 5m and longer than 3m.")
+
+        self.layout.addWidget(self.lesson_1_pic, 2, 0)
+        self.layout.addWidget(self.lesson_2_pic, 2, 1)
+
+    def selected_next_page(self):
+        self.parent.stack.setCurrentIndex(1)
 \end{python}
 
 \subsubsection{EasyWidget}
 
 \begin{python}
-#Finish
-\end{python}
+class EasyWidget(ParentLessonLayout):
+    def __init__(self, parent):
+        super().__init__()
 
-\subsubsection{MediumWidget}
+        self.parent = parent
+        
+        self.title.setPixmap(QPixmap("vectors_1_lesson_title"))
 
-\begin{python}
-#Finish
-\end{python}
+        self.lesson_1_pic = QLabel()
+        self.lesson_1_pic.setPixmap(QPixmap("vectors_lesson_1_pic"))
+        self.lesson_1_pic.setAlignment(Qt.AlignCenter)
 
-\subsubsection{HardWidget}
+        self.lesson_2_pic = QLabel()
+        self.lesson_2_pic.setPixmap(QPixmap("vectors_lesson_2_pic"))
+        self.lesson_2_pic.setAlignment(Qt.AlignCenter)
+        
+        self.lesson_1.setText("There are three things to know about vectors:\n\n1. The four notations\n\nThe vector image below can be referred to as a with a ~ underneath or just a in bold.\n\nMake sure you know which is which in the column vector and what a negative value means in a column vector.\n\n\n2. Adding and subtracting values:\n\nVectors must always be added end to end, so that the arrows all point with each other, not against each other.\n\nIf a = 5 over 3 and b = -2 over 4, then 2a - b = 2(5 over 3) - -2 over 4 = 12 over 2.")
+        
+        self.lesson_2.setText("This is a very common type of question and it illustrates a very important vector technique:\n\nTo obtain the unknown vector just get there by any route made up of known vectors.\n\nApplying this rule we can eaasily obtain the following:\n\nvectors in term of a~, b~ and m~ (given that M and N are mid-points):\n\n1. AM = -a~ + b~ + m~ (via O and B)\nOC = b~ + 2m (via B and M)\nAC = -a~ + b~ + 2m~ (A to C via O, B and M)")
 
-\begin{python}
-#Finish
-\end{python}
+        self.layout.addWidget(self.lesson_1_pic, 2, 0)
+        self.layout.addWidget(self.lesson_2_pic, 2, 1)
 
-\subsubsection{ReviseTrig1Widget}
-
-\begin{python}
-#Finish
-\end{python}
-
-\subsubsection{ReviseTrig2Widget}
-
-\begin{python}
-#Finish
-\end{python}
-
-\subsubsection{ReviseTrig3Widget}
-
-\begin{python}
-#Finish
+    def selected_next_page(self):
+        self.parent.stack.setCurrentIndex(1)
 \end{python}
 
 \subsection{Lesson Page 2 Classes}
+
+Here are some examples of the second lesson screens:
 
 \begin{python}
 from PyQt4.QtCore import * #These two lines import all of the built in PyQt code
@@ -6167,7 +6062,25 @@ from lesson_page_2_parent_class import * #This contains the parent class which p
 \subsubsection{SidesAHOWidgetPage2}
 
 \begin{python}
-#Finish
+class SidesAHOWidgetPage2(ParentLessonPage2):
+    def __init__(self, parent):
+        super().__init__()
+
+        self.parent = parent
+
+        self.text_2_pic = QLabel()
+        self.text_2_pic.setPixmap(QPixmap("sides_lesson_2_pic"))
+        self.text_2_pic.setAlignment(Qt.AlignCenter)
+        
+        self.text_1.setText("There are four types of question where the SINE and COSINE rules would be applied.\n\n1. Two angles given plus any side - SINE rule needed\n\nB = A - C\n\nb {0} SIN B = c {0} SIN C\n\nWhich gives c = b x SIN C {0} SIN B = X\n\n2. Two sides given plus an angle not enclosed by them - SINE rule needed\n\nb {0} SIN B = c {0} SIN C\n\nSIN B = b x SIN C {0} c = X\n\n3. Two sides given plus the angle enclosed by them - COSINE rule needed\n\na\u00b2 = b\u00b2 + c\u00b2 - 2bcCOS A\n\n4. All three sides given but no angles - COSINE rule needed\n\nCOS A = b\u00b2 + c\u00b2 - a\u00b2 {0} 2bc".format(chr(247)))
+        
+        self.text_2.setText("Practice:\n\nFind the length of side c in the diagram below.\nUse example 1 to your left to help you find it.")
+
+        self.answer_lesson = "8.05m"
+
+        self.answer.setText("m")
+
+        self.layout.addWidget(self.text_2_pic, 1, 1)
 \end{python}
 
 \subsubsection{SOHCAHTOAWidgetPage2}
@@ -6212,61 +6125,109 @@ class SOHCAHTOAWidgetPage2(ParentLessonPage2):
 \subsubsection{FindingAnglesWidgetPage2}
 
 \begin{python}
-#Finish
+class FindingAnglesWidgetPage2(ParentLessonPage2):
+    def __init__(self, parent):
+        super().__init__()
+
+        self.parent = parent
+
+        self.text_1_pic = QLabel()
+        self.text_1_pic.setPixmap(QPixmap("find_angles_example"))
+        self.text_1_pic.setAlignment(Qt.AlignCenter)
+                
+        self.text_1.setText("Example:\n\nFind 6 different angles x such that sin x = 0.94\n\n\nMethod:\n\n1. Sketch the extended SIN graph\n2. Put a horizontal line across at 0.94\n3. Draw lines down to the x-axis wherever the horizontal croses the curve\n4. Use your calculator to find inv sin 0.94, to get the first angle (70\u00b0 in this case)\n5. The symmetry is surely obvious. You can see that 70\u00b0 is 20\u00b0 away from the peak, so all the other angles are clearly 20\u00b0 either side of the peaks at 90\u00b0, 450\u00b0, etc\n\nWe can say that sin x = +0.94 for all of the following angles:\n-290\u00b0, -250\u00b0, 70\u00b0, 110\u00b0, 430\u00b0, 470\u00b0, 790\u00b0, 830\u00b0")
+
+        self.text_2.setText("Practice:\n\nFind one other angle which has the same cosine as 65\u00b0.\nUse the calculator to find COS 65\u00b0\n\nYou will need paper and a pen to sketch a COS graph similar to the one in the previous example.\n\n\nPlease input your answer in the box below: ")
+
+        self.layout.addWidget(self.text_1_pic, 1, 0)
+
+        self.answer.setText("\u00b0")
+        
+        self.answer_lesson = "-425\u00b0"
+        self.answer_lesson_2 = "-295\u00b0"
+        self.answer_lesson_3 = "-65\u00b0"
 \end{python}
 
 \subsubsection{ThreeDTrigonometryWidgetPage2}
 
 \begin{python}
-#Finish
+class ThreeDTrigonometryWidgetPage2(ParentLessonPage2):
+    def __init__(self, parent):
+        super().__init__()
+
+        self.parent = parent
+
+        self.text_1_pic = QLabel()
+        self.text_1_pic.setPixmap(QPixmap("three_d_trig_lesson_2_pic_1"))
+        self.text_1_pic.setAlignment(Qt.AlignCenter)
+
+        self.text_2_pic = QLabel()
+        self.text_2_pic.setPixmap(QPixmap("three_d_trig_lesson_2_pic_2"))
+        self.text_2_pic.setAlignment(Qt.AlignCenter)
+        
+        self.text_1.setText("You can also use right angled triangles to find lengths.\n\nExample: Find the lengths FH and BH shown in the diagram.\n\n1.First, use Pythagoras to find the length FH.\n\nf\u00b2 = 3\u00b2 + 3\u00b2 = 18\nFH = \u221a18cm\n\n2. Now use Pythagoras again to find the length BH.\nBH\u00b2 = 3\u00b2 +(\u221a18)\u00b2 = 27\nBH = \u221a27cm = 5.2cm")
+        
+        self.text_2.setText("Practice:\n\nCalculate the length of AG in the cuboid below.\nInput your answer in the box to two decimal places.")
+
+        self.layout.addWidget(self.text_1_pic, 1, 0)
+        self.layout.addWidget(self.text_2_pic, 1, 1)
+
+        self.answer_lesson = "7.07cm"
+
+        self.answer.setText("cm")
 \end{python}
 
 \subsubsection{PythagTheoremWidgetPage2}
 
 \begin{python}
-#Finish
+class PythagTheoremWidgetPage2(ParentLessonPage2):
+    def __init__(self, parent):
+        super().__init__()
+
+        self.parent = parent
+
+        self.text_1_pic = QLabel()
+        self.text_1_pic.setPixmap(QPixmap("three_d_pythag_lesson_1_pic_1"))
+        self.text_1_pic.setAlignment(Qt.AlignCenter)
+
+        self.text_2_pic = QLabel()
+        self.text_2_pic.setPixmap(QPixmap("three_d_pythag_lesson_1_pic_2"))
+        self.text_2_pic.setAlignment(Qt.AlignCenter)
+        
+        self.text_1.setText("As you may have seen in the 3D Trigonometry lesson, the rules of Trigonometry and Pythagoras can also be applied to 3-dimensional pyramid shapes.\n\nPythagoras' Theorem is useful for finding the lengths of triangles found within a 3D pyramid.\n\nLook at the square based pyramid below. You can see a red triangle highlighted within, representing the first stage of finding angles in a 3D pyramid.\n\nThe principle is hte same as 2D Pythagoras; you just have to pull a triangle out of the pyramid, find the length, and put it back in ready to use that length to get closer to finding the solution to an angle based question (see 3D Trigonometry).\n\nBC = 6cm, and AB = 9.2cm, so AC can by found using the following method:\n\n6\u00b2 = 36\n9.2\u00b2 = 85 (rounded)\n85 - 36 = 49\n\u221a49 = 7\n\nTherefore, AC must be 7.\n\nNow place the triangle back into the pyramid and use your new AC value to help find the next side or angle.")
+        
+        self.text_2.setText("Practice:\n\nLook at the square-based pyramid below.\nCalculate the length of AE to 1 decimal place.")
+
+        self.layout.addWidget(self.text_1_pic, 1, 0)
+        self.layout.addWidget(self.text_2_pic, 1, 1)
+
+        self.answer_lesson = "13.9cm"
+
+        self.answer.setText("cm")
 \end{python}
 
-\subsubsection{ThreeDPythagorasWidgetPage2}
+\subsubsection{VectorWidgetPage2}
 
 \begin{python}
-#Finish
-\end{python}
+class VectorWidgetPage2(ParentLessonPage2):
+    def __init__(self, parent):
+        super().__init__()
 
-\subsubsection{EasyWidgetPage2}
+        self.parent = parent
+        
+        self.text_1.setText("Vectors are often used in real life situations. Here is an example of a generic 'swimming across the river' question.\nyou just have to add the two velocity vectors end to end and draw the resultant vector which shows both the speed and direction of the final course.\n\nYou will need to use Pythagoras and Trigonometry to find the length and angle.\n\nExample:\n\nOverall speed = \u221a3\u00b2 + 2\u00b2 = 3.6m/s\nDirection = TAN X = 3 {0} 2\nX = TAN-1(1.5) = 56.3\u00b0.".format(chr(247)))
+        
+        self.text_2.setText("Practice:\n\nWork out the overall force in Newtons on the Queen Mary in the picture below:")
 
-\begin{python}
-#Finish
-\end{python}
+        self.text_2_pic = QLabel()
+        self.text_2_pic.setPixmap(QPixmap("vectors_lesson_2_pic_2"))
+        self.text_2_pic.setAlignment(Qt.AlignCenter)
 
-\subsubsection{MediumWidgetPage2}
+        self.layout.addWidget(self.text_2_pic, 1, 1)
 
-\begin{python}
-#Finish
-\end{python}
+        self.answer_lesson = "21800N"
 
-\subsubsection{HardWidgetPage2}
-
-\begin{python}
-#Finish
-\end{python}
-
-\subsubsection{ReviseTrig1WidgetPage2}
-
-\begin{python}
-#Finish
-\end{python}
-
-\subsubsection{ReviseTrig2WidgetPage2}
-
-\begin{python}
-#Finish
-\end{python}
-
-\subsubsection{ReviseTrig3WidgetPage2}
-
-\begin{python}
-#Finish
+        self.answer.setText("N")
 \end{python}
 
 \subsection{ParentHomeworkPage1Class Class}
@@ -6278,7 +6239,7 @@ from PyQt4.QtGui import *
 from database_class import * #Contains all of the methods required to manipulate the database
 from error_messages import * #Contains all of the error message classes for when the user makes a mistake
 
-#The parent template for the first page of all homework tasks - all homework child classes inherit their default attributes from here
+#The parent template for the first page of all homeworks - all homework child classes inherit their default attributes from here
 class ParentHomeworkPage1Class(QWidget):
     #Constructor
     def __init__(self, parent = None):
@@ -6304,7 +6265,7 @@ class ParentHomeworkPage1Class(QWidget):
         self.setAutoFillBackground(True)
         self.setPalette(pal)     
 
-        #All of these buttons appear in all of the child classes - they are created here then the text is set in the child classesso they can all be different
+        #All of these buttons appear in all of the child classes - they are created here then the text is set in the child classesso htey can all be different
         self.next = QPushButton("Next")
         #Sets the size of the button
         self.next.setMinimumHeight(110)
@@ -6532,6 +6493,8 @@ class ParentHomeworkPage1Class(QWidget):
 from PyQt4.QtCore import *
 from PyQt4.QtGui import *
 
+import random
+
 from database_class import * #This contains the methods used to add to the database
 from error_messages import * #This contains the default error message classes used when the user makes an error
 
@@ -6602,16 +6565,16 @@ class HomeworkPage2ParentClass(QWidget):
         self.question_2.setFont(QFont("Courier", 30))
         
         self.shape_2 = QLabel()        
-        self.shape_2.setFont(QFont("Courier", 30))
         
         self.question_3 = QLabel()        
         self.question_3.setFont(QFont("Courier", 30))
         
         self.shape_3 = QLabel()       
-        self.shape_3.setFont(QFont("Courier", 30))
         
         self.question_4 = QLabel()       
         self.question_4.setFont(QFont("Courier", 30))
+
+        self.shape_4 = QLabel()
 
         #This is the combo box which provides the value to check to see if the input for the answer is right or not
         self.answer_2 = QComboBox()
@@ -6659,7 +6622,7 @@ class HomeworkPage2ParentClass(QWidget):
         self.attempts_button.setMinimumWidth(90)
         self.attempts_button.setMaximumWidth(200)
         self.attempts_button.setStyleSheet("QPushButton {background-color: white; font-color: black;}")
-        self.attempts_button.setEnabled(False)
+        self.attempts_button.setEnabled(False)          
 
         #Sets the layout to a QGridLayout so the widgets can be positioned easily
         self.layout = QGridLayout()
@@ -6681,6 +6644,7 @@ class HomeworkPage2ParentClass(QWidget):
         self.layout.addWidget(self.answer_3, 3, 0)
         self.layout.addWidget(self.mark_3, 3, 1)
         self.layout.addWidget(self.question_4, 0, 2)
+        self.layout.addWidget(self.shape_4, 0, 3)
         self.layout.addWidget(self.previous, 5, 0)
         self.layout.addWidget(self.finish, 5, 3)
 
@@ -6885,7 +6849,7 @@ class HomeworkPage2ParentClass(QWidget):
         #Resets the correct count so that it doesn't increment across tasks
         self.correct_count_2 = 0
         #Takes the value to be checked from the content of the combo box and compares it to the hard-coded answer
-        if self.answer_2.currentText() == "20":
+        if self.answer_2.currentText() == self.answer_q_2:
             #If they are right they are awarded marks and the buttons are disabled as they have no further need of them (they can't get the same marks twice)
             self.correct_count_2 += 1
             self.mark_2.setText("Correct!")
@@ -6908,7 +6872,7 @@ class HomeworkPage2ParentClass(QWidget):
                                          
     def selected_mark_3(self, attempts_remaining_b):
         self.correct_count_3 = 0
-        if self.answer_3.currentText() == "20":
+        if self.answer_3.currentText() == self.answer_q_3:
             self.correct_count_3 += 1
             self.mark_3.setText("Correct!")
             self.mark_3.setEnabled(False)
@@ -6949,7 +6913,7 @@ class HomeworkPage2ParentClass(QWidget):
             self.parent.close()
 \end{python}
 
-\subsection{Homework Page 1 Classes}
+\subsection{Homework Page 1 Class}
 
 \begin{python}
 from PyQt4.QtGui import * #These two lines import all of the built in PyQt code
@@ -6961,6 +6925,8 @@ from error_messages import * #This contains the error message classes displayed 
 \end{python}
 
 \subsubsection{SidesAHOEasyWidget}
+
+Here is an example of the page 1 homework classes:
 
 \begin{python}
 #These are the child classes which inherit from the homework_parent_class
@@ -6982,13 +6948,17 @@ class SidesAHOEasyWidget(ParentHomeworkPage1Class):
         #text is set in the child classes so that they can all be different
         self.question_1.setText("Question 1: Look at the diagram below\nand answer the following questions: ")
         
-        self.q1a.setText("Which side is oppopsite angle A? ")
+        self.q1a.setText("Which side is opposite angle A?")
     
-        self.q1b.setText("Which side is adjacent to angle Q? ")
+        self.q1b.setText("Which side is the adjacent?")
                 
-        self.q1c.setText("Which side is the hypotenuse? ")        
+        self.q1c.setText("Which side is the hypotenuse?")        
 
-        self.q1d.setText("Which formula would you use to find AB? ")
+        self.q1d.setText("Which formula would you use to find AB?")
+
+        self.q1e.setText("If BC is 7cm, and AC is 8cm, then what is the length of AB?")
+
+        self.q1f.setText("If BC is 4cm, and AC is 6cm, then what is the length of AB?")
         
         self.question_1_shape.setPixmap(QPixmap("sides_easy_q1"))
 
@@ -6997,149 +6967,20 @@ class SidesAHOEasyWidget(ParentHomeworkPage1Class):
         self.answer_1_b = "AC"
         self.answer_1_c = "AB"
         self.answer_1_d = "cosine"
-        self.answer_1_e = "5"
-        self.answer_1_f = "6"
+        self.answer_1_e = "10.6cm"
+        self.answer_1_f = "7.2cm"
+
+        self.answer_e.setText("cm")
+        self.answer_f.setText("cm")
+
+    #The connection for this is in the parent class as the code is the same; it knows which screen to switch to because the stack is
+    #already instantiated by this point
+    def open_page_2(self):
+        #Switches to screen to in the stack widget
+        self.parent.stack.setCurrentIndex(1)
 \end{python}
 
-\subsubsection{SidesAHOMediumWidget}
-
-\begin{python}
-#Finish
-\end{python}
-
-\subsubsection{SidesAHOHardWidget}
-
-\begin{python}
-#Finish
-\end{python}
-
-\subsubsection{SOHCAHTOAEasyWidget}
-
-\begin{python}
-#Finish
-\end{python}
-
-\subsubsection{SOHCAHTOAMediumWidget}
-
-\begin{python}
-#Finish
-\end{python}
-
-\subsubsection{SOHCAHTOAHardWidget}
-
-\begin{python}
-#Finish
-\end{python}
-
-\subsubsection{FindingAnglesEasyWidget}
-
-\begin{python}
-#Finish
-\end{python}
-
-\subsubsection{FindingAnglesMediumWidget}
-
-\begin{python}
-#Finish
-\end{python}
-
-\subsubsection{FindingAnglesHardWidget}
-
-\begin{python}
-#Finish
-\end{python}
-
-\subsubsection{ThreeDTrigEasyWidget}
-
-\begin{python}
-#Finish
-\end{python}
-
-\subsubsection{ThreeDTrigMediumWidget}
-
-\begin{python}
-#Finish
-\end{python}
-
-\subsubsection{ThreeDTrigHardWidget}
-
-\begin{python}
-#Finish
-\end{python}
-
-\subsubsection{PythagTheoremEasyWidget}
-
-\begin{python}
-#Finish
-\end{python}
-
-\subsubsection{PythagTheoremMediumWidget}
-
-\begin{python}
-#Finish
-\end{python}
-
-\subsubsection{PythagTheoremHardWidget}
-
-\begin{python}
-#Finish
-\end{python}
-
-\subsubsection{ThreeDPythagEasyWidget}
-
-\begin{python}
-#Finish
-\end{python}
-
-\subsubsection{ThreeDPythagMediumWidget}
-
-\begin{python}
-#Finish
-\end{python}
-
-\subsubsection{ThreeDPythagHardWidget}
-
-\begin{python}
-#Finish
-\end{python}
-
-\subsubsection{VectorsEasyWidget}
-
-\begin{python}
-#Finish
-\end{python}
-
-\subsubsection{VectorsMediumWidget}
-
-\begin{python}
-#Finish
-\end{python}
-
-\subsubsection{VectorsHardWidget}
-
-\begin{python}
-#Finish
-\end{python}
-
-\subsubsection{EasySummaryWidget}
-
-\begin{python}
-#Finish
-\end{python}
-
-\subsubsection{MediumSummaryWidget}
-
-\begin{python}
-#Finish
-\end{python}
-
-\subsubsection{HardSummaryWidget}
-
-\begin{python}
-#Finish
-\end{python}
-
-\subsection{Homework Page 2 Classes}
+\subsection{Homework Page 2 Class}
 
 \begin{python}
 from PyQt4.QtCore import * #These two lines import all of the built in PyQt code
@@ -7150,6 +6991,8 @@ from database_class import * #This contains the method which saves the scores to
 \end{python}
 
 \subsubsection{SidesAHOEasyWidget2}
+
+Here is an example of the page 2 homework classes:
 
 \begin{python}
 #These are the child classes which inherit all of their default attributes from homework_page_2_parent_class
@@ -7167,222 +7010,49 @@ class SidesAHOEasyWidget2(HomeworkPage2ParentClass):
 
         #The widget variables are all created in the parent class because they are used in all of the child classes
         #and the text is set here so that it can be different
-        self.question_2.setText("Question 2\nWhat is the length\nof b?")
+        self.question_2.setText("Question 2\nWhat is the name of side AC?")
         
-##        self.shape_2.setText("sides easy")
+        self.shape_2.setPixmap(QPixmap("sides_homework_1"))
+        self.shape_2.setAlignment(Qt.AlignCenter)
         
-        self.question_3.setText("Question 3\nWhat is the length\nof c?")
+        self.question_3.setText("Question 3\nWhat is the name of side BC?")
         
-##        self.shape_3.setText("Shape")
+        self.shape_3.setPixmap(QPixmap("sides_homework_1"))
+        self.shape_3.setAlignment(Qt.AlignCenter)
         
-        self.question_4.setText("Question 4\nWhat is the\nlength of a?")
+        self.question_4.setText("Question 4\nWhat is the\nlength of AC?")
+
+        self.shape_4.setPixmap(QPixmap("sides_homework_1"))
+        self.shape_4.setAlignment(Qt.AlignCenter)
 
         #Adds some wrong answers and the right answer to the combo box
-        self.answer_2.addItem("10")
-        self.answer_2.addItem("20")
-        self.answer_2.addItem("30")
+        self.answer_q_2 = "Opposite"
+        self.answer_2.addItem("Adjacent")
+        self.answer_2.addItem("Hypotenuse")
+        self.answer_2.addItem(self.answer_q_2)
 
-        self.answer_3.addItem("10")
-        self.answer_3.addItem("20")
-        self.answer_3.addItem("30")
+        self.answer_q_3 = "Adjacent"
+        self.answer_3.addItem("Hypotenuse")
+        self.answer_3.addItem(self.answer_q_3)
+        self.answer_3.addItem("Opposite")
 
         #Sets the text of the multiple choice buttons which is used to check the answer in the check methods
-        self._button_1.setText("60")
-        self._button_2.setText("50")
-        self._button_3.setText("40")
-        self._button_4.setText("30")
-        self._button_5.setText("20")
-        self._button_6.setText("10")
+        self._button_1.setText("4.3cm")
+        self._button_2.setText("6cm")
+        self._button_3.setText("5cm")
+        self._button_4.setText("4cm")
+        self._button_5.setText("7.1cm")
+        self._button_6.setText("12cm")
 
         #This is the hard-coded answer which is checked against with the text in the buttons above
-        self.answer_question_4 = "40"
-\end{python}
-
-\subsubsection{SidesAHOMediumWidget2}
-
-\begin{python}
-#Finish
-\end{python}
-
-\subsubsection{SidesAHOHardWidget2}
-
-\begin{python}
-#Finish
-\end{python}
-
-\subsubsection{SOHCAHTOAEasyWidget2}
-
-\begin{python}
-#Finish
-\end{python}
-
-\subsubsection{SOHCAHTOAMediumWidget2}
-
-\begin{python}
-#Finish
-\end{python}
-
-\subsubsection{SOHCAHTOAHardWidget2}
-
-\begin{python}
-#Finish
-\end{python}
-
-\subsubsection{FindingAnglesEasyWidget2}
-
-\begin{python}
-#Finish
-\end{python}
-
-\subsubsection{FindingAnglesMediumWidget2}
-
-\begin{python}
-#Finish
-\end{python}
-
-\subsubsection{FindingAnglesHardWidget2}
-
-\begin{python}
-#Finish
-\end{python}
-
-\subsubsection{ThreeDTrigEasyWidget2}
-
-\begin{python}
-#Finish
-\end{python}
-
-\subsubsection{ThreeDTrigMediumWidget2}
-
-\begin{python}
-#Finish
-\end{python}
-
-\subsubsection{ThreeDTrigHardWidget2}
-
-\begin{python}
-#Finish
-\end{python}
-
-\subsubsection{PythagTheoremEasyWidget2}
-
-\begin{python}
-#Finish
-\end{python}
-
-\subsubsection{PythagTheoremMediumWidget2}
-
-\begin{python}
-#Finish
-\end{python}
-
-\subsubsection{PythagTheoremHardWidget2}
-
-\begin{python}
-#Finish
-\end{python}
-
-\subsubsection{ThreeDPythagorasEasyWidget2}
-
-\begin{python}
-#Finish
-\end{python}
-
-\subsubsection{ThreeDPythagorasMediumWidget2}
-
-\begin{python}
-#Finish
-\end{python}
-
-\subsubsection{ThreeDPythagorasHardWidget2}
-
-\begin{python}
-#Finish
-\end{python}
-
-\subsubsection{VectorsEasyWidget2}
-
-\begin{python}
-#Finish
-\end{python}
-
-\subsubsection{VectorsMediumWidget2}
-
-\begin{python}
-#Finish
-\end{python}
-
-\subsubsection{VectorsHardWidget2}
-
-\begin{python}
-#Finish
-\end{python}
-
-\subsubsection{EasySummaryWidget2}
-
-\begin{python}
-#Finish
-\end{python}
-
-\subsubsection{MediumSummaryWidget2}
-
-\begin{python}
-#Finish
-\end{python}
-
-\subsubsection{HardSummaryWidget2}
-
-\begin{python}
-#Finish
+        self.answer_question_4 = "5cm"
 \end{python}
 
 \subsection{Error Message Classes}
 
 \begin{python}
-#FINISH THESE - MAKE THEM RIGHT
 from PyQt4.QtGui import * #These two lines import the built in PyQt code
 from PyQt4.QtCore import *
-\end{python}
-
-\subsubsection{ErrorMessage2}
-
-\begin{python}
-#These are child class from the built in QErrorMessage class and these are called when the user inputs wrong data types or no value at all on the homework tasks
-class ErrorMessage2(QErrorMessage):
-    #Constructor
-    def __init__(self):
-        #Return a proxy object that delegates method calls to a parent or sibling class of type.
-        super().__init__()
-        
-        #This is the message that is passed into the call for the message to be shown
-        message = "Invalid data type - please make sure you are inputting a decimal value"
-
-        #This shows the error message on the screen
-        QErrorMessage.showMessage(self, message)
-\end{python}
-
-\subsubsection{ErrorMessage3}
-
-\begin{python}
-class ErrorMessage3(QErrorMessage):
-    def __init__(self):
-        super().__init__()
-        
-        message = "Invalid data type - please make sure you are inputting an integer value"
-        
-        QErrorMessage.showMessage(self, message)
-\end{python}
-
-\subsubsection{ErrorMessage4}
-
-\begin{python}
-class ErrorMessage4(QErrorMessage):
-    def __init__(self):
-        super().__init__()
-        
-        message = "Invalid data type - please make sure you are inputting a string value"
-        
-        QErrorMessage.showMessage(self, message)
 \end{python}
 
 \subsubsection{ErrorMessage5}

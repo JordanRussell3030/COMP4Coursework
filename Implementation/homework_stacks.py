@@ -299,63 +299,6 @@ class PythagStackTheoremHard(QMainWindow):
 
         self.setCentralWidget(self.widget)
 
-class PythagStackTDPEasy(QMainWindow):
-    def __init__(self):
-        super().__init__()
-
-        self.showMaximized()
-
-        self.first_widget = ThreeDPythagorasEasyWidget(self)
-        self.second_widget = ThreeDPythagorasEasyWidget2(self)
-
-        self.stack = QStackedLayout()
-
-        self.stack.addWidget(self.first_widget)
-        self.stack.addWidget(self.second_widget)
-
-        self.widget = QWidget()
-        self.widget.setLayout(self.stack)
-
-        self.setCentralWidget(self.widget)
-
-class PythagStackTDPMedium(QMainWindow):
-    def __init__(self):
-        super().__init__()
-
-        self.showMaximized()
-
-        self.first_widget = ThreeDPythagorasMediumWidget(self)
-        self.second_widget = ThreeDPythagorasMediumWidget2(self)
-
-        self.stack = QStackedLayout()
-
-        self.stack.addWidget(self.first_widget)
-        self.stack.addWidget(self.second_widget)
-
-        self.widget = QWidget()
-        self.widget.setLayout(self.stack)
-
-        self.setCentralWidget(self.widget)
-
-class PythagStackTDPHard(QMainWindow):
-    def __init__(self):
-        super().__init__()
-
-        self.showMaximized()
-
-        self.first_widget = ThreeDPythagorasHardWidget(self)
-        self.second_widget = ThreeDPythagorasHardWidget2(self)
-
-        self.stack = QStackedLayout()
-
-        self.stack.addWidget(self.first_widget)
-        self.stack.addWidget(self.second_widget)
-
-        self.widget = QWidget()
-        self.widget.setLayout(self.stack)
-
-        self.setCentralWidget(self.widget)
-
 class VectorsStackEasy(QMainWindow):
     def __init__(self):
         super().__init__()

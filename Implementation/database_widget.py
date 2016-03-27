@@ -23,9 +23,9 @@ class DatabaseWidget(QWidget):
         self.setPalette(pal)
 
         #This QLabel is the title on the screen
-        self.title = QLabel("Progress")
-        #This line sets the title font size and house style
-        self.title.setFont(QFont("Courier", 40))
+        self.title = QLabel()
+        self.title.setPixmap(QPixmap("progress_title"))
+        self.title.setAlignment(Qt.AlignCenter)
 
         #This QPushButton closes the screen
         self.back = QPushButton("Return")
@@ -49,7 +49,7 @@ class DatabaseWidget(QWidget):
         #This is the header which appears in each column in the database
         self.database_header = ("Task Name", "Question 1", "Question 2", "Question 3", "Question 4")#"Total"
         #Sets the number of rows in the table - there are only 24 possible tasks, rach of which can only be recorded once and overwritten upon improvement
-        self.database.setRowCount(24)
+        self.database.setRowCount(27)
         #Sets the number of columns in the table - there are 5 headings, 5 attributes to record
         self.database.setColumnCount(5)
         self.database.horizontalHeader().setResizeMode(3)
