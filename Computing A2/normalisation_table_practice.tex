@@ -1,0 +1,51 @@
+\documentclass{article}
+\begin{document}
+
+\begin{center}
+\begin{tabular}{|p{3cm}|p{5cm}|p{3cm}|p{3cm}|} \hline
+\textbf{UNF} & \textbf{1NF} & \textbf{2NF} & \textbf{3NF} \\ \hline
+Collect the attributes & Remove all repeating attributes to create a new separate table & Any attributes that are not dependent on all parts of a composite key are removed to a new table & Make sure that every attribute is wholly dependent on the primary key and not on another attribute \\ \hline
+\textbf{All Attributes} & \textbf{Non-Repeating Attributes} & \textbf{TraineeNo} & \textbf{TraineeNo} \\ 
+FirstName & FirstName & FirstName & FirstName \\
+LastName & LastName & LastName & LastName \\
+TraineeNo & \textbf{TraineeNo} & DateOfBirth & DateOfBirth \\
+DateOfBirth & DateOfBirth & \textbf{ModuleNo} & \textbf{Level} \\
+ModuleNo & & ModuleName & ModuleDuration \\
+ModuleName & \textbf{Repeating Attributes} & Level & \\
+Level &\textbf{ModuleNo} & ModuleDuration & \textbf{ModuleNo} \\
+ModuleDuration & ModuleName & & ModuleName \\
+CompletionDate & Level & \textbf{TraineeNo} & Level \\
+Result & ModuleDuration & \textbf{ModuleNo} &  \\
+& CompletionDate & CompletionDate & \textbf{TraineeNo} \\
+& Result & Result & \textbf{ModuleNo} \\
+& \textbf{TraineeNo} & & Result \\
+& & & CompletionDate \\ \hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{|p{3cm}|p{5cm}|p{3cm}|p{3cm}|} \hline
+\textbf{UNF} & \textbf{1NF} & \textbf{2NF} & \textbf{3NF} \\ \hline
+Collect the attributes & Remove all repeating attributes to create a new separate table & Any attributes that are not dependent on all parts of a composite key are removed to a new table & Make sure that every attribute is wholly dependent on the primary key and not on another attribute \\ \hline
+\textbf{All Attributes} & \textbf{Non-Repeating Attributes} &  &  \\ 
+AnimalName & AnimalName & & \\
+AnimalType & OwnersName & & \\
+OwnersName & Address & & \\
+Address & PostCode & & \\
+PostCode & Telephone & & \\
+Telephone & AnimalIdentityNo & & \\
+AnimalIdentityNo & DateOfBirth & & \\
+DateOfBirth &  & & \\
+Description & \textbf{Repeating Attributes} & & \\
+Vaccine & AnimalType & & \\
+BatchNumber & Description & & \\
+Date & Vaccine & & \\
+NextVaccine & BatchNumber & & \\ 
+Vet & Date & & \\
+& NextVaccine & & \\
+& Vet & & \\ \hline
+\end{tabular}
+\end{center}
+
+%3NF take from 2NF tables, if information is repeated e.g moduleduration depends on the level like 30 mins level 1 60 mins level 2 etc. So duration is dependent on level
+\end{document}
