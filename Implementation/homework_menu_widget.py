@@ -20,8 +20,9 @@ class HomeworkMenuWidget(QMainWindow):
         self.setPalette(pal)
 
         self.title = QLabel()
-        self.title.setFont(QFont("Courier", 40))
-
+        self.title.setPixmap(QPixmap("homework_title"))
+        self.title.setAlignment(Qt.AlignCenter)
+        
         #These buttons all connect to a child menu class, which inherit from the HomeworkMenuParentClass
         self.ht1 = QPushButton("Trigonometry 1")
         #Sets the minimum width and height of the button to reduce problems with different screen sizes
@@ -35,15 +36,10 @@ class HomeworkMenuWidget(QMainWindow):
         self.ht2.setMinimumHeight(110)
         self.ht2.setFont(QFont("Courier", 40))
         
-        self.hpyt = QPushButton("Pythagoras")
+        self.hpyt = QPushButton("Pythagoras and Vectors")
         self.hpyt.setMinimumWidth(90)
         self.hpyt.setMinimumHeight(110)
         self.hpyt.setFont(QFont("Courier", 40))
-        
-        self.hpytrig = QPushButton("Vectors")
-        self.hpytrig.setMinimumWidth(90)
-        self.hpytrig.setMinimumHeight(110)
-        self.hpytrig.setFont(QFont("Courier", 40))
         
         self.hsum = QPushButton("Summary")
         self.hsum.setMinimumWidth(90)
@@ -72,10 +68,6 @@ class HomeworkMenuWidget(QMainWindow):
         self.hpyt_pic.setPixmap(QPixmap("homework_pythag_pic"))
         self.hpyt_pic.setAlignment(Qt.AlignCenter)
         
-        self.hpytrig_pic = QLabel()
-        self.hpytrig_pic.setPixmap(QPixmap("homework_vectors_pic"))
-        self.hpytrig_pic.setAlignment(Qt.AlignCenter)
-        
         self.hsum_pic = QLabel()
         self.hsum_pic.setPixmap(QPixmap("homework_summary_pic"))
         self.hsum_pic.setAlignment(Qt.AlignCenter)
@@ -88,17 +80,15 @@ class HomeworkMenuWidget(QMainWindow):
 
         #These add the widgets to the layout
         self.layout.addWidget(self.title, 0, 0) #These numbers position the widget in the window
-        self.layout.addWidget(self.ht1_pic, 2, 0)
-        self.layout.addWidget(self.ht1, 2, 1)
-        self.layout.addWidget(self.ht2, 3, 0)
-        self.layout.addWidget(self.ht2_pic, 3, 1)
-        self.layout.addWidget(self.hpyt_pic, 4, 0)
-        self.layout.addWidget(self.hpyt, 4, 1)
-        self.layout.addWidget(self.hpytrig, 5, 0)
-        self.layout.addWidget(self.hpytrig_pic, 5, 1)
-        self.layout.addWidget(self.hsum_pic, 6, 0)
-        self.layout.addWidget(self.hsum, 6, 1)
-        self.layout.addWidget(self.back, 7, 0)
+        self.layout.addWidget(self.ht1_pic, 1, 1)
+        self.layout.addWidget(self.ht1, 1, 0)
+        self.layout.addWidget(self.ht2, 2, 1)
+        self.layout.addWidget(self.ht2_pic, 2, 0)
+        self.layout.addWidget(self.hpyt_pic, 3, 1)
+        self.layout.addWidget(self.hpyt, 3, 0)
+        self.layout.addWidget(self.hsum_pic, 4, 0)
+        self.layout.addWidget(self.hsum, 4, 1)
+        self.layout.addWidget(self.back, 6, 0)
 
         #This chunk of code sets the centralwidget as the layout - it has to use a QWidget because this class is a QMainWindow
         self._centralwidget = QWidget()
@@ -109,7 +99,6 @@ class HomeworkMenuWidget(QMainWindow):
         self.ht1.clicked.connect(self.selected_ht1)
         self.ht2.clicked.connect(self.selected_ht2)
         self.hpyt.clicked.connect(self.selected_hpyt)
-        self.hpytrig.clicked.connect(self.selected_hpytrig)
         self.hsum.clicked.connect(self.selected_hsum)
         self.back.clicked.connect(self.selected_back)
 
@@ -132,12 +121,6 @@ class HomeworkMenuWidget(QMainWindow):
         pythagoras_homework.show()
         pythagoras_homework._raise()
         pythagoras_homework.showMaximized()
-
-    def selected_hpytrig(self):
-        pythag_trig_homework = PythagTrigonometryHW()
-        pythag_trig_homework.show()
-        pythag_trig_homework._raise()
-        pythag_trig_homework.showMaximized()
 
     def selected_hsum(self):
         summary_homework = SummaryHW()

@@ -19,35 +19,42 @@ class SidesAHOEasyWidget2(HomeworkPage2ParentClass):
 
         #The widget variables are all created in the parent class because they are used in all of the child classes
         #and the text is set here so that it can be different
-        self.question_2.setText("Question 2\nWhat is the length\nof b?")
+        self.question_2.setText("Question 2\nWhat is the name of side AC?")
         
-##        self.shape_2.setText("sides easy")
+        self.shape_2.setPixmap(QPixmap("sides_homework_1"))
+        self.shape_2.setAlignment(Qt.AlignCenter)
         
-        self.question_3.setText("Question 3\nWhat is the length\nof c?")
+        self.question_3.setText("Question 3\nWhat is the name of side BC?")
         
-##        self.shape_3.setText("Shape")
+        self.shape_3.setPixmap(QPixmap("sides_homework_1"))
+        self.shape_3.setAlignment(Qt.AlignCenter)
         
-        self.question_4.setText("Question 4\nWhat is the\nlength of a?")
+        self.question_4.setText("Question 4\nWhat is the\nlength of AC?")
+
+        self.shape_4.setPixmap(QPixmap("sides_homework_1"))
+        self.shape_4.setAlignment(Qt.AlignCenter)
 
         #Adds some wrong answers and the right answer to the combo box
-        self.answer_2.addItem("10")
-        self.answer_2.addItem("20")
-        self.answer_2.addItem("30")
+        self.answer_q_2 = "Opposite"
+        self.answer_2.addItem("Adjacent")
+        self.answer_2.addItem("Hypotenuse")
+        self.answer_2.addItem(self.answer_q_2)
 
-        self.answer_3.addItem("10")
-        self.answer_3.addItem("20")
-        self.answer_3.addItem("30")
+        self.answer_q_3 = "Adjacent"
+        self.answer_3.addItem("Hypotenuse")
+        self.answer_3.addItem(self.answer_q_3)
+        self.answer_3.addItem("Opposite")
 
         #Sets the text of the multiple choice buttons which is used to check the answer in the check methods
-        self._button_1.setText("60")
-        self._button_2.setText("50")
-        self._button_3.setText("40")
-        self._button_4.setText("30")
-        self._button_5.setText("20")
-        self._button_6.setText("10")
+        self._button_1.setText("4.3cm")
+        self._button_2.setText("6cm")
+        self._button_3.setText("5cm")
+        self._button_4.setText("4cm")
+        self._button_5.setText("7.1cm")
+        self._button_6.setText("12cm")
 
         #This is the hard-coded answer which is checked against with the text in the buttons above
-        self.answer_question_4 = "40"
+        self.answer_question_4 = "5cm"
 
 class SidesAHOMediumWidget2(HomeworkPage2ParentClass):
     def __init__(self, parent):
@@ -285,54 +292,6 @@ class PythagTheoremHardWidget2(HomeworkPage2ParentClass):
         self.question_2.setText("Question 2\n_________\n_________")
         
         self.shape_2.setText("pt h")
-        
-        self.question_3.setText("Question 3\n_________\n_________")
-        
-        self.shape_3.setText("Shape")
-        
-        self.question_4.setText("Question 4\n______\n______\n______")
-
-class ThreeDPythagorasEasyWidget2(HomeworkPage2ParentClass):
-    def __init__(self, parent):
-        super().__init__()
-        
-        self.parent = parent
-        
-        self.question_2.setText("Question 2\n_________\n_________")
-        
-        self.shape_2.setText("3dp e")
-        
-        self.question_3.setText("Question 3\n_________\n_________")
-        
-        self.shape_3.setText("Shape")
-        
-        self.question_4.setText("Question 4\n______\n______\n______")
-
-class ThreeDPythagorasMediumWidget2(HomeworkPage2ParentClass):
-    def __init__(self, parent):
-        super().__init__()
-        
-        self.parent = parent
-        
-        self.question_2.setText("Question 2\n_________\n_________")
-        
-        self.shape_2.setText("3dp m")
-        
-        self.question_3.setText("Question 3\n_________\n_________")
-        
-        self.shape_3.setText("Shape")
-        
-        self.question_4.setText("Question 4\n______\n______\n______")
-
-class ThreeDPythagorasHardWidget2(HomeworkPage2ParentClass):
-    def __init__(self, parent):
-        super().__init__()
-        
-        self.parent = parent
-        
-        self.question_2.setText("Question 2\n_________\n_________")
-        
-        self.shape_2.setText("3dp h")
         
         self.question_3.setText("Question 3\n_________\n_________")
         

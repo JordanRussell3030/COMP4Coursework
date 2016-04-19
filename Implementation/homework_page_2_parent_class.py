@@ -1,6 +1,8 @@
 from PyQt4.QtCore import *
 from PyQt4.QtGui import *
 
+import random
+
 from database_class import * #This contains the methods used to add to the database
 from error_messages import * #This contains the default error message classes used when the user makes an error
 
@@ -71,16 +73,16 @@ class HomeworkPage2ParentClass(QWidget):
         self.question_2.setFont(QFont("Courier", 30))
         
         self.shape_2 = QLabel()        
-        self.shape_2.setFont(QFont("Courier", 30))
         
         self.question_3 = QLabel()        
         self.question_3.setFont(QFont("Courier", 30))
         
         self.shape_3 = QLabel()       
-        self.shape_3.setFont(QFont("Courier", 30))
         
         self.question_4 = QLabel()       
         self.question_4.setFont(QFont("Courier", 30))
+
+        self.shape_4 = QLabel()
 
         #This is the combo box which provides the value to check to see if the input for the answer is right or not
         self.answer_2 = QComboBox()
@@ -128,7 +130,7 @@ class HomeworkPage2ParentClass(QWidget):
         self.attempts_button.setMinimumWidth(90)
         self.attempts_button.setMaximumWidth(200)
         self.attempts_button.setStyleSheet("QPushButton {background-color: white; font-color: black;}")
-        self.attempts_button.setEnabled(False)
+        self.attempts_button.setEnabled(False)          
 
         #Sets the layout to a QGridLayout so the widgets can be positioned easily
         self.layout = QGridLayout()
@@ -150,6 +152,7 @@ class HomeworkPage2ParentClass(QWidget):
         self.layout.addWidget(self.answer_3, 3, 0)
         self.layout.addWidget(self.mark_3, 3, 1)
         self.layout.addWidget(self.question_4, 0, 2)
+        self.layout.addWidget(self.shape_4, 0, 3)
         self.layout.addWidget(self.previous, 5, 0)
         self.layout.addWidget(self.finish, 5, 3)
 
@@ -354,7 +357,7 @@ class HomeworkPage2ParentClass(QWidget):
         #Resets the correct count so that it doesn't increment across tasks
         self.correct_count_2 = 0
         #Takes the value to be checked from the content of the combo box and compares it to the hard-coded answer
-        if self.answer_2.currentText() == "20":
+        if self.answer_2.currentText() == self.answer_q_2:
             #If they are right they are awarded marks and the buttons are disabled as they have no further need of them (they can't get the same marks twice)
             self.correct_count_2 += 1
             self.mark_2.setText("Correct!")
@@ -377,7 +380,7 @@ class HomeworkPage2ParentClass(QWidget):
                                          
     def selected_mark_3(self, attempts_remaining_b):
         self.correct_count_3 = 0
-        if self.answer_3.currentText() == "20":
+        if self.answer_3.currentText() == self.answer_q_3:
             self.correct_count_3 += 1
             self.mark_3.setText("Correct!")
             self.mark_3.setEnabled(False)

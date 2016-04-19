@@ -14,6 +14,14 @@ class ReportWidget(QWidget):
         #Maximises the screen
         self.showMaximized()
 
+        #These four lines of code make the background of the widget white
+        pal = QPalette()
+        #Sets the chosen colour to white
+        pal.setColor(QPalette.Background, Qt.white)
+        #The screen will automatically be filled with the chosen colour
+        self.setAutoFillBackground(True)
+        self.setPalette(pal)
+
         #This is just a label with the title of the window
         self.header = QLabel("Report")
         #Sets the font size and house style of the label
@@ -94,7 +102,7 @@ class ReportWidget(QWidget):
         #This is the table which displays the data which the user has queried when it is found
         self.db = QTableWidget()
         #Sets the number of rows in the table - only 24 possible tasks to find
-        self.db.setRowCount(24)
+        self.db.setRowCount(27)
         #Sets the number of columns in the table - there are 5 headers
         self.db.setColumnCount(5)
         #Sets the headers so that they match the database
@@ -102,6 +110,9 @@ class ReportWidget(QWidget):
         #Applies the header to the table
         self.db.setHorizontalHeaderLabels(self.db_header)
         self.db.setStyleSheet("QTableWidget {selection-background-color: #A3C1DA;}")
+        self.db.setFont(QFont("Courier", 25))
+        self.db.horizontalHeader().setResizeMode(3)
+        self.db.verticalHeader().setResizeMode(3)
 
         #Sets the layout to a QGridLayout so that the widgets can be positioned easily
         self.layout = QGridLayout()
@@ -136,7 +147,7 @@ class ReportWidget(QWidget):
         report = g_database.get_query(data, score_data)
         #This clears the contents of the table with each new query so it does'nt continue to
         #display data that is no longer relevant
-        for count in range(24):
+        for count in range(27):
             self.db.setItem(count, 0, QTableWidgetItem(None))
             self.db.setItem(count, 1, QTableWidgetItem(None))
             self.db.setItem(count, 2, QTableWidgetItem(None))

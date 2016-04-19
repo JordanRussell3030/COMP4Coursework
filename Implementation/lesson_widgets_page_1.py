@@ -17,7 +17,7 @@ class SidesAHOWidget(ParentLessonLayout):
         self.title.setPixmap(QPixmap("sides_lesson_title"))
 
         #These TextEdits are declared in the parent class and the text is set here so that it can be different across each child class
-        self.lesson_1.setText("Every triangle has 3 sides, and each side has a name.\n\nThe HYPOTENUSE is the longest side, and is always oppposite the right-angle of a triangle.\n\nThe length can be found using Pythagoras' Theorem of a\u00b2 + b\u00b2 = c\u00b2.\n\nSine function: sin(x) = Opposite {0} Hypotenuse\n\nb {0} SIN B = c {0} SIN C or a {0} SIN A = b {0} SIN B".format(chr(247)))
+        self.lesson_1.setText("Every triangle has 3 sides, and each side has a name.\n\nThe HYPOTENUSE is the longest side, and is always opposite the right-angle of a triangle.\n\nThe length can be found using Pythagoras' Theorem of a\u00b2 + b\u00b2 = c\u00b2.\n\nSine function: sin(x) = Opposite {0} Hypotenuse\n\nb {0} SIN B = c {0} SIN C or a {0} SIN A = b {0} SIN B".format(chr(247)))
 
         self.lesson_2.setText("The OPPOSITE is the side opposite the angle being used.\n\nCosine function: cos(x) = Adjacent {0} Hypotenuse\n\na\u00b2 = b\u00b2 + c\u00b2 - 2bcCOS A\n\nOR\n\nCOS A = b\u00b2 + c\u00b2 - a\u00b2 {0} 2bc\n\nThe ADJACENT is next to the angle being used.\nTangent function: tan(x) = Opposite {0} Adjacent".format(chr(247)))
 
@@ -115,27 +115,12 @@ class PythagTheoremWidget(ParentLessonLayout):
         self.lesson_2_pic.setPixmap(QPixmap("pythag_lesson_pic_2"))
         self.lesson_2_pic.setAlignment(Qt.AlignCenter)
         
-        self.lesson_1.setText("Pythagoras' Theorem is: a\u00b2 + b\u00b2 = c\u00b2\nPythagoras' Theorem always goes with SIN, COS and TAN because they are both involved with right angled triangles.\nHowever, Pythagoras does not ibvolve any angles - it just uses two sides to find the third side.\nGeneral trigonometry always involves angles.\nThe two shorter sides squared add to equal the longest side squared.\nIn trigonometry terms, the opposite squared plus the adjacent squared add up to make the hypotenuse squared.")
+        self.lesson_1.setText("Pythagoras' Theorem is: a\u00b2 + b\u00b2 = c\u00b2\nPythagoras' Theorem always goes with SIN, COS and TAN because they are both involved with right angled triangles.\n\nHowever, Pythagoras does not involve any angles - it just uses two sides to find the third side.\n\nGeneral trigonometry always involves angles.\n\nThe two shorter sides squared add to equal the longest side squared.\n\nIn trigonometry terms, the opposite squared plus the adjacent squared add up to make the hypotenuse squared.")
         
         self.lesson_2.setText("Example:\n\nFind the missing side in the triangle shown.\n\na\u00b2 + b\u00b2 = c\u00b2\n3\u00b2 + x\u00b2 = 5\u00b2\n9 + x\u00b2 = 25\nx\u00b2 = 25 - 9 = 16\nx = \u221a16 = 4m\nIs it sensible? Yes, it's just shorter than 5m and longer than 3m.")
 
         self.layout.addWidget(self.lesson_1_pic, 2, 0)
         self.layout.addWidget(self.lesson_2_pic, 2, 1)
-
-    def selected_next_page(self):
-        self.parent.stack.setCurrentIndex(1)
-
-class ThreeDPythagorasWidget(ParentLessonLayout):
-    def __init__(self, parent):
-        super().__init__()
-
-        self.parent = parent
-        
-        self.title.setPixmap(QPixmap("three_d_pythag_lesson_title"))
-        
-        self.lesson_1.setText("SOHCAHTROA stuff")
-        
-        self.lesson_2.setText("")
 
     def selected_next_page(self):
         self.parent.stack.setCurrentIndex(1)
@@ -147,41 +132,22 @@ class EasyWidget(ParentLessonLayout):
         self.parent = parent
         
         self.title.setPixmap(QPixmap("vectors_1_lesson_title"))
-        
-        self.lesson_1.setText("SOHCAHTROA stuff")
-        
-        self.lesson_2.setText("")
 
-    def selected_next_page(self):
-        self.parent.stack.setCurrentIndex(1)
+        self.lesson_1_pic = QLabel()
+        self.lesson_1_pic.setPixmap(QPixmap("vectors_lesson_1_pic"))
+        self.lesson_1_pic.setAlignment(Qt.AlignCenter)
 
-class MediumWidget(ParentLessonLayout):
-    def __init__(self, parent):
-        super().__init__()
+        self.lesson_2_pic = QLabel()
+        self.lesson_2_pic.setPixmap(QPixmap("vectors_lesson_2_pic"))
+        self.lesson_2_pic.setAlignment(Qt.AlignCenter)
+        
+        self.lesson_1.setText("There are three things to know about vectors:\n\n1. The four notations\n\nThe vector image below can be referred to as a with a ~ underneath or just a in bold.\n\nMake sure you know which is which in the column vector and what a negative value means in a column vector.\n\n\n2. Adding and subtracting values:\n\nVectors must always be added end to end, so that the arrows all point with each other, not against each other.\n\nIf a = 5 over 3 and b = -2 over 4, then 2a - b = 2(5 over 3) - -2 over 4 = 12 over 2.")
+        
+        self.lesson_2.setText("This is a very common type of question and it illustrates a very important vector technique:\n\nTo obtain the unknown vector just get there by any route made up of known vectors.\n\nApplying this rule we can eaasily obtain the following:\n\nvectors in term of a~, b~ and m~ (given that M and N are mid-points):\n\n1. AM = -a~ + b~ + m~ (via O and B)\nOC = b~ + 2m (via B and M)\nAC = -a~ + b~ + 2m~ (A to C via O, B and M)")
 
-        self.parent = parent
-        
-        self.title.setPixmap(QPixmap("vectors_2_lesson_title"))
-        
-        self.lesson_1.setText("SOHCAHTROA stuff")
-        
-        self.lesson_2.setText("")
+        self.layout.addWidget(self.lesson_1_pic, 2, 0)
+        self.layout.addWidget(self.lesson_2_pic, 2, 1)
 
-    def selected_next_page(self):
-        self.parent.stack.setCurrentIndex(1)
-
-class HardWidget(ParentLessonLayout):
-    def __init__(self, parent):
-        super().__init__()
-
-        self.parent = parent
-        
-        self.title.setPixmap(QPixmap("vectors_3_lesson_title"))
-        
-        self.lesson_1.setText("SOHCAHTROA stuff")
-        
-        self.lesson_2.setText("")
-        
     def selected_next_page(self):
         self.parent.stack.setCurrentIndex(1)
 
