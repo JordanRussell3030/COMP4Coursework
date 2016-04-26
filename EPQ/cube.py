@@ -64,30 +64,30 @@ def ground(): #This function is used to colour the ground and place it in the wi
         glVertex3fv(vertex) #Points to an array to pass the vertex co-ordinates to OpenGL
     glEnd()
 
-def set_vertices(max_distance, min_distance = -20):
+def set_vertices(max_distance, min_distance = -20): #This method sets the range which each vertice can move by
     x_value_change = random.randrange(-10, 10)
     y_value_change = random.randrange(-10, 10)
     z_value_change = random.randrange(-1 * max_distance, min_distance)
 
-    new_vertices = []
+    new_vertices = [] #creates a list which the vertices can be added to and iterated through
 
-    for vert in vertices:
+    for vert in vertices: #For each vertice in the list the following code is applied
         new_vert = []
-        new_x = vert[0] + x_value_change
+        new_x = vert[0] + x_value_change #Changes the value to whatever randomly generated value is added
         new_y = vert[1] + y_value_change
         new_z = vert[2] + z_value_change
 
-        new_vert.append(new_x)
+        new_vert.append(new_x) #Adds the new values to the list
         new_vert.append(new_y)
         new_vert.append(new_z)
 
-        new_vertices.append(new_vert)
+        new_vertices.append(new_vert) #Adds the list to the other list to make a nested list
 
-    return new_vertices
+    return new_vertices #Returns the final list to be used
 
-def Cube(vertices):
+def Cube(vertices): #This is the template for the actual cube which appears
     glBegin(GL_QUADS)
-    for surface in surfaces:
+    for surface in surfaces: #This instantiates the surfaces created above
         x = 0
         for vertex in surface:
             x += 1
@@ -98,13 +98,13 @@ def Cube(vertices):
     glBegin(GL_LINES)
     for edge in edges:
         for vertex in edge:
-            glVertex3fv(vertices[vertex])
+            glVertex3fv(vertices[vertex]) #This instantiates the vertices created above
     glEnd()
 
 def main():
-    pygame.init()
-    display = (1200,900)
-    pygame.display.set_mode(display, DOUBLEBUF|OPENGL)
+    pygame.init() #Initialises the pygame package
+    display = (1200,900) #Sets the size of the window that will appear
+    pygame.display.set_mode(display, DOUBLEBUF|OPENGL) #does something to minimise frame rate
 
     gluPerspective(45, (display[0]/display[1]), 0.1, 50.0)
 
@@ -117,43 +117,43 @@ def main():
 
     max_distance = 100
 
-    cube_dict = {}
+    cube_dict = {} #all this stuff decides the range that the cube can move
 
     for x in range(20):
         cube_dict[x] = set_vertices(max_distance)
     
     #glRotatef(1, 1, 1, 1)
 
-    while True:
+    while True: #Sets a condition to keep the program running until another condition is met
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
                 quit()
             if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_LEFT:
+                if event.key == pygame.K_LEFT: #If the user presses the left key this enables them to move the camera towards the left, like a movement control
                     x_move = 0.3
-                if event.key == pygame.K_RIGHT:
+                if event.key == pygame.K_RIGHT: #same except the camera moves right
                     x_move = -0.3
-##                if event.key == pygame.K_UP:
-##                    y_move = -0.3
-##                if event.key == pygame.K_DOWN:
-##                    y_move = 0.3
+                if event.key == pygame.K_UP: #Same except camera move up
+                    y_move = -0.3 # the distance the camera moves per 'click'
+                if event.key == pygame.K_DOWN: #camera moves down
+                    y_move = 0.3
                     
             if event.type == pygame.KEYUP:
                 if event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT:
-                    x_move = 0
-##                if event.key == pygame.K_UP or event.key == pygame.K_DOWN:
-##                    y_move = 0
-##            if event.type == pygame.MOUSEBUTTONDOWN:
-##                if event.button == 4:
-##                    glTranslatef(0, 0, 1.0)
-##                if event.button == 5:
-##                    glTranslatef(0, 0, -1.0)
+                    x_move = 0 #This makes the camera only able to move if the user presses the key, it doesn't keep going
+                if event.key == pygame.K_UP or event.key == pygame.K_DOWN:
+                    y_move = 0
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                if event.button == 4: #This enables the user to zoom in and out, or in this case speed up or slow down the cubes
+                    glTranslatef(0, 0, 1.0)
+                if event.button == 5:
+                    glTranslatef(0, 0, -1.0)
 
         #glRotatef(1, 1, 3, 1)
 
         x = glGetDoublev(GL_MODELVIEW_MATRIX)
-        print(x)
+        print(x) #This prints all the maths stuff and coordinates of the cubes in the Python shell
 
         camera_x = x[3][0]
         camera_y = x[3][1]
