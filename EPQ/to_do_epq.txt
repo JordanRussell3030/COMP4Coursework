@@ -2,5 +2,3 @@ To do EPQ:
 
 Finish commenting all files
 Make program stated on 11 December on timetable
-Might have to edit session 18 a lot
-install pyopengl at home!!!!!!!!!!

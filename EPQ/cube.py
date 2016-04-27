@@ -91,8 +91,8 @@ def Cube(vertices): #This is the template for the actual cube which appears
         x = 0
         for vertex in surface:
             x += 1
-            glColor3fv(colour[x])
-            glVertex3fv(vertices[vertex])
+            glColor3fv(colour[x]) #this makes the colour grade change across the surfaces of the cubes; for every 1 unit the hex colour value changes creating a rainbow effect
+            glVertex3fv(vertices[vertex]) #Applies the vertex values to each vertice.
     glEnd()
     
     glBegin(GL_LINES)
@@ -181,7 +181,7 @@ def main():
         pygame.display.flip()
         pygame.time.wait(10)
 
-main()    
+main()    #this automatically runs the program
 pygame.quit()
-quit()
+quit() #This closes the window when the user inputs to quit
     
